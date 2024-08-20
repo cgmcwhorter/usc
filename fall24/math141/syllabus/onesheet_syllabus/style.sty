@@ -1,0 +1,144 @@
+% -------------------
+% Packages
+% -------------------
+\usepackage{
+	graphicx,		% Include Images
+	microtype		% Improved Typesetting
+}
+%	amsthm,			% Theorem Environments
+%	caption,			% Remove 'Figure' Prefix
+%	float,				% Force Table Placement
+
+
+
+
+% -------------------
+% Font
+% -------------------
+\usepackage[T1]{fontenc}
+\usepackage{charter}
+
+
+
+% -------------------
+% Colors
+% -------------------
+\usepackage{xcolor}
+
+% College Colors
+\definecolor{stacred}{HTML}{72263d} % 114, 38, 61
+\definecolor{stacgold}{HTML}{f3be48} % 243, 190, 72
+
+\definecolor{stacmaroon}{HTML}{5f082e} % 95, 8, 46
+\definecolor{staclightgold}{HTML}{fdbe7c} % 251, 222, 124
+
+\definecolor{stacwarmgray}{HTML}{423a2e} % 66, 58, 46
+\definecolor{stacrichblack}{HTML}{000100} % 0, 1, 0
+
+\definecolor{quotegray}{HTML}{595959} % 89, 89, 89
+\definecolor{endquotegray}{HTML}{6b6b6b} % 107, 107, 107
+
+
+
+% -------------------
+% Hyperref
+% -------------------
+\usepackage[breaklinks = true]{hyperref}
+\hypersetup{
+	colorlinks 	= true,
+  	linkcolor  	= stacred,
+  	urlcolor   	= stacred
+}
+
+
+
+% -------------------
+% Enumerate/Itemize Environments
+% -------------------
+\usepackage{enumerate}
+%\newenvironment{2enumerate}{%
+%	\begin{enumerate}[(a)]
+%	\begin{multicols}{2}
+%	}{%
+%	\end{multicols}
+%	\end{enumerate}
+%}
+%\newenvironment{3enumerate}{%
+%	\begin{enumerate}[(a)]
+%	\begin{multicols}{3}
+%	}{%
+%	\end{multicols}
+%	\end{enumerate}
+%}
+
+
+
+% -------------------
+% Header & Footer
+% -------------------
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+
+% Paragraph Spacing & Head/Foot Height
+\setlength{\parskip}{0.0cm}
+\setlength{\parindent}{0.0cm}
+\headheight = 14pt
+\footskip = 14pt
+
+% Default Page Style
+\fancypagestyle{pages}{
+	%Headers
+	\fancyhead[L]{}
+	\fancyhead[C]{}
+	\fancyhead[R]{\thepage}
+\renewcommand{\headrulewidth}{0pt}
+	%Footers
+	\fancyfoot[L]{}
+	\fancyfoot[C]{}
+	\fancyfoot[R]{}
+\renewcommand{\footrulewidth}{0.0pt}
+}
+\pagestyle{pages}
+
+
+
+% -------------------
+% Section Headers
+% -------------------
+
+% Title
+\newcommand{\mytitle}[1]{%
+\begin{center}
+\thispagestyle{empty}
+\includegraphics[width=\textwidth]{stac_horzlogo.png} \par
+\huge\color{stacred} \coursenumber: \coursetitle \par
+\color{stacred} \semester\ \myyear\
+\end{center} \par\vspace{\baselineskip}%
+}
+
+% Section
+\newcommand{\mysection}[3]{%
+\begin{minipage}{\textwidth}
+\phantomsection
+	{%
+\large\bfseries\color{stacred}
+#2\label{#3} \par\vspace{-0.62\baselineskip}
+\noindent\rule{#1\textwidth}{1.5pt} \par
+\vspace{-0.3cm}\noindent\rule{0.13\textwidth}{5.1pt}%
+	}%
+\end{minipage}\par\vspace{4\lineskip}%
+}
+
+% Header
+\newcommand{\lefthead}[1]{\noindent{\large\bfseries\color{stacred}#1}\par}
+
+% Large Header
+\newcommand{\largeheader}[3]{\phantomsection\noindent{\LARGE\bfseries\color{stacred}#2\label{#3}}\par\vspace{#1}}
+
+
+% -------------------
+% General Commands
+% -------------------
+\newcommand{\sectionbreak}{\par\vspace{2\baselineskip}}
+\newcommand{\pspace}{\par\vspace{\baselineskip}}
+\newcommand{\pvspace}[1]{\par\vspace{#1}}

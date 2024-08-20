@@ -1,0 +1,718 @@
+\documentclass[11pt,letterpaper]{article}
+\usepackage[lmargin=1in,rmargin=1in,bmargin=1in,tmargin=1in]{geometry}
+\usepackage{style}
+
+% Course Subject Abbreviation
+\newcommand{\coursenumber}{\LARGE MATH 122}
+% Course Title
+\newcommand{\coursetitle}{\LARGE Calculus for Business \par Administration and Social Sciences}
+% Section
+\newcommand{\coursesection}{}
+% Term
+\newcommand{\semester}{Sections 008--009 --- Fall}
+% Year
+\newcommand{\myyear}{2024}
+% Class Dates
+\newcommand{\classdates}{August 20 -- December 16}
+% Class Time
+\newcommand{\classtimes}{TR 10:05 -- 11:20 (Section 008); TR 11:40 -- 12:55 (Section 009)}
+% Classroom
+\newcommand{\classroom}{LeConte 118 (Both Sections)}
+% Credits
+\newcommand{\credits}{4}
+
+
+% Instructor
+\newcommand{\instructor}{Dr. Caleb McWhorter}
+% Instructor Office
+\newcommand{\office}{LeConte 345C}
+% Instructor Number
+\newcommand{\phone}{}
+% Instructor Email
+\newcommand{\email}{cm264@mailbox.sc.edu}
+% Instructor Website
+\newcommand{\website}{http://coffeeintotheorems.com}
+% Instructor Office Hours
+\newcommand{\officehours}{}
+
+
+% -------------------
+% Content
+% -------------------
+\begin{document}
+
+% Title
+\mytitle
+
+% Table of Contents
+\largeheader{0cm}{Table of Contents}{table_contents}
+
+\begin{minipage}[t]{0.45\textwidth} % First Column
+% Basic Course Information
+{\bfseries\color{scred} Basic Course Information} \dotfill \pageref{course_info} \par
+\hspace{0.3cm} Instructor Information \dotfill \pageref{instr_info} \par
+\hspace{0.3cm} Meeting Times \dotfill \pageref{meetings} \par
+\hspace{0.3cm} Course Description \dotfill \pageref{course_desc} \par
+\hspace{0.3cm} Course Objectives \dotfill \pageref{course_obj} \par
+\hspace{0.3cm} Course Materials \dotfill \pageref{course_mat} \par
+\hspace{0.3cm} Course Format \dotfill \pageref{course_format} \par
+% Course Policies
+{\bfseries\color{scred} Course Policies} \dotfill \pageref{course_policies} \par
+\hspace{0.3cm} Grading Components \dotfill \pageref{grade_comp} \par
+\hspace{0.3cm} Grading Scale \dotfill \pageref{grade_scale} \par
+\hspace{0.3cm} Attendance \& Participation \dotfill \pageref{attend} \par
+\hspace{0.3cm} Quizzes \dotfill \pageref{quiz} \par
+\hspace{0.3cm} Homeworks \dotfill \pageref{hw} \par
+\hspace{0.3cm} Exams \dotfill \pageref{exams} \par
+\hspace{0.3cm} Respect Policy \dotfill \pageref{respect} \par
+\hspace{0.3cm} Email Policy \dotfill \pageref{email_policy} \par 
+\hspace{0.3cm} Electronic Device Policy \dotfill \pageref{electronic} \par
+\hspace{0.3cm} Faith/Tradition Observances Policy \dotfill \pageref{faith} \par
+\hspace{0.3cm} Use of Student Work \dotfill \pageref{std_work} \par
+\end{minipage} \hfill \begin{minipage}[t]{0.45\textwidth} \par % Second Column
+\hspace{0.3cm} Course Materials Policy \dotfill \pageref{copyright} \par
+\hspace{0.3cm} Syllabus Policy \dotfill \pageref{syllabus} \par
+\hspace{0.3cm} Tips for Success \dotfill \pageref{tips} \par
+% University Policies
+{\bfseries\color{scred} University Policies \& Resources} \dotfill \pageref{univ_policies} \par
+\hspace{0.3cm} Academic Integrity \dotfill \pageref{univ_academicintegrity} \par
+\hspace{0.3cm} Academic Success \dotfill \pageref{univ_success} \par
+\hspace{0.3cm} Accommodating Disabilities \dotfill \pageref{univ_ada} \par
+\hspace{0.3cm} Amending the Syllabus or Policies \dotfill \pageref{univ_amending} \par
+\hspace{0.3cm} Codes of Conduct \dotfill \pageref{univ_conduct} \par
+\hspace{0.3cm} Expectations of the Instructor \dotfill \pageref{univ_instructorexp} \par
+\hspace{0.3cm} Freedom of Expression \dotfill \pageref{univ_freedexpression} \par
+\hspace{0.3cm} Artificial Intelligence Policy \dotfill \pageref{univ_artintel} \par
+\hspace{0.3cm} Important Dates \dotfill \pageref{univ_dates} \par
+\hspace{0.3cm} Inclusivity \dotfill \pageref{univ_inclusion} \par
+\hspace{0.3cm} Incomplete Grades \dotfill \pageref{univ_incomplete} \par
+\hspace{0.3cm} Inter. Violence \& Sex. Misconduct \dotfill \pageref{univ_viosexmis} \par
+\hspace{0.3cm} Mathematics Help \dotfill \pageref{univ_mathhelp} \par
+\hspace{0.3cm} Mental Health \& Well-Being \dotfill \pageref{univ_mental} \par
+\hspace{0.3cm} Technical Resources \& Support \dotfill \pageref{univ_techsupport} \par
+{\bfseries\color{scred} Course Schedule} \dotfill \pageref{schd} \par
+\hfill {\bfseries\color{scred} Total Pages:} \pageref*{LastPage}
+\end{minipage}
+\par\vspace{0.2cm}
+
+
+
+
+
+% -----
+% Course Information
+% -----
+
+% Course Information
+\largeheader{0.5cm}{\Large Basic Course Information}{course_info}
+
+% Instructor Information
+\mysection{0.31}{Instructor Information}{instr_info}
+\textit{Name:} \instructor \par
+\textit{Office:} \office \par
+%\textit{Phone:} \phone \par
+\textit{Email:} \href{mailto:\email}{\email} \par
+\textit{Office Hours:} \officehours 
+\pspace
+
+
+
+% Class Information
+\mysection{0.27}{Meeting Times}{meetings}
+\textit{Dates:} \classdates \par
+\textit{Time:} \classtimes \par
+\textit{Classroom:} \classroom \par
+\textit{Course Webpage:} \href{\website}{\website} \par
+\textit{Final Exam:} December 10, 9:00~am (Section 008); December 12, 12:30~pm (Section 009)
+\sectionbreak
+
+
+
+% Course Description 
+\mysection{0.27}{Course Description}{course_desc}
+
+Derivatives and integrals of elementary algebraic, exponential, and logarithmic functions. Maxima, minima, rate of change, motion, work, area under a curve, and volume. {\itshape Prerequisites: C or better in MATH 111, MATH 111I or MATH 115 or placement through the Math Assessment of Prerequisites (MAP). Carolina Core: ARP}
+\sectionbreak
+
+
+
+% Course Objectives
+\mysection{0.27}{Course Objectives}{course_obj}
+
+A student who successfully completes Calculus for Business Administration and Social Sciences (Math 122) should be able to\dots
+	\begin{itemize} \itemsep=0.3ex
+	\item Recall basic mathematical terms related to elementary algebraic, exponential, and logarithmic functions, and derivatives and integrals of such functions and express these terms in correct context. 
+	\item Apply the methods of calculus to solve applications involving maxima, minima, rates of change, motion, work, and area under a curve. 
+	\item Verbally interpret data given as graphs, tables, and equations and put into words the relationship between a function and its derivative or integral given in these forms as well. 
+	\item Utilize a graphing calculator to solve problems, locate maxima and minima of a function, and analyze change in a function. 
+	\end{itemize}
+Furthermore, students should\dots
+	\begin{itemize} \itemsep=0.3ex
+	\item  Improve their ability to engage in mathematical thinking, reasoning, communication, and problem solving.
+	\item Develop a matured perspective on how to approach mathematical problems and concepts.
+	\item Be able to state ways Mathematics applies to real world problems.
+	\item Learn to properly utilize technology to explore, expand upon, or answer mathematical questions.
+	\item Refine their cognitive skills by improving their ability to learn independently, approach problems imaginatively, solve problems methodically, and communicate solutions intelligibly.
+	\end{itemize}
+\par\vspace{0.4cm}
+
+
+
+% Course Materials
+\mysection{0.22}{Course Materials}{course_mat}
+
+{\itshape\bfseries\color{scred}Textbook.} The textbook for this course is {Applied Calculus (7th Ed)} by Hughes-Hallett, Gleason, Lock, Flath, et al., Wiley, 2022. Students may purchase a physical copy of the textbook; however, a more convenient option may be to purchase an ebook version of the textbook that comes along with the course homework system through WileyPlus. \pspace
+
+{\itshape\bfseries\color{scred}WileyPlus.} Students will complete homework and possibly other course assignments using a homework system called WileyPlus, which pairs with the course textbook. All students in the course will need to purchase access to this system for the semester. The instructor will provide an access code to allow students to add the course to WileyPlus. See the website \url{https://education.wiley.com/ngonboard/index.html\#/Login}. \pspace
+
+{\itshape\bfseries\color{scred}Calculators.} A graphing calculator is required for this course. The TI-83 or 84 is highly recommended and preferred. However, a TI-89, TI-Nspire CAS, or similar calculator with a computer algebra system will not be allowed on quizzes or exams. The course may make use of the computational engine Mathematica via the WolframAlpha website: \url{https://www.wolframalpha.com}. Although WolframAlpha does have a paid account option for additional resources, the course will not make use of these features and students {\itshape will not} be required to setup an account or make any kind of payment. The course may also make use of Symbolab: \url{https://www.symbolab.com/}. 
+\sectionbreak
+
+
+
+% Course Format
+\mysection{0.19}{Course Format}{course_format}
+
+The course consists of two meetings per week. Each class will begin with a quiz followed by lecture. These lectures will typically consist of a topic discussion followed by time for individual or group problem solving. However, due to the number and `depth' of course topics, not every concept or problem type can be covered during class. Therefore, you may be assigned reading or videos before lecture. Lectures where readings or video are assigned will still cover course content; however, the focus of these lectures will be problem-solving. Therefore, be sure to do the assigned reading/viewing before the lecture. Regardless, students are expected to spend outside of class reading course material, studying extra materials, and solving additional problems. Students are highly encouraged to do additional practice problems from past semesters available via the course webpage. Finally, students are expected to typically spend approximately 3~hours per credit outside of class on course materials. However, some weeks this may be more or less. 
+\sectionbreak
+
+
+
+
+
+% -----
+% Course Policies
+% -----
+
+% Course Policies
+\largeheader{0.3cm}{Course Policies}{course_policies}
+
+% Grading Components
+\mysection{0.27}{Grading Components}{grade_comp}
+
+Course grades are determined by the following components: \par
+	\begin{table}[!ht]
+        \begin{tabular}{lr}
+	Quizzes & 15\% \\
+        Homework & 20\% \\
+        Exams & 45\% \\
+        Final Exam & 20\% \\
+        \end{tabular} 
+        \end{table}
+\sectionbreak
+
+
+
+% Grading Scale
+\mysection{0.18}{Grading Scale}{grade_scale}
+
+The grade scale is as follows: \par
+        \begin{table}[!ht]
+        \centering
+        \begin{tabular}{|l||c|l||c|} \hline
+        A & 90 -- 100 & C & 70 -- 74 \\ \hline
+        B+ & 85 -- 89 & D+ & 65 -- 69 \\ \hline
+        B & 80 -- 84 & D & 60 -- 64 \\ \hline
+        C+ & 75 -- 79 & F & 0 -- 59 \\ \hline
+        \end{tabular}
+        \end{table} 
+\sectionbreak
+
+
+
+
+
+\newpage
+
+
+
+
+
+% Attendance and Participation
+\mysection{0.36}{Attendance \& Participation}{attend}
+
+{\itshape\bfseries\color{scred}Attendance.} It is essential to your success in this course that you attend each lecture and participate in class discussions. It is also a federal requirement that students who do not attend or stop attending a class be reported at the time of determination by the faculty that the student never attended or stopped attending the class. Therefore, you are expected to attend each lecture and to show up on time. Address any absence(s), anticipated or unanticipated, with the instructor as soon as possible. Should you anticipate an absence, you are to contact the instructor as soon as possible---at least twenty-four hours before the class, if possible. Certain absences from lecture(s) may be excused, depending on the reason for the absence. Determinations are made on a case-by-case basis at the discretion of the instructor. The student should discuss the issue with the instructor as soon as possible; however, to excuse an absence, the reason(s) for missing lecture(s) must be documentable and presented, if requested. \pspace
+
+If you miss a lecture, you are responsible for any material covered, any work assigned, any course changes made, etc. during the class. Do not assume or expect the instructor to provide you with anything, particularly lecture notes, from the class(es) missed. {\itshape Five or more unexcused absences from lectures could result in receiving a grade penalty per additional absence or an `F' in the course.} Furthermore, excessive lateness will also count as an absence. If you are dismissed from lecture due to problems during the lecture, e.g. disruptive behavior or unauthorized cell phone use, then this dismissal will be recorded as an absence for the lecture. If you cannot attend a class due to illness, inform your instructor immediately so that arrangements can be made. In this case, the student may be required to participate in lectures virtually and submit assignments online. \pspace
+
+{\itshape\bfseries\color{scred}Participation.} 
+Students are expected to participate in the course---both inside and outside the classroom. Inside the classroom, this means attending class, paying attention, taking notes, asking and answering questions when appropriate, etc. However, course participation does not begin and end at the classroom door. Students are expected to review course material and complete course assignments. Typically, students can expect to spend approximately 3~hours per credit outside of class working for the course---although some weeks this could be more or less. Students are highly encouraged to form study groups to help support themselves and their fellow students' learning. These groups can be used to review notes or additional resources, work on class activities, discuss homework problems, etc. However, these groups {\itshape should not} be used to simply solve problems for others or have others solve your problems for you. For instance, students may not `assign' homework problems to each other to solve in order to complete assignments. Using study groups in this or similar manners is an academic integrity violation that will be dealt with harshly. If you are unsure if what plan on doing or are doing in study groups is appropriate, discuss this with your instructor. \par\vspace{0.8cm}
+
+
+
+% Quizzes
+\mysection{0.18}{Quizzes}{quiz}
+
+There will be a quiz \textit{every} class. Quizzes are meant to be short and simple. These quizzes serve more as a method of gauging whether you are keeping up with the material. It is important that if you are late that you obtain a copy of the quiz immediately. Quiz solutions will often be discussed following the quiz. Because quiz solutions will often be discussed in class, no make-up quizzes will be given except under extraordinary circumstances determined on a case-by-case basis at the discretion of the instructor. Unless otherwise instructed, there are no calculators, computational devices, notes, or outside assistance of any kind allowed on quizzes. 
+\sectionbreak
+
+
+
+% Homeworks
+\mysection{0.18}{Homeworks}{hw}
+
+The only way to learn Mathematics is to do Mathematics! Therefore, there will be weekly homework assignments. Homeworks will mostly be given and submitted using WileyPlus. Therefore, students will need to purchase an access code to this system at \url{https://education.wiley.com/ngonboard/index.html\#/Login}. Students can also purchase access to a digital copy of the textbook when they purchase an access code. If you have difficulties in accessing this system, getting an access code, or using the system during the semester, ask your instructor or other university technological consultant for assistance. Because homeworks will often be submitted electronically and students may experience difficulties with these systems, the internet, etc., do not wait until the last minute to begin or submit these assignments. \pspace
+
+It is essential for students to complete all of the assignments for the course. Working on homework is the best way of engaging with course concepts and gauging one's mastery of the material. Moreover, homework is an essential portion of the course grade. Assignments should be started as soon as possible. Do not delay working through homework; it is easier to keep up than it is to catch up. Students may request extensions on homework assignments. Requests for extensions should be submitted to the instructor in a timely fashion---do not delay! However, do not simply assume that you will be able to receive extra time on an assignment and plan your schedule carefully. Except in exceptional circumstances, homework extensions on topics included in an exam will not be granted beyond the exam date for that material. Any extensions, due dates, and grade penalties for late assignments will be determined by the instructor on a student-by-student basis. \pspace
+
+You are encouraged to work with others on homeworks. Mathematics is a social activity! The purpose of working together on assignments is to engage with course topics, see different perspectives, ask questions, and have others look over your work. However, do not simply use others to do your assignments. You should also not allow other students to use you to complete their assignments. Of course, using online solutions is a violation of the university's academic integrity policies. If you are unsure of whether a particular resource is appropriate to use on an assignment, consult with your instructor first. \pspace
+
+Homeworks may entail software or programming components. These portions may require a fair amount of independence on the part of the student. Should you have difficulty with these problems, ask your instructor for help! Be aware that many of your fellow students may be more technologically literate and ask them for help as well! Anticipate that there may be technological issues and always start problem sets early! Do not wait until the problem(s) are nearly due to try to complete or submit them. You are responsible for submitting solutions and any files for computer-based problems on-time and in the proper format. Always check the file(s) after submission. Failure to adhere to these guidelines may result in grade deductions or rejection of submissions. There is no guarantee that any late solution(s) or file(s) will be accepted. However, if you experience technical difficulties, document the issues thoroughly. 
+\sectionbreak
+
+
+
+% Exams
+\mysection{0.18}{Exams}{exams}
+
+There will be three exams in this course, each worth 15\% of the course grade, for a total of 45\% of the course grade. There will also be a final exam worth 20\% of the course grade. Together, all exams are worth 65\% of the course grade. The final exam grade will be used to replace the lowest of the three exam scores---assuming the final exam score is greater than this lowest score. Furthermore, students achieving an average `raw' exam score of 93 or higher may be exempt from the final exam. No other students may be exempt from the final exam. The schedule of the exams can be found in the `Course Schedule' section of the syllabus. However, these exam dates are subject to change. Students should not make plans to leave campus or otherwise have conflicts on/before that date on/before class on November 21st for the Thanksgiving Break nor December 10th/12th for the final exam. Exams will typically focus on that portion of the course's material. However, any course topics may appear on any exam. The final exam is cumulative and will cover the topics from the entire semester. Students should be present, seated, and prepared for a scheduled exam before the exam begins. Students who are late should not expect extra exam time. Furthermore, students who miss an exam should not expect to receive a make-up exam. There will be no make-up exams except under extraordinary circumstances, e.g. in the case of an emergency. However, determinations for make-up exams or other substitutions, with possible grade deductions, are made at the discretion of the instructor on a case-by-case basis. Unless otherwise instructed, no devices or materials other than those provided by the instructor are allowed on any exam. Exams may involve out-of-class portions, which will be submitted at a time and manner specified in lecture. Furthermore, it may be possible that any exam will be a take-home exam. In this case, the exam procedure and schedule will be announced in advance during lecture. 
+\sectionbreak
+
+
+
+% Respect Policy
+\mysection{0.19}{Respect Policy}{respect}
+
+Learning requires a healthy academic environment. A key component to this is respecting everyone's time, especially giving everyone time to fail, ask questions, and learn---including yourself! Therefore, everyone should abide by the following respect policies: \pspace
+
+The instructor will respect student's time:
+	\begin{itemize}
+	\item They will come prepared to help you understand the course material and prepare students for quizzes/exams. 
+	\item They will listen to student feedback on how to best help them succeed. 
+	\item They will return assignments, respond to emails, and give feedback in a timely fashion. 
+	\item They will be patient during the student learning process and will treat all students fairly. 
+	\end{itemize} \pspace
+
+Students will respect the instructor's time:
+	\begin{itemize}
+	\item They will be on time to class. Moreover, they will come prepared and pay attention during class. 
+	\item They will ask for help and communicate with the instructor in a timely fashion. 
+	\item They will keep track of assignments---completing them on time and to the best of their ability.  
+	\item They will read and follow course policies. 
+	\end{itemize} \pspace
+
+
+
+
+
+\newpage
+
+
+
+
+
+Students will respect each other's time:
+	\begin{itemize}
+	\item They will not be disruptive in class. If you need to call or text someone, take it outside of the classroom. 
+	\item They will work with each other to find solutions and understand course material. However, they will not simply solve problems. 
+	\item They will allow each other to make mistakes, ask questions, and participate in the learning process. 
+	\item They will use respectful language when speaking to or about one another. 
+	\end{itemize}
+\sectionbreak
+
+
+
+% Email Policy
+\mysection{0.18}{Email Policy}{email_policy}
+
+All email communication in this course should be done using your university email account. Similarly, any digital course access and file submissions should be made using your university email account. Abiding by federal guidelines, emails coming from a non-university email may not receive a response. Emails should be properly written: contain appropriate subject line, possess an opening and closing address, be understandable and contain appropriate language, be grammatically correct, have appropriate font style and size, etc. Emails which do not follow these guidelines may not receive a response. 
+\sectionbreak
+
+
+
+% Electronic Device Policy
+\mysection{0.31}{Electronic Device Policy}{electronic}
+
+Students are expected to complete the course without the use of calculators or other computational devices on assignments, quizzes, exams, etc., unless otherwise instructed. Any unauthorized use of such devices are considered a violation of the academic integrity policies. During the course, \href{http://www.wolframalpha.com/}{http://www.wolframalpha.com/}, \href{https://www.symbolab.com/}{https://www.symbolab.com/}, and Mathematica may be used to demonstrate concepts give students an opportunity to be able to check work. However, these should only be used as instructed, and never during a quiz or exam unless instructed. All electronic devices should be turned off and put away during class unless otherwise instructed or given specific permission. Use of such devices can result in dismissal from class.
+\sectionbreak
+
+
+
+% Faith/Tradition Observances Policy
+\mysection{0.44}{Faith/Tradition Observances Policy}{faith}
+
+The instructor recognizes the diversity of faiths and traditions represented in the campus community. Students should have the right to observe religious holy days according to their faith and traditions. Accordingly, students may notify their instructor, no later than the end of the second week of classes, of any classes that they will be missing due to religious or traditional observances. Students following this guideline will be excused from these classes. Under this policy, students should have an opportunity to make up any examination, study, or work missed due to these observances or have an equitable and appropriate substitution made. All policy and procedural decisions are made at the discretion of the instructor on a student-by-student basis. 
+\sectionbreak
+
+
+
+
+
+\newpage
+
+
+
+
+
+% Use of Student Work
+\mysection{0.27}{Use of Student Work}{std_work}
+
+In compliance with the federal Family Educational Rights and Privacy Act (FERPA), registration in this class is understood as permission for assignments prepared for this class to be used anonymously in the future for educational purposes.
+\sectionbreak
+
+
+
+% Course Materials Policy
+\mysection{0.30}{Course Materials Policy}{copyright}
+
+All course materials (defined to include, but not limited to, course handouts, video/audio lectures, assignments, quizzes, exams, etc.) are the intellectual property of the instructor or the university, unless the copyright is already explicitly held by some other individual, group, or other entity. Therefore, course materials are protected by United States copyright law, see Title~17~USC. Students in this course are permitted to download some course materials for personal use. \pspace
+
+However, students are not permitted to (in print, digitally, or otherwise) share, distribute, sell, or publish course materials, either in part or in whole, without the instructors explicit written and signed permission along with a personal usage code. Unauthorized reproduction or distribution of course materials is a violation of intellectual property law, and is a violation of the student code of conduct. The instructor, or agent acting on behalf of the instructor with written and signed permission, also reserves the right to delete or disable any link to any course materials. In enrolling in the course, the student agrees to abide by this course materials policy in perpetuity.
+\sectionbreak
+
+
+
+% Syllabus Policy
+\mysection{0.20}{Syllabus Policy}{syllabus}
+
+The instructor reserves the right to revise, including substantially revise, appropriate portions of the course syllabus at any time---with or without notification. By enrolling in this course, students agree to all the policies found in the syllabus. Wherever applicable, students also agree to follow syllabus policies in perpetuity, e.g. students may not provide unauthorized assistance, materials, etc. to students enrolled in future versions of this course. 
+\sectionbreak
+
+
+
+% Tips for Success
+\mysection{0.21}{Tips for Success}{tips}
+
+\begin{itemize} \itemsep=0.3ex
+\item Attend every lecture; it is easier to keep up than to catch up!
+\item Be proactive about your success in the course. Do not hesitate or delay in asking for help.
+\item Do not procrastinate! Begin your assignments and studying early!
+\item Address issues immediately. Ask questions during class, recitation, office hours, etc. 
+\item Focus on problem solving and when studying do not \textit{study} problem but rather \textit{solve} them. 
+\item Work on developing good problem solving skills, especially writing up problems in an organized manner with proper notation. 
+\item Form a study group! Working together will help you and others better understand the course material as you can work through different difficulties and offer each other clarifications on concepts.
+\item Do problems! Reading through your notes is not enough. Seek out new problems and work through them carefully. When you are done, check your answer. If you are wrong, examine carefully what misunderstanding occurred and how to avoid it in the future. If you were correct, examine if there was a faster way, check to see if your solution `flowed' and was easy to read, and think over what concepts/computations were used and what `type' of problem was the exercise.
+\end{itemize} \sectionbreak
+
+
+
+
+
+% -----
+% University Policies & Resources
+% -----
+
+% University Policies
+\largeheader{0.5cm}{University Policies \& Resources}{univ_policies}
+
+% Academic Integrity
+\mysection{0.25}{Academic Integrity}{univ_academicintegrity}
+
+As a partner in your learning, it is important to both of us that any assignment submission is a pure reflection of your work and understanding. Suspicions of alleged violations of Cheating---defined as ``unauthorized assistance in connection with any academic work'' and/or Falsification, which includes ``Misrepresenting or misleading others with respect to academic work or misrepresenting facts for an academic advantage''---will be referred to the \href{https://www.sa.sc.edu/academicintegrity/}{Office of Student Conduct and Academic Integrity} (\url{https://www.sa.sc.edu/academicintegrity/}). \pspace
+
+You are expected to practice the highest possible standards of academic integrity. Any deviation from this expectation will result in a minimum academic penalty of your failing the assignment and will result in additional disciplinary measures. This includes improper citation of sources, using another student's work, and any other form of academic misrepresentation. The first tenet of the Carolinian Creed is, ``I will practice personal and academic integrity.'' Below are some websites for you to visit to learn more about University policies:
+	\begin{itemize}
+	\item \href{https://sc.edu/about/offices\_and\_divisions/student\_affairs/our\_initiatives/involvement\_and\_leadership/carolinian\_creed/index.php}{Carolinian Creed} (\url{https://sc.edu/about/offices\_and\_divisions/student\_affairs/our\_initiatives/involvement\_and\_leadership/carolinian\_creed/index.php})
+	\item \href{https://www.sc.edu/policies/ppm/staf625.pdf}{Academic Responsibility} (\url{https://www.sc.edu/policies/ppm/staf625.pdf})
+	\item \href{https://www.sa.sc.edu/academicintegrity/}{Office of Student Conduct and Academic Integrity} (\url{https://www.sa.sc.edu/academicintegrity/})
+	\item \href{https://sc.edu/about/offices\_and\_divisions/division\_of\_information\_technology/security/policy/index.php}{Information Security Policy and Standards} (\url{https://sc.edu/about/offices\_and\_divisions/division\_of\_information\_technology/security/policy/index.php})
+	\end{itemize} \pvspace{0.1cm}
+
+% Plagiarism
+{\bfseries Plagiarism} \par
+Using the words or ideas of another as if they were one's own is a serious form of academic dishonesty. If another person’s complete sentence, syntax, key words, or the specific or unique ideas and information are used, one must give that person credit through proper citation. \pspace
+
+% Copyright Syllabus Language
+{\bfseries Copyright Syllabus Language} \par
+Lectures and course materials (which is inclusive of my presentations, tests, exams, outlines, and lecture notes) maybe protected by copyright. You are encouraged to take notes and utilize course materials for your own educational purpose. However, you are not to reproduce or distribute this content without my expressed written permission. This includes sharing course materials to online social study sites like CourseHero and other services. Students who publicly reproduce, distribute or modify course content may be in violation of the university's Honor Code’s Complicity policy. \pspace
+
+% Complicity
+{\bfseries Complicity} \par
+Assisting or attempting to assist (through intentional or unintentional action) another in any violation of the Honor Code. Other prohibited behaviors include:
+	\begin{enumerate}[1.]
+	\item Sharing academic work with another student (either in person or electronically) without the permission of the instructor.
+	\item Communicating (either in person or electronically) with another student(s) or other individual(s) during an examination without the permission of the instructor.
+	\end{enumerate}
+To best understand the parameters around copyright and intellectual property review \href{https://sc.edu/policies/ppm/acaf133.pdf}{ACAF 1.33 ``Intellectual Property Policy''} (\url{https://sc.edu/policies/ppm/acaf133.pdf}). \pspace
+
+% Collaboration
+{\bfseries Collaboration} \par
+Your grades should represent the extent to which you have mastered the course content. You should assume that you are to complete course work individually (without the use of another person or un-cited outside source) unless otherwise indicated by the instructor. It is your responsibility to seek clarification if you are unclear about what constitutes proper or improper collaboration. \pspace
+
+% Reusing Course Materials
+{\bfseries Reusing Course Materials} \par
+The use of previous semester course materials is not allowed in this course without explicit written permission from your instructor. This applies to homework, projects, quizzes, tests, and other course assignments (graded or ungraded). Because these aids are not available to all students within the course, their use by any individual student may undermine the fundamental principles of fairness and disrupts your professor's ability to accurately evaluate your work. Any potential violations will be forwarded to the \href{https://sc.edu/about/offices\_and\_divisions/student\_conduct\_and\_academic\_integrity/index.php}{Office of Student Conduct and Academic Integrity} (\url{https://sc.edu/about/offices\_and\_divisions/student\_conduct\_and\_academic\_integrity/index.php}) for review. \sectionbreak
+
+
+
+% Academic Success
+\mysection{0.25}{Academic Success}{univ_success} \pvspace{0.1cm}
+
+% Student Success Center
+{\bfseries Student Success Center} \par
+In partnership with USC faculty, the \href{https://sc.edu/about/offices\_and\_divisions/student\_success\_center/index.php}{Student Success Center (SSC)} (\url{https://sc.edu/about/offices\_and\_divisions/student\_success\_center/index.php}) offers a number of programs to help you better understand your course material and to support your path to success. SSC programs are facilitated by professional staff, graduate students, and trained undergraduate peer leaders who have previously excelled in their courses. Resources available to you in this course may include:
+	\begin{itemize}
+	\item {\bfseries Peer Tutoring:} You can make a one-on-one appointment with a \href{https://sc.edu/about/offices\_and\_divisions/student\_success\_center/study-smart/tutoring/index.php}{Peer Tutor} (\url{https://sc.edu/about/offices\_and\_divisions/student\_success\_center/study-smart/tutoring/index.php}). 
+	\href{https://sc.edu/about/offices\_and\_divisions/student\_success\_center/study-smart/tutoring/dropin\_tutoring/index.php}{Drop-in Tutoring and Online Tutoring} (\url{https://sc.edu/about/offices\_and\_divisions/student\_success\_center/study-smart/tutoring/dropin\_tutoring/index.php}) may also be available for this course. Visit their website for a full schedule of times, locations, and courses.
+	
+	\item {\bfseries Supplemental Instruction (SI):} SI Leaders are assigned to specific sections of courses and hold three weekly study sessions. Sessions focus on the most difficult content being covered in class. The SI Session schedule is posted through the SSC website each week and will also be communicated in class by the SI Leader.
+	
+
+
+
+
+\newpage
+
+
+
+
+
+	\item {\bfseries Peer Writing:} Improve your college-level writing skills by bringing writing assignments from any of your classes to a Peer Writing Tutor. Similar to Tutoring, you can visit the website to make an appointment, and to view the full schedule of available drop-in hours and locations.
+	
+	\item {\bfseries Success Consultations:} In Success Consultations, SSC staff assist you in developing study skills, setting goals, and connecting to a variety of campus resources. Throughout the semester, I may communicate with the Student Success Center regarding your progress, which indicates your instructor is concerned about your progress in this course. If contacted by the Student Success Center, please schedule a Success Consultation right away. Referrals are not punitive, and any information shared by your professor is confidential and subject to FERPA privacy laws. Student Success Center services are offered to all USC undergraduates at no additional cost. Please call 803.777.1000, visit \href{https://sc.edu/about/offices\_and\_divisions/student\_success\_center/index.php}{Student Success Center} (\url{https://sc.edu/about/offices\_and\_divisions/student\_success\_center/index.php}), or come to the Student Success Center in the Thomas Cooper Library (Mezzanine Level) to check schedules and make appointments.
+	\end{itemize} \pvspace{0.1cm}
+	
+% University Libraries Resources
+{\bfseries University Libraries Resources} \par
+The University has a number of \href{https://sc.edu/about/offices\_and\_divisions/university\_libraries/find\_services/index.php}{university library resources} (\url{https://sc.edu/about/offices\_and\_divisions/university\_libraries/find\_services/index.php}) available to you during your studies.
+	\begin{itemize}
+	\item University Libraries has access to books, articles, subject specific resources, citation help, and more. If you are not sure where to start, assistance is available at \href{https://sc.edu/about/offices\_and\_divisions/university\_libraries/get\_research\_help/index.php}{Ask a Librarian} (\url{https://sc.edu/about/offices\_and\_divisions/university\_libraries/get\_research\_help/index.php})!
+	\item Remember that if you use anything that is not your own writing or media (quotes from books, articles, interviews, websites, movies---everything) you must cite the source in MLA (or other appropriate and approved) format.
+	\end{itemize} \pvspace{0.1cm}
+
+% Writing Center
+{\bfseries Writing Center} \par
+This course has may have writing assignments. The \href{http://artsandsciences.sc.edu/write/university-writing-center}{University Writing Center} (\url{http://artsandsciences.sc.edu/write/university-writing-center}) is an important resource you should use! It is open to help any USC student needing assistance with a writing project at any stage of development. The main Writing Center is in Byrnes~703. \sectionbreak
+
+
+
+% Accommodating Disabilities
+\mysection{0.37}{Accommodating Disabilities}{univ_ada}
+
+The \href{https://sc.edu/about/offices\_and\_divisions/student\_disability\_resource\_center/index.php}{Student Disability Resource Center (SDRC)} (\url{https://sc.edu/about/offices\_and\_divisions/student\_disability\_resource\_center/index.php}) empowers students to manage challenges and limitations imposed by disabilities. In order to receive reasonable accommodations from me, you must be registered with the Student Disability Resource Center (1705 College Street, Close-Hipp Suite~102, Columbia, SC 29208, 803.777.6142). Any student with a documented disability should contact the SDRC to make arrangements for appropriate accommodations. Once registered, students with disabilities are encouraged to contact me (within the first week of the semester) to discuss the logistics of any accommodations needed to fulfill course requirements. \sectionbreak
+
+
+
+% Amending the Syllabus or Policies
+\mysection{0.44}{Amending the Syllabus or Policies}{univ_amending}
+
+Amendments and changes to the syllabus, including evaluation and grading mechanisms, are possible. The instructor must initiate any changes. Changes to the grading and evaluation scheme must be voted on by the entire class and approved only with unanimous vote of all students present in class on the day the issue is decided. The lecture schedule and reading assignments (daily schedule) will not require a vote and may be altered at the instructor's discretion. Grading changes that unilaterally and equitably improve all students' grades will not require a vote. Once approved, amendments will be distributed in writing to all students via Blackboard. \sectionbreak
+
+
+
+% Artificial Intelligence Policy
+\mysection{0.28}{Artificial Intelligence Policy}{univ_artintel}
+
+The use of artificial intelligence (AI) tools, e.g. ChatGPT, DALL-E, Wordtune, Symbolab, Photomath, WolframAlpha, etc., has the potential to transform student learning at the university level---providing students with tools to enhance their learning. However, these same tools also have the potential to destroy student learning opportunities when used improperly (especially in violation of university codes) or by providing incorrect, misleading, or information. Students and Instructors are expected to exercise caution, to use critical judgement, and to abide by university policies when using these tools. \pspace
+
+% Prohibition on Unauthorized AI Use
+{\bfseries Prohibition on Unauthorized AI Use} \par
+Students are strictly prohibited from using AI tools to complete or assist in any graded or ungraded coursework without the explicit permission of the course instructor. This includes, but is not limited to, using AI to generate content, answer questions, provide summaries, or modify existing work (whether the student's work or the work of others). Unauthorized use of AI tools in the preparation, completing, or submission---in whole or in part---of course assignments (graded or ungraded), e.g. discussions, homeworks, labs, projects, papers, exams, may be considered a violation of this policy. \pspace
+
+% Prohibition on Academic Misrepresentation
+{\bfseries Prohibition on Academic Misrepresentation} \par
+Students using, presenting, or submitting AI-generated content as their own work without permission or citation is a serious violation of the university honor code and policies on academic integrity. Students may not submit AI-generated content as their original work, nor should they use AI tools to modify their work in a way that could misrepresent their own efforts and understanding. Such actions are considered academic dishonesty and will be subject to disciplinary action as outlined in the university's academic integrity policy. If AI is used in student work, it should be clearly stated what tools were used, where the tools were used, and in what manner the tools were used. The use of AI tools must comply with the university's academic integrity policy. Misuse or abuse of AI tools will not be tolerated. \pspace
+
+% Instructor Guidance and Approval
+{\bfseries Instructor Guidance and Approval} \par
+If students wish to use AI tools for any aspect of their coursework, unless otherwise stated by the instructor, they must first seek and obtain written permission from the course instructor. The instructor may provide specific guidelines on acceptable AI use and will determine the appropriateness of such tools in the context of the assignment or course objectives. Students are encouraged to consult with their instructors if they have any questions regarding the appropriate use of AI tools in their coursework \textit{before} using the tools. By adhering to this policy, students contribute to a culture of academic integrity and help to uphold the university's commitment to honesty and excellence. \sectionbreak
+
+
+
+
+
+\newpage
+
+
+
+
+
+% Codes of Conduct
+\mysection{0.25}{Codes of Conduct}{univ_conduct}
+
+There are a number of codes of conduct with which students are expected to be familiar with and abide by while they are a student at USC. Each of these outline the respective relationships between the university, faculty, and students and detail the expectations, policies, and procedures---individually and collectively---for students while summarizing the rights and responsibilities of our students and list available services and programs that will make campus life more enjoyable for our students. All students are expected to know and follow all university policies and procedures. These include, but are not limited to, the following: \pspace
+
+% Code of Conduct
+{\bfseries Code of Conduct} \par
+The Code of Conduct identifies for students prohibited conduct and outcomes for violations of prohibited conduct. It further outlines procedures and due process rights that the Office of Student Conduct and Academic Integrity wants all students who meet with us to know and have the opportunity to ask questions about in their meetings. Students may find the \href{https://sc.edu/about/offices\_and\_divisions/student\_conduct\_and\_academic\_integrity/code\_of\_conduct/index.php}{Code of Conduct} (\url{https://sc.edu/about/offices\_and\_divisions/student\_conduct\_and\_academic\_integrity/code\_of\_conduct/index.php}) on the University webpage. \pspace
+
+% Honor Code
+{\bfseries Honor Code} \par
+To promote honesty and integrity in all academic work, the university must receive, investigate and adjudicate all alleged violations of the Honor Code. Students may find the \href{https://sc.edu/about/offices\_and\_divisions/student\_conduct\_and\_academic\_integrity/honor\_code/index.php}{Honor Code} (\url{https://sc.edu/about/offices\_and\_divisions/student\_conduct\_and\_academic\_integrity/honor\_code/index.php}) on the University webpage. \pspace
+
+% Carolinian Creed
+{\bfseries Carolinian Creed} \par
+In 1990, the Carolinian Creed was established as the university's value statement. The Creed is an expression of our community's aspirations and reminds of the importance of civil discourse while embracing mutual respect for everyone, even those we disagree with. It is not an enforceable code of conduct, nor is it intended to limit freedom of expression. The Carolinian Creed states that, \textit{as a Carolinian\dots
+	\begin{itemize}
+	\item I will practice personal and academic integrity;
+	\item I will respect the dignity of all persons;
+	\item I will respect the rights and property of others;
+	\item I will discourage bigotry, while striving to learn from differences in people, ideas and opinions;
+	\item I will demonstrate concern for others, their feelings, and their need for the conditions which support their work and development.
+	\end{itemize}
+	}
+Read more about the \href{https://sc.edu/about/offices\_and\_divisions/student\_affairs/our\_initiatives/involvement\_and\_leadership/carolinian\_creed/index.php}{Carolinian Creed} (\url{https://sc.edu/about/offices\_and\_divisions/student\_affairs/our\_initiatives/involvement\_and\_leadership/carolinian\_creed/index.php}) and freedom of speech on the University webpage. \pspace
+
+% Student Handbook
+{\bfseries Student Handbook} \par
+All USC students are expected to be familiar with and abide by the \href{https://sc.edu/about/offices_and_divisions/system_affairs/policies_and_procedures/system_manuals_and_handbooks/index.php}{Student Handbook} (\url{https://sc.edu/about/offices_and_divisions/system_affairs/policies_and_procedures/system_manuals_and_handbooks/index.php})---both for the University and their respective school/program. \sectionbreak
+
+
+
+% Expectations of the Instructor
+\mysection{0.40}{Expectations of the Instructor}{univ_instructorexp}
+
+The instructor is expected to facilitate learning, answer questions appropriately, be fair and objective in grading, provide timely and useful feedback on assignments, maintain adequate office hours, and treat students as they would like to be treated. \sectionbreak
+
+
+
+% Freedom of Expression
+\mysection{0.39}{Expectations of the Instructor}{univ_freedexpression}
+
+The University is committed to fostering an environment in which the open exchange of ideas and information is valued, promoted, and encouraged.  In context of the \href{https://sc.edu/about/offices\_and\_divisions/student\_affairs/our\_initiatives/involvement\_and\_leadership/carolinian\_creed/index.php}{Carolinian Creed} (\url{https://sc.edu/about/offices\_and\_divisions/student\_affairs/our\_initiatives/involvement\_and\_leadership/carolinian\_creed/index.php}), all class members are free and encouraged to express thoughts, opinions, and beliefs in ways that are protected by law or University policy. Offensive language, personal attacks, threats, harassment, and other expressions that demean others are not conducive to a healthy learning environment and will not be tolerated in this class. Explore \href{https://sc.edu/about/offices\_and\_divisions/student\_affairs/our\_initiatives/involvement\_and\_leadership/free\_speech/index.php}{Free Speech on Campus} (\url{https://sc.edu/about/offices\_and\_divisions/student\_affairs/our\_initiatives/involvement\_and\_leadership/free\_speech/index.php}) to discover how the university actively cultivates an atmosphere that values, promotes, and encourages the open exchange of ideas and information. \sectionbreak
+
+
+
+% Important Dates
+\mysection{0.24}{Important Dates}{univ_dates}
+
+	\begin{itemize}
+	\item 08/20: Add/Drop Deadline
+	\item 09/20: Labor Day (No Classes)
+	\item 10/14: Midterm
+	\item 10/17--10/18: Fall Break (No Classes)
+	\item 11/05: General Election (No Classes)
+	\item 11/06: Withdraw Deadline
+	\item 11/24--12/01: Thanksgiving Break (No Classes)
+	\item 12/06: Last Day of Classes
+	\item 12/09--12/16: Final Exams (Including Saturday)
+	\end{itemize}
+
+Students may find additional useful dates in the \href{https://sc.edu/about/offices\_and\_divisions/registrar/academic\_calendars/2024-25\_calendar.php}{2024--2025 Academic Calendar} (\url{https://sc.edu/about/offices\_and\_divisions/registrar/academic\_calendars/2024-25\_calendar.php}). \sectionbreak
+
+
+
+% Inclusivity
+\mysection{0.18}{Inclusivity}{univ_inclusion}
+
+In order to learn, we must be open to the views of people different than ourselves. In this time we share together over the semester, please honor the uniqueness of your fellow classmates and appreciate the opportunity we have to learn from one another. Please respect each others' opinions and refrain from personal attacks or demeaning comments of any kind. Finally, remember to keep confidential all issues of a personal or professional nature that are discussed in class. \sectionbreak
+
+
+
+% Incomplete Grades
+\mysection{0.27}{Incomplete Grades}{univ_incomplete}
+
+You may be assigned an `I' (Incomplete) grade if you are unable to complete a significant portion of the assigned course work because of an unanticipated illness, accident, work-related responsibility, family hardship, or verified learning disability. An incomplete grade gives you additional time to complete course assignments {\itshape ONLY IF} there is indication that the specified circumstances prevented you from completing course assignments on time. For more information, visit the \href{https://sc.edu/about/offices\_and\_divisions/registrar/index.php}{University Registrar} (\url{https://sc.edu/about/offices\_and\_divisions/registrar/index.php}). \sectionbreak
+
+
+
+% Interpersonal Violence & Sexual Misconduct
+\mysection{0.57}{Interpersonal Violence \& Sexual Misconduct}{univ_viosexmis}
+
+Interpersonal violence---including sexual harassment, relationship violence, sexual assault, and stalking---is prohibited at USC. Faculty, staff, and administrators encourage anyone experiencing interpersonal violence to speak with someone, so they can get the necessary support and USC can respond appropriately. If you or someone you know has been or is currently impacted by interpersonal violence, you can find the appropriate resources at the \href{https://sc.edu/safety/interpersonal-violence/index.php}{Sexual Assault and Violence Intervention \& Prevention (SAVIP)} (\url{https://sc.edu/safety/interpersonal-violence/index.php}) website. You may also find policies and procedures related to Civil Rights \& Title IX, prohibited consensual relationships, etc. on the \href{https://sc.edu/about/offices\_and\_divisions/civil\_rights\_title\_ix/policies\_and\_procedures/index.php}{Office of Civil Rights \& Title IX website} (\url{https://sc.edu/about/offices\_and\_divisions/civil\_rights\_title\_ix/policies\_and\_procedures/index.php}). \pspace
+
+As faculty, the instructor must report all incidents of interpersonal violence and sexual misconduct, and thus cannot guarantee confidentiality. Please know that you can seek \href{https://sc.edu/safety/interpersonal-violence/index.php}{confidential resources} (\url{https://sc.edu/safety/interpersonal-violence/index.php}). If you want to make a formal report, you can \href{https://cm.maxient.com/reportingform.php?UnivofSouthCarolina\&layout\_id=25}{report interpersonal violence and sexual misconduct} (\url{https://cm.maxient.com/reportingform.php?UnivofSouthCarolina\&layout\_id=25}) or contact the institution's Title~IX Coordinator, or one of the Deputy Title~IX Coordinators listed on the SAVIP website. You can also file a police report by contacting USC Police at 803.777.4215. \sectionbreak
+
+
+
+% Mathematics Help
+\mysection{0.26}{Mathematics Help}{univ_mathhelp}
+
+Be proactive about your success in the course! If you need help, there are many resources available to help you. Your first primary contact for help is the instructor and/or supplemental instructors. If you are struggling, attend their office hours or send them an email. Do not wait to bring issues, course related or otherwise, to the attention of these instructors. While students may seek help from their instructors, teaching assistants, supplemental instructors, etc., especially during office hours, there are a number of resources available to you at the university. These resources include\dots
+	\begin{itemize}
+	\item {\bfseries Math Tutoring Center:} \href{https://sc.edu/study/colleges\_schools/artsandsciences/mathematics/study/tutoring/index.php}{The Math Tutoring Center} (\url{https://sc.edu/study/colleges\_schools/artsandsciences/mathematics/study/tutoring/index.php}) offers free help to all USC students taking 100-level Math courses. Talented graduate students are available to answer your questions. No appointment is necessary---just drop in during any of the hours listed on their webpage: \url{https://sc.edu/study/colleges\_schools/artsandsciences/mathematics/study/tutoring/index.php}. 
+	
+	\item {\bfseries Drop-In Tutoring:} The Student Success Center \href{https://www.sc.edu/about/offices\_and\_divisions/student\_success\_center/study-smart/tutoring/dropin\_tutoring/index.php}{satellite locations} (\url{https://www.sc.edu/about/offices\_and\_divisions/student\_success\_center/study-smart/tutoring/dropin\_tutoring/index.php}) offer free math tutoring in the evenings. These services are drop-in group tutoring sessions. The Student Success Center also offers help for MATH 111, 111i, 115, 122, 141, 142, 170, 174, 241, 242, 300, 544, and 574. 
+	
+	\item {\bfseries Supplemental Instruction:} The \href{https://www.sc.edu/about/offices\_and\_divisions/student\_success\_center/study-smart/supplemental-instruction/si-schedule/index.php}{Student Success Center} (\url{https://www.sc.edu/about/offices\_and\_divisions/student\_success\_center/study-smart/supplemental-instruction/si-schedule/index.php}) also offers supplemental instruction offered for a number of Mathematics courses (and beyond). Supplemental Instruction (SI) sessions tend to focus on the most difficult content being covered in class. SI~Leaders are assigned to specific sections of courses and hold three weekly study sessions that can serve as ``built-in study time.'' The schedule is posted on the SSC website each week and will also be communicated by the SI~Leader. See the Student Success Center website for the \href{https://www.sc.edu/about/offices\_and\_divisions/student\_success\_center/study-smart/supplemental-instruction/si-schedule/index.php}{list and schedule for supplemental instruction offerings} (\url{https://www.sc.edu/about/offices\_and\_divisions/student\_success\_center/study-smart/supplemental-instruction/si-schedule/index.php}).
+		
+	\item {\bfseries Peer Tutoring:} The \href{https://www.sc.edu/about/offices\_and\_divisions/student\_success\_center/index.php}{Student Success Center} (\url{https://www.sc.edu/about/offices\_and\_divisions/student\_success\_center/index.php}) offers one-on-one sessions with a peer tutor.  If a course is not on the semester's supported course list, there is a process for requesting assistance. The full schedule of days/times/locations for drop-in and Online Tutoring hours as well as additional study resources can also be viewed on the \href{https://www.sc.edu/about/offices\_and\_divisions/student\_success\_center/index.php}{Student Success Center website} (\url{https://www.sc.edu/about/offices\_and\_divisions/student\_success\_center/index.php}).
+	
+	\item {\bfseries Private Tutors:} The Mathematics Department also maintains a list of private tutors for structured or intensive help. Visit the \href{https://sc.edu/study/colleges\_schools/artsandsciences/mathematics/study/tutoring/private\_tutors.php}{private tutor list} (\url{https://sc.edu/study/colleges\_schools/artsandsciences/mathematics/study/tutoring/private\_tutors.php}) to find this list. 
+	
+	\item {\bfseries Final Exam Tutoring:} There are also mathematics tutors available during final exam periods. A list of tutors and times for this final exam help is posted to the \href{https://sc.edu/study/colleges\_schools/artsandsciences/mathematics/study/tutoring/index.php}{Tutoring Center webpage} (\url{https://sc.edu/study/colleges\_schools/artsandsciences/mathematics/study/tutoring/index.php}) once the final exam period begins. 
+	
+	\item {\bfseries Peer Success Consultations:} The Student Success Center (SSC) offers one-on-one consultations with a peer consultant to work on developing study skills, setting goals, and connecting to a variety of campus resources. Your instructor may communicate with the SSC via Success Connect, an online referral system, regarding your progress in the course. If contacted by the SSC, please schedule a Success Consultation. Success Connect referrals are not punitive and any information shared by your professor is confidential and subject to FERPA regulations. SSC services are offered to all USC undergraduates at no additional cost. You are invited to call the Student Success Hotline at 803.777.1000, visit \url{https://www.sc.edu/about/offices\_and\_divisions/student\_success\_center/index.php} or go to the SSC in the Thomas Cooper Library (Mezzanine Level) to check schedules and make appointments.
+	\end{itemize} \pspace
+
+Furthermore, the \href{https://www.sc.edu/about/offices\_and\_divisions/student\_success\_center/index.php}{Student Success Center} (\url{https://www.sc.edu/about/offices\_and\_divisions/student\_success\_center/index.php}) is a comprehensive one-stop-shop for academic support services on campus. The Student Success Center offers guidance, help, and tools for more than just Mathematics courses. All the programs and initiatives through the Student Success Center are free to students at the University of South Carolina. While there are immediate and drop-in services offered, many services from the Student Success Center, especially course help, will require a student to \href{https://sc.edu/about/offices\_and\_divisions/student\_success\_center/about/make-appointment/index.php}{schedule an appointment} (\url{https://sc.edu/about/offices\_and\_divisions/student\_success\_center/about/make-appointment/index.php}) (in-person or online). 
+\sectionbreak
+
+
+
+% Mental Health & Well-Being
+\mysection{0.63}{Mental Health \& Well-Being}{univ_mental}
+
+The university offers \href{https://sc.edu/about/offices\_and\_divisions/student-health-well-being/mental-health/counseling-and-psychiatry/index.php}{Counseling and Crisis Services} (\url{https://sc.edu/about/offices\_and\_divisions/student-health-well-being/mental-health/counseling-and-psychiatry/index.php}) as well as outreach services, self-help, and frequently asked questions. \pspace
+
+If stress is impacting you or getting in the way of your ability to do your schoolwork, maintain relationships, eat, sleep, or enjoy yourself, then please reach out to any of USC's mental health resources. Most of these services are offered at no cost as they are covered by the Student Health Services tuition fee. For all available mental health resources, check out \href{https://sc.edu/about/offices\_and\_divisions/student-health-well-being/index.php}{Student Health and Well-Being} (\url{https://sc.edu/about/offices\_and\_divisions/student-health-well-being/index.php}) and the quick reference list below. 
+	\begin{itemize}
+	\item Wellness Coaching can help you improve in areas related to emotional and physical well-being (e.g., sleep, resiliency, balanced eating and more)---schedule an appointment at 803.777.6518 or on \href{https://myhealthspace.ushs.sc.edu/}{MyHealthSpace} (\url{https://myhealthspace.ushs.sc.edu/})
+	
+	\item Access virtual self-help modules via \href{https://us.taoconnect.org/register}{Therapy Assistance Online (TAO)} (\url{https://us.taoconnect.org/register})---see \href{https://sc.edu/about/offices\_and\_divisions/student-health-well-being/mental-health/24\_hour\_online\_support/index.php}{TAO registration instructions} (\url{https://sc.edu/about/offices\_and\_divisions/student-health-well-being/mental-health/24\_hour\_online\_support/index.php}).
+	
+	\item Access additional articles and videos on health and wellness topics on the \href{https://thriveatcarolina.com/}{Wellness Hub} (\url{https://thriveatcarolina.com/}) or by downloading the \href{https://www.campuswell.com/}{CampusWell} (\url{https://www.campuswell.com/}) app and searching for University of South Carolina.
+	
+	\item Counseling \& Psychiatry offers individual and group counseling and psychiatric services – schedule an appointment at 803.777.5223 or on \href{https://myhealthspace.ushs.sc.edu/}{MyHealthSpace} (\url{https://myhealthspace.ushs.sc.edu/}).
+	
+	\item Access the 24-hr Mental Health Support Line at 833.664.2854.
+	
+	\item Access an anonymous \href{https://www.uscscreening.org/welcome.cfm?access=website}{mental health screening program} (\url{https://www.uscscreening.org/welcome.cfm?access=website}).
+	\end{itemize} \sectionbreak
+
+
+
+% Technical Resources & Support 
+\mysection{0.41}{Technical Resources \& Support}{univ_techsupport}
+
+Some level of technical skills are required for this course. All students are expected to have basic technical skills, e.g. the ability to use copy/paste, create/download/organize/save/send documents, send/receive emails with and without attachments, follow simple technical instructions, locate information in a browser, use basic computer/internet security and privacy principles, etc. There are resources available to help you improve or develop these skills. If you struggle with these skills or skills like these, you should make your instructor aware as soon as possible. Do not delay in addressing these issues or beginning/submitting assignments if you believe that you will have or experience technical issues. Students are expected to and will use email and Blackboard regularly. Students should check these resources daily. Therefore, you must have consistent and reliable access to a computer and the internet. These resources are available to you at the university; however, accessing these resources may involve being mindful of time restrictions and planning ahead carefully. Therefore, do not delay in beginning or submitting electronic assignments. Students are responsible for submitting their work on-time and/or in a timely fashion. Do not wait until the last minutes/seconds to make digital submissions. \pspace
+
+If you have questions or problems related to your computer, software, or need technical support (including Blackboard support), please contact the Division of Information Technology (DoIT) Service Desk at 803.777.1800, submit an online request through the \href{https://scprod.service-now.com/sp}{Self-Service Portal} (\url{https://scprod.service-now.com/sp}), or visit the \href{https://sc.edu/about/offices\_and\_divisions/division\_of\_information\_technology/end\_user\_services/available\_technology\_resources/carolina\_tech\_zone/}{Carolina Tech Zone} (\url{https://sc.edu/about/offices\_and\_divisions/division\_of\_information\_technology/end\_user\_services/available\_technology\_resources/carolina\_tech\_zone/}). The Service Desk is open Monday through Friday from 8:00~am until 6:00~pm (Eastern Time). If you have computer issues/problems, then there is a computer lab available at the Thomas Cooper Library and in certain campus classroom buildings. If you are not located in the Columbia, SC area, then most regional campuses and public libraries have computers for public use. \pspace
+
+The PowerPoint lecture presentations, assignments, quizzes, and rubrics and links to articles may be located on the Blackboard site for the course. To participate in learning activities and complete assignments, you will need daily access to:
+	\begin{itemize}
+	\item The Internet and a computer which can be used at any time, controlled and configured as required for assignments, for access to resources, and for communication.
+	\item A web browser, e.g. 
+		\begin{enumerate}[--]
+		\item MacOS\texttrademark: Apple Safari, Google Chrome, Mozilla Firefox.
+		\item Windows\texttrademark: Google Chrome, Microsoft Edge, Mozilla Firefox.
+		\end{enumerate}
+	\item Blackboard Learning Management System
+	\item Microsoft Word as your word processing program
+	\item Adobe~24 or DC; and
+	\item Reliable data storage for your work, such as a USB drive or Office365 OneDrive cloud storage.
+	\end{itemize}
+Microsoft Office~365 is available for free to all students. Students have access to the latest versions of Word, Excel, PowerPoint, OneNote, and much more. You can install Office~365 on up to five compatible devices, including five tablet devices. All work can be saved online in OneDrive so it can be accessed no matter which device is being used. You can use this Office~365 subscription for as long as you are a student  at the University of South Carolina. To download Microsoft Office, go to \url{https://portal.office.com/}, log in with your email address and Network Username password, and then choose Settings, Office~365 settings, Software. \pspace
+
+All computers that connect to a university network must have current, up-to-date antivirus software. Antivirus software is included with Microsoft Windows; however, it is not included on Macs. If your computer does not have antivirus software, the \href{https://sc.edu/about/offices\_and\_divisions/division\_of\_information\_technology/end\_user\_services/available\_technology\_resources/carolina\_tech\_zone/}{Carolina Tech Zone} (\url{https://sc.edu/about/offices\_and\_divisions/division\_of\_information\_technology/end\_user\_services/available\_technology\_resources/carolina\_tech\_zone/}) can assist you. \pspace
+
+If you have further questions or need help with the software, then please contact the \href{https://sc.edu/about/offices\_and\_divisions/division\_of\_information\_technology/end\_user\_services/available\_technology\_resources/service\_desk/index.php}{Division of Information Technology Service Desk} (\url{https://sc.edu/about/offices\_and\_divisions/division\_of\_information\_technology/end\_user\_services/available\_technology\_resources/service\_desk/index.php}). \sectionbreak
+
+
+
+
+
+% -----
+% Course Schedule
+% -----
+\largeheader{0.3cm}{Course Schedule}{schd}
+
+The following is a \emph{tentative} schedule for the course and is subject to change. 
+        \begin{table}[!ht]
+        \hspace{-1cm}
+        \scalebox{1}{%
+        \begin{tabular}{ll || ll}
+        Date & Topic(s) & Date & Topic(s) \\ \hline         
+        08/20 & Course Introduction & 10/17 & Fall Break (No Class) \\
+        08/22 & Linear Functions (\S1.1--1.2) & 10/22 & Distance \& Accumulated Change (\S5.1) \\
+        08/27 & Rates of Change \& Applications (\S1.3--1.4) & 10/24 & Definite Integral (\S5.2--5.3) \\ 
+        08/29 & Exponentials/Logarithms (\S1.5--1.7) & 10/29 & Integral Interpretations (\S5.4) \\
+        09/03 & Transformations \& Polynomials (\S1.8--1.9) & 10/31 & Fund. Thm. of Calc. (\S5.5, 6.3) \\
+        09/05 & Review & 11/05 & Election Day (No Class) \\
+        09/10 & Exam 1 & 11/07 & Review \\
+        09/12 & Derivatives (\S2.1--2.2) & 11/12 & Exam 3 \\
+        09/17 & Derivative Interpretations (\S2.3--2.4) & 11/14 & Integrals (\S6.1--6.2) \\
+        09/19 & Marginal Cost/Revenue (\S2.5) & 11/19 & Consumer/Product Surplus (\S6.4) \\
+        09/24 & Further Derivatives (\S3.1--3.2) & 11/21 & Consumer/Product Surplus (\S6.4) \\
+        09/26 & Derivative Rules (\S3.3--3.4) & 11/26 & Thanksgiving Break (No Class) \\
+        10/01 & Max, Mins, \& Inflection (\S4.1--4.2) & 11/28 & Thanksgiving Break (No Class) \\
+        10/03 & Max, Mins, \& Inflection (\S4.1--4.2) & 12/03 & Review \\
+        10/08 & Review & 12/05 & Review \\
+        10/10 & Exam 2 & 12/10 or 12/12 & Final Exam \\
+        10/15 & Global Maxes, Cost/Revenue (\S4.3--4.4) & 
+        \end{tabular}
+        }
+        \end{table}
+
+
+\end{document}
