@@ -15,7 +15,7 @@
 % Class Dates
 \newcommand{\classdates}{August 20 -- December 16}
 % Class Time
-\newcommand{\classtimes}{Sections 017--020: 2:20 -- 3:35 (MW), 10:05--10:55 (TR); \par \hspace{0.94cm} Sections 021--024: 3:55 -- 5:10 (MW), 2:50 -- 3:40 (TR)}
+\newcommand{\classtimes}{Lecture, MW: \par \hspace{1.5cm} 2:20pm -- 3:35pm (Sections 017--020); \par \hspace{1.5cm} 3:55pm -- 5:10pm (Sections 021--024) \par \hspace{0.95cm} Recitation/Lab, TR: \par \hspace{1.5cm} 10:05am -- 10:55am (Sections 17--18) \par \hspace{1.5cm} 11:40am -- 12:30pm (Sections 19--20) \par \hspace{1.5cm} 1:15pm -- 2:05pm (Sections 21--22) \par \hspace{1.5cm} 2:50pm -- 3:40pm (Sections 23--24)}
 % Classroom
 \newcommand{\classroom}{All Sections: LeConte 118 (MW), LeConte 123 (TR)}
 % Credits
@@ -27,13 +27,13 @@
 % Instructor Office
 \newcommand{\office}{LeConte 345C}
 % Instructor Number
-\newcommand{\phone}{}
+\newcommand{\phone}{803.777.7425}
 % Instructor Email
 \newcommand{\email}{cm264@mailbox.sc.edu}
 % Instructor Website
 \newcommand{\website}{http://coffeeintotheorems.com}
 % Instructor Office Hours
-\newcommand{\officehours}{}
+\newcommand{\officehours}{MW: 1:00pm -- 2:00pm; TR: 4:00pm -- 5:30pm}
 
 
 % -------------------
@@ -62,7 +62,7 @@
 \hspace{0.3cm} Grading Scale \dotfill \pageref{grade_scale} \par
 \hspace{0.3cm} Attendance \& Participation \dotfill \pageref{attend} \par
 \hspace{0.3cm} CircleIn \dotfill \pageref{circlein} \par
-\hspace{0.3cm} Quizzes \dotfill \pageref{quiz} \par
+\hspace{0.3cm} Check-Ins \dotfill \pageref{check} \par
 \hspace{0.3cm} Labs \dotfill \pageref{labs} \par
 \hspace{0.3cm} Gateways \dotfill \pageref{gateways} \par
 \hspace{0.3cm} Homeworks \dotfill \pageref{hw} \par
@@ -107,7 +107,7 @@
 % -----
 
 % Course Information
-\largeheader{0.5cm}{Basic Course Information}{course_info}
+\vspace{-0.2cm} \largeheader{0.5cm}{Basic Course Information}{course_info} \vspace{-0.3cm}
 
 % Instructor Information
 \mysection{0.62}{Instructor \& Teaching Assistant Information}{instr_info}
@@ -115,18 +115,23 @@
 {\bfseries\color{scred} Instructor Information} \par
 \textit{Name:} \instructor \par
 \textit{Office:} \office \par
-%\textit{Phone:} \phone \par
+\textit{Phone:} \phone \par
 \textit{Email:} \href{mailto:\email}{\email} \par
 \textit{Office Hours:} \officehours \pspace
 
-{\bfseries\color{scred} Teaching Assistant Information} \par
-\textit{Name:} Dilshan Somathilake \par
-\textit{Office:}  \par
-%\textit{Phone:} \phone \par
-\textit{Email:} \href{mailto:dilshan@email.sc.edu}{dilshan@email.sc.edu} \par
-\textit{Office Hours:}  
+{\bfseries\color{scred} Teaching Assistant Information} \par \vspace{0.1cm}
+\hspace{0.25cm} \begin{minipage}[b]{0.4\textwidth}
+        {\itshape Teaching Assistant Sections 17--20} \par
+        \textit{Name:} Jianguo Hou \par
+        \textit{Office:} LeConte 113 \par
+        \textit{Email:} \href{mailto:jianguo@email.sc.edu}{jianguo@email.sc.edu} 
+\end{minipage}\begin{minipage}[b]{0.4\textwidth}
+        {\itshape Teaching Assistant Sections 21--24} \par
+        \textit{Name:} Dilshan Somathilake \par
+        \textit{Office:}  LeConte 113 \par
+        \textit{Email:} \href{mailto:dilshan@email.sc.edu}{dilshan@email.sc.edu} 
+\end{minipage}
 \pspace
-
 
 
 % Class Information
@@ -170,13 +175,6 @@ Furthermore, students should\dots
 
 
 
-% Course Materials
-\mysection{0.22}{Course Materials}{course_mat}
-
-{\itshape\bfseries\color{scred}Textbook.} The textbook for this course is {\itshape Thomas' Calculus Early Transcendentals (15th Ed)} by George B. Thomas Jr. Students may purchase a physical copy of the textbook; however, a more convenient option may be to purchase an ebook version of the textbook that comes along with the course homework system MyMathLab. \pspace
-
-
-
 
 
 \newpage
@@ -185,7 +183,12 @@ Furthermore, students should\dots
 
 
 
-{\itshape\bfseries\color{scred}MyMathLab.} Students will complete homework and possibly other course assignments using a homework system called MyMathLab, which pairs with the course textbook. All students in the course will need to purchase access to this system for the semester. The instructor will provide an access code to allow students to add the course to MyMathLab. \pspace
+% Course Materials
+\mysection{0.22}{Course Materials}{course_mat}
+
+{\itshape\bfseries\color{scred}Textbook.} The textbook for this course is {\itshape Thomas' Calculus Early Transcendentals (15th Ed)} by George B. Thomas Jr. Students may purchase a physical copy of the textbook; however, a more convenient option may be to purchase an ebook version of the textbook that comes along with the course homework system MyMathLab. \pspace
+
+{\itshape\bfseries\color{scred}MyMathLab.} Students will complete homework and possibly other course assignments using a homework system called MyMathLab, which pairs with the course textbook. All students in the course will need to purchase access to this system for the semester. Instructions on how to create your MyMathLab account can be found on Blackboard. The course ID for Sections 17--20 is \textbf{mcwhorter36461} and the course ID for Sections 21--24 is \textbf{mcwhorter17209}. \pspace
 
 {\itshape\bfseries\color{scred}SageMath.} To help students engage with the course topics and learn some fundamental programming principles, students will complete a series of labs using SageMath throughout the semester. SageMath is an open source program for mathematical programs that is built using Python. Students will not need their own copy of SageMath as the computers in their assigned lab have the program already installed. However, students may install their own copy or use an online version of SageMath through \textit{Binder}. Instructions for uploading a lab file to Binder can be found in the corresponding course `Reference Guide' and links to open labs in Binder immediately are provided in the third column of the table where the lab downloads are provided. If a student wants assistance obtaining a personal copy of SageMath, they can see the course `Accessing Sagemath' guide or make use of the technical resources available to them at the university. \pspace
 
@@ -218,7 +221,7 @@ Course grades are determined by the following components: \par
 	\begin{table}[!ht]
         \begin{tabular}{lr}
 	CircleIn & 5\% \\
-	Quizzes & 5\% \\
+	Check-Ins & 5\% \\
 	Labs & 10\% \\
 	Gateway I \& II & 10\% \\
 	Homework & 15\% \\
@@ -279,16 +282,6 @@ The expectation is that students will engage with their classmates each week on 
 
 Lastly, CircleIn is paid for by USC, so students will never see advertising, students will not be asked for a credit card or banking info and students can communicate with any other student directly through CircleIn, so students do not have to give out any personal contact information to set it up. Please, take advantage of it today. \pspace
 
-
-
-
-
-\newpage
-
-
-
-
-
 To get started:
 	\begin{itemize}
 	\item \href{http://CircleInApp.app.link}{Download the App} (\url{http://CircleInApp.app.link}) and visit the \href{https://app.circleinapp.com/}{CircleIn's Web Version (PC or MAC)} (\url{https://app.circleinapp.com/}).
@@ -309,19 +302,11 @@ Students will required to participate in the course using CircleIn. This is to h
 
 
 
-% Quizzes
-\mysection{0.18}{Quizzes}{quiz}
+% Check-Ins
+\mysection{0.18}{Check-Ins}{check}
 
-There will be a quiz \textit{every} class. Quizzes are meant to be short and simple. These quizzes serve more as a method of gauging whether you are keeping up with the material. It is important that if you are late that you obtain a copy of the quiz immediately. Quiz solutions will often be discussed following the quiz. Because quiz solutions will often be discussed in class, no make-up quizzes will be given except under extraordinary circumstances determined on a case-by-case basis at the discretion of the instructor. Unless otherwise instructed, there are no calculators, computational devices, notes, or outside assistance of any kind allowed on quizzes. 
-\sectionbreak
-
-
-
-
-
-\newpage
-
-
+There will be a check-in \textit{every} class. Check-Ins are meant to be short and simple. These check-ins serve more as a method of gauging whether you are keeping up with the material. It is important that if you are late that you obtain a copy of the check-in immediately. Check-In solutions will often be discussed following the check-in. Because check-in solutions will often be discussed in class, no make-up check-in will be given except under extraordinary circumstances determined on a case-by-case basis at the discretion of the instructor. Unless otherwise instructed, there are no calculators, computational devices, notes, or outside assistance of any kind allowed on check-ins. 
+\par\vspace{0.6cm}
 
 
 
