@@ -334,20 +334,54 @@ This limit does not exist. Therefore, $f'(0)$ does not exist. There are other fu
 
 
 
-%% 09/16
-%\checkin{09/16} $\ds \dfrac{d}{dx} \left(x 3^x \right)^{10}= 10 \left(3^x + x3^x \right)^9$ \pspace
-%
-%\sol The statement is \textit{false}.
-%
-%% 09/18
-%\checkin{09/18} $\dfrac{d}{dx} \left( \dfrac{f}{g} \right)= \dfrac{f' g - g' f}{g^2}$ \pspace
-%
-%\sol The statement is \textit{true}.
-%
-%% 09/19
-%\checkin{09/19} Let $f(x)$ be a twice-differentiable function. If $f'(x) > 0$, then it must be that $f''(x) > 0$. \pspace
-%
-%\sol The statement is \textit{false}.
+% 09/16
+\checkin{09/16} $\ds \dfrac{d}{dx} \left(x 3^x \right)^{10}= 10 \left(3^x + x3^x \right)^9$ \pspace
+
+\sol The statement is \textit{false}. The chain rule has not been properly applied. The individual began to apply the chain rule by beginning with the power rule---but then let the base be result of the next step in the chain rule---while also incorrectly taking the derivative of $3^x$. [The derivative of $b^x$ is $b^x \ln b$.] We have\dots
+	\[
+	\dfrac{d}{dx} \left(x 3^x \right)^{10}= 10 \left(x 3^x \right)^9 \cdot \dfrac{d}{dx} \left(x 3^x \right)= 10(x3^x) \cdot (3^x + x 3^x \ln 3)
+	\]
+Of course, one could perform some arithmetic first to avoid the chain rule---mostly:
+	\[
+	\dfrac{d}{dx} \left(x 3^x \right)^{10}= \dfrac{d}{dx} x^10 3^{10x}= 10x^9 \cdot 3^{10x} + x^{10} \cdot \left( 3^{10x} \ln 3 \cdot 10 \right)
+	\] \pvspace{1.3cm}
+
+
+
+% 09/18
+\checkin{09/18} $\dfrac{d}{dx} \left( \dfrac{f}{g} \right)= \dfrac{f' g - g' f}{g^2}$ \pspace
+
+\sol The statement is \textit{true}. This is the quotient rule! Indeed, we can derive this using the power and chain rules:
+	\[
+	\dfrac{d}{dx} \left( \dfrac{f}{g} \right)= \dfrac{d}{dx} \left( f \cdot (g)^{-1} \right)= f' \cdot (g)^{-1} + f \cdot (- g^{-2} \cdot g')= \dfrac{f'}{g} - \dfrac{fg'}{g^2}= \dfrac{f' g}{g^2} - \dfrac{f g'}{g^2}= \dfrac{f' g - f g'}{g^2}
+	\] \pvspace{1.3cm}
+
+
+
+% 09/19
+\checkin{09/19} Let $f(x)$ be a twice-differentiable function. If $f'(x) > 0$, then it must be that $f''(x) > 0$. \pspace
+
+\sol The statement is \textit{false}. Recall that if $f'(x) > 0$, the function $f(x)$ is increasing at that $x$-value, and if $f'(x) < 0$, the function $f(x)$ is decreasing at that $x$-value. Furthermore, recall that if $f''(x) > 0$, the function $f(x)$ is concave up at that $x$-value, and if $f''(x) < 0$, the function $f(x)$ is concave down at that $x$-value. Therefore, the question is asking if a function is increasing, does it have to be concave up. This is certainly not the case. For instance, consider the function $f(x)$ shown below. 
+	\[
+	\fbox{
+	\begin{tikzpicture}[scale=1,every node/.style={scale=0.5}]
+	\begin{axis}[
+	grid=both,
+	axis lines=middle,
+	ticklabel style={fill=blue!5!white},
+	xmin= -10.5, xmax=10.5,
+	ymin= -10.5, ymax=10.5,
+	xtick={-10,-8,-6,-4,-2,0,2,4,6,8,10},
+	ytick={-10,-8,-6,-4,-2,0,2,4,6,8,10},
+	minor tick = {-10,-9,...,10},
+	xlabel=\(x\),ylabel=\(y\),
+	]
+	\addplot[line width= 0.02cm,samples=100,domain= -10.5:10.5] ({x},{5 - 1/35*(x - 12)^2});
+	\end{axis}
+	\end{tikzpicture}
+	}
+	\] 
+This function is clearly everywhere increasing, so that $f'(x) > 0$. However, observe that the function is concave down, so that $f''(x) < 0$. The sign of $f'$ and $f''$ do indeed give you information about $f(x)$. However, the signs of $f$, $f'$, and $f''$ \textit{do not} need to be the same. \pvspace{1.3cm}
 
 
 
