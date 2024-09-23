@@ -17,7 +17,7 @@
 % -------------------
 % Course Information
 % -------------------
-\newcommand{\course}{MATH 115}
+\newcommand{\course}{MATH 122}
 \newcommand{\semester}{Fall 2024}
 
 
@@ -79,7 +79,7 @@
 \fancypagestyle{title}{
 	%Headers
 	\fancyhead[L]{\Large\bfseries\course}
-	\fancyhead[C]{\Large\bfseries Quiz Solutions}
+	\fancyhead[C]{\Large\bfseries Check-In Solutions}
 	\fancyhead[R]{\Large\bfseries\semester}
 	\renewcommand{\headrulewidth}{0.2pt}
 	%Footers
@@ -130,10 +130,8 @@
 % -------------------
 % Quiz/Solution Commands
 % -------------------
-\newcounter{quiz}
-\newcommand{\quizsol}{
-	\stepcounter{quiz}%
-	\noindent \textbf{Quiz \thequiz. }%
+\newcommand{\checkin}[1]{
+	\noindent \textbf{Check-In #1.} {\itshape (True/False)}%
 }
 \newcommand{\sol}{\noindent\textbf{Solution. }}
 

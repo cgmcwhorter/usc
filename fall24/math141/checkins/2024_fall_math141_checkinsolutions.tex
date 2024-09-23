@@ -1,0 +1,363 @@
+\documentclass[11pt,letterpaper]{article}
+\usepackage[lmargin=1in,rmargin=1in,bmargin=1in,tmargin=1in]{geometry}
+\usepackage{checkins}
+
+
+% -------------------
+% Content
+% -------------------
+\begin{document}
+\thispagestyle{title}
+
+% 08/22
+\checkin{08/22} If $f(x)$ is a function with $f(5)= -4$, then it must be that $\displaystyle \lim_{x \to 5} f(x)= -4$. \pspace
+
+\sol The statement is \textit{false}. Limits are about happens `near' an input---not what happens at the input. A limit may or may not exist at a given $x$-value even when the function is defined for that $x$-value. Moreover, even if the limit exists, it may not be equal to the function value there! 
+	\begin{center}
+	% Left
+	\fbox{%
+	\begin{tikzpicture}[scale=0.7,every node/.style={scale=0.5}]
+	\begin{axis}[
+	grid=both,
+	axis lines=middle,
+	ticklabel style={fill=blue!5!white},
+	xmin= -0.5, xmax=10.5,
+	ymin= -8.5, ymax=2.5,
+	xtick={-1,0,...,11},
+	ytick={-8,-7,...,2},
+	minor tick = {-9,-8,...,3},
+	xlabel=\(x\),ylabel=\(y\),
+	samples=20]
+	\node at (7.5,-2.4) {\scalebox{1.6}{$f(x)$}};
+	\addplot[thick, samples=5, domain= -0.5:10.5] {x - 9};
+	\end{axis}
+	\end{tikzpicture}
+	} \hfill
+	% Middle
+	\fbox{%
+	\begin{tikzpicture}[scale=0.7,every node/.style={scale=0.5}]
+	\begin{axis}[
+	grid=both,
+	axis lines=middle,
+	ticklabel style={fill=blue!5!white},
+	xmin= -0.5, xmax=10.5,
+	ymin= -8.5, ymax=2.5,
+	xtick={-1,0,...,11},
+	ytick={-8,-7,...,2},
+	minor tick = {-9,-8,...,3},
+	xlabel=\(x\),ylabel=\(y\),
+	samples=20]
+	\node at (7.5,-3.4) {\scalebox{1.6}{$g(x)$}};
+	\addplot[thick, samples=5, domain= -0.5:10.5] {x - 10};
+	\addplot[soldot] coordinates{(5,-4)};
+	\addplot[holdot] coordinates{(5,-5)};
+	\end{axis}
+	\end{tikzpicture}
+	} \hfill
+	% Right
+	\fbox{%
+	\begin{tikzpicture}[scale=0.7,every node/.style={scale=0.5}]
+	\begin{axis}[
+	grid=both,
+	axis lines=middle,
+	ticklabel style={fill=blue!5!white},
+	xmin= -0.5, xmax=10.5,
+	ymin= -8.5, ymax=2.5,
+	xtick={-1,0,...,11},
+	ytick={-8,-7,...,2},
+	minor tick = {-9,-8,...,3},
+	xlabel=\(x\),ylabel=\(y\),
+	samples=20]
+	\node at (6.5,-2.4) {\scalebox{1.6}{$h(x)$}};
+	\addplot[thick, samples=5, domain= -0.5:5] {x - 10};
+	\addplot[thick, samples=5, domain= 5:10.5] {x - 8};
+	\addplot[soldot] coordinates{(5,-4)};
+	\addplot[holdot] coordinates{(5,-3)(5,-5)};
+	\end{axis}
+	\end{tikzpicture}
+	}
+	\end{center}
+For instance, for the function $f(x)$ on the left, we have $f(5)= -4$ and $\ds\lim_{x \to 5} f(x)= -4$. However, for the function $g(x)$ in the middle, we have $g(5)= -4$ but $\ds\lim_{x \to 5} g(x)= -5$. But for $h(x)$ on the right, we have $h(5)= -4$ but $\ds\lim_{x \to 5} h(x)$ does not exist because the left and right hand limits are not equal. \pvspace{1.3cm}
+
+
+
+% 08/26
+\checkin{08/26} If $\ds\lim_{x \to a^-} f(x)$ and $\ds\lim_{x \to a^+} f(x)$ exist, then $\ds\lim_{x \to a} f(x)$ exists. \pspace
+
+\sol The statement is \textit{false}. We know that if $\ds\lim_{x \to a} f(x)$ exists, then $\ds\lim_{x \to a^-} f(x)$, exists, $\ds\lim_{x \to a^+} f(x)$ exists, and $\ds\lim_{x \to a^-} f(x)= \lim_{x \to a^+} f(x)$. This is because if $\ds\lim_{x \to a} f(x)$ exists, then $f(x)$ is getting `close' to a single number, say $L$, whenever $x$ is `close' to $a$---no matter if it is `below' or `above' $x= a$. However, just because $f(x)$ is getting `close' to a particular output `on the left' does not mean $f(x)$ is getting `close' to the same output from the right. Take the example from the previous quiz!
+	\[
+	\fbox{%
+	\begin{tikzpicture}[scale=1,every node/.style={scale=0.5}]
+	\begin{axis}[
+	grid=both,
+	axis lines=middle,
+	ticklabel style={fill=blue!5!white},
+	xmin= -0.5, xmax=10.5,
+	ymin= -8.5, ymax=2.5,
+	xtick={-1,0,...,11},
+	ytick={-8,-7,...,2},
+	minor tick = {-9,-8,...,3},
+	xlabel=\(x\),ylabel=\(y\),
+	samples=20]
+	\node at (6.5,-2.4) {\scalebox{1.6}{$h(x)$}};
+	\addplot[thick, samples=5, domain= -0.5:5] {x - 10};
+	\addplot[thick, samples=5, domain= 5:10.5] {x - 8};
+	\addplot[soldot] coordinates{(5,-4)};
+	\addplot[holdot] coordinates{(5,-3)(5,-5)};
+	\end{axis}
+	\end{tikzpicture}
+	}
+	\]
+For this function, we have $\ds\lim_{x \to 5^-} h(x)= -5$, $\ds\lim_{x \to 5^+} h(x)= -3$, but $\ds \lim_{x \to 5^-} h(x) \neq \lim_{x \to 5^+} h(x)$. However, if the left and right hand limits exist \textit{and} are equal, then $\ds\lim_{x \to a} f(x)$ exists.
+
+
+
+\newpage
+
+
+
+% 08/26
+\checkin{08/26} $\ds\lim_{\theta \to 0} \dfrac{\sin(3\theta)}{2\theta}= \dfrac{3}{2}$ \pspace
+
+\sol The statement is \textit{true}. Recall that $\ds\lim_{\Box{} \to 0} \dfrac{\sin(\Box)}{\Box}= 1$. But then\dots
+	\[
+	\lim_{\theta \to 0} \dfrac{\sin(3\theta)}{2\theta}= \dfrac{1}{2} \lim_{\theta \to 0} \dfrac{\sin(3\theta)}{\theta}= \dfrac{1}{2} \lim_{\theta \to 0} \dfrac{3\sin(3\theta)}{3\theta}= \dfrac{3}{2} \lim_{\theta \to 0} \underbrace{\dfrac{\sin(3\theta)}{3\theta}}_{\squiggle 1}= \dfrac{3}{2} \cdot 1= \dfrac{3}{2}
+	\] \pvspace{1.3cm}
+
+
+
+% 08/28
+\checkin{08/28} $\ds\lim_{x \to 5} \dfrac{x^2 - 3x - 10}{x - 5}= 7$ \pspace
+
+\sol The statement is \textit{true}. We have\dots
+	\[
+	\lim_{x \to 5} \dfrac{x^2 - 3x - 10}{x - 5}= \lim_{x \to 5} \dfrac{\cancel{(x - 5)}(x + 2)}{\cancel{x - 5}}= \lim_{x \to 5} (x + 2)= 5 + 2= 7
+	\] \pvspace{1.3cm}
+
+
+
+% 08/29
+\checkin{08/29} $\ds \lim_{x \to 1^-} \dfrac{x - 5}{x - 1}= -\infty$ \pspace
+
+\sol The statement is \textit{false}. `Plugging in' $x= 1$, we obtain $\frac{-4}{0}$---so certainly this limit is either $-\infty$, $+\infty$, or DNE. Because we approach $1$ from the left, we know that $x < 1$. But then $x - 1 < 0$. But then $\frac{1}{x - 1}$ approaches $-\infty$ as $x$ tends to 1 from the left. But the numerator is also negative because when $x$ is `close' to 1, $x - 5 < 0$. Therefore, the limit tends to $\infty$. We can see this from the plot of $\frac{x - 5}{x - 1}$. 
+	\[
+	\fbox{%
+	\begin{tikzpicture}[scale=1,every node/.style={scale=0.5}]
+	\begin{axis}[
+	grid=both,
+	axis lines=middle,
+	ticklabel style={fill=blue!5!white},
+	xmin= -8.5, xmax=8.5,
+	ymin= -8.5, ymax=8.5,
+	xtick={-10,-8,...,10},
+	ytick={-10,-8,...,10},
+	minor tick = {-10,-9,...,10},
+	xlabel=\(x\),ylabel=\(y\),
+	samples=20]
+	
+	\addplot[thick, samples=80, domain= -8.5:0.9] {(x - 5)/(x - 1)};
+	\addplot[thick, samples=80, domain= 1.1:10.5] {(x - 5)/(x - 1)};
+	
+	\end{axis}
+	\end{tikzpicture}
+	}
+	\]
+The given answer failed to take the sign of the numerator into account. 
+
+
+
+\newpage
+
+
+
+% 09/04
+\checkin{09/04} $\ds \lim_{x \to \infty} \dfrac{9x^2 - 5x + 7}{8 - 3x^2}= 3$ \pspace
+
+\sol The statement is \textit{true}. We know that $\ds\lim_{x \to \pm \infty} \dfrac{\text{polynomial}}{\text{polynomial}}$ is 0 if $\deg \text{ den.} > \deg \text{ num.}$, $\pm \infty$ (depending on the limit and sign of the leading coefficient in the numerator) if $\deg \text{ num.} > \deg \text{ den.}$, and is the ratio of the leading coefficients if $\deg \text{ den.}= \deg \text{ num.}$. The degree of the numerator and denominator is 2. Therefore, we know that 
+	\[
+	\lim_{x \to \infty} \dfrac{9x^2 - 5x + 7}{8 - 3x^2}= \dfrac{9}{-3}= -3
+	\]
+The given answer did not correctly identify the leading coefficient in the denominator. Alternatively, we can multiply by $\frac{1/x^{\deg \text{ denom}}}{1/x^{\deg \text{ denom}}}$:
+	\[
+	\lim_{x \to \infty} \dfrac{9x^2 - 5x + 7}{8 - 3x^2}= \lim_{x \to \infty} \dfrac{9x^2 - 5x + 7}{8 - 3x^2} \cdot \dfrac{1/x^2}{1/x^2}= \lim_{x \to \infty} \dfrac{9 - \frac{5}{x} + \frac{7}{x}}{\frac{8}{x^2} - 3}= \dfrac{9 - 0 + 0}{0 - 3}= \dfrac{9}{-3}= -3
+	\] \pvspace{1.3cm}
+
+
+
+% 09/05
+\checkin{09/05} If $f(x)$ is defined to be the following function: 
+	\[
+	f(x)= 
+	\begin{cases}
+	x^2 + x - 6, & x < -1 \\
+	x - 5, & x \geq -1 
+	\end{cases}
+	\]
+Then $f(x)$ is everywhere continuous. \pspace
+
+\sol The statement is \textit{true}. If $x < -1$, then $f(x)= x^2 + x - 6$. We know that $x^2 + x - 6$ is a polynomial, which are everywhere continuous. If $x > -1$, then $f(x)= x - 5$, which is a polynomial. We know that polynomials are everywhere continuous. Therefore, we know $f(x)$ is continuous when $x < -1$ and when $x > -1$. We only need to check if $f(x)$ is continuous at $x= -1$. For $f(x)$ to be continuous at $x= -1$, we need to check that $\ds f(-1)= \lim_{x \to -1} f(x)$:
+	\begin{itemize}
+	\item $f(-1)= -1 - 5= -6$
+	\item $\ds\lim_{x \to -1^-} f(x)= \lim_{x \to -1^-} (x^2 + x - 6)= (-1)^2 + (-1) - 6= -6$
+	\item $\ds\lim_{x \to -1^+} f(x)= \lim_{x \to -1^+} (x - 5)= -1 - 5= -6$
+	\end{itemize}
+Because $\ds\lim_{x \to -1^-} f(x)= \ds\lim_{x \to -1^+} f(x)$, we know that $\ds\lim_{x \to -1} f(x)= -6$. Therefore, $\ds f(-1)= \lim_{x \to -1} f(x)$. But then $f(x)$ is continuous at $x= -1$. Therefore, $f(x)$ is continuous for all $x$, i.e. $f(x)$ is everywhere continuous. 
+
+
+
+\newpage
+
+
+
+% 09/09
+\checkin{09/09} The function $f(x)= |xe^x \sin x|$ is continuous. Therefore, $\ds\lim_{x \to \pi} f(x)= f \left( \lim_{x \to \pi} \right)= f(\pi)= 0$. \pspace
+
+\sol The statement is \textit{true}. We know that $x$, $e^x$, and $\sin x$ are everywhere continuous. Therefore, their product---$g(x):= x e^x \sin x$---is continuous. We also know the function $h(x)= |x|$ is everywhere continuous. But then the composition $(h \circ g)(x)$ is continuous. But $(h \circ g)(x)= h \big( g(x) \big)= h(x e^x \sin x)= |xe^x \sin x|$. 
+We can see the continuity from a plot of this function. 
+	\[
+	\fbox{%
+	\begin{tikzpicture}[scale=0.9,every node/.style={scale=0.5}]
+	\begin{axis}[
+	grid=both,
+	axis lines=middle,
+	ticklabel style={fill=blue!5!white},
+	xmin= -6, xmax=6,
+	ymin= -0.5, ymax=20.5,
+	xtick={-6,-4,...,6},
+	ytick={-2,0,...,20},
+	minor tick = {-6,-5,...,0,1,2,...,20},
+	xlabel=\(x\),ylabel=\(y\),
+	samples=20]
+	
+	\addplot[thick, samples=120, domain= -8.5:3.14] {abs(x*2.71828^x*sin(deg(x)))};
+	\addplot[thick, samples=120, domain= 3.13:4] {abs(x*2.71828^x*sin(deg(x)))};
+	
+	\end{axis}
+	\end{tikzpicture}
+	}
+	\]
+Finally, we know that if a function $f(x)$ is continuous at $x= a$, then $\ds \lim_{x \to a} f(x)= f(a)$. But we know that the given $f(x)$ is continuous at $x= \pi$---it is everywhere continuous. But then\dots
+	\[
+	f(\pi)= |\pi \cdot e^\pi \sin \pi|= |\pi \cdot e^\pi \cdot 0|= |0|= 0
+	\] \pvspace{1.3cm}
+
+
+
+% 09/10
+\checkin{09/10} The function $f(x)$, plotted below, is \textit{not} differentiable at $x= -2$ but \textit{is differentiable} at $x= 6$.
+	\[
+	\fbox{
+	\begin{tikzpicture}[scale=1,every node/.style={scale=0.5}]
+	\begin{axis}[
+	grid=both,
+	axis lines=middle,
+	ticklabel style={fill=blue!5!white},
+	xmin= -10.5, xmax=10.5,
+	ymin= -10.5, ymax=10.5,
+	xtick={-10,-8,-6,-4,-2,0,2,4,6,8,10},
+	ytick={-10,-8,-6,-4,-2,0,2,4,6,8,10},
+	minor tick = {-10,-9,...,10},
+	xlabel=\(x\),ylabel=\(y\),
+	]
+	\node at (7.4,3.5) {$f(x)$};
+	\addplot[line width= 0.02cm,samples=200,domain= 0:10.5] ({x},{abs(x-3)});
+	\addplot[line width= 0.02cm,samples=200,domain= -10.5:-2] ({x},{-1*abs(x+5)});
+	\addplot[line width= 0.02cm,samples=200,domain= -2:0] ({x},{3+3*x});
+	\end{axis}
+	\end{tikzpicture}
+	}
+	\] 
+
+\sol The statement is \textit{true}. At $x= -2$, we can see that $f(x)$ has a cusp. [The derivative somehow `wants' to be $-1$ and 3 at the same time.] Therefore, $f(x)$ is not differentiable at $x= -2$. However, we can see that $f(x)$ is linear at $x= 6$. We know linear functions are differentiable---the derivative is the slope of the function. Therefore, $f(x)$ is differentiable at $x= 6$. In fact, the value of the derivative at $x= 6$ is the slope of the line through $\big(6, f(x) \big)$---which is $3x + 3$ so that $f'(6)= 3$. 
+
+
+
+\newpage
+
+
+
+% 09/11
+\checkin{09/11} \textit{Every} differentiable function is continuous, but not every continuous function is differentiable. \pspace
+
+\sol The statement is \textit{true}. We know that every differentiable function is continuous. However, not every continuous function is necessarily differentiable. For instance, consider the function $f(x)= |x|$, shown below.
+	\[
+	\fbox{
+	\begin{tikzpicture}[scale=1,every node/.style={scale=0.5}]
+	\begin{axis}[
+	grid=both,
+	axis lines=middle,
+	ticklabel style={fill=blue!5!white},
+	xmin= -10.5, xmax=10.5,
+	ymin= -10.5, ymax=10.5,
+	xtick={-10,-8,-6,-4,-2,0,2,4,6,8,10},
+	ytick={-10,-8,-6,-4,-2,0,2,4,6,8,10},
+	minor tick = {-10,-9,...,10},
+	xlabel=\(x\),ylabel=\(y\),
+	]
+	\node at (7.4,6.5) {$f(x)$};
+	\addplot[line width= 0.02cm,samples=3,domain= -10.5:10.5] ({x},{abs(x)});
+	\end{axis}
+	\end{tikzpicture}
+	}
+	\] 
+We see that $f(x)$ has a cusp at $x= 0$. Therefore, $f(x)$ is not differentiable at $x= 0$. We can check this directly:
+	\[
+	f'(0):= \lim_{h \to 0} \dfrac{f(0 + h) - f(0)}{h}= \dfrac{|h| - 0}{h}= \begin{cases} \dfrac{h}{h}= 1, h > 0 \\ \\\dfrac{-h}{h}= -1, & h < 0 \end{cases}
+	\]
+This limit does not exist. Therefore, $f'(0)$ does not exist. There are other functions, e.g. the Weierstrass function shown below, that are \textit{everywhere} continuous but \textit{nowhere} differentiable. 
+
+	\begin{figure}[!ht]
+	\centering
+	\fbox{%
+	\includegraphics[width=0.5\textwidth]{weierstrass.png}
+	}
+	\end{figure} \pvspace{1.3cm}
+
+
+
+\newpage
+
+
+
+% 09/12
+\checkin{09/12} $\ds \dfrac{d}{dx} \left( e^{-x} \cos x \right)= -e^{-x} \cos x - e^{-x} \sin x$ \pspace
+
+\sol The statement is \textit{true}. We use the product rule and the chain rule. We have\dots
+	\[
+	\begin{aligned}
+	\dfrac{d}{dx} \left( e^{-x} \cos x \right)&= \dfrac{d}{dx} (e^{-x}) \cos x + e^{-x} \dfrac{d}{dx} ( \cos x) \\[0.3cm]
+	&= (-e^{-x}) \cos x + e^{-x} (-\sin x) \\[0.3cm]
+	&= -e^{-x} \cos x - e^{-x} \sin x \\[0.3cm]
+	&= -e^{-x} (\sin x + \cos x)
+	\end{aligned}
+	\] \pvspace{1cm}
+
+
+
+%% 09/16
+%\checkin{09/16} $\ds \dfrac{d}{dx} \left(x 3^x \right)^{10}= 10 \left(3^x + x3^x \right)^9$ \pspace
+%
+%\sol The statement is \textit{false}.
+%
+%% 09/18
+%\checkin{09/18} $\dfrac{d}{dx} \left( \dfrac{f}{g} \right)= \dfrac{f' g - g' f}{g^2}$ \pspace
+%
+%\sol The statement is \textit{true}.
+%
+%% 09/19
+%\checkin{09/19} Let $f(x)$ be a twice-differentiable function. If $f'(x) > 0$, then it must be that $f''(x) > 0$. \pspace
+%
+%\sol The statement is \textit{false}.
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}

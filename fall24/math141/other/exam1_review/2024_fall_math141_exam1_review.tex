@@ -1,0 +1,1488 @@
+\documentclass[11pt,letterpaper]{article}
+\usepackage[lmargin=1in,rmargin=1in,bmargin=1in,tmargin=1in]{geometry}
+
+% -------------------
+% Packages
+% -------------------
+\usepackage{
+	amsmath,			% Math Environments
+	amssymb,			% Extended Symbols
+	enumerate,		% Custom Enumerate
+	multicol,			% Use MultiColumns
+	stmaryrd			% Integer Function
+}
+
+\setlength{\parindent}{0ex}
+
+% -------------------
+% Tikz/PGFPlots
+% -------------------
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest}
+\pgfplotsset{soldot/.style={color=black,only marks,mark=*},
+		holdot/.style={color=black,fill=white,only marks,mark=*},
+		compat=1.12
+}
+
+% -------------------
+% Enumerate/Itemize Environments
+% -------------------
+\newenvironment{2enumerate}{%
+	\begin{enumerate}[(a)]
+	\begin{multicols}{2}
+	}{%
+	\end{multicols}
+	\end{enumerate}
+}
+
+% -------------------
+% Font
+% -------------------
+\usepackage[T1]{fontenc}
+\usepackage{charter}
+
+% -------------------
+% Commands
+% -------------------
+\DeclareMathOperator{\arccsc}{arccsc}
+\DeclareMathOperator{\arcsec}{arcsec}
+\DeclareMathOperator{\arccot}{arccot}
+
+\newcommand{\ds}{\displaystyle}
+\newcommand{\pspace}{\par\vspace{\baselineskip}}
+\newcommand{\pvspace}[1]{\par\vspace{#1}}
+
+\newcounter{problem}
+\newcommand{\prob}{\stepcounter{problem}%
+\noindent\textbf{Problem \theproblem. }}
+
+% -------------------
+% Content
+% -------------------
+\begin{document}
+
+% Exam 1 Review
+\begin{center} {\bfseries\Large MATH 141 --- Fall 2024} \par\vspace{0.3cm} {\bfseries\LARGE Exam 1 Review} \end{center} \par\vspace{0.3cm}
+
+% Problem
+\prob Use the plot of the function $f(x)$ below to answer the following questions:
+	\[
+	\fbox{
+	\begin{tikzpicture}[scale=1.4,every node/.style={scale=0.5}]
+	\begin{axis}[
+	grid=both,
+	axis lines=middle,
+	ticklabel style={fill=blue!5!white},
+	xmin= -10, xmax=10,
+	ymin= -10, ymax=10,
+	xtick={-10,-9,...,10},
+	ytick={-10,...,10},
+	xlabel=\(x\),ylabel=\(y\)
+	]
+
+	\addplot[thick, domain= -2:2,samples=100] {3*abs(x)-3};
+	\addplot[thick,domain= 2:7,samples=100] {x-5};
+	\addplot[thick,domain= -4.5:-2,samples=100] {9/(x+5)};
+	\addplot[thick,domain= -10:-5.5,samples=100] {7/(x+5)^3};
+	\addplot[thick,domain= 7:10,samples=100] {2^(x-6)};
+
+
+	
+	\addplot[holdot] coordinates{(-2,3)(2,3)(2,-3)};
+	\addplot[soldot] coordinates{(2,0)};
+
+	\end{axis}
+	\end{tikzpicture}
+	}
+	\] 
+
+\begin{2enumerate}
+\item $f(2)$
+\item $\ds\lim_{x \to 2^-} f(x)$
+\item $\ds\lim_{x \to 2^+} f(x)$
+\item $\ds\lim_{x \to 2} f(x)$
+\item $\ds\lim_{x \to -2^-} f(x)$
+\item $\ds\lim_{x \to -2^+} f(x)$
+\item $\ds\lim_{x \to -2} f(x)$
+\item $\ds\lim_{x \to -\infty} f(x)$
+\item $\ds\lim_{x \to \infty} f(x)$
+\item What is the $y$-intercept of $f(x)$? 
+\item What are the zeros of $f(x)$?
+\item If $f(x)$ has any vertical asymptotes, give their equation.
+\item Where is $f(x)$ continuous?
+\item List at least 4 values for $x$ at which $f(x)$ is not differentiable.
+\end{2enumerate}
+
+
+
+% Problem
+\prob Showing all your work, compute the following limits:
+	\begin{2enumerate}
+	\item $\ds\lim_{h \to 0} \dfrac{(9 + h)^2 - 81}{h}$
+	\item $\ds\lim_{w \to \infty} \dfrac{\pi w^2 - w + 6}{2 w^2 - 4}$
+	\item $\ds\lim_{x \to 4} \dfrac{\sqrt{x + 5} - 3}{x - 4}$
+	\item $\ds\lim_{b \to -\infty} \dfrac{x^7 + x^2 - 6}{x^2 + 5x - 3}$
+	\item $\ds\lim_{x \to 0} \dfrac{3x}{\sin x}$
+	\item $\ds\lim_{x \to \infty} \left(1 + \dfrac{2}{x} \right)^x$
+	\end{2enumerate}
+
+
+% Problem
+\prob Showing all your work, compute the following limits:
+	\begin{2enumerate}
+	\item $\ds\lim_{c \to 1} \dfrac{x^2}{\pi x^2 - \sqrt[3]{x} + 8}$
+	\item $\ds\lim_{x \to 0^-} \dfrac{(x + 3)^2 - 9}{x}$
+	\item $\ds\lim_{x \to 0} \dfrac{\sin x}{\sqrt[3]{x}}$
+	\item $\ds\lim_{x \to 3^+} \dfrac{x^2 + 5x + 6}{x^2 + 2x + 1}$
+	\item $\ds\lim_{a \to \infty} \left(1 + \dfrac{1}{a} \right)^{3a}$
+	\item $\ds\lim_{x \to 0} \dfrac{x^2 - x \cos x}{x}$
+	\item $\ds\lim_{x \to 0} \dfrac{5x}{\sqrt{x + 7} - \sqrt{7}}$
+	\item $\ds\lim_{x \to \infty} \arctan(x)$
+	\item $\ds\lim_{x \to 4} \cos^2 \left( \dfrac{5\pi}{x} \right)$
+	\item $\ds\lim_{x \to \infty} x^3 \sin \left( \dfrac{1}{x^3} \right)$
+	\item $\ds\lim_{x \to \infty} \dfrac{1 - x^2}{x^4 - 1}$
+	\item $\ds\lim_{b \to 0} \dfrac{\frac{1}{2 + b} - \frac{1}{b}}{b}$
+	\item $\ds\lim_{x \to \infty} \dfrac{x^6}{(2x^2 - 1)^3}$
+	\item $\ds\lim_{x \to \infty} \dfrac{x^2 - 5x + 6}{x^3 - 8x + 9}$
+	\item $\ds\lim_{x \to -\infty} 7^x$
+	\item $\ds\lim_{r \to 0} r^8 \sin \left( \dfrac{e^r}{r^8} \right)$
+	\item $\ds\lim_{x \to 1^-} \dfrac{5 - 2x}{x - 1}$
+	\item $\ds\lim_{x \to 0} x \sin x$
+	\item $\ds\lim_{h \to -4^+} \dfrac{|h + 4|}{5 - h}$
+	\item $\ds\lim_{h \to -3^-} \dfrac{h + 10}{|h + 3|}$
+	\item $\ds\lim_{x \to \infty} \dfrac{(x + 1)(x - 3)(x^2 - 5)}{x^2 - 6}$
+	\item $\ds\lim_{x \to 0^-} \left(1 + \dfrac{1}{e^x} \right)^x$ 
+	\item $\ds\lim_{x \to \pi^+} \left( x^2 - 3^x \right)$
+	\end{2enumerate}
+
+
+
+% Problem
+\prob Decide whether the following statements are true or false. Be sure to justify your answer.
+	\begin{enumerate}[(a)]
+	\item If $f(x)$ and $g(x)$ are continuous at $x= a$, then $(f + g)(x)$ is continuous at $x= a$. 
+	\item If $f(x)$ is continuous at $x= a$, then $\left( f(x) \right)^2$ is continuous at $x= a$.
+	\item If $f(x)$ and $g(x)$ are everywhere continuous, then $(fg)(x)$ is everywhere continuous.
+	\item If $f(x)$ and $g(x)$ are continuous at $x= a$, then $(f \circ g)(x)$ is continuous at $x= a$. 
+	\item If $f(x)$ is continuous at $x= a$, then $|f(x)|$ is continuous at $x= a$. 
+	\item If $|f(x)|$ is continuous at $x= a$, then $f(x)$ is continuous at $x= a$. 
+	\item If $f(x)$ and $g(x)$ are discontinuous at $x= a$, then $(f + g)(x)$ is discontinuous at $x= a$. 
+	\item If $f(x) < g(x)$ for $x > 0$ and $\ds\lim_{x \to \infty} f(x)$ and $\ds\lim_{x \to \infty} g(x)$ exist, then $\ds\lim_{x \to \infty} f(x) < \lim_{x \to \infty} g(x)$. 
+	\end{enumerate}
+
+
+
+% Problem
+\prob For the function $f(x)$, whose graph is shown in the figure below, compute the following limits. If the limit does not exist, write `DNE.' \par
+	\[
+	\fbox{
+	\begin{tikzpicture}[scale=0.8,every node/.style={scale=0.5}]
+	\begin{axis}[
+	grid=both,
+	axis lines=middle,
+	ticklabel style={fill=blue!5!white},
+	xmin= -7, xmax=7,
+	ymin= -6.5, ymax=6.5,
+	xtick={-6,-4,-2,0,2,4,6},
+	ytick={-6,-4,-2,0,2,4,6},
+	minor tick = {-5,-3,...,5},
+	xlabel=\(x\),ylabel=\(y\),
+	samples=20]
+
+	\addplot[thick, domain= -7:-3] {-3*x-10};
+	\addplot[thick,domain= -3:2] {4/5*x-3/5};
+	\addplot[thick,domain= 2:4] {7/2*x^2-41/2*x+28};
+	\addplot[thick,domain= 4:7] {2};
+	\addplot[holdot] coordinates{(-3,-1)(2,1)(4,2)};
+	\addplot[soldot] coordinates{(-3,-3)(4,3)};
+
+	\end{axis}
+	\end{tikzpicture}
+	}
+	\] 
+	
+        \begin{2enumerate}
+        \item $\ds\lim_{x \to -3^-} f(x)$  
+        \item $\ds\lim_{x \to -3^+} f(x)$ 
+        \item $\ds\lim_{x \to -3} f(x)$ 
+        \item $\ds\lim_{x \to 2^-} f(x)$ 
+        \item $\ds\lim_{x \to 2^+} f(x)$ 
+        \item $\ds\lim_{x \to 2} f(x)$ 
+        \item $\ds\lim_{x \to -\infty} f(x)$  
+        \item $\ds\lim_{x \to \infty} f(x)$ 
+        \end{2enumerate}
+Also, determine if $f(x)$ continuous at $x=4$. Be sure to justify your answer using the definition of continuity. \pspace
+
+
+
+% Problem
+\prob Showing all your work, compute the following limits:
+	\begin{2enumerate}
+	\item $\ds\lim_{x \to 8} \sin \left( \dfrac{\pi x}{2} \right)$
+	\item $\ds\lim_{h \to -2} \dfrac{h^2 - h - 2}{h - 2}$
+	\item $\ds\lim_{x \to 0} \dfrac{\frac{1}{x + 5} - \frac{1}{5}}{x}$
+	\item $\ds\lim_{x \to 4} \left| \dfrac{x}{x + 4} \right|$
+	\item $\ds\lim_{x \to 9} \dfrac{3 - \sqrt{x}}{x - 9}$
+	\item $\ds\lim_{x \to 4} \csc \left( \dfrac{11\pi}{x} \right)$
+	\item $\ds\lim_{x \to \infty} \dfrac{6 - 5x^2}{3x^2 + x - 9}$
+	\item $\ds\lim_{\theta \to 0} \dfrac{\cos \theta \tan \theta}{\theta}$
+	\item $\ds\lim_{x \to \infty} x \sin \left( \dfrac{1}{x} \right)$
+	\item $\ds\lim_{x \to \infty} \tan^{-1} \left( x - 2^x \right)$
+	\item $\ds\lim_{x \to 0} \left(1 + \dfrac{x}{5} \right)^{1/x}$
+	\item $\ds\lim_{x \to -4^-} \dfrac{3x + 5}{x + 4}$
+	\item $\ds\lim_{a \to 0} \dfrac{16 - (4 - a)^2}{a}$
+	\item $\ds\lim_{x \to -1^-} \dfrac{x^2}{x + 1}$
+	\item $\ds\lim_{j \to -7} \dfrac{|j + 1|}{j}$
+	\item $\ds\lim_{x \to \infty} \dfrac{x^5}{100x^4 + 6x^3 + 5x^2 - x + 9}$
+	\item $\ds\lim_{x \to 6} \dfrac{\sqrt{10 - x} - 2}{x - 6}$
+	\end{2enumerate}
+
+
+
+% Problem
+\prob Decide whether the following statements are true or false. Be sure to justify your answer.
+	\begin{enumerate}[(a)]
+	\item If neither $\ds\lim_{x \to 2} f(x)$ nor $\ds\lim_{x \to 2} g(x)$ exist, then $\ds\lim_{x \to 2} \left( f(x) + g(x) \right)$ does not exist. 
+	\item If neither $\ds\lim_{x \to 2} f(x)$ nor $\ds\lim_{x \to 2} g(x)$ exist, then $\ds\lim_{x \to 2} \left( f(x) \cdot g(x) \right)$ does not exist. 
+	\item If $\ds\lim_{x \to \infty} f(x)= \infty$, then $\ds\lim_{x \to \infty} \left( f(x) + g(x) \right)= \infty$.
+	\item If $\ds\lim_{x \to 7} f(x)$ and $\ds\lim_{x \to 7} g(x)$ exist, then $\ds\lim_{x \to 7} \left( f(x) - g(x) \right)$ must exist. 
+	\item If $\ds\lim_{x \to 1} f(x)$ and $\ds\lim_{x \to 1} g(x)$ exist, then $\ds\lim_{x \to 1} \left( f(x) + g(x) \right)$ must exist. 
+	\item If $\ds\lim_{x \to 0} f(x)$ exists, then $f(0)$ exists. 
+	\item If $f(x) < g(x)$ for all $x$, then $\ds\lim_{x \to 0} f(x) < \lim_{x \to 0} g(x)$. 
+	\item If $\ds\lim_{x \to 9} f(x)= 0$, then $\ds\lim_{x \to 9} f(x) g(x)= 0$. 
+	\item If $\ds\lim_{x \to 7} f(x)= -9$, then $\ds\lim_{x \to 7} |f(x)|= 9$. 
+	\item If $\ds\lim_{x \to 3^-} f(x)$ exists, then $\ds\lim_{x \to 3^+} f(x)$ exists. 	
+	\item If $\ds\lim_{x \to 5} f(x)$ exists, then $\ds\lim_{x \to 5} f(x)= f(5)$. 
+	\item If $\ds\lim_{x \to 4} |f(x)|= L$, then $\ds\lim_{x \to 4} f(x)= L$. 
+	\item If $\ds\lim_{x \to -4^-} f(x)$ and $\ds\lim_{x \to -4^+} f(x)$ exist, then $\ds\lim_{x \to -4} f(x)$ exists.
+	\item If $\ds\lim_{x \to 0^-} f(x)= \ds\lim_{x \to 0^+} f(x)$, then $\ds\lim_{x \to 0} f(x)$ exists. 
+	\item If $\ds\lim_{x \to \pi} f(x)$ exists, then $\ds\lim_{x \to \pi^+} f(x)$ exists. 
+	\item If $\ds\lim_{x \to 1^-} f(x)$ exists, then $\ds\lim_{x \to 1} f(x)$ exists. 
+	\item If $f(x)$ is continuous at $x= a$, then $\ds\lim_{x \to a^-} f(x)= f(a)$. 
+	\item If $f(x)$ is everywhere continuous, then $\ds\lim_{x \to -3} f(x^2)= f(9)$.
+	\item \textit{Any} continuous function is differentiable.
+	\item \textit{Any} differentiable function is continuous. 
+	\item If a function is differentiable, then it is differentiable everywhere. 
+	\item If $g(2)= 0$, then $\frac{f(x)}{g(x)}$ has a vertical asymptote at $x= 2$. 
+	\end{enumerate}
+
+
+
+\newpage
+
+
+
+% Problem
+\prob Showing all your work, compute the following limits:
+	\begin{2enumerate}
+	\item $\ds\lim_{x \to 0^-} \dfrac{\sqrt{2x + 5} - 4}{x^2 + 1}$
+	\item $\ds\lim_{u \to 5} \dfrac{u + 5}{u^2 - 2u + 3}$
+	\item $\ds\lim_{x \to -\infty} e^x$
+	\item $\ds\lim_{a \to 0} \dfrac{a}{\sqrt{a + 9} - 3}$
+	\item $\ds\lim_{j \to -5} \dfrac{j^2 + 4j - 5}{2j^2 + 13j + 15}$
+	\item $\ds\lim_{x \to \infty} \dfrac{2^x}{6^x}$
+	\item $\ds\lim_{h \to 0} \dfrac{\sqrt{2 + h} - \sqrt{2}}{h}$
+	\item $\ds\lim_{b \to 5} \cos\left(\pi - \frac{\pi b}{4} \right)$
+	\item $\ds\lim_{k \to 8} \dfrac{k^2 - 5k - 24}{k^2 - 13k + 40}$
+	\item $\ds\lim_{x \to \frac{3}{2}} \dfrac{2x^2 + 7x - 15}{2x^2 - 15x + 18}$
+	\item $\ds\lim_{x \to 0^-} \dfrac{x}{x^2 - 7x + 9}$
+	\item $\ds\lim_{t \to 3} \dfrac{t - 3}{3 - \sqrt{12 - t}}$
+	\item $\ds\lim_{c \to 0} \dfrac{5c}{\sin(7c)}$
+	\item $\ds\lim_{b \to -5^+} \dfrac{b + 4}{|b + 5|}$
+	\item $\ds\lim_{x \to \infty} \arctan \left( e^x \right)$
+	\item $\ds\lim_{x \to \infty} \left(1 + \dfrac{\pi}{x} \right)^{\pi x}$
+	\item $\ds\lim_{x \to \infty} \arctan(1 - x)$
+	\item $\ds\lim_{x \to 0} \dfrac{1 - \cos(\sin x)}{\sin x}$
+	\item $\ds\lim_{x \to \infty} e^{2x} \sin \left(e^{-x} \right)$
+	\item $\ds\lim_{x \to 0} \dfrac{\sin(2x)}{\sin(\pi x)}$
+	\item $\ds\lim_{u \to 1} u \sec \left( \dfrac{u^2}{4} \right)$ 
+	\item $\ds\lim_{x \to \infty} \dfrac{1 + 8^x}{9^x}$
+	\item $\ds\lim_{u \to \infty} \dfrac{(2u - 6)(3u - 1)(5u + 2)}{(u - 1)(u + 1)(7u - 8)}$
+	\item $\ds\lim_{x \to -3} \dfrac{\frac{1}{6} + \frac{1}{x - 3}}{x + 3}$
+	\item $\ds\lim_{x \to -\infty} \dfrac{5 - e^x}{9^x}$
+	\item $\ds\lim_{u \to 0} \dfrac{\tan(4u)}{\tan(8u)}$
+	\end{2enumerate}
+
+
+
+% Problem
+\prob Showing all your work, compute the following limits:
+	\begin{2enumerate}
+	\item $\ds\lim_{x \to -\infty} \dfrac{x^5 + 4x^2 + 1}{x^2 + 6}$
+	\item $\ds\lim_{x \to 0^+} \dfrac{5x}{x^2 - 6x}$
+	\item $\ds\lim_{x \to 0^+} \tan^{-1} \left( \dfrac{1}{x} \right)$
+	\item $\ds\lim_{x \to -\infty} \dfrac{x^3 + x - 6}{x + 6}$
+	\item $\ds\lim_{x \to \infty} 5^x$
+	\item $\ds\lim_{r \to 0} \dfrac{\tan^2 r}{r}$
+	\item $\ds\lim_{\ell \to -3} \dfrac{x^2 + x - 6}{x^2 - 9}$
+	\item $\ds\lim_{a \to \pi} a \sec a$
+	\item $\ds\lim_{y \to 0} \dfrac{y}{y^2 - 3y + 4}$
+	\item $\ds\lim_{x \to 0^+} (x^2 - 5x + 8)$
+	\item $\ds\lim_{y \to 1^-} y e^{\pi y}$ 
+	\end{2enumerate}
+
+
+
+% Problem
+\prob Decide whether the following statements are true or false. Be sure to justify your answer.
+        \begin{enumerate}[(a)]
+        \item If $f, g$ are differentiable, then $\dfrac{d}{dx}(fg)= f' g'$.
+        \item If a function is continuous, then it is differentiable. 
+        \item If a function is differentiable, then it is continuous. 
+        \item If $\ds\lim_{x \to a} f(x)$ exists, then $\ds\lim_{x \to a^+} f(x)$ and $\ds\lim_{x \to a^-} f(x)$ exist.
+        \item If $\ds\lim_{x \to a} f(x)$ exists, then $\ds\lim_{x\to a^+} f(x)= \lim_{x \to a^-} f(x)$.
+        \item If $\ds \lim_{x \to a^+} f(x)$ and $\ds\lim_{x \to a^-} f(x)$ exist, then $\ds\lim_{x \to a} f(x)$ exists.
+        \item If $\ds\lim_{x \to a} f(x)= M$ and $\ds\lim_{x \to a} g(x)= N$, then $\ds\lim_{x \to a} \left( \dfrac{f(x)}{g(x)} \right)= \dfrac{M}{N}$.
+        \item Polynomials are everywhere continuous.
+        \item Rational functions are continuous everywhere.
+        \item A tangent line to a function $f(x)$ intersects the function only once. 
+        \item A tangent line to a function $f(x)$ cannot intersect the function infinitely many times.
+        \item $\ds\lim_{x \to a}\left( f(x) + g(x) \right)= \lim_{x \to a} f(x) + \lim_{x \to a} g(x)$.
+        \item All continuous functions have at least one $x$-value at which they are differentiable.
+        \item All functions on $\mathbb{R}$ have a limit at some $x$-value in their domain.
+        \item If $f, g$ are differentiable, then $\dfrac{d}{dx} \left( \dfrac{f(x)}{g(x)} \right)= \dfrac{f'(x)}{g'(x)}$. 
+        \item A tangent line to a function $f(x)$ at $x= a$ has the same value of $f(x)$ at $x= a$.
+        \item Every function has a tangent line wherever it is defined. 
+        \item If $g(x) < f(x)$ on $(a, b)$, then $g'(x) < f'(x)$ on $(a, b)$.
+        \item If $\ds\lim_{x \to \infty} f(x)= L$, i.e. $x$ has a horizontal asymptote, then $\ds\lim_{x \to -\infty} f(x)= L$. 
+        \item There is a function with a zero at $x=0$ and a $y$-intercept of 6. 
+        \item If $f(x)$ is differentiable and decreasing on $(a, b)$, then $f'(x) < 0$ on $(a, b)$.  
+        \item If $f'(x) > 0$ on $(a,b)$, then $f(x)$ is increasing on $(a, b)$.
+        \item If $f'(x) > 0$ on $(a,b)$, then $f(x) > 0$ on $(a, b)$.
+        \item If $f(x)$ is continuous at $x= a$, then $\ds\lim_{x \to a} f(x)$ exists. 
+        \item If $f(x), g(x)$ are continuous, then $\dfrac{f(x)}{g(x)}$ is continuous whenever it is defined. 
+        \end{enumerate}
+
+
+
+\newpage
+
+
+
+% Problem
+\prob Showing all your work, compute the following limits:
+	\begin{2enumerate}
+	\item $\ds\lim_{\theta \to \frac{\pi}{2}} \sec \theta$
+	\item $\ds\lim_{h \to -\infty} \dfrac{h^5 + 6h^2 + 1}{h^8}$
+	\item $\ds\lim_{u \to 3^-} |2u - 8|$
+	\item $\ds\lim_{t \to 3} \dfrac{3x}{\sqrt{x + 6}}$
+	\item $\ds\lim_{y \to 3^+} \dfrac{3 - y}{y^2 - 9}$
+	\item $\ds\lim_{x \to 0} \left(3x^2 - e^x \right)$
+	\item $\ds\lim_{x \to \infty} \dfrac{1 - x^6}{10x^2 + 3x - 5}$
+	\item $\ds\lim_{r \to 1} \dfrac{\sqrt{2r - 1} - 1}{r - 1}$
+	\item $\ds\lim_{x \to 0} \arctan \left( \dfrac{\sin x}{x} \right)$
+	\item $\ds\lim_{x \to \infty} \dfrac{2^x + 3^x}{5^x}$
+	\item $\ds\lim_{x \to 0^-} \dfrac{4 - (2 - x)^2}{x}$
+	\item $\ds\lim_{x \to \infty} \left( 8 + 4^{4 - x} \right)$
+	\item $\ds\lim_{x \to -\infty} \dfrac{x + 6}{1 - x^2}$
+	\item $\ds\lim_{a \to -\infty} \dfrac{a^6 - a^5 + a^4 - a^3 + a^2 - a + 1}{4a^6 - 100a^3}$
+	\item $\ds\lim_{x \to \infty} \cos \left( \dfrac{1}{x} \right)$
+	\item $\ds\lim_{a \to \infty} \dfrac{a^7 - 15a^4 + 3a^2 - 5}{a^{10} + a^2}$
+	\item $\ds\lim_{x \to -\infty} \dfrac{e^x}{\pi^x}$
+	\item $\ds\lim_{x \to -\infty} \dfrac{e^{2x}}{\pi^x}$
+	\item $\ds\lim_{y \to 0} \sin \left( \dfrac{1}{y^2} \right)$
+	\end{2enumerate} \pspace
+
+
+
+% Problem
+\prob Showing all your work, compute the following limits:
+	\begin{2enumerate}
+	\item $\ds\lim_{q \to 0} \dfrac{\sin(w^2)}{w}$
+	\item $\ds\lim_{x \to 1} \tan \left(\frac{\pi x}{2} \right)$
+	\item $\ds\lim_{x \to 0} \dfrac{\sqrt{x + 3} - \sqrt{3}}{x ( \sqrt{x + 1} + 5)}$
+	\item $\ds\lim_{k \to 1^-} \csc(8\pi k)$
+	\item $\ds\lim_{u \to 1} \dfrac{3u^2 + 2u - 5}{u - 1}$
+	\item $\ds\lim_{x \to \sqrt{2}} (x^4 - \cos^2 x)$
+	\item $\ds\lim_{x \to -1} \dfrac{x + 6}{x + 1}$
+	\item $\ds\lim_{x \to \infty} \left(4 - e^x \right)$
+	\item $\ds\lim_{\phi \to 0} \left(1 + \phi \right)^{1/\phi}$
+	\item $\ds\lim_{v \to 6} \dfrac{v}{|v - 6|}$
+	\item $\ds\lim_{u \to 1} \dfrac{|u - 5|}{u + 6}$
+	\item $\ds\lim_{t \to 8^-} \dfrac{|t - 8|}{t - 8}$
+	\item $\ds\lim_{x \to \infty} \dfrac{x^2 + x - 5}{(x - 3)(x + 5)}$
+	\item $\ds\lim_{x \to \infty} \sin \left( \dfrac{x - 1}{x^2 + 2x + 5} \right)$
+	\item $\ds\lim_{x \to \infty} \left( \dfrac{2x - 1}{5x + 9} \right)^4$
+	\item $\ds\lim_{x \to 12} \tan^3 (4x)$
+	\end{2enumerate}
+
+
+
+\prob For the function $f(x)$, whose graph is shown in the figure below, compute the following limits. If the limit does not exist, write `DNE.' \par
+	\[
+	\fbox{
+	\begin{tikzpicture}[scale=1,every node/.style={scale=0.5}]
+	\begin{axis}[
+	grid=both,
+	axis lines=middle,
+	ticklabel style={fill=blue!5!white},
+	xmin= -7, xmax=7,
+	ymin= -6.5, ymax=6.5,
+	xtick={-6,-4,-2,0,2,4,6},
+	ytick={-6,-4,-2,0,2,4,6},
+	minor tick = {-5,-3,...,5},
+	xlabel=\(x\),ylabel=\(y\),
+	samples=20]
+	
+	\addplot[thick, samples=30, domain= -7:-4.05] {-1/(2*x+8)-3};
+	\addplot[thick, smooth, domain= -3.9:-1] {-1/(x+4)+7/3};
+	\addplot[thick, smooth, domain= -1:2] {x};
+	\addplot[thick, smooth, domain= 2:4] {x^2-11/2*x+9};
+	\addplot[thick, samples=40, smooth, domain= 4:7] {sin(10*deg(x-4))+5};
+	
+	\addplot[holdot] coordinates{(-1,-1)(2,2)(4,3)(4,5)};
+	\addplot[soldot] coordinates{(-1,2)(4,1)};
+	\end{axis}
+	\end{tikzpicture}
+	}
+	\] 
+ 
+        \begin{2enumerate}
+        \item $\ds\lim_{x \to -4^-} f(x)$
+        \item $\ds\lim_{x \to -4^+} f(x)$
+        \item $\ds\lim_{x \to -4} f(x)$
+        \item $f(-4)$
+        \item $\ds\lim_{x \to -1^-} f(x)$
+        \item $\ds\lim_{x \to -1^+} f(x)$
+        \item $\ds\lim_{x \to -1} f(x)$
+        \item $f(-1)$
+        \item $\ds\lim_{x \to 2^-} f(x)$
+        \item $\ds\lim_{x \to 2^+} f(x)$
+        \item $\ds\lim_{x \to 2} f(x)$
+        \item $f(2)$
+       \item $\ds\lim_{x \to 4^-} f(x)$
+       \item $\ds\lim_{x \to 4^+} f(x)$
+       \item $\ds\lim_{x \to 4} f(x)$
+       \item $f(4)$
+       \item $\ds\lim_{x \to -\infty} f(x)$
+       \item $\ds\lim_{x \to \infty} f(x)$
+        \end{2enumerate}
+
+
+
+% Problem
+\prob Showing all your work, compute the following limits:
+	\begin{2enumerate}
+	\item $\ds\lim_{v \to 0} \dfrac{\tan v}{v}$
+	\item $\ds\lim_{x \to -\infty} \dfrac{1 - x}{x + 1}$
+	\item $\ds\lim_{x \to \frac{\pi}{2}} \dfrac{\cos x}{\cot x}$
+	\item $\ds\lim_{x \to \infty} 3x \sin \left( \dfrac{4}{x} \right)$
+	\item $\ds\lim_{x \to \infty} \dfrac{1 - x^3}{x + 5}$
+	\item $\ds\lim_{u \to 0^+} \dfrac{\sqrt{u + 1} - 1}{u}$
+	\item $\ds\lim_{k \to 2} \dfrac{|k^2 - 4|}{2k}$
+	\item $\ds\lim_{x \to \infty} e^x \sin \left(e^{-x} \right)$
+	\item $\ds\lim_{y \to 0} \dfrac{\cos y - 1}{2y^2}$
+	\item $\ds\lim_{x \to 5} \dfrac{x}{x - 5}$
+	\item $\ds\lim_{y \to 6} \tan \left( \dfrac{6\pi}{y} \right)$
+	\item $\ds\lim_{b \to 5} \cot^2(\pi x)$
+	\item $\ds\lim_{x \to \infty} \arctan \left( \dfrac{1}{x} \right)$
+	\item $\ds\lim_{\psi \to \pi/4} \dfrac{1 - \tan \psi}{\sin \psi - \cos \psi}$
+	\item $\ds\lim_{x \to 6} |x + 6|$
+	\item $\ds\lim_{w \to \infty} \left(1 + \dfrac{3}{4w} \right)^{9w}$
+	\item $\ds\lim_{x \to 0} x \sin \left( \dfrac{1}{x} \right)$
+	\item $\ds\lim_{x \to 0} x^3 \cos \left( \dfrac{1}{x^2} \right)$
+	\end{2enumerate} \pspace
+
+
+
+% Problem
+\prob Define the following functions:
+	\[
+	f(x)= 
+	\begin{cases}
+	2x - 5, & x < 0 \\
+	x^2 + 5x - 1, & x \geq 0
+	\end{cases} \qquad
+	g(x)= 
+	\begin{cases}
+	2e^x - 1, & x \leq 0 \\
+	\dfrac{\sin x}{x}, & x > 0
+	\end{cases} \qquad
+	h(x)= 
+	\begin{cases}
+	1 - x^2, & x < -2 \\
+	\cos x, & -2 < x \leq 5 \\
+	\ln|1 - x|, & x > 5
+	\end{cases}
+	\]
+Showing all your work, compute the following limits:
+	\begin{2enumerate}
+	\item $\ds\lim_{x \to 0^+} f(x)$
+	\item $\ds\lim_{x \to 0^-} f(x)$
+	\item $\ds\lim_{x \to 0} f(x)$
+	\item $\ds\lim_{x \to 15} f(x)$
+	\item $\ds\lim_{x \to -\pi} f(x)$
+	\item $\ds\lim_{x \to 0^-} g(x)$
+	\item $\ds\lim_{x \to 0^+} g(x)$
+	\item $\ds\lim_{x \to 0} g(x)$
+	\item $\ds\lim_{x \to \pi} g(x)$
+	\item $\ds\lim_{x \to -20} g(x)$
+	\item $\ds\lim_{x \to -2^-} h(x)$
+	\item $\ds\lim_{x \to -2^+} h(x)$
+	\item $\ds\lim_{x \to -2} h(x)$
+	\item $\ds\lim_{x \to 5^-} h(x)$
+	\item $\ds\lim_{x \to 5^+} h(x)$
+	\item $\ds\lim_{x \to 5} h(x)$
+	\item $\ds\lim_{x \to 10} h(x)$
+	\item $\ds\lim_{x \to -3} h(x)$
+	\item $\ds\lim_{x \to 0} h(x)$
+	\end{2enumerate} \pspace
+
+
+
+% Problem
+\prob Assume that $\ds\lim_{x \to a} f(x)= L$ and $\ds\lim_{x \to a} g(x)= M$, where $L, M \neq 0$. Showing all your work, compute the following limits:
+	\begin{2enumerate}
+	\item $\ds\lim_{x \to a} \left(f(x) - 5g(x) \right)$
+	\item $\ds\lim_{x \to a} \left( \dfrac{4 - f(x)}{[g(x)]^2} \right)$
+	\item $\ds\lim_{x \to a} \left( g(x) \sqrt[3]{f(x)} \right)$
+	\item $\ds\lim_{x \to a} \left( |f(x)| + \sin \left( g(x) \right) \right)$
+	\end{2enumerate}
+
+
+
+\newpage
+
+
+
+% Problem
+\prob Showing all your work, compute the following limits:
+	\begin{2enumerate}
+	\item $\ds\lim_{x \to \infty} \left(1 + \dfrac{5}{x} \right)^{6x}$
+	\item $\ds\lim_{r \to 2} |r^2 - 1|$
+	\item $\ds\lim_{h \to 0} \dfrac{(1 - \cos h)^2}{h}$
+	\item $\ds\lim_{x \to 0} \sin \left( \dfrac{1}{x} \right)$
+	\item $\ds\lim_{k \to -\infty} \dfrac{k^3 - 5k^2 + 15}{(k^2 - 1)(k^2 + 8)}$
+	\item $\ds\lim_{x \to 0} \cos \left( \dfrac{1}{x} \right)$
+	\item $\ds\lim_{x \to -\infty} \dfrac{5x^3 - x + 7}{10x^3 - x^2 + 4}$
+	\item $\ds\lim_{x \to 0} \dfrac{1 - \cos^2 x}{x}$
+	\item $\ds\lim_{x \to -\infty} \cos \left( \dfrac{x^2}{x^3 + 1} \right)$
+	\item $\ds\lim_{x \to 6} \sec \left( 3\pi - \dfrac{\pi}{x} \right)$
+	\item $\ds\lim_{b \to 0} \dfrac{b}{2 \cos b - 2 b \cos^2 b}$
+	\item $\ds\lim_{y \to \infty} \dfrac{(1 - y)(y^2 + 1)(y + 7)}{y^2 + 2y + 12}$
+	\item $\ds\lim_{x \to 2} \dfrac{x^5 - 32}{x - 2}$
+	\item $\ds\lim_{x \to \pi} \left( \dfrac{7}{3} - \cot^2 \left( \dfrac{x}{3} \right) \right)$
+	\item $\ds\lim_{y \to 0} \dfrac{8}{\sec(5y)}$
+	\item $\ds\lim_{r \to \infty} \dfrac{1000r + 7}{r^2 - 12}$
+	\item $\ds\lim_{y \to -\infty} \dfrac{\pi y^2 - \sqrt[3]{5} y}{\pi y^4 + 1}$
+	\item $\ds\lim{x \to 1^+} \dfrac{x + 1}{|x - 1|}$
+	\item $\ds\lim_{r \to \infty} \dfrac{1 - r^5}{r^5 + 6}$
+	\item $\ds\lim_{a \to 4} \dfrac{a - 4}{|a - 4|}$
+	\end{2enumerate} \pspace
+
+
+
+% Problem
+\prob Give an example of\dots
+        \begin{enumerate}[(a)]
+        \item a continuous function (algebraically and graphically).
+        \item a differentiable function.
+        \item a function which is not differentiable (algebraically and graphically).
+        \item a function whose limit exists (algebraically and graphically).
+        \item a function whose limit does not exist (algebraically and graphically).
+        \item a function whose left and right limits exist but whose limit does not exist.
+        \item a function whose left and right limits are equal but whose limit does not exist.
+        \item a function with a vertical asymptote.
+        \item a function with a horizontal asymptote.
+        \item a function with a zero.
+        \item a function with no zeros.
+        \item a function with no $y$-intercept.
+        \item a function with a jump discontinuity.
+        \item a function with an infinite discontinuity.
+        \item a function with a removable discontinuity. 
+        \item a function with an infinite amount of zeros.
+        \item a function with infinitely many infinite discontinuities.
+        \item a function with infinitely many removable discontinuities.
+        \item a polynomial with roots $x= -1,2,3$.
+        \item a polynomial with roots $(-6,0),(2,0)$ and $y$-intercept $(0,5)$.
+        \item a function with $y$-intercept $-2$ and a zero at $x=4$.
+        \item a graph which is not the plot of a function.
+        \item a graph which is not a function of $x$ or $y$ but is a function of some variable. \\
+        \end{enumerate}
+
+
+
+% Problem
+\prob Assume that $\ds\lim_{x \to 0} f(x)= L$ and $\ds\lim_{x \to 0} g(x)= M$, where $L, M \neq 0$. Showing all your work, compute the following limits:
+	\begin{2enumerate}
+	\item $\ds\lim_{x \to 0} \left( f(x) - g(x) \right)$
+	\item $\ds\lim_{x \to 0} \left( f(x) g(x) + f(x^2) \right)$
+	\item $\ds\lim_{x \to 0} \left( \dfrac{f \left( \sin(x) \right)}{5g(x)} \right)$
+	\item $\ds\lim_{x \to 0} \sin \left(x f(x) \right)$
+	\item $\ds\lim_{x \to 0} \left( g(x) e^{L - f(x)} \right)$
+	\item $\ds\lim_{x \to 0} \left( \cos \left( g(x) \right) \cdot \dfrac{\sin \left(L - f(x) \right)}{L - f(x)} \right)$
+	\end{2enumerate} \pspace
+
+
+
+% Problem
+\prob Fully justifying your answer, find the largest subset of the real numbers over which the following functions are continuous:
+	\begin{2enumerate}
+	\item $x^3 - 5x + 9$
+	\item $xe^x + \sin x$
+	\item $\ln \left| \cos \left(4^{x^2} \right) \right|$
+	\item $\dfrac{2x - 1}{4 - 7x}$
+	\item $\dfrac{x + 5}{\sqrt[3]{4 - x^2}}$
+	\item $\dfrac{x^2 - 1}{x + 1}$
+	\item $\dfrac{(x - 6)(x + 9)}{x^2 - x - 12}$
+	\item $x^3 \sin \left( \dfrac{1}{x} \right)$
+	\item $4x^5 + \tan x$
+	\item $\sqrt[4]{x^2 + 6x + 9}$
+	\item $\dfrac{\arctan\left(3^x \right)}{x^2 - 2}$
+	\end{2enumerate}
+
+
+
+% Problem
+\prob Fully justifying your answer, find the largest subset of the real numbers over which the following functions are continuous:
+	\begin{2enumerate}
+	\item $5x^5 - 4x^3 + x - 17$
+	\item $\dfrac{x - 6}{5 - x}$
+	\item $\dfrac{x^3 - x + 3}{e^x + 1}$
+	\item $\dfrac{7x - 5}{x^2 + 8x + 15}$
+	\item $\dfrac{\cos(\ln x)}{\sin x}$
+	\item $\sqrt{x^2 + 5}$
+	\item $\cos \left| \dfrac{5 - e^x}{x^2 + 1} \right|$
+	\item $\sqrt[3]{x^3 - 6x + 8}$
+	\item $\sqrt[4]{5 - x}$
+	\item $\sqrt{\dfrac{x + 5}{x - 4}}$
+	\item $x 5^x \sec(x)$
+	\end{2enumerate} \pspace
+
+
+
+% Problem
+\prob Fully justifying your answer, find the largest subset of the real numbers over which the function $f(x)= \dfrac{x^3 - xe^x + \sin(x) - \sqrt{16 - x^2}}{x^3 - 3x^2 - 4x}$ is continuous. \pspace
+
+
+
+% Problem
+\prob Fully justifying your answer, find the largest subset of the real numbers over which the function $g(x)= \dfrac{x6^x - \ln(x) + \cos(4 - x)}{(x^2 + 3x - 18) \sqrt{x + 4} \sqrt[3]{x - 10}}$ is continuous. \pspace
+
+
+
+% Problem
+\prob Find and classify any discontinuities for the following functions---if the discontinuity involves a hole, find the location of the hole:
+	\begin{2enumerate}
+	\item $\dfrac{x^2 - 1}{x + 1}$
+	\item $\dfrac{x^2 + 5x - 1}{x^2 + 5x + 6}$
+	\item $\dfrac{\sin(2x)}{x}$
+	\item $\dfrac{1 - \cos(3x)}{x}$
+	\item $\dfrac{x^2 + 5x - 6}{x^3 + 11x^2 - 12x}$
+	\item $x^2 + 6x + 8$
+	\item $\dfrac{(x + 6)(x - 7)(x - 1)}{(x - 1)(x^2 - 49)}$
+	\item $x \sin \left( \dfrac{1}{x} \right)$
+	\item $\dfrac{4 - x}{x^2 + 4}$
+	\item $\dfrac{\sin^2(x) - 1}{1 + \sin x}$
+	\end{2enumerate} \pspace
+	
+	
+
+% Problem
+\prob Find a value $c$ which makes the following function everywhere continuous on the real line. Be sure to fully justify why the function is everywhere continuous. 
+	\[
+	f(x)=
+	\begin{cases}
+	\dfrac{\sin(3x)}{x}, & x \leq 0 \\
+	c - 5x, & x > 0
+	\end{cases}
+	\]
+	
+
+
+\newpage
+
+
+
+% Problem
+\prob Find a value $c$ which makes the following function everywhere continuous on the real line. Be sure to fully justify why the function is everywhere continuous. 
+	\[
+	f(x)= 
+	\begin{cases}
+	\dfrac{x^2 - 2x - 15}{x^2 + 5x + 6}, & x \neq -3 \\
+		c, & x= -3 
+	\end{cases}
+	\]
+
+
+
+% Problem
+\prob Find values $m, b$ which makes the following function everywhere continuous on the real line. Be sure to fully justify why the function is everywhere continuous. 
+	\[
+	f(x)=
+	\begin{cases}
+	x^2 - 1, & x \leq -2 \\
+	mx + b, & -2 < x \leq 3 \\
+	x - 2^x, & x > 3
+	\end{cases}
+	\]
+
+
+
+% Problem
+\prob Find any vertical, horizontal, and slant asymptotes for the following functions:
+	\begin{2enumerate}
+	\item $\dfrac{3x - 5}{x + 4}$
+	\item $\dfrac{x^2 - x + 4}{x + 1}$
+	\item $\dfrac{5x - 2}{x^2 + 9}$
+	\item $\dfrac{x^2 - 7x + 4}{x^3 - x^2}$
+	\item $\dfrac{(x - 1)(x + 1)(x - 5)(x - 9)}{(x + 1)(x + 4)(x^5 - 9)}$
+	\item $\dfrac{4 - x^2}{2x^2 + 9}$
+	\item $\dfrac{x^2 - 4}{x^2 + 6x + 8}$
+	\item $\dfrac{x^3 + 4x^2 - x + 8}{x^2 - x - 6}$
+	\end{2enumerate}
+
+
+
+
+
+
+
+
+
+
+
+% Problem
+\prob Use the definition of the derivative to find the value of the derivative of the given function at the indicated value.
+	\begin{2enumerate}
+	\item $f(x)= x^2 - x + 4$, $a= 1$
+	\item $g(x)= 2x^2 - 3x + 5$, $a= -2$
+	\item $h(x)= \sin x$, $a= \frac{\pi}{6}$
+	\item $j(x)= \cos x$, $a= \pi$
+	\item $k(x)= \dfrac{x + 1}{x - 2}$, $a= 0$
+	\item $\ell(x)= \sqrt{x}$, $a= 25$
+	\item $m(x)= \sqrt{4 - x}$, $a= -12$
+	\item $n(x)= \dfrac{1}{\sqrt{x}}$, $a= 9$
+	\item $p(x)= 4 - 7x^2$, $a= -1$
+	\item $q(x)= e^x$, $a= 0$
+	\item $r(x)= \dfrac{4}{x + 1}$, $a= 3$
+	\end{2enumerate}
+
+
+% Problem
+\prob Use the definition of the derivative to find the derivative of the following functions:
+	\begin{2enumerate}
+	\item $f(x)= x^2 - 7$
+	\item $g(x)= x^2 - 2x + 5$
+	\item $h(x)= 3x^2 - x + 3$
+	\item $j(x)= \sqrt{x}$
+	\item $k(x)= (x + 1)^3$
+	\item $\ell(x)= (1 - 4x)^2$
+	\item $m(x)= \sqrt{6 - x}$
+	\item $n(x)= (2x - 1)^3$
+	\item $p(x)= \dfrac{x - 1}{x + 5}$
+	\item $q(x)= \dfrac{1}{\sqrt{x}}$
+	\item $r(x)= \dfrac{3x + 1}{x - 1}$
+	\item $s(x)= \dfrac{1}{x^2}$
+	\item $t(x)= \sin x$
+	\item $u(x)= \cos x$
+	\item $v(x)= e^x$
+	\item $w(x)= 2^x$
+	\item $y(x)= \csc x$
+	\end{2enumerate}
+
+
+
+% Problem
+\prob Use the definition of the derivative to find the equation of the tangent line to the function at the given point.
+	\begin{2enumerate}
+	\item $x^2 + 4x - 1$, $a= 2$
+	\item $1 - x^2$, $a= -3$
+	\item $3x^2 - x + 1$, $a= 1$
+	\item $\sqrt{x}$, $a= 25$
+	\item $\dfrac{1}{x}$, $a= -3$
+	\item $\dfrac{x + 3}{x}$, $a= 3$
+	\item $\dfrac{x + 1}{x - 2}$, $a= -1$
+	\item $\sqrt{20 - x}$, $a= 4$
+	\item $\dfrac{1}{\sqrt{x}}$, $a= 4$
+	\item $(2x - 7)$, $a= 1$
+	\item $\sin x$, $a= \frac{\pi}{4}$
+	\item $\cos x$, $a= \frac{5\pi}{3}$
+	\end{2enumerate}
+
+
+% Problem
+\prob Showing all your work, find the second derivatives of the following functions:
+	\begin{2enumerate}
+	\item $11 - x$
+	\item $x^2 + 8x - 2$
+	\item $4x^2 + 5x - 9$
+	\item $x^4 - 3x^2 + 5x - 8$
+	\item $x^5 - x^2 + 9$
+	\item $e^x$
+	\item $2^x$
+	\item $\dfrac{x^3 - 5x^2 + 9x - 1}{x^2}$
+	\item $\dfrac{x + 1}{x - 1}$
+	\item $\sin(3x)$
+	\item $\dfrac{x^2 - x + 7 - \sqrt[3]{x}}{\sqrt{x}}$
+	\item $\dfrac{x^2 - 5}{9 - x^2}$
+	\item $\sin(x) \sin(2x)$
+	\item $x^4 e^x$
+	\item $x \sin(x^2)$
+	\item $\csc x \tan x$
+	\item $\arccos(1 - x)$
+	\item $\arctan(5^x)$
+	\item $6^x \sec(e^x) \ln x$
+	\item $\dfrac{x4^x - 4^{2x}}{x \arccos x}$
+	\item $3x^5 \tan x \sqrt{5 - x}$
+	\item $\dfrac{5x - 1}{\sqrt[3]{x^2 + 9}}$
+	\end{2enumerate}
+
+
+
+\newpage
+
+
+
+% Problem
+\prob Showing all your work, find the derivatives of the following functions:
+	\begin{2enumerate}
+	\item $9 - 5x$
+	\item $x^2 + 3x - 8$
+	\item $x^4 + 4x^2 - x + 9$
+	\item $6 - \sqrt{x}$
+	\item $\dfrac{1}{\sqrt[3]{x}}$
+	\item $\sqrt[5]{x^7}$
+	\item $\dfrac{x - 1}{x^2}$
+	\item $\log_7(x)$
+	\item $\log_\pi x$
+	\item $5^{1 - x}$
+	\item $\dfrac{6 - x}{x + 4}$
+	\item $x^4 4^x$
+	\item $\sin^4(-x)$
+	\item $\pi^x$ 
+	\item $\sqrt[3]{7} \pi^{3/5} e^{1 - \pi}$
+	\item $\sec(5x)$
+	\item $\arcsin(2x)$
+	\item $\arccos(\ln x)$
+	\item $\tan^4(x)$
+	\item $x 5^x \log_9 x$
+	\item $x^x$
+	\item $x^{2x}$
+	\end{2enumerate}
+
+
+
+% Problem
+\prob Showing all your work, find the derivatives of the following functions:
+	\begin{2enumerate}
+	\item $x^4 e^{2x} \tan x$
+	\item $\csc(x) \cot(-x)$
+	\item $\dfrac{x - 6^x}{\ln x}$
+	\item $(\sin x - e^x)^{100}$
+	\item $(2x - 5)^{12} (4 - x)^{10}$
+	\item $\dfrac{\sec(2x)}{5^x}$
+	\item $\dfrac{x^2 - \cot(2x)}{x - e^{-x}}$
+	\item $(2x)^{\cos x}$
+	\item $\dfrac{\arctan(4x)}{1 - x}$
+	\item $\dfrac{x 3^x \arctan(1 - x)}{5x\log_2 x}$
+	\item $\sec x \tan x \arccsc x$
+	\item $\sec \left( e^{\log_5(1 - x^2)} \right)$
+	\item $(1 - x)^{x - 1}$
+	\item $(\sin x)^x$
+	\item $\sqrt{x}^{\,\,\tan x}$
+	\end{2enumerate}
+
+
+
+% Problem
+\prob Showing all your work, find the derivatives of the following functions:
+	\begin{2enumerate}
+	\item $\ln \left( \sin \big( \csc(2x) \big) \right)$
+	\item $\dfrac{x 5^x + \sec(6 - \sqrt{x} )}{(x^2 - 5)^9}$
+	\item $\dfrac{5^{-x} + \sin^2(2^x)}{\arccot x - e^{x^2}}$
+	\item $(1 - x)^4 8^{-x} \arcsec(x^2 e^x) \tan^2 \big(1 - \ln(4x) \big)$
+	\item $\sqrt[5]{\sin^5(x^2 + 5\sqrt{x}) \big)^8}$
+	\item $\left(2^{-\arccot x} + \log_6(\sqrt[10]{x}) \right)^5$
+	\end{2enumerate}
+
+
+
+% Problem
+\prob Showing all your work, find the following limits:
+	\begin{2enumerate}
+	\item $\ds\lim_{x \to \infty} \left( \ln(3x) - \ln(5x) \right)$
+	\item $\ds\lim_{x \to \infty} \left( \sqrt{9x^2 + 1} - 3x \right)$
+	\item $\ds\lim_{x \to \infty} \ln(5x + 1) - \ln(3x + 2)$
+	\item $\ds\lim_{x \to \infty} \sqrt{x^6 + 2x^3} - x^3$
+	\item $\ds\lim_{x \to \infty} \left( \sqrt{x^2 + 3x + 1} - 2x \right)$
+	\item $\ds\lim_{x \to \infty} \sqrt{x + 2} - \sqrt{x - 1}$
+	\item $\ds\lim_{x \to \infty} \ln(3x^2 - 4) - \ln(2x^2 + 1)$
+	\item $\ds\lim_{x \to \infty} \dfrac{x^{4/3} + x + \sqrt[3]{x}}{(2x^{2/3} + 5)^2}$
+	\item $\ds\lim_{x \to \infty} \dfrac{10x + \sqrt{x + 3}}{5x - 1}$
+	\item $\ds\lim_{x \to \infty} \sqrt{x^2 + 1} - \sqrt{x^2 - 1}$
+	\item $\ds\lim_{x \to \infty} \left(x - x \cos \left( \dfrac{1}{x} \right) \right)$
+	\item $\ds\lim_{x \to \infty} \sqrt{x^2 + 6x + 1} - x$
+	\item $\ds\lim_{x \to \infty} \left(\sqrt{9x^2+1} -3x\right)$
+	\item $\ds\lim_{x\to \infty} \sqrt{2x^2+4x-1} - \sqrt{2x^2+8x+7}$
+	\end{2enumerate}
+
+
+
+% Problem
+\prob Find the values of $x$ at which the following function is continuous. Explain your reasoning.
+        \[
+        f(x)=
+        \begin{cases}
+        -2-x, & -1 \leq x \\
+        -1, & -1<x\leq 0 \\
+        \sqrt{x}, & 0<x<1 \\
+        2-x, & 1 \leq x<2 \\
+        (x-2)^2, & 2\leq x
+        \end{cases}
+        \]
+
+
+
+% Problem
+\prob Show that the following function is everywhere continuous. 
+        \[
+        f(x)= 
+        \begin{cases}
+        \dfrac{\sin(x - 3)}{x - 3}, & x \neq 3 \\
+        1, & x=3
+        \end{cases}
+        \]
+
+
+
+% Problem
+\prob For the following plot, find the values of $x$ for which the function is discontinuous and identify the type of discontinuity.
+	\[
+	\fbox{
+	\begin{tikzpicture}[scale=1.5,every node/.style={scale=0.5}]
+	\begin{axis}[
+	grid=both,
+	axis lines=middle,
+	ticklabel style={fill=blue!5!white},
+	xmin= -5, xmax=5,
+	ymin= -10, ymax=10,
+	xtick={-4,-2,0,2,4},
+	ytick={-10,-8,-6,-4,-2,0,2,4,6,8,10},
+	minor tick = {-9,-7,-5,-3,-1,1,3,5,7,9},
+	xlabel=\(x\),ylabel=\(y\),
+	samples=20]
+
+	\addplot[thick, domain= -5:-3] {-4-3*x};
+	\addplot[thick, domain= -3:-2.01] {1/(x+2)};
+	\addplot[thick, domain= -1.9:0] {-x/(x+2)};
+	\addplot[thick, domain= 0:0.99] {1/(1-x)};
+	\addplot[thick, domain= 1.01:2] {-1/(1-x)};
+	\addplot[thick, domain= 2:5] {2*x-6};
+	
+	\addplot[holdot] coordinates {(-3,5)(0,0)(2,1)(4,2)};
+	\addplot[soldot] coordinates {(-3,-1)(0,1)(2,-2)};
+	\end{axis}
+	\end{tikzpicture}
+	}
+	\]
+
+
+
+% Problem
+\prob Explain why the following functions are discontinuous:
+        \begin{enumerate}[(a)]
+        \item $f(x)=\sin(1/x)$ 
+        \item $h(x)=\dfrac{1}{2-x}$ 
+        \item $r(x)= \begin{cases} 2x+3, & x<1 \\ x-7, & x \geq 1 \end{cases}$ 
+        \item $s(x)= \begin{cases} -2x, & x<0 \\ 4x, & x>0 \end{cases}$ \\
+        \end{enumerate}
+
+
+
+% Problem
+\prob Find the intervals on which the following functions are continuous:
+        \begin{2enumerate}
+        \item $f(x)=2x+3$ 
+        \item $g(x)=\dfrac{1}{6-5x}$ 
+        \item $h(x)= \dfrac{x-7}{x+6}$ 
+        \item $r(x)= \dfrac{\sin x}{x^2+2x+3}$ 
+        \item $s(x)=\sin(\cos(x^2+1))$ 
+        \item $t(x)=\dfrac{x\sin(1-x)}{\sqrt{x^2+2}}$ \\
+        \end{2enumerate}
+
+
+
+% Problem
+\prob If $p(x)= a_n x^n + a_{n-1} x^{n-1} + \cdots + a_1 x + a_0$ is a polynomial, does there exist a positive integer $n$ such that $p^{(n)}(x)= 0$? Explain. \pspace
+
+
+
+% Problem
+\prob Does there exist a function $f(x)$ such that $f^{(n)}(x)$ exists for all positive integers $n$ but $f^{(n)}(x) \neq 0$ for all positive integers $n$? Explain. \pspace
+
+
+
+% Problem
+\prob Does there exist a function $f(x)$ such that $f^{(n)}(x)$ exists for all positive integers $n$ and $f^{(n)}(x) > 0$ for all positive integers $n$? Explain. \pspace
+
+
+
+% Problem
+\prob Does there exist a function $f(x)$ such that $f^{(n)}(x)$ exists for all positive integers $n$ and $f^{(n)}(x) < 0$ for all positive integers $n$? Explain. \pspace
+
+
+
+% Problem
+\prob Does there exist a function $f(x)$ such that $f^{(n)}(x)$ exists for all positive integers $n$ and that $f^{(n)}(x)$ changes sign infinitely many times for each such $n$? Explain. \pspace
+
+
+
+% Problem
+\prob Does there exist a function which is differentiable but its derivative is not? Explain. \pspace
+
+
+
+% Problem
+\prob Find a function whose graph could be given below. 
+	\[
+	\fbox{
+	\begin{tikzpicture}[scale=0.8,every node/.style={scale=0.5}]
+	\begin{axis}[
+	grid=both,
+	axis lines=middle,
+	ticklabel style={fill=blue!5!white},
+	xmin= -7, xmax=7,
+	ymin= -6.5, ymax=6.5,
+	xtick={-6,-4,-2,0,2,4,6},
+	ytick={-6,-4,-2,0,2,4,6},
+	minor tick = {-5,-3,...,5},
+	xlabel=\(x\),ylabel=\(y\),
+	samples=20]
+	\addplot[thick, domain= -7.5:7.5] {1/2*x - 1};
+	\addplot[holdot] coordinates{(4,1)};
+	\end{axis}
+	\end{tikzpicture}
+	}
+	\] \pspace
+
+
+
+% Problem
+\prob Find a function whose graph could be given below. 
+	\[
+	\fbox{
+	\begin{tikzpicture}[scale=0.8,every node/.style={scale=0.5}]
+	\begin{axis}[
+	grid=both,
+	axis lines=middle,
+	ticklabel style={fill=blue!5!white},
+	xmin= -7, xmax=7,
+	ymin= -6.5, ymax=6.5,
+	xtick={-6,-4,-2,0,2,4,6},
+	ytick={-6,-4,-2,0,2,4,6},
+	minor tick = {-5,-3,...,5},
+	xlabel=\(x\),ylabel=\(y\),
+	samples=100]
+	\addplot[thick, domain= -7.5:7.5] {x^2};
+	\addplot[holdot] coordinates{(-2,4)};
+	\end{axis}
+	\end{tikzpicture}
+	}
+	\] 
+
+
+
+% Problem
+\prob Find a function whose graph could be given below. 
+	\[
+	\fbox{
+	\begin{tikzpicture}[scale=0.8,every node/.style={scale=0.5}]
+	\begin{axis}[
+	grid=both,
+	axis lines=middle,
+	ticklabel style={fill=blue!5!white},
+	xmin= -7, xmax=7,
+	ymin= -6.5, ymax=6.5,
+	xtick={-6,-4,-2,0,2,4,6},
+	ytick={-6,-4,-2,0,2,4,6},
+	minor tick = {-5,-3,...,5},
+	xlabel=\(x\),ylabel=\(y\),
+	samples=100]
+	\addplot[thick, domain= -7.5:7.5] {4 - x^2};
+	\addplot[holdot] coordinates{(2,0)(-1,3)};
+	\end{axis}
+	\end{tikzpicture}
+	}
+	\] 
+
+
+
+% Problem
+\prob Find a function whose graph could be given below. 
+	\[
+	\fbox{
+	\begin{tikzpicture}[scale=0.8,every node/.style={scale=0.5}]
+	\begin{axis}[
+	grid=both,
+	axis lines=middle,
+	ticklabel style={fill=blue!5!white},
+	xmin= -7, xmax=7,
+	ymin= -6.5, ymax=6.5,
+	xtick={-6,-4,-2,0,2,4,6},
+	ytick={-6,-4,-2,0,2,4,6},
+	minor tick = {-5,-3,...,5},
+	xlabel=\(x\),ylabel=\(y\),
+	samples=100]
+	\addplot[thick, domain= -7.5:7.5] {sin(deg(x))};
+	\addplot[holdot] coordinates{(0,0)};
+	\end{axis}
+	\end{tikzpicture}
+	}
+	\] 
+
+
+
+% Problem
+\prob Define $f(x)$ to be the following function:
+        \[
+        f(x)=
+        \begin{cases}
+        x^2 2^{-x}, & x \geq 0 \\
+        4-x, & x<0
+        \end{cases}
+        \]
+Use the definition of $f(x)$ to find the following:
+        \begin{enumerate}[(a)]
+        \item $f(0)$
+        \item $\ds\lim_{x \to 2} f(x)$
+        \item $y$-intercepts
+        \item $\ds\lim_{x \to 0^-} f(x)$
+        \item $x$-intercepts
+        \item $\ds\lim_{x \to 0^+} f(x)$
+        \item Classify any discontinuities for $f(x)$
+        \item $\ds\lim_{x \to 0} f(x)$ \\
+        \end{enumerate}
+
+
+
+% Problem
+\prob Define $f(x)$ to be the following function:
+        \[
+        f(x)= \dfrac{(x+1)(2x-3)(x+2)}{(3x-7)(x+2)(x+3)}
+        \]
+
+\begin{enumerate}[(a)]
+\item What is the $y$-intercept of $f(x)$?
+\item What are the $x$-intercepts of $f(x)$?
+\item What are the vertical asymptotes for $f(x)$?
+\item Where is $f(x)$ continuous?
+\item If $f(x)$ has any discontinuities, classify them.
+\item Identify any horizontal asymptotes $f(x)$ might have. 
+\end{enumerate}
+
+
+
+% Problem
+\prob Evaluate the following limits:
+        \begin{enumerate}[(a)]
+        \item $\ds\lim_{x \to 0^+} \ln x$
+        \item $\ds\lim_{x \to 2^+} \dfrac{x+6}{x-2}$
+        \item $\ds\lim_{x \to 1^-} \dfrac{x-4}{x+1}$
+        \item $\ds\lim_{x\to -2} \dfrac{2x+4}{x+2}$
+        \item $\ds\lim_{x \to 0} \dfrac{\cos x}{x}$ 
+        \end{enumerate}
+
+
+% Problem
+\prob Calculate the following limits:
+        \begin{enumerate}[(a)]
+        \item $\ds\lim_{x \to 0} \csc x - \cot x$
+        \item $\ds\lim_{x \to 0} \dfrac{3x}{\sin 5x}$
+        \item $\ds\lim_{x \to 0} \dfrac{\csc 7x}{\csc 5x}$
+        \item $\ds\lim_{x \to 0} \sin^2 3x$
+        \item $\ds\lim_{x \to 0} \dfrac{\tan x}{\sin x}$
+        \item $\ds\lim_{x \to 0} \dfrac{\sin^2(3x)}{x}$
+        \item $\ds\lim_{x \to 0} \dfrac{\tan x}{x}$ \\
+        \end{enumerate}
+
+
+
+% Problem
+\prob Use Squeeze Theorem to evaluate the following limits:
+        \begin{enumerate}[(a)]
+        \item $\displaystyle\lim_{x \to 0} x \sin(1/x)$
+        \item $\displaystyle\lim_{x \to 0} x^2 \cos(1/x)$
+        \item $\displaystyle\lim_{x \to 0} |x| \cos^2(1/x)$
+        \item $\displaystyle\lim_{x \to 0} x^3 e^{\sin(1/x)}$
+        \item $\displaystyle\lim_{x \to \infty} \dfrac{x^x}{(2x)!}$
+        \item $\displaystyle\lim_{x \to \infty} (x!)^{1/x^2}$ \\
+        \end{enumerate}
+
+
+
+% Problem
+\prob Use the Intermediate Value Theorem to show there is a solution to the following equations over the given interval:
+        \begin{enumerate}[(a)]
+        \item $4^x= x^2 + 1$ over $[-2,1]$
+        \item $x^3 + \cos x= 2$ over $[0,10]$
+        \item $e^{-x^2}-x= 0$ over $[0,1]$
+        \item $x^3 + x + 1= 0$ over $[-1,0]$
+        \item $\pi^{13.475} x^{15} - \sqrt{e^3} x^12 - x^9 + 1478x +14.2345 = e^\pi x^{13} - \sqrt{1 + \sqrt{2 + \sqrt{3}}} x^{10} - 99.99x^2 + 2^{4^{6^8}}$ \\
+        \end{enumerate}
+
+
+
+% Problem
+\prob In Special Relativity, the energy of a particle moving at a velocity $v$ is given by 
+        \[
+        E(v)= \dfrac{mc^2}{\sqrt{1 - v^2/c^2}},
+        \]
+ where $c$ is the speed of light and $m$ is the mass of the particle. What happens if $v=0$? What happens as $v$ approaches $c$? What does this limit imply? Is this something you already knew?
+
+
+
+% Problem
+\prob Let $f(x)=\llbracket x\rrbracket$ denote the largest integer $n$ such that $n \leq x$. For example, $\llbracket 1.5\rrbracket=1$, $\llbracket 2 \rrbracket=2$, $\llbracket -1 \rrbracket=-1$, $\llbracket -2.2\rrbracket=-3$, and $\llbracket 0\rrbracket=0$. This function is used in Computer Science since $\llbracket x\rrbracket$ gives the `integer part' of $x$. 
+        \begin{enumerate}[(a)]
+        \item Graph the function $f(x)=\llbracket x \rrbracket$
+        \item Determine $\ds\lim_{x \to 3.2^+} f(x)$, $\ds\lim_{x \to 3.2^-} f(x)$, and $\ds\lim_{x \to 3.2} f(x)$.
+        \item Determine $\ds\lim_{x \to 5^+} f(x)$, $\ds\lim_{x \to 5^-} f(x)$, and $\ds\lim_{x \to 5} f(x)$.
+        \item Using the previous parts for what values $a$ does $\ds\lim_{x \to a} f(x)$ exist? \\
+        \end{enumerate}
+
+
+
+% Problem
+\prob Use the graph of $f(x)$ below to evaluate the following:
+	\[
+	\fbox{
+	\begin{tikzpicture}[scale=1.5,every node/.style={scale=0.5}]
+	\begin{axis}[
+	grid=both,
+	axis lines=middle,
+	ticklabel style={fill=blue!5!white},
+	xmin= -7, xmax=7,
+	ymin= -6.5, ymax=6.5,
+	xtick={-6,-4,-2,0,2,4,6},
+	ytick={-6,-4,-2,0,2,4,6},
+	minor tick = {-5,-3,...,5},
+	xlabel=\(x\),ylabel=\(y\),
+	samples=20]
+
+	\addplot[thick, domain= -4:-2] {10-x^2};
+	\addplot[thick, domain= -2:4] {1/2*(x-2)};
+	\addplot[thick, domain= 4:6] {9-2*x};
+	\addplot[holdot] coordinates{(-2,-2)(4,1)};
+	\addplot[soldot] coordinates{(-2,6)};
+
+	\end{axis}
+	\end{tikzpicture}
+	}
+	\]
+	
+        \begin{2enumerate}
+        \item $\ds\lim_{x \to 2^+} f(x)$ 
+        \item $\ds\lim_{x \to 2^-} f(x)$ 
+        \item $\ds\lim_{x \to 2} f(x)$ 
+        \item $f(2)$ 
+        \item $\ds\lim_{x \to -2^-} f(x)$ 
+        \item $\ds\lim_{x \to -2^+} f(x)$ 
+        \item $\ds\lim_{x \to -2} f(x)$ 
+        \item $f(-2)$ 
+        \item $\ds\lim_{x \to 4^-} f(x)$ 
+        \item $\ds\lim_{x \to 4^+} f(x)$ 
+        \item $\ds\lim_{x \to 4} f(x)$ 
+        \item $f(4)$ 
+        \end{2enumerate}
+
+
+
+% Problem
+\prob Find the $x$-intercepts, $y$-intercepts, vertical asymptotes, and horizontal asymptotes of the following function. If there are discontinuities, identify them. If there are removable discontinuities, identify the point. 
+        \[
+        \dfrac{(x+2)(x-3)(x+7)(2x-3)}{(x-3)(2x+1)(x-2)(x-7)}
+        \]
+
+
+
+% Problem
+\prob Let $f(x)= x^2 + 5x - 1$. Find the average velocity of $f(x)$ on $[-1, 2]$. Use the definition of the derivative to find the instantaneous velocity of $f(x)$ at $x= 1$. \pspace
+
+
+
+% Problem
+\prob Define $f(x)$ to be the following function:
+        \[
+        f(x)=
+        \begin{cases}
+        1 - x, & x \leq 1 \\
+        x^2 + ax + b, & x > 1
+        \end{cases}
+        \]
+Find values $a, b$ so that $f(x)$ is everywhere continuous and differentiable. \pspace
+
+
+
+% Problem
+\prob If $f(x)$ is a function defined around $x= a$, explain why one can define $\ds f'(a):= \lim_{x \to a} \dfrac{f(x) - f(a)}{x - a}$. Use this definition of the derivative to find $f'(x)$, where $f(x)= x^2 + 3x - 6$. \pspace
+
+
+
+% Problem
+\prob State the Sandwich Theorem. Give an example of a limit that it can be used to compute. \pspace
+
+
+
+% Problem
+\prob Find the following limits (if they exist):
+	\begin{2enumerate}
+        \item $\ds\lim_{x \to \infty} \dfrac{6}{x^2+4}$ 
+        \item $\ds\lim_{x \to \infty} 2^{-x}$ 
+        \item $\ds\lim_{x \to \infty} \ln(x+6)$ 
+        \item $\ds\lim_{x \to \infty} \ln \left(\dfrac{2x+1}{3x-2}\right)$ 
+        \item $\ds\lim_{x \to \infty} \cos(1/x)$ 
+        \item $\ds\lim_{x \to \infty} x\sin(1/x)$ \\
+        \end{2enumerate}
+
+
+
+% Problem 
+\prob For each part below, give an example of a function with given properties. If no such function exists, explain why.
+	\begin{enumerate}[(a)]
+	\item A hole at $x= 5$.
+	\item Holes at $x= -3, 0$.
+	\item A hole at the point $(1, -6)$. 
+	\item Horizontal asymptote $y= 7$.
+	\item Vertical asymptote at $x= \pi$. 
+	\item Horizontal asymptote $y= 0$ and a hole at $x= -2$.
+	\item A function which crosses a horizontal asymptote an infinite number of times. 
+	\item A function which is not defined at $x= 7$ and $x= 10$. 
+	\item Vertical asymptote at $x= 0$, a horizontal of $y= -5$, and a hole at $x= 2$.
+	\item A function with $y$-intercepts 4 and $-5$. 
+	\item A function with $x$-intercepts $-6$ and 7. 
+	\item A function with $y$-intercept 6 and $x$-intercepts $-4, 9$.
+	\item A continuous function that is not differentiable at $x= 6$.
+	\item A continuous function that is not differentiable at $x= -3, 4$.
+	\item A differentiable function that is not continuous.
+	\end{enumerate}
+
+
+
+% Problem
+\prob Evaluate the following limits:
+	\begin{2enumerate}
+        \item $\ds\lim_{w \to 0} \dfrac{w}{|w|}$
+        \item $\ds\lim_{w \to -2} \dfrac{2w+4}{|w+2|}$
+        \item $\ds\lim_{w \to 6} \dfrac{|w-5|-1}{w-6}$
+        \item $\ds\lim_{w \to 3} \dfrac{w^2+w-12}{|w-3|}$
+        \item $\ds\lim_{w \to 2} \left(3w^3 - |w-2|\right)$ \\
+        \end{2enumerate}
+
+
+
+% Problem 
+\prob For each part below, give an example of a function with given properties. If no such function exists, explain why.
+	\begin{enumerate}[(a)]
+	\item A function with infinitely many $y$-intercepts. 
+	\item A function with infinitely many vertical asymptotes. 
+	\item A function with infinitely many zeros.
+	\item A function with infinitely many zeros but $\ds\lim_{x \to \infty} f(x)= \infty$.
+	\item A function with infinitely many zeros that is unbounded. 
+	\item A function with a jump discontinuity at $x= 4$.
+	\item A function where $\ds\lim_{x \to 5} f(x)= 9$.
+	\item A function where $\ds\lim_{x \to 1} f(x)= 0$
+	\item A function where $\ds\lim_{x \to 0} f(x)= 2$ but $\ds\lim_{x \to 0^+} f(x)= 1$.
+	\item A function with a removable discontinuity at $x= 0$.
+	\item A function with an infinite discontinuity at $x= 5$ and a jump discontinuity at $x= 2$.
+	\item A function where $\ds\lim_{x \to 1^+} f(x) \neq \ds\lim_{x \to 1^-} f(x)$. 
+	\item A function which is everywhere differentiable but has a jump discontinuity at $x= 5$. 
+	\item A function where $f'(x)$ exists but $f''(x)$ does not exist. 
+	\item A function that is infinitely differentiable, i.e. $f^{(n)}(x)$ exists for all positive integers $n$.
+	\item A function where $\ds\lim_{x \to 7^+} f(x)= 4$  but $\ds\lim_{x \to 7^-} f(x)= -1$. 
+	\item A function that is nowhere differentiable. 
+	\end{enumerate}
+
+
+
+% Problem
+\prob Use the Squeeze Theorem to prove the following:
+        \begin{enumerate}[(a)]
+        \item $\ds\lim_{x \to 0} x^2 \sin^2\left(\dfrac{1}{x}\right)=0$
+        \item $\ds\lim_{x \to 0} x^2 \cos\left( \dfrac{1}{x^2}\right)=0$ 
+        \item $\ds\lim_{x \to 0} x^2 e^{\sin1/x}=0$ 
+        \item $\ds\lim_{x \to \infty} \dfrac{2+\sin x}{x-3}=0$ 
+        \end{enumerate}
+
+
+
+% Problem
+\prob The following represents the derivative of some function $f$ at some value $a$. Find such an $f$ and $a$: 
+	\[
+	\lim_{h \to 0} \dfrac{(2 + h)^3 - 8}{h}
+	\]
+
+
+
+% Problem
+\prob The following represents the derivative of some function $f$ at some value $a$. Find such an $f$ and $a$: 
+	\[
+	\lim_{h \to 0} \dfrac{\sqrt{9 + h} - 3}{h}
+	\] 
+
+
+
+% Problem
+\prob The following represents the derivative of some function $f$ at some value $a$. Find such an $f$ and $a$: 
+	\[
+	\lim_{h \to 0} \dfrac{\dfrac{1}{(h - 3)^2} - \dfrac{1}{9}}{h}
+	\]
+
+
+
+% Problem
+\prob Use the Intermediate Value Theorem to show that there is a solution to the given equation.
+        \begin{enumerate}[(a)]
+        \item $\sin x= x$
+        \item $4x^2 - 4= 2x$
+        \item $e^x= 10 - \sqrt{x}$
+        \item $\pi x^{15} + e^2 x^{13} - 5x^4 + \sqrt[3]{2}= e^\pi x^{12} + \pi^e x^3 + 6x - 1729$ \\
+        \end{enumerate}
+
+
+
+% Problem
+\prob Use the graph of $f(x)$ below to evaluate the following:
+	\[
+	\fbox{
+	\begin{tikzpicture}[scale=1.5,every node/.style={scale=0.5}]
+	\begin{axis}[
+	grid=both,
+	axis lines=middle,
+	ticklabel style={fill=blue!5!white},
+	xmin= -7, xmax=7,
+	ymin= -6.5, ymax=6.5,
+	xtick={-6,-4,-2,0,2,4,6},
+	ytick={-6,-4,-2,0,2,4,6},
+	minor tick = {-5,-3,...,5},
+	xlabel=\(x\),ylabel=\(y\),
+	samples=20]
+
+	\addplot[thick, domain= -4:-2] {10-x^2};
+	\addplot[thick, domain= -2:4] {1/2*(x-2)};
+	\addplot[thick, domain= 4:6] {9-2*x};
+	\addplot[holdot] coordinates{(-2,-2)(4,1)};
+	\addplot[soldot] coordinates{(-2,6)};
+
+	\end{axis}
+	\end{tikzpicture}
+	}
+	\]
+	
+        \begin{2enumerate}
+        \item $\ds\lim_{x \to 2^+} f(x)$ 
+        \item $\ds\lim_{x \to 2^-} f(x)$ 
+        \item $\ds\lim_{x \to 2} f(x)$ 
+        \item $f(2)$ 
+        \item $\ds\lim_{x \to -2^-} f(x)$ 
+        \item $\ds\lim_{x \to -2^+} f(x)$ 
+        \item $\ds\lim_{x \to -2} f(x)$ 
+        \item $f(-2)$ 
+        \item $\ds\lim_{x \to 4^-} f(x)$ 
+        \item $\ds\lim_{x \to 4^+} f(x)$ 
+        \item $\ds\lim_{x \to 4} f(x)$ 
+        \item $f(4)$ 
+        \end{2enumerate}
+
+
+\end{document}  

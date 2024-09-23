@@ -4,6 +4,7 @@
 \usepackage{
 	amsmath,			% Math Environments
 	amssymb,			% Extended Symbols
+	cancel,			% Use Cancel
 	etoolbox,			% Use Booleans
 	microtype,			% Improved Typography
 }
@@ -60,6 +61,10 @@
 %\usetikzlibrary{}
 \usepackage{pgfplots}
 \pgfplotsset{compat=newest}
+\pgfplotsset{soldot/.style={color=black,only marks,mark=*},
+		holdot/.style={color=black,fill=white,only marks,mark=*},
+		compat=1.12
+}
 %\usepgfplotslibrary{}
 
 
@@ -79,7 +84,7 @@
 \fancypagestyle{title}{
 	%Headers
 	\fancyhead[L]{\Large\bfseries\course}
-	\fancyhead[C]{\Large\bfseries Quiz Solutions}
+	\fancyhead[C]{\Large\bfseries Check-In Solutions}
 	\fancyhead[R]{\Large\bfseries\semester}
 	\renewcommand{\headrulewidth}{0.2pt}
 	%Footers
@@ -130,10 +135,8 @@
 % -------------------
 % Quiz/Solution Commands
 % -------------------
-\newcounter{quiz}
-\newcommand{\quizsol}{
-	\stepcounter{quiz}%
-	\noindent \textbf{Quiz \thequiz. }%
+\newcommand{\checkin}[1]{
+	\noindent \textbf{Check-In #1.} {\itshape (True/False)}%
 }
 \newcommand{\sol}{\noindent\textbf{Solution. }}
 
@@ -146,3 +149,5 @@
 \newcommand{\pspace}{\par\vspace{\baselineskip}} % Par then linebreak
 \newcommand{\pvspace}[1]{\par\vspace{#1}} % Par then vpsace
 \newcommand{\fn}[1]{\begingroup\let\thefootnote\relax\footnotetext{#1}\endgroup} % Unnumbered Footnote
+
+\newcommand{\squiggle}{\rightsquigarrow}

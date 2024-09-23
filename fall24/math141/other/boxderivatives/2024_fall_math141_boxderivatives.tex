@@ -1,0 +1,92 @@
+\documentclass[11pt,letterpaper]{article}
+\usepackage[lmargin=0.9in,rmargin=0.9in,bmargin=0.9in,tmargin=0.9in]{geometry}
+
+% -------------------
+% Packages
+% -------------------
+\usepackage{
+	amsmath,			% Math Environments
+	amssymb,			% Extended Symbols
+	enumerate,		% Custom Enumerate
+	multicol			% Use MultiColumns
+}
+
+\setlength{\parindent}{0ex}
+\pagenumbering{gobble}
+
+% -------------------
+% Enumerate/Itemize Environments
+% -------------------
+\newenvironment{2enumerate}{%
+	\begin{itemize}
+	\begin{multicols}{2}
+	}{%
+	\end{multicols}
+	\end{itemize}
+}
+
+% -------------------
+% Font
+% -------------------
+\usepackage[T1]{fontenc}
+\usepackage{charter}
+
+% -------------------
+% Commands
+% -------------------
+\DeclareMathOperator{\arccsc}{arccsc}
+\DeclareMathOperator{\arcsec}{arcsec}
+\DeclareMathOperator{\arccot}{arccot}
+\DeclareMathOperator{\sech}{sech}
+\DeclareMathOperator{\csch}{csch}
+
+% -------------------
+% Content
+% -------------------
+\begin{document}
+
+% Box Derivatives
+\begin{center} {\bfseries\LARGE `Box Method' for Derivatives} \end{center}
+
+The following indicates the derivative of various common functions by filling in a box---ignoring the chain rule. For example, to find $\frac{d}{dx} \tan(x^3)$, we fill in the box for $\frac{d}{dx} \tan \left(\, \Box \,\right)= \sec^2 \left(\, \Box \,\right)$ with $x^3$ and remember to apply the chain rule---which says to multiply by the derivative the contents of $\Box$. Therefore, $\frac{d}{dx} \tan \left( \boxed{x^3} \right)= \sec^2 \left( \boxed{x^3} \right) \cdot \frac{d}{dx} \, x^3= \sec^2 \left( \boxed{x^3} \right) \cdot 3x^2= 3x^2 \sec^2(x^3)$. \par\vfill
+
+\begin{2enumerate}
+\item $\dfrac{d}{dx}\; (\text{constant})= 0$ \par\vspace{0.05cm}
+\item $\dfrac{d}{dx}\; \Box^{\,n} = n \, \Box^{\,n-1}$ \par\vspace{0.05cm}
+\item $\dfrac{d}{dx}\; \#^\Box= \#^\Box \ln \#$ \par\vspace{0.05cm}
+\item $\dfrac{d}{dx}\; e^\Box= e^\Box$ \par\vspace{0.05cm}
+\item $\dfrac{d}{dx}\; \log_b \left(\, \Box \,\right) = \dfrac{1}{\left(\, \Box \,\right) \ln b}$ \par\vspace{0.05cm}
+\item $\dfrac{d}{dx}\; \ln \left(\, \Box \,\right) = \dfrac{1}{\Box}$ \par\vspace{0.05cm}
+\item $\dfrac{d}{dx}\; \sin \left(\, \Box \,\right) = \cos \left(\, \Box \,\right)$ \par\vspace{0.05cm} 
+\item $\dfrac{d}{dx}\; \cos \left(\, \Box \,\right) = -\sin \left(\, \Box \,\right)$ \par\vspace{0.05cm} 
+\item $\dfrac{d}{dx}\; \tan \left(\, \Box \,\right) = \sec^2 \left(\, \Box \,\right)$ \par\vspace{0.05cm}
+\item $\dfrac{d}{dx}\; \csc \left(\, \Box \,\right) = -\csc \left(\, \Box \,\right) \cot \left(\, \Box \,\right)$ \par\vspace{0.05cm}
+\item $\dfrac{d}{dx}\; \sec \left(\, \Box \,\right) = \sec \left(\, \Box \,\right) \tan \left(\, \Box \,\right)$ \par\vspace{0.05cm}
+\item $\dfrac{d}{dx}\; \arcsin \left(\, \Box \,\right) = \dfrac{1}{\sqrt{1 - \left(\, \Box \,\right)^2}}$ \par\vspace{0.05cm}
+\item $\dfrac{d}{dx}\; \arccos \left(\, \Box \,\right) = \dfrac{-1}{\sqrt{1 - \left(\, \Box \,\right)^2}}$ \par\vspace{0.05cm}
+\item $\dfrac{d}{dx}\; \arctan \left(\, \Box \,\right) = \dfrac{1}{1 + \left(\, \Box \,\right)^2}$ \par\vspace{0.05cm}
+\item $\dfrac{d}{dx}\; \arccsc \left(\, \Box \,\right) = \dfrac{-1}{| \Box | \sqrt{\left(\, \Box \,\right)^2 - 1}}$ \par\vspace{0.05cm}
+\item $\dfrac{d}{dx}\; \arcsec \left(\, \Box \,\right) = \dfrac{1}{| \Box | \sqrt{\left(\, \Box \,\right)^2 - 1}}$ \par\vspace{0.05cm}
+\item $\dfrac{d}{dx}\; \arccot \left(\, \Box \,\right) = \dfrac{-1}{1 + \left(\, \Box \,\right)^2}$ \par\vspace{0.05cm}
+\end{2enumerate}
+
+\noindent\rule{\textwidth}{1pt}
+
+\begin{2enumerate}
+\item $\dfrac{d}{dx}\; \sinh \left(\, \Box \,\right) = \cosh \left(\, \Box \,\right)$ \par\vspace{0.05cm}
+\item $\dfrac{d}{dx}\; \cosh \left(\, \Box \,\right) = \sinh \left(\, \Box \,\right)$ \par\vspace{0.05cm}
+\item $\dfrac{d}{dx}\; \tanh \left(\, \Box \,\right) = \sech^2 \left(\, \Box \,\right)$ \par\vspace{0.05cm}
+\item $\dfrac{d}{dx}\; \csch \left(\, \Box \,\right) = -\csch \left(\, \Box \,\right) \coth \left(\, \Box \,\right)$ \par\vspace{0.05cm}
+\item $\dfrac{d}{dx}\; \sech \left(\, \Box \,\right) = -\sech \left(\, \Box \,\right) \tanh \left(\, \Box \,\right)$ \par\vspace{0.05cm}
+\item $\dfrac{d}{dx}\;  \coth \left(\, \Box \,\right) = -\csch^2 \left(\, \Box \,\right)$ \par\vspace{0.05cm}
+\item $\dfrac{d}{dx}\;  \sinh^{-1} \left(\, \Box \,\right) = \dfrac{1}{\sqrt{\left(\, \Box \,\right)^2 + 1}}$ \par\vspace{0.05cm}
+\item $\dfrac{d}{dx}\; \cosh^{-1} \left(\, \Box \,\right) = \dfrac{1}{\sqrt{\left(\, \Box \,\right)^2 -1}}$ \par\vspace{0.05cm}
+\item $\dfrac{d}{dx}\; \tanh^{-1} \left(\, \Box \,\right) = \dfrac{1}{1 - \left(\, \Box \,\right)^2}$ \par\vspace{0.05cm}
+\item $\dfrac{d}{dx}\; \csch^{-1} \left(\, \Box \,\right) = \dfrac{-1}{| \Box | \sqrt{1 + \left(\, \Box \,\right)^2}}$ \par\vspace{0.05cm}
+\item $\dfrac{d}{dx}\; \sech^{-1} \left(\, \Box \,\right) = \dfrac{-1}{\left(\, \Box \,\right) \sqrt{1 - \left(\, \Box \,\right)^2}}$ \par\vspace{0.05cm}
+\item $\dfrac{d}{dx}\; \coth^{-1} \left(\, \Box \,\right) = \dfrac{1}{1 - \left(\, \Box \,\right)^2}$ \par\vspace{0.05cm}
+\end{2enumerate}
+
+\vfill
+
+\end{document}  
