@@ -7,6 +7,7 @@
 	cancel,			% Use Cancel
 	etoolbox,			% Use Booleans
 	float,				% Force Placements
+	mathtools,			% Floor/Ceiling
 	microtype,			% Improved Typography
 	polynom			% Use Polynomial Division
 }
@@ -147,3 +148,6 @@
 \newcommand{\pspace}{\par\vspace{\baselineskip}} % Par then linebreak
 \newcommand{\pvspace}[1]{\par\vspace{#1}} % Par then vpsace
 \newcommand{\fn}[1]{\begingroup\let\thefootnote\relax\footnotetext{#1}\endgroup} % Unnumbered Footnote
+
+\DeclarePairedDelimiter\ceil{\lceil}{\rceil}
+\DeclarePairedDelimiter\floor{\lfloor}{\rfloor}

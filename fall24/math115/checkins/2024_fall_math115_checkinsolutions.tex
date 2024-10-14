@@ -199,10 +199,154 @@ Therefore, $f(x)$ is exponential because it has the form $Ab^x$ with $A= 4$ and 
 
 
 % 09/23
-\checkin{09/23} 
-\pspace
+\checkin{09/23} For any base $b > 0$, $\log_b(x + y)= \log_b x + \log_b y$. \pspace
 
-\sol The statement is \textit{true}.
+\sol The statement is \textit{false}. For instance, consider the case where $x= y= 1$ and $b= 2$. On the left, we have $\log_2(1 + 1)= \log_2(2)= 1$. On the right, we have $\log_2(1) + \log_2(1)= 0 + 0= 0$. Therefore, we see that $\log_b(x + y)= \log_b x + \log_b y$. However, it is the case that $\log_b(xy)= \log_b x + \log_b y$. \pvspace{1.3cm}
+
+
+
+% 09/24
+\checkin{09/24} $\sqrt{x^{\log_b y}}= x^{\log_b \sqrt{y}}$ \pspace
+
+\sol The statement is \textit{true}. Recall that $(x^a)^b= x^{ab}$ and $r \log_b x= \log_b (x^r)$. But then\dots
+	\[
+	\sqrt{x^{\log_b y}}= (x^{\log_b y})^{1/2}= x^{\frac{1}{2} \log_b y}= x^{\log_b y^{1/2}}= x^{\log_b \sqrt{y}}
+	\] \pvspace{1.3cm}
+
+
+
+% 09/25
+\checkin{09/25} Both $x= \log_2(10)$ and $2 \log_4(10)$ are solutions to $2^x= 10$. \pspace
+
+\sol The statement is \textit{true}. We can check whether these are solutions:
+	\[
+	\begin{aligned}
+	2^x&= 2^{\log_2 10}= 10 \\
+	2^x&= 2^{2 \log_4 10}= (2^2)^{\log_4 10}= 4^{\log_4 10}= 10
+	\end{aligned}
+	\]
+Therefore, these are both solutions to the given equation. Alternatively, one can also convert from one log base to another using change of base: $\log_b x= \frac{\log_a x}{\log_a b}$. Using the fact that $4^{1/2}= \sqrt{4}= 2$, we have\dots
+	\[
+	\log_2(10)= \dfrac{\log_4 10}{\log_4 2}= \dfrac{\log_4 10}{\frac{1}{2}}= 2 \log_4 10
+	\]
+Of course, one then still need show that at least one of these is actually a solution to the given equation---as above. \pvspace{1.3cm}
+
+
+
+\newpage
+
+
+
+% 10/02
+\checkin{10/02} There is an integer $k$ such that $34^k$ has 8,085 digits. \pspace
+
+\sol The statement is \textit{true}. Recall that the number of digits in $N$ in base-$b$ is one more than $\floor*{\log_b N}$. But then if $34^k$ has 8,085 digits, it must be that $\floor*{\log_{10} 34^k} + 1= 8085$. That is, we have $8084 \leq \log_{10} 34^k < 8085$. But then\dots
+	\[
+	\begin{gathered}
+	8084 \leq \log_{10} 34^k < 8085 \\
+	8084 \leq k \log_{10} 34 < 8085 \\
+	\dfrac{8084}{\log_{10} 34} \leq k < \dfrac{8085}{\log_{10} 34}
+	5278.56 \leq k < 5279.21
+	\end{gathered}
+	\]
+Therefore, choosing $k= 5279$, we see that $34^k$ has 8,085 digits. We can check this: the number of digits in $34^{5279}$ is\dots
+	\[
+	\floor*{\log_{10} 34^{5279}} + 1= \floor*{5279 \log_{10} 34} + 1= \floor*{5279(1.531478917)} + 1= \floor*{8084.6772} + 1= 8084 + 1= 8085
+	\] \pvspace{1.3cm}
+
+
+
+% 10/07
+\checkin{10/07} If $|x + 1|= 4$, then $x= 3$. \pspace
+
+\sol The statement is \textit{false}. Observe that if $x= 3$, we have $|x + 1|= |3 + 1|= |4|= 4$. So $x= 3$ is a solution, but it is not the only solution. Depending on whether $x \geq -1$ or $x < -1$, we know that $|x + 1|= x + 1$ or $|x + 1|= -(x + 1)$, respectively. But then\dots
+	\[
+	\begin{aligned}
+	|x + 1|&= 4 &\hspace{1cm} |x + 1|&= 4 \\
+	x + 1&= 4 & -(x + 1)&= 4 \\
+	x= &\; 3 & x + 1&= -4 \\
+	& & x= &-5
+	\end{aligned}
+	\]
+Therefore, if $|x + 1|= 4$, then $x= 3$ or $x= -5$. It is not necessarily the case that $x= 3$. \pvspace{1.3cm}
+
+
+
+% 10/08
+\checkin{10/08} The angle $-\dfrac{3\pi}{2}$~radians is coterminal with the angle $90^\circ$. \pspace
+
+\sol The statement is \textit{true}. Converting $\frac{3\pi}{2}$~radians to degrees, we have $90^\circ$. Therefore, $-\dfrac{3\pi}{2}$~radians is $-270^\circ$. Plotting both these angles, we see that they have the same vertex, initial side, and terminal side. Therefore, these angles are coterminal. 
+	\[
+	\begin{tikzpicture}
+	\draw[line width=0.03cm,->] (-2,0) -- (2,0);				% x-axis
+	\draw[line width=0.03cm,->] (0,-2) -- (0,2);				% y-axis
+	
+	\draw[line width=0.07cm,->] (0,0) -- (0,1.5);			% Initial Side
+	\draw[line width=0.07cm] (0,0) -- (1.5,0);				% Terminal Side
+	
+	\draw[line width=0.03cm] (0.4,0) arc (0:90:0.4); \node at (0.55,0.55) {$90^\circ$};	% 90 deg
+	\draw[line width=0.03cm] (0.6,0) arc (0:-270:0.6); \node at (-0.8,-0.8) {$-\frac{3\pi}{2}$};	% -3pi/2 
+	\end{tikzpicture}
+	\]
+
+
+
+\newpage
+
+
+
+% 10/09
+\checkin{10/09} The point $(-0.888,0.460)$ is on the unit circle. If $\theta$ is the angle this point makes with the origin and positive $x$-axis, then $\sin \theta= -0.888$ and $\cos \theta= 0.460$. \pspace
+
+\sol The statement is \textit{false}. Recall the points on the unit circle are of the form $(\cos \theta, \sin \theta)$. But then if $(-0.888,0.460)$ is on the unit circle, then $\cos \theta= -0.888$ and $\sin \theta= 0.460$. The given values are reversed. We can also do this using a sketch via reference angles. 
+	\[
+	\begin{tikzpicture}
+	\draw[line width=0.03cm,->] (-2,0) -- (2,0);				% x-axis
+	\draw[line width=0.03cm,->] (0,-2) -- (0,2);				% y-axis
+	
+	\draw[fill=black] (-1.80613, 0.859016) circle (0.1);		% Point
+	\draw[line width=0.03cm,dotted] (-1.80613, 0.859016) -- (-1.80613,0);	% Vertical Side
+	\draw[line width=0.03cm,dotted] (-1.80613, 0.859016) -- (0,0);			% Horz. Side
+	\draw[line width=0.03cm] (0.4,0) arc (0:154.564:0.4); \node at (0.4,0.5) {$\theta$};	% Arc
+
+	\node at (-1,-0.3) {$-0.888$};	% Adj Label
+	\node at (-2.35,0.4) {$0.460$};	% Opp Label
+	\node at (-0.75,0.6) {$1$};		% Hypt. Label
+	\node at (-0.9,0.2) {$\theta_r$};	% Reference Angle
+	\end{tikzpicture}
+	\]
+But then $\sin \theta= \frac{\text{opp}}{\text{hyp}}= \frac{0.460}{1}= 0.460$ and $\cos \theta= \frac{\text{adj}}{\text{hyp}}= \frac{-0.888}{1}= -0.888$. \pvspace{1.3cm}
+
+
+
+% 10/10
+\checkin{10/10} $\cos(-120^\circ)= -\dfrac{\sqrt{3}}{2}$ \pspace
+
+\sol The statement is \textit{false}. We plot the angle $-120^\circ$. We can see that the reference angle for $-120^\circ$ is $60^\circ$. We can see that $-120^\circ$ is in Quadrant~III, where $\cos \theta$ is negative. 
+	\[
+	\begin{tikzpicture}
+	\draw[line width=0.03cm,->] (-2,0) -- (2,0);				% x-axis
+	\draw[line width=0.03cm,->] (0,-2) -- (0,2);				% y-axis
+	
+	\draw[fill=black,line width=0.05cm] (0,0) -- (1.7,0);		% Initial Side
+	\draw[fill=black,->,line width=0.05cm] (0,0) -- (-1,-1.732);	% Terminal Side
+	\draw[line width=0.03cm] (0.4,0) arc (0:-120:0.4);		% Angle Arc
+	
+	\node at (-0.6,-0.3) {$60^\circ$};	% 60 deg
+	\node at (0.6,-0.6) {$-120^\circ$};	% -120 deg
+	\end{tikzpicture}
+	\]
+
+Therefore, $\cos(-120^\circ)= - \cos(60^\circ)= -\frac{1}{2}$. 
+
+
+
+
+
+
+
+
+
 
 
 

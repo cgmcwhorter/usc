@@ -385,6 +385,64 @@ This function is clearly everywhere increasing, so that $f'(x) > 0$. However, ob
 
 
 
+% 10/07
+\checkin{10/07} $\dfrac{d}{dx} \left( x^2 + y^2 - \sin^2(xy) \right)= 2x + 2yy' - \cos^2(xy)  (y + x)$ \pspace
+
+\sol The statement is \textit{false}. This is implicit differentiation. One must remember that $\dfrac{d}{dx}\, y= y'$---and to properly apply derivative rules:
+	\[
+	\dfrac{d}{dx} \left( x^2 + y^2 - \sin^2(xy) \right)= 2x + 2y\, \dfrac{dy}{dx} - 2 \sin(xy) \cdot \cos(xy) \cdot \left(1 \cdot y + x \cdot \dfrac{dy}{dx} \right)
+	\] \pvspace{1.3cm}
+
+
+
+% 10/07
+\checkin{10/07} Suppose that $f'(a)= 0$ and $f(x)$ has a local maximum at $x= a$. Then $f'(x)$ changes sign at $x= a$ and $f''(a) < 0$. \pspace
+
+\sol The statement is \textit{false}. We know that $f'(a)= 0$, i.e. $x= a$ is a critical value, and $f(x)$ has a local maximum at $x= a$. Because the first derivative test applies, it must be that $f'(x)$ changes sign at $x= a$---from positive to negative across $x= a$. We can also determine that $x= a$ is a local maxima by the second derivative test if $f''(a) < 0$. However, if $x= a$ is a local maxima, the second derivative test may not apply. For instance, the function may not be twice differentiable---even if it is differentiable. Furthermore, it could be that $f''(a)= 0$---so that the second derivative test is inconclusive. For instance, consider the function $f(x)= 1 - x^4$ and take $a= 0$. We have $f'(x)= -4x^3$ so that $f'(0)= 0$. We know that $f'(-0.1) > 0$ and $f'(0.1) < 0$, i.e. $f'(x)$ changes sign from positive to negative. Therefore, $x= 0$ is a local maximum, which we can see in the plot below. However, $f''(x)= -12x^2$ and $f''(0)= 0$. Therefore, the second derivative test is inconclusive. 
+	\[
+	\fbox{
+	\begin{tikzpicture}[scale=1,every node/.style={scale=0.5}]
+	\begin{axis}[
+	grid=both,
+	axis lines=middle,
+	ticklabel style={fill=blue!5!white},
+	xmin= -2.5, xmax=2.5,
+	ymin= -2.5, ymax=2.5,
+	xtick={-2,-1.5,...,2},
+	ytick={-2,-1.5,...,2},
+	minor tick = {-2.5,-2.25,...,2.5},
+	xlabel=\(x\),ylabel=\(y\),
+	]
+	\addplot[line width= 0.02cm,samples=100,domain= -2.5:2.5] ({x},{1 - x^4});
+	\end{axis}
+	\end{tikzpicture}
+	}
+	\] 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

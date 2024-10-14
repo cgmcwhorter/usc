@@ -1,0 +1,237 @@
+\documentclass[12pt,letterpaper]{exam}
+\usepackage[lmargin=1in,rmargin=1in,tmargin=1in,bmargin=1in]{geometry}
+\usepackage{../style/exams}
+
+% -------------------
+% Course & Exam Information
+% -------------------
+\newcommand{\course}{MATH 141: Exam 1}
+\newcommand{\term}{Fall --- 2024}
+\newcommand{\examdate}{09/25/2024}
+\newcommand{\timelimit}{75 Minutes}
+
+\setbool{hideans}{false} % Student: True; Instructor: False
+
+% -------------------
+% Content
+% -------------------
+\begin{document}
+
+\examtitle
+\instructions{Write your name on the appropriate line on the exam cover sheet. This exam contains \numpages\ pages (including this cover page) and \numquestions\ questions. Check that you have every page of the exam. Answer the questions in the spaces provided on the question sheets. Be sure to answer every part of each question and show all your work. If you run out of room for an answer, continue on the back of the page --- being sure to indicate the problem number. At no during the exam may you use l'H\^{o}pital's rule. {\itshape Solutions which make use of l'H\^{o}pital's rule will receive no credit.}} 
+\scores
+\bottomline
+\newpage
+
+
+% -------------------
+% Questions
+% -------------------
+\begin{questions}
+
+% Question 1
+\newpage
+\question[15] Use the plot of the function $f(x)$ shown below to answer the following questions---if a given limit does not exist, simply write `DNE':
+	\[
+	\fbox{
+	\begin{tikzpicture}[scale=1,every node/.style={scale=0.5}]
+	\begin{axis}[
+	grid=both,
+	axis lines=middle,
+	ticklabel style= {fill= blue!5!white},
+	xmin= -10.5, xmax=10.5,
+	ymin= -10.5, ymax=10.5,
+	xtick= {-10,-8,...,10},
+	ytick= {-10,-8,...,10},
+	minor tick = {-10,-9,...,10},
+	xlabel= \(x\), ylabel= \(y\)
+	]
+	
+	\addplot[thick, samples=100, smooth, domain= -10.5:-6] {sin(13*deg(x - 4)) - 5};
+	\addplot[thick, samples=4, smooth, domain= -6:-3] {-2*x - 10};
+	\addplot[thick, samples=4, smooth, domain= -3:1] {3/4*x - 7/4};
+	\addplot[thick, samples=20, smooth, domain= 1:4] {(x - 2)^2 + 3};
+	\addplot[thick, samples=60, smooth, domain= 4:5.95] {1/(x - 6) + 15/2};
+	\addplot[thick, samples=100, smooth, domain= 6.05:10.5] {1/(5*(x - 6)^2) + 4};
+	
+	\addplot[holdot] coordinates{(-6,-4)(1,-1)(1,4)(4,7)};
+	\addplot[soldot] coordinates{(-6,2)(1,1)(4,2)};
+	\end{axis}
+	\end{tikzpicture}
+	}
+	\] \pvspace{0.3cm}
+
+\begin{enumerate}[(a)]
+\item $f(1)= \psol{1}$ \vfill
+\item $\ds\lim_{x \to 1^-} f(x)= \psol{-1}$ \vfill
+\item $\ds\lim_{x \to 1^+} f(x)= \psol{4}$ \vfill
+\item $\ds\lim_{x \to 1} f(x)= \psol{\text{DNE}}$ \vfill
+\item $f(4)= \psol{2}$ \vfill
+\item $\ds\lim_{x \to 4^-} f(x)= \psol{7}$ \vfill
+\item $\ds\lim_{x \to 4^+} f(x)= \psol{7}$ \vfill
+\item $\ds\lim_{x \to 4} f(x)= \psol{4}$ \vfill
+\item $\ds\lim_{x \to 6^-} f(x)= \psol{-\infty}$ \vfill
+\item $\ds\lim_{x \to 6^+} f(x)= \psol{\infty}$ \vfill
+\item $\ds\lim_{x \to 6} f(x)= \psol{\text{DNE}}$ \vfill
+\item $\ds\lim_{x \to -\infty} f(x)= \psol{\text{DNE}}$ \vfill
+\item $\ds\lim_{x \to \infty} f(x)= \psol{4}$ \vfill
+\item What are the points of discontinuity for $f(x)$---if any? \psol{$x= -6, 1, 4, 6$} \vfill
+\item What are the cusps of $f(x)$---if any? \psol{$x= -3$} \vfill
+\end{enumerate}
+
+
+
+% Question 2
+\newpage
+\question Showing all your work, compute the following limits: \pvspace{0.3cm}
+	\begin{parts}
+	\part[3] $\ds\lim_{y \to 2^-} y e^{\pi y}= \psol{2 e^{2\pi}}$ \vfill 
+	\part[3] $\ds\lim_{c \to 0} \dfrac{3c}{\sin(5c)}= \psol{\lim_{c \to 0} \left(3 \cdot \dfrac{c}{\sin(5c)} \right)= \lim_{c \to 0} \left( \dfrac{3}{5} \cdot \dfrac{5c}{\sin(5c)} \right)= \dfrac{3}{5} \cdot 1= \dfrac{3}{5}}$ \vfill 
+	\part[3] $\ds\lim_{h \to 0} \dfrac{(2 + h)^2 - 4}{h}= \psolscale{1}{\lim_{h \to 0} \dfrac{(4 + 4h + h^2) - 4}{h}= \lim_{h \to 0} \dfrac{4h + h^2}{h}= \lim_{h \to 0} (4 + h)= 4}$ \vfill 
+	\part[3] $\ds\lim_{b \to -6^+} \dfrac{b + 4}{|b + 6|}= \psol{\lim_{b \to -6^+} \underbrace{\dfrac{b + 4}{b + 6}}_{\substack{b + 4 < 0 \\ b + 6 > 0 \\ b + 6 \to 0}}= -\infty}$ \vfill 
+	\part[3] $\ds\lim_{x \to \infty} \left(1 + \dfrac{1}{6x} \right)^{2x}= \psolscale{1}{\lim_{x \to \infty} \left[ \left(1 + \dfrac{1}{6x} \right)^{x\,} \right]^{2}= \lim_{x \to \infty} \left[ \left(1 + \dfrac{1}{6x} \right)^{6x\,} \right]^{2/6}= e^{1/3}= \sqrt[3]{e}}$ \vfill 
+	\end{parts}
+
+
+
+% Question 3
+\newpage
+\question Compute the limits given below. You do not need to show your work. \pvspace{0.3cm}
+	\begin{parts}
+	\part[2] $\ds\lim_{x \to -\infty} \dfrac{x^2 - 8x + 5}{x^3 - 9x + 8}= \psolscale{1}{\lim_{x \to \infty} \dfrac{\frac{x^2}{x^3} - \frac{8x}{x^3} + \frac{5}{x^3}}{\frac{x^3}{x^3} - \frac{9x}{x^3} + \frac{8}{x^3}}= \lim_{x \to \infty} \dfrac{\frac{1}{x} - \frac{8}{x^2} + \frac{5}{x^3}}{1 - \frac{9}{x^2} + \frac{8}{x^3}}= \dfrac{0 - 0 + 0}{1 - 0 + 0}= 0}$ \vfill
+	\part[2] $\ds\lim_{x \to \infty} \dfrac{6x^3 + x - 5}{12x^3 - x - 3}= \psolscale{0.95}{\lim_{x \to \infty} \dfrac{\frac{6x^3}{x^3} + \frac{x}{x^3} - \frac{5}{x^3}}{\frac{12x^3}{x^3} - \frac{x}{x^3} - \frac{3}{x^3}}= \lim_{x \to \infty} \dfrac{6 + \frac{1}{x^2} - \frac{5}{x^3}}{12 - \frac{1}{x^2} - \frac{3}{x^3}}= \dfrac{6 + 0 - 0}{12 - 0 - 0}= \dfrac{6}{12}= \dfrac{1}{2}}$ \vfill
+	\part[2] $\ds\lim_{x \to -\infty} \dfrac{1 - x^5}{10x^2 + 3x - 5}= \psolscale{0.98}{\lim_{x \to \infty} \dfrac{\frac{1}{x^2} - \frac{x^5}{x^2}}{\frac{10x^2}{x^2} + \frac{3x}{x^2} - \frac{5}{x^2}}= \lim_{x \to \infty} \dfrac{\frac{1}{x^2} - x^3}{10 + \frac{3}{x} - \frac{5}{x^2}}= -(-\infty)= \infty}$ \vfill
+	\part[2] $\ds\lim_{x \to \infty} \arctan(e^x)= \psol{\dfrac{\pi}{2}}$ \vfill
+	\part[2] $\ds\lim_{x \to \infty} x^3 \sin \left( \dfrac{1}{x^3} \right)= \psol{\lim_{x \to \infty} \dfrac{\sin\left(\frac{1}{x^3}\right)}{\frac{1}{x^3}}= 1}$ \vfill
+	\end{parts}
+
+
+
+% Question 4
+\newpage
+\question Consider the function $f(x)= \sqrt{20 - x}$. \pvspace{0.2cm}
+	\begin{parts}
+	\part[6] Using the definition of the derivative, find $f'(4)$ directly. {\itshape You will receive no credit for using the derivative shortcuts to find $f'(4)$.} \pspace
+	
+	\psol{
+		\[
+		\begin{aligned}
+		f'(4)&:= \lim_{h \to 0} \dfrac{f(4 + h) - f(4)}{h} \\
+		&= \lim_{h \to 0} \dfrac{\sqrt{20 - (4 + h)} - \sqrt{20 - 4}}{h} \\
+		&= \lim_{h \to 0} \dfrac{\sqrt{16 - h} - 4}{h} \\
+		&= \lim_{h \to 0} \dfrac{\sqrt{16 - h} - 4}{h} \cdot \dfrac{-\sqrt{16 - h} - 4}{-\sqrt{16 - h} - 4} \\
+		&= \lim_{h \to 0} \dfrac{-(16 - h) - 4 \sqrt{16 - h} + 4 \sqrt{16 - h} + 16}{h \left(-\sqrt{16 - h} - 4 \right)} \\
+		&= \lim_{h \to 0} \dfrac{h - 16 + 16}{h \left(-\sqrt{16 - h} - 4 \right)} \\
+		&= \lim_{h \to 0} \dfrac{h}{h \left(-\sqrt{16 - h} - 4 \right)} \\
+		&= \lim_{h \to 0} \dfrac{1}{-\sqrt{16 - h} - 4} \\
+		&= \dfrac{1}{-\sqrt{16 - 0} - 4} \\
+		&= \dfrac{1}{-4 - 4} \\
+		&= -\dfrac{1}{8}
+		\end{aligned}
+		\] \pspace
+	}
+	\part[4] Using your answer in (a), find the tangent line to $f(x)$ at $x= 4$. [If you did not find $f'(4)$ in (a), use the made up value $f'(4)= 6$.] \pspace
+	
+	\psol{\itshape
+	Using point-slope, we know that $y= y_0 + m(x - x_0)$, where $(x_0, y_0)$ is the tangent point and $m$ is the slope. From (a), we know that $m= f'(4)= -\frac{1}{8}$. Because $x= 4$, $f(4)= \sqrt{20 - 4}= \sqrt{16}= 4$. Therefore, $(x_0, y_0)= (4, 4)$. But then\dots
+		\[
+		\begin{gathered}
+		y= y_0 + m(x - x_0) \\
+		y= 4 - \frac{1}{8} \left(x - 4 \right) \\
+		y= 4 - \frac{1}{8}\, x + \frac{1}{2} \\
+		y= -\frac{1}{8}\, x + \frac{9}{2}
+		\end{gathered}
+		\]
+	}
+	\end{parts} 
+
+
+
+% Question 5
+\newpage
+\question[15] Showing all your work but without simplifying, compute the following: \pvspace{0.3cm}
+
+        \begin{enumerate}[(a)]
+        \item $\dfrac{d}{dx} (x^5 - 3x^2 + x - 6)= \psol{5x^4 - 6x + 1}$ \vfill
+        \item $\dfrac{d}{dx} \arcsin(2x)= \psol{\dfrac{1}{\sqrt{1 - (2x)^2}} \cdot 2= \dfrac{2}{\sqrt{1 - 4x^2}}}$ \vfill
+        \item $\dfrac{d}{dx} \left( \dfrac{2x + 1}{3x - 1} \right)= \psol{\dfrac{2(3x - 1) - 3(2x + 1)}{(3x - 1)^2}}= \dfrac{6x - 2 - 6x - 3}{(3x - 1)^2}= \dfrac{-5}{(3x - 1)^2}$ \vfill
+        \end{enumerate}
+
+
+
+% Question 6
+\newpage
+\question[15] Showing all your work but without simplifying, compute the following: \pvspace{0.3cm}
+
+        \begin{enumerate}[(a)]
+        \item $\dfrac{d}{dx} \left( \dfrac{1}{\sqrt[3]{x}} \right)= \dfrac{d}{dx} \, x^{-1/3}= -\dfrac{1}{3} x^{-4/3}= -\dfrac{1}{3 \sqrt[3]{x^4}}$ \vfill
+        \item $\dfrac{d}{dx} \left( \dfrac{x - 5^x}{\ln x} \right)= \dfrac{(1 - 5^x \ln 5) (\ln x) - \left( \frac{1}{x} \right) (x - 5^x)}{(\ln x)^2}$ \vfill
+        \item $\dfrac{d}{dx}\, (e^x \cos(x) \log_3 x)= e^x \cos x \log_3x - e^x \sin x \log_3 x + \dfrac{e^x \cos x}{x \ln 3}$ \vfill
+        \item $\dfrac{d}{dx} \left( \dfrac{\sqrt[3]{6}\, \pi^{\sqrt{2}}}{e^{1 - \pi}} \right)= \psol{0}$ \vfill
+        \item $\dfrac{d}{dx} (\sin x - \sec x)^{100}= 100 (\sin x - \sec x)^{99} \cdot (\cos x - \sec x \tan x)$ \vfill
+        \end{enumerate}
+
+
+
+% Question 7
+\newpage
+\question[10] Define $f(x)$ to be the following function:
+	\[
+	f(x)= 
+	\begin{cases}
+	1 - x, & x \leq 1 \\
+	x^2 + ax + b, & x > 1
+	\end{cases}
+	\]
+Find values $a, b$ so that $f(x)$ is everywhere continuous and everywhere differentiable. Show all your work and fully justify your response. \pspace
+
+\tsol {\itshape First, observe that $f(x)$ is continuous and differentiable for $x < 1$ because there $f(x)= 1 - x$ and $1 - x$ is a polynomial---which are everywhere continuous and differentiable. Furthermore, $f(x)$ is continuous and differentiable for $x > 1$ because there $f(x)= x^2 + ax + b$ and $x^2 + ax + b$ is a polynomial (for any $a, b$)---which are everywhere continuous and differentiable. \pspace
+
+It remains to make $f(x)$ continuous and differentiable at $x= 1$. For $f(x)$ to be continuous at $x= 1$, we need $\ds\lim_{x \to 1} f(x)= f(1)$. We know\dots
+	\[
+	\begin{aligned}
+	f(1)&= 1 - 1= 0 \\
+	\lim_{x \to 1^-} f(x)&= \lim_{x \to 1^-} (1 - x)= (1 - 1)= 0 \\
+	\lim_{x \to 1^+} f(x)&= \lim_{x \to 1^+} (x^2 + ax + b)= a + b + 1
+	\end{aligned}
+	\]
+Therefore, we need $a + b + 1= 0$. \pspace
+
+For $f(x)$ to be differentiable at $x= 1$, we need the derivative of $1 - x$ and $x^2 + ax + b$ to be equal at $x= 1$. But\dots
+	\[
+	\begin{aligned}
+	\dfrac{d}{dx} (1 - x) \bigg|_{x=1}&= -1 \bigg|_{x=1}= -1 \\
+	\dfrac{d}{dx} (x^2 + ax + b) \bigg|_{x=1}&= (2x + a) \bigg|_{x=1}= 2 + a
+	\end{aligned}
+	\]
+But then we need $-1= 2 + a$. Therefore, we need $a + b + 1= 0$ and $-1= 2 + a$. Because $-1= 2 + a$, we know that $a= -3$. But then because $a + b + 1= 0$, we know that $b= -a - 1$. Therefore, $b= -(-3) - 1= 3 - 1= 2$. But then we need $a= -3$ and $b= 2$. Therefore, 
+	\[
+	f(x)= 
+	\begin{cases}
+	1 - x, & x \leq 1 \\
+	x^2 - 3x + 2, & x > 1
+	\end{cases}
+	\]
+}
+
+
+% Question 8
+\newpage
+\question[10] Determine if each of the following statements is true or false. Write `T' (True) if the statement is true or `F' (False) if the statement is false. \pvspace{0.5cm}
+
+	\begin{enumerate}[(a)]
+	\item \usol{0.6cm}{F}\,: If a function is continuous, then it is differentiable. \vfill
+	\item \usol{0.6cm}{T}\,: If a function is differentiable, then it is continuous. \vfill
+	\item \usol{0.6cm}{F}\,: If $\ds\lim_{x \to 5} f(x)$ exists, then $\ds\lim_{x \to 5} f(x)= f(5)$. \vfill	
+	\item \usol{0.6cm}{T}\,: If $\ds\lim_{x \to a} f(x)$ exists, then $\ds\lim_{x \to a^-} f(x)= \lim_{x \to a^+} f(x)$. \vfill	
+	\item \usol{0.6cm}{T}\,: If $f(x)$ is continuous at $x= a$, then $\ds\lim_{x \to a} f(x)$ exists. \vfill
+	\item \usol{0.6cm}{F}\,: If $\ds\lim_{x \to a^-} f(x)$ exists and $\ds\lim_{x \to a^+} f(x)$ exists, then $\ds\lim_{x \to a} f(x)$ exists. \vfill
+	\item \usol{0.6cm}{T}\,: A tangent line to a function $f(x)$ at $x= a$ has the same value of $f(x)$ at $x= a$. \vfill	
+	\item \usol{0.6cm}{T}\,: If $f(x)$ is everywhere continuous, then $\ds\lim_{x \to -3} f(x^2)= f(9)$. \vfill
+	\item \usol{0.6cm}{T}\,: If $f(x)$ and $g(x)$ are everywhere continuous, then $(fg)(x)$ is everywhere continuous. \vfill
+	\item \usol{0.6cm}{F}\,: If $\ds\lim_{x \to 3^-} f(x)$ exists, then $\ds\lim_{x \to 3^+} f(x)$ exists. \vfill
+	\end{enumerate}
+
+
+\end{questions}
+\end{document}

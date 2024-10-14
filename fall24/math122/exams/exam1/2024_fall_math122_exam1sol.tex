@@ -10,8 +10,7 @@
 \newcommand{\examdate}{09/10/2024}
 \newcommand{\timelimit}{75 Minutes}
 
-\setbool{hideans}{true} % Student: True; Instructor: False
-
+\setbool{hideans}{false} % Student: True; Instructor: False
 
 % -------------------
 % Content
@@ -34,10 +33,43 @@
 \newpage
 \question Let $f(x)= 2x - 5$ and $g(x)= x^2 + 2x - 3$. Find and simplify the following: \pspace
 	\begin{parts}
-	\part[2] $(fg)(0)$ \vfill
-	\part[2] $(g - f)(2)$ \vfill
-	\part[3] $(g \circ f)(x)$ \vfill
-	\part[3] $g(2 + h) - g(2)$ \vfill
+	\part[2] $(fg)(0)$ 
+		\[
+		\begin{aligned}
+		f(0)&= 2(0) - 5= 0 - 5= -5 \\
+		g(0)&= 0^2 + 2(0) - 3= 0 + 0 - 3= -3 \\[0.3cm]
+		(fg)(0)&= f(0) \cdot g(0)= -5 \cdot -3= 15
+		\end{aligned}
+		\] \vfill
+	
+	\part[2] $(g - f)(2)$ 
+		\[
+		\begin{aligned}
+		g(2)&= 2^2 + 2(2) - 3= 4 + 4 - 3= 8 - 3= 5 \\
+		f(2)&= 2(2) - 5= 4 - 5= -1 \\[0.3cm]
+		(g - f)(2)&= g(2) - f(2)= 5 - (-1)= 5 + 1= 6
+		\end{aligned}
+		\] \vfill
+	
+	\part[3] $(g \circ f)(x)$ 
+		\[
+		\begin{aligned}
+		(g \circ f)(x)&= g \big( f(x) \big) \\
+		&= g(2x - 5)= (2x - 5)^2 + 2(2x - 5) - 3 \\
+		&= (4x^2 - 20x + 25) + (4x - 10) - 3 \\
+		&= 4x^2 - 16x + 12 \\
+		&= 4(x - 1)(x - 3)
+		\end{aligned}
+		\] \vfill
+	
+	\part[3] $g(2 + h) - g(2)$ 
+		\[
+		\begin{aligned}
+		&g(2)= 2^2 + 2(2) - 3= 4 + 4 - 3= 8 - 3= 5 \\[0.2cm]
+		&g(2 + h)= (2 + h)^2 + 2(2 + h) - 3= (4 + 4h + h^2) + (4 + 2h) - 3= h^2 + 6h + 5 \\[0.2cm]
+		&g(2 + h) - g(2)= (h^2 + 6h + 5) - 5= h^2 + 6h= h(h + 6)
+		\end{aligned}
+		\] \vfill
 	\end{parts}
 
 
@@ -47,21 +79,88 @@
 \question For each of the following functions, find functions $u(x), v(x)$ such that $f(x)= (v \circ u)(x)$. \pspace
         \begin{parts}
         \part[5] $f(x)= (e^x + 5)^{10}$ \vfill
+        
+        {\itshape There are infinitely many answers. For instance,} \vspace{0.1cm}
+		\[
+		\begin{aligned}
+		u(x)&= e^x + 5 \\
+		v(x)&= x^{10}
+		\end{aligned} \hspace{3cm}
+		\begin{aligned}
+		u(x)&= e^x \\
+		v(x)&= (x + 5)^{10}
+		\end{aligned} \hspace{3cm}
+		\begin{aligned}
+		u(x)&= (e^x + 5)^2 \\
+		v(x)&= x^5
+		\end{aligned}
+		\] \vfill
+	
         \part[5] $f(x)= 6 \ln(1 - x^2)$ \vfill
+	
+	        {\itshape There are infinitely many answers. For instance,} \vspace{0.1cm}
+		\[
+		\begin{aligned}
+		u(x)&= 1 - x^2 \\
+		v(x)&= 6 \ln x
+		\end{aligned} \hspace{3cm}
+		\begin{aligned}
+		u(x)&= x^2 \\
+		v(x)&= 6 \ln(1 - x)
+		\end{aligned} \hspace{3cm}
+		\begin{aligned}
+		u(x)&= \ln(1 - x^2) \\
+		v(x)&= 6x
+		\end{aligned}
+		\] \vfill
+	
         \part[5] $f(x)= \dfrac{1}{5x - 6}$ \vfill
+	
+	        {\itshape There are infinitely many answers. For instance,} \vspace{0.1cm}
+		\[
+		\begin{aligned}
+		u(x)&= 5x - 6 \\
+		v(x)&= \dfrac{1}{x}
+		\end{aligned} \hspace{3cm}
+		\begin{aligned}
+		u(x)&= 5x \\
+		v(x)&= \dfrac{1}{x - 6}
+		\end{aligned} \hspace{3cm}
+		\begin{aligned}
+		u(x)&= 5x + 4 \\
+		v(x)&= \dfrac{1}{x - 10}
+		\end{aligned}
+		\] \vfill
         \end{parts}
 
 
 
 % Question 3
 \newpage
-\question Chlorofluorocarbons (CFCs) were chemicals used in the manufacture of aerosol sprays and refrigerants that were harmful to the ozone layer. The 1987 Montreal Protocol helped reduce the use of such substances. Let $C(t)$ denote the parts per trillion (ppt) of CFCs in the atmosphere $t$~years after 1987. 
+\question Chlorofluorocarbons (CFCs) were chemicals used in the manufacture of aerosol sprays and refrigerants that were harmful to the ozone layer. The 1987 Montreal Protocol helped reduce the use of such substances. Let $C(t)$ denote the parts per trillion (ppt) of CFCs in the atmosphere $t$~years after 1987. \pvspace{0.1cm} 
 	\begin{parts}
 	\part[3] Interpret $C(26)= 233$ in words. \vfill
+	
+	{\itshape 26 years after 1987, there were 233~ppt of CFCs in the atmosphere; that is, there were 233~ppt of CFCs in the atmosphere in 2010.} \vfill 
 	\part[3] What would the $y$-intercept of $C(t)$ represent? \vfill
+	
+	{\itshape The $y$-intercept is the value $C(0)$. But $C(0)$ is the ppt of CFCs in the atmosphere 0 years after 1987. Therefore, the $y$-intercept is the CFC level in the atmosphere in 1987.} \vfill 
+	
 	\part[3] What would the $x$-intercept of $C(t)$ represent? \vfill
+	
+	{\itshape The $y$-intercept is the $t$-value(s) where $C(t)= 0$. These are the years after 1987, $t$, such that $C(t)= 0$. Therefore, the $x$-intercepts are the number of years after 1987 where there are no CFCs in the atmosphere.} \vfill 
+	
 	\part[3] If $C(t)$ were linear, what would the slope of $C(t)$ represent? \vfill
-	\part[3] Write a mathematical expression representing the statement, ``The ppt of CFCs in the atmosphere in 2015 was 10~ppt less than what it was in 2010. \vfill
+	
+	{\itshape The slope of a linear function is its rate of change. If $C(t)$ were linear, we would know that $m= \frac{\Delta C}{\Delta t}$. Therefore, if $C(t)$ were linear, the slope of $C(t)$ would represent the  yearly increase/decrease of CFCs in the atmosphere per year.} \vfill
+	
+	\part[3] Write a mathematical expression representing the statement, ``The ppt of CFCs in the atmosphere in 2015 was 10~ppt less than what it was in 2010.'' \vfill
+	
+	{\itshape We know 2015 is 28 years after 1987, while 2010 is 23 years after 1987. But then, ``The ppt of CFCs in the atmosphere in 2015 was 10~ppt less than what it was in 2010,'' can be expressed as\dots
+		\[
+		C(28)= C(23) - 10
+		\]
+	} \vfill
 	\end{parts}
 
 
@@ -70,9 +169,34 @@
 \newpage
 \question Azalea Pharmacy sells body milks, which is milk for your body. The store pays approximately \$1,400 per month in rent, utilities, supplies, etc. They purchase the body milk from local suppliers for \$25 per bottle and resell these bottles under their brand for \$58 per bottle. 
 	\begin{parts}
-	\part[5] Find $R(q)$, the revenue from selling $q$~bottles of this product. \vfill
-	\part[5] Find $C(q)$, the cost function from selling $q$~bottles of this product. \vfill 
+	\part[5] Find $R(q)$, the revenue from selling $q$~bottles of this product. \vfill \vspace{0.6cm}
+	
+	{\itshape Each bottle of body milk sells for \$58. If they sell $q$~bottles, the pharmacy's revenue will be $\$58q$. Therefore, we have\dots
+		\[
+		R(q)= 58q
+		\]
+	} \vfill \vspace{1cm}
+	
+	\part[5] Find $C(q)$, the cost function from selling $q$~bottles of this product. \vfill \vspace{1cm}
+	
+	{\itshape The pharmacy must pay \$1,400 in associated fees per month---regardless of what they sell, i.e. the fixed costs are \$1,400. Each bottle they purchase costs \$25. If they purchase $q$~bottles, the total cost of this is $\$25q$. Therefore, their total cost is\dots
+		\[
+		C(q)= 25q + 1400
+		\]
+	} \vfill \vspace{1cm}
+	
 	\part[5] What is the minimal number of bottles that the store must sell to turn a profit? \vfill
+	
+	{\itshape We first find the breakeven point, i.e. the point where revenue equals cost:
+		\[
+		\begin{gathered}
+		R(q)= C(q) \\
+		58q= 25q + 1400 \\
+		33q= 1400 \\
+		q \approx 42.42
+		\end{gathered}
+		\]
+	Therefore, the pharmacy must sell a minimum of 43~bottles in order to turn a profit.} \vfill
 	\end{parts}
 
 
@@ -82,8 +206,24 @@
 \question Robbin and Draskin are friends that own an ice cream truck called `Don’t Stop Be-Freeze-in.' Each day, they drive the truck around the boroughs of Conelumbia trying to satisfy customers in the summer heat. They find that their cost function, $C(q)$, for selling $q$~novelty cones is given by $C(q)= 0.87q + 940$. 
 	\begin{parts}
 	\part[5] What are the fixed costs for their product? \vfill
+	
+	{\itshape We know the fixed costs are the costs incurred regardless of the level of production, i.e. $C(0$. But we have\dots
+		\[
+		C(0)= 0.87(0) + 940= 0 + 940= 940
+		\]
+	Therefore, the fixed costs are \$940.} \vfill 
+	
 	\part[5] What is the marginal cost for their product? \vfill
+	
+	{\itshape The marginal cost at a production level of $q$ is the cost of producing the next item, i.e. the $(q+1)$th item. Observe that $C(q)$ is linear. Therefore, this cost is constant and equal to the slope of $C(q)$. Therefore, the marginal cost is $m= 0.87$.} \vfill
+	
 	\part[5] How much does it cost them to sell 200~novelty cones? \vfill
+	
+	{\itshape This is $C(200)$. We have\dots
+		\[
+		C(200)= 0.87(200) + 940= 174 + 940= \$1,\!114
+		\]
+	} \vfill
 	\end{parts}
 
 
@@ -92,9 +232,26 @@
 \newpage
 \question Patrick Rose is reading Frank Herbert's six novel \textit{Dune} series when he isn't working at his store. The series is a daunting 2,550~pages---approximately. Looking at how many pages he has read thus far, he plans out a daily reading schedule that can be given by the model $P(d)= 32d + 484$, where $d$ is the number of days from today. 
 	\begin{parts}
-	\part[5] Find and interpret the $y$-intercept of $P(d)$. \vfill
+	\part[5] Find and interpret the $y$-intercept of $P(d)$. \vfill \vspace{0.5cm}
+	
+	{\itshape We know the $y$-intercept of $P(d)$ is $P(0)$. We have $P(0)= 32(0) + 484= 484$. Therefore, zero days after he has begun reading, he has read 484~pages; that is, he has already read 484 pages.} \vfill \vspace{0.5cm}
+	
 	\part[5] Find and interpret the slope of $P(d)$. \vfill
+	
+	{\itshape We know that the slope of $P(d)$ is $m= 32$ and $m= \frac{\Delta P}{\Delta d}$. Writing $m= \frac{32}{1}$, we can see that for each additional day, the number of pages read will increase by 32; that is, Patrick will read 32~pages per day.} \vfill 
+	
 	\part[5] How long until Patrick has read the entire series? \vfill
+	
+	{\itshape If Patrick has read the entire series, he will have read 2,550~pages. But then\dots
+		\[
+		\begin{gathered}
+		P(d)= 2550 \\
+		32d + 484= 2550 \\
+		32d= 2066 \\
+		d \approx 64.56 \text{ days}
+		\end{gathered}
+		\]
+	Therefore, Patrick will finish the series after an additional 64.56~days.} \vfill
 	\end{parts}
 
 
@@ -103,9 +260,35 @@
 \newpage
 \question You are saving up to buy the box set of your favorite show---\textit{Schmidt's River}. You deposit \$30 into an account that earns 3.5\% annual interest, compounded continuously. 
 	\begin{parts}
-	\part[6] Find a function, $M(t)$, that gives the amount of money in the account $t$~years from now. \vfill
+	\part[6] Find a function, $M(t)$, that gives the amount of money in the account $t$~years from now. \vfill \vspace{0.8cm}
+	
+	{\itshape If an investment of $P$ is made at an annual interest rate of $r$, compounded continuously, the amount of money the investment is worth after $t$~years is $F= Pe^{rt}$. But then\dots
+		\[
+		M(t)= 30 e^{0.035 t}
+		\]
+	} \vfill \vspace{0.8cm}
+	
 	\part[6] If the box set costs \$90, how long until you have saved up enough money? \vfill
-	\part[3] What is the annual percent growth rate of the money in the account? \vfill
+	
+	{\itshape This is the time when $M(t)= 90$. But then\dots
+		\[
+		\begin{gathered}
+		M(t)= 90 \\
+		30 e^{0.035t}= 90 \\
+		e^{0.035t}= 3 \\
+		0.035t= \ln(3) \\
+		t= \dfrac{\ln(3)}{0.035} \approx 31.39 \text{ years}
+		\end{gathered}
+		\]
+	Therefore, you will have enough money after saving 31.39~years---too long to wait!} \vfill
+	
+	\part[3] What is the annual percent growth rate of the money in the account? \vfill 
+	
+	{\itshape We have\dots
+		\[
+		M(t)= 30 e^{0.035t}= 30 (e^{0.035})^t \approx 30(1.0356)^t= 30(1 + 0.0356)^t
+		\]
+	Interpreting this as a percentage increase, we can see that the money will increase by approximately 3.56\% in value each year.} \vfill
 	\end{parts}
 
 

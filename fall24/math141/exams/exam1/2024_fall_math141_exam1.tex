@@ -1,0 +1,180 @@
+\documentclass[12pt,letterpaper]{exam}
+\usepackage[lmargin=1in,rmargin=1in,tmargin=1in,bmargin=1in]{geometry}
+\usepackage{../style/exams}
+
+% -------------------
+% Course & Exam Information
+% -------------------
+\newcommand{\course}{MATH 141: Exam 1}
+\newcommand{\term}{Fall --- 2024}
+\newcommand{\examdate}{09/25/2024}
+\newcommand{\timelimit}{75 Minutes}
+
+\setbool{hideans}{true} % Student: True; Instructor: False
+
+
+% -------------------
+% Content
+% -------------------
+\begin{document}
+
+\examtitle
+\instructions{Write your name on the appropriate line on the exam cover sheet. This exam contains \numpages\ pages (including this cover page) and \numquestions\ questions. Check that you have every page of the exam. Answer the questions in the spaces provided on the question sheets. Be sure to answer every part of each question and show all your work. If you run out of room for an answer, continue on the back of the page --- being sure to indicate the problem number. At no during the exam may you use l'H\^{o}pital's rule. {\itshape Solutions which make use of l'H\^{o}pital's rule will receive no credit.}} 
+\scores
+\bottomline
+\newpage
+
+
+% -------------------
+% Questions
+% -------------------
+\begin{questions}
+
+% Question 1
+\newpage
+\question[15] Use the plot of the function $f(x)$ shown below to answer the following questions---if a given limit does not exist, simply write `DNE':
+	\[
+	\fbox{
+	\begin{tikzpicture}[scale=1,every node/.style={scale=0.5}]
+	\begin{axis}[
+	grid=both,
+	axis lines=middle,
+	ticklabel style= {fill= blue!5!white},
+	xmin= -10.5, xmax=10.5,
+	ymin= -10.5, ymax=10.5,
+	xtick= {-10,-8,...,10},
+	ytick= {-10,-8,...,10},
+	minor tick = {-10,-9,...,10},
+	xlabel= \(x\), ylabel= \(y\)
+	]
+	
+	\addplot[thick, samples=100, smooth, domain= -10.5:-6] {sin(13*deg(x - 4)) - 5};
+	\addplot[thick, samples=4, smooth, domain= -6:-3] {-2*x - 10};
+	\addplot[thick, samples=4, smooth, domain= -3:1] {3/4*x - 7/4};
+	\addplot[thick, samples=20, smooth, domain= 1:4] {(x - 2)^2 + 3};
+	\addplot[thick, samples=60, smooth, domain= 4:5.95] {1/(x - 6) + 15/2};
+	\addplot[thick, samples=100, smooth, domain= 6.05:10.5] {1/(5*(x - 6)^2) + 4};
+	
+	\addplot[holdot] coordinates{(-6,-4)(1,-1)(1,4)(4,7)};
+	\addplot[soldot] coordinates{(-6,2)(1,1)(4,2)};
+	\end{axis}
+	\end{tikzpicture}
+	}
+	\] \pvspace{0.3cm}
+
+\begin{enumerate}[(a)]
+\item $f(1)=$ \vfill
+\item $\ds\lim_{x \to 1^-} f(x)=$ \vfill
+\item $\ds\lim_{x \to 1^+} f(x)=$ \vfill
+\item $\ds\lim_{x \to 1} f(x)=$ \vfill
+\item $f(4)=$ \vfill
+\item $\ds\lim_{x \to 4^-} f(x)=$ \vfill
+\item $\ds\lim_{x \to 4^+} f(x)=$ \vfill
+\item $\ds\lim_{x \to 4} f(x)=$ \vfill
+\item $\ds\lim_{x \to 6^-} f(x)=$ \vfill
+\item $\ds\lim_{x \to 6^+} f(x)=$ \vfill
+\item $\ds\lim_{x \to 6} f(x)=$ \vfill
+\item $\ds\lim_{x \to -\infty} f(x)=$ \vfill
+\item $\ds\lim_{x \to \infty} f(x)=$ \vfill
+\item What are the points of discontinuity for $f(x)$---if any? \vfill
+\item What are the cusps of $f(x)$---if any? \vfill
+\end{enumerate}
+
+
+
+% Question 2
+\newpage
+\question Showing all your work, compute the following limits: \pvspace{0.3cm}
+	\begin{parts}
+	\part[3] $\ds\lim_{y \to 2^-} y e^{\pi y}=$ \vfill %2->3
+	\part[3] $\ds\lim_{c \to 0} \dfrac{3c}{\sin(5c)}=$ \vfill %2->3, 5->3
+	\part[3] $\ds\lim_{h \to 0} \dfrac{(2 + h)^2 - 4}{h}=$ \vfill % 2->3, 4->9
+	\part[3] $\ds\lim_{b \to -6^+} \dfrac{b + 4}{|b + 6|}=$ \vfill %4->5, -6->-7
+	\part[3] $\ds\lim_{x \to \infty} \left(1 + \dfrac{1}{6x} \right)^{2x}=$ \vfill %6->9, 2->3
+	\end{parts}
+
+
+
+% Question 3
+\newpage
+\question Compute the limits given below. You do not need to show your work. \pvspace{0.3cm}
+	\begin{parts}
+	\part[2] $\ds\lim_{x \to -\infty} \dfrac{x^2 - 8x + 5}{x^3 - 9x + 8}=$ \vfill
+	\part[2] $\ds\lim_{x \to \infty} \dfrac{6x^3 + x - 5}{12x^3 - x - 3}=$ \vfill
+	\part[2] $\ds\lim_{x \to -\infty} \left( \dfrac{1 - x^5}{10x^2 + 3x - 5} \right)=$ \vfill
+	\part[2] $\ds\lim_{x \to \infty} \arctan(e^x)=$ \vfill
+	\part[2] $\ds\lim_{x \to \infty} x^3 \sin \left( \dfrac{1}{x^3} \right)=$ \vfill
+	\end{parts}
+
+
+
+% Question 4
+\newpage
+\question Consider the function $f(x)= \sqrt{20 - x}$. \pvspace{0.2cm}
+	\begin{parts}
+	\part[6] Using the definition of the derivative, find $f'(4)$ directly. {\itshape You will receive no credit for using the derivative shortcuts to find $f'(4)$.} \vfill
+	\part[4] Using your answer in (a), find the tangent line to $f(x)$ at $x= 4$. [If you did not find $f'(4)$ in (a), use the made up value $f'(4)= 6$.] \pvspace{3in}
+	\end{parts}
+
+
+
+% Question 5
+\newpage
+\question[15] Showing all your work but without simplifying, compute the following: \pvspace{0.3cm}
+
+        \begin{enumerate}[(a)]
+        \item $\dfrac{d}{dx} (x^5 - 3x^2 + x - 6)=$ \vfill
+        \item $\dfrac{d}{dx} \arcsin(2x)=$ \vfill
+        \item $\dfrac{d}{dx} \left( \dfrac{2x + 1}{3x - 1} \right)=$ \vfill
+        \end{enumerate}
+
+
+
+% Question 6
+\newpage
+\question[15] Showing all your work but without simplifying, compute the following: \pvspace{0.3cm}
+
+        \begin{enumerate}[(a)]
+        \item $\dfrac{d}{dx} \left( \dfrac{1}{\sqrt[3]{x}} \right)=$ \vfill
+        \item $\dfrac{d}{dx} \left( \dfrac{x - 5^x}{\ln x} \right)=$ \vfill
+        \item $\dfrac{d}{dx}\, (e^x \cos(x) \log_3 x)=$ \vfill
+        \item $\dfrac{d}{dx} \left( \dfrac{\sqrt[3]{6}\, \pi^{\sqrt{2}}}{e^{1 - \pi}} \right)=$ \vfill
+        \item $\dfrac{d}{dx} (\sin x - \sec x)^{100}$ \vfill
+        \end{enumerate}
+
+
+
+% Question 7
+\newpage
+\question[10] Define $f(x)$ to be the following function:
+	\[
+	f(x)= 
+	\begin{cases}
+	1 - x, & x \leq 1 \\
+	x^2 + ax + b, & x > 1
+	\end{cases}
+	\]
+Find values $a, b$ so that $f(x)$ is everywhere continuous and everywhere differentiable. Show all your work and fully justify your response. 
+
+
+
+% Question 8
+\newpage
+\question[10] Determine if each of the following statements is true or false. Write `T' (True) if the statement is true or `F' (False) if the statement is false. \pvspace{0.5cm}
+
+	\begin{enumerate}[(a)]
+	\item \usol{0.6cm}{F}\,: If a function is continuous, then it is differentiable. \vfill
+	\item \usol{0.6cm}{T}\,: If a function is differentiable, then it is continuous. \vfill
+	\item \usol{0.6cm}{F}\,: If $\ds\lim_{x \to 5} f(x)$ exists, then $\ds\lim_{x \to 5} f(x)= f(5)$. \vfill	
+	\item \usol{0.6cm}{T}\,: If $\ds\lim_{x \to a} f(x)$ exists, then $\ds\lim_{x \to a^-} f(x)= \lim_{x \to a^+} f(x)$. \vfill	
+	\item \usol{0.6cm}{T}\,: If $f(x)$ is continuous at $x= a$, then $\ds\lim_{x \to a} f(x)$ exists. \vfill
+	\item \usol{0.6cm}{F}\,: If $\ds\lim_{x \to a^-} f(x)$ exists and $\ds\lim_{x \to a^+} f(x)$ exists, then $\ds\lim_{x \to a} f(x)$ exists. \vfill
+	\item \usol{0.6cm}{T}\,: A tangent line to a function $f(x)$ at $x= a$ has the same value of $f(x)$ at $x= a$. \vfill	
+	\item \usol{0.6cm}{T}\,: If $f(x)$ is everywhere continuous, then $\ds\lim_{x \to -3} f(x^2)= f(9)$. \vfill
+	\item \usol{0.6cm}{T}\,: If $f(x)$ and $g(x)$ are everywhere continuous, then $(fg)(x)$ is everywhere continuous. \vfill
+	\item \usol{0.6cm}{F}\,: If $\ds\lim_{x \to 3^-} f(x)$ exists, then $\ds\lim_{x \to 3^+} f(x)$ exists. \vfill
+	\end{enumerate}
+
+
+\end{questions}
+\end{document}

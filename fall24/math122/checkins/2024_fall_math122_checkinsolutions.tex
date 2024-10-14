@@ -75,6 +75,99 @@ This function is clearly everywhere increasing, so that $f'(x) > 0$. However, ob
 
 
 
+% 09/24
+\checkin{09/24} If $C(q)$ is a cost function, then $C'(q)$ is the marginal cost. \pspace
+
+\sol The statement is \textit{true}. In the case of linear cost functions, we knew that the marginal cost was the slope of the line, i.e. its derivative. For general cost functions, we define the marginal cost to be the derivative of the cost function. Generally, we know the marginal cost is the cost of producing the next item. We know that $C'(q):= \frac{dC}{dq}$. But then the cost of the next item should approximately be $\frac{dC}{dq} \big( (q+1) - q \big)= \frac{dC}{dq} \cdot 1= \frac{dC}{dq}$. That is, the cost of the next additional item is approximately $C'(q)$. \pvspace{1.3cm}
+
+
+
+\newpage
+
+
+
+% 09/26
+\checkin{09/26} $\dfrac{d}{dx} (7x^3 - e^x + \log_2 x)= 21x^2 - e^x + \dfrac{1}{x \ln 2}$ \pspace
+
+\sol The statement is \textit{true}. Recall that $\frac{d}{dx} \, x^n= nx^{n-1}$, $\frac{d}{dx}\, e^x= e^x$, and $\frac{d}{dx}\, \log_2 x= \frac{1}{x \ln 2}$. Therefore, we have\dots
+	\[
+	\dfrac{d}{dx} (7x^3 - e^x + \log_2 x)= (7 \cdot 3 x^2 - e^x + \dfrac{1}{x \ln 2})= 21x^2 - e^x + \dfrac{1}{x \ln 2}
+	\] \pvspace{1.3cm}
+
+
+
+% 10/03
+\checkin{10/03} $\dfrac{d}{dx} \left(4x^2 - \dfrac{1}{x} \right)^5= 5 \left(8x - \dfrac{1}{x^2} \right)^4$ \pspace
+
+\sol The statement is \textit{false}. Recall that the chain rule states that $\frac{d}{dx} f \big( g(x) \big)= f' \big( g(x) \big) \cdot g'(x)$. We have here $f(x)= x^5$ and $g(x)= 4x^2 - \frac{1}{x}$. We know that $f'(x)= 5x^4$ and $g'(x)= 8x + \frac{1}{x^2}$. Therefore, we have\dots
+	\[
+	\dfrac{d}{dx} \left(4x^2 - \dfrac{1}{x} \right)^5= 5 \left(4x^2 - \dfrac{1}{x} \right)^4 \cdot \left( 8x + \frac{1}{x^2} \right)
+	\] \pvspace{1.3cm}
+
+
+
+% 10/08
+\checkin{10/08} Suppose that $f(1)= 5$, $f'(1)= 4$, and $f''(1)= -3$. Because $f'(1) > 0$, $f(x)$ is increasing at $x= 1$. Furthermore, because $f''(1) < 0$, $x= 1$ must be a local maxima for $f(x)$. \pspace
+
+\sol The statement is \textit{false}. It is true that if $f'(a) > 0$, then $f(x)$ is increasing at $x= a$. Therefore, because $f'(1) > 0$, $f(x)$ is increasing at $x= 1$. We know that if $f''(a) < 0$ \textit{and} $f'(a)= 0$, then $f(x)$ has a local maxima at $x= a$---this is the second derivative test. Though $f''(1) < 0$, we know $f'(1) \neq 0$ because $f'(1) > 0$. Therefore, $x= 1$ need not be a local maxima. For instance, the function below has $f(1)= 5$, $f'(1)= 4$, and $f''(1)= -3$ but $x= 1$ is not a local maxima. 
+	\[
+	\fbox{
+	\begin{tikzpicture}[scale=1,every node/.style={scale=0.5}]
+	\begin{axis}[
+	grid=both,
+	axis lines=middle,
+	ticklabel style={fill=blue!5!white},
+	xmin= -10.5, xmax=10.5,
+	ymin= -10.5, ymax=10.5,
+	xtick={-10,-8,-6,-4,-2,0,2,4,6,8,10},
+	ytick={-10,-8,-6,-4,-2,0,2,4,6,8,10},
+	minor tick = {-10,-9,...,10},
+	xlabel=\(x\),ylabel=\(y\),
+	]
+	\addplot[line width= 0.02cm,samples=100,domain= -10.5:10.5] ({x},{-3/2*x^2 + 7*x - 1/2});
+	\draw[fill=black] (1,5) circle (0.2);
+	\end{axis}
+	\end{tikzpicture}
+	}
+	\] 
+
+
+
+\newpage
+
+
+
+% 10/10
+\checkin{10/10} Suppose that $f(-2)= 10$ and $f'(-2)= 0$. If $f'$ changes sign from positive to negative across $x= -2$, then $f(x)$ has a local maximum at $x= -2$. \pspace
+
+\sol The statement is \textit{true}. This is the first derivative test. We know that if $f'(a)= 0$ and $f'(x)$ changes sign from positive to negative across $x= a$, then $x= a$ is a local maximum. 
+	\[
+	\begin{tikzpicture}
+	\draw[line width=0.03cm,<->] (-3,0) -- (3,0);
+	\draw[line width=0.03cm] (0,-0.1) -- (0,0.1);
+	\node at (-0.12,-0.35) {$-2$};
+	\node at (-1.3,0.3) {$+$};
+	\node at (1.3,0.3) {$-$};
+	\draw[line width=0.02cm] (-0.3,0.3) -- (-0.1,0.6) -- (0.1,0.6) -- (0.3,0.3);
+	\end{tikzpicture}
+	\]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
