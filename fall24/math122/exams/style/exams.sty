@@ -6,6 +6,7 @@
 	amssymb,			% Extended Symbols
 	etoolbox,			% Use Booleans
 	microtype,			% Improved Typography
+	multicol,			% Use Multicol
 }
 %	amsthm,			% Theorem Environments
 %	caption,			% Remove 'Figure' Prefix
@@ -95,6 +96,13 @@
 % Enumerate/Itemize Environments
 % -------------------
 \usepackage{enumerate}
+\newenvironment{2itemize}{%
+	\begin{itemize}
+	\begin{multicols}{2}
+	}{%
+	\end{multicols}
+	\end{itemize}
+}
 %\newenvironment{2enumerate}{%
 %	\begin{enumerate}[(a)]
 %	\begin{multicols}{2}

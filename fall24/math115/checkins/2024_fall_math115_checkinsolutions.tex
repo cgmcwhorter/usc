@@ -284,7 +284,7 @@ Therefore, if $|x + 1|= 4$, then $x= 3$ or $x= -5$. It is not necessarily the ca
 	\draw[line width=0.07cm,->] (0,0) -- (0,1.5);			% Initial Side
 	\draw[line width=0.07cm] (0,0) -- (1.5,0);				% Terminal Side
 	
-	\draw[line width=0.03cm] (0.4,0) arc (0:90:0.4); \node at (0.55,0.55) {$90^\circ$};	% 90 deg
+	\draw[line width=0.03cm] (0.4,0) arc (0:90:0.4); \node at (0.55,0.55) {$90^\circ$};		% 90 deg
 	\draw[line width=0.03cm] (0.6,0) arc (0:-270:0.6); \node at (-0.8,-0.8) {$-\frac{3\pi}{2}$};	% -3pi/2 
 	\end{tikzpicture}
 	\]
@@ -337,11 +337,53 @@ But then $\sin \theta= \frac{\text{opp}}{\text{hyp}}= \frac{0.460}{1}= 0.460$ an
 	\end{tikzpicture}
 	\]
 
-Therefore, $\cos(-120^\circ)= - \cos(60^\circ)= -\frac{1}{2}$. 
+Therefore, $\cos(-120^\circ)= - \cos(60^\circ)= -\frac{1}{2}$. \pvspace{1.3cm}
 
 
 
+% 10/14
+\checkin{10/14} If $f(x)$ is a trigonometric function, $\theta$ is an angle, and $\theta_r$ is the reference angle for $\theta$, then $f(\theta)= f(\theta_r)$. \pspace
 
+\sol The statement is \textit{false}. Consider the angle $\theta= -30^\circ$ and the trigonometric function $f(x)= \sin x$. We know the reference angle for $-30^\circ$ is $30^\circ$, i.e. $\theta_r= 30^\circ$. Now\dots
+	\[
+	\begin{aligned}
+	f(\theta)&= f(-30^\circ)= \sin(-30^\circ)= \sin(270^\circ)= -\dfrac{1}{2} \\
+	f(\theta_r)&= f(30^\circ)= \sin(30^\circ)= \dfrac{1}{2}
+	\end{aligned}
+	\]
+But then $f(\theta)= f(\theta_r)$. What is true is that $|f(\theta)|= |f(\theta_r)|$, i.e. $f(\theta)$ and $f(\theta_r)$ are the same value up to sign; that is, $f(\theta)$ is either $+f(\theta_r)$ or $-f(\theta_r)$. \pvspace{1.3cm}
+
+
+
+% 10/15
+\checkin{10/15} If $\cos \theta= \frac{12}{13}$ and $\sin \theta < 0$, then $\tan \theta= \frac{5}{12}$. \pspace
+
+\sol The statement is \textit{false}. Because $\cos \theta= \frac{12}{13} > 0$, we know that $\theta$ is an angle in QI or QIV. Because $\sin \theta < 0$, it must be that $\theta$ is an angle in QIII or QIV. Therefore, $\theta$ is an angle in QIV. But in QIV, $\tan \theta \leq 0$. Therefore, $\tan \theta \neq \frac{5}{12}$. If we want to find $\tan \theta$ directly, we use the fact that $\theta$ is in QIV and that $\cos \theta= \frac{\text{adj}}{\text{hyp}}= \frac{12}{13}$; therefore, we can assume we have\dots
+	\[
+	\begin{tikzpicture}
+	\draw[line width=0.03cm,->] (-2,0) -- (2,0);				% x-axis
+	\draw[line width=0.03cm,->] (0,-2) -- (0,2);				% y-axis
+	
+	\node at (0.6,-0.2) {$\theta$};
+	\draw[line width=0.03cm] (0,0) -- (1.4,-1.2) -- (1.4,0);			% Triangle
+	\draw[line width=0.03cm] (1.25,0) -- (1.25,-0.15) -- (1.4,-0.15);	% Right Angle
+	
+	\node at (0.8,0.2) {$12$};
+	\node at (1.75,-0.6) {$-5$};
+	\node at (0.5,-0.8) {$13$};
+	\end{tikzpicture}
+	\]
+There the oppositve side was found using the Pythagorean Theorem: $a^2 + 12^2= 13^2$, so $a^2= 13^2 - 12^2= 169 - 144= 25$, i.e. $a= \sqrt{25}= 5$. Therefore, $\tan \theta= \frac{\text{opp}}{\text{adj}}= \frac{-5}{12}$. \pvspace{1.3cm}
+
+
+
+% 10/16
+\checkin{10/16} $\sin^2(50^\circ) + \cos^2(310^\circ)= 1$ \pspace
+
+\sol The statement is \textit{true}. Recall that $\sin^2 \theta + \cos^2 \theta= 1$ for any angle $\theta$. But the reference angle for $310^\circ$ is $50^\circ$. We know that $310^\circ$ is in QIV. But then $\cos(310^\circ)= \cos(50^\circ)$. But then\dots
+	\[
+	\sin^2(50^\circ) + \cos^2(310^\circ)= \sin^2(50^\circ) + \cos^2(50^\circ)= 1
+	\]
 
 
 

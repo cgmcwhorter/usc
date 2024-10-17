@@ -1,0 +1,157 @@
+\documentclass[11pt,letterpaper]{article}
+\usepackage[lmargin=1in,rmargin=1in,bmargin=1in,tmargin=1in]{geometry}
+
+% -------------------
+% Packages
+% -------------------
+\usepackage{
+	amsmath,			% Math Environments
+	amssymb,			% Extended Symbols
+	enumerate,		% Custom Enumerate
+	multicol,			% Use MultiColumns
+	stmaryrd			% Integer Function
+}
+
+\setlength{\parindent}{0ex}
+
+% -------------------
+% Tikz/PGFPlots
+% -------------------
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest}
+\pgfplotsset{soldot/.style={color=black,only marks,mark=*},
+		holdot/.style={color=black,fill=white,only marks,mark=*},
+		compat=1.12
+}
+
+% -------------------
+% Enumerate/Itemize Environments
+% -------------------
+\newenvironment{2enumerate}{%
+	\begin{enumerate}[(a)]
+	\begin{multicols}{2}
+	}{%
+	\end{multicols}
+	\end{enumerate}
+}
+
+% -------------------
+% Font
+% -------------------
+\usepackage[T1]{fontenc}
+\usepackage{charter}
+
+% -------------------
+% Commands
+% -------------------
+\DeclareMathOperator{\arccsc}{arccsc}
+\DeclareMathOperator{\arcsec}{arcsec}
+\DeclareMathOperator{\arccot}{arccot}
+
+\newcommand{\ds}{\displaystyle}
+\newcommand{\pspace}{\par\vspace{\baselineskip}}
+\newcommand{\pvspace}[1]{\par\vspace{#1}}
+
+\newcounter{problem}
+\newcommand{\prob}{\stepcounter{problem}%
+\noindent\textbf{Problem \theproblem. }}
+
+% -------------------
+% Content
+% -------------------
+\begin{document}
+
+% Exam 1 Review
+\begin{center} {\bfseries\Large MATH 141 --- Fall 2024} \par\vspace{0.3cm} {\bfseries\LARGE Exam 2 --- Extra Problems} \end{center} \par\vspace{0.3cm}
+
+
+
+% Derivatives
+\noindent {\bfseries\Large Derivatives} \pvspace{0.3cm}
+
+% Problem
+\prob Let $f(x)= x^3 - 12x + 5$. Find the intervals of increase and decrease, intervals of concavity, inflection points, and local minima and maxima of $f(x)$. \pspace
+
+
+
+% Optimization
+\noindent {\bfseries\Large Optimization} \pvspace{0.3cm}
+
+% Problem
+\prob A box with a square base and open top must have a volume of 32 cubic centimeters. Find the dimensions of the box that minimize the amount of material used. \pspace
+
+% Problem
+\prob There is 300 square cm of material available to make a box with a square base and an open top. Find the dimensions of the box with the largest possible volume. \pspace
+
+% Problem
+\prob A cylindrical can without a top is made to contain 1000~cm$^3$ of liquid. Find the dimensions that will minimize the surface area of the metal to make the can. \pspace
+
+% Problem
+\prob An open rectangular box that holds 36,000 cubic inches is to have a rectangular base that is twice as long as it is wide. What dimensions for the box will require the least material? \pspace
+
+
+
+% Related Rates
+\noindent {\bfseries\Large Related Rates} \pvspace{0.3cm}
+
+% Problem
+\prob A kite 100 feet above the ground moves horizontally at a speed of 10~feet per second. At what rate is the angle between the string and the horizontal decreasing when 200~feet of string is let out? \pspace
+
+% Problem
+\prob A ladder 10~feet long rests against a vertical wall. If the bottom of the ladder slides away from the wall at a rate of 3~ft/sec., how fast is the top of the ladder sliding down the wall when the bottom of the ladder is 6 feet from the wall? \pspace
+
+% Problem
+\prob During a game of baseball, a batter hits the ball and runs towards first base at a speed of 25~ft per second? At what rate is their distance from second base decreasing when they are one quarter of the way from first base, i.e. 67.5~ft from first base? \pspace
+
+% Problem
+\prob Water is being poured into a conical reservoir at the rate of $\pi$~cubic feet per second. The reservoir has a radius of 6~ft across the top and a height of 12~ft. At what rate is the depth of the water increasing when the depth is 6~ft? \pspace
+
+% Problem
+\prob Car~A is leaving at a right-angled intersection and heading south at 60~mph. Car~B is leaving the intersection and heading east at 70~mph. When Car~A is 6~mi away from the intersection and Car~B is 8~mi to the east, how fast is the distance between the cars changing? \pspace
+
+% Problem
+\prob A spotlight on the ground shines on a wall 40~ft away. A person 6~ft tall walks from the spotlight toward the wall at a speed of 6~ft/sec. How fast is the length of their shadow on the wall decreasing when they are 15~ft away from the spotlight? \pspace
+
+
+
+% IVT
+\noindent {\bfseries\Large IVT} \pvspace{0.3cm}
+
+% Problem
+\prob Show that the polynomial $2x^9 - 5x^4 + 7x - 3$ has a root for some $x$ with $-1 \leq x \leq 1$. \pspace
+
+% Problem
+\prob Show that the equation $2^x= 5x - 2$ has a solution on the interval $[0, 1]$. \pspace
+
+% Problem
+\prob Let $f(x)= x^3 - x^2 + x - 1$. Show there exists a real number $a$ such that $f(x)= -2$. [Hint. Consider the interval $[-1,0]$.] \pspace
+
+% Problem
+\prob Suppose that $f(x)$ is continuous on $[-2, 2]$ and $-1 \leq f(x) \leq 2$ for $x \in [-2, 2]$. Show there is a $c \in [-2, 2]$ such that $f(c)= c$. \pspace
+
+
+
+% MVT
+\noindent {\bfseries\Large MVT} \pvspace{0.3cm}
+
+% Problem
+\prob Find the values $c$ that satisfy the MVT for $f(x)= x^3 + 5x^2 - 7x + 5$ on $[-1, 2]$. \pspace
+
+% Problem
+\prob Show that $3x + 2\sin x= 5$ has exactly one solution. \pspace
+
+% Problem
+\prob Prove that if two runners race each other and end in a tie, they must have run at the same speed at some point during the race. \pspace
+
+% Problem
+\prob If $f(x)$ is a differentiable function on $[2, 9]$ with $f(2)= -3$ and $-1 \leq f'(x) \leq 5$ for $x \in [2, 9]$, what are the smallest and largest possible values for $f(9)$? \pspace
+
+
+
+% IVT & MVT
+\noindent {\bfseries\Large IVT \& MVT} \pvspace{0.3cm}
+
+% Problem
+\prob Show that every positive real number has a unique positive, real square root. \pspace
+
+\end{document}  

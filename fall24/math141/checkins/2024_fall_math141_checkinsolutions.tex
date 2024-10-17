@@ -417,7 +417,110 @@ This function is clearly everywhere increasing, so that $f'(x) > 0$. However, ob
 	\end{axis}
 	\end{tikzpicture}
 	}
-	\] 
+	\] \pvspace{1.3cm}
+
+
+
+% 10/14
+\checkin{10/14} A function can have infinitely many local maxima or local minima. \pspace
+
+\sol The statement is \textit{true}. Consider the function $f(\theta)= \cos(\theta)$, plotted below. 
+	\[
+	\fbox{
+	\begin{tikzpicture}[scale=1,every node/.style={scale=0.5}]
+	\begin{axis}[
+	grid=both,
+	axis lines=middle,
+	ticklabel style={fill=blue!5!white},
+	xmin= -12*pi, xmax=12*pi,
+	ymin= -1.5, ymax=1.5,
+	xtick={-12*pi,-10*pi,...,12*pi},
+	ytick={-1.5,-1,-sqrt(3)/2,-1/sqrt(2),-1/2,0,1/2,1/sqrt(2),sqrt(3)/2,1,1.5},
+	xticklabel style={font=\footnotesize,fill=white},
+	xticklabels={$-12\pi$,$-10\pi$,$-8\pi$,$-6\pi$,$-4\pi$,$-2\pi$,$0$,$2\pi$,$4\pi$,$6\pi$,$8\pi$,$10\pi$,$12\pi$},
+	yticklabel style={font=\footnotesize,fill=white},
+	yticklabels={$-1.5$,$-1$,$-\frac{\sqrt{3}}{2}$,$-\frac{1}{\sqrt{2}}$,$-\frac{1}{2}$,$0$,$\frac{1}{2}$,$\frac{1}{\sqrt{2}}$,$\frac{\sqrt{3}}{2}$,$1$,$1.5$},
+	minor tick = {-12*pi,-11*pi,...,12*pi},
+	xlabel=\(x\),ylabel=\(y\),
+	]
+	\addplot[line width= 0.02cm,samples=300,domain= -12*pi:12*pi] ({x},{cos(deg(x))});
+	\end{axis}
+	\end{tikzpicture}
+	}
+	\]
+We know that $f(\theta)= \cos(\theta)$ has a local maxima at each even integer multiple of $\pi$ and local minima at each odd integer multiple of $\pi$. In fact, a function can have infinitely many local maxima/minima on a finite interval. Consider the function $f(x)= \cos\left( \frac{1}{x} \right)$ for $0 < x \leq 1$ and $f(0)= 1$ if $x= 0$. This function has infinitely many local maxima and minima on $[0, 1]$. For instance, it has a local maxima whenever $x= \frac{1}{2k \pi}$ for any integer $k > 0$ and a local minima whenever $x= \frac{1}{(2k + 1) \pi}$ for any integer $k > 0$. \par
+	\[
+	\fbox{
+	\begin{tikzpicture}[scale=1,every node/.style={scale=0.5}]
+	\begin{axis}[
+	grid=both,
+	axis lines=middle,
+	ticklabel style={fill=blue!5!white},
+	xmin= -0.1, xmax=1.1,
+	ymin= -1.2, ymax=1.2,
+	xlabel=\(x\),ylabel=\(y\),
+	]
+	\addplot[line width= 0.02cm,samples=1000,domain= 0.001:0.1] ({x},{cos((1/x)r)});
+	\addplot[line width= 0.02cm,samples=300,domain= 0.1:1.1] ({x},{cos((1/x)r)});
+	\end{axis}
+	\end{tikzpicture}
+	}
+	\] \pvspace{1.3cm}
+
+
+
+% 10/15
+\checkin{10/15} The \textit{Froude number}, $F_r$, is a dimensionless value that is used in the description of open channel flows. Specifically, it is the ratio of inertial and gravitational forces. Using this, we have $F_r= \dfrac{v}{\sqrt{gD}}$, where $v$ is the water velocity, $D$ is the hydraulic depth, and $g$ is the constant gravitational attraction. Given this, their rates of changes with respect to time are related by\dots
+	\[
+	\dfrac{dF_r}{dt}= \dfrac{\frac{dv}{dt}\, \sqrt{gD} - v \, \frac{\sqrt{g}}{2 \sqrt{D}}\, \frac{dD}{dt}}{gD}
+	\] \pspace
+
+\sol The statement is \textit{true}. Implicitly differentiating with respect to $t$, we have\dots
+	\[
+	\begin{gathered}
+	F_r= \dfrac{v}{\sqrt{gD}} \\
+	\dfrac{d}{dt} \,F_r= \dfrac{d}{dt} \left( \dfrac{v}{\sqrt{gD}} \right) \\
+	\dfrac{dF_r}{dt}= \dfrac{\dfrac{d}{dt}\, v \cdot \sqrt{gD} - \dfrac{d}{dt} ( \sqrt{g} \sqrt{D}) \cdot v}{\sqrt{gD}^2} \\
+	\dfrac{dF_r}{dt}= \dfrac{\dfrac{dv}{dt}\, \sqrt{gD} - \left( \sqrt{g}\, \dfrac{D'}{2\sqrt{D}} \right) \cdot v}{gD} \\
+	\dfrac{dF_r}{dt}= \dfrac{\frac{dv}{dt}\, \sqrt{gD} - v \, \frac{\sqrt{g}}{2 \sqrt{D}}\, \frac{dD}{dt}}{gD}
+	\end{gathered}
+	\]
+
+
+
+\newpage
+
+
+
+% 10/16
+\checkin{10/16} If one wants to find the rate of change of the distance between two objects, one at $\big(x_1(t), y_1(t) \big)$ and the other at $\big(x_2(t), y_2(t) \big)$, then one can implicitly differentiation $d^2= (x_1 - x_2)^2 + (y_1 - y_2)^2$ with respect to time, $t$. \pspace
+
+\sol The statement is \textit{true}. The distance between the objects at time $t$ is given by\dots
+	\[
+	d= \sqrt{ \big(x_1(t) - x_2(t) \big)^2 + \big(y_1(t) - y_2(t) \big)^2}
+	\]
+One can then implicitly differentiate with respect to time, $t$, to find the rate of change in the distance between the objects. 
+	\[
+	\begin{aligned}
+	d&= \sqrt{ \big(x_1(t) - x_2(t) \big)^2 + \big(y_1(t) - y_2(t) \big)^2} \\[0.2cm]
+	\dfrac{d}{dt} \, d&= \dfrac{d}{dt}\, \sqrt{ \big(x_1(t) - x_2(t) \big)^2 + \big(y_1(t) - y_2(t) \big)^2} \\[0.2cm]
+	d'&= \frac{1}{2} \left( \big(x_1(t) - x_2(t) \big)^2 + \big(y_1(t) - y_2(t) \big)^2 \right)^{-1/2} \cdot \\[0.2cm]
+	\phantom{d'}&\phantom{= -----} \left( 2 \big(x_1(t) - x_2(t) \big) \cdot \big(x_1'(t) - x_2'(t) \big) + 2 \big( y_1(t) - y_2(t) \big) \cdot \big( y_1'(t) - y_2'(t) \big) \right)  \\[0.2cm]
+	d'&= \dfrac{\big(x_1(t) - x_2(t) \big) \cdot \big(x_1'(t) - x_2'(t) \big) + \big( y_1(t) - y_2(t) \big) \cdot \big( y_1'(t) - y_2'(t)}{\sqrt{\big(x_1(t) - x_2(t) \big)^2 + \big(y_1(t) - y_2(t) \big)^2}}
+	\end{aligned}
+	\]
+Alternatively, we can square to avoid the square root and then implicitly differentiate: 
+	\[
+	\begin{aligned}
+	d&= \sqrt{ \big(x_1(t) - x_2(t) \big)^2 + \big(y_1(t) - y_2(t) \big)^2} \\[0.2cm]
+	d^2&= \big(x_1(t) - x_2(t) \big)^2 + \big(y_1(t) - y_2(t) \big)^2 \\[0.2cm]
+	\dfrac{d}{dt}\, d^2 &= \dfrac{d}{dt}\, \big(x_1(t) - x_2(t) \big)^2 + \big(y_1(t) - y_2(t) \big)^2 \\[0.2cm]
+	2d \cdot d' &= 2 \big(x_1(t) - x_2(t) \big) \cdot \big(x_1'(t) - x_2'(t) \big) + 2 \big(y_1(t) - y_2(t) \big) \cdot \big(y_1'(t) - y_2'(t) \big) \\[0.2cm]
+	d' &= \dfrac{\big(x_1(t) - x_2(t) \big) \cdot \big(x_1'(t) - x_2'(t) \big) + \big(y_1(t) - y_2(t) \big) \cdot \big(y_1'(t) - y_2'(t) \big)}{d} \\[0.2cm]
+	d' &= \dfrac{\big(x_1(t) - x_2(t) \big) \cdot \big(x_1'(t) - x_2'(t) \big) + \big(y_1(t) - y_2(t) \big) \cdot \big(y_1'(t) - y_2'(t) \big)}{\sqrt{ \big(x_1(t) - x_2(t) \big)^2 + \big(y_1(t) - y_2(t) \big)^2}}
+	\end{aligned}
+	\]
+
 
 
 
