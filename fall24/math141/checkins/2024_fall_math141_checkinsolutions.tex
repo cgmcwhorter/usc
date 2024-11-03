@@ -519,18 +519,25 @@ Alternatively, we can square to avoid the square root and then implicitly differ
 	d' &= \dfrac{\big(x_1(t) - x_2(t) \big) \cdot \big(x_1'(t) - x_2'(t) \big) + \big(y_1(t) - y_2(t) \big) \cdot \big(y_1'(t) - y_2'(t) \big)}{d} \\[0.2cm]
 	d' &= \dfrac{\big(x_1(t) - x_2(t) \big) \cdot \big(x_1'(t) - x_2'(t) \big) + \big(y_1(t) - y_2(t) \big) \cdot \big(y_1'(t) - y_2'(t) \big)}{\sqrt{ \big(x_1(t) - x_2(t) \big)^2 + \big(y_1(t) - y_2(t) \big)^2}}
 	\end{aligned}
-	\]
+	\] \pvspace{1.3cm}
 
 
 
+% 10/21
+\checkin{10/21} If $f(x)$ is a continuous function with $f(1)= 1$ and $f(5)= 4$, then there is an $x \in [1, 5]$ with $f(x)^2 + 4= 10$.  \pspace
+
+\sol The statement is \textit{true}. Because $f(x)$ is continuous, we know that $f(x)^2$ is continuous---being the product of continuous functions. Now $f(1)^2= 1^2= 1$ and $f(5)^2= 4^2= 16$. Observe that $f(x)^2 + 4= 10$ has a solution if and only if $f(x)^2= 6$. But $f(1)^2= 1 < 6 < 16= f(5)^2$. Therefore, by the Intermediate Value Theorem, there is a $c \in [1, 5]$ such that $f(c)^2= 6$. But then $f(c)^2 + 4= 6 + 4= 10$, i.e. there is a solution to $f(x)^2 + 4= 10$ on $[1, 5]$. 
 
 
 
+\newpage
 
 
 
+% 10/30
+\checkin{10/30} $\ds\int_{-1}^1 \sqrt{1 - x^2} \,dx= \frac{\pi}{2}$  \pspace
 
-
+\sol The statement is \textit{true}. Let $y= \sqrt{1 - x^2}$. We want to compute $\ds\int_{-1}^1 \sqrt{1 - x^2} \,dx= \int_{-1}^1 y(x) \,dx$. But if $y= \sqrt{1 - x^2}$, then $y^2= 1 - x^2$, which implies that $x^2 + y^2= 1$. But this is the circle with radius 1 centered at the origin. This shows us that $y= \sqrt{1 - x^2}$ on $[-1, 1]$ is the `upper half' of this unit circle. We know that $\ds\int_{-1}^1 \sqrt{1 - x^2} \,dx$ is the (signed) area between the curve and the $x$-axis. We know that the area of a circle is $\pi r^2$. For the whole unit circle, $A= \pi r^2= \pi (1^2)= \pi$. But then the area of the half circle is $\frac{\pi}{2}$. Therefore, $\ds\int_{-1}^1 \sqrt{1 - x^2} \,dx= \frac{\pi}{2}$. \pvspace{1.3cm}
 
 
 

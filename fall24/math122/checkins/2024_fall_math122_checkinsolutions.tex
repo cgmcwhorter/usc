@@ -156,6 +156,30 @@ This function is clearly everywhere increasing, so that $f'(x) > 0$. However, ob
 
 
 
+% 10/24
+\checkin{10/24} If $v(t)$ is a person's velocity at time $t$, then the total area between the graph of $v(t)$ and the $x$-axis (with area under the $x$-axis counted as negative) is the net change in the distance traveled. \pspace
+
+\sol The statement is \textit{true}. We approximate this area using the sum of areas of many rectangles. [If we want the \textit{exact} value, either we need to make a geometric argument or use an infinite amount of rectangles.] Picture the area of one of these rectangles: $A= bh$. The base of this rectangle is a change in the inputs---$t$, i.e. $\Delta t$. This has units of time. The height of this rectangle is $f(t)$ for some $t$, which has units of $v(t)$, e.g. m/s. But then the area of the rectangle has units of $A= \text{time} \cdot \text{distance/time}= \text{distance}$, where this distance can be negative (meaning the total distance is decreasing) if $v(t) < 0$. Adding these rectangles, we are summing distances. Therefore, the total area between the graph of $v(t)$ and the $x$-axis (with area under the $x$-axis counted as negative) is the net change in the distance traveled. \pvspace{1.3cm}
+
+
+
+% 10/29
+\checkin{10/29} Because $x^2 + y^2= 1$ is a circle with radius 1 centered at $(0, 0)$, $\ds\int_{-1}^1 \sqrt{1 - x^2} \,dx= \frac{\pi}{2}$. \pspace
+
+\sol The statement is \textit{true}. Let $y= \sqrt{1 - x^2}$. We want to compute $\ds\int_{-1}^1 \sqrt{1 - x^2} \,dx= \int_{-1}^1 y(x) \,dx$. But if $y= \sqrt{1 - x^2}$, then $y^2= 1 - x^2$, which implies that $x^2 + y^2= 1$. But this is the circle with radius 1 centered at the origin. This shows us that $y= \sqrt{1 - x^2}$ on $[-1, 1]$ is the `upper half' of this unit circle. We know that $\ds\int_{-1}^1 \sqrt{1 - x^2} \,dx$ is the (signed) area between the curve and the $x$-axis. We know that the area of a circle is $\pi r^2$. For the whole unit circle, $A= \pi r^2= \pi (1^2)= \pi$. But then the area of the half circle is $\frac{\pi}{2}$. Therefore, $\ds\int_{-1}^1 \sqrt{1 - x^2} \,dx= \frac{\pi}{2}$. \pvspace{1.3cm}
+
+
+
+% 10/31
+\checkin{10/31} Estimating $\ds\int_1^9 f(x) \;dx$ using a right hand sum with sixteen equal width rectangles means you would use rectangles with width 0.5 and the first rectangle would have height $f(1)$. \pspace
+
+\sol The statement is \textit{false}. We want to approximate $\ds\int_a^b f(x) \;dx$ with $a= 1$ and $b= 9$ using $n= 16$ equal width rectangles. Because the rectangles have equal width, we can break the internal into $n$ equal pieces. Then each rectangle will have width $\Delta x= \frac{b - a}{n}= \frac{9 - 1}{16}= \frac{8}{16}= \frac{1}{2}= 0.5$. Because the interval for this integral is $[1, 9]$ and we begin at $x= 1$, the intervals we use for the approximation are $[1, 1.5]$, $[1.5, 2]$, $[2, 2.5]$, \dots, $[8.5, 9]$. If we use a right hand sum, then we use the value on the `right' of each interval. But then the height of the first box would be the `height' at $x= 1.5$, i.e. $f(1.5)$. Therefore, the statement is false as it uses $f(1)$ for the initial box height----the one use for the \textit{left} hand sum. \pvspace{1.3cm}
+
+
+
+
+
+
 
 
 
