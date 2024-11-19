@@ -2,6 +2,9 @@
 \usepackage[lmargin=1in,rmargin=1in,bmargin=1in,tmargin=1in]{geometry}
 \usepackage{checkins}
 
+% Shaded Lines - Area Between Curves
+\usepgfplotslibrary{fillbetween}
+\usetikzlibrary{patterns}
 
 % -------------------
 % Content
@@ -506,7 +509,7 @@ One can then implicitly differentiate with respect to time, $t$, to find the rat
 	\dfrac{d}{dt} \, d&= \dfrac{d}{dt}\, \sqrt{ \big(x_1(t) - x_2(t) \big)^2 + \big(y_1(t) - y_2(t) \big)^2} \\[0.2cm]
 	d'&= \frac{1}{2} \left( \big(x_1(t) - x_2(t) \big)^2 + \big(y_1(t) - y_2(t) \big)^2 \right)^{-1/2} \cdot \\[0.2cm]
 	\phantom{d'}&\phantom{= -----} \left( 2 \big(x_1(t) - x_2(t) \big) \cdot \big(x_1'(t) - x_2'(t) \big) + 2 \big( y_1(t) - y_2(t) \big) \cdot \big( y_1'(t) - y_2'(t) \big) \right)  \\[0.2cm]
-	d'&= \dfrac{\big(x_1(t) - x_2(t) \big) \cdot \big(x_1'(t) - x_2'(t) \big) + \big( y_1(t) - y_2(t) \big) \cdot \big( y_1'(t) - y_2'(t)}{\sqrt{\big(x_1(t) - x_2(t) \big)^2 + \big(y_1(t) - y_2(t) \big)^2}}
+	d'&= \dfrac{\big(x_1(t) - x_2(t) \big) \cdot \big(x_1'(t) - x_2'(t) \big) + \big( y_1(t) - y_2(t) \big) \cdot \big( y_1'(t) - y_2'(t) \big)}{\sqrt{\big(x_1(t) - x_2(t) \big)^2 + \big(y_1(t) - y_2(t) \big)^2}}
 	\end{aligned}
 	\]
 Alternatively, we can square to avoid the square root and then implicitly differentiate: 
@@ -540,6 +543,101 @@ Alternatively, we can square to avoid the square root and then implicitly differ
 \sol The statement is \textit{true}. Let $y= \sqrt{1 - x^2}$. We want to compute $\ds\int_{-1}^1 \sqrt{1 - x^2} \,dx= \int_{-1}^1 y(x) \,dx$. But if $y= \sqrt{1 - x^2}$, then $y^2= 1 - x^2$, which implies that $x^2 + y^2= 1$. But this is the circle with radius 1 centered at the origin. This shows us that $y= \sqrt{1 - x^2}$ on $[-1, 1]$ is the `upper half' of this unit circle. We know that $\ds\int_{-1}^1 \sqrt{1 - x^2} \,dx$ is the (signed) area between the curve and the $x$-axis. We know that the area of a circle is $\pi r^2$. For the whole unit circle, $A= \pi r^2= \pi (1^2)= \pi$. But then the area of the half circle is $\frac{\pi}{2}$. Therefore, $\ds\int_{-1}^1 \sqrt{1 - x^2} \,dx= \frac{\pi}{2}$. \pvspace{1.3cm}
 
 
+
+% 11/04
+\checkin{11/04} Both $\sin^2 x$ and $-\frac{1}{2} \cos(2x)$ are antiderivatives for $\sin(2x)$, i.e. they are solutions to $\ds\int \sin(2x) \,dx$. \pspace
+
+\sol The statement is \textit{true}. Recall that an antiderivative (if it exists) for a function $f(x)$ is a function $F(x)$ such that $F'(x)= f(x)$. Observe that\dots
+	\[
+	\begin{aligned}
+	\dfrac{d}{dx} \, \sin^2 x&= 2 \sin x \cdot \cos x= \sin(2x) \\[0.3cm]
+	\dfrac{d}{dx} \, -\frac{1}{2}\, \cos(2x)&= -\dfrac{1}{2}\, \cdot -\sin(2x) \cdot 2= \sin(2x)
+	\end{aligned}
+	\]
+Therefore, these are both antiderivatives of $\sin(2x)$, i.e. solutions to $\ds\int \sin(2x) \,dx$. For the most general form of a antiderivative for $\sin(2x)$ is $\ds\int \sin(2x) \,dx= -\dfrac{\cos(2x)}{2} + C$. Observe that this also shows there is some $C$ such that $-\frac{1}{2} \cos(2x) + C= \sin^2 x$. Recalling that $\sin^2 x= \frac{1 - \cos(2x)}{2}$, we see that $C= \frac{1}{2}$. One can also substitute any $x$ value and then solve for $C$ to find that $C= \frac{1}{2}$. \pvspace{1.3cm}
+
+
+
+% 11/06
+\checkin{11/06} $\ds \dfrac{d}{dx} \int_{\sin x}^9 e^{t^3} \;dt= 3x^2 e^{\sin^3 x} + C$ \pspace
+
+\sol The statement is \textit{false}. Recall that from the Second Fundamental Theorem of Calculus, we have\dots
+	\[
+	\dfrac{d}{dx} \int_c^{g(x)} f(t) \,dt= f \big(g(x) \big) \cdot g'(x)
+	\]
+But observe that the \textit{lower limit} is the constant and one differentiates the upper limit---not the integrant. Moreover, there is never a `$+ C$' in these problems. We must first rewrite the integral and then properly apply the theorem:
+	\[
+	 \dfrac{d}{dx} \int_{\sin x}^9 e^{t^3} \;dt= - \dfrac{d}{dx} \int_9^{\sin x} e^{t^3} \;dt= -e^{\sin^3 x} \cdot \dfrac{d}{dx} \, (\sin x)= -e^{\sin^3 x} \cos x 
+	\]
+
+
+
+\newpage
+
+
+
+% 11/11
+\checkin{11/11} The area bound by the curves $y= x^3$ and $y= x$ is given by $\ds\int_{-1}^1 (x^3 - x) \; dx$. \pspace
+
+\sol The statement is \textit{false}. Recall that when we say the area bound by curves, we mean that to be the \textit{area} not the \textit{signed/directed area}; that is, the area bound by curves must be zero or bigger, i.e. nonnegative. We first find the intersection of these curves. If $x^3= x$, then $x^3 - x= 0$. But $x^3 - x= x(x^2 - 1)= x(x - 1)(x + 1)$. Therefore, the solutions are $x= -1$, $x= 0$, and $x= 1$. If one na\"ively integrates, we find that $\ds\int_{-1}^1 (x^3 - x) \; dx= 0$. But yet, we can see on the plot below that there is indeed area between them! 
+	\[
+	\fbox{
+	\begin{tikzpicture}[scale=1,every node/.style={scale=0.5}]
+	\begin{axis}[
+	grid=both,
+	axis lines=middle,
+	ticklabel style={fill=blue!5!white},
+	xmin= -1.5, xmax=1.5,
+	ymin= -1.5, ymax=1.5,
+	xtick={-2,-1,...,2},
+	ytick={-2,-1,...,2},
+	minor tick = {-2.5,-2,...,2.5},
+	xlabel=\(x\),ylabel=\(y\),
+	]
+	\addplot[name path= F, line width= 0.02cm,samples=80,domain= -1.7:1.7] ({x},{x^3 });
+	\addplot[name path= G, line width= 0.02cm,samples=10,domain= -3.6:3.5] ({x},{x});
+	
+	\addplot[color=gray!50] fill between[of= F and G, soft clip={domain= -1:1}];
+	\addplot[pattern= north east lines, pattern color=gray!10] fill between[of=F and G, soft clip={domain= -1:1}];
+	\end{axis}
+	\end{tikzpicture}
+	}
+	\]
+The issue is that some of this area was treated as negative because the area was not computed properly. To make sure that the area is treated as `positive', we need to be sure that we integrate the `top' curve minus the `bottom' curve. But which is the `top' flips across this region. On $[-1, 0]$, $y= x^3$ is the `top' curve, while on $[0, 1]$, $y= x$ is the `top' curve. Therefore, to compute the area correctly, we need to compute the following:
+	\[
+	\begin{gathered}
+	A= \int_{-1}^0 (x^3 - x) \;dx + \int_0^1 (x - x^3) \;dx \\[0.3cm]
+	A= \left( \frac{1}{4}\, x^4 - \frac{1}{2}\, x^2 \right) \bigg|_{-1}^0 + \left( \frac{1}{2}\, x^2 - \frac{1}{4}\, x^4 \right) \bigg|_0^1 \\[0.3cm]
+	A= \left[ \left( 0 - 0 \right) - \left( \dfrac{1}{4} - \dfrac{1}{2} \right) \right] + \left[ \left( \dfrac{1}{2} - \dfrac{1}{4} \right) - \left( 0 - 0 \right) \right] \\[0.3cm]
+	A= \left[ 0 - \left(- \dfrac{1}{4} \right) \right] + \left[ \dfrac{1}{4} - 0 \right] \\[0.3cm]
+	A= \dfrac{1}{4} + \dfrac{1}{4} \\[0.3cm]
+	A= \dfrac{1}{2}
+	\end{gathered}
+	\] \pvspace{1.3cm}
+
+
+
+\newpage
+
+
+
+% 11/13
+\checkin{11/3} The substitution $u= \sqrt{x}$ allows one to write the integral $\ds\int\sqrt{x} \, e^{\sqrt{x}}\;dx$ as $\ds\frac{1}{2} \int e^u \;du$. Therefore, $\ds\int \sqrt{x} \, e^{\sqrt{x}} \;dx= \frac{1}{2}\, e^{\sqrt{x}} + C$. \pspace
+
+\sol The statement is \textit{false}. If this were the case, then $\dfrac{d}{dx} \,(\frac{1}{2}\, e^{\sqrt{x}} + C)= \frac{1}{2}\, e^{\sqrt{x}} \cdot \frac{1}{2 \sqrt{x}} = \frac{e^{\sqrt{x}}}{4 \sqrt{x}} \neq \sqrt{x} \, e^{\sqrt{x}}$. Observe that if one chooses $u= \sqrt{x}$, then $du= \frac{1}{2\sqrt{x}} \,dx$. But then $dx= 2 \sqrt{x} \;du$. Therefore, the correctly substituted integral is\dots
+	\[
+	\ds\int\sqrt{x} \, e^{\sqrt{x}}\;dx= \int \sqrt{x} \, e^u \cdot 2 \sqrt{x} \; du= \int (u \cdot e^u \cdot 2u) \;du= \int 2u^2 e^u \;du
+	\]
+We have---although we do not know this yet---that\dots
+	\[
+	 \int 2u^2 e^u \;du= 2 u^2 e^u - 4 u e^u + 4e^u + C= 2 (\sqrt{x})^2 e^{\sqrt{x}} - 4 \sqrt{x}\, e^{\sqrt{x}} + 4e^{\sqrt{x}} + C= 2x e^{\sqrt{x}} - 4 \sqrt{x}\, e^{\sqrt{x}} + 4e^{\sqrt{x}} + C
+	\] \pvspace{1.3cm}
+
+
+
+
+
+18To evaluate $\ds\int x(x^3 - 2x)^2$, $u$-substitution would be `most appropriate.'
 
 
 

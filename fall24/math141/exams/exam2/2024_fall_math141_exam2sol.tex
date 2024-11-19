@@ -1,0 +1,438 @@
+\documentclass[12pt,letterpaper]{exam}
+\usepackage[lmargin=1in,rmargin=1in,tmargin=1in,bmargin=1in]{geometry}
+\usepackage{../style/exams}
+
+\newcommand{\lh}{\stackrel{\text{L.H.}}{=}}
+\DeclareMathOperator{\SA}{SA}
+
+% -------------------
+% Course & Exam Information
+% -------------------
+\newcommand{\course}{MATH 141: Exam 2}
+\newcommand{\term}{Fall --- 2024}
+\newcommand{\examdate}{10/23/2024}
+\newcommand{\timelimit}{75 Minutes}
+
+\setbool{hideans}{false} % Student: True; Instructor: False
+
+% -------------------
+% Content
+% -------------------
+\begin{document}
+
+\examtitle
+\instructions{Write your name on the appropriate line on the exam cover sheet. This exam contains \numpages\ pages (including this cover page) and \numquestions\ questions. Check that you have every page of the exam. Answer the questions in the spaces provided on the question sheets. Be sure to answer every part of each question and show all your work. If you run out of room for an answer, continue on the back of the page --- being sure to indicate the problem number.} 
+\scores
+\bottomline
+\newpage
+
+
+% -------------------
+% Questions
+% -------------------
+\begin{questions}
+
+% Question 1
+\newpage
+\question[10] L'H\^{o}pital's rule will not compute the limit below---the resulting limits essentially `cycle.' Compute the limit below {\itshape without the use of l'H\^{o}pital's}.
+	\[
+	\lim_{x \to \infty} \dfrac{2x + 5}{\sqrt{3x^2 + 1}}
+	\] \pvspace{0.8cm}
+
+\tsol {\itshape Observe that when $x$ is `large', then $3x^2 + 1 \approx 3x^2$ so that $\sqrt{3x^2 + 1} \approx \sqrt{3x^2}= \sqrt{3} \, x$. But then we have\dots \par\vspace{0.1cm}
+	\[
+	\begin{aligned}
+	\lim_{x \to \infty} \dfrac{2x + 5}{\sqrt{3x^2 + 1}}&= \lim_{x \to \infty} \dfrac{2x + 5}{\sqrt{3x^2 + 1}} \cdot \dfrac{1/x}{1/x} \\[0.3cm]
+	&= \lim_{x \to \infty} \dfrac{ \;\;\frac{2x}{x} + \frac{5}{x}\;\;}{\frac{\sqrt{3x^2 + 1}}{x}} \\[0.3cm]
+	&= \lim_{x \to \infty} \dfrac{ \;\;2 + \frac{5}{x}\;\;}{\frac{\sqrt{3x^2 + 1}}{\sqrt{x^2}}} \\[0.3cm]
+	&= \lim_{x \to \infty} \dfrac{ \;\;2 + \frac{5}{x}\;\;}{\sqrt{\frac{3x^2 + 1}{x^2}}} \\[0.3cm]
+	&= \lim_{x \to \infty} \dfrac{ \;\;2 + \frac{5}{x}\;\;}{\sqrt{3 + \frac{1}{x^2}}} \\[0.3cm]
+	&= \dfrac{2 + 0}{\sqrt{3 + 0}} \\[0.3cm]
+	&= \dfrac{2}{\sqrt{3}}
+	\end{aligned}
+	\] \vfill
+
+{\scriptsize Note. A rather clever approach which requires some non-obvious (but nevertheless true) facts: suppose that $\ds\lim_{x \to \infty} f(x)^2= L \geq 0$ and $f(x) \geq 0$ on $[0, \infty)$. Because $f(x) \geq 0$ and $\sqrt{x}$ is continuous, we know that $\ds\lim_{x \to \infty} f(x)= \lim_{x \to \infty} |f(x)|= \lim_{x \to \infty} \sqrt{f(x)^2}= \sqrt{\lim_{x \to \infty} f(x)^2}= \sqrt{L}$. Because $\left( \frac{2x + 5}{\sqrt{3x^2 + 1}} \right)^2= \frac{(2x + 5)^2}{3x^2 + 1}= \frac{4x^2 + 20x + 25}{3x^2 + 1}$, we know that ${\ds\lim_{x \to \infty}} \frac{4x^2 + 20x + 25}{3x^2 + 1}= \frac{4}{3}$. But then from our remarks, ${\ds\lim_{x \to \infty}} \frac{2x + 5}{\sqrt{3x^2 + 1}}= \sqrt{\frac{4}{3}}= \frac{2}{\sqrt{3}}$.}
+}
+
+
+
+% Question 2
+\newpage
+\question[10] Let $f$ be the function $f(x)= 2x^3 - 3x^2 - 12x + 7$. Show that $f(x)$ has a root on $[0, 1]$. Be sure to show all your work and fully justify your response. \pvspace{0.8cm}
+
+\tsol {\itshape If $f(x)$ has a root on $[0, 1]$, then there is a $c \in [0, 1]$ such that $f(c)= 0$. Now observe\dots
+	\begin{itemize}
+	\item The function $f(x)= 2x^3 - 3x^2 - 12x + 7$ is continuous on $[0, 1]$ because it is a polynomial and polynomials are everywhere continuous. \par\vspace{0.2cm}
+	\item $f(0)= 2(0^3) - 3(0^2) - 12(0) + 7= 2(0) - 3(0) - 12(0) + 7= 0 - 0 - 0 + 7= 7$. \par\vspace{0.2cm}
+	\item $f(1)= 2(1^3) - 3(1^2) - 12(1) + 7= 2(1) - 3(1) - 12(1) + 7= 2 - 3 - 12 + 7= -6$. \par\vspace{0.2cm}
+	\item $f(1) < 0 < f(0)$
+	\end{itemize}
+Therefore, by the Intermediate Value Theorem, there exists $c \in [0, 1]$ such that $f(c)= 0$. But then $c$ is a root of $f(x)$ in $[0, 1]$. 
+}
+
+
+
+% Question 3
+\newpage
+\question[10] An open rectangular storage box is going to be designed to hold 36,000~cubic inches. The base of the box will be twice as long as it is wide. Find the dimensions of the box that will require the least amount of material, i.e. the box with minimal surface area. {\itshape For full credit, show all your work and justify that your dimensions actually give the minimal surface area.} \pspace
+
+\tsol {\footnotesize \itshape We first draw a picture.
+	\[
+	\begin{tikzpicture}[scale=0.8]
+	\draw[line width=0.03cm,fill=gray!85] (0.9,1.5) -- (3,1.5) -- (4,3) -- (1,3) -- (0.9,1.5);
+	\draw[line width=0.03cm,fill=gray!85] (0,1.5) -- (0.9,1.50) -- (1,1.7) -- (1,3) -- (0,1.5);
+	\draw[line width=0.03cm,fill=gray!50] (0,0) -- (3,0) -- (3,1.5) -- (0,1.5) -- (0,0);
+	\draw[line width=0.03cm,fill=gray!50] (3,0) -- (4,1.7) -- (4,3) -- (3,1.5) -- (3,0);
+	\draw[line width=0.03cm] (0,1.5) -- (1,3) -- (4,3) -- (3,1.5);
+	\draw[line width=0.03cm] (4,3) -- (4,1.7) -- (3,0);
+	\draw[line width=0.03cm,dotted] (4,1.7) -- (3.12,1.7);
+	\draw[line width=0.03cm] (3.12,1.7) -- (1,1.7) -- (1,3);
+	\draw[line width=0.03cm] (1,1.7) -- (0.9,1.5);
+	\draw[line width=0.03cm,dotted] (0.9,1.5) -- (0,0);
+	\node at (1.5,-0.4) {$\ell$};
+	\node at (3.9,0.9) {$w$};
+	\node at (4.3,2.4) {$h$};
+	\end{tikzpicture}
+	\]
+We want the dimensions of the box which minimize the surface area $\SA= \ell w + 2 \ell h + 2 w h$ (notice there is no top because it is an open box). We know the volume is 36,000 cubic inches, i.e. $V= 36000$. But we know also that $V= \ell w h$. But then\dots
+	\[
+	V= \ell w h \Longrightarrow 36000= \ell wh \Longrightarrow h= \dfrac{36000}{\ell w}
+	\]
+But then\dots
+	\[
+	\SA= \ell w + 2 \ell h + 2 w h= \ell w + 2 \ell \cdot \dfrac{36000}{\ell w} + 2 w \cdot \dfrac{36000}{\ell w}= \ell w + \dfrac{72000}{w} + \dfrac{72000}{\ell}
+	\]
+We are told that the length is twice the width, i.e. $\ell= 2w$. But then\dots
+	\[
+	\SA= \ell w + \dfrac{72000}{w} + \dfrac{72000}{\ell}= (2w) w + \dfrac{72000}{w} + \dfrac{72000}{2w}= 2w^2 + \dfrac{72000}{w} + \dfrac{36000}{w}= 2w^2 + \dfrac{108000}{w}
+	\]
+We want to find the minimum of $\SA$ with respect to $w$ for $w \in (0, \infty)$. We have $\SA'= 4w - \frac{108000}{w^2}$. We know that $w \neq 0$ (because $V \neq 0$), so that $w= 0$ is not a critical value. Setting $\SA$ to zero, we have\dots
+	\[
+	\begin{gathered}
+	\SA= 0 \\
+	4w - \frac{108000}{w^2}= 0 \\
+	4w= \dfrac{108000}{w^2} \\
+	4w^3= 108000 \\
+	w^3= 27000 \\
+	w= \sqrt[3]{27000} \\
+	w= 30 \text{ in}
+	\end{gathered}
+	\]
+We confirm that this is a minimum with the first derivative test:
+	\[
+	\begin{tikzpicture}
+	\draw[line width=0.03cm,<->] (-2,0) -- (2,0);
+	\draw[line width=0.02cm] (0,-0.15) -- (0,0.15);
+	\draw[line width=0.03cm] (-0.4,0.7) -- (-0.2,0.4) -- (0.2,0.4) -- (0.4,0.7);
+	\node at (-1,0.4) {$-$};
+	\node at (1,0.4) {$+$};
+	\node at (0,-0.4) {$30$};
+	\node at (2.4,0) {$\SA'$};
+	\end{tikzpicture}
+	\]
+Alternatively, we have $\SA''(w)= 4 + \frac{216000}{w^3}$, so that $\SA''(30)= 4 + \frac{216000}{30^3}= 4 + \frac{216000}{27000}= 4 + 8= 12 > 0$. Now if $w= 30 \text{ in}$, then $\ell= 2w= 2(30)= 60 \text{ in}$. But then $h= \frac{36000}{\ell w}= \frac{36000}{60(30)}= \frac{36000}{1800}= 20 \text{ in}$. Therefore, the dimensions of the box with minimal surface area, i.e. minimal material, is\dots
+	\[
+	20 \text{ in } \times 30 \text{ in } \times 60 \text{ in}
+	\]
+}
+
+
+
+% Question 4
+\newpage
+\question[10] Showing all your work, compute the following limits: \par\vspace{0.3cm}
+	\begin{enumerate}[(a)]
+	\item $\ds\lim_{x \to 0} \dfrac{\sin^2(x)}{\cos(x) - 1} \lh \lim_{x \to 0} \dfrac{2 \sin x \cos x}{-\sin x} \lh \lim_{x \to 0} \dfrac{2 \cos^2 x - 2 \sin^2 x}{-\cos x}= \dfrac{2(1) - 2(0)}{-1}= -2$ \vspace{0.75cm}
+	
+	{\hfill \itshape OR \hfill} \vspace{0.75cm}
+	
+	\scalebox{0.92}{$\ds\lim_{x \to 0} \dfrac{\sin^2(x)}{\cos(x) - 1}= \lim_{x \to 0} \dfrac{1 - \cos^2 x}{\cos(x) - 1}= \lim_{x \to 0} \dfrac{(1 - \cos x)(1 + \cos x)}{\cos x - 1}= \lim_{x \to 0} -(1 + \cos x)= -(1 + \cos 0)= -2$} \vspace{2.95cm}
+	
+	\item $\ds\lim_{x \to \infty} 2x \tan\left( \dfrac{3}{x} \right)= \scalebox{1}{$\ds\lim_{x \to \infty} \dfrac{2\tan \left( \frac{3}{x} \right)}{\frac{1}{x}} \lh \lim_{x \to \infty} \dfrac{2 \sec^2 \left( \frac{3}{x} \right) \cdot \frac{-3}{x^2}}{\frac{-1}{x^2}}= \lim_{x \to \infty} 6 \sec^2 \left( \frac{3}{x} \right)= 6 \sec^2(0)= 6$}$ \vspace{0.75cm}
+	
+	{\hfill \itshape OR \hfill} \vspace{0.75cm}
+	
+	\scalebox{1}{$\ds\lim_{x \to \infty} 2x \tan\left( \dfrac{3}{x} \right)= \lim_{x \to \infty} \dfrac{2x \sin \left( \frac{3}{x} \right)}{\cos \left( \frac{3}{x} \right)}= \lim_{x \to \infty} 2 \cdot 3\; \dfrac{\sin \left( \frac{3}{x} \right)}{\frac{3}{x}} \cdot \dfrac{1}{\cos \left( \frac{3}{x} \right)}= 6 \cdot 1 \cdot \dfrac{1}{\cos(0)}= 6$} \vspace{2.63cm}
+	
+	\item $\ds\lim_{x \to 0^-} \dfrac{2x - e^x + 1}{x^2} \lh \lim_{x \to 0^-} \underbrace{\dfrac{2 - e^x}{_{\phantom{\int}} 2x_{\phantom{\int}}}}_{\substack{2x \to 0 \\ 2x < 0 \\ 2 - e^x > 0}}= -\infty$ \vfill
+	\end{enumerate}
+
+
+
+% Question 5
+\newpage
+\question[10] A trisectrix of Maclaurin is a curve that can be given by the equation below:
+	\[
+	x^3 + xy^2= 3x^2 - y^2
+	\] 
+Find the tangent line to this curve at the point $(1, -1)$. \pvspace{1cm}
+
+\tsol {\itshape First, we implicitly differentiate:
+	\[
+	\begin{gathered}
+	x^3 + xy^2= 3x^2 - y^2 \\[0.3cm]
+	\dfrac{d}{dx} \left( x^3 + xy^2 \right)= \dfrac{d}{dx} \left( 3x^2 - y^2 \right) \\[0.3cm]
+	3x^2 + \left( y^2 + 2xy \; \dfrac{dy}{dx} \right)= 6x - 2y \; \dfrac{dy}{dx}
+	\end{gathered}
+	\]
+We then use the point $(1, -1)$:
+	\[
+	\begin{gathered}
+	3x^2 + \left( y^2 + 2xy \; \dfrac{dy}{dx} \right)= 6x - 2y \; \dfrac{dy}{dx} \\[0.3cm]
+	3(1^2) + \left( (-1)^2 + 2(1)(-1) \; \dfrac{dy}{dx} \right)= 6(1) - 2(-1) \; \dfrac{dy}{dx} \\[0.3cm]
+	4 - 2\; \dfrac{dy}{dx}= 6 + 2 \; \dfrac{dy}{dx} \\[0.3cm] 
+	4\; \dfrac{dy}{dx}= -2 \\[0.3cm]
+	\dfrac{dy}{dx}= -\dfrac{1}{2}
+	\end{gathered}
+	\]
+Therefore, the tangent line is\dots
+	\[
+	\begin{gathered}
+	\ell(x)= y_0 + m(x - x_0) \\[0.3cm]
+	\ell(x)= -1 - \dfrac{1}{2} \, (x - 1)
+	\end{gathered}
+	\] \vfill
+
+{\small Note. Before using the point $(1, -1)$, one could explicitly solve for $\frac{dy}{dx}$ and find that $\frac{dy}{dx}= \frac{6x - y^2 - 3x^2}{2(y + xy)} \big|_{(x,y)=(1,-1)}= \frac{6(1) - (-1)^2 - 3(1^2)}{2(-1 + 1(-1))}= \frac{6 - 1 -3}{2(-1 - 1)}= \frac{2}{-4}= -\frac{1}{2}$.}
+}
+
+
+
+% Question 6
+\newpage
+\question[10] Consider the function $f(x)= \sqrt{x}$. \par\vspace{0.1cm}
+	\begin{parts}
+	\part Find the linearization of $f(x)$ at $x= 64$. {\itshape Do not simplify your answer.} \par\vspace{0.5cm}
+	{\itshape
+		\[
+		\begin{aligned}
+		f(64)&= \sqrt{64}= 8 \\
+		\\
+		f'(x)&= \dfrac{1}{2 \sqrt{x}} \\
+		f'(64)&= \dfrac{1}{2 \sqrt{64}}= \dfrac{1}{2(8)}= \dfrac{1}{16}
+		\end{aligned}
+		\] \par\vspace{0.3cm}
+	Therefore, the linearization is\dots \par\vspace{0.3cm}
+		\[
+		\begin{gathered}
+		\ell(x)= y_0 + m (x - x_0) \\[0.3cm]
+		\ell(x)= 8 + \dfrac{1}{16} (x - 64)
+		\end{gathered}
+		\] \par\vspace{2.2cm}
+	}
+	
+	\part Use (a) to approximate $\sqrt{60}$. Express your answer as a decimal. \par\vspace{0.5cm}
+	{\itshape
+	We have\dots
+		\[
+		\sqrt{60}\approx \ell(60)= 8 + \dfrac{1}{16} \, (60 - 64)= 8 - \dfrac{4}{16}= 8 - \dfrac{1}{4}= 8 - 0.25= 7.75
+		\] \pspace
+	Note. The actual value is $\sqrt{60} \approx 7.74596669\ldots$. Therefore, our approximation has only a $0.0520\%$ error! \vfill
+	}
+	\end{parts}
+
+
+
+% Question 7
+\newpage
+\question[10] Showing all your work, compute the following limits: \par\vspace{0.3cm}
+	\begin{enumerate}[(a)]
+	\item $\ds\lim_{x \to \infty} \dfrac{\ln \left(3 + e^{2x} \right)}{5x} \lh \scalebox{1}{$\ds\lim_{x \to \infty} \dfrac{\;\;\frac{1}{3 + e^{2x}} \cdot 2e^{2x}\;\;}{5}= \lim_{x \to \infty} \dfrac{2e^{2x}}{15 + 5e^{2x}} \lh \lim_{x \to \infty} \dfrac{4e^{2x}}{10 e^{2x}}= \lim_{x \to \infty} \dfrac{4}{10}= \dfrac{2}{5}$}$ \par\vspace{3cm}
+	
+	\item $\ds\lim_{x \to 0^+} \left( \dfrac{1}{x} - \dfrac{1}{e^x - 1} \right)= \dfrac{1}{2}$ \pspace
+		{
+		\[
+		\hspace{-3.5cm}\scalebox{0.82}{$\ds\lim_{x \to 0^+} \left( \dfrac{1}{x} - \dfrac{1}{e^x - 1} \right)= \lim_{x \to 0^+} \left( \dfrac{e^x - 1}{x(e^x - 1)} - \dfrac{x}{x(e^x - 1)} \right)= \lim_{x \to 0^+} \dfrac{e^x - 1 - x}{x(e^x - 1)} \lh \lim_{x \to 0^+} \dfrac{e^x - 1}{(e^x - 1) + xe^x} \lh \lim_{x \to 0^+} \dfrac{e^x}{e^x + (e^x + xe^x)} = \dfrac{1}{1 + 1 + 0}= \dfrac{1}{2}$}
+		\] 
+		} \vfill
+	
+	
+	
+	\item $\ds\lim_{x \to \infty} \left(1 - \dfrac{2}{x} \right)^x= \dfrac{1}{e^2}$ \pspace
+		{\small
+		\[
+		\begin{aligned}
+		y&= \lim_{x \to \infty} \left(1 - \dfrac{2}{x} \right)^x \\
+		\ln y&= \lim_{x \to \infty} \ln \left(1 - \dfrac{2}{x} \right)^x \\
+		\ln y&= \lim_{x \to \infty} x \ln \left(1 - \dfrac{2}{x} \right) \\
+		\ln y&= \lim_{x \to \infty} \dfrac{\ln \left(1 - \frac{2}{x} \right)}{\frac{1}{x}} \\
+		\ln y&\lh \lim_{x \to \infty} \dfrac{\frac{1}{1 - \frac{2}{x}} \cdot \frac{2}{x^2}}{\frac{-1}{x^2}} \\
+		\ln y&= \lim_{x \to \infty} \dfrac{-2}{1 - \frac{2}{x}} \\
+		\ln y&= \frac{-2}{1 - 0} \\
+		\ln y&= -2 \\
+		y&= e^{-2}
+		\end{aligned}
+		\]
+		} \vfill
+	{\footnotesize \itshape Alternatively, use the fact that $\ds\lim_{x \to \infty} \left(1 + \frac{1}{x} \right)^x= e$, so that $\ds\lim_{x \to \infty} \left(1 - \frac{2}{x} \right)^x= \lim_{x \to \infty} \left(1 + \frac{-2}{x} \right)^x= \lim_{x \to \infty} \left[ \left(1 + \frac{1}{x/-2} \right)^{x/-2} \right]^{-2}= e^{-2}$.}
+	\end{enumerate}
+
+
+
+% Question 8
+\newpage
+\question[10] A spotlight on the ground is illuminating a wall that is 40~ft away from the spotlight. A person that is 6~ft tall begins walking from the spotlight towards the wall at a speed of 6~ft/sec. How fast is the height of the resulting shadow along the wall changing when the person is 15~ft away from the spotlight? \par\vspace{0.3cm}
+
+\tsol {\footnotesize\itshape We first diagram the situation, letting $H$ be the height of the shadow along the wall, $h$ be the height of the person, $s$ be the distance to the spotlight, and $w$ be the distance to the wall:
+	\[
+	\begin{tikzpicture}[scale=0.6]
+	\draw[line width=0.015cm] (0,0) -- (8,0); % Ground
+	\draw[line width=0.08cm] (0,0) -- (0,3.5); % Wall
+	% Spotlight
+		\draw[draw=none,fill=yellow!10!white] (5.8,0.64) circle (0.63); 
+		\draw[draw=none,fill=yellow!20!white] (6.1,0.54) circle (0.53); 
+		\draw[draw=none,fill=yellow!40!white] (6.4,0.44) circle (0.43); 
+		\draw[draw=none,fill=yellow!60!white] (6.7,0.34) circle (0.33); 
+		\draw[draw=none,fill=yellow] (6.9,0.25) circle (0.23); 
+		\draw[draw=none,fill=black] (7,0.11) circle (0.12);
+	% Wall Illumination
+		\draw[draw=none,fill=yellow!80!white] (0.2,2.95) -- (0.2,3.5) -- (0.07,3.5) -- (0.07,2.95);
+	% Person
+		\draw[line width=0.03cm] (3.5,1.2) circle (0.3); % head
+		\draw[line width=0.03cm] (3.5,0.9) -- (3.5,0.4); % body
+		\draw[line width=0.03cm] (3.5,0.4) -- (3.3,0); % left leg
+		\draw[line width=0.03cm] (3.5,0.4) -- (3.7,0); % right leg
+		\draw[line width=0.03cm] (3.5,0.7) -- (3.3,0.5); % left arm
+		\draw[line width=0.03cm] (3.5,0.7) -- (3.7,0.5); % right arm
+	% Dotted Line
+	\draw[line width=0.03cm,dotted] (7,0.11) -- (0,3.0);
+	% Labels
+	\node at (1.75,-0.3) {$w$};
+	\node at (5.4,-0.3) {$s$};
+	\node at (4.1,0.65) {$h$};
+	\node at (-0.4,1.5) {$H$};
+	\end{tikzpicture} \hspace{1cm}
+	% (Right) Similar Triangle
+	\begin{tikzpicture}[scale=0.6]
+	\draw[line width=0.03cm] (0,0) -- (0,3) -- (7,0) -- (0,0);
+	\draw[line width=0.03cm] (3.5,0) -- (3.5,1.5);
+	\node at (0,-0.2) {$\phantom{H}$};
+	\node at (1.75,-0.3) {$w$};
+	\node at (5.4,-0.3) {$s$};
+	\node at (3.9,0.65) {$h$};
+	\node at (-0.4,1.5) {$H$};
+	\end{tikzpicture}
+	\]
+We want the rate of change of the height of the shadow, i.e. $\frac{dH}{dt}$. By similar triangles, we have\dots
+	\[
+	\begin{aligned}
+	\dfrac{h}{s}&= \dfrac{H}{w + s} \\[0.3cm]
+	sH&= h(w + s)
+	\end{aligned}
+	\]
+Now implicitly differentiating with respect to time, we have\dots
+	\[
+	\begin{gathered}
+	\dfrac{d}{dt} (sH)= \dfrac{d}{dt} \left[ h(w + s) \right] \\[0.3cm]
+	\dfrac{ds}{dt} \,H + s \, \dfrac{dH}{dt}= \dfrac{dh}{dt} \,(w + s) + h \left( \dfrac{dw}{dt} + \dfrac{ds}{dt} \right)
+	\end{gathered}
+	\]
+When the person is 15~ft from the spotlight, i.e. $s= 15$, they are 25~ft from the wall (because the total distance to the spotlight is 40~ft), i.e. $w= 25$. The person is 6~ft tall, i.e. $h= 6$. But then\dots
+	\[
+	\dfrac{h}{s}= \dfrac{H}{w + s} \Longrightarrow \dfrac{6}{15}= \dfrac{H}{25 + 15} \Longrightarrow \dfrac{2}{5}= \dfrac{H}{40} \Longrightarrow H= 40 \cdot \dfrac{2}{5}= 16
+	\]
+The person is not growing/shrinking and we know that the person is walking towards the spotlight at 6~ft/s. But then\dots
+	\[
+	\begin{aligned}
+	h&= 6 \text{ ft}, & s&= 15 \text{ ft}, & w&= 25 \text{ ft}, & H&= 16 \text{ ft} \\
+	\dfrac{dh}{dt}&= 0 \text{ ft/s}, & \dfrac{ds}{dt}&= 6 \text{ ft/s}, & \dfrac{dw}{dt}&= -6 \text{ ft/s}, & \dfrac{dH}{dt}&= \,\, ?
+	\end{aligned}
+	\]
+Therefore, we know\dots
+	\[
+	\begin{gathered}
+	\dfrac{ds}{dt} \,H + s \, \dfrac{dH}{dt}= \dfrac{dh}{dt} \,(w + s) + h \left( \dfrac{dw}{dt} + \dfrac{ds}{dt} \right) \\[0.3cm]
+	6(16) + 15 \, \dfrac{dH}{dt}= 0 (25 + 15) + 6 \left( -6 + 6 \right) \\[0.3cm]
+	6(16) + 15 \, \dfrac{dH}{dt}= 0 \\
+	\dfrac{dH}{dt}= -\dfrac{6(16)}{15} \\
+	\dfrac{dH}{dt}= -\dfrac{32}{5} \approx -6.4 \text{ ft/s}
+	\end{gathered}
+	\]
+Therefore, the height of the shadow is shrinking at 6.4~ft per second.
+}
+
+
+
+% Question 9
+\newpage
+\question[10] Suppose that $f(x)$ is a function such that $f(x)$ is differentiable on $[1, 5]$, $f(1)= 10$, and $-1 \leq f'(x) \leq 3$ on $[1, 5]$. Find the smallest and largest possible values for $f(5)$. Be sure to show all your work and fully justify your solutions. \par\vspace{1cm}
+
+\tsol {\itshape Observe that\dots
+	\begin{itemize}
+	\item $f(x)$ is continuous on $[1, 5]$: Differentiable functions are continuous. Therefore, $f(x)$ is continuous on $[1, 5]$. \par\vspace{0.3cm}
+	\item $f(x)$ is differentiable on $(1, 5)$: We know $f(x)$ is differentiable on the entirety of $[1, 5]$.
+	\end{itemize}
+Therefore, by the Mean Value Theorem, there exists $c \in (1, 5)$ such that\dots
+	\[
+	\begin{gathered}
+	f(5) - f(1)= f'(c) (5 - 1) \\[0.3cm]
+	f(5) - f(1)= 4 f'(c) \\[0.3cm]
+	f(5)= f(1) + 4f'(c) \\[0.3cm]
+	f(5)= 10 + 4f'(c)
+	\end{gathered}
+	\]
+But then using the fact that $-1 \leq f'(x) \leq 3$ on $[1, 5]$, we have\dots \par\vspace{0.1cm}
+	\[
+	\begin{aligned}
+	f(5)= 10 + 4f'(c) \geq 10 + 4(-1)= 10 - 4= 6 \\[0.5cm]
+	f(5)= 10 + 4f'(c) \leq 10 + 4(3)= 10 + 12= 22
+	\end{aligned}
+	\] \par\vspace{0.1cm}
+Therefore, we know\dots \par\vspace{0.1cm}
+	\[
+	6 \leq f(5) \leq 22
+	\]
+}
+
+
+
+% Question 10
+\newpage
+\question[10] let $f(x)= 3x^4 - 4x^3 - 2$. Find the absolute minimum and absolute maximum \textit{values} of $f(x)$ on the interval $[-1, 2]$. Be sure to show all your work and fully your answers. You may use any derivative test to justify your answers. \par\vspace{1cm}
+
+\tsol {\itshape We have $f'(x)= 12x^3 - 12x^2$. But then setting $f'(x)= 0$, we have\dots
+	\[
+	\begin{gathered}
+	f'(x)= 0 \\[0.3cm]
+	12x^3 - 12x^2= 0 \\[0.3cm]
+	12x^2 (x - 1)= 0
+	\end{gathered}
+	\]
+But then either $12x^2= 0$, which implies $x= 0$, or $x - 1= 0$, which implies $x= 1$. Therefore, the only critical values are $x= 0 , 1$, which are both in the interval $[-1, 2]$. Now observe\dots \par\vspace{0.3cm}
+	\[
+	\begin{tikzpicture}
+	\draw[line width=0.03cm,<->] (-3,0) -- (3,0);
+	\draw[line width=0.02cm] (-1,-0.2) -- (-1,0.2);
+	\draw[line width=0.02cm] (1,-0.2) -- (1,0.2);
+	\node at (3.3,0) {$f'$};
+	\node at (-1,-0.5) {$0$};
+	\node at (1,-0.5) {$1$};
+	\node at (-2,0.3) {$-$};
+	\node at (0,0.3) {$-$};
+	\node at (2,0.3) {$+$};
+	\draw[line width=0.02cm] (-1.3,1) -- (-1.1,0.6) -- (-0.9,0.6) -- (-0.6,0.2);
+	\draw[line width=0.02cm] (0.7,1) -- (0.9,0.6) -- (1.1,0.6) -- (1.3,1);
+	\end{tikzpicture}
+	\]
+Therefore, $x= 1$ is a local minimum---but not necessarily an absolute minimum on $[-1, 2]$. Observe\dots
+	\[
+	\begin{aligned}
+	f(1)&= 3(1^4) - 4(1^3) - 2= 3 - 4 - 2= -3 \\
+	\\
+	f(-1)&= 3(-1)^4 - 4(-1)^3 - 2= 3 + 4 - 2= 5 \\[0.3cm]
+	f(2)&= 3(2^4) - 4(2^3) - 2= 3(16) - 4(8) - 2= 48 - 32 - 2= 14
+	\end{aligned}
+	\] \pspace
+Therefore, the absolute minimum on $[-1, 2]$ is $-3$ at $x= 1$ and the absolute maximum on $[-1, 2]$ is $14$ at $x= 2$. \par\vspace{0.1cm}
+	\[
+	\begin{aligned}
+	\text{Absolute Minimum}= -3 \text{ at } x= 1 \\[0.3cm]
+	\text{Absolute Maximum}= 14 \text{ at } x= 2
+	\end{aligned}
+	\]
+}
+
+
+\end{questions}
+\end{document}

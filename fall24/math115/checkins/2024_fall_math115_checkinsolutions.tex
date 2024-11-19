@@ -454,15 +454,109 @@ But then by the Pythagorean Theorem, $a^2 + b^2= c^2$, i.e. $x^2 + b^2= 1^2$. Th
 	\cos(30^\circ) \\[0.3cm]
 	\dfrac{\sqrt{3}}{2}
 	\end{gathered}
+	\] \pvspace{1.3cm}
+
+
+
+% 11/04
+\checkin{11/04} $\sin^2 x= \dfrac{1 + \cos(2x)}{2}$ \pspace
+
+\sol The statement is \textit{false}. The actual identity is $\sin^2 x= \dfrac{1 - \cos(2x)}{2}$. We can tell this `identity' is not true by choosing a special angle and testing it. For instance, choosing $x= \frac{\pi}{2}$, we have\dots
+	\[
+	\begin{aligned}
+	\sin^2 x \,\bigg|_{x=\frac{\pi}{2}}&= \sin^2 \left( \frac{\pi}{2} \right)= 1^2= 1 \\[0.3cm]
+	\dfrac{1 + \cos(2x)}{2} \,\bigg|_{x=\frac{\pi}{2}}&= \dfrac{1 + \cos(\pi)}{2}= \dfrac{1 - 1)}{2}= 0
+	\end{aligned}
 	\]
+Therefore, the `identity' cannot be true. \pvspace{1.3cm}
 
 
 
+% 11/06
+\checkin{11/06} $\sin(x - y)= \sin x \cos y - \sin y \cos x$ \pspace
+
+\sol The statement is \textit{true}. This is the sum angle identity for sine. We can use this to find certain sine values. For instance, we have\dots
+	\[
+	\begin{aligned}
+	\sin(15^\circ)&= \sin(45^\circ - 30^\circ) \\[0.1cm]
+	&= \sin(45^\circ) \cos(30^\circ) - \sin(30^\circ) \cos(45^\circ) \\[0.1cm]
+	&= \dfrac{1}{\sqrt{2}} \cdot \dfrac{\sqrt{3}}{2} - \dfrac{1}{2} \cdot \dfrac{1}{\sqrt{2}} \\[0.1cm]
+	&= \dfrac{\sqrt{3}}{2\sqrt{2}} - \dfrac{1}{2\sqrt{2}} \\[0.1cm]
+	&= \dfrac{\sqrt{3} - 1}{2\sqrt{2}} \approx 0.258819
+	\end{aligned}
+	\] \pvspace{1.3cm}
 
 
 
+% 11/07
+\checkin{11/07} If $\csc \left( \dfrac{\theta}{3} \right)= -2$, then it must be that $\theta= -\frac{\pi}{2} + 2\pi n$, where $n$ is an integer. \pspace
+
+\sol The statement is \textit{false}. First, observe that if $\csc \left( \dfrac{\theta}{3} \right)= -2$, then we must have $\sin \left( \dfrac{\theta}{3} \right)= -\dfrac{1}{2}$. But then we know that $\frac{\theta}{3}= \frac{7\pi}{6} + 2\pi n$ or $\frac{\theta}{3}= \frac{11\pi}{6} + 2\pi n$, where $n$ is an integer. But then $\theta= \frac{7\pi}{2} + 6 \pi n$ or $\theta= \frac{11\pi}{2} + 6 \pi n$, where $n$ is an integer. Note that the second type of solution (by subtracting a $6\pi$-radians) could be written as $\theta= -\frac{\pi}{2} + 6\pi n$, where $n$ is an integer. The given solution only finds one `type' of the `two types' of solutions. \pvspace{1.3cm}
 
 
+
+% 11/11
+\checkin{11/11} There are infinitely many solutions to $4x \sin^2 x= 4(2 - x \cos^2 x)$. \pspace
+
+\sol The statement is \textit{false}. While `many' trigonometric equations have infinitely many solutions, this need not always be the case. Recall that $\sin^2 \theta + \cos^2 \theta= 1$ for all $\theta$. But then\dots
+	\[
+	\begin{gathered}
+	4x \sin^2 x= 4(2 - x \cos^2 x) \\[0.1cm]
+	4x \sin^2 x= 8 - 4x \cos^2 x \\[0.1cm]
+	4x \sin^2 x + 4x \cos^2 x= 8 \\[0.1cm]
+	4x \left( \sin^2 x + \cos^2 x \right)= 8 \\[0.1cm]
+	4x \cdot 1= 8 \\[0.1cm]
+	x= 2
+	\end{gathered}
+	\]
+Therefore, the given equation has only one solution. \pvspace{1.3cm}
+
+
+
+% 11/12
+\checkin{11/12} The solutions to $\sin(2x) + \sin(x)= 0$ are $2\pi n$, where $n$ is an integer. \pspace
+
+\sol The statement is \textit{false}. Recall that $\sin(2x)= 2 \sin x \cos x$. But then\dots
+	\[
+	\begin{gathered}
+	\sin(2x) + \sin(x)= 0 \\[0.1cm]
+	2 \sin x \cos x + \sin x= 0 \\[0.1cm]
+	\sin x (2 \cos x + 1)= 0 
+	\end{gathered}
+	\]
+Therefore, either $\sin x= 0$, which implies that $x= n \pi$, where $n$ is an integer, or $2 \cos x + 1=0 $. If $2 \cos x + 1= 0$, then $\cos x= -\frac{1}{2}$. But this implies that either $x= \frac{5\pi}{6} + 2\pi n$ or $x= \frac{7\pi}{6} + 2\pi n$, where $n$ is an integer. Therefore, the solution(s) presented in the statement are only one `type' of solution to the given equation. \pvspace{1.3cm}
+
+
+
+\newpage
+
+
+
+% 11/13
+\checkin{11/13} $\dfrac{\sin \theta - \sin^3 \theta}{\cos^2 \theta}= \sin \theta$ \pspace
+
+\sol The statement is \textit{true}. Recall that $\sin^2 \theta + \cos^2 \theta= 1$, which implies that $\cos^2 \theta= 1 - \sin^2 \theta$. But then\dots
+	\[
+	\dfrac{\sin \theta - \sin^3 \theta}{\cos^2 \theta}= \dfrac{\sin \theta (1 - \sin^2 \theta)}{\cos^2 \theta}= \dfrac{\sin \theta \cdot \cos^2 \theta}{\cos^2 \theta}= \sin \theta
+	\] \pvspace{1.3cm}
+
+
+
+% 11/14
+\checkin{11/14} The law of cosine states that $c^2= a^2 + b^2 - 2ab \cos C$ and in the case when $c$ is the hypotenuse of a right triangle, then the law simplifies to the Pythagorean theorem. \pspace
+
+\sol The statement is \textit{true}. The law of cosines states that for any triangle $\Delta abc$ with corresponding angles $A, B, C$, that $c^2= a^2 + b^2 - 2ab \cos C$, where $C$ is the angle corresponding to side $c$. Consider the case of a right triangle with hypotenuse $c$. We know the angle corresponding to $c$ is $90^\circ$. But then by the law of cosines would imply\dots
+	\[
+	c^2= a^2 + b^2 - 2ab \cos C= a^2 + b^2 - 2ab \cos(90^\circ)= a^2 + b^2 - 2ab(0)= a^2 + b^2
+	\]
+This is the Pythagorean Theorem. Therefore, we can view the law of cosines is a generalization of the pythagorean theorem to non-right triangles. \pvspace{1.3cm}
+
+
+18Using the law of sines, one can show that if two angles are congruent, their opposite sides are congruent. 
+
+19$\cos^4 x - \sin^4 x= \cos(2x)$
+
+20If one knows $\sin \theta= \frac{1}{3}$, then using $\cos^2 \theta= 1 - \sin^2 \theta$, one can determine the value of $\cos \theta$.
 
 
 
