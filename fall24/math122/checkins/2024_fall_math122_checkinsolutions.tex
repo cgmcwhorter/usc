@@ -201,33 +201,16 @@ This function is clearly everywhere increasing, so that $f'(x) > 0$. However, ob
 	\[
 	\int_0^4 2 \sqrt{x} \, e^{\sqrt{x}} \;dx= \int_0^2 2 \sqrt{x} \, e^u \cdot 2 \sqrt{x} \; du= \int_0^2 4x \, e^u \; du
 	\]
-Not only does the given integral not have the correct bounds, certainly, the integrand above not simplify to the given integrand. [In fact, the correct substituted integral is $\ds\int_0^2 4 u^2 e^u \;du$, which is beyond the scope of this course.]
+Not only does the given integral not have the correct bounds, certainly, the integrand above not simplify to the given integrand. [In fact, the correct substituted integral is $\ds\int_0^2 4 u^2 e^u \;du$, which is beyond the scope of this course.] \pvspace{1.3cm}
 
 
 
+% 11/19
+\checkin{11/19} To evaluate $\ds\int \dfrac{x^3 - x + 5}{x} \;dx$, one `should use' $u$-substitution. \pspace
 
-
-
-
-
-19To evaluate $\ds\int \dfrac{x^3 - x + 5}{x} \;dx$, one `should use' $u$-substitution.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+\sol The statement is \textit{false}. The only `useful' choices would be $u= x$ or $u= x^3 - x + 5$. If $u= x$, then one is simply literally rewriting the integral in $u$'s instead of $x$'s. If $u= x^3 - x + 5$, then $du= (3x^2 - 1) \;dx$, so that $dx= \dfrac{1}{3x^2 - 1} \,du$. But there is no $3x^2 - 1$ term in the numerator to cancel, so that the resulting integral will not be entirely in $u$'s. Therefore, this would not be a valid $u$-substitution. The correct method is to apply algebra by dividing the $x$ into each term in the numerator and apply basic integration rules:
+	\[
+	\int \dfrac{x^3 - x + 5}{x} \;dx= \int \left(x^2 - 1 + \dfrac{5}{x} \right) \;dx= \dfrac{x^3}{3} - x + 5 \ln|x| + C
+	\] 
 
 \end{document}

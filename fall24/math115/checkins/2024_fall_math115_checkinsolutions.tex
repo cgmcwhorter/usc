@@ -10,7 +10,7 @@
 \thispagestyle{title}
 
 % 08/22
-\checkin{08/22} \textit{True/False}: If $A= (1, 8]$ and $B= (8, 11)$, then $A \cap B= \{ 8 \}$. \pspace
+\checkin{08/22} If $A= (1, 8]$ and $B= (8, 11)$, then $A \cap B= \{ 8 \}$. \pspace
 
 \sol The statement is \textit{false}. The set $A$ is the set of numbers greater than 1 but at most 8, i.e. the numbers less than 8---including 8. Whereas $B$ is the set of numbers greater than 8 but less than 11. The set $A \cap B$ is the set of elements in \textit{both} $A$ and $B$. The only real number that \textit{could} be in both $A$ and $B$ is $8$. However, 8 is in $B$ but not in $A$. Therefore, $8 \notin A \cap B$. But then $A \cap B$ is empty, i.e. $A \cap B= \varnothing$. We can see this by sketching the intervals and seeing that there is no `overlap.' 
 	\[
@@ -40,7 +40,7 @@
 
 
 % 08/26
-\checkin{08/26} \textit{True/False}: $\left( \dfrac{y^{-2}}{x^4 x^2} \right)^{-3}= \dfrac{x^{24}}{y^5}$ \pspace
+\checkin{08/26} $\left( \dfrac{y^{-2}}{x^4 x^2} \right)^{-3}= \dfrac{x^{24}}{y^5}$ \pspace
 
 \sol The statement is \textit{false}. Recall that $x^a x^b= x^{a + b}$, $(x^a)^b= x^{ab}$, and $x^{-1}= \frac{1}{x}$. Then we have\dots
 	\[
@@ -50,7 +50,7 @@
 
 
 % 08/27
-\checkin{08/27} \textit{True/False}: It is possible to have a right triangle with sides of length $4, 7, 12$. \pspace
+\checkin{08/27} It is possible to have a right triangle with sides of length $4, 7, 12$. \pspace
 
 \sol The statement is \textit{false}. We know a triangle with sides $a, b, c$ is a right triangle if and only if $a^2 + b^2= c^2$. We have\dots
 	\[
@@ -66,14 +66,14 @@ Therefore, there exists no such right triangle. In fact, there does not even exi
 
 
 % 08/28
-\checkin{08/28} \textit{True/False}: Let $f(x)$ be a relation with $f(2)= 7$ and $f(-3)= 7$. Because $f(2)$ and $f(-3)$ are both $7$, $f$ cannot be a function. \pspace
+\checkin{08/28} Let $f(x)$ be a relation with $f(2)= 7$ and $f(-3)= 7$. Because $f(2)$ and $f(-3)$ are both $7$, $f$ cannot be a function. \pspace
 
 \sol The statement is \textit{false}. A relation is a function if there is only one possible output for a given input, i.e. given an input, one knows with certainty what the output is. We know that $f(2)= 7$ and $f(-3)= 7$; that is, given the inputs of $x= 2$ or $x= -3$, we know the output. The fact that the outputs are the same is irrelevant. There are many functions with the property that $f(2)= 7$ and $f(-3)= 7$. For instance, there must be a linear function through these two points, i.e. $y= 7$. An example of a quadratic function through these points is $y= \frac{7x(x + 1)}{6}$. \pvspace{1.3cm}
 
 
 
 % 08/29
-\checkin{08/29} \textit{True/False}: Let $f(x)$ be a function. The $y$-intercept of $f(x)$ is $f(0)$ and the $x$-intercept(s) of $f(x)$ are the $x$-values where $f(x)= 0$. \pspace
+\checkin{08/29} Let $f(x)$ be a function. The $y$-intercept of $f(x)$ is $f(0)$ and the $x$-intercept(s) of $f(x)$ are the $x$-values where $f(x)= 0$. \pspace
 
 \sol The statement is \textit{true}. The $y$-intercept is where the graph of the function intersects the $y$-axis, which is the line $x= 0$. But then the $y$-intercept must be the function value at $x= 0$, i.e. $f(0)$. An $x$-intercept is where the graph of the function intersects the $x$-axis, which is the line $y= 0$. But this means the output of the function is zero. Therefore, an $x$-intercept is an $x$-value such that $f(x)= 0$. \pvspace{1.3cm}
 
@@ -552,25 +552,51 @@ Therefore, either $\sin x= 0$, which implies that $x= n \pi$, where $n$ is an in
 This is the Pythagorean Theorem. Therefore, we can view the law of cosines is a generalization of the pythagorean theorem to non-right triangles. \pvspace{1.3cm}
 
 
-18Using the law of sines, one can show that if two angles are congruent, their opposite sides are congruent. 
 
-19$\cos^4 x - \sin^4 x= \cos(2x)$
+% 11/18
+\checkin{11/18} Using the law of sines, one can show that if two angles are congruent, their opposite sides are congruent. \pspace
 
-20If one knows $\sin \theta= \frac{1}{3}$, then using $\cos^2 \theta= 1 - \sin^2 \theta$, one can determine the value of $\cos \theta$.
-
-
-
-
-
-
-
-
-
-
-
-
+\sol The statement is \textit{true}.  Let $A$ and $B$ be the congruent angles (in radians) and $a, b$ be their respective sides, respectively. By the law of sines, we know that $\frac{\sin A}{a}= \frac{\sin B}{b}$. Because $A \cong B$, we know that $\sin A= \sin B$. But then cancelling $\sin A= \sin B$ from both sides, we have $\frac{1}{a}= \frac{1}{b}$. But then $a= b$. Therefore, sides $a$ and $b$ are congruent. 
+	\[
+	\begin{tikzpicture}
+	\draw[line width=0.03cm] (0,0) -- (2.2,0) -- (0.4,1.6) -- (0,0);
+	\node at (1.1,-0.3) {$a$};
+	\node at (0,0.9) {$b$};
+	\node at (1.5,1.0) {$c$};
+	\node at (0.50,1.15) {$A$};
+	\node at (1.5,0.25) {$B$};
+	\end{tikzpicture}
+	\] \pvspace{1.3cm}
 
 
 
+% 11/19
+\checkin{11/19} $\cos^4 x - \sin^4 x= \cos(2x)$ \pspace
+
+\sol The statement is \textit{true}. Recall that for all $x$, $\sin^2 x + \cos^2 x= 1$ and $\cos(2x)= \cos^2 x - \sin^2 x$. But then\dots
+	\[
+	\cos^4 x - \sin^4 x= (\cos^2 x + \sin^2 x)(\cos^2 x - \sin^2 x)= 1 \cdot \cos(2x)= \cos(2x)
+	\] \pvspace{1.3cm}
+
+
+
+% 11/20
+\checkin{11/20} If one knows $\sin \theta= \frac{1}{3}$, then using $\cos^2 \theta= 1 - \sin^2 \theta$, one can determine the value of $\cos \theta$. \pspace
+
+\sol The statement is \textit{false}. One can only determine the value of $\cos \theta$ up to sign. If $\sin \theta= \frac{1}{3}$, then $\cos^2 \theta= 1 - \sin^2 \theta= 1 - \left( \frac{1}{3} \right)^2= 1 - \frac{1}{9}= \frac{8}{9}$. But then $\cos \theta= \pm \sqrt{\frac{8}{9}}= \pm \frac{\sqrt{8}}{3}= \pm \frac{2 \sqrt{2}}{3} \approx \pm 0.942809$. This leaves two options for $\cos \theta$. Because $\sin \theta= \frac{1}{3} > 0$, we know $\theta$ lies in Quadrant~I or Quadrant~II. But this is still not enough to determine the value of $\cos \theta$. In fact, if $\theta_1 \approx 19.471221^\circ$ or $\theta_2 \approx 160.528779^\circ$, then $\sin^2 \theta= \frac{1}{3}$ but $\cos \theta_1 \approx 0.942809$ and $\cos \theta_2 \approx -0.942809$. This corresponds to the fact that $\sin \theta= \frac{1}{3}$ and $\sin \theta= \frac{\text{opp}}{\text{hyp}}$, there are two possible triangles that can be constructed corresponding to $\theta$:
+	\[
+	\begin{tikzpicture}
+	\draw[line width=0.03cm,->] (0,-2) -- (0,2);
+	\draw[line width=0.03cm,->] (-2,0) -- (2,0);
+	\draw[line width=0.05cm] (0,0) -- (1,1) -- (1,0);
+	\draw[line width=0.05cm] (0,0) -- (-1,1) -- (-1,0);
+	\node at (0.45,0.2) {$\theta$};
+	\node at (-0.45,0.2) {$\theta$};
+	\node at (1.2,0.5) {$1$};
+	\node at (0.4,0.7) {$3$};
+	\node at (-1.2,0.5) {$1$};
+	\node at (-0.4,0.7) {$3$};
+	\end{tikzpicture}
+	\]
 
 \end{document}

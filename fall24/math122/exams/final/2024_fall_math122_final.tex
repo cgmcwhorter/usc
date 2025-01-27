@@ -1,0 +1,251 @@
+\documentclass[12pt,letterpaper]{exam}
+\usepackage[lmargin=1in,rmargin=1in,tmargin=1in,bmargin=1in]{geometry}
+\usepackage{../style/exams}
+
+% -------------------
+% Course & Exam Information
+% -------------------
+\newcommand{\course}{MATH 122: Final Exam}
+\newcommand{\term}{Fall --- 2024}
+\newcommand{\examdate}{12/10/2024}
+\newcommand{\timelimit}{150 Minutes}
+
+\setbool{hideans}{true} % Student: True; Instructor: False
+
+% -------------------
+% Content
+% -------------------
+\begin{document}
+
+\examtitle
+\instructions{Write your name on the appropriate line on the exam cover sheet. This exam contains \numpages\ pages (including this cover page) and \numquestions\ questions. Check that you have every page of the exam. Answer the questions in the spaces provided on the question sheets. Be sure to answer every part of each question and show all your work. If you run out of room for an answer, continue on the back of the page --- being sure to indicate the problem number.} 
+\scores
+\bottomline
+\newpage
+
+% Poem
+\phantom{.} \vfill
+	\begin{table}[h]
+	\centering
+	\begin{tabular}{l}
+	{\itshape 'Twas the night before Christmas, up at the Pole,} \\
+	{\itshape Santa was frazzled---he'd lost all control!} \\
+	{\itshape The reindeer were restless, the sleight off its track,} \\
+	{\itshape And the toy distribution? A logistical smack!} \\
+	\\
+	{\itshape Santa scratched his beard, eyes weary and red,} \\
+	{\itshape ``The math here is tricky. I'm in over my head!} \\
+	{\itshape The children are waiting, and I need to take flight.} \\
+	{\itshape I need a Calculus wizard to save Christmas tonight!''}
+	\end{tabular}
+	\end{table}
+\phantom{.} \vfill 
+
+% -------------------
+% Questions
+% -------------------
+\begin{questions}
+
+% Question 1
+\newpage
+\question[10] {\itshape Santa’s workshop is busy, the costs start to climb, \par \phantom{(XX points)} ``Help me with this function---I'm running out of time!''} \par\vspace{0.3cm}
+
+The cost to produce toys for a small town for the North Pole toy manufacturing production line is given by $C(q)= 0.01q^2 + 1.7q + 15760$, where $q$ is the number of toys produced and $C$ is measured in dollars. Showing all your work\dots
+	\begin{enumerate}[(a)]
+	\item Find the cost to produce 3,700 toys. \vfill
+	\item Find the fixed costs to produce the toys for this small town. \vfill
+	\item Find and interpret the marginal cost to produce 3,700~toys. \vfill
+	\end{enumerate}
+
+
+
+% Question 2
+\newpage
+\question[10] {\itshape Santa's gifts bring joy, but his budget's not lit, \par \phantom{(XX points)} ``Help me crunch the numbers---I need to make a profit!''} \par\vspace{0.3cm}
+
+To help produce enough toys during the year, Santa has Bernard the Elf sell snow globes. Each snow globe is sold for \$119.99 and costs approximately \$8.34 to produce. However, the costs to maintain the North Pole snow globe manufacturing plant are huge---approximately \$250 million. Showing all your work, find the minimal number of snow globes Santa needs to sell to turn a profit. 
+
+
+
+% Question 3
+\newpage
+\question[10] {\itshape Santa's sleigh is in peril, the night's looking rough, \par \phantom{(XX points)} ``Help me read this graph---Christmas math is tough!''} \par\vspace{0.3cm}
+
+Consider the {\bfseries plot of a function $f(x)$} shown below. 
+	\[
+	\fbox{
+	\begin{tikzpicture}[scale=1,every node/.style={scale=0.5}]
+	\begin{axis}[
+	grid=both,
+	axis lines=middle,
+	ticklabel style={fill=blue!5!white},
+	xmin= -10.5, xmax=10.5,
+	ymin= -10.5, ymax=10.5,
+	xtick={-10,-8,-6,-4,-2,0,2,4,6,8,10},
+	ytick={-10,-8,-6,-4,-2,0,2,4,6,8,10},
+	minor tick = {-10,-9,...,10},
+	xlabel=\(x\),ylabel=\(y\),
+	]
+	\addplot[line width= 0.02cm,samples=120,domain= -10.5:10.5] ({x},{-4.37348 - 1.46973*x + 0.231455*x^2 + 0.0556307*x^3 - 0.00249594*x^4 - 0.000614528*x^5 + 0.0000156713*x^6 + 0.00000528689*x^7});
+	\node at (4.7,-6) {\Large$f(x)$};
+	\end{axis}
+	\end{tikzpicture}
+	}
+	\] 
+Based on the plot above, answer the following: \par
+	\begin{enumerate}[(a)]
+        	\item On what interval(s)---if any---is $f'(x) > 0$? \vfill
+	\item On what interval(s)---if any---is $f'(x) < 0$? \vfill
+	\item Find the critical values---if any---for $f(x)$. \vfill
+	\item Find the points of inflection---if any---for $f(x)$. \vfill
+	\item On what interval(s)---if any---is $f''(x) > 0$? \vfill
+	\item On what interval(s)---if any---is $f''(x) < 0$? \vfill
+	\item Sketch the tangent line to $f(x)$ at $x= 6$ on the graph above. 
+	\end{enumerate}
+
+
+
+% Question 4
+\newpage
+\question[10] {\itshape Santa's old graph was flawed, it led him astray, \par \phantom{(XX points)} ``Help me solve this new one, or Christmas won't stay!''} \par\vspace{0.3cm}
+
+Consider the {\bfseries plot of a derivative $f'(x)$} shown below. {\bfseries This is not the graph of the function, $f(x)$.}
+	\[
+	\fbox{
+	\begin{tikzpicture}[scale=1,every node/.style={scale=0.5}]
+	\begin{axis}[
+	grid=both,
+	axis lines=middle,
+	ticklabel style={fill=blue!5!white},
+	xmin= -10.5, xmax=10.5,
+	ymin= -10.5, ymax=10.5,
+	xtick={-10,-8,-6,-4,-2,0,2,4,6,8,10},
+	ytick={-10,-8,-6,-4,-2,0,2,4,6,8,10},
+	minor tick = {-10,-9,...,10},
+	xlabel=\(x\),ylabel=\(y\),
+	]
+	\addplot[line width= 0.02cm,samples=120,domain= -10.5:10.5] ({x},{-4.37348 - 1.46973*x + 0.231455*x^2 + 0.0556307*x^3 - 0.00249594*x^4 - 0.000614528*x^5 + 0.0000156713*x^6 + 0.00000528689*x^7});
+	\node at (4.7,-6) {\Large$f'(x)$};
+	\end{axis}
+	\end{tikzpicture}
+	}
+	\] 
+Based on the plot above, answer the following questions: 
+	\begin{enumerate}[(a)]
+	\item On what interval(s)---if any---is $f(x)$ increasing? \vfill
+	\item On what interval(s)---if any---is $f(x)$ decreasing? \vfill
+	\item On what interval(s)---if any---is $f(x)$ concave up? \vfill
+	\item On what interval(s)---if any---is $f(x)$ concave down? \vfill
+	\item Find any critical values for $f(x)$---if any. \vfill
+	\item Classify any critical values you found in (e). \vfill
+	\item Find any points of inflection for $f(x)$. \vfill
+	\end{enumerate}
+
+
+
+% Question 5
+\newpage
+\question[10] {\itshape Santa's sleigh's gone off course, the math isn't quite right, \par \phantom{(XX) points)} ``Quick, help me compute these derivatives this Christmas night!''} \par\vspace{0.3cm}
+
+Showing all your work, compute the following derivatives: \par\vspace{0.3cm}
+	\begin{enumerate}[(a)]
+	\item $\dfrac{d}{dx} \left( \dfrac{\sqrt[3]{\pi^2} \ln(15)}{19^{-3}} \right)=$ \vfill
+	\item $\dfrac{d}{dx} \left( 4x^3 - 5^x + \sqrt[3]{x} \right)=$ \vfill
+	\item $\dfrac{d}{dx} \left( (x^2 - 7) e^x \right)=$ \vfill
+	\item $\dfrac{d}{dx} \ln(5x^2 - 9)=$ \vfill
+	\item $\dfrac{d}{dx} \left( \dfrac{3x^4}{x^2 - x} \right)=$ 
+	\end{enumerate}
+
+
+
+% Question 6
+\newpage
+\question[10] {\itshape Santa's sleigh is tilting, the path's tough to find, \par \phantom{(XX points)} ``Help me with the tangent---Christmas is on the line!''} \par\vspace{0.3cm}
+
+Consider the function $f(x)= x^2 - 6x + 4$. Showing all your work\dots
+	\begin{enumerate}[(a)]
+	\item Find the tangent line to $f(x)$ at $x= -2$. \vfill
+	\item Find the absolute maximum and absolute minimum of $f(x)$ on $[0, 8]$. \vfill
+	\end{enumerate}
+
+
+
+% Question 7
+\newpage
+\question[10] {\itshape Santa's sleigh is on point, but his math's in a tizz, \par \phantom{(XX points)} ``Quick, estimate this integral---I can't lose my rizz!''} \par\vspace{0.3cm}
+
+The speed of Santa's sleigh in mph, $v(t)$, at a time $t$ (in hours) as he races across the globe at several different times since the start of Christmas are given in the table below. \par
+	\begin{table}[!ht]
+	\centering
+	\begin{tabular}{|l||c|c|c|c|c|c|c|} \hline
+	Time, $t$ & 0 & 2 & 3 & 6 & 7 \\ \hline
+	Velocity, $v(t)$ & 844 & 2,440 & 7,640 & 9,330 & 6,210 \\ \hline
+	\end{tabular}
+	\end{table} \par
+Showing all your work and being as accurate as possible, use a left-hand sum to estimate and interpret $\ds\int_0^7 v(t) \;dt$.
+
+
+
+% Question 9
+\newpage
+\question[10] {\itshape Santa's graph is confusing, the numbers don't show, \par \phantom{(XX points)}``Help me compute this integral, so I know where to go!''} \par\vspace{0.3cm}
+
+A function $f(x)$ is plotted below. \par
+	\[
+	\fbox{
+	\begin{tikzpicture}[scale=0.8,every node/.style={scale=0.5}]
+	\begin{axis}[
+	grid=both,
+	axis lines=middle,
+	ticklabel style= {fill= blue!5!white},
+	xmin= -1.5, xmax=9.5,
+	ymin= -5.5, ymax=5.5,
+	xtick= {-2,-1,...,10},
+	ytick= {-6,-5,...,6},
+	minor tick = {-10,-9,...,10},
+	xlabel= \(x\), ylabel= \(y\)
+	]
+	\addplot[line width=0.04cm, samples=4, smooth, domain= 0:2] {4};
+	\addplot[line width=0.04cm, samples=4, smooth, domain= 2:6] {8 - 2*x};
+	\addplot[line width=0.04cm, samples=4, smooth, domain= 6:9] {2*x - 16};
+	
+	\end{axis}
+	\end{tikzpicture}
+	}
+	\] 
+Showing all your work, based on the graph above, compute the following: \par\vspace{0.3cm}
+	\begin{enumerate}[(a)]
+	\item $\ds\int_0^4 f(x) \;dx=$ \vfill
+	\item $\ds\int_4^8 f(x) \;dx=$ \vfill
+	\item $\ds\int_0^8 f(x) \;dx=$ \vfill
+	\item $\ds\int_5^5 f(x) \;dx=$ \vfill
+	\item The area between $f(x)$ and the $x$-axis. \vfill
+	\end{enumerate}
+
+
+
+% Question 9
+\newpage
+\question[10] {\itshape Addressing Christmas challenges, Santa has another request. \par \phantom{(XX points)} ``Help me solve this problem---then we'll pass this tough test!''} \par\vspace{0.3cm}
+ 
+ Showing all your work, compute the following: \par\vspace{0.3cm}
+ 	\begin{enumerate}[(a)]
+	\item $\ds\int (x^5 - e^x + 7) \;dx$ \vfill
+	\item $\ds\int \dfrac{x^6 - x^2 + 9}{x^2} \;dx$ \vfill
+	\item $\ds\int_{-1}^3 (4 - 3x^2) \;dx$ \vfill
+	\end{enumerate}
+
+ 
+ 
+ % Question 10
+\newpage
+\question[10] {\itshape Christmas almost over, you're nearly clear. \par \phantom{(XX points)} ``Help me find these integrals, then we're done for this year.''} \par\vspace{0.3cm}
+
+Showing all your work, use $u$-substitution to find the following: \par\vspace{0.3cm}
+	\begin{enumerate}[(a)]
+	\item $\ds\int \dfrac{x}{x^2 + 1} \;dx$ \vfill
+	\item $\ds\int_0^1 (1 - 2x)^{10} \;dx$ \vfill
+	\end{enumerate}
+\end{questions}
+
+\end{document}

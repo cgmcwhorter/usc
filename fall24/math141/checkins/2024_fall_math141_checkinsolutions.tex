@@ -594,7 +594,7 @@ But observe that the \textit{lower limit} is the constant and one differentiates
 	minor tick = {-2.5,-2,...,2.5},
 	xlabel=\(x\),ylabel=\(y\),
 	]
-	\addplot[name path= F, line width= 0.02cm,samples=80,domain= -1.7:1.7] ({x},{x^3 });
+	\addplot[name path= F, line width= 0.02cm,samples=80,domain= -1.7:1.7] ({x},{x^3});
 	\addplot[name path= G, line width= 0.02cm,samples=10,domain= -3.6:3.5] ({x},{x});
 	
 	\addplot[color=gray!50] fill between[of= F and G, soft clip={domain= -1:1}];
@@ -636,27 +636,11 @@ We have---although we do not know this yet---that\dots
 
 
 % 11/18
-\checkin{11/18} To evaluate $\ds\int x(x^3 - 2x)^2 \;dx$, $u$-substitution would be `most appropriate.'
+\checkin{11/18} To evaluate $\ds\int x(x^3 - 2x)^2 \;dx$, $u$-substitution would be `most appropriate.' \pspace
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+\sol The statement is \textit{false}. The only `reasonable' choices for $u$ would be $u= x$ or $u= x^3 - 2x$. The first just changes the variable to $u$ but makes no other changes. If $u= x^3 - 2x$, then $du= 3x^2 \;dx$. But there is no multiple of $3x^2$ in the integrand. Therefore, one cannot make the switch from $u$ to $x$ using this substitution. To perform this integration, one needs to expand the integrand: 
+	\[
+	\int x(x^3 - 2x)^2 \;dx= \int x(x^6 - 4x^4 - 4x^2) \;dx= \int (x^7 - 4x^5 - 4x^3) \;dx= \dfrac{x^8}{8} - \dfrac{2x^6}{3} - x^4 + C
+	\]
 
 \end{document}
