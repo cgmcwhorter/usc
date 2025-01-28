@@ -1,0 +1,168 @@
+% -------------------
+% Packages
+% -------------------
+\usepackage{
+	amsmath,			% Math Environments
+	amssymb,			% Extended Symbols
+	etoolbox,			% Use Booleans
+	microtype,			% Improved Typography
+}
+
+
+% -------------------
+% Course Information
+% -------------------
+\newcommand{\semester}{Spring 2025}
+\newcommand{\course}{MATH 111-I}
+
+
+% -------------------
+% Font
+% -------------------
+\usepackage[T1]{fontenc}
+\usepackage{charter}
+
+
+% -------------------
+% Colors
+% -------------------
+\usepackage{xcolor}
+
+% College Colors
+\definecolor{stacred}{HTML}{73233c} % 115, 35, 60
+\definecolor{stacgold}{HTML}{fdbe57} % 253, 190, 87
+
+% Quote Colors
+\definecolor{quotegray}{HTML}{595959} % 89, 89, 89
+
+
+% -------------------
+% Tikz
+% -------------------
+\usepackage{tikz}
+%\usetikzlibrary{}
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest}
+%\usepgfplotslibrary{}
+
+
+% -------------------
+% Enumerate/Itemize Environments
+% -------------------
+\usepackage{enumerate}
+%\newenvironment{2enumerate}{%
+%	\begin{enumerate}[(a)]
+%	\begin{multicols}{2}
+%	}{%
+%	\end{multicols}
+%	\end{enumerate}
+%}
+%\newenvironment{3enumerate}{%
+%	\begin{enumerate}[(a)]
+%	\begin{multicols}{3}
+%	}{%
+%	\end{multicols}
+%	\end{enumerate}
+%}
+
+
+% -------------------
+% Header & Footer
+% -------------------
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+
+% Paragraph Spacing & Head/Foot Height
+\setlength{\parskip}{0.0cm}
+\setlength{\parindent}{0.0cm}
+\headheight = 14pt
+\footskip = 14pt
+
+% Default Page Style
+\fancypagestyle{pages}{
+	%Headers
+	\fancyhead[L]{}
+	\fancyhead[C]{}
+	\fancyhead[R]{}
+	\renewcommand{\headrulewidth}{0pt}
+	%Footers
+	\fancyfoot[L]{}
+	\fancyfoot[C]{}
+	\fancyfoot[R]{}
+	\renewcommand{\footrulewidth}{0.0pt}
+}
+\pagestyle{pages}
+
+
+% -------------------
+% Title & Problem Commands
+% -------------------
+\newcommand{\quiz}[1]{%
+\noindent\begin{minipage}[t]{0.60\textwidth}
+	\textbf{Name:} \underline{\hspace{1.15cm} \wans{Caleb McWhorter --- Solutions } \hspace{1.15cm}} \par
+	{\bfseries \course} \par
+	{\bfseries \semester} \par
+	{\bfseries Quiz #1}
+\end{minipage} \pspace
+}
+
+
+\newcommand{\prob}{\noindent\textbf{Problem: }}
+\newcounter{problem}
+\newcommand{\problem}{
+	\stepcounter{problem}%
+	\noindent \textbf{Problem \theproblem: }%
+}
+\newcommand{\sol}{\noindent\textbf{Solution. }}
+
+
+% -------------------
+% Commands
+% -------------------
+\newcommand\ds{\displaystyle}
+\newcommand{\pspace}{\par\vspace{\baselineskip}}
+\newcommand{\pvspace}[1]{\par\vspace{#1}}
+
+
+% -------------------
+% Answer Hiding
+% -------------------
+\newbool{hideans}
+\usetikzlibrary{tikzmark}
+\usepackage{tikzpagenodes}
+\newcounter{tikzmarklines}\setcounter{tikzmarklines}{0} % 
+\tikzset{
+  tikzmark prefix=prefix-,
+  tikzmark suffix=-suffix
+}
+
+\newcommand{\hidestart}{%
+  \stepcounter{tikzmarklines}%
+  \tikzmark{a\thetikzmarklines}%
+  \iftikzmarkoncurrentpage{b\thetikzmarklines}%
+  \else
+  \begin{tikzpicture}[remember picture,overlay,next page=below]%
+  \path (pic cs:a\thetikzmarklines) coordinate (start-\thetikzmarklines)
+  ([yshift=-0.2ex]pic cs:b\thetikzmarklines) coordinate (end-\thetikzmarklines);
+  \ifbool{hideans}{\fill[white] (current page.west|-start-\thetikzmarklines)-- ++(0,1.2em) -|
+  (current page.east|-end-\thetikzmarklines) -| cycle;}{}
+  \end{tikzpicture}%
+  \fi
+}
+\newcommand{\hidefinish}{%
+  \tikzmark{b\thetikzmarklines}%
+  \begin{tikzpicture}[remember picture,overlay,next page=below]%
+  \path (pic cs:a\thetikzmarklines) coordinate (start-\thetikzmarklines)
+  ([yshift=-1.5ex]pic cs:b\thetikzmarklines) coordinate (end-\thetikzmarklines);
+  \ifbool{hideans}{\fill[white] (current page.west|-start-\thetikzmarklines)-- ++(0,1.2em) -|
+  (current page.east|-end-\thetikzmarklines) -| cycle;}{}
+  \end{tikzpicture}%
+  }
+\newcommand{\ans}[1]{\hidestart \par {\itshape #1 } \hidefinish}
+\newcommand{\wans}[1]{\ifbool{hideans}{\textcolor{white}{#1}}{{\itshape #1}}}
+\newcommand{\uans}[2]{\ifbool{hideans}{\underline{\hspace{#1}\textcolor{white}{$#2$}\hspace{#1}}}{\underline{\hspace{#1}$#2$\hspace{#1}}}}
+\newcommand{\ansfig}[1]{\ifbool{hideans}{\phantom{x}}{{\itshape #1}}}
+\newcommand{\spaceans}[2]{\ifbool{hideans}{#2}{#1}}
+\newcommand{\either}[2]{\ifbool{hideans}{\phantom{#1}}{#1}}
+\newcommand{\tans}[1]{\ifbool{hideans}{\underline{\phantom{$#1$}}}{\underline{$#1$}}}
+\newcommand{\remove}[1]{\ifbool{hideans}{}{#1}}
