@@ -80,73 +80,84 @@ Using the $u$-substitution $u= 1 + \theta^2$, we see that $\ds\int \frac{\theta}
 
 
 
-%\checkin{01/23} The integral $\ds\int e^{x/2} \sin(3x) \;dx$ is a `looping' integral. \pspace
-%
-%\sol The statement is \textit{true}. Recall that integrals whose integrand is the product of an exponential function with $\sin x$ or $\cos x$ `loop.' We can see this directly: choose $u= \sin(3x)$. Using the `box method', we have\dots
-%	\[
-%	\begin{tikzpicture}
-%	\boxseven{\sin(3x)}{e^{x/2}}{3 \cos(3x)}{2e^{x/2}}
-%	\end{tikzpicture}
-%	\]
-%Therefore, we have\dots
-%	\[
-%	\int e^{x/2} \sin(3x) \;dx= 2 e^{x/2} \sin(3x) - \int 6e^{x/2} \cos(3x) \;dx
-%	\]
-%But this integral on the right also requires integration-by-parts: we choose $u= \cos(3x)$ and then\dots
-%	\[
-%	\begin{tikzpicture}
-%	\boxseven{\cos(3x)}{6 e^{x/2}}{-3 \sin(3x)}{12 e^{x/2}}
-%	\end{tikzpicture}
-%	\]
-%So then we have\dots
-%	\[
-%	\begin{aligned}
-%	\int e^{x/2} \sin(3x) \;dx&= 2 e^{x/2} \sin(3x) - \int 6e^{x/2} \cos(3x) \;dx \\
-%	&= 2 e^{x/2} \sin(3x) - \left(12 e^{x/2} \cos(3x) - \int -36 e^{x/2} \sin(3x) \;dx \right) \\
-%	&= 2 e^{x/2} \sin(3x) - 12 e^{x/2} \cos(3x) + \int -36 e^{x/2} \sin(3x) \;dx \\
-%	&= 2 e^{x/2} \sin(3x) - 12 e^{x/2} \cos(3x) - 36 \int e^{x/2} \sin(3x) \;dx
-%	\end{aligned}
-%	\]
-%Observe that we have `looped'---obtaining a multiple of the original integral on the right. Adding $\ds 36 \int e^{x/2} \sin(3x) \;dx$ to both sides, we have\dots
-%	\[
-%	37 \int e^{x/2} \sin(3x) \;dx= 2 e^{x/2} \sin(3x) - 12 e^{x/2} \cos(3x)
-%	\]
-%Therefore, we have\dots
-%	\[
-%	\int e^{x/2} \sin(3x) \;dx= \dfrac{2 e^{x/2} \sin(3x) - 12 e^{x/2} \cos(3x)}{37} + C
-%	\]
-%We can shortcut this work by adjusting tabular integration: 
-%	\[
-%	\renewcommand{\arraystretch}{1.5}
-%	\begin{array}{c @{\hspace*{1.3cm}} c} \toprule
-%	u & dv \\ \cmidrule(lr){1-2}
-%	\sin(3x) \tikzmark{Left 1} & \tikzmark{Right 1} e^{x/2} \\[0.3cm]
-%	3 \cos(3x) \tikzmark{Left 2} & \tikzmark{Right 2} 2 e^{x/2} \\[0.3cm]
-%	-9 \sin(3x) \tikzmark{Left 3}  & \tikzmark{Right 3} 4 e^{x/2} \\[0.3cm]
-%	
-%	\DrawArrow{Left 1}{Right 2}{+}
-%	\DrawArrow{Left 2}{Right 3}{--}
-%	\DrawArrow{Left 3}{Right 3}{+}
-%	\end{array}%
-%	\]
-%Therefore, we have\dots
-%	\[
-%	\begin{aligned}
-%	\int e^{x/2} \sin(3x) \;dx&= 2 e^{x/2} - 12 e^{x/2} \cos(3x) - 36 \int e^{x/2} \sin(3x) \; dx \\
-%	37 \int e^{x/2} \sin(3x) \;dx&= 2 e^{x/2} - 12 e^{x/2} \cos(3x) \\
-%	\int e^{x/2} \sin(3x) \;dx&= \dfrac{2 e^{x/2} \sin(3x) - 12 e^{x/2} \cos(3x)}{37} + C
-%	\end{aligned}
-%	\]
+% 01/23
+\checkin{01/23} The integral $\ds\int e^{x/2} \sin(3x) \;dx$ is a `looping' integral. \pspace
+
+\sol The statement is \textit{true}. Recall that integrals whose integrand is the product of an exponential function with $\sin x$ or $\cos x$ `loop.' We can see this directly: choose $u= \sin(3x)$. Using the `box method', we have\dots
+	\[
+	\begin{tikzpicture}
+	\boxseven{\sin(3x)}{e^{x/2}}{3 \cos(3x)}{2e^{x/2}}
+	\end{tikzpicture}
+	\]
+Therefore, we have\dots
+	\[
+	\int e^{x/2} \sin(3x) \;dx= 2 e^{x/2} \sin(3x) - \int 6e^{x/2} \cos(3x) \;dx
+	\]
+But this integral on the right also requires integration-by-parts: we choose $u= \cos(3x)$ and then\dots
+	\[
+	\begin{tikzpicture}
+	\boxseven{\cos(3x)}{6 e^{x/2}}{-3 \sin(3x)}{12 e^{x/2}}
+	\end{tikzpicture}
+	\]
+So then we have\dots
+	\[
+	\begin{aligned}
+	\int e^{x/2} \sin(3x) \;dx&= 2 e^{x/2} \sin(3x) - \int 6e^{x/2} \cos(3x) \;dx \\
+	&= 2 e^{x/2} \sin(3x) - \left(12 e^{x/2} \cos(3x) - \int -36 e^{x/2} \sin(3x) \;dx \right) \\
+	&= 2 e^{x/2} \sin(3x) - 12 e^{x/2} \cos(3x) + \int -36 e^{x/2} \sin(3x) \;dx \\
+	&= 2 e^{x/2} \sin(3x) - 12 e^{x/2} \cos(3x) - 36 \int e^{x/2} \sin(3x) \;dx
+	\end{aligned}
+	\]
+Observe that we have `looped'---obtaining a multiple of the original integral on the right. Adding $\ds 36 \int e^{x/2} \sin(3x) \;dx$ to both sides, we have\dots
+	\[
+	37 \int e^{x/2} \sin(3x) \;dx= 2 e^{x/2} \sin(3x) - 12 e^{x/2} \cos(3x)
+	\]
+Therefore, we have\dots
+	\[
+	\int e^{x/2} \sin(3x) \;dx= \dfrac{2 e^{x/2} \sin(3x) - 12 e^{x/2} \cos(3x)}{37} + C
+	\]
+We can shortcut this work by adjusting tabular integration: 
+	\[
+	\renewcommand{\arraystretch}{1.5}
+	\begin{array}{c @{\hspace*{1.3cm}} c} \toprule
+	u & dv \\ \cmidrule(lr){1-2}
+	\sin(3x) \tikzmark{Left 1} & \tikzmark{Right 1} e^{x/2} \\[0.3cm]
+	3 \cos(3x) \tikzmark{Left 2} & \tikzmark{Right 2} 2 e^{x/2} \\[0.3cm]
+	-9 \sin(3x) \tikzmark{Left 3}  & \tikzmark{Right 3} 4 e^{x/2} 
+	
+	\DrawArrow{Left 1}{Right 2}{+}
+	\DrawArrow{Left 2}{Right 3}{--}
+	\DrawArrow{Left 3}{Right 3}{+}
+	\end{array}
+	\]
+Therefore, we have\dots
+	\[
+	\begin{aligned}
+	\int e^{x/2} \sin(3x) \;dx&= 2 e^{x/2} - 12 e^{x/2} \cos(3x) - 36 \int e^{x/2} \sin(3x) \; dx \\
+	37 \int e^{x/2} \sin(3x) \;dx&= 2 e^{x/2} - 12 e^{x/2} \cos(3x) \\
+	\int e^{x/2} \sin(3x) \;dx&= \dfrac{2 e^{x/2} \sin(3x) - 12 e^{x/2} \cos(3x)}{37} + C
+	\end{aligned}
+	\] \pvspace{1.3cm}
 
 
 
+% 01/28
+\checkin{01/28} To integrate $\ds\int \cos^8 \theta \sin^5 \theta \;d\theta$, one should choose $u= \cos \theta$. \pspace
 
-
-
-
-
-
-
+\sol The statement is \textit{true}. Observe that if we choose $u= \cos \theta$, then $\cos^8 \theta$ becomes $u^8$. We know $du$ will then produce a $\sin \theta$---specifically $-\sin \theta$. This `uses' one of the $\sin \theta$'s in the integrand. This leaves $\sin^4 \theta$ remaining in the integrand. But we can replace even powers of $\sin \theta$ in terms of $\cos \theta$. So we can carry out this substitution. Observe that if $u= \cos \theta$, then $du= -\sin \theta \;d\theta$. But then using the fact that $\sin^2 \theta= 1 - \cos^2 \theta$ (so that $\sin^4 \theta= (\sin^2 \theta)^2= (1 - \cos^2 \theta)^2$), we have\dots
+	\[
+	\begin{aligned}
+	\int \cos^8 \theta \sin^5 \theta \;d\theta&= \int \cos^8 \theta \sin^4 \theta \cdot \sin \theta \; d\theta \\
+	&= -\int \cos^8 \theta \sin^4 \theta \cdot -\sin \theta \; d\theta \\
+	&= -\int \cos^8 \theta (1 - \cos^2 \theta)^2 \cdot -\sin \theta \;d\theta \\
+	&= -\int u^8 (1 - u^2)^2 \;du \\
+	&= -\int u^8 (1 - 2u^2 + u^4) \;du \\
+	&= \int -u^8 + 2u^{10} - u^{12} \;du \\
+	&= -\dfrac{u^9}{9} + \dfrac{2u^{11}}{11} - \dfrac{u^{13}}{13} + C \\
+	&= -\dfrac{\cos^9 \theta}{9} + \dfrac{2\cos^{11} \theta}{11} - \dfrac{\cos^{13} \theta}{13} + C
+	\end{aligned}
+	\]
+Alternatively, observe that if we had chosen $u= \sin \theta$, then $\sin^5 \theta$ becomes $u^5$. We know that $du$ produces a $\cos \theta$. This `uses' one of the $\cos \theta$'s in the integrand. This leaves $\cos^7 \theta$ remaining in the integrand. However, we can only replace even powers of $\cos \theta$ in terms of $\sin \theta$ using $\cos^2 \theta= 1 - \sin^2 \theta$. So without using other identities or using other techniques, we cannot `simply' choose $u= \sin \theta$ for this integral. \pvspace{1.3cm}
 
 
 
