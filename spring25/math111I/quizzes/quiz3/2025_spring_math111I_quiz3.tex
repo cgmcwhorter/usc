@@ -1,0 +1,53 @@
+\documentclass[11pt,letterpaper]{article}
+\usepackage[lmargin=1in,rmargin=1in,tmargin=1in,bmargin=1in]{geometry}
+\usepackage{../style/quiz}
+\setbool{hideans}{true} % Student: True; Instructor: False
+
+% -------------------
+% Content
+% -------------------
+\begin{document}
+\quiz{3}
+
+% Problem 1
+\problem Compute the average rate of change for $f(x)= 1 - 3x$ on the interval $[-1, 1]$. Show all your work. \pspace
+
+\ans{
+The average rate of change for $f(x)$ on an interval $[a, b]$ is the slope of the line through the endpoints, i.e. $\frac{f(b) - f(a)}{b - a}$. 
+	\[
+	\begin{aligned}
+	f(1)&= 1 - 3(1)= 1 - 3= -2 \\
+	f(-1)&= 1 - 3(-1)= 1 + 3= 4 \\
+	m&= \dfrac{f(b) - f(a)}{b - a}= \dfrac{f(1) - f(-1)}{1 - (-1)}= \dfrac{-2 - 4}{1 + 1}= \dfrac{-6}{2}= -3
+	\end{aligned}
+	\]
+Therefore, the average rate of change is $-3$. Alternatively, observe that $f(x)= 1 - 3x$ is linear because it has the form $y= mx + b$ with $y= f(x)$, $x= x$, $m= -3$, and $b= 1$. We know the average rate of change of a line is its slope. The slope of the line $f(x)$ is $m= -3$; therefore, the average rate of change must be $-3$.
+} \pspace
+
+
+% Problem 2
+\problem A physicist is tracking the temperature of a metal rod as a heat pulse is `injected' into the rod. The physicist observes that the rate of change in the temperature in the rod is constant. They will build a model for the temperature of the rod (in Kelvin), $K(t)$, $t$ minutes from now.
+	\begin{enumerate}[(a)]
+	\item Explain why $K(t)$ is linear. \pspace
+	
+	\ans{We know the rate of change in the temperature in the rod is constant. But functions with a constant rate of change are linear. Therefore, it must be that $K(t)$ is linear.} \pspace
+	
+	\item Suppose that $K(t)= 0.9t + 297$. Find and interpret the slope of $K(t)$. \pspace
+	
+	\ans{We see that $K(t)$ has the form $y= mx + b$ with $y= K(t)$, $x= t$, $m= 0.9$, and $b= 297$. Therefore, the slope is $m= 0.9$. We know that $m= \frac{\Delta \text{output}}{\Delta \text{input}}= \frac{\Delta \text{temperature}}{\Delta \text{time}}= \frac{0.9}{1}$. Therefore, every 1 increase in minutes results in an increase of 0.9~K in temperature, i.e.  the rod's temperature is increasing by 0.9~K every minute.} \pspace
+
+	\item Still assuming $K(t)= 0.9t + 297$, find and interpret the $y$-intercept of $K(t)$. \pspace
+	
+	\ans{We see that $K(t)$ has the form $y= mx + b$ with $y= K(t)$, $x= t$, $m= 0.9$, and $b= 297$. Therefore, the slope is $m= 0.9$. We know that $b= 297$ is the $y$-intercept, i.e. $K(0)= 297$. But then the temperature $t= 0$~minutes from now is $297$, i.e. the initial temperature of the rod is 297~K.} \pspace
+	
+	\item Assuming $K(t)$ is given as above, compute $K(10)$. Explain what $K(10)$ represents. \pspace
+	
+	\ans{We have $K(10)= 0.9(10) + 297= 9 + 297= 306$. But then the temperature of the rod $t= 6$~minutes from now is 306~K, i.e. the temperature of the rod in 6~minutes will be 306~K.}
+	\end{enumerate}
+
+
+
+
+
+
+\end{document}

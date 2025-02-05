@@ -73,9 +73,40 @@ Despite the fact that $f(3)= 5$, $\ds\lim_{x \to 3} f(x)= 2$ because all the out
 % 01/27
 \checkin{01/27} The function $f(x)= \dfrac{e^x \sin(\sqrt[3]{x})}{x^2 + 6x + 9}$ is continuous on any interval which does not contain $x= -3$. \pspace
 
-\sol 
+\sol The statement is \textit{true}. We know that $e^x$, $\sin x$, $\sqrt[3]{x}$, and $x^2 + 6x + 9$ are everywhere continuous. But then $\sin(\sqrt[3]{x})$ is everywhere continuous, because it is a composition of continuous functions. This makes $e^x \sin(\sqrt[3]{x})$ continuous, because it is the product of continuous functions. But then $f(x)= \dfrac{e^x \sin(\sqrt[3]{x})}{x^2 + 6x + 9}$ is continuous so long as $x^2 + 6x + 9 \neq 0$, because it would be a quotient of continuous functions. Observe that $x^2 + 6x + 9= (x + 3)^2$. Therefore, if $x^2 + 6x + 9= 0$, then $(x + 3)^2= 0$ so that $x= -3$. Therefore, $f(x)$ is continuous on any interval not containing $-3$. \pvspace{1.3cm}
 
 
+
+% 01/29
+\checkin{01/29} The limit $\ds\lim_{x \to 0} \dfrac{\sqrt{x + 9} - 3}{x}$ represents $f'(9)$, where $f(x)= \sqrt{x}$. 
+
+\sol The statement is \textit{true}. The definition of the derivative at $x= a$ is $\ds f'(a)= \lim_{h \to 0} \dfrac{f(a + h) - f(a)}{h}$. Taking $f(x)= \sqrt{x}$ and $a= 9$, we would have $\ds f'(9)= \lim_{h \to 0} \dfrac{f(9 + h) - f(9)}{h}= \lim_{h \to 0} \dfrac{\sqrt{9 + h} - \sqrt{9}}{h}= \lim_{h \to 0} \dfrac{\sqrt{h + 9} - 3}{h}$. This is the same as the given limit with the role of $h$ and $x$ interchanged. \pvspace{1.3cm}
+
+
+
+% 01/31
+\checkin{01/31} $\dfrac{d}{dx} \, \sin(\ln x)= \cos \left( \dfrac{1}{x} \right)$ \pspace
+
+\sol The statement is \textit{false}. We have a derivative of a composition of functions. This requires chain rule: $\frac{d}{dx}\, f \big( g(x) \big)= f' \big( g(x) \big) \cdot g'(x)$. Here, we have $f(x)= \sin x$ and $g(x)= \ln x$. The correct derivative should be\dots
+	\[
+	\dfrac{d}{dx} \, \sin(\ln x)= \cos(\ln x) \cdot \dfrac{1}{x}
+	\]
+Here, the `rule' $\frac{d}{dx} f \big( g(x) \big)= f' \big( g'(x) \big)$ has been applied, which is incorrect. \pvspace{1.3cm}
+
+
+
+\newpage
+
+
+
+%% 02/03
+%\checkin{02/03} $\dfrac{d}{dx} \; x^3 \sin(x)= 3x^2 \cos x$ \pspace
+%
+%\sol The statement is \textit{incorrect}. We have a derivative of a product of functions. This requires the product rule: $\frac{d}{dx} f(x) g(x)= f'(x) g(x) + f(x) g'(x)$. Here, we have $f(x)= x^3$ and $g(x)= \sin x$. The correct derivative should be\dots
+%	\[
+%	\dfrac{d}{dx}\, x^3 \sin x= 3x^2 \cdot \sin x + x^3 \cdot \cos x
+%	\]
+%Here, the `rule' $\frac{d}{dx} f(x) g(x)= f'(x) g'(x)$ has been applied, which is incorrect. \pvspace{1.3cm}
 
 
 

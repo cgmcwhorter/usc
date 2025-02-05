@@ -1,0 +1,300 @@
+\documentclass[11pt,letterpaper]{article}
+\usepackage[lmargin=1in,rmargin=1in,bmargin=1in,tmargin=1in]{geometry}
+\usepackage{
+	amsmath,			% Math Environments
+	enumerate,		% Enumerate Environments
+	microtype,			% Improved Typesetting
+	multicol,			% Use Multiple Columns
+}
+
+% Font
+\usepackage[T1]{fontenc}
+\usepackage{charter}
+
+\setlength{\parindent}{0ex} % Paragraph Indentation
+
+% Tikz/PGFPlots
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest}
+\pgfplotsset{soldot/.style={color=black,only marks,mark=*},
+		holdot/.style={color=black,fill=white,only marks,mark=*},
+		compat=1.12
+}
+
+% Commands
+\newcommand\ds{\displaystyle}
+\newenvironment{2enumerate}{%
+	\begin{enumerate}[(i)]
+	\begin{multicols}{2}
+	}{%
+	\end{multicols}
+	\end{enumerate}
+}
+\newcounter{problem}
+\newcommand{\prob}{\stepcounter{problem}%
+\noindent\textbf{Problem \theproblem. }}
+\DeclareMathOperator{\arcsec}{arcsec}
+
+
+% -------------------
+% Content
+% -------------------
+\begin{document}
+\pagenumbering{gobble}
+
+% Exam 1 Review
+\begin{center} {\bfseries \LARGE Exam 1 Review} \end{center} \par\vspace{0.2\baselineskip}
+
+
+% Problem 1
+\prob Use the plot of the function $f(x)$ below to answer the following questions:
+	\[
+	\fbox{
+	\begin{tikzpicture}[scale=1,every node/.style={scale=0.5}]
+	\begin{axis}[
+	grid=both,
+	axis lines=middle,
+	ticklabel style={fill=blue!5!white},
+	xmin= -10, xmax=10,
+	ymin= -10, ymax=10,
+	xtick={-10,-9,...,10},
+	ytick={-10,...,10},
+	xlabel=\(x\),ylabel=\(y\)
+	]
+
+	\addplot[thick, domain= -2:2,samples=100] {3*abs(x)-3};
+	\addplot[thick,domain= 2:7,samples=100] {x-5};
+	\addplot[thick,domain= -4.5:-2,samples=100] {9/(x+5)};
+	\addplot[thick,domain= -10:-5.5,samples=100] {7/(x+5)^3};
+	\addplot[thick,domain= 7:10,samples=100] {2^(x-6)};
+
+	\addplot[holdot] coordinates{(-2,3)(2,3)(2,-3)};
+	\addplot[soldot] coordinates{(2,0)};
+	
+	\end{axis}
+	\end{tikzpicture}
+	}
+	\] 
+
+\begin{2enumerate}
+\item $f(2)$
+\item $\ds\lim_{x \to 2^-} f(x)$
+\item $\ds\lim_{x \to 2^+} f(x)$
+\item $\ds\lim_{x \to 2} f(x)$
+\item $\ds\lim_{x \to -2^-} f(x)$
+\item $\ds\lim_{x \to -2^+} f(x)$
+\item $\ds\lim_{x \to -2} f(x)$
+\item $\ds\lim_{x \to -\infty} f(x)$
+\item $\ds\lim_{x \to \infty} f(x)$
+\item What is the $y$-intercept of $f(x)$? 
+\item What are the zeros of $f(x)$?
+\item If $f(x)$ has any vertical asymptotes, give their equation.
+\item Where is $f(x)$ continuous?
+\item List at least 4 values for $x$ at which $f(x)$ is not differentiable.
+\end{2enumerate} \par\vspace{0.5cm}
+
+
+% Problem 2
+\prob For the function $f(x)$, whose graph is shown in the figure below, compute the following limits. If the limit does not exist, write `DNE.' \par
+	\[
+	\fbox{
+	\begin{tikzpicture}[scale=1,every node/.style={scale=0.5}]
+	\begin{axis}[
+	grid=both,
+	axis lines=middle,
+	ticklabel style={fill=blue!5!white},
+	xmin= -7, xmax=7,
+	ymin= -6.5, ymax=6.5,
+	xtick={-6,-4,-2,0,2,4,6},
+	ytick={-6,-4,-2,0,2,4,6},
+	minor tick = {-5,-3,...,5},
+	xlabel=\(x\),ylabel=\(y\),
+	samples=20]
+
+	\addplot[thick, domain= -7:-3] {-3*x-10};
+	\addplot[thick,domain= -3:2] {4/5*x-3/5};
+	\addplot[thick,domain= 2:4] {7/2*x^2-41/2*x+28};
+	\addplot[thick,domain= 4:7] {2};
+	\addplot[holdot] coordinates{(-3,-1)(2,1)(4,2)};
+	\addplot[soldot] coordinates{(-3,-3)(4,3)};
+
+	\end{axis}
+	\end{tikzpicture}
+	}
+	\] 
+	
+        \begin{2enumerate}
+        \item $\ds\lim_{x \to -3^-} f(x)$  
+        \item $\ds\lim_{x \to -3^+} f(x)$ 
+        \item $\ds\lim_{x \to -3} f(x)$ 
+        \item $\ds\lim_{x \to 2^-} f(x)$ 
+        \item $\ds\lim_{x \to 2^+} f(x)$ 
+        \item $\ds\lim_{x \to 2} f(x)$ 
+        \item $\ds\lim_{x \to -\infty} f(x)$  
+        \item $\ds\lim_{x \to \infty} f(x)$ 
+        \end{2enumerate}
+Also, find and classify and discontinuities for $f(x)$. Determine any values where $f(x)$ is not differentiable. Finally, determine the value of the derivative at $x= -1$ and $x= 5$. \par\vspace{1cm}
+
+
+% Problem 3
+\prob For the function $f(x)$, whose graph is shown in the figure below, compute the following limits. If the limit does not exist, write `DNE.' \par
+	\[
+	\fbox{
+	\begin{tikzpicture}[scale=1,every node/.style={scale=0.5}]
+	\begin{axis}[
+	grid=both,
+	axis lines=middle,
+	ticklabel style={fill=blue!5!white},
+	xmin= -7, xmax=7,
+	ymin= -6.5, ymax=6.5,
+	xtick={-6,-4,-2,0,2,4,6},
+	ytick={-6,-4,-2,0,2,4,6},
+	minor tick = {-5,-3,...,5},
+	xlabel=\(x\),ylabel=\(y\),
+	samples=20]
+	
+	\addplot[thick, samples=30, domain= -7:-4.05] {-1/(2*x+8)-3};
+	\addplot[thick, smooth, domain= -3.9:-1] {-1/(x+4)+7/3};
+	\addplot[thick, smooth, domain= -1:2] {x};
+	\addplot[thick, smooth, domain= 2:4] {x^2-11/2*x+9};
+	\addplot[thick, samples=40, smooth, domain= 4:7] {sin(10*deg(x-4))+5};
+	
+	\addplot[holdot] coordinates{(-1,-1)(2,2)(4,3)(4,5)};
+	\addplot[soldot] coordinates{(-1,2)(4,1)};
+	\end{axis}
+	\end{tikzpicture}
+	}
+	\] 
+ 
+        \begin{2enumerate}
+        \item $\ds\lim_{x \to -4^-} f(x)$
+        \item $\ds\lim_{x \to -4^+} f(x)$
+        \item $\ds\lim_{x \to -4} f(x)$
+        \item $f(-4)$
+        \item $\ds\lim_{x \to -1^-} f(x)$
+        \item $\ds\lim_{x \to -1^+} f(x)$
+        \item $\ds\lim_{x \to -1} f(x)$
+        \item $f(-1)$
+        \item $\ds\lim_{x \to 2^-} f(x)$
+        \item $\ds\lim_{x \to 2^+} f(x)$
+        \item $\ds\lim_{x \to 2} f(x)$
+        \item $f(2)$
+       \item $\ds\lim_{x \to 4^-} f(x)$
+       \item $\ds\lim_{x \to 4^+} f(x)$
+       \item $\ds\lim_{x \to 4} f(x)$
+       \item $f(4)$
+       \item $\ds\lim_{x \to -\infty} f(x)$
+       \item $\ds\lim_{x \to \infty} f(x)$
+        \end{2enumerate}
+
+
+
+\newpage
+
+
+
+% Problems 4
+\prob Showing all your work, compute the following limits: 
+	\begin{2enumerate}
+	\item $\ds\lim_{a \to 0} \dfrac{\sin(5a)}{3a}$
+	\item $\ds\lim_{x \to -\infty} \left( \dfrac{1}{x} - \arctan x \right)$
+	\item $\ds\lim_{x \to 4} \dfrac{x^2 - 5x + 4}{x^2 - 2x - 8}$
+	\item $\ds\lim_{r \to 0}\dfrac{\tan^2(r)}{r}$
+	\item $\ds\lim_{x \to 1} \dfrac{x + 5}{|x + 1|}$
+	\item $\ds\lim_{x \to \infty} \dfrac{4x^2 - 3x + 7}{6x^2 + 7}$
+	\item $\ds\lim_{s \to \infty} \left(1 + \dfrac{6}{s} \right)^{2s}$
+	\item $\ds\lim_{s \to 3^+} \dfrac{1 - s}{s - 3}$
+	\item $\ds\lim_{q \to 0^+} (1 + 5q)^{4/q}$
+	\item $\ds\lim_{x \to \frac{\pi}{2}} \dfrac{\cos x}{\cot x}$
+	\item $\ds\lim_{x \to 5^-} \dfrac{5x - 25}{|x - 5|}$
+	\item $\ds\lim_{x \to \infty} x \sin \left( \frac{1}{x} \right)$
+	\item $\ds\lim_{x \to -4} \dfrac{x + 4}{x^2 - 16}$
+	\item $\ds\lim_{x \to 0} \dfrac{\cos x - 1}{2x^2}$
+	\item $\ds\lim_{g \to \infty} \dfrac{4 - g}{g^3 + 1}$
+	\item $\ds\lim_{h \to 0} 3 \sqrt{h} \sin \left( \dfrac{5}{h} \right)$
+	\item $\ds\lim_{v \to -3^-} \dfrac{4v + 1}{v + 3}$
+	\item $\ds\lim_{y \to \infty} \left(1 - \dfrac{1}{5y} \right)^y$
+	\item $\ds\lim_{w \to 0} \dfrac{\sin(6w)}{\sin(2w)}$
+	\item $\ds\lim_{u \to 0} \dfrac{\tan(\pi u)}{\sin(\pi u)}$
+	\item $\ds\lim_{t \to -\infty} \dfrac{1 - t^3}{5t + 6}$
+	\item $\ds\lim_{x \to 3} \left( \dfrac{2x}{x + 3} - |x| \right)$
+	\end{2enumerate} \par\vspace{0.3cm}
+
+
+% Problem 5
+\prob Determine whether the given function is continuous on the given interval $\mathcal{I}$:
+	\begin{2enumerate}
+	\item $f(x)= \dfrac{x \sin x}{x - 5}$, $\mathcal{I}= (-4, 4)$
+	\item $g(x)= e^x \cos x - 3x^2$, $\mathcal{I}= (-\infty, \infty)$
+	\item $h(x)= \dfrac{4x}{x^2 - x  - 6}$, $\mathcal{I}= (1, \infty)$
+	\item $j(x)= \sqrt[3]{x} - \log_6(x^2 + 1)$, $\mathcal{I}= (-\infty, \infty)$
+	\end{2enumerate} \par\vspace{0.3cm}
+
+
+% Problem 6
+\prob Determine the largest interval where the following functions are continuous:
+	\begin{2enumerate}
+	\item $f(x)= (1 - 2x)^3$
+	\item $g(x)= \sin^2 x - \cos x + \sqrt{x}$
+	\item $h(x)= \dfrac{x}{x + 3}$
+	\item $j(x)= e^x - \ln x$
+	\item $k(x)= \dfrac{x^2 - 1}{x^3 - 4x^2 - 5x}$
+	\item $\ell(x)= \sin(1 - x^2) + \arctan x + 5$
+	\end{2enumerate}
+
+
+
+\newpage
+
+
+
+% Problem 7
+\prob Find $a, b$ so that the following function is everywhere continuous. Be sure to use any necessary theorems and the definition of continuity to prove $f(x)$ is everywhere continuous.
+	\[
+	f(x)=
+	\begin{cases}
+	6 - x, & \phantom{xx} x \leq -1 \\
+	ax - b, & -1 < x \leq 3 \\
+	x^2 - 3x, & \phantom{xxx} 3 < x
+	\end{cases}
+	\] \par\vspace{0.3cm}
+
+
+% Problem 8
+\prob Using the definition of the derivative, find the derivative of the given function at the indicated value:
+	\begin{2enumerate}
+	\item $f(x)= x^2 - 5x + 2$, $a= 1$
+	\item $g(x)= \dfrac{1}{x}$, $a= -3$
+	\item $h(x)= \sqrt{x + 7}$, $a= 2$
+	\item $j(x)= |2x - 1|$, $a= 3$
+	\end{2enumerate} \par\vspace{0.3cm}
+
+
+% Problem 9
+\prob Using the definition of the derivative, find the derivative of the given function:
+	\begin{2enumerate}
+	\item $f(x)= 2x^2 - 3x + 5$
+	\item $g(x)= \sqrt{1 - x}$
+	\item $h(x)= \dfrac{x}{x + 1}$
+	\item $j(x)= 2x^{3/2}$
+	\end{2enumerate} \par\vspace{0.3cm}
+
+
+% Problem 10
+\prob Showing all your work, compute the following:
+	\begin{2enumerate}
+	\item $\dfrac{d}{dx} \left( 5 \sqrt[3]{x^2} - 4e^{2x} \right)$
+	\item $\dfrac{d}{dx}\, \cos^3(2^{-x})$
+	\item $\dfrac{d}{dx}\, \log_5(x) \arctan(5x)$
+	\item $\dfrac{d}{dx} \left( \dfrac{x - x^3}{5x - 6} \right)$
+	\item $\dfrac{d^2}{dx^2} \left( -2 \csc(e^x) - \arcsec x \right)$
+	\item $\dfrac{d}{dx} \left( \dfrac{8^{-x} \sin x}{(2x + 1)^2} \right)$
+	\item $\dfrac{d}{dx}\, e^{10x} \sin x \cos x$ 
+	\item $\dfrac{d^2}{dx^2} \left( \dfrac{1}{3^x} - \dfrac{1}{x^2 - x} \right)$
+	\item $\dfrac{d}{dx} \left( \dfrac{\sec x - x}{\sqrt{x} \ln x} \right)$
+	\item $\dfrac{d}{dx} \left(1 - \dfrac{x}{x - \cot x} \right)^5$
+	\item $\dfrac{d}{dx}\, x^3 \tan^2(3x)$
+	\item $\dfrac{d^2}{dx^2}\, (3x^2 - 5x + 9)^{12}$
+	\end{2enumerate}
+
+\end{document}
