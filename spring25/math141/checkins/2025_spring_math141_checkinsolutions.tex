@@ -99,14 +99,40 @@ Here, the `rule' $\frac{d}{dx} f \big( g(x) \big)= f' \big( g'(x) \big)$ has bee
 
 
 
-%% 02/03
-%\checkin{02/03} $\dfrac{d}{dx} \; x^3 \sin(x)= 3x^2 \cos x$ \pspace
-%
-%\sol The statement is \textit{incorrect}. We have a derivative of a product of functions. This requires the product rule: $\frac{d}{dx} f(x) g(x)= f'(x) g(x) + f(x) g'(x)$. Here, we have $f(x)= x^3$ and $g(x)= \sin x$. The correct derivative should be\dots
-%	\[
-%	\dfrac{d}{dx}\, x^3 \sin x= 3x^2 \cdot \sin x + x^3 \cdot \cos x
-%	\]
-%Here, the `rule' $\frac{d}{dx} f(x) g(x)= f'(x) g'(x)$ has been applied, which is incorrect. \pvspace{1.3cm}
+% 02/03
+\checkin{02/03} $\dfrac{d}{dx} \; x^3 \sin(x)= 3x^2 \cos x$ \pspace
+
+\sol The statement is \textit{incorrect}. We have a derivative of a product of functions. This requires the product rule: $\frac{d}{dx} f(x) g(x)= f'(x) g(x) + f(x) g'(x)$. Here, we have $f(x)= x^3$ and $g(x)= \sin x$. The correct derivative should be\dots
+	\[
+	\dfrac{d}{dx}\, x^3 \sin x= 3x^2 \cdot \sin x + x^3 \cdot \cos x
+	\]
+Here, the `rule' $\frac{d}{dx} f(x) g(x)= f'(x) g'(x)$ has been applied, which is incorrect. \pvspace{1.3cm}
+
+
+
+% 02/05
+\checkin{02/05} If $\theta_d$ is an angle measured in degrees, then $\dfrac{d}{d\theta}\, \sin(\theta_d)= \cos(\theta_d)$. \pspace
+
+\sol The statement is \textit{false}. This is a problem which can arise in working with derivatives with `mixed units' or especially when programming computer systems to perform the computations and one is not paying attention to the units. Trigonometric functions should be computed using radians. Even if one wishes to use degrees, the units would need to be consistent. Clearly, $\frac{d}{d\theta}$ is the derivative with respect to $\theta$---measured in radians. However, the input to the trigonometric function is in degrees. We would need to convert this input to radians by multiplying by $\frac{\pi}{180}$. But then\dots
+	\[
+	\dfrac{d}{d\theta} \sin(\theta_d)= \dfrac{d}{d\theta} \sin \left(\theta \cdot \dfrac{\pi}{180} \right)= \dfrac{\pi}{180} \cdot \cos \left(\theta \cdot \dfrac{\pi}{180} \right)= \dfrac{\pi}{180} \cos \left( \theta_d \right)
+	\]
+One can work out the derivation of $\frac{d}{d\theta} \sin \theta$ to see the reliance on radians to get a deeper---non-chain rule---reason for why this is the case. \pvspace{1.3cm}
+
+
+
+% 02/10
+\checkin{02/10}
+
+
+
+
+
+
+
+
+
+
 
 
 

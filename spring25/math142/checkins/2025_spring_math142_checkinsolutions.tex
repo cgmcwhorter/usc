@@ -32,6 +32,10 @@
         node [midway,above] {#5};
     \end{tikzpicture}%
 }
+\usepackage{polynom}
+
+
+
 
 % -------------------
 % Content
@@ -234,8 +238,99 @@ If we simplify this, we have\dots
 Therefore, we have\dots
 	\[
 	\int \dfrac{x^3}{\sqrt{x^2 - 4}} \;dx= \dfrac{1}{3}\, \sqrt{x^2 - 4}\; (x^2 + 8) + C
+	\] \pvspace{1.3cm}
+
+
+
+% 02/04
+\checkin{02/04} The rational function $\dfrac{x^6 - 4x}{(x - 1)(x + 2)(x^2 + 4)}$ can be decomposed as $\dfrac{A}{x - 1} + \dfrac{B}{x + 2} + \dfrac{Cx + D}{x^2 + 4}$. \pspace
+
+\sol The statement is \textit{false}. We know that given a rational function has a partial fraction decomposition given in the `traditional' way so long as the degree of the numerator is \textit{less} than the degree of the denominator. Observe that the degree of the numerator in the original function is 6 while the degree of the denominator is $1 + 1 + 2= 4$. So, this cannot be broken down in the `traditional' way. Alternatively, find the common denominator of $(x - 1)(x + 2)(x^2 + 4)$ for the given decomposition, observe that the numerator will have at most degree 4, which could not possibly yield the numerator of $x^6 - 4x$ with degree 6. One would first need to long divide $x^6 - 4x$ by $(x - 1)(x + 2)(x^2 + 4)$ to find the quotient and remainder before trying to give a partial fraction decomposition. Observe\dots
+	\[
+	(x - 1)(x + 2)(x^2 + 4)= (x^2 + x - 2)(x^2 + 4)= x^4 + x^3 + 2x^2 + 4x - 8
+	\]
+But then\dots
+	\[
+	\polylongdiv{x^6 - 4x}{x^4 + x^3 + 2x^2 + 4x - 8}
+	\]
+Therefore, we have\dots
+	\[
+	\dfrac{x^6 - 4x}{(x - 1)(x + 2)(x^2 + 4)}= x^2 - x - 1 + \dfrac{-x^3 + 14x^2 - 8x - 8}{x^4 + x^3 + 2x^2 + 4x - 8}= x^2 - x - 1 + \dfrac{-x^3 + 14x^2 - 8x - 8}{(x - 1)(x + 2)(x^2 + 4)}
+	\]
+We can then find the `traditional' partial fraction decomposition of the resulting rational function above because the degree of the numerator, which is 3, is \textit{less} than the degree of the denominator, which is 4. We would have\dots
+	\[
+	\dfrac{-x^3 + 14x^2 - 8x - 8}{(x - 1)(x + 2)(x^2 + 4)}= \dfrac{A}{x - 1} + \dfrac{B}{x + 2} + \dfrac{Cx + D}{x^2 + 4}
+	\]
+Using Heaviside's Method/Cover-Up Method, we can find $A$ and $B$ `instantly':
+	\[
+	\begin{aligned}
+	A&= \dfrac{-1^3 + 14(1^2) - 8(1) - 8}{(1 + 2)(1^2 + 4)}= -\dfrac{3}{15}= -\dfrac{1}{5} \\[0.2cm]
+	B&= \dfrac{-(-2^3) + 14(-2)^2 - 8(-2) - 8}{(-2 - 1) \big( (-2)^2 + 4 \big)}= \dfrac{72}{-24}= -3
+	\end{aligned}
+	\]
+To find $C, D$, we can get a common denominator:
+	\[
+	\dfrac{A}{x - 1} + \dfrac{B}{x + 2} + \dfrac{Cx + D}{x^2 + 4}= \dfrac{A(x + 2)(x^2 + 4) + B(x - 1)(x^2 + 4) + (Cx + D)(x - 1)(x + 2)}{(x - 1)(x + 2)(x^2 + 4)}
+	\]
+Using the fact that the rational functions now have equal denominators, we can equate their numerators:
+	\[
+	\begin{aligned}
+	-x^3 + 14x^2 - 8x - 8&= A(x + 2)(x^2 + 4) + B(x - 1)(x^2 + 4) + (Cx + D)(x - 1)(x + 2) \\[0.2cm]
+	-x^3 + 14x^2 - 8x - 8&=-\frac{1}{5}\, (x + 2)(x^2 + 4) - 3(x - 1)(x^2 + 4) + (Cx + D)(x - 1)(x + 2) \\
+	\end{aligned}
+	\]
+We multiply the last equation by 5 to clear fractions:
+	\[
+	5(-x^3 + 14x^2 - 8x - 8)= -(x + 2)(x^2 + 4) - 15(x - 1)(x^2 + 4) + 5(Cx + D)(x - 1)(x + 2)
+	\]
+Rather than expand this and relate coefficients to obtain a system of equations, we will simply substitute two $x$-values (ones not used in Heaviside's Method): using $x= 0$, we have\dots
+	\[
+	\begin{aligned}
+	5(-x^3 + 14x^2 - 8x - 8)&= -(x + 2)(x^2 + 4) - 15(x - 1)(x^2 + 4) + 5(Cx + D)(x - 1)(x + 2) \\
+	-40&= 52 - 10D \\
+	-92&= -10 D \\
+	\dfrac{46}{5}&= D
+	\end{aligned}
+	\]
+and using $x= -1$ and the value for $D$ above, we have\dots
+	\[
+	\begin{aligned}
+	5(-x^3 + 14x^2 - 8x - 8)&= -(x + 2)(x^2 + 4) + 15(x - 1)(x^2 + 4) + 5(Cx + D)(x - 1)(x + 2) \\
+	75&= 145 - 10 (-C + D) \\
+	-70&= 10C - 10D \\
+	-70&= 10C - 10 \cdot \dfrac{46}{5} \\
+	-70&= 10C - 92 \\
+	22&= 10C \\
+	\dfrac{11}{5}&= C
+	\end{aligned}
+	\]
+Therefore, we have\dots
+	\[
+	\dfrac{x^6 - 4x}{(x - 1)(x + 2)(x^2 + 4)}= x^2 - x - 1 + \dfrac{-1/5}{x - 1} + \dfrac{-3}{x + 2} + \dfrac{\frac{11}{5}\,x + \frac{46}{5}}{x^2 + 4}= x^2 - x - 1 - \dfrac{1}{5(x - 1)} - \dfrac{3}{x + 2} + \dfrac{11x + 46}{5(x^2 + 4)}
+	\] \pvspace{1.3cm}
+
+
+
+% 02/06
+\checkin{02/06} $\ds\int \dfrac{5}{x + 1} - \dfrac{1}{(x + 1)^2} - \dfrac{x + 1}{x^2 + 1} \;dx= 5 \ln(x + 1) - \dfrac{1}{x + 1} - \frac{1}{2} \ln|x^2 + 1| + \arctan x + K$ \pspace
+
+\sol The statement is \textit{false}. First, we know that\dots
+	\[
+	\int \dfrac{5}{x + 1} \;dx= 5 \ln|x + 1| + K
+	\]
+The integral of the second term is also incorrect:
+	\[
+	\int -\dfrac{1}{(x + 1)^2} \;dx= \int -(x + 1)^{-2} \;dx= \dfrac{-(x + 1)^{-1}}{-1} + K= \dfrac{1}{x + 1} + K
+	\]
+Moreover, the third term is also incorrect as the negative has been improperly distributed:
+	\[
+	- \int \dfrac{x + 1}{x^2 + 1} \;dx= -\int \dfrac{x}{x^2 + 1} + \dfrac{1}{x^2 + 1} \;dx= - \left( \frac{1}{2} \ln|x^2 + 1| + \arctan x \right) + K= -\frac{1}{2} \ln|x^2 + 1| - \arctan x + K
 	\]
 
+
+
+% 02/11
+\checkin{02/11} 
 
 
 
