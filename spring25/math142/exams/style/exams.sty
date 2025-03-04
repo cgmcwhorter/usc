@@ -1,0 +1,212 @@
+% -------------------
+% Packages
+% -------------------
+\usepackage{
+	amsmath,			% Math Environments
+	amssymb,			% Extended Symbols
+	etoolbox,			% Use Booleans
+	microtype,			% Improved Typography
+}
+%	amsthm,			% Theorem Environments
+%	caption,			% Remove 'Figure' Prefix
+%	float,				% Force Table Placement
+%	graphicx,			% Include Images
+
+
+
+% -------------------
+% Font
+% -------------------
+\usepackage[T1]{fontenc}
+\usepackage{charter}
+
+
+
+% -------------------
+% Colors
+% -------------------
+\usepackage{xcolor}
+
+% College Colors
+\definecolor{stacred}{HTML}{73233c} % 115, 35, 60
+\definecolor{stacgold}{HTML}{fdbe57} % 253, 190, 87
+
+
+
+% -------------------
+% Header & Footer
+% -------------------
+%\usepackage{fancyhdr}
+\usepackage{lastpage}
+
+% Running Headers
+\firstpageheader{}{}{}
+\runningheader{\course}{}{\thepage\ of \numpages}
+\runningheadrule
+\runningfooter{}{}{}
+
+% Paragraph Spacing & Head/Foot Height
+%\setlength{\parskip}{0.0cm}
+%\setlength{\parindent}{0.0cm}
+%\headheight = 14pt
+%\footskip = 14pt
+
+% Default Page Style
+%\fancypagestyle{pages}{
+%	%Headers
+%	\fancyhead[L]{}
+%	\fancyhead[C]{}
+%	\fancyhead[R]{}
+%	\renewcommand{\headrulewidth}{0pt}
+%	%Footers
+%	\fancyfoot[L]{}
+%	\fancyfoot[C]{}
+%	\fancyfoot[R]{\small\thepage \,of \pageref{LastPage}}
+%	\renewcommand{\footrulewidth}{0.0pt}
+%}
+%\pagestyle{pages}
+
+
+% -------------------
+% Hyperref
+% -------------------
+%\usepackage[breaklinks = true]{hyperref}
+%\hypersetup{
+%	colorlinks 	= true,
+%  	linkcolor  	= stacred,
+%  	urlcolor   	= stacred
+%}
+
+
+
+% -------------------
+% Tikz
+% -------------------
+\usepackage{tikz}
+%\usetikzlibrary{}
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest}
+\pgfplotsset{soldot/.style={color=black,only marks,mark=*},
+		holdot/.style={color=black,fill=white,only marks,mark=*},
+		compat=1.12
+}
+
+% See Answer Hiding for more Tikz Definitions
+
+
+% -------------------
+% Enumerate/Itemize Environments
+% -------------------
+\usepackage{enumerate}
+%\newenvironment{2enumerate}{%
+%	\begin{enumerate}[(a)]
+%	\begin{multicols}{2}
+%	}{%
+%	\end{multicols}
+%	\end{enumerate}
+%}
+%\newenvironment{3enumerate}{%
+%	\begin{enumerate}[(a)]
+%	\begin{multicols}{3}
+%	}{%
+%	\end{multicols}
+%	\end{enumerate}
+%}
+
+
+
+% -------------------
+% Answer Hiding
+% -------------------
+\newcommand{\tsol}{\noindent{\bfseries Solution. }}
+\newcommand{\sol}[1]{\hidestart{\itshape #1}\hidefinish}
+\newcommand{\psol}[1]{\ifbool{hideans}{\phantom{#1}}{#1}}
+\newcommand{\psolscale}[2]{\psol{\scalebox{#1}{\mbox{\ensuremath{\displaystyle #2}}}}}
+\newcommand{\figsol}[1]{\ifbool{hideans}{\phantom{x}}{{\itshape #1}}}
+\newcommand{\wsol}[1]{\ifbool{hideans}{{\color{white} #1}}{{\itshape #1}}}
+\newcommand{\usol}[2]{\ifbool{hideans}{\underline{\hspace{#1}{\phantom{#2}}\hspace{#1}}}{\underline{\hspace{#1}{#2}\hspace{#1}}}}
+
+\newbool{hideans}
+%\usetikzlibrary{tikzmark}
+%\usepackage{tikzpagenodes}
+%\newcounter{tikzmarklines}\setcounter{tikzmarklines}{0} % 
+%\tikzset{
+%  tikzmark prefix=prefix-,
+%  tikzmark suffix=-suffix
+%}
+%\newcommand{\hidestart}{%
+%  \stepcounter{tikzmarklines}%
+%  \tikzmark{a\thetikzmarklines}%
+%  \iftikzmarkoncurrentpage{b\thetikzmarklines}%
+%  \else
+%  \begin{tikzpicture}[remember picture,overlay,next page=below]%
+%  \path (pic cs:a\thetikzmarklines) coordinate (start-\thetikzmarklines)
+%  ([yshift=-0.2ex]pic cs:b\thetikzmarklines) coordinate (end-\thetikzmarklines);
+%  \ifbool{hideans}{\fill[white] (current page.west|-start-\thetikzmarklines)-- ++(0,1.2em) -|
+%  (current page.east|-end-\thetikzmarklines) -| cycle;}{}
+%  \end{tikzpicture}%
+%  \fi
+%}
+%\newcommand{\hidefinish}{%
+%  \tikzmark{b\thetikzmarklines}%
+%  \begin{tikzpicture}[remember picture,overlay,next page=below]%
+%  \path (pic cs:a\thetikzmarklines) coordinate (start-\thetikzmarklines)
+%  ([yshift=-1.5ex]pic cs:b\thetikzmarklines) coordinate (end-\thetikzmarklines);
+%  \ifbool{hideans}{\fill[white] (current page.west|-start-\thetikzmarklines)-- ++(0,1.2em) -|
+%  (current page.east|-end-\thetikzmarklines) -| cycle;}{}
+%  \end{tikzpicture}%
+%  }
+
+
+% -------------------
+% Cover Page Commands
+% -------------------
+
+% Exam Title
+\newcommand{\examtitle}{\ifbool{hideans}{
+	\noindent\textbf{\course} \hfill \textbf{Name:} \underline{\hspace{8.7cm}} \par
+	\noindent \textbf{\term} \par
+	\noindent \textbf{\examdate} \par
+	\noindent \textbf{\timelimit} \par \vspace{0.2cm}
+	\noindent \rule[2ex]{\textwidth}{2pt}
+}{%
+	\noindent\textbf{\course} \hfill \textbf{Name:} \underline{\hspace{1.55cm} \itshape{Caleb M\textsuperscript{c}Whorter --- Solutions} \hspace{1.55cm}} \par
+	\noindent \textbf{\term} \par
+	\noindent \textbf{\examdate} \par
+	\noindent \textbf{\timelimit} \par \vspace{0.2cm}
+	\noindent \rule[2ex]{\textwidth}{2pt}
+	}
+}
+
+% Instructions
+\newcommand{\instructions}[1]{%
+	\begin{center}
+	\fbox{\fbox{\parbox{6in}{\centering #1}}}
+	\end{center} \vspace{0.1cm}
+}
+
+% Scores
+\newcommand{\scores}{
+	\begin{center}
+	\addpoints
+	\gradetable[v][questions] % v: vertical scores; h: horizontal scores
+	\end{center}
+}
+
+% Bottom Line
+\newcommand{\bottomline}{\vfill\noindent \rule[2ex]{\textwidth}{2pt}}
+
+
+
+% -------------------
+% General Commands
+% -------------------
+\newcommand\ds{\displaystyle} % Shortened displaystyle
+\newcommand{\pspace}{\par\vspace{\baselineskip}} % Par then linebreak
+\newcommand{\pvspace}[1]{\par\vspace{#1}} % Par then vpsace
+\newcommand{\fn}[1]{\begingroup\let\thefootnote\relax\footnotetext{#1}\endgroup} % Unnumbered Footnote
+
+% Check/X Marks
+%\usepackage{pifont}
+%\newcommand{\cmark}{\ding{51}}
+%\newcommand{\xmark}{\ding{55}}

@@ -1,0 +1,216 @@
+\documentclass[12pt,letterpaper]{exam}
+\usepackage[lmargin=1in,rmargin=1in,tmargin=1in,bmargin=1in]{geometry}
+\usepackage{../style/exams}
+
+\usepackage{cancel}
+
+% -------------------
+% Course & Exam Information
+% -------------------
+\newcommand{\course}{MATH 141: Exam 1}
+\newcommand{\term}{Spring --- 2025}
+\newcommand{\examdate}{02/07/2025}
+\newcommand{\timelimit}{50 Minutes}
+
+\setbool{hideans}{false} % Student: True; Instructor: False
+
+
+% -------------------
+% Content
+% -------------------
+\begin{document}
+
+\examtitle
+\instructions{Write your name on the appropriate line on the exam cover sheet. This exam contains \numpages\ pages (including this cover page) and \numquestions\ questions. Check that you have every page of the exam. Answer the questions in the spaces provided on the question sheets. Be sure to answer every part of each question and show all your work. If you run out of room for an answer, continue on the back of the page --- being sure to indicate the problem number. At no during the exam may you use l'H\^{o}pital's rule. {\itshape Solutions which make use of l'H\^{o}pital's rule will receive no credit.}} 
+\scores
+\bottomline
+\newpage
+
+
+% -------------------
+% Questions
+% -------------------
+\begin{questions}
+
+% Question 1
+\newpage
+\question[20] Use the plot of the function $f(x)$ shown below to answer the following questions---if a given limit does not exist, simply write `DNE':
+	\[
+	\fbox{
+	\begin{tikzpicture}[scale=1,every node/.style={scale=0.5}]
+	\begin{axis}[
+	grid=both,
+	axis lines=middle,
+	ticklabel style= {fill= blue!5!white},
+	xmin= -10.5, xmax=10.5,
+	ymin= -10.5, ymax=10.5,
+	xtick= {-10,-8,...,10},
+	ytick= {-10,-8,...,10},
+	minor tick = {-10,-9,...,10},
+	xlabel= \(x\), ylabel= \(y\)
+	]
+	
+	\addplot[thick, samples=100, smooth, domain= 5:10.5] {-(sin(13*deg(x - 3)) - 5)};
+	\addplot[thick, samples=4, smooth, domain= 2:5] {-(2*(x + 1) - 11)};
+	\addplot[thick, samples=4, smooth, domain= -2:2] {-(-3/4*(x + 1) - 11/4)};
+	\addplot[thick, samples=20, smooth, domain= -5:-2] {-((x + 3)^2 + 2)};
+	\addplot[thick, samples=60, smooth, domain= -6.95:-5] {1/(x + 7) - 13/2};
+	\addplot[thick, samples=100, smooth, domain= -10.5:-7.05] {-(1/(5*(x + 7)^2) + 5)};
+	
+	\addplot[holdot] coordinates{(5,4)(-2,2)(-2,-3)(-5,-6)};
+	\addplot[soldot] coordinates{(5,-1)(-2,0)(-5,-2)};
+	\end{axis}
+	\end{tikzpicture}
+	}
+	\] \pvspace{0.3cm}
+
+\begin{enumerate}[(a)]
+\item $f(-2)= 0$ \vfill
+\item $\ds\lim_{x \to \,-2^-} f(x)= -3$ \vfill
+\item $\ds\lim_{x \to \,-2^+} f(x)= 2$ \vfill
+\item $\ds\lim_{x \to \,-2} f(x)= \text{DNE}$ \vfill
+\item $f(-5)= -2$ \vfill
+\item $\ds\lim_{x \to \,-5^-} f(x)= -6$ \vfill
+\item $\ds\lim_{x \to \,-5^+} f(x)= -6$ \vfill
+\item $\ds\lim_{x \to \,-5} f(x)= -6$ \vfill
+\item $\ds\lim_{x \to \,-7^-} f(x)= -\infty$ \vfill
+\item $\ds\lim_{x \to \,-7^+} f(x)= \infty$ \vfill
+\item $\ds\lim_{x \to \,-7} f(x)= \text{DNE}$ \vfill
+\item $\ds\lim_{x \to -\infty} f(x)= -5$ \vfill
+\item $\ds\lim_{x \to \infty} f(x)= \text{DNE}$ \vfill
+\item What are the points of discontinuity for $f(x)$---if any? \quad $x= -7, -5, -2, 5$ \vfill
+\item What are the cusps of $f(x)$---if any? \quad $x= 2$ \vfill
+\end{enumerate}
+
+
+
+% Question 2
+\newpage
+\question[20] Showing all your work, compute the following limits. {\itshape You will not receive any credit for using l'H\^opital's rule.} \par\vspace{0.3cm}
+	\begin{enumerate}[(a)]
+	\item $\ds\lim_{a \to 8} \dfrac{3 - \sqrt{a + 1}}{8 - a}=  \lim_{a \to 8} \dfrac{3 - \sqrt{a + 1}}{8 - a} \cdot \dfrac{3 + \sqrt{a + 1}}{3 + \sqrt{a + 1}}$ \par\vspace{0.3cm}
+	$\ds\phantom{\lim_{a \to 3} \dfrac{\sqrt{a + 1} - 2}{a - 3}}= \lim_{a \to 8} \dfrac{9 + 3 \sqrt{a + 1} - 3\sqrt{a + 1} - (a + 1)}{(8 - a)(3 + \sqrt{a + 1})}$ \par\vspace{0.3cm}
+	$\ds\phantom{\lim_{a \to 3} \dfrac{\sqrt{a + 1} - 2}{a - 3}}= \lim_{a \to 8} \dfrac{9 - a - 1}{(8 - a)(3 + \sqrt{a + 1})}$ \par\vspace{0.3cm}
+	$\ds\phantom{\lim_{a \to 3} \dfrac{\sqrt{a + 1} - 2}{a - 3}}= \lim_{a \to 8} \dfrac{\cancel{8 - a}}{\cancel{(8 - a)}(3 + \sqrt{a + 1})}$ \par\vspace{0.3cm}
+	$\ds\phantom{\lim_{a \to 3} \dfrac{\sqrt{a + 1} - 2}{a - 3}}= \lim_{a \to 8} \dfrac{1}{3 + \sqrt{a + 1}}$ \par\vspace{0.3cm}
+	$\ds\phantom{\lim_{a \to 3} \dfrac{\sqrt{a + 1} - 2}{a - 3}}= \dfrac{1}{3 + \sqrt{9}}$ \par\vspace{0.3cm}
+	$\ds\phantom{\lim_{a \to 3} \dfrac{\sqrt{a + 1} - 2}{a - 3}}= \dfrac{1}{6}$ \par\vspace{0.72cm}
+	
+	\item $\ds\lim_{x \to \infty} \dfrac{7 - 2x^2}{5x^2 - 9x}= \lim_{x \to \infty} \dfrac{7 - 2x^2}{5x^2 - 9x} \cdot \dfrac{1/x^2}{1/x^2}$ \par\vspace{0.3cm}
+	$\ds\phantom{\lim_{x \to \infty} \dfrac{3x^2 - 4}{5x - 7x^2}}= \lim_{x \to \infty} \dfrac{\;\;\;\dfrac{7}{x^2} - \dfrac{2x^2}{x^2}\;\;\;}{\dfrac{5x^2}{x^2} - \dfrac{9x}{x^2}}$ \par\vspace{0.3cm}
+	$\ds\phantom{\lim_{x \to \infty} \dfrac{3x^2 - 4}{5x - 7x^2}}= \lim_{x \to \infty} \dfrac{\;\;\;\dfrac{7}{x^2} - 2\;\;\;}{5 - \dfrac{9}{x}}$ \par\vspace{0.3cm} 
+	$\ds\phantom{\lim_{x \to \infty} \dfrac{3x^2 - 4}{5x - 7x^2}}= \dfrac{0 - 2}{5 - 0}$ \par\vspace{0.3cm}
+	$\ds\phantom{\lim_{x \to \infty} \dfrac{3x^2 - 4}{5x - 7x^2}}= -\dfrac{2}{5}$ \vfill
+	
+	\newpage
+	
+	
+	\item $\ds\lim_{x \to \,-3^-} \dfrac{x + 2}{|x + 3|} \stackrel{\frac{1}{0}}{=} \lim_{x \to -3^-} \dfrac{\overbrace{x + 2}^{-}}{\underbrace{|x + 3|}_{+}}= -\infty$ \vspace{9.25cm}
+	
+	\item $\ds\lim_{x \to 0} \dfrac{3x}{\sin(4x)}= \lim_{x \to 0} 3 \cdot \dfrac{x}{\sin(4x)}$ \par\vspace{0.3cm} 
+	$\ds\phantom{\lim_{x \to 0} \dfrac{3x}{\sin(4x)}}= \lim_{x \to 0} 3 \cdot \dfrac{4x}{\sin(4x)} \cdot \dfrac{1}{4}$ \par\vspace{0.3cm}
+	$\ds\phantom{\lim_{x \to 0} \dfrac{3x}{\sin(4x)}}= 3 \cdot 1 \cdot \dfrac{1}{4}$ \par\vspace{0.3cm}
+	$\ds\phantom{\lim_{x \to 0} \dfrac{3x}{\sin(4x)}}= \dfrac{3}{4}$ \vfill
+	\end{enumerate}
+
+
+
+% Question 3
+\newpage
+\question[20] Use the derivative definition to compute the derivative of $f(x)= 5x - x^2$ at $x= -3$. Be sure to show all your work. {\itshape Using the derivative `shortcut' rules or l'H\^opital's rule to compute any limits will result in no credit.} \pspace
+
+{\itshape \tsol Recall that $f'(a):= \ds \lim_{h \to 0} \dfrac{f(a + h) - f(a)}{h}$. We have $f(x)= 5x - x^2$ and $a= -3$. But then $f(-3)= 5(-3) - (-3)^2= -15 - 9= -24$. But then\dots \par\vspace{0.5cm}
+	\[
+	\begin{aligned}
+	f(-1)&= \lim_{h \to 0} \dfrac{f(-3 + h) - f(-3)}{h} \\[0.3cm]
+	&= \dfrac{\big( 5(-3 + h) - (-3 + h)^2 \big) - (-24)}{h} \\[0.3cm]
+	&= \lim_{h \to 0} \dfrac{\big( -15 + 5h - (9 - 6h + h^2) \big) + 24}{h} \\[0.3cm]
+	&= \lim_{h \to 0} \dfrac{-15 + 5h - 9 + 6h - h^2 + 24}{h} \\[0.3cm]
+	&= \lim_{h \to 0} \dfrac{-h^2 + 11h}{h} \\[0.3cm]
+	&= \lim_{h \to 0} (-h + 11) \\[0.3cm]
+	&= 0 + 11 \\[0.3cm]
+	&= 11
+	\end{aligned}
+	\]
+}
+
+
+
+% Question 4
+\newpage
+\question[20] Showing all your work, compute the following: \par\vspace{0.5cm}
+	\begin{enumerate}[(a)]
+	\item $\dfrac{d}{dx} \left(e^x \tan x \ln x \right)= e^x \cdot \tan x \ln x + \sec^2 x \cdot e^x \ln x + \dfrac{1}{x} \cdot e^x \tan x$ \vfill
+	\item $\dfrac{d}{dx} \left( \dfrac{\ln x}{\cos x} \right)= \dfrac{\dfrac{1}{x} \cdot \cos x - (-\sin x) \cdot \ln x}{\cos^2 x}$ \par\vspace{0.5cm}
+	
+	\hspace{3cm} {\itshape OR} \par\vspace{0.5cm}
+	
+	$\dfrac{d}{dx} \left( \dfrac{\ln x}{\cos x} \right)= \dfrac{d}{dx} (\ln x \cdot \sec x )= \dfrac{1}{x} \cdot \sec x + \sec x \tan x \cdot \ln x$ \par\vspace{0.65cm}
+	
+	\item $\dfrac{d}{dx} \left( \underbrace{\sqrt[4]{x^7}}_{x^{7/4}} + \cos^{-1}(x) \right)= \dfrac{7}{4}\; x^{3/4} + \dfrac{-1}{\sqrt{1 - x^2}}$ \vfill
+	\item $\dfrac{d}{dx} \left( \sec x + 2^x \right)= \sec x \tan x + 2^x \ln 2$ \vfill
+	\item $\dfrac{d}{dx} \left( \sin^2(5x) + e^\pi \right)= 2 \sin(5x) \cdot \cos(5x) \cdot 5 + 0$ \vfill
+	\end{enumerate}
+
+
+
+% Question 5
+\newpage
+\question[20] Consider the function $f(x)$ given below.
+	\[
+	f(x)= 
+	\begin{cases}
+	2x + 1, & x < 3 \\
+	x^2 - 5x - 1, & x \geq 3
+	\end{cases}
+	\]
+Use the definition of continuity to determine whether $f(x)$ is continuous at $x= 3$. If the function is not continuous, determine the type of discontinuity. \pspace
+
+{\itshape \tsol Recall that $f(x)$ is continuous at $x= 3$ if $\ds f(3)= \lim_{x \to 3} f(x)$. We know that $\ds\lim_{x \to 3} f(x)$ exists if and only if $\ds\lim_{x \to 3^-} f(x)= \lim_{x \to 3^+} f(x)$. We have\dots
+	\begin{itemize}
+	\item $f(2)$: 
+		\[
+		f(3)= 2(3) + 1= 6 + 1= 7
+		\] \par\vspace{0.5cm}
+	
+	\item $\ds\lim_{x \to 3^-} f(x)$:
+		\[
+		\lim_{x \to 3^-} f(x)= \lim_{x \to 3^-} (2x + 1)= 2(3) + 1= 6 + 1= 7
+		\] \par\vspace{0.5cm}
+	
+	\item $\ds\lim_{x \to 3^+} f(x)$:
+		\[
+		\lim_{x \to 3^+} f(x)= \lim_{x \to 3^+} (x^2 - 5x - 1)= 3^2 - 5(3) - 1= -7
+		\]
+	\end{itemize}
+Because $\ds\lim_{x \to 3^-} f(x) \neq \lim_{x \to 3^+} f(x)$, $\ds\lim_{x \to 3} f(x)$ does not exist. But then $\ds f(3) \neq \lim_{x \to 3} f(x)$. Therefore, $f(x)$ is not continuous at $x= 3$. \par\vspace{0.5cm}
+
+Because $f(3)$ is defined, $\lim_{x \to 3^-} f(x)$ and $\lim_{x \to 3^+} f(x)$ exist, and $\ds\lim_{x \to 3^-} f(x) \neq \lim_{x \to 3^+} f(x)$, it must be that $x= 3$ is a jump discontinuity. We can see this in the plot below.
+	\[
+	\fbox{
+	\begin{tikzpicture}[scale=1,every node/.style={scale=0.5}]
+	\begin{axis}[
+	grid=both,
+	axis lines=middle,
+	ticklabel style= {fill= blue!5!white},
+	xmin= -0.5, xmax=5.5,
+	ymin= -10.5, ymax=10.5,
+	xtick= {-10,-8,...,10},
+	ytick= {-10,-8,...,10},
+	minor tick = {-10,-9,...,10},
+	xlabel= \(x\), ylabel= \(y\)
+	]
+	
+	\addplot[thick, samples=60, smooth, domain= 0:3] {2*x + 1};
+	\addplot[thick, samples=100, smooth, domain= 3:5.5] {x^2 - 5*x - 1};
+	
+	\addplot[holdot] coordinates{(3,7)};
+	\addplot[soldot] coordinates{(3,-7)};
+	\end{axis}
+	\end{tikzpicture}
+	}
+	\]
+}
+
+\end{questions}
+\end{document}
