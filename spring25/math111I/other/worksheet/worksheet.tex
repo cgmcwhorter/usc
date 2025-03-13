@@ -1,0 +1,158 @@
+\documentclass[11pt,letterpaper]{article}
+\usepackage[lmargin=1in,rmargin=1in,bmargin=1in,tmargin=1in]{geometry}
+\usepackage{
+	enumerate,		% Enumerate Environments
+	microtype,			% Improved Typesetting
+	multicol,			% Use Multiple Columns
+}
+
+% -------------------
+% Fonts
+% -------------------
+\usepackage[T1]{fontenc}
+\usepackage{charter}
+
+\setlength{\parindent}{0ex} % Paragraph Indentation
+
+% -------------------
+% Commands
+% -------------------
+\newcommand\ds{\displaystyle}
+\newenvironment{3enumerate}{%
+	\begin{enumerate}[(1)]
+	\begin{multicols}{3}
+	}{%
+	\end{multicols}
+	\end{enumerate}
+}
+
+\newcounter{problem}
+\newcommand{\prob}{\stepcounter{problem}%
+\noindent\textbf{Problem \theproblem. }}
+
+\newcommand{\pspace}{\par\vspace{\baselineskip}}
+
+% -------------------
+% Tikz/PGFPlots
+% -------------------
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest}
+
+
+% -------------------
+% Content
+% -------------------
+\begin{document}
+\pagenumbering{gobble}
+
+% Title
+\begin{center} {\bfseries \LARGE Linear Function Problems --- 01/28} \end{center} \par\vspace{0.2\baselineskip}
+
+% Problem 1
+\prob Does the table below represent a linear function? \par
+	\begin{table}[ht]
+	\centering
+	\begin{tabular}{|c||rrrr|} \hline
+	$x$ & $1$ & $2$ & $5$ & $6$ \\
+	$y$ & $7$ & $4$ & $-5$ & $-8$ \\ \hline
+	\end{tabular}
+	\end{table} \par
+If $y$ is a linear function of $x$, find the function. If it is not, explain why. \pspace
+
+
+
+% Problem 2
+\prob A company is examining their operating costs. They observe that the amount they spend making each item they sell is approximately the same---roughly \$8. The company also has to pay \$7,500 in rent for their warehouse used in manufacturing. 
+	\begin{enumerate}[(a)]
+	\item Explain why the total cost of production, $C$, is a linear function of the number of items they produce, $q$. Find $C(q)$.
+	\item Find and interpret the slope of $C(q)$.
+	\item Find and interpret the $y$-intercept of $C(q)$.
+	\item What is the cost of producing 450 items?
+	\end{enumerate} \pspace
+
+
+% Problem 3
+\prob A statistician finds that the population of a town $t$~years after its founding in 1980 is given by $P(t)= 200t + 8500$. 
+	\begin{enumerate}[(a)]
+	\item What kind of model did the statistician use? Justify your answer.
+	\item Find and interpret the average rate of change for $P(t)$.
+	\item Find and interpret the $y$-intercept for $P(t)$.
+	\item Find and interpret $P(20)$.
+	\item According to this model, what is the year that the town will be 100,000 people?
+	\end{enumerate} \pspace
+
+
+
+% Problem 4
+\prob Find the average rate of change for $f(x)= x^2 - 3x + 5$ between $x= -1$ and $x= 5$. Interpret this average rate of change graphically. \pspace
+
+
+
+% Problem 5
+\prob Find the linear function that passes through the point $(1, 3)$ with slope $-4$. \pspace
+
+
+
+% Problem 6
+\prob Find the linear function shown below. 
+	\[
+	\fbox{
+	\begin{tikzpicture}[scale=0.8,every node/.style={scale=0.5}]
+	\begin{axis}[
+	grid=both,
+	axis lines=middle,
+	ticklabel style={fill=blue!5!white},
+	xmin= -10, xmax=10,
+	ymin= -10, ymax=10,
+	xtick={-10,-9,...,10},
+	ytick={-10,...,10},
+	xlabel=\(x\),ylabel=\(y\)
+	]
+	\addplot[thick, domain= -10.5:10.5,samples=2] {1/3*x + 4/3};
+
+	\end{axis}
+	\end{tikzpicture}
+	}
+	\] 
+
+
+
+% Problem 7
+\prob Find a linear function, $f(x)$, such that $f(1)= 0$ and $f(-5)= 6$. \pspace
+
+
+
+% Problem 8
+\prob A single adult leader of a Math Circle is taking children to see a new math flick in theaters. Adult tickets are \$14 and children tickets are \$10. They get a deal for a \$6 mini box of popcorn and \$3 soda for each child. They will also pay \$20 to park the bus taken to bring the children there. Find an expression representing the total cost to bring $N$ children to this movie. Is this expression linear in $N$? Explain. \pspace 
+
+
+
+% Problem 9
+\prob Find the linear function that intersects $f(x)= 4 - x^2$ at $x= -1$ and $x= 3$. \pspace 
+
+
+
+% Problem 10
+\prob Is the point $(1, -4)$ on the graph of the linear function $\ell(x)= 3x + 1$? Explain. \pspace
+
+
+
+% Problem 11
+\prob The cost of taking $C$ credits at a college, in thousands of dollars, for $y$~years is given by $0.5 + 23y$.
+	\begin{enumerate}[(a)]
+	\item Find and interpret the slope and $y$-intercept. 
+	\item What happens if the college increases the cost of tuition? Explain.
+	\item What happens if the college decreases their base fees? Explain.  
+	\end{enumerate} \pspace
+
+
+
+% Problem 12
+\prob While filling a large tank, an applied mathematician finds that the amount of water in a tank (in gallons) $t$~hours from now is given by $G(t)= 600t - 30$. 
+	\begin{enumerate}[(i)]
+	\item Find and interpret the slope and $y$-intercept.
+	\item Find and interpret $G(4)$.
+	\item Solve $G(t)= 30000$. What does this tell you?
+	\end{enumerate}
+
+\end{document}
