@@ -124,28 +124,144 @@ One can work out the derivation of $\frac{d}{d\theta} \sin \theta$ to see the re
 % 02/12
 \checkin{02/12} If $f'(1)= 0$ and $f''(1) < 0$, then $f(x)$ has a local minima at $x= 1$. \pspace
 
+\sol The statement is \textit{false}. Suppose that $f(x)$ is a twice-differentiable function. If $f'(a)= 0$, then $x= a$ is a critical value for $f(x)$. By the Second Derivative Test, if $f''(a) < 0$, then $x= a$ is a local maxima. If $f''(a) > 0$, then $x= a$ is a local minima. However, if $f''(a)= 0$, then the test is inconclusive. Because $f'(1)= 0$, we know that $x= 1$ is a critical value. Because $f''(1) < 0$, then $x= 1$ is a local maxima. \pvspace{1.3cm}
+
+
+
 % 02/14
 \checkin{02/14} If $f(x)$ is differentiable at $x= a$, then the linearization of $f(x)$ at $x= a$ and the tangent line to $f(x)$ at $x= a$ are the same thing. \pspace
+
+\sol The statement is \textit{true}. Recall that the tangent line for $f(x)$ at $x= x_0$ (if it exists) is the line $y= f(x_0) + m(x - x_0)$, where $m= f'(x_0)$. However, the linearization of $f(x)$ at $x= a$ is $\ell(x)= f(x_0) + f'(x_0) \, \big(x - x_0 \big)$. Observe that these are the same line. \pvspace{1.3cm}
+
+
+
+\newpage
+
+
 
 % 02/17
 \checkin{02/17}  A point where $f''(x)= 0$ is called an inflection point. \pspace
 
+\sol The statement is \textit{false}. An inflection point is a point where $f(x)$ changes concavity. Consider the function $f(x)= x^4$. Observe that $f'(x)= 4x^3$ and $f''(x)=12x^2$. We have $f''(0)= 12(0^2)= 0$. However, $f''(x)= 12x^2 \geq 0$ for all $x$. But then $f''(x)$ can never change sign, so that $f(x)$ has no points of inflection. This contradicts the assertion in the given statement. While points where $f''(x)= 0$ \textit{can} be points of inflection, they do not \textit{have} to be. \pvspace{1.3cm}
+
 
 
 % 02/19
-\checkin{02/19} $\ds\lim_{x \to 2} \dfrac{x - 2}{x^2 - 4} \stackrel{\text{L.H.}}{=} \lim_{x \to 2} \dfrac{1}{2x}= \dfrac{1}{4}$
+\checkin{02/19} $\ds\lim_{x \to 2} \dfrac{x - 2}{x^2 - 4} \stackrel{\text{L.H.}}{=} \lim_{x \to 2} \dfrac{1}{2x}= \dfrac{1}{4}$ \pspace
+
+\sol The statement is \textit{true}. Recall that by l'H\^opital's Rule, if $\ds\lim \dfrac{f(x)}{g(x)}$ is $\dfrac{0}{0}$ or $\pm\dfrac{\infty}{\infty}$ and $\ds\lim \dfrac{f'(x)}{g'(x)}$ exists, then $\ds\lim \dfrac{f(x)}{g(x)}= \lim \dfrac{f'(x)}{g'(x)}$. Observe that `plugging in' $x= 2$ into $\dfrac{x - 2}{x^2 - 4}$, we obtain $\dfrac{0}{0}$. By l'H\^opital's Rule, we then have that this limit is the same as $\ds\lim_{x \to 2} \dfrac{1}{2x}= \dfrac{1}{2(2)}= \dfrac{1}{4}$. \pvspace{1.3cm}
 
 
 
 % 02/21
-\checkin{02/21} $\ds\lim_{x \to 1} \dfrac{4 - x}{x^2 - 1} \stackrel{\text{L.H.}}{=} \lim_{x \to 1} \dfrac{-1}{2x}= \dfrac{-1}{2(1)}= -\dfrac{1}{2}$
+\checkin{02/21} $\ds\lim_{x \to 1} \dfrac{4 - x}{x^2 - 1} \stackrel{\text{L.H.}}{=} \lim_{x \to 1} \dfrac{-1}{2x}= \dfrac{-1}{2(1)}= -\dfrac{1}{2}$ \pspace
 
-
+\sol The statement is \textit{false}. Recall that by l'H\^opital's Rule, if $\ds\lim \dfrac{f(x)}{g(x)}$ is $\dfrac{0}{0}$ or $\pm\dfrac{\infty}{\infty}$ and $\ds\lim \dfrac{f'(x)}{g'(x)}$ exists, then $\ds\lim \dfrac{f(x)}{g(x)}= \lim \dfrac{f'(x)}{g'(x)}$. However, `plugging in' $x= 1$, we obtain $\frac{3}{0}$, which is neither of these forms. In fact, $\ds\lim_{x \to 1} \dfrac{4 - x}{x^2 - 1}$ does not exist because $\ds\lim_{x \to 1^+} \dfrac{4 - x}{x^2 - 1}= -\infty$ and $\ds\lim_{x \to 1^+} \dfrac{4 - x}{x^2 - 1}= \infty$. \pvspace{1.3cm}
 
 
 
 % 02/24
-\checkin{02/24} Implicitly differentiating $4x + y^2 + e^{xy}= y$ yields $4 + 2y + e^{xy} \cdot y + y' = y'$.
+\checkin{02/24} Implicitly differentiating $4x + y^2 + e^{xy}= y$ yields $4 + 2y + e^{xy} \cdot y + y' = y'$. \pspace
+
+\sol The statement is \textit{false}. Recall that when implicitly differentiating $y$ with respect to $x$, we have $1 \cdot \dfrac{dy}{dx}= y'$. Therefore, we have\dots
+	\[
+	\begin{gathered}
+	4x + y^2 + e^{xy}= y \\[0.2cm]
+	\dfrac{d}{dx} \, \left(4x + y^2 + e^{xy} \right)= \dfrac{d}{dx} \, y \\[0.2cm]
+	4 + 2y \cdot \dfrac{dy}{dx} + e^{xy} \cdot \left( 1 \cdot y + x \cdot \dfrac{dy}{dx} \right)= \dfrac{dy}{dx} \\[0.2cm]
+	4 + 2y \cdot y' + e^{xy} \cdot \left( y + x y' \right)= y'
+	\end{gathered}
+	\]
+
+
+
+\newpage
+
+
+
+% 02/26
+\checkin{02/26} If the radius of a sphere is decreasing at a rate of 1 meter per minute and is currently 2~m across, the rate of change of the volume of the sphere is $16\pi$. \pspace
+
+\sol The statement is \textit{false}. Recall that the volume of a sphere is $V= \frac{4}{3} \,\pi r^3$. Because the sphere is 2~m across, the diameter is 2~m, i.e. the radius is $r= 1$~m. We know that the radius of the sphere is decreasing at a rate of 1~m per minute, i.e. $\frac{dr}{dt}= -1$. But then\dots
+	\[
+	\begin{gathered}
+	V= \dfrac{4}{3} \,\pi r^3 \\
+	\dfrac{d}{dt}\, V= \dfrac{d}{dt} \, \left( \dfrac{4}{3} \,\pi r^3 \right) \\
+	\dfrac{dV}{dt}= 4\pi r^2 \cdot \dfrac{dr}{dt} \\
+	\dfrac{dV}{dt}= 4\pi (1^2) \cdot -1 \\
+	\dfrac{dV}{dt}= -4\pi
+	\end{gathered}
+	\]
+Therefore, the volume of the sphere is decreasing at $4\pi$~m$^3$ per minute. The given answer must be incorrect as the rate of change of the volume of the sphere is positive---whereas we know the volume must be decreasing. The given answer used $r= 2$ rather than the correct value $r= 1$. \pvspace{1.3cm}
+
+
+
+% 03/03
+\checkin{03/03} If one is optimizing a function $f(x)$ on an interval $[a, b]$, if there are not critical values, then $f(x)$ has no absolute maximum or minimum on $[a, b]$. \pspace
+
+\sol The statement is \textit{false}. Consider the function $f(x)= x$ on the interval $[-1, 1]$. Because $f'(x)= 1 \neq 0$, $f(x)$ has no critical values. However, observe that $f'(x)= 1 > 0$, so that $f(x)$ is increasing. Therefore, the smallest value for $f(x)$ must be at $x= -1$ and the largest value must be at $x= 1$. This shows that $f(-1)= -1$ is the absolute minimum for $f(x)$ on $[-1, 1]$ and $f(1)= 1$ is the absolute maximum for $f(x)$ on $[-1, 1]$. \pvspace{1.3cm}
+
+
+
+% 03/05
+\checkin{03/05} If $f'(x)$ is increasing, then $f(x)$ is convex. \pspace
+
+\sol The statement is \textit{true}. We assume that $f''(x)$ exists. Because $f'(x)$ is increasing, we know that its derivative is positive. But $\frac{d}{dx} \,f'(x)= f''(x)$. But then $f''(x) > 0$. Because $f''(x) > 0$, we know that $f(x)$ is concave up, i.e. $f(x)$ is convex. \pvspace{1.3cm}
+
+
+
+% 03/19
+\checkin{03/19} Let $p(x)$ be an odd degree polynomial. Because $p(x)$ is everywhere continuous and $\ds\lim_{x \to \pm \infty} p(x)= \pm \infty$, by the Intermediate Value Theorem, it must be that $p(x)$ has a real root. That is, every odd degree polynomial has a real root. \pspace
+
+\sol The statement is \textit{true}. A polynomial is everywhere continuous, so that the Intermediate Value Theorem applies to $p(x)$. If $p(x)$ has odd degree, then either $\ds\lim_{x \to \infty} p(x)= \infty$ and $\ds\lim_{x \to -\infty} p(x)= -\infty$ or $\ds\lim_{x \to \infty} p(x)= -\infty$ and $\ds\lim_{x \to -\infty} p(x)= \infty$. In either case, by the Intermediate Value Theorem, there must be an $x_0 \in (-\infty, \infty)$ such that $p(x_0)= 0$. But then $p(x)$ has a root. \pvspace{1.3cm}
+
+
+
+% 03/21
+\checkin{03/21} Starting from a stop, if you drive 250 miles in 5~hours, there had to have been a time when you drove 30~mph. \pspace
+
+\sol The statement is \textit{true}. We assume that one's position in time, $p(t)$, is continuous and differentiable---in fact, continuously differentiable. [This should logically be the case.] Therefore, $p(t)$ is continuous on $[0, 5]$ and differentiable on $(0, 5)$. We know that the average speed over this time period is $\frac{250}{5}= 50$~mph. By the Mean Value Theorem, there is a time between 0 and 5 hours where one's speed is 50~mph. But to accelerate to 50~mph, one had to first have traveled at 30~mph (by the Intermediate Value Theorem). \pvspace{1.3cm}
+
+
+
+% 03/24
+\checkin{03/24} $\ds\sum_{n=1}^3 n^2= 14$ \pspace
+
+\sol The statement is \textit{true}. Recall that $\ds\sum_{n=a}^b f(n)= f(a) + f(a + 1) + \cdots + f(b)$. Therefore, we have\dots
+	\[
+	\sum_{n=1}^3 n^2= 1^2 + 2^2 + 3^2= 1 + 4 + 9= 14
+	\] \pvspace{1.3cm}
+
+
+
+% 03/26
+\checkin{03/26} The function $\sec^2(\theta) - 5$ is an antiderivative for the function $f(\theta)= \tan(\theta)$. \pspace
+
+\sol The statement is \textit{false}. A function $F(x)$ is an antiderivative for $f(x)$ if $F'(x)= f(x)$. Observe that $\dfrac{d}{d\theta} \big( \sec^2(\theta) - 5 \big)= 2 \sec \theta \cdot \sec \theta \tan \theta - 0= 2 \sec^2 \theta \tan \theta \neq f(\theta)$. But then $\sec^2(\theta) - 5$ cannot be an antiderivative for $f(\theta)$. In fact, the antiderivative for $f(\theta)$ is $\ln|\sec \theta| + C$, where $C$ is a constant. To see this, observe that\dots
+	\[
+	\dfrac{d}{d\theta} \left( \ln|\sec \theta| + C \right)= \dfrac{1}{\sec \theta} \cdot \sec \theta \tan \theta + 0= \tan \theta
+	\] \pvspace{1.3cm}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
