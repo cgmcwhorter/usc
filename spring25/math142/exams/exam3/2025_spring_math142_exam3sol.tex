@@ -1,0 +1,259 @@
+\documentclass[12pt,letterpaper]{exam}
+\usepackage[lmargin=1in,rmargin=1in,tmargin=1in,bmargin=1in]{geometry}
+\usepackage{../style/exams}
+
+% -------------------
+% Course & Exam Information
+% -------------------
+\newcommand{\course}{MATH 142: Exam 3}
+\newcommand{\term}{Spring --- 2025}
+\newcommand{\examdate}{04/17/2025}
+\newcommand{\timelimit}{75 Minutes}
+
+\setbool{hideans}{false} % Student: True; Instructor: False
+
+
+% -------------------
+% Content
+% -------------------
+\begin{document}
+
+\examtitle
+\instructions{Write your name on the appropriate line on the exam cover sheet. This exam contains \numpages\ pages (including this cover page) and \numquestions\ questions. Check that you have every page of the exam. Answer the questions in the spaces provided on the question sheets. Be sure to answer every part of each question and show all your work. If you run out of room for an answer, continue on the back of the page --- being sure to indicate the problem number.} 
+\scores
+\bottomline
+\newpage
+
+
+% -------------------
+% Questions
+% -------------------
+\begin{questions}
+
+% Question 1
+\newpage
+\question[10] Answer the following:
+	\begin{enumerate}[(a)]
+	\item What is the Taylor series for $\sin x$ centered at $x= 0$? Be sure to give the series and its interval of convergence. \vfill
+	\sol{
+		\[
+		\sin x= \sum_{n=0}^\infty (-1)^n \, \dfrac{x^{2n + 1}}{(2n + 1)!}, \qquad x \in (-\infty, \infty)
+		\]
+	} \vfill
+	
+	\item What is the Taylor series for $\cos x$ centered at $x= 0$? Be sure to give the series and its interval of convergence. \vfill
+	\sol{
+		\[
+		\cos x= \sum_{n=0}^\infty (-1)^n \, \dfrac{x^{2n}}{(2n)!}, \qquad x \in (-\infty, \infty)
+		\]
+	} \vfill
+	
+	\item What is the Taylor series for $\dfrac{1}{1 - x}$ centered at $x= 0$? Be sure to give the series and its interval of convergence. \vfill
+	\sol{
+		\[
+		\dfrac{1}{1 - x}= \sum_{n=0}^\infty x^n, \qquad x \in (-1, 1)
+		\]
+	} \vfill
+	\end{enumerate}
+
+
+
+% Question 2
+\newpage
+\question[20] Find the first four nonzero terms of the Taylor series centered at $x= 1$ for the function $f(x)= 3x^2 + e^{1-x}$. \pspace
+
+\sol{We know that the Taylor series for a function $f(x)$ centered at $x= c$ is given by\dots
+	\[
+	\sum_{n=0}^\infty \dfrac{f^{(n)}(c)}{n!} \, (x - c)^n
+	\]
+We have $f(x)= 3x^2 + e^{1-x}$ and center $c= 1$. We know\dots \pspace
+	\[
+	\begin{aligned}
+	f(x)&= 3x^2 + e^{1 - x} \hspace{0.4cm}\Longrightarrow\hspace{0.4cm}& f(1)&= 3(1^2) + e^{1-1}= 3(1) + e^0= 3 + 1= 4 \\[1cm]
+	f'(x)&= 6x - e^{1 - x} \hspace{0.4cm}\Longrightarrow\hspace{0.4cm}& f'(1)&= 6(1) - e^{1-1}= 6 - e^0= 6 - 1= 5 \\[1cm]
+	f''(x)&= 6 + e^{1 - x} \hspace{0.4cm}\Longrightarrow\hspace{0.4cm}& f''(1)&= 6 + e^{1 - 1}= 6 + e^0= 6 + 1= 7 \\[1cm]
+	f'''(x)&= -e^{1 - x} \hspace{0.4cm}\Longrightarrow\hspace{0.4cm}& f'''(1)&= -e^{1 - 1}= -e^0= -1
+	\end{aligned}
+	\] \pspace
+But then the first four nonzero terms of the Taylor series are\dots \pspace
+	\[
+	\begin{gathered}
+	\dfrac{4}{0!} \, (x - 1)^0 + \dfrac{5}{1!} \, (x - 1)^1 + \dfrac{7}{2!} \, (x - 1)^2 + \dfrac{-1}{3!} \, (x - 1)^3 \\[1cm]
+	\dfrac{4}{1} \, (x - 1)^0 + \dfrac{5}{1} \, (x - 1)^1 + \dfrac{7}{2} \, (x - 1)^2 + \dfrac{-1}{6} \, (x - 1)^3 \\[1cm]
+	4 + 5(x - 1) + \dfrac{7}{2} \,(x - 1)^2 - \dfrac{1}{6} \, (x - 1)^3
+	\end{gathered}
+	\]
+}
+
+
+
+% Question 3
+\newpage
+\question[20] Find the center, radius of convergence, and interval of convergence for the following power series:
+	\[
+	\sum_{n=1}^\infty \dfrac{(x - 4)^n}{n \, 5^n}
+	\] \pspace
+
+\sol{\footnotesize Clearly, as $x= 4$ `kills' the series, the center of this power series is $x= 4$. Using the Ratio test, we have\dots
+	\[
+	\lim_{n \to \infty} \left| \dfrac{\;\;\dfrac{(x - 4)^{n+1}}{(n + 1) 5^{n+1}}\;\;}{\dfrac{(x - 4)^n}{n 5^n}} \right|= \lim_{n \to \infty} \left| \dfrac{(x - 4)^{n+1}}{(n + 1) 5^{n+1}} \cdot \dfrac{n 5^n}{(x - 4)^n} \right|= \lim_{n \to \infty} \left| \dfrac{(x - 4)^{n + 1}}{(x - 4)^n} \cdot \dfrac{5^n}{5^{n+1}} \cdot \dfrac{n}{n + 1} \right|	
+	\]
+But this is\dots
+	\[
+	\lim_{n \to \infty} \left| (x - 4) \cdot \dfrac{1}{5} \cdot \dfrac{n}{n + 1} \right|= \left| (x - 4) \cdot \dfrac{1}{5} \cdot 1 \right|= \left| \dfrac{x - 4}{5} \right|
+	\]
+Alternatively, using the Root Test, we have\dots
+	\[
+	\lim_{n \to \infty} \left| \dfrac{(x - 4)^n}{n 5^n} \right|^{1/n}= \lim_{n \to \infty} \left| \dfrac{(x - 4)^{n/n}}{n^{1/n} \, 5^{n/n}} \right|= \lim_{n \to \infty} \left| \dfrac{x - 4}{n^{1/n} \, 5} \right|= \left| \dfrac{x - 4}{1 \cdot 5} \right|= \left| \dfrac{x - 4}{5} \right|
+	\]
+In either case, we want $\left| \tfrac{x - 4}{5} \right| < 1$. But then\dots
+	\[
+	\begin{gathered}
+	\left| \dfrac{x - 4}{5} \right| < 1 \\
+	-1 < \dfrac{x - 4}{5} < 1 \\
+	-5 < x - 4 < 5 \\
+	-1 < x < 9
+	\end{gathered}
+	\]
+But then the radius of convergence is $R= \dfrac{9 - (-1)}{2}= \dfrac{10}{2}= 5$. We know that the series converges absolutely for $-1 < x < 9$. However, the tests are inconclusive if $x= -1, 9$. We test these individually. \pspace
+
+\underline{$x= -1$}\,: If $x= -1$, the series is $\ds\sum_{n=1}^\infty \dfrac{(-1 - 4)^n}{n 5^n}= \sum_{n=1}^\infty \dfrac{(-5)^n}{n 5^n}= \sum_{n=1}^\infty \dfrac{(-1)^n 5^n}{n 5^n}= \sum_{n=1}^\infty \dfrac{(-1)^n}{n}$. Observe that the sequence $\left\{ \tfrac{1}{n} \right\}$ is decreasing and $\ds\lim_{n \to \infty} \tfrac{1}{n}= 0$. Therefore, the series $\ds\sum_{n=1}^\infty \dfrac{(-1)^n}{n}$ converges by the Alternating Series Test. \pspace
+
+\underline{$x= 9$}\,: If $x= 9$, the series is $\ds\sum_{n=1}^\infty \dfrac{(9 - 4)^n}{n 5^n}= \sum_{n=1}^\infty \dfrac{5^n}{n 5^n}= \sum_{n=1}^\infty \dfrac{1}{n}$. This is the Harmonic series, which diverges by the $p$-test with $p= 1$. \pspace
+
+Therefore, the interval of convergence is $[-1, 9)$. 
+	\[
+	\boxed{
+	\begin{aligned}
+	\text{Center: }& x= 4 \\
+	\text{Radius: }& R= 5 \\
+	\text{Int. Conv: }& [-1, 9)
+	\end{aligned}
+	}
+	\]
+}
+
+
+
+% Question 4
+\newpage
+\question[15] Showing all your work, complete the following parts:
+	\begin{enumerate}[(a)]
+	\item Find the Maclaurin series for $e^{-x^2}$. \pspace
+	\sol{\small We know that the Maclaurin series, i.e. the Taylor series centered at $x= 0$, for $e^x$ is\dots
+		\[
+		e^x= \sum_{n=0}^\infty \dfrac{x^n}{n!}
+		\]
+	This series converges for all $x \in (-\infty, \infty)$. But then\dots
+		\[
+		e^{-x^2}= \sum_{n=0}^\infty \dfrac{(-x^2)^n}{n!}= \sum_{n=0}^\infty (-1)^n \, \dfrac{x^{2n}}{n!}
+		\]
+	This series must also convergence for $x \in (-\infty, \infty)$.} \vfill
+	
+	\item Use (a) to `compute' the following:
+		\[
+		\int_0^1 e^{-x^2} \;dx
+		\] 
+	\sol{\newline\small We know from (a) that $\ds e^{-x^2}= \sum_{n=0}^\infty (-1)^n \, \dfrac{x^{2n}}{n!}$ and that this is valid for all $x \in (-\infty, \infty)$. But then\dots
+		\[
+		\begin{aligned}
+		\int_0^1 e^{-x^2} \;dx&= \int_0^1 \left( \sum_{n=0}^\infty (-1)^n \, \dfrac{x^{2n}}{n!} \right) \;dx \\
+		&=  \sum_{n=0}^\infty \left( \int_0^1 (-1)^n \, \dfrac{x^{2n}}{n!} \right) \;dx \\
+		&= \sum_{n=0}^\infty \left( (-1)^n \, \dfrac{x^{2n+1}}{n! (2n + 1)} \bigg|_{x=0}^{x=1} \right) \\
+		&= \sum_{n=0}^\infty \left( (-1)^n \, \dfrac{1^{2n+1}}{n! (2n + 1)} - (-1)^n \, \dfrac{0^{2n+1}}{n! (2n + 1)} \right) \\
+		&= \boxed{\sum_{n=0}^\infty \dfrac{(-1)^n}{n! (2n + 1)}}
+		\end{aligned}
+		\]
+	So we have\dots
+		\[
+		\int_0^1 e^{-x^2} \;dx= \sum_{n=0}^\infty \dfrac{(-1)^n}{n! (2n + 1)}= 1 - \dfrac{1}{3} + \dfrac{1}{10} - \dfrac{1}{42} + \cdots \approx 1 - \dfrac{1}{3} + \dfrac{1}{10} - \dfrac{1}{42}= \dfrac{26}{35} \approx 0.742857
+		\]
+	In fact, $\ds\int_0^1 e^{-x^2} \;dx \approx 0.746824$.\newline}
+	\end{enumerate}
+
+
+
+% Question 5
+\newpage
+\question[15] Find the center, radius of convergence, and interval of convergence for the following power series:
+	\[
+	\sum_{n=1}^\infty \dfrac{n! \,x^n}{\sqrt{n}}
+	\] \pspace
+
+\sol{Because $x= 0$ `kills' the series, the center is $x= 0$. Using the Ratio Test, we have\dots
+	\[
+	\begin{aligned}
+	\lim_{n \to \infty} \left| \dfrac{\;\;\dfrac{(n+1)! x^{n+1}}{\sqrt{n+1}}\;\;}{\dfrac{n! x^n}{\sqrt{n}}} \right|&= \lim_{n \to \infty} \left| \dfrac{(n+1)! x^{n+1}}{\sqrt{n+1}} \cdot \dfrac{\sqrt{n}}{n! x^n} \right| \\[0.3cm]
+	&= \lim_{n \to \infty} \left| \dfrac{(n + 1)!}{n!} \cdot \dfrac{x^{n + 1}}{x^n} \cdot \dfrac{\sqrt{n}}{\sqrt{n + 1}} \right| \\[0.3cm]
+	&= \lim_{n \to \infty} \left| \dfrac{(n + 1) \,n!}{n!} \cdot \dfrac{x^n \, x}{x^n} \cdot \sqrt{\dfrac{n}{n + 1}} \right| \\[0.3cm]
+	&= \lim_{n \to \infty} \left| (n + 1) \, x \, \sqrt{\dfrac{n}{n + 1}} \right|
+	\end{aligned}
+	\]
+If $x= 0$, the above limit is $0$, so that the series converges absolutely. For all other $x$, we have\dots
+	\[
+	\lim_{n \to \infty} \left| (n + 1) \, x \, \sqrt{\dfrac{n}{n + 1}} \right|= | \infty \cdot x \cdot \sqrt{1}|= \infty > 1
+	\]
+By the Ratio Test, the series would then diverge. Therefore, the `interval' of convergence is only $x= 0$, i.e. $\{ 0 \}$. This also shows that the radius of convergence is $R= 0$. 
+	\[
+	\boxed{
+	\begin{aligned}
+	\text{Center: }& x= 0 \\
+	\text{Radius: }& R= 0 \\
+	\text{`Int.' Conv: }& \{ 0 \} 
+	\end{aligned}
+	}
+	\]
+}
+
+
+
+% Question 6
+\newpage
+\question[10] Showing all your work, compute the following sum:
+	\[
+	\sum_{n=0}^\infty \dfrac{3^n}{n!}
+	\] \pspace
+
+\sol{Recall that the Taylor series for $e^x$ centered at $x= 0$ is\dots
+	\[
+	e^x= \sum_{n=0}^\infty \dfrac{x^n}{n!}
+	\]
+and is valid for all $x \in (-\infty, \infty)$. But then\dots
+	\[
+	\sum_{n=0}^\infty \dfrac{3^n}{n!}= \sum_{n=0}^\infty \dfrac{x^n}{n!} \bigg|_{x=3}= e^x \bigg|_{x=3}= e^3
+	\]
+}
+
+
+
+% Question 7
+\newpage
+\question[10] Consider the function $f(x)= e^x$. Let $T_2(x)$ be the second degree Taylor polynomial centered at $x= 0$ for $f(x)$. If one uses $T_2(x)$ to approximate $f(x)$ on $(-1, 1)$, what is the largest possible error using this approximation? Be sure to fully justify your answer. \pspace
+
+\sol{Recall that the Taylor series for $e^x$ centered at $x= 0$ is\dots
+	\[
+	e^x= \sum_{n=0}^\infty \dfrac{x^n}{n!}= 1 + x + \dfrac{x^2}{2!} + \dfrac{x^3}{3!} + \cdots 
+	\]
+and is valid for all $x \in (-\infty, \infty)$. Therefore, we know that $T_2(x)= 1 + x + \tfrac{1}{2}\, x^2$. \pspace
+
+The $N$th degree Taylor series centered at $x= x_0$, $T_N(x)$, is given by\dots
+	\[
+	\sum_{n=0}^N \dfrac{f^{(n)}(c)}{n!} \, (x - x_0)^n
+	\] \pspace
+If one approximates $f(a)$ by $T_N(a)$ for some $x= a$ in the interval of convergence, then the Taylor Remainder Theorem states there is some $c$ between the center $x= x_0$ and $x= a$ such that the error is\dots
+	\[
+	\text{Error}= \dfrac{f^{(N+1)}(c)}{(N+1)!} \, (a - x_0)^{N+1}
+	\] \pspace
+Here, we have $f(x)= e^x$, $N= 2$ (so that $N+1= 3$) center $x_0= 0$, and $a$ and $c$ are some value in $(-1, 1)$. We know that all derivatives of $e^x$ are $e^x$. But then $f^{(n+1)}(x)= e^x$. Therefore, the error is\dots
+	\[
+	\text{Error}= \dfrac{f^{(N+1)}(c)}{(N+1)!} \, (a - x_0)^{N+1}= \dfrac{e^c}{3!} \, (a - 0)^3= \dfrac{e^c}{6} \,\,a^3
+	\] \pspace
+Because $e^x$ is increasing on $(-1, 1)$, the largest possible value for $e^c$ at $x= 1$. But then largest value for $e^x$ on $(-1, 1)$ is $e^1= e$. But $x^3$ is also increasing on $(-1, 1)$, so that the largest possible value for $x^3$ on $(-1, 1)$ is at $x= 1$. So, the largest value of $a^3$ on $(-1, 1)$ is $1^3= 1$. Therefore, by approximating $f(x)= e^x$ by $T_2(x)$ on $(-1, 1)$, the largest possible error is\dots
+	\[
+	\text{Error}= \dfrac{e^c}{6} \,\,x^3 \leq \dfrac{e^1}{6} \;\;1^3= \boxed{\dfrac{e}{6}} \approx 0.453047
+	\] \pspace
+In fact, one can show that the maximum possible for this approximation is approximately 0.218282.
+}
+
+\end{questions}
+\end{document}

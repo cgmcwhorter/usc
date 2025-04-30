@@ -1,0 +1,39 @@
+\documentclass[11pt,letterpaper]{article}
+\usepackage[lmargin=1in,rmargin=1in,tmargin=1in,bmargin=1in]{geometry}
+\usepackage{../style/quiz}
+\setbool{hideans}{false} % Student: True; Instructor: False
+
+% -------------------
+% Content
+% -------------------
+\begin{document}
+\quiz{7}
+
+% Problem 1
+\problem Find the domain of the following functions:
+	\begin{enumerate}[(a)]
+	\item $f(x)= x^3 - 4x + 8$
+	\item $g(x)= \dfrac{6}{x + 9}$
+	\item $h(x)= \sqrt{2x - 5}$
+	\end{enumerate} \pspace
+
+\ans{
+\begin{enumerate}[(a)]
+\item The domain of any polynomial is all real numbers. Therefore, the domain of $f(x)$ is all real numbers, i.e. $\mathbb{R}$ or $(-\infty, \infty)$.
+
+\item We know a `fraction' is defined so long as the denominator is not 0. We have $x + 9= 0$, then $x= -9$. Therefore, the domain of $g(x)$ is all real numbers except for $x= -9$, i.e. $(-\infty, -9) \cup (-9, \infty)$ or $\mathbb{R} \setminus \{ -9 \}$.
+
+\item The domain of an even root is all inputs that are nonnegative, i.e. greater than or equal to 0. So, we need $2x - 5 \geq 0$. This implies that $2x \geq 5$ so that $x \geq \frac{5}{2}$. Therefore, the domain of $h(x)$ is the set of real numbers with $x \geq \frac{5}{2}$, i.e. $[\frac{5}{2}, \infty)$.
+\end{enumerate}
+} \vfill
+
+
+% Problem 1
+\problem Find the domain and range of the function $f(x)= 4 - (x + 1)^2$. \pspace
+
+\ans{The function $f(x)$ is a quadratic function. The domain of a quadratic function---indeed, any polynomial---is the set of all real numbers, i.e. $\mathbb{R}$ or $(-\infty, \infty)$. \pspace
+
+We can see that $a= -1 < 0$. [This is because $f(x)$ is in vertex form. Alternatively, we can expand $f(x)$: $4 - (x + 1)^2 = 4 - (x + 1)(x + 1)= 4 - (x^2 + x + x + 1)= 4 - (x^2 + 2x + 1)= -x^2 - 2x - 3$, where we can see that $a= -1$.] But then $f(x)$ opens downwards, i.e. $f(x)$ has a maximum value but no minimum value. We can see from $f(x)$ that $f(x)$ has vertex $(-1, 4)$. The vertex is the maximum $y$-value. But then the range must be $(-\infty, 4]$. 
+} \vfill
+
+\end{document}

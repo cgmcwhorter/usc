@@ -449,8 +449,8 @@ Therefore, by the Root Test, the series converges absolutely. Alternatively, we 
 	&= \lim_{n \to \infty} \dfrac{\;\;\left( \dfrac{n + 2}{2n + 5} \right)^{n+1}\;\;}{\left( \dfrac{n + 1}{2n + 3} \right)^n} \\\
 	&= \lim_{n \to \infty} \dfrac{\;\;\left( \dfrac{n + 2}{2n + 5} \right)^n \left( \dfrac{n + 2}{2n + 5} \right)\;\;}{\left( \dfrac{n + 1}{2n + 3} \right)^n} \\
 	&= \lim_{n \to \infty} \dfrac{\;\;\left( \dfrac{n + 2}{2n + 5} \right)^n\;\;}{\left( \dfrac{n + 1}{2n + 3} \right)^n} \cdot  \dfrac{n + 2}{2n + 5} \\
-	&= \left( \dfrac{\;\;\dfrac{n + 2}{2n + 5}\;\;}{\dfrac{n + 1}{2n + 3}} \right)^n \cdot \dfrac{n + 2}{2n + 5} \\
-	&= \left( \dfrac{(n + 2)(2n + 3)}{(2n + 5)(n + 1)} \right)^n \cdot \dfrac{n + 2}{2n + 5} \\
+	&= \lim_{n \to \infty} \left( \dfrac{\;\;\dfrac{n + 2}{2n + 5}\;\;}{\dfrac{n + 1}{2n + 3}} \right)^n \cdot \dfrac{n + 2}{2n + 5} \\
+	&= \lim_{n \to \infty} \left( \dfrac{(n + 2)(2n + 3)}{(2n + 5)(n + 1)} \right)^n \cdot \dfrac{n + 2}{2n + 5} \\
 	&= 1 \cdot \dfrac{1}{2} \\
 	&= \dfrac{1}{2} < 1
 	\end{aligned}
@@ -466,35 +466,111 @@ Therefore, the series converges absolutely.\footnote{\tiny Note. To show that $\
 
 
 
+\newpage
 
 
 
+% 04/01
+\checkin{04/01} The series $\ds\sum_{n=1}^\infty \dfrac{(x - 5)^n}{n^2 3^n}$ has center $x= 5$ and radius of convergence 3. Therefore, the series converges for $x= 7$. \pspace
+
+\sol The statement is \textit{true}. Clearly, $x= 5$ `kills' the entire series, i.e. makes the summand 0. So, the center is $x= 5$. We can confirm that the series has radius of convergence 3. For instance, using the root test, we have\dots
+	\[
+	\lim_{n \to \infty} \left| \dfrac{(x - 5)^n}{n^2 3^n} \right|^{1/n}= \lim_{n \to \infty} \dfrac{|x - 5|}{n^{2/n} 3}= \dfrac{|x - 5|}{1 \cdot 3}= \dfrac{|x - 5|}{3}
+	\]
+By the root test, we know that this series converges absolutely if this limit is less than 1. But then\dots
+	\[
+	\begin{gathered}
+	\dfrac{|x - 5|}{3} < 1 \\
+	|x - 5| < 3 \\
+	-3 < x - 5 < 3 \\
+	2 < x < 8
+	\end{gathered}
+	\]
+The radius of convergence is then $R= \dfrac{8 - 2}{2}= \dfrac{6}{2}= 3$. But because $2 < 7 < 8$, we know that the series converges absolutely for $x= 7$. \pvspace{1.3cm}
 
 
 
+% 04/03
+\checkin{04/03} The first-order Taylor series for $f(x)$ at $x_0$ is the tangent line to $f(x)$ at $x_0$. Furthermore, the Taylor series for $f(x)$ at $x_0$ is an `infinite degree' polynomial approximating $f(x)$ `near' $x_0$. \pspace
+
+\sol The statement is \textit{true}. The Taylor series for $f(x)$ centered at $x= x_0$ is\dots
+	\[
+	\sum_{n=0}^\infty \dfrac{f^{(n)}(x_0)}{n!} \, (x - x_0)^n= f(x_0) + f'(x_0) \,(x - x_0) + \dfrac{f''(x_0)}{2} \,(x - x_0)^2 + \dfrac{f^{(3)}(x_0)}{6} \,(x - x_0) + \cdots
+	\]
+Observe if one only uses the first-order Taylor series, i.e. $T_1(x)$, then we have\dots
+	\[
+	T_1(x)= f(x_0) + f'(x_0) \,(x - x_0)
+	\]
+This is exactly the tangent line to $f(x)$ at $x= x_0$. For the second part, observe that the above Taylor series terminated at any fixed $n$, i.e. considering only $T_n(x)$, is a polynomial in $x$. Because the Taylor series is a infinite series consisting of infinitely many polynomial terms, we can consider the Taylor series as an infinite degree polynomial which converges to (not just approximates) $f(x)$ on the interval of convergence centered at $x= x_0$. \pvspace{1.3cm}
 
 
 
+% 04/08
+\checkin{04/08} If a Taylor series for $f(x)$ at $x= a$ converges to $f(x)$ on an interval $I$ containing $x= a$, then the error in approximating $f(x)$ by $T_n(x)$ for $x \in I$ is given by the $(n+1)$st term of the Taylor series, i.e. $\dfrac{f^{(n+1)}(c)}{(n+1)!} \,(x - a)^{n + 1}$, where $c$ is some number between $a$ and $x$. \pspace
+
+\sol The statement is \textit{true}. This is the Taylor Series Remainder Theorem. For instance, the third Taylor polynomial for $f(x)= x^{10}$ centered at $x= 1$ is\dots
+	\[
+	T_3(x)= 1 + 10(x - 1) + 45(x - 1)^2 + 120(x - 1)^3
+	\]
+Suppose one uses this to approximate $f(1.3)= (1.3)^{10}$. The Taylor Remainder Theorem states there is a $c$ between $x= 1$ and $x= 1.3$ such that the error for this approximation is\dots
+	\[
+	\dfrac{f^{(n+1)}(c)}{(n+1)!} \,(x - a)^{n + 1}= \dfrac{f^{(3+1)}(c)}{(3+1)!} \,(1.3 - 1)^{3 + 1}= \dfrac{f^{(4)}(c)}{4!} \,(0.3)^4= 0.0003375 \cdot f^{(4)}(c) 
+	\]
+However, we know that $f^{(4)}(x)= 5040x^6$ and is increasing on the interval $[1, 1.3]$. Therefore, we have\dots
+	\[
+	0.0003375 \cdot f^{(4)}(c) \leq 0.0003375 \cdot f^{(4)}(1.3)= 0.0003375 \cdot 24327.11736= 8.2104
+	\]
+So the error in saying $1.3^{10}= f(1.3) \approx T_3(1.3)$ is at most 8.2104. In fact, we have\dots
+	\[
+	|f(1.3) - T_3(1.3)| \approx 2.4958492
+	\] \pvspace{1.3cm}
 
 
 
+% 04/10
+\checkin{04/10} The value of $\ds\sum_{n=0}^\infty \dfrac{1}{n! \, 2^n}$ is $e^2$. \pspace
+
+\sol The statement is \textit{false}. Recall that the Taylor series for $e^x$ centered at $x= 0$ is $\ds\sum_{n=0}^\infty \dfrac{x^n}{n!}$ and that this series converges to $e^x$ for all $x \in (-\infty, \infty)$. But then\dots
+	\[
+	\sqrt{e}= e^{1/2}= e^x \bigg|_{x= \frac{1}{2}}= \sum_{n=0}^\infty \dfrac{x^n}{n!} \bigg|_{x= \frac{1}{2}}= \sum_{n=0}^\infty \dfrac{\left(\tfrac{1}{2} \right)^n}{n!}=  \sum_{n=0}^\infty \dfrac{1}{n! \, 2^n}
+	\]
+The given value incorrectly substitutes $x= 2$ for the Taylor series for $e^x$. \pvspace{1.3cm}
 
 
 
+% 04/15
+\checkin{04/15} The Taylor series for a function always converges to that function. \pspace
+
+\sol The statement is \textit{false}. For instance, the Taylor series of $f(x)= \dfrac{1}{1 - x}$ is $\ds\sum_{n=0}^\infty x^n$, which only converges for $(-1, 1)$. On this interval, it is true that the Taylor series converges to $f(x)$. However, $f(x)$ is defined for all $x \neq 1$ while the Taylor series is only defined for $x \in (-1, 1)$. There are more extreme examples. For instance, consider the function $g(x)$ given by\dots
+	\[
+	g(x)=
+	\begin{cases}
+	e^{-1/x}, & x > 0 \\
+	0, & x \leq 0
+	\end{cases}
+	\]
+One can show that $g(x)$ is infinitely differentiable at $x= 0$. However, the Taylor series for $g(x)$ centered at $x= 0$ is $0$---the zero function. But $g(x) > 0$ for all $x > 0$. Therefore, the Taylor series for $g(x)$ centered at $x= 0$ does not converge to $g(x)$ at all (except for at its center, obviously). Another such example is the function $h(x)= e^{-1/x^2}$ for $x \neq 0$ and we take $h(0)= 0$. So, while a Taylor series \textit{should} approximate a function `near' its center, this may not always be the case. However, for sufficiently `nice' functions, this indeed will be the case. \pvspace{1.3cm}
 
 
 
+% 04/24
+\checkin{04/24} In polar coordinates, $x= r \sin \theta$ and $y= r \cos \theta$. \pspace
 
-
-
-
-
-
-
-
-
-
-
-
+\sol The statement is \textit{true}. Recall that in polar coordinates, $r$ is the distance from a point to the origin and $\theta$ is the angle the ray from the origin to the point makes with the positive $x$-axis (measured counterclockwise). We can construct a right triangle and use basic trigonometry to derive these formulas.
+	\[
+	\begin{tikzpicture}
+	\draw[line width=0.02cm,->] (-2,0) -- (2,0);
+	\draw[line width=0.02cm,->] (0,-2) -- (0,2);
+	\draw[line width=0.02cm] (1.5,0) -- (1.5,0.2) -- (1.7,0.2);
+	\draw[line width=0.04cm] (0,0) -- (1.7,1.3) -- (1.7,0);
+	\draw[fill=black] (1.7,1.3) circle (0.08);
+	\node at (2.3,1.4) {$(x, y)$};
+	\node at (0.6,0.23) {$\theta$};
+	\node at (0.8,0.85) {$r$};
+	\node at (0.9,-0.2) {$x$};
+	\node at (1.9,0.6) {$y$};
+	\end{tikzpicture}
+	\]
+Observe that $\cos \theta= \frac{x}{r}$, so that $x= r \cos \theta$, and $\sin \theta= \frac{y}{r}$, so that $y= r \sin \theta$. Furthermore, observe that from the Pythagorean Theorem, we know that $x^2 + y^2= r^2$. Finally, observe that $\tan \theta= \frac{y}{x}$, which implies that $\theta= \tan^{-1} ( \frac{y}{x} )$.
 
 \end{document}

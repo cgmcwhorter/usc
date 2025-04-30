@@ -1,0 +1,55 @@
+\documentclass[11pt,letterpaper]{article}
+\usepackage[lmargin=1in,rmargin=1in,tmargin=1in,bmargin=1in]{geometry}
+\usepackage{../style/quiz}
+\setbool{hideans}{true} % Student: True; Instructor: False
+
+% -------------------
+% Content
+% -------------------
+\begin{document}
+\quiz{11}
+
+% Problem 1
+\problem Find the average rate of change of $f(x)= 2x^2 + 4x - 5$ on $[-1, 1]$. \pspace
+
+\ans{The average rate of change of a function on an interval is the slope of the line through the graph of the function at the interval's endpoints, i.e. $\dfrac{\Delta y}{\Delta x}= \dfrac{f(b) - f(a)}{b - a}$, where the interval is $[a, b]$. We have $a= -1$ and $b= 1$. But then\dots
+	\[
+	\begin{aligned}
+	f(1)&= 2(1^2) + 4(1) - 5= 2(1) + 4(1) - 5= 2 + 4 - 5= 1 \\[0.3cm]
+	f(-1)&= 2(-1)^2 + 4(-1) - 5= 2(1) + 4(-1) - 5= 2 - 4 - 5= -7
+	\end{aligned}
+	\]
+But then\dots
+	\[
+	\text{Avg. ROC}= \dfrac{\Delta y}{\Delta x}= \dfrac{f(1) - f(-1)}{1 - (-1)}= \dfrac{1 - (-7)}{1 - (-1)}= \dfrac{1 + 7}{1 + 1}= \dfrac{8}{2}= 4
+	\]
+} \pvspace{3cm}
+
+
+
+% Problem 2
+\problem Write the following functions as $f \big( g(x) \big)$ for some functions $f(x), g(x)$. \pspace
+	\begin{enumerate}[(a)]
+	\item $\ln(16 - x^2)$ \pspace
+	\ans{There are infinitely many answers. For instance,
+		\[
+		f(x)= \ln x \qquad g(x)= 16 - x^2
+		\]
+	}
+	
+	\item $8 \sqrt{4x + 5}$ \pspace
+	\ans{There are infinitely many answers. For instance,
+		\[
+		f(x)= 8 \sqrt{x} \qquad g(x)= 4x + 5
+		\]
+	}
+	
+	\item $\dfrac{1}{x^2 + x + 5}$ \pspace
+	\ans{There are infinitely many answers. For instance,
+		\[
+		f(x)= \dfrac{1}{x} \qquad g(x)= x^2 + x + 5
+		\]
+	}
+	\end{enumerate}
+
+\end{document}

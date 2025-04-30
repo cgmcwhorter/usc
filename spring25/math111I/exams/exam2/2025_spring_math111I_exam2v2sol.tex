@@ -1,0 +1,482 @@
+\documentclass[12pt,letterpaper]{exam}
+\usepackage[lmargin=1in,rmargin=1in,tmargin=1in,bmargin=1in]{geometry}
+\usepackage{../style/exams}
+
+% -------------------
+% Course & Exam Information
+% -------------------
+\newcommand{\course}{MATH 111I: Exam 2}
+\newcommand{\term}{Spring --- 2025}
+\newcommand{\examdate}{03/27/2025}
+\newcommand{\timelimit}{75 Minutes}
+
+\setbool{hideans}{false} % Student: True; Instructor: False
+
+% -------------------
+% Content
+% -------------------
+\begin{document}
+
+\examtitle
+\instructions{Write your name on the appropriate line on the exam cover sheet. This exam contains \numpages\ pages (including this cover page) and \numquestions\ questions. Check that you have every page of the exam. Answer the questions in the spaces provided on the question sheets. Be sure to answer every part of each question and show all your work. If you run out of room for an answer, continue on the back of the page --- being sure to indicate the problem number.} 
+\scores
+\bottomline
+\newpage
+
+
+% -------------------
+% Questions
+% -------------------
+\begin{questions}
+
+% Question 1
+\newpage
+\question[8] Showing all your work, factor the following as must as possible: \par\vspace{0.3cm}
+	\begin{parts}
+	\part $x^2 + 13x - 90$ \pspace
+	\sol{We find factors of $1 \cdot -90= -90$ that add to $13$. Because $-90 < 0$, the factors must have opposite signs.
+	\begin{table}[!ht]
+	\centering
+	\wsol{\underline{\bfseries $\mathbf{-90}$}} \pvspace{0.2cm}
+	\begin{tabular}{rr}
+	\wsol{$1 \cdot -90$} & \wsol{$-89$} \\
+	\wsol{$-1 \cdot 90$} & \wsol{$89$} \\
+	\wsol{$2 \cdot -45$} & \wsol{$-43$} \\
+	\wsol{$-2 \cdot 45$} & \wsol{$43$} \\
+	\wsol{$3 \cdot -30$} & \wsol{$-27$} \\
+	\wsol{$-3 \cdot 30$} & \wsol{$27$} \\
+	\wsol{$5 \cdot -18$} & \wsol{$-13$} \\
+	\wsol{\underline{$\mathbf{-5 \cdot 18}$}} & \wsol{\underline{$\mathbf{13}$}} \\
+	\wsol{$6 \cdot -15$} & \wsol{$-9$} \\
+	\wsol{$-6 \cdot 15$} & \wsol{$9$} \\
+	\wsol{$9 \cdot -10$} & \wsol{$-1$} \\
+	\wsol{$-9 \cdot 10$} & \wsol{$1$} 
+	\end{tabular}
+	\end{table} \par
+	Therefore, we have\dots
+		\[
+		x^2 - 23 + 90= \boxed{(x - 5)(x + 18)}
+		\] \vfill
+	}
+
+	\part $9x^2 - 16$ \pspace
+	\sol{Recall that a difference of perfect square, $a^2 - b^2$, factors as $(a - b)(a + b)$. We have $a= 3x$ (so that $a^2= (3x)^2= 9x^2$) and $b= 4$ (so that $b^2= 4^2= 16$). Therefore, we have\dots
+		\[
+		9x^2 - 16= \boxed{(3x - 4)(3x + 4)}
+		\] \par\vspace{4cm}\vfill
+	}
+	\end{parts}
+
+
+
+% Question 2
+\newpage
+\question[8] Showing all your work, solve the following equation:
+	\[
+	x(x + 4)= 45
+	\]
+
+\sol{{\itshape\bfseries Solution.} We have\dots
+	\[
+	\begin{gathered}
+	x(x + 4)= 45 \\[0.3cm]
+	x^2 + 4x= 45 \\[0.3cm]
+	x^2 + 4x - 45= 0 \\[0.3cm]
+	(x + 9)(x - 5)= 0
+	\end{gathered}
+	\] \pspace
+But then either $x + 9= 0$, which implies that $x= -9$, or $x - 5= 0$, which implies that $x= 5$. Therefore, we have\dots \par\vspace{0.2cm}
+	\[
+	\boxed{x= -9, \, 5}
+	\] \vfill
+}
+
+
+
+% Question 3
+\question[8] Showing all your work, solve the following equation:
+	\[
+	x^2 - 60= 4x
+	\]
+
+\sol{{\itshape\bfseries Solution.} We have\dots
+	\[
+	\begin{gathered}
+	x^2 - 60= 4x \\[0.3cm]
+	x^2 - 4x - 60= 0 \\[0.3cm]
+	(x + 6)(x - 10)= 0
+	\end{gathered}
+	\] \pspace
+But then either $x + 6= 0$, which implies that $x= -6$, or $x - 10= 0$, which implies that $x= 10$. Therefore, we have\dots \par\vspace{0.2cm}
+	\[
+	\boxed{x= -6, \, 10}
+	\] \vfill
+}
+
+
+
+% Question 4
+\newpage
+\question[10] Consider the quadratic function $f(x)= 3 - (x + 8)^2$.
+	\begin{parts}
+	% (a)
+	\part What is the vertex for $f(x)$? \pspace
+	\sol{The $x$-coordinate of the vertex makes the square term $0$. Clearly, the $x$-coordinate of the vertex is $x= -8$. The $y$-coordinate of the vertex is what remains once the square term is $0$, which here is $3$. Therefore, the vertex is $(-8, 3)$.} \pspace \vfill
+	% (b)
+	\part What is the domain of $f(x)$? \pspace
+	\sol{Because $f(x)$ is a polynomial, the domain of $f(x)$ is all real numbers, i.e. the domain of $f(x)$ is $(-\infty, \infty)$. Equivalently, one can say that the domain of $f(x)$ is $\mathbb{R}$.} \pspace \vfill
+	% (c)
+	\part Is $f(x)$ concave up or concave down? Justify your answer. \pspace
+	\sol{Writing $f(x)$ as $-(x + 8)^2 + 3$, we can see that $a= -1$. Alternatively, we have $f(x)= 3 - (x + 8)^2= 3 - (x + 8)(x + 8)= 3 - (x^2 + 8x + 8x + 64)= 3 - (x^2 + 16x + 64)= 3 - x^2 - 16x - 64= -x^2 - 16x - 61$. In any case, we have $a= -1 < 0$. Therefore, $f(x)$ opens downwards; that is, $f(x)$ is concave down.} \pspace \vfill
+	% (d)
+	\part Does $f(x)$ have a maximum value or a minimum value? Explain. \pspace
+	\sol{Because $f(x)$ opens downwards, we know that $f(x)$ has a `highest point'---the vertex. Therefore, it must be that $f(x)$ has a maximum value. However, there is no minimum value for $f(x)$.} \pspace \vfill
+	% (e)
+	\part Find the maximum or minimum value for $f(x)$---whichever exists. \pspace
+	\sol{We know from the previous part that $f(x)$ has a maximum value. We know that the `highest point' on $f(x)$ is the vertex. The $y$-value of the vertex is the `output at this highest point.' We know from (a) that the vertex is $(-8, 3)$. Therefore, the maximum value for $f(x)$ is $3$.} \pspace \vfill
+	% (f)
+	\part What is the range of $f(x)$? \pspace
+	\sol{We know from (d) and (e) that $f(x)$ has a maximum value of $3$. We know also from (c) that $f(x)$ opens downwards. Therefore, it must be that $f(x)$ `takes on' every value $3$ or less. Therefore, the range of $f(x)$ is $(-\infty, 3]$.} \pspace \vfill
+	\end{parts}
+
+
+
+% Question 5
+\newpage
+\question[8] Showing all your work, solve the following equation:
+	\[
+	x= \sqrt{x} + 2
+	\] \pspace
+
+\sol{{\itshape\bfseries Solution.} We have\dots
+	\[
+	\begin{gathered}
+	x= \sqrt{x} + 2 \\
+	x - 2= \sqrt{x} \\
+	(x - 2)^2= (\sqrt{x})^2 \\
+	x^2 - 2x - 2x + 4= x \\
+	x^2 - 4x + 4= x \\
+	x^2 - 5x + 4= 0 \\
+	(x - 1)(x - 4)= 0 
+	\end{gathered}
+	\] \pspace
+But then either $x - 1= 0$, which implies that $x= 1$, or $x - 4= 0$, which implies that $x= 4$. Alternatively, suppose we write $y= \sqrt{x}$, so that $y^2= (\sqrt{x})^2= x$. But then\dots
+	\[
+	\begin{gathered}
+	x= \sqrt{x} + 2 \\
+	y^2= y + 2 \\
+	y^2 - y - 2= 0 \\
+	(y - 2)(y + 1)= 0 
+	\end{gathered}
+	\]
+But then either $y - 2= 0$, so that $y= 2$. But then $\sqrt{x}= 2$, so that $x= \sqrt{x}^2= 2^2= 4$. Or we know that $y + 1= 0$, so that $y= -1$. But then $\sqrt{x}= -1$, so that $x= \sqrt{x}^2= (-1)^2= 1$. \pspace
+
+However, not both of these are solutions. We can verify that $x= 4$ is a solution:
+	\[
+	\begin{gathered}
+	x= \sqrt{x} + 2 \\
+	4\stackrel{?}{=} \sqrt{4} + 2 \\
+	4\stackrel{?}{=} 2 + 2 \\
+	4= 4
+	\end{gathered}
+	\]
+However, $x= 1$ is not a solution (it is an extraneous solution):
+	\[
+	\begin{gathered}
+	x= \sqrt{x} + 2 \\
+	1\stackrel{?}{=} \sqrt{1} + 2 \\
+	1\stackrel{?}{=} 1 + 2 \\
+	1 \neq 3
+	\end{gathered}
+	\]
+Therefore, the only solution is $x= 4$:
+	\[
+	\boxed{x= 4}
+	\]
+}
+
+
+
+% Question 6
+\newpage
+\question[8] Showing all your work, find the vertex form of $x^2 - 16x + 78$. \pspace
+
+\sol{{\itshape\bfseries Solution.} The `middle' term is $-16$. Taking half of this, we have $\frac{-16}{2}= -8$. Squaring this value, we have $(-8)^2= 64$. But then by completing the square, we have\dots
+	\[
+	\begin{gathered}
+	x^2 - 16x + 78 \\[0.3cm]
+	x^2 - 16x + 64 - 64 + 78 \\[0.3cm]
+	(x^2 - 16x + 64) + (-64 + 78) \\[0.3cm]
+	\boxed{(x - 8)^2 + 14}
+	\end{gathered}
+	\] \par\vspace{1cm}
+
+Alternatively, using the `Evaluation Method', we know the $x$-coordinate of the vertex is $x= -\frac{b}{2a}$. We know that $a= 1$, $b= -116$, and $c= 78$. Therefore, the $x$-coordinate of the vertex is\dots
+	\[
+	x= -\dfrac{b}{2a}= -\dfrac{-16}{2(1)}= -\dfrac{-16}{2}= -(-8)= 8
+	\] \pspace
+Letting $f(x)= x^2 - 16x + 78$, we know the $y$-coordinate of the vertex is\dots
+	\[
+	f(8)= 8^2 - 16(8) + 78= 64 - 128 + 78= -64 + 78= 14
+	\] \pspace
+We know that the vertex form is $y= a(x - P)^2 + Q$, where the vertex is $(P, Q)$ and $a$ is the $a$-value from the standard form. The vertex is $(P, Q)= (8, 14)$. Therefore, the vertex form is\dots
+	\[
+	1(x - 8)^2 + 14= \boxed{(x - 8)^2 + 14}
+	\]
+}
+
+
+
+% Question 7
+\newpage
+\question[8] Showing all your work, factor the following as must as possible: \par\vspace{0.3cm}
+	\begin{parts}
+	\part $3x^2 + 23x - 8$ \pspace
+	\sol{We find factors of $3 \cdot -8= -24$ that add to $23$. Because $-24 < 0$, the factors must have opposite signs.
+	\begin{table}[!ht]
+	\centering
+	\wsol{\underline{\bfseries $\mathbf{-24}$}} \pvspace{0.2cm}
+	\begin{tabular}{rr}
+	\wsol{$1 \cdot -24$} & \wsol{$-23$} \\
+	\wsol{\underline{$\mathbf{-1 \cdot 24}$}} & \wsol{\underline{$\mathbf{23}$}} \\
+	\wsol{$2 \cdot -12$} & \wsol{$-10$} \\
+	\wsol{$-2 \cdot 12$} & \wsol{$10$} \\
+	\wsol{$3 \cdot -8$} & \wsol{$-5$} \\
+	\wsol{$-3 \cdot 8$} & \wsol{$5$} \\
+	\wsol{$4 \cdot -6$} & \wsol{$-2$} \\
+	\wsol{$-4 \cdot 6$} & \wsol{$2$} 
+	\end{tabular}
+	\end{table} \par
+	Therefore, we have\dots
+		\[
+		3x^2 + 23x - 8= 3x^2 - x + 24x - 8= x(3x - 1) + 8(3x - 1)= \boxed{(3x - 1)(x + 8)}
+		\] \vfill
+	}
+
+	\part $x^3 - x^2 - 2x$ \pspace
+	\sol{First, we factor out an $x$: $x3 - x^2 - 2x= x(x^2 - x - 2)$. We then need to factor $x^2 - x - 2$. We find factors of $-2$ that add to $-1$. Because $-2 < 0$, the factors must have opposite signs.
+	\begin{table}[!ht]
+	\centering
+	\wsol{\underline{\bfseries $\mathbf{-2}$}} \pvspace{0.2cm}
+	\begin{tabular}{rr}
+	\wsol{\underline{$\mathbf{1 \cdot -2}$}} & \wsol{\underline{$\mathbf{-1}$}} \\
+	\wsol{$-1 \cdot 2$} & \wsol{$1$} 
+	\end{tabular}
+	\end{table} \par
+	Therefore, we have\dots
+		\[
+		x^3 - 4x^2 + 3x= x(x^2 - x - 2)= \boxed{x(x + 1)(x - 2)}
+		\] \vfill
+	}
+	\end{parts}
+
+
+
+% Question 8
+\newpage
+\question Consider the quadratic function $72x^2 - 121x + 45$.
+	\begin{parts}
+	% (a)
+	\part[3] Use the discriminant of the given quadratic to explain why it factors \textit{without} explicitly factoring it. \pspace
+	\sol{\small We know the discriminant of a quadratic function $ax^2 + bx + c$ is $D= b^2 - 4ac$. We have $a= 72$, $b= -121$, and $c= 45$. Therefore, the discriminant of this quadratic function is\dots
+		\[
+		D= b^2 - 4ac= (-121)^2 - 4(72)45= 14641 - 12960= 1681
+		\]
+	We know that the quadratic function factors if the discriminant is a perfect square. We can see that $D$ is a perfect square because $\sqrt{D}= \sqrt{1681}= 41$, i.e. $41^2= 1681$. Therefore, $72x^2 - 121x + 45$ factors.
+	} 
+	% (b)
+	\part[4] Use the quadratic formula to find the $x$-intercepts of the given quadratic. \pspace
+	\sol{We have\dots
+		\[
+		\begin{aligned}
+		x&= \dfrac{-b \pm \sqrt{b^2 - 4ac}}{2a} \\
+		&= \dfrac{-(-121) \pm \sqrt{D}}{2(72)} \\
+		&= \dfrac{121 \pm \sqrt{1681}}{144} \\
+		&= \dfrac{121 \pm 41}{144}
+		\end{aligned}
+		\] \pspace
+	Therefore, the $x$-intercepts are $x= \dfrac{121 - 41}{144}= \dfrac{80}{144}= \dfrac{5}{9}$ and $x=\dfrac{121 + 41}{144}= \dfrac{162}{144}= \dfrac{9}{8}$\,, i.e. $\boxed{x= \dfrac{5}{9}, \, \dfrac{9}{8}}$\,. \par
+	} \vfill
+	% (c)
+	\part[3] Use the previous part to factor the given quadratic. \pspace
+	\sol{\small We `unsolve' for $x$:
+		\[
+		\begin{aligned}
+		x&= \dfrac{5}{9} &\hspace{3cm} x&= \dfrac{9}{8} \\
+		9x&= 5 & 8x&= 9 \\
+		9x - 5&= 0 & 8x - 9&= 0
+		\end{aligned}
+		\]
+	Therefore, $9x - 5$ and $8x - 9$ are factors of $72x^2 - 121x + 45$.  Because $9 \cdot 8= 72= a$, we know that\dots
+		\[
+		72x^2 - 121x + 45= \boxed{(9x - 5)(8x - 9)}
+		\]
+	}
+	\end{parts}
+
+
+
+% Question 9
+\newpage
+\question[8] For each of the given functions below, find functions $f(x)$ and $g(x)$ so that the given function can be written as $f \big( g(x) \big)$. \par\vspace{0.3cm}
+	\begin{parts}
+	\part $(x + 9)^5$ \pspace
+	\sol{There are infinitely many possible answers. The `most obvious' choice is\dots
+		\[
+		\boxed{
+		\begin{gathered}
+		f(x)= x^5 \\[0.3cm]
+		g(x)= x + 9
+		\end{gathered}
+		}
+		\] \pspace
+	We can verify this:
+		\[
+		f \big( g(x) \big)= f(x + 9)= (x + 9)^5
+		\]
+	} \vfill
+	
+	\part $\dfrac{1}{3x - 7}$ \pspace
+	\sol{There are infinitely many possible answers. The `most obvious' choice is\dots
+		\[
+		\boxed{
+		\begin{gathered}
+		f(x)= \dfrac{1}{x} \\
+		g(x)= 3x - 7
+		\end{gathered}
+		}
+		\] \pspace
+	We can verify this:
+		\[
+		f \big( g(x) \big)= f(3x - 7)= \dfrac{1}{3x - 7}
+		\]
+	} \vfill
+	\end{parts}
+
+
+
+% Question 10
+\newpage
+\question[9] Showing any necessary work, find the domain of each of the following functions: \par\vspace{0.3cm}
+	\begin{parts}
+	% (a)
+	\part $x^3 + 6x - 8$ \pspace
+	\sol{Because $x^3 + 6x - 8$ is a polynomial, the domain is all real numbers, i.e. the domain is $(-\infty, \infty)$. Alternatively, the domain is the set of all real numbers, $\mathbb{R}$.} \par\vspace{1cm} \vfill
+	% (b)
+	\part $\sqrt{x - 3}$ \pspace
+	\sol{We know that $\sqrt{\Box{\phantom{x}}\!\!\!}$ is defined only if $\Box{\phantom{x}} \!\!\!\geq 0$. But then we need\dots
+		\[
+		\begin{gathered}
+		x - 3 \geq 0 \\[0.3cm]
+		x \geq 3
+		\end{gathered}
+		\] \pspace
+	Therefore, the domain of $\sqrt{x - 3}$ is $\boxed{x \geq 3}$\,, i.e. the domain is $\boxed{[3, \infty)}$\,.
+	} \vfill
+	% (c)
+	\part $\dfrac{1}{x + 7}$ \pspace
+	\sol{\par We know that $\dfrac{1}{\Box{\phantom{x}}}$ is defined only if $\Box{\phantom{x}} \neq 0$. But then we need\dots
+		\[
+		\begin{gathered}
+		x + 7 \neq 0 \\[0.3cm]
+		x \neq -7
+		\end{gathered}
+		\] \pspace
+	Therefore, the domain of $\dfrac{1}{x + 7}$ is $\boxed{\text{all real numbers except $x= -7$}}$\,, i.e. the domain is $(-\infty, -7) \cup (-7, \infty)$. Alternatively, the domain is $\mathbb{R} \setminus \{ -7 \}$.
+	} \vfill
+	\end{parts}
+
+
+
+% Question 11
+\newpage
+\question[8] Three parts are given below. {\bfseries Choose any \underline{two} parts and complete these parts---showing all your work.} Cross out the part that you \textit{do not} want graded.
+	\begin{enumerate}[(a)]
+	% (a)
+	\item Compared to the graph of $f(x)$, describe the graph of $y= -4 f(x + 1)$ in terms of $f(x)$. \pspace
+	\sol{The graph of $y$ is the graph of $f(x)$ shifted 1 units to the left, scaled (stretched) by a factor 4 in the $y$-direction, and then reflected across the $x$-axis.} \vfill
+	% (b)
+	\item Find the function whose graph is the graph of a function $f(x)$ reflected through the $y$-axis, then shifted 3 units to the left, and then finally shifted 5 units down. \pspace
+	\sol{The graph of $f(x)$ reflected through the $y$-axis is the graph of $f(-x)$. Shifting this 3 units to the left, we have $f(-x + 3)$. Finally, shifting this 5 units down, we have $f(-x + 3) - 5$. Therefore, the function is\dots
+		\[
+		\boxed{f(-x + 3) - 5}
+		\]
+	} \pspace
+	% (c)
+	\item The graph of $f(x)$ is shown below in black (the \textit{very} thick function). Determine what the function plotted in red is in terms of $f(x)$.
+	\[
+	\fbox{
+	\begin{tikzpicture}[scale=0.7,every node/.style={scale=0.5}]
+	\begin{axis}[
+	grid=both,
+	axis lines=middle,
+	ticklabel style={fill=blue!5!white},
+	xmin= -10.5, xmax=10.5,
+	ymin= -10.5, ymax=10.5,
+	xtick={-10,-8,...,10},
+	ytick={-10,-8,...,10},
+	minor tick = {-10,-9,...,10},
+	xlabel=\(x\),ylabel=\(y\),
+	]
+	\addplot[line width=0.08cm, domain= 0:10.5, samples=100] ({x},{sqrt(x)});
+	\addplot[line width=0.02cm, domain= -10.5:0, samples=100,red] ({x},{sqrt(-x) + 5});
+	\end{axis}
+	\end{tikzpicture}
+	}
+	\] 
+	\sol{We can see that the graph of the red function is the graph of the black function, $f(x)$, reflected across the $y$-axis and then shifted 7 upwards. The function whose graph is the graph of $f(x)$ reflected across the $y$-axis is $f(-x)$. Shifting this 5 units upwards, we have $f(-x) + 5$. Therefore, the red function is given by\dots
+		\[
+		\boxed{f(-x) + 5}
+		\]
+	} \vfill
+	\end{enumerate}
+
+
+
+% Question 12
+\newpage
+\question[7] Let $f(x)$ be the function $f(x)= 2x - 5$.
+	\begin{parts}
+	% (a)
+	\part The graph of $f(x)$ is shown below.
+            	\[
+            	\fbox{
+            	\begin{tikzpicture}[scale=0.75,every node/.style={scale=0.5}]
+            	\begin{axis}[
+            	grid=both,
+            	axis lines=middle,
+            	ticklabel style= {fill= blue!5!white},
+            	xmin= -10.5, xmax=10.5,
+            	ymin= -10.5, ymax=10.5,
+            	xtick= {-10,-8,...,10},
+            	ytick= {-10,-8,...,10},
+            	minor tick = {-10,-9,...,10},
+            	xlabel= \(x\), ylabel= \(y\)
+            	]
+            	\addplot[thick, samples=150, smooth, domain= -10.5:10.5] {2*x - 5};    
+		\node at (5.2,1.8) {\LARGE$f(x)$};
+            	\end{axis}
+            	\end{tikzpicture}
+            	}
+            	\]
+	Explain why the function $f(x)$ has an inverse, i.e. explain why $f^{-1}(x)$ exists. \pspace
+	\sol{We know that the function $f(x)$ has an inverse, i.e. $f^{-1}(x)$ exists, because $f(x)$ passes the horizontal line test; that is, every horizontal line intersects the graph of $f(x)$ at most once.} \par\vspace{2cm}
+	% (b)
+	\part Showing all your work, find $f^{-1}(x)$. \pspace
+	\sol{We write $y= 2x - 5$. To find $f^{-1}(x)$, we interchange the roles of $x$ and $y$, and then we solve for $y$. Interchanging the roles of $x$ and $y$, we have $x= 2y - 5$. We now solve for $y$:
+		\[
+		\begin{gathered}
+		x= 2y - 5 \\[0.3cm]
+		x + 5= 2y \\[0.3cm]
+		\dfrac{x + 5}{2}= y 
+		\end{gathered}
+		\]
+	Therefore, we have\dots
+		\[
+		\boxed{f^{-1}(x)= \dfrac{x + 5}{2}}
+		\]
+	}
+	\end{parts}
+
+\end{questions}
+\end{document}

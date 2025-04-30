@@ -1,0 +1,73 @@
+\documentclass[11pt,letterpaper]{article}
+\usepackage[lmargin=1in,rmargin=1in,tmargin=1in,bmargin=1in]{geometry}
+\usepackage{../style/quiz}
+\setbool{hideans}{false} % Student: True; Instructor: False
+
+% -------------------
+% Content
+% -------------------
+\begin{document}
+\quiz{4}
+
+% Problem 1
+\problem Find a solution to the system of linear equations given below and then verify that the solution is correct.
+	\[
+	\begin{cases}
+	2x - y= 4 \\
+	4x + y= 8
+	\end{cases}
+	\] \pspace
+
+\ans{Using elimination, observe that by adding the equations, we have\dots
+	\begin{table}[!ht]
+	\centering
+	\begin{tabular}{rrrrrr}
+	& $2x$ & $-$ & $y$ & $=$ & $4$ \\
+	$+$ & $4x$ & $+$ & $y$ & $=$ & $8$ \\ \hline
+	& $6x$ & $+$ & $0$ & $=$ & $12$ \\ 
+	\end{tabular}
+	\end{table}
+But then $6x= 12$, which implies that $x= 2$. Using this in the second equation, we have\dots
+	\[
+	\begin{gathered}
+	4x + y= 8 \\
+	4(2) + y= 8 \\
+	8 + y= 8 \\
+	y= 0
+	\end{gathered}
+	\]
+Therefore, the solution is $(x, y)= (2, 0)$, i.e. $x= 2$ and $y= 0$. \pspace
+
+Alternatively, using substitution, we can solve for $y$ in the first equation:
+	\[
+	\begin{gathered}
+	2x - y= 4 \\
+	2x= y + 4 \\
+	2x - 4= y \\
+	y= 2x - 4
+	\end{gathered}
+	\]
+Using this in the second equation, we have\dots
+	\[
+	\begin{gathered}
+	4x + y= 8 \\
+	4x + (2x - 4)= 8 \\
+	6x - 4= 8 \\
+	6x= 12 \\
+	x= 2
+	\end{gathered}
+	\]
+But then $y= 2x - 4= 2(2) - 4= 4 - 4= 0$. Therefore, the solution is $(x, y)= (2, 0)$, i.e. $x= 2$ and $y= 0$. \pspace
+
+We verify this by checking that it satisfies both equations:
+	\[
+	\begin{aligned}
+	2x - y&= 4 &\qquad\qquad 4x + y&= 8 \\[-0.1cm]
+	2(2) - 0 &\stackrel{?}{=} 4 & 4(2) + 0 &\stackrel{?}{=} 8 \\[-0.1cm]
+	4 - 0 &\stackrel{?}{=} 4 & 8 + 0 &\stackrel{?}{=} 8 \\[-0.1cm]
+	4&= 4 & 8&= 8
+	\end{aligned}
+	\]
+}
+
+\end{document}

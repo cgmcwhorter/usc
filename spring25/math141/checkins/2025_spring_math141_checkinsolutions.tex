@@ -244,25 +244,251 @@ Therefore, the volume of the sphere is decreasing at $4\pi$~m$^3$ per minute. Th
 
 
 
+% 03/28
+\checkin{03/28---I} $\ds\int \dfrac{x + 1}{x^2} \;dx= \dfrac{\frac{1}{2}\,x^2 + x}{\frac{1}{3} x^3} + C$ \pspace
+
+\sol The statement is \textit{false}. Recall that integrals \textit{do not} distribute over multiplication, powers, and division, i.e.
+	\[
+	\begin{aligned}
+	\int f(x) g(x) \;dx &\neq \int f(x) \;dx \cdot \int g(x) \;dx \\
+	\int \big( f(x) \big)^n \;dx &\neq \left( \int f(x) \;dx \right)^n \\
+	\int \dfrac{f(x)}{g(x)} \;dx &\neq \dfrac{\ds\int f(x) \;dx}{\ds\int g(x) \;dx}
+	\end{aligned}
+	\]
+So, to integrate $\dfrac{x + 1}{x^2}$, one \textit{cannot} simply integrate the numerator and denominator. Instead, we divide $x^2$ into $x + 1$ so that we can apply the power rule for integration:
+	\[
+	\int \dfrac{x + 1}{x^2} \;dx= \int \left( \dfrac{x}{x^2} + \dfrac{1}{x^2} \right) \;dx= \int \left( \dfrac{1}{x} + x^{-2} \right) \;dx= \ln|x| + \dfrac{x^{-1}}{-1} + C= \ln|x| - \dfrac{1}{x} + C
+	\] \pvspace{1.3cm}
 
 
 
+% 03/28
+\checkin{03/28---II} $\ds\dfrac{d}{dx} \int_0^{\sqrt{x}} \cos(t^2) \;dt= \cos(x) \cdot \dfrac{1}{2\sqrt{x}}$ \pspace
+
+\sol The statement is \textit{true}. We know from the Fundamental Theorem of Calculus that\dots
+	\[
+	\dfrac{d}{dx} \int_c^{g(x)} f(t) \;dt= f \big( g(x) \big) \cdot g'(x)
+	\]
+But then, we have\dots
+	\[
+	\dfrac{d}{dx} \int_0^{\sqrt{x}} \cos(t^2) \;dt= \cos \big( (\sqrt{x})^2 \big) \cdot \dfrac{d}{dx} \, \sqrt{x}= \cos(x) \cdot \dfrac{1}{2 \sqrt{x}}= \dfrac{\cos x}{2 \sqrt{x}}
+	\] \pvspace{1.3cm}
 
 
 
+% 03/28
+\checkin{03/28---III} If $\ds\int_0^2 f(x) \;dx= 4$ and $\ds\int_1^0 f(x) \;dx= 3$, then $\ds\int_1^2 f(x) \;dx= 1$. \pspace
+
+\sol The statement is \textit{false}. Recall the following two properties of integrals:
+	\[
+	\begin{aligned}
+	\int_a^c f(x) \;dx= \int_a^b f(x) \;dx + \int_b^c f(x) \;dx \\
+	\int_a^b f(x) \;dx= -\int_b^a f(x) \;dx
+	\end{aligned}
+	\]
+From the first property above, we know that\dots
+	\[
+	\int_0^2 f(x) \;dx= \int_0^1 f(x) \;dx + \int_1^2 f(x) \;dx
+	\]
+We know that $\ds\int_1^0 f(x)= 3$. Using the second integral property above, we then know that $\ds\int_0^1 f(x)= - \int_1^0 f(x) \;dx= -3$. But then\dots
+	\[
+	\begin{gathered}
+	\int_0^2 f(x) \;dx= \int_0^1 f(x) \;dx + \int_1^2 f(x) \;dx \\
+	4= -3 +  \int_1^2 f(x) \;dx \\ 
+	\int_1^2 f(x) \;dx= 7
+	\end{gathered}
+	\] \pvspace{1.3cm}
 
 
 
+% 04/02
+\checkin{04/02} The average value of a continuous function $f(x)$ on an interval $[a, b]$ is $\ds \dfrac{1}{b - a} \int_a^b f(x) \;dx$. \pspace
+
+\sol The statement is \textit{true}. This is the definition of average value for a continuous function $f(x)$ on an interval $[a, b]$. The typical discrete average value is $\dfrac{\text{sum of values}}{\text{number values}}$. Instead, the traditional numerator `sum' of the values is replaced with $\ds\int_a^b f(x) \;dx$, while the traditional denominator of `total number of values' is replaced by the `interval worth of values' $[a, b]$. For instance, the average value of $f(x)= \dfrac{x + 3}{x^2} \;dx$ on $[1, 5]$ is\dots \par
+\begin{minipage}{0.5\linewidth}
+	\[
+	\begin{aligned}
+	\text{Avg}_{[1,5]} \big( f(x) \big)&= \dfrac{1}{5 - 1} \int_1^5 \dfrac{x + 3}{x^2} \;dx \\
+	&= \dfrac{1}{4} \int_1^5 \left( \dfrac{1}{x} + 3x^{-2} \right) \;dx \\
+	&= \dfrac{1}{4} \left( \ln|x| - 3x^{-1} \right) \bigg|_{x= 1}^{x= 5} \\
+	&= \dfrac{1}{4} \left[ \left( \ln 5 - \dfrac{3}{5} \right) - \left( \ln 1 - \dfrac{3}{1} \right) \right] \\
+	&= \dfrac{1}{4} \left[ \ln 5 - \dfrac{3}{5} - 0 + \dfrac{15}{5} \right] \\
+	&= \dfrac{1}{4} \left( \ln 5 + \dfrac{12}{5} \right) \approx 1.00236
+	\end{aligned}
+	\]
+\end{minipage}%
+\begin{minipage}{0.5\linewidth}
+	\[
+	\fbox{%
+	\begin{tikzpicture}[scale=1,every node/.style={scale=0.5}]
+	\begin{axis}[
+	grid=both,
+	axis lines=middle,
+	ticklabel style={fill=blue!5!white},
+	xmin= 1, xmax=5,
+	ymin= -0.5, ymax=5.5,
+	xtick={-1,0,...,11},
+	ytick={-1,0,...,11},
+	minor tick = {-11,-10,...,11},
+	xlabel=\(x\),ylabel=\(y\),
+	samples=20]
+	\node at (1.7,2.25) {\scalebox{1.6}{$f(x)$}};
+	\addplot[thick, samples=100, domain= 1:5,name path=f] {(x + 3)/x^2};
+	\addplot[thick, samples=100, domain= 1:5,name path=g,dashed] {1.00236};
+	
+	\path [name path=xaxis] (\pgfkeysvalueof{/pgfplots/xmin},0) -- (\pgfkeysvalueof{/pgfplots/xmax},0);
+	\addplot[red!10, opacity=0.4] fill between [of=f and xaxis, soft clip={domain=1:5}];
+	\addplot[blue!10, opacity=0.4] fill between [of=g and xaxis, soft clip={domain=1:5}];
+	\end{axis}
+	\end{tikzpicture}
+	}
+	\]
+\end{minipage} \pspace
+
+We can see this in the plot on the right above. Recall also that the average value is also the `height' of the box so that the `area under the curve' of $f(x)$ on $[a, b]$ (shown in red) is the same as the area of the box on $[a, b]$ (shown in blue), also shown above. 
 
 
 
+\newpage
 
 
 
+% 04/04
+\checkin{04/04} The area between the curves $y= -3x$ and $y= x(1 - x)$ is given by $\ds\int_0^4 x(1 - x) - 3x \;dx$. \pspace
+
+\sol The statement is \textit{false}. We need to find the intersection between the two curves:
+	\[
+	\begin{gathered}
+	-3x= x(1 - x) \\
+	-3x= x - x^2 \\
+	x^2 - 4x= 0 \\
+	x(x - 4)= 0
+	\end{gathered}
+	\]
+Therefore, either $x= 0$ or $x - 4= 0$, which implies $x= 4$. Of course, we could have simply verified this from the beginning as the given integral implies the intersections are $x= 0$ and $x= 4$: we have $y= - 3(0)= 0$ and $y= 0(1 - 0)= 0$, and we have $y= -3(4)= -12$ and $y= 4(1 - 4)= 4(-3)= -12$. Because the given curves are a line and parabola, they can only intersect in at most two points. These must be the two given intersection points. Choosing a value in-between $x= 0$ and $x= 4$, say $x= 1$, we see that $y= -3(1)= -3$ and $y= 1(1 - 1)= 0$. This shows that the parabola is `on-top.' Alternatively, we know that the parabola opens downwards and picturing the intersection, it must be the case that the parabola is `on top'. [Otherwise, the line would intersect the parabola at a point higher than the vertex---which is impossible.] Therefore, the area between the curves is\dots
+	\[
+	A= \int_0^4 x(1 - x) - (-3x) \;dx= \int_0^4 x(1 - x) + 3x \;dx
+	\] 
+The given integral has incorrectly subtracted the `lower' function, $y= -3x$. \pvspace{1.3cm}
 
 
 
+% 04/07
+\checkin{04/07} The area between $x= y^2 - 4$ and $x= 4 - y^2$ is `best' computed using an integral in $y$. \pspace
+
+\sol The statement is \textit{true}. The function $x= y^2 - 4$ is a parabola that opens to the right, while the function $x= 4 - y^2$ is a parabola that opens to the left. Clearly, these curves intersect at $y= \pm 2$. We plot these functions below. 
+	\[
+	\fbox{%
+	\begin{tikzpicture}[scale=1,every node/.style={scale=0.5}]
+	\begin{axis}[
+	grid=both,
+	axis lines=middle,
+	ticklabel style={fill=blue!5!white},
+	xmin= -5.5, xmax=5.5,
+	ymin= -5.5, ymax=5.5,
+	xtick={-1,0,...,11},
+	ytick={-1,0,...,11},
+	minor tick = {-11,-10,...,11},
+	xlabel=\(x\),ylabel=\(y\),
+	samples=20]
+	\addplot[thick, samples=100, domain= -4:4,name path=f] ({4 - x^2},{x});
+	\addplot[thick, samples=100, domain= -4:4,name path=f] ({x^2 - 4},{x});
+	
+	\addplot[draw=none,name path=f,domain=-4:0] {sqrt(x + 4)};
+	\addplot[draw=none,name path=g,domain=-4:0] {-sqrt(x + 4)};
+	\addplot[draw=none,name path=m,domain=0:4] {sqrt(4 - x)};
+	\addplot[draw=none,name path=n,domain=0:4] {-sqrt(4 - x)};
+	
+	\addplot[blue!20, opacity=0.4] fill between [of=f and g, soft clip={domain=-4:0}];
+	\addplot[blue!20, opacity=0.4] fill between [of=m and n, soft clip={domain=0:4}];
+	\end{axis}
+	\end{tikzpicture}
+	}
+	\]
+Observe that integrating in $x$, one would need an integral for the `left side' of the region (where the slices go back and forth between the upper and lower portions of the curve $x= y^2 - 4$) and an integral for the `right side' of the region (where the slices go back and forth between the upper and lower portions of the curve $x= 4 - y^2$). This would be\dots
+	\[
+	\int_{-4}^0 \sqrt{x + 4} - (-\sqrt{x + 4}) \;dx + \int_0^4 \sqrt{4 - x} - (-\sqrt{4 - x}) \;dx
+	\]
+Whereas, using an integral in $y$, each slice in $y$ consistently goes between the curves $x= y^2 - 4$ and $x= 4 - y^2$---requiring only one integral. This integral would be\dots
+	\[
+	\int_{-2}^2 (4 - y^2) - (y^2 - 4) \;dy
+	\] \pvspace{1.5cm}
 
 
+
+% 04/09
+\checkin{04/09} The `best' choice for a $u$-substitution to integrate $\ds\int 5x^2 e^{x^3} \;dx$ would be $u= x^3$. \pspace
+
+\sol The statement is \textit{true}. Observe that choosing $u= x^3$, we have $du= 3x^2 \;dx$. This implies that $dx= \frac{1}{3x^2} \;du$. But then\dots
+	\[
+	\int 5x^2 e^{x^3} \;dx= \int 5x^2 e^u \cdot \dfrac{1}{3x^2} \;du= \dfrac{5}{3} \int e^u \;du= \dfrac{5}{3} \, e^u + C= \dfrac{5}{3} \, e^{x^3} + C
+	\]
+Alternatively, choosing $u= x^3$, we have $du= 3x^2 \;dx$. But then\dots
+	\[
+	\int 5x^2 e^{x^3} \;dx= 5 \int x^2 e^{x^3} \;dx= \dfrac{5}{3} \int 3x^2 e^{x^3} \;dx= \dfrac{5}{3} \int e^{x^3} \cdot 3x^2 \;dx= \dfrac{5}{3} \int e^u \;du= \dfrac{5}{3}\, e^u + C= \dfrac{5}{3}\, e^{x^3} + C
+	\] \pvspace{1.5cm}
+
+
+
+% 04/11
+\checkin{04/11} The resulting integral from making the substitution $u= x^2 - 1$ in $\ds\int_1^2 x(x^2 - 1)^3 \;dx$ is the integral $\ds \dfrac{1}{2} \int_1^2 u^3 \;du$. \pspace
+
+\sol The statement is \textit{false}. When making a $u$-substitution in a definite integral, one must also remember to change the bounds for the integral as well. We use the substitution $u= x^2 - 1$, so that $du= 2x \;dx$. Observe that if $x= 1$, then $u= 1^2 - 1= 0$. If $x= 2$, then $u= 2^2 - 1= 3$. But then\dots
+	\[
+	\int_1^2 x(x^2 - 1)^3 \;dx= \dfrac{1}{2} \int_1^2 2x(x^2 - 1)^3 \;dx= \dfrac{1}{2} \int_0^3 u^3 \;du
+	\] \pvspace{1.3cm}
+
+
+
+\newpage
+
+
+
+% 04/14
+\checkin{04/14} To integrate $\ds\int x \sqrt{x + 3} \;dx$, one makes the substitution $u= x + 2$. \pspace
+
+\sol The statement is \textit{true}. This is a `shifting integral.' Choosing $u= x + 3$, we have $du= dx$. Observe that we also know that $x= u - 3$. But then\dots
+	\[
+	\begin{aligned}
+	\int x \sqrt{x + 3} \;dx&= \int (u - 3) \, \sqrt{u} \;du \\
+	&= \int \left( u^{3/2} - 3u^{1/2} \right) \;du \\
+	&= \dfrac{2}{5}\, u^{5/2} - 2u^{3/2} + C \\
+	&= \dfrac{2}{5} \, (x + 3)^{5/2} - 2(x + 3)^{3/2} + C \\
+	&= \dfrac{2}{5} \,(x + 3)^{3/2} \, \bigg( (x + 3)^{2/2} - 5 \bigg) + C \\
+	&= \dfrac{2}{5} \,(x + 3)^{3/2} \, \bigg( x + 3 - 5 \bigg) + C \\
+	&= \dfrac{2}{5} \,(x + 3)^{3/2} (x - 2) + C
+	\end{aligned}
+	\]
+
+
+
+% 04/16
+\checkin{04/16} $\ds\int \sec \theta \;d\theta= \ln|\sec \theta + \tan \theta| + C$ \pspace
+
+\sol The statement is \textit{true}. One can always verify this by taking a derivative:
+	\[
+	\dfrac{d}{d\theta} \left( \ln|\sec \theta + \tan \theta| + C \right)= \dfrac{1}{\sec \theta + \tan \theta} \cdot (\sec \theta \tan \theta + \sec^2 \theta)= \dfrac{\sec \theta (\tan \theta + \sec \theta)}{\sec \theta + \tan \theta}= \sec \theta
+	\] \pvspace{1.3cm}
+
+
+
+% 04/23
+\checkin{04/23} If a three-dimensional region has regular cross sections perpendicular to the $x$-axis between $x= a$ and $x= b$ with area $A(x)$, then the volume of the resulting region is $\ds\int_a^b A(x) \;dx$. \pspace
+
+\sol The statement is \textit{true}. This is volume by cross sections. Suppose we take $n$ `slices' at $x_0= a, x_2, x_3, \ldots, x_n= b$. The area of these `slices' is $A_i= A(x_i)$. If extend these slices `through space' for a width $\Delta x_i= x_i - x_{i - 1}$, the volume of the resulting figure is $V_i= A_i \Delta x_i= A(x_i) \Delta x_i$. But then the volume of the figure is approximately $\ds V \approx \sum_{i=1}^n V_i= \sum_{i=1}^n A(x_i) \Delta x_i$. Taking infinitely many such slices, we see that we have a Riemann sum that converges to a Riemann integral:
+	\[
+	V= \lim_{n \to \infty} \sum_{i=1}^n V_i= \lim_{n \to \infty} \sum_{i=1}^n A(x_i) \Delta x_i= \int_a^b A(x) \;dx
+	\] 
+
+
+
+\newpage
+
+
+
+% 04/25
+\checkin{04/25} If the region between the curve $y= f(x)$ for $x= a$ and $x= b$ is revolved around the $x$-axis, then the volume of the solid obtained is $\ds 2\pi\int_a^b x f(x) \;dx$. \pspace
+
+\sol The statement is \textit{false}. From the `$2\pi$' term, we can see that the individual is attempting to use the method of shells. For the shell method, `slices' are parallel to the axis around which the region is being rotated. As this is the $x$-axis, slices must be the result of intersecting a line $y= a$ with the region, i.e. the slices are horizontal. These must be `slid' up and down to `cover' the region, so that the integral must be in terms of $y$---not $x$. Furthermore, the radius term for a slice at $y$ would be $y$---not $x$ as in the integrand. There are further problems, but these reasons are already more than sufficient to show that the statement must be false. 
 
 \end{document}

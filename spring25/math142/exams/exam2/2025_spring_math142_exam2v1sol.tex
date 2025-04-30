@@ -1,0 +1,283 @@
+\documentclass[12pt,letterpaper]{exam}
+\usepackage[lmargin=1in,rmargin=1in,tmargin=1in,bmargin=1in]{geometry}
+\usepackage{../style/exams}
+
+% -------------------
+% Course & Exam Information
+% -------------------
+\newcommand{\course}{MATH 142: Exam 2}
+\newcommand{\term}{Spring --- 2025}
+\newcommand{\examdate}{03/20/2025}
+\newcommand{\timelimit}{75 Minutes}
+
+\setbool{hideans}{false} % Student: True; Instructor: False
+
+\usepackage{cancel} % Use Cancellations
+
+% -------------------
+% Content
+% -------------------
+\begin{document}
+
+\examtitle
+\instructions{Write your name on the appropriate line on the exam cover sheet. This exam contains \numpages\ pages (including this cover page) and \numquestions\ questions. Check that you have every page of the exam. Answer the questions in the spaces provided on the question sheets. Be sure to answer every part of each question and show all your work. If you run out of room for an answer, continue on the back of the page --- being sure to indicate the problem number.} 
+\scores
+\bottomline
+\newpage
+
+
+% -------------------
+% Questions
+% -------------------
+\begin{questions}
+
+% Question 1
+\newpage
+\question[25] Determine whether the series below converges conditionally, converges absolutely, or diverges. Be sure to fully justify your answer using the appropriate series tests.
+	\[
+	\sum_{n=1}^\infty (-1)^n \, \dfrac{n^2}{n^3 + 16}
+	\] \pspace
+
+{\small\itshape \textbf{Solution.} The series $\ds\sum_{n=1}^\infty (-1)^n \, \dfrac{n^2}{n^3 + 16}$ converges if and only if the series $\ds\sum_{n=4}^\infty (-1)^n \, \dfrac{n^2}{n^3 + 16}$ converges because they differ by three terms. Observe that\dots
+	\begin{itemize}
+	\item $\ds\lim_{n \to \infty} \dfrac{n^2}{n^3 + 16}= 0$
+	\item The sequence $\left\{ \dfrac{n^2}{n^3 + 16} \right\}$ is decreasing for $n= 4, 5, \ldots$.\footnote{\tiny One can see this from the fact that $\dfrac{d}{dn} \left( \dfrac{n^2}{n^3 + 16} \right)= -\dfrac{n(n^3 - 32)}{(n^3 + 16)^2}$. We see that $n, (n^3 + 16)^2 \geq 0$ for $n= 1, 2, \ldots$. But then this derivative is negative if $-(n^3 - 32) < 0$, i.e. if $n > \sqrt[3]{32} \approx 3.1748$. But then the derivative is negative for $n= 4, 5, \ldots$, which implies that the sequence is decreasing.}
+	\end{itemize}
+Therefore, by the Alternating Series Test, the series $\ds \sum_{n=1}^\infty (-1)^n \, \dfrac{n^2}{n^3 + 16}$ converges. \pspace
+
+We now consider the series $\ds\sum_{n=1}^\infty \dfrac{n^2}{n^3 + 16}$. First, observe that the series $\ds\sum_{n=1}^\infty \dfrac{1}{n}$ diverges by the $p$-test with $p= 1$. Observe that\dots
+	\[
+	\lim_{n \to \infty} \dfrac{\;\;\dfrac{n^2}{n^3 + 16}\;\;}{\dfrac{1}{n}}= \lim_{n \to \infty} \dfrac{n^3}{n^3 + 16}= \underbrace{1}_{\neq 0} < \infty
+	\]
+Therefore, the series $\ds\sum_{n=1}^\infty \dfrac{n^2}{n^3 + 16}$ diverges by the Limit Comparison Test. Alternatively, observe that\dots
+	\[
+	\sum_{n=1}^\infty \dfrac{n^2}{n^3 + 16} \geq \sum_{n=1}^\infty \dfrac{n^2}{n^3 + 16n^3}= \sum_{n=1}^\infty \dfrac{n^2}{17n^3}= \dfrac{1}{17} \sum_{n=1}^\infty \dfrac{1}{n}
+	\]
+Therefore, the series $\ds\sum_{n=1}^\infty \dfrac{n^2}{n^3 + 16}$ diverges by the Direct Comparison Test.\footnote{\tiny As noted above, we need only show that the series $\ds\sum_{n=4}^\infty \frac{n^2}{n^3 + 16}$. We can also show this using the Integral Test. Let $f(x)= \frac{x^2}{x^3 + 16}$. Observe that $f(x) > 0$ (because $n^2, n^3 + 16 > 0$ on $[4, \infty)$), $f(x)$ is continuous, and $f(x)$ is decreasing (for the same reason the sequence is). Therefore, this series converges if and only if the integral $\ds\int_4^\infty \frac{x^2}{x^3 + 16} \;dx$ converges. By `guess-and-check' or using $u= x^3 + 16$, $du= 3x^2 \;dx$, we know that $\ds\int \frac{x^2}{x^3 + 16} \;dx= \frac{1}{3} \ln|x^3 + 16| + C$. But then $\ds\int_4^\infty \frac{x^2}{x^3 + 16} \;dx:= \lim_{N \to \infty} \int_4^N \frac{x^2}{x^3 + 16} \;dx= \lim_{N \to \infty} \frac{1}{3} \ln|x^3 + 16| \bigg|_4^N= \lim_{N \to \infty} \frac{1}{3} \ln|N^3 + 16| - \frac{1}{3} \ln(80)= \infty$. Therefore, by the Integral Test, the series $\ds\sum_{n=4}^\infty \frac{n^2}{n^3 + 16}$ diverges.} \pspace
+
+Therefore, the series $\ds\sum_{n=1}^\infty (-1)^n \, \dfrac{n^2}{n^3 + 16}$ converges conditionally.}
+
+
+
+% Question 2
+\newpage
+\question[10] Determine whether the series below converges or diverges. Be sure to fully justify your response with the appropriate series tests.
+	\[
+	\sum_{n=5}^\infty \dfrac{2n^3}{n^3 + 7} 
+	\] \pspace
+
+{\itshape \textbf{Solution.} Observe that\dots
+	\[
+	\lim_{n \to \infty} \dfrac{2n^3}{n^3 + 7}= \dfrac{2}{1}= 2 \neq 0
+	\] \pspace
+Therefore, the series $\ds\sum_{n=5}^\infty \dfrac{2n^3}{n^3 + 7}$ diverges by the Divergence Test.}
+
+
+
+% Question 3
+\newpage
+\question[10] Determine whether the series below converges or diverges. Be sure to fully justify your response with the appropriate series tests.
+	\[
+	\sum_{n=0}^\infty \dfrac{n^3 \, 3^n}{n!}
+	\] \pspace
+
+{\itshape \textbf{Solution.} Observe that\dots
+	\[
+	\begin{aligned}
+	\lim_{n \to \infty} \left| \dfrac{\;\;\dfrac{(n + 1)^3 \, 3^{n + 1}}{(n + 1)!}\;\;}{\dfrac{n^3 \, 3^n}{n!}} \right|&= \lim_{n \to \infty} \left| \dfrac{(n + 1)^3 \, 3^{n + 1}}{(n + 1)!} \cdot \dfrac{n!}{n^3 \,3^n} \right| \\[0.3cm]
+	&= \lim_{n \to \infty} \left| \dfrac{(n + 1)^3}{n^3} \cdot \dfrac{3^{n + 1}}{3^n} \cdot \dfrac{n!}{(n + 1)!} \right| \\[0.3cm]
+	&= \lim_{n \to \infty} \left| \left( \dfrac{n + 1}{n} \right)^3 \cdot \dfrac{\cancel{3^n} \cdot 3}{\cancel{3^n}} \cdot \dfrac{\cancel{n!}}{(n + 1) \cancel{n!}} \right| \\[0.3cm]
+	&= \lim_{n \to \infty} \left| \left( \dfrac{n + 1}{n} \right)^3 \cdot 3 \cdot \dfrac{1}{n + 1} \right| \\[0.3cm]
+	&= 1^3 \cdot 3 \cdot 0 \\[0.3cm]
+	&= 0 < 1
+	\end{aligned}
+	\]
+Therefore, the series $\ds\sum_{n=0}^\infty \dfrac{n^3 \, 3^n}{n!}$ converges absolutely by the Ratio Test.}
+
+
+
+% Question 4
+\newpage
+\question[10] Determine whether the series below converges or diverges. Be sure to fully justify your response with the appropriate series tests.
+	\[
+	\sum_{n=1}^\infty \dfrac{\ln n}{\sqrt[3]{n}}
+	\] \pspace
+
+{\footnotesize\itshape \textbf{Solution.} The series $\ds\sum_{n=1}^\infty \dfrac{\ln n}{\sqrt[3]{n}}$ converges if and only if the series $\ds\sum_{n=3}^\infty \dfrac{\ln n}{\sqrt[3]{n}}$ converges. Observe that the series $\ds\sum_{n=3}^\infty \dfrac{1}{\sqrt[3]{n}}= \sum_{n=3}^\infty \dfrac{1}{n^{1/3}}$ diverges by the $p$-test with $p= \frac{1}{3}$. Now observe that $\ln n > 1$ if and only if $n > e^1 \approx 2.718$. But then\dots
+	\[
+	\sum_{n=3}^\infty \dfrac{\ln n}{\sqrt[3]{n}} > \sum_{n=3}^\infty \dfrac{1}{\sqrt[3]{n}}
+	\]
+Therefore, the series $\ds\sum_{n=3}^\infty \dfrac{\ln n}{\sqrt[3]{n}}$ diverges by the Direct Comparison Test. \pspace
+
+Alternatively, we know that $\ds\sum_{n=1}^\infty \dfrac{\ln n}{\sqrt[3]{n}}$ converges if and only if $\sum_{n=21}^\infty \dfrac{\ln n}{\sqrt[3]{n}}$ converges because they differ by finitely many terms. Let $f(x)= \dfrac{\ln x}{\sqrt[3]{x}}$. Observe that\dots
+	\begin{itemize}
+	\item $f(x)$ is positive on $[1, \infty)$: We know that $\ln x > 0$ and $\sqrt[3]{x} > 0$ for $x \in [21, \infty)$. But then $f(x)= \dfrac{\ln x}{\sqrt[3]{x}} \geq 0$ on $[21, \infty)$ and is only zero at $x= 1$. 
+	\item $f(x)$ is continuous: We know that $\ln x$ is continuous for $x > 0$ and $\sqrt[3]{x}$ is everywhere continuous. But then $f(x)= \dfrac{\ln x}{\sqrt[3]{x}}$ is continuous on $(0, \infty)$. In particular, $f(x)$ is continuous on $[21, \infty)$. 
+	\item $f(x)$ is decreasing: Observe that $f'(x)= -\dfrac{\ln x - 3}{3 \sqrt[3]{x^4}}$. If $f'(x)= -\dfrac{\ln x - 3}{3 \sqrt[3]{x^4}} < 0$, then $\ln x - 3 > 0$. But then $\ln x > 3$, which implies $x > e^3 \approx 20.0855$. But then $f(x)$ is decreasing for $x \geq 21$.
+	\end{itemize}
+Therefore, the Integral Test implies that $\ds\sum_{n=1}^\infty \dfrac{\ln n}{\sqrt[3]{n}}$ converges if and only if $\ds\int_{21}^\infty \dfrac{\ln x}{\sqrt[3]{x}} \;dx$ converges. Using integration by parts with $u= \ln x$ and $dv= \frac{1}{\sqrt[3]{x}}$, we know that
+	\[
+	\int \dfrac{\ln x}{\sqrt[3]{x}} \;dx= \dfrac{3}{2}\, x^{2/3} \ln x - \dfrac{9}{4} \, x^{2/3} + C= \dfrac{3}{4}\, x^{2/3} ( 2 \ln x - 3) + C
+	\]
+We have\dots
+	\[
+	\begin{aligned}
+	\int_{21}^\infty \dfrac{\ln x}{\sqrt[3]{x}} \;dx&= \lim_{N \to \infty} \int_{21}^N \dfrac{\ln x}{\sqrt[3]{x}} \;dx \\
+	&= \lim_{N \to \infty} \dfrac{3}{4}\, x^{2/3} ( 2 \ln x - 3) \bigg|_{x=21}^{x=N} \\
+	&= \lim_{N \to \infty} \dfrac{3}{4}\, N^{2/3} ( 2 \ln N - 3) - \left( \dfrac{3}{4} \, \sqrt[3]{441} (2 \ln 21 - 3) \right) \\
+	&= \infty
+	\end{aligned}
+	\]
+This shows that the integral diverges. Therefore, the series $\ds\sum_{n=1}^\infty \dfrac{\ln n}{\sqrt[3]{n}}$ diverges by the Integral Test.} 
+
+
+
+% Question 5
+\newpage
+\question[10] Determine whether the series below converges or diverges. Be sure to fully justify your response with the appropriate series tests.
+	\[
+	\sum_{n=1}^\infty \left( \dfrac{5n + 1}{4n + 3} \right)^n
+	\] \pspace
+
+{\small\itshape \textbf{Solution.} Observe that\dots
+	\[
+	\lim_{n \to \infty} \left| \left( \dfrac{5n + 1}{4n + 3} \right)^n \right|^{1/n}= \lim_{n \to \infty} \dfrac{5n + 1}{4n + 3}= \dfrac{5}{4} > 1
+	\]
+Therefore, the series $\ds\sum_{n=1}^\infty \left( \dfrac{5n + 1}{4n + 3} \right)^n$ diverges by the Root Test. \pspace
+
+Alternatively, observe that\dots
+	\[
+	\begin{aligned}
+	\lim_{n \to \infty} \left| \dfrac{\;\;\left( \dfrac{5(n+1) + 1}{4(n+1) + 3} \right)^{n+1}\;\;}{\left( \dfrac{5n + 1}{4n + 3} \right)^n} \right|&= \lim_{n \to \infty} \left| \left( \dfrac{5(n+1) + 1}{4(n+1) + 3} \right)^{n+1} \cdot \left( \dfrac{4n + 3}{5n + 1} \right)^n \right| \\
+	&= \lim_{n \to \infty} \left| \left( \dfrac{5n + 6}{4n + 7} \right)^{n+1} \cdot \left( \dfrac{4n + 3}{5n + 1} \right)^n \right| \\
+	&= \lim_{n \to \infty} \left| \dfrac{5n + 6}{4n + 7} \cdot \left( \dfrac{5n + 6}{4n + 7} \right)^n \cdot \left( \dfrac{4n + 3}{5n + 1} \right)^n \right| \\
+	&= \lim_{n \to \infty} \left| \dfrac{5n + 6}{4n + 7} \cdot \left( \dfrac{5n + 6}{4n + 7} \cdot \dfrac{4n + 3}{5n + 1} \right)^n \right| \\
+	&= \lim_{n \to \infty} \left| \dfrac{5n + 6}{4n + 7} \cdot \left( \dfrac{20n^2 + 39n + 18}{20n^2 + 39n + 7} \right)^n \right| \\
+	&= \dfrac{5}{4} \cdot 1 \\
+	&= \dfrac{5}{4} > 1
+	\end{aligned}
+	\]
+Therefore, the series $\ds\sum_{n=1}^\infty \left( \dfrac{5n + 1}{4n + 3} \right)^n$ diverges by the Ratio Test.\footnote{The next to last equality require more justification. Let $\ds L= \lim_{n \to \infty} \left( \dfrac{20n^2 + 39n + 18}{20n^2 + 39n + 7} \right)^n$. But then $\ds \ln L= \lim_{n \to \infty} \ln \left( \dfrac{20n^2 + 39n + 18}{20n^2 + 39n + 7} \right)^n= \lim_{n \to \infty} n\ln \left( \dfrac{20n^2 + 39n + 18}{20n^2 + 39n + 7} \right)= \lim_{n \to \infty} \dfrac{1}{1/n} \cdot \ln \left( \dfrac{20n^2 + 39n + 18}{20n^2 + 39n + 7} \right) \stackrel{\text{L.H.}}{=} \lim_{n \to \infty} \dfrac{11n^2 (40n + 39)}{(20n^2 + 39n + 7)(20n^2 + 39n + 18)}= 0$. But then $\ln L= 0$, which implies $L= e^0= 1$.}
+
+Alternatively, we have\dots
+	\[
+	\lim_{n \to \infty} \left( \dfrac{5n + 1}{4n + 3} \right)^n= \infty
+	\]
+Therefore, the series $\ds\sum_{n=1}^\infty \left( \dfrac{5n + 1}{4n + 3} \right)^n$ diverges by the Divergence Test.}
+
+
+
+% Question 6
+\newpage
+\question[10] Determine whether the series below converges or diverges. If the series converges, find the sum. Be sure to fully justify your response with the appropriate series tests and computations. 
+	\[
+	\sum_{n=1}^\infty \dfrac{(-4)^{n-1}}{3^{2n}}
+	\] \pspace
+
+{\itshape \textbf{Solution.} We have\dots
+	\[
+	\sum_{n=1}^\infty \dfrac{(-4)^{n-1}}{3^{2n}}= \sum_{n=1}^\infty \dfrac{(-4)^n \cdot (-4)^{-1}}{(3^2)^n}= \sum_{n=1}^\infty -\dfrac{1}{4} \cdot \dfrac{(-4)^n}{9^n}= \sum_{n=1}^\infty -\dfrac{1}{4} \cdot \left( -\dfrac{4}{9} \right)^n
+	\]
+But then this series is geometric with $a= -\frac{1}{4}$ and $r= -\frac{4}{9}$. Because $|r|= \frac{4}{9} < 1$, the series converges by the Geometric Series Test. \pspace
+
+We know that the series converges to\dots
+	\[
+	\sum_{n=1}^\infty \dfrac{(-4)^{n-1}}{3^{2n}}= \dfrac{\text{First Term}}{1 - r}= \dfrac{-\dfrac{1}{4} \cdot \left( -\dfrac{4}{9} \right)^1}{1 - \left(-\dfrac{4}{9}\right)}= \dfrac{\;\;\dfrac{1}{9}\;\;}{1 + \dfrac{4}{9}}= \dfrac{\;\;\dfrac{1}{9}\;\;}{\dfrac{13}{9}} \cdot \dfrac{9}{9}= \dfrac{1}{13}
+	\] \pspace
+
+Although we cannot find the sum using the Alternating Series Test, Ratio Test, or Root Test. Observe that the series is alternating because $\ds\sum_{n=1}^\infty \dfrac{(-4)^{n-1}}{3^{2n}}= \sum_{n=1}^\infty -\dfrac{1}{4} \cdot \left( -\dfrac{4}{9} \right)^n= \sum_{n=1}^\infty (-1)^{n + 1} \cdot \dfrac{1}{4} \cdot \left( \dfrac{4}{9} \right)^n$ is alternating. 
+	\begin{itemize}
+	\item $\ds\lim_{n \to \infty} -\dfrac{1}{4} \cdot \left( -\dfrac{4}{9} \right)^n= -\dfrac{1}{4} \cdot 0= 0$.
+	\item The sequence $\left\{ \dfrac{1}{4} \cdot \left( \dfrac{4}{9} \right)^n \right\}$ is decreasing.
+	\end{itemize}
+Therefore, the given series converges by the Alternating Series Test. Alternatively, we have\dots
+	\[
+	\lim_{n \to \infty} \left| \dfrac{-\dfrac{1}{4} \cdot \left( -\dfrac{4}{9} \right)^{n + 1}}{-\dfrac{1}{4} \cdot \left( -\dfrac{4}{9} \right)^n} \right|= \lim_{n \to \infty} \left| \dfrac{4^{n+1}}{9^{n+1}} \cdot \dfrac{9^n}{4^n} \right|= \lim_{n \to \infty} \left| \dfrac{4^{n+1}}{4} \cdot \dfrac{9^n}{9^{n+1}} \right|= \lim_{n \to \infty} \left| \dfrac{4}{9} \right|= \dfrac{4}{9} < 1
+	\]
+Therefore, the given series converges absolutely by the Ratio Test. Finally, observe that\dots
+	\[
+	\lim_{n \to \infty} \left| -\dfrac{1}{4} \cdot \left( -\dfrac{4}{9} \right)^n \right|^{1/n}= \lim_{n \to \infty} \left| \left( \dfrac{1}{4} \right)^{1/n} \cdot \dfrac{4}{9} \right|= \left| 1 \cdot \dfrac{4}{9} \right|= \dfrac{4}{9} < 1
+	\]
+Therefore, the given series converges absolutely by the Root Test. 
+}
+
+
+
+% Question 7
+\newpage
+\question[10] Determine whether the series below is convergent or divergent. Be sure to fully justify your response with the appropriate series tests.
+	\[
+	\sum_{n=3}^\infty \dfrac{n^2 - 4}{n^6 + 5}
+	\] \pspace
+
+{\itshape \textbf{Solution.} Observe that the series $\ds\sum_{n=3}^\infty \dfrac{1}{n^4}$ converges by the $p$-Series Test with $p= 4$. But then\dots
+	\[
+	\lim_{n \to \infty} \dfrac{\;\;\dfrac{n^2 - 4}{n^6 + 5}\;\;}{\dfrac{1}{n^4}}= \lim_{n \to \infty} \dfrac{n^4(n^2 - 4)}{n^6 + 5}= \lim_{n \to \infty} \dfrac{n^6 - 4n^4}{n^6 + 5}= \dfrac{1}{1}= \underbrace{1}_{\neq 0} < \infty
+	\]
+Therefore, the series $\ds\sum_{n=3}^\infty \dfrac{n^2 - 4}{n^6 + 5}$ converges by the Limit Comparison Test. \pspace
+
+Alternatively, we have\dots
+	\[
+	\sum_{n=3}^\infty \dfrac{n^2 - 4}{n^6 + 5} < \sum_{n=3}^\infty \dfrac{n^2}{n^6}= \sum_{n=3}^\infty \dfrac{1}{n^4}
+	\]
+Therefore, the series $\ds\sum_{n=3}^\infty \dfrac{n^2 - 4}{n^6 + 5}$ converges by the Direct Comparison Test.}
+
+
+
+% Question 8
+\newpage
+\question[15] Use the Integral Test to determine whether the series below converges or diverges. Be sure to fully justify your response and show all your work. 
+	\[
+	\sum_{n=2}^\infty \dfrac{1}{n (\ln n)^4}
+	\] \pspace
+
+{\itshape \textbf{Solution.} Let $f(x)= \dfrac{1}{x (\ln x)^4}$. Observe that\dots
+	\begin{itemize}
+	\item $f(x) > 0$: Observe that $x$ and $(\ln x)^4 > 0$ for all $x \in [2, \infty)$. But then $f(x) > 0$ on the interval $[2, \infty)$.
+	\item $f(x)$ is continuous on $[2, \infty)$: The functions $x$ and $\ln x$ are continuous on $[2, \infty)$. But then $(\ln x)^4$ is continuous because it is a power of a continuous function. But then $x (\ln x)^4$ is continuous because it is a product of continuous functions. We know that $x (\ln x)^4= 0$ if and only if $x= 0$ or $x= 1$, which does not occur on $[2, \infty)$. But then $f(x)= \frac{1}{x (\ln x)^4}$ is a quotient of continuous functions with non-vanishing denominator, which implies that $f(x)$ is continuous.
+	\item $f(x)$ is decreasing: Observe that $f'(x)= - \dfrac{\ln x + 4}{x^2 (\ln x)^5} < 0$ on $[2, \infty)$. Because $f'(x) < 0$, $f(x)$ is decreasing on $[2, \infty)$. 
+	\end{itemize}
+Therefore, the Integral Test implies that $\ds\sum_{n=2}^\infty \dfrac{1}{n (\ln n)^4}$ converges if and only if $\ds\int_2^\infty \dfrac{dx}{x (\ln x)^4}$ converges. \pspace
+
+Let $u= \ln x$, so that $du= \frac{1}{x} \;dx$. But then\dots
+	\[
+	\hspace{-1cm} \int \dfrac{dx}{x (\ln x)^4}= \int \dfrac{1}{(\ln x)^4} \cdot \dfrac{1}{x} \;dx= \int \dfrac{1}{u^4} \;du= \int u^{-4} \;du= -\frac{1}{3} \, u^{-3} + C= -\dfrac{1}{3u^3} + C= -\dfrac{1}{3(\ln x)^3} + C
+	\]
+But then\dots
+	\[
+	\hspace{-2cm} \int_2^\infty \dfrac{dx}{x (\ln x)^4}= \lim_{N \to \infty} \int_2^N \dfrac{dx}{x (\ln x)^4}= \lim_{N \to \infty} -\dfrac{1}{3(\ln x)^3} \bigg|_2^N= \lim_{N \to \infty} -\dfrac{1}{3(\ln N)^3} - \dfrac{-1}{3 (\ln 2)^3}= 0 + \dfrac{1}{3 (\ln 2)^3}= \dfrac{1}{3 (\ln 2)^3}
+	\]
+This shows that the integral converges. Therefore, the series $\ds\sum_{n=2}^\infty \dfrac{1}{n (\ln n)^4}$ converges by the Integral Test.}
+
+
+
+% Bonuses
+\newpage
+\noindent {\bfseries Bonus I.} The following parts are \textit{each worth two bonus points} on the exam. You may answer one or more of them. Failing to answer any of these questions or answering any of them incorrectly \textit{\bfseries will not} count against your exam score. \par\vspace{0.5cm}
+	\begin{enumerate}[(a)]
+	\item The name of the series $\ds\sum_{n=1}^\infty \dfrac{1}{n}$ is \underline{\hspace{2cm} \itshape the Harmonic Series \hspace{2cm}}. \par\vspace{0.1cm}
+	
+	\item The sum of the series $\ds\sum_{n=1}^\infty \dfrac{1}{n^2}$ is \underline{\hspace{2cm} $\dfrac{\pi^2}{6}$ \hspace{2cm}}. \par\vspace{0.1cm}
+	
+	\item The sum of the series $\ds\sum_{n=1}^\infty \dfrac{1}{n^4}$ is \underline{\hspace{2cm} $\dfrac{\pi^4}{90}$ \hspace{2cm}}. \par\vspace{0.1cm}
+	
+	\item The sum $\ds\sum_{k=0}^n a\, r^n$ is \underline{\hspace{2cm} $a \, \dfrac{1 - r^{n+1}}{1 - r}$ \hspace{2cm}}. \par\vspace{0.1cm}
+	
+	\item What is the most likely next term of the sequence $\{ 1, 11, 21, 1211, 111221, 312211, \ldots \}$? \par\vspace{0.5cm} \underline{ \hspace{2cm} $13112221$ \hspace{2cm}}
+	\end{enumerate} \par\vspace{0.5cm}
+	
+\noindent {\bfseries Bonus II.} The following question is worth \textit{ten bonus points}. Failing to answer this question or answering incorrectly \textit{\bfseries will not} count against your exam score. \par\vspace{0.3cm} 
+
+Fully justifying your reasoning and using any appropriate series tests, determine whether the following series converges or diverges:	
+	\[
+	\sum_{n=1}^\infty \sin \left( \dfrac{1}{n^3} \right)
+	\] \pspace
+
+{\itshape \textbf{Solution.} Observe that the series $\ds\sum_{n=1}^\infty \dfrac{1}{n^3}$ converges by the $p$-test with $p= 3$. Observe that $\frac{1}{n^3} > 0$ and $\sin(\frac{1}{n^3}) > 0$ on $(0, \infty)$. But then\dots
+	\[
+	\lim_{n \to \infty} \dfrac{\;\;\sin \left( \dfrac{1}{n^3} \right)\;\;}{\dfrac{1}{n^3}}= \underbrace{1}_{\neq 0} < \infty
+	\]
+Therefore, the series $\ds\sum_{n=1}^\infty \sin \left( \dfrac{1}{n^3} \right)$ converges by the Limit Comparison Test.}
+
+\end{questions}
+\end{document}

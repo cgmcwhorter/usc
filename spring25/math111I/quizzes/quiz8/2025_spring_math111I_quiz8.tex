@@ -10,17 +10,45 @@
 \quiz{8}
 
 % Problem 1
-\problem If $f(x)= 5x + 8$ and $g(x)= x^2 - 4$, compute $(f \circ g)(-1)$. \par\vspace{4cm}
+\problem If $f(x)= 5x + 8$ and $g(x)= x^2 - 4$, compute $(f \circ g)(-1)$. \pspace
+
+\ans{We know that $(f \circ g)(-1)= f \big( g(-1) \big)$. But\dots
+	\[
+	\begin{aligned}
+	g(-1)&= (-1)^2 - 4= 1 - 4= -3 \\
+	f(-3)&= 5(-3) + 8= -15 + 8= -7
+	\end{aligned}
+	\]
+Therefore, we have\dots
+	\[
+	(f \circ g)(-1)= f \big( g(-1) \big)= f(-3)= -7
+	\]
+}
 
 
 
 % Problem 2
-\problem Consider the function $h(x)= 4(x + 5)^3$. Find functions $f(x)$ and $g(x)$ such that $h(x)= f \big( g(x) \big)$, i.e. write $h(x)$ as a composition of two functions. \par\vspace{4cm}
+\problem Consider the function $h(x)= 4(x + 5)^3$. Find functions $f(x)$ and $g(x)$ such that $h(x)= f \big( g(x) \big)$, i.e. write $h(x)$ as a composition of two functions. \pspace
+
+\ans{There are infinitely many answers. For instance, we have\dots
+	\[
+	\begin{aligned}
+	f(x)&= 4x^3 \\
+	g(x)&= x + 5
+	\end{aligned}
+	\]
+We can verify that this selection works:
+	\[
+	f \big( g(x) \big)= f(x + 5)= 4(x + 5)^3= h(x)
+	\]
+}
 
 
 
 % Problem 3
-\problem Compared to the graph of $f(x)$, what does the graph of $4 - f(x + 6)$ `look like'? \par\vspace{4cm}
+\problem Compared to the graph of $f(x)$, what does the graph of $4 - f(x + 6)$ `look like'? \pspace
+
+\ans{We know that the graph of $f(x + 6)$ is the graph of $f(x)$ shifted 6~units to the left. The graph of $-f(x + 6)$ is the graph of $f(x + 6)$ reflected through the $x$-axis. Finally, the graph of $4 - f(x + 6)= -f(x + 6) + 4$ is the graph of $-f(x + 6)$ shifted 4~units upwards. Therefore, the graph of $4 - f(x + 6)$ is the graph of $f(x)$ shifted 6~units to the left, reflected through the $x$-axis, and then shifted 4~units upward.} \vfill
 
 
 
@@ -47,6 +75,8 @@
 	\end{axis}
 	\end{tikzpicture}
 	}
+\end{minipage}\begin{minipage}[b]{0.48\textwidth}
+\wans{The function $f(x)$ does not have an inverse because the graph of $f(x)$ fails the Horizontal Line Test; that is, not every horizontal line intersects the graph of $f(x)$ at most once.} \pvspace{2cm} 
 \end{minipage}
 
 \end{document}

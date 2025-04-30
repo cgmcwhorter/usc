@@ -15,14 +15,34 @@
 	\item Find $a, b, c$ from the standard form for $f(x)$.
 	\item Does the graph of $f(x)$ open upwards or downwards? Explain.
 	\item Find the vertex and axis of symmetry for $f(x)$.
-	\end{enumerate} \pspace
+	\end{enumerate}
 
-\sol 
+\ans{
 \begin{enumerate}[(a)]
-\item The standard form of a quadratic function is $ax^2 + bx + c$. Writing $f(x)= 3 - 6x - x^2= -x^2 - 6x + 3$, we see that $a= -1$, $b= -6$, and $c= 3$. \pspace
+\item The standard form for a quadratic function is $ax^2 + bx + c$. Writing $f(x)$ as $f(x)= -x^2 - 6x + 3$, we see that\dots
+	\[
+	\boxed{a= 1, \quad b= -6, \quad c= 3}
+	\]
 
-\item 
-\item 
+\item Because $a= -1 < 0$, we know that the graph of $f(x)$ opens downwards. \pspace
+
+\item We find the vertex form of $f(x)$. 
+
+Using completing the square, we first factor out $-1$ to make the $x^2$-coefficient 1. For the new term, we find half the `middle' term ($\frac{6}{2}= 3$), square this term ($3^2= 9$) and then add/subtract this value. This yields\dots
+	\[
+	\begin{aligned}
+	f(x)&= -x^2 - 6x + 3 \\
+	&= -(x^2 + 6x - 3) \\
+	&= -(x^2 + 6x + 9 - 9 - 3) \\
+	&= -\big( (x^2 + 6x + 9) + (-9 - 3) \big) \\
+	&= -\big( (x + 3)^2 - 12 \big) \\
+	&= -(x + 3)^2 + 12
+	\end{aligned}
+	\]
+Therefore, the vertex form is $f(x)= 12 - (x + 3)^2$. Alternatively, using the `evaluation method', we know that the vertex is located at $x= -\frac{b}{2a}= -\frac{(-6)}{2(-1)}= \frac{6}{-2}= -3$. The $y$-value at this vertex location must be $f(-3)= -(-3)^2 - 6(-3) + 3= -9 + 18 + 3= 12$. We know that $a= -1$. The vertex form is $a(x - P)^2 + Q$, where the vertex is $(P, Q)$. Therefore, we have $f(x) = -1 \big(x - (-3) \big)^2 + 12= -(x + 3)^2 + 12= 12 - (x + 3)^2$. \pspace
+
+In either case, the vertex must be $(-3, 12)$. This also implies that the axis of symmetry is $x= -3$.
 \end{enumerate}
+}
 
 \end{document}
