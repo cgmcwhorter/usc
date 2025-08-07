@@ -116,6 +116,50 @@
 
 
 % -------------------
+% Answer Hiding
+% -------------------
+\newcommand{\tsol}{\noindent{\bfseries Solution. }}
+\newcommand{\sol}[1]{\hidestart{\itshape #1}\hidefinish}
+\newcommand{\psol}[1]{\ifbool{hideans}{\phantom{#1}}{#1}}
+\newcommand{\psolscale}[2]{\psol{\scalebox{#1}{\mbox{\ensuremath{\displaystyle #2}}}}}
+\newcommand{\figsol}[1]{\ifbool{hideans}{\phantom{x}}{{\itshape #1}}}
+\newcommand{\wsol}[1]{\ifbool{hideans}{{\color{white} #1}}{{\itshape #1}}}
+\newcommand{\usol}[2]{\ifbool{hideans}{\underline{\hspace{#1}{\phantom{#2}}\hspace{#1}}}{\underline{\hspace{#1}{#2}\hspace{#1}}}}
+
+\newbool{hideans}
+\usetikzlibrary{tikzmark}
+\usepackage{tikzpagenodes}
+\newcounter{tikzmarklines}\setcounter{tikzmarklines}{0} % 
+\tikzset{
+  tikzmark prefix=prefix-,
+  tikzmark suffix=-suffix
+}
+\newcommand{\hidestart}{%
+  \stepcounter{tikzmarklines}%
+  \tikzmark{a\thetikzmarklines}%
+  \iftikzmarkoncurrentpage{b\thetikzmarklines}%
+  \else
+  \begin{tikzpicture}[remember picture,overlay,next page=below]%
+  \path (pic cs:a\thetikzmarklines) coordinate (start-\thetikzmarklines)
+  ([yshift=-0.2ex]pic cs:b\thetikzmarklines) coordinate (end-\thetikzmarklines);
+  \ifbool{hideans}{\fill[white] (current page.west|-start-\thetikzmarklines)-- ++(0,1.2em) -|
+  (current page.east|-end-\thetikzmarklines) -| cycle;}{}
+  \end{tikzpicture}%
+  \fi
+}
+\newcommand{\hidefinish}{%
+  \tikzmark{b\thetikzmarklines}%
+  \begin{tikzpicture}[remember picture,overlay,next page=below]%
+  \path (pic cs:a\thetikzmarklines) coordinate (start-\thetikzmarklines)
+  ([yshift=-1.5ex]pic cs:b\thetikzmarklines) coordinate (end-\thetikzmarklines);
+  \ifbool{hideans}{\fill[white] (current page.west|-start-\thetikzmarklines)-- ++(0,1.2em) -|
+  (current page.east|-end-\thetikzmarklines) -| cycle;}{}
+  \end{tikzpicture}%
+  }
+\newcommand{\remove}[1]{\ifbool{hideans}{}{#1}}
+
+
+% -------------------
 % Cover Page Commands
 % -------------------
 
@@ -167,48 +211,3 @@
 %\usepackage{pifont}
 %\newcommand{\cmark}{\ding{51}}
 %\newcommand{\xmark}{\ding{55}}
-
-
-% -------------------
-% Answer Hiding
-% -------------------
-\newbool{hideans}
-\usetikzlibrary{tikzmark}
-\usepackage{tikzpagenodes}
-\newcounter{tikzmarklines}\setcounter{tikzmarklines}{0} % 
-\tikzset{
-  tikzmark prefix=prefix-,
-  tikzmark suffix=-suffix
-}
-
-\newcommand{\hidestart}{%
-  \stepcounter{tikzmarklines}%
-  \tikzmark{a\thetikzmarklines}%
-  \iftikzmarkoncurrentpage{b\thetikzmarklines}%
-  \else
-  \begin{tikzpicture}[remember picture,overlay,next page=below]%
-  \path (pic cs:a\thetikzmarklines) coordinate (start-\thetikzmarklines)
-  ([yshift=-0.2ex]pic cs:b\thetikzmarklines) coordinate (end-\thetikzmarklines);
-  \ifbool{hideans}{\fill[white] (current page.west|-start-\thetikzmarklines)-- ++(0,1.2em) -|
-  (current page.east|-end-\thetikzmarklines) -| cycle;}{}
-  \end{tikzpicture}%
-  \fi
-}
-\newcommand{\hidefinish}{%
-  \tikzmark{b\thetikzmarklines}%
-  \begin{tikzpicture}[remember picture,overlay,next page=below]%
-  \path (pic cs:a\thetikzmarklines) coordinate (start-\thetikzmarklines)
-  ([yshift=-1.5ex]pic cs:b\thetikzmarklines) coordinate (end-\thetikzmarklines);
-  \ifbool{hideans}{\fill[white] (current page.west|-start-\thetikzmarklines)-- ++(0,1.2em) -|
-  (current page.east|-end-\thetikzmarklines) -| cycle;}{}
-  \end{tikzpicture}%
-  }
-\newcommand{\ans}[1]{\hidestart  {\itshape #1 } \hidefinish}
-\newcommand{\wans}[1]{\ifbool{hideans}{\textcolor{white}{#1}}{{\itshape #1}}}
-\newcommand{\wsol}[1]{\ifbool{hideans}{\textcolor{white}{#1}}{#1}}
-\newcommand{\uans}[2]{\ifbool{hideans}{\underline{\hspace{#1}\textcolor{white}{$#2$}\hspace{#1}}}{\underline{\hspace{#1}$#2$\hspace{#1}}}}
-\newcommand{\ansfig}[1]{\ifbool{hideans}{\phantom{x}}{{\itshape #1}}}
-\newcommand{\spaceans}[2]{\ifbool{hideans}{#2}{#1}}
-\newcommand{\either}[2]{\ifbool{hideans}{\phantom{#1}}{#1}}
-\newcommand{\tans}[1]{\ifbool{hideans}{\underline{\phantom{$#1$}}}{\underline{$#1$}}}
-\newcommand{\remove}[1]{\ifbool{hideans}{}{#1}}
