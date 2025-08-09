@@ -1,0 +1,174 @@
+\documentclass[11pt,letterpaper]{article}
+\usepackage[lmargin=0.75in,rmargin=0.75in,tmargin=0.75in,bmargin=0.75in]{geometry}
+
+% -------------------
+% Packages
+% -------------------
+\usepackage{
+	amsmath,			% Math Environments
+	amssymb,			% Extended Symbols
+	enumerate,		% Enumerate Environments
+	graphicx,			% Include Images
+	lastpage			% Reference Lastpage
+}
+
+
+% -------------------
+% Hyperref
+% -------------------
+\usepackage[hyphens]{url}
+\usepackage{hyperref}
+\hypersetup{
+	colorlinks 	= true,
+  	linkcolor  	= scred,
+  	urlcolor   	= scred
+}
+\renewcommand\UrlFont{\normalfont}
+\makeatletter
+\g@addto@macro{\UrlBreaks}{\UrlOrds}
+\makeatother
+\renewcommand\UrlFont{\normalfont}
+
+
+% -------------------
+% Font
+% -------------------
+\usepackage[T1]{fontenc}
+\usepackage{charter}
+
+
+% -------------------
+% Colors
+% -------------------
+\usepackage{xcolor}
+\definecolor{scred}{HTML}{73000a} % 115, 0, 10
+\definecolor{scgold}{HTML}{d7a902} % 215, 169, 2
+
+
+% -------------------
+% Header & Footer
+% -------------------
+\usepackage{fancyhdr}
+\setlength{\parindent}{0pt}
+
+\fancypagestyle{pages}{
+	%Headers
+	\fancyhead[L]{}
+	\fancyhead[C]{}
+	\fancyhead[R]{}
+	\renewcommand{\headrulewidth}{0pt}
+	%Footers
+	\fancyfoot[L]{}
+	\fancyfoot[C]{}
+	\fancyfoot[R]{}
+	\renewcommand{\footrulewidth}{0.0pt}
+}
+\headheight=0pt
+\footskip=12pt
+\pagestyle{pages}
+
+
+% -------------------
+% Commands
+% -------------------
+\newcommand{\mytitle}[1]{%
+\begin{center}
+\includegraphics[width=0.53\textwidth]{usc_horzlogo.png} \par\vspace{-0.2cm}
+\huge\bfseries\color{scred} #1
+\end{center} \par\vspace{0.2\baselineskip}%
+}
+\newcommand{\mysection}[2]{%
+\begin{minipage}{\textwidth}
+\phantomsection
+	{%
+\large\bfseries\color{scred}
+#2 \par\vspace{-0.62\baselineskip}
+\noindent\rule{#1\textwidth}{1.5pt} \par
+\vspace{-0.3cm}\noindent\rule{0.13\textwidth}{5.1pt}%
+	}%
+\end{minipage}\par\vspace{4\lineskip}%
+}
+\newcommand{\lefthead}[1]{\noindent{\large\bfseries\color{scred}#1}\par}
+\newcommand{\largeheader}[2]{\noindent{\large\bfseries\color{scred}#2}\par\vspace{#1}}
+\newcommand{\colortext}[1]{{\bfseries\color{scred}#1}}
+\newcommand{\pspace}{\par\vspace{\baselineskip}}
+\newcommand{\ptspace}{\par\vspace{0.2\baselineskip}}
+\newcommand{\pttspace}{\par\vspace{0.4\baselineskip}}
+\newcommand{\pspecial}{\par\vspace{0.3\baselineskip}}
+
+
+% -------------------
+% Content
+% -------------------
+\begin{document}
+\mytitle{Student Mental Health Resources}
+
+% Importance of Mental Health
+\mysection{0.37}{Importance of Mental Health}
+Your emotional and mental health is as important as your physical health. If at any point during the semester you feel overwhelmed with your course work, feel thoughts of depression or suicide, experience sexual assault or rape, have problems with substance abuse or relationship abuse, or have any other struggles with your mental health, \underline{\bfseries\itshape please seek help}! Never feel ashamed about asking for help. The \href{https://sc.edu/about/offices\_and\_divisions/student-health-well-being/mental-health/counseling-and-psychiatry/index.php}{Counseling and Crisis Services} at the University of South Carolina is a resource offering assistance with any mental health issues that you might have. Be aware that some resources may be private but not confidential, i.e. issues will be kept private but that federal law may mandate reporting to appropriate individuals. If you are unsure if the resources you are accessing will be confidential, you need only ask. \pspecial
+
+There are also a number of resources available to you at the University of South Carolina for academic related issues: Student Success Center, Student Health and Well-Being, Substance Abuse Prevention and Education, Writing Center, etc. Please, consult with the Student Services Office and the University of South Carolina webpage about the resources available to you. There is \underline{\bfseries\itshape never} any shame in seeking help. If you or someone you know is struggling with any of these issues, speak out! You may also \href{https://cm.maxient.com/reportingform.php?UnivofSouthCarolina&layout_id=3}{report any issues} you observe to the university. \par\vspace{0.7\baselineskip}
+
+
+
+% STAC Resources
+\mysection{0.51}{University of South Carolina (Columbia)}
+
+\colortext{Student Health and Well-Being:} The Student Health and Well-Being Office supports the well-being of university students. They help to meet the emotional, mental, and physical needs of students---focusing on holistic wellness. You can find them at the Center for Health \& Well-Being (8:00am -- 5:00pm), 803.777.3175, or contact at \url{https://sc.edu/about/offices\_and\_divisions/student-health-well-being/about/contact.php}. Use \href{https://myhealthspace.ushs.sc.edu/login\_dualauthentication.aspx}{MyHealthSpace} for most appointments. The trained staff provides essential therapy and emotional wellness services for all USC students. For appointments, call 803.777.5223 or login to \href{https://myhealthspace.ushs.sc.edu/login\_dualauthentication.aspx}{MyHealthSpace}. \pspecial
+
+\colortext{Thrive@Carolina:} Thrive@Carolina provides a 24/7/365 support line, access to other counseling and assistance, free and anonymous mental health screening, and assisting recognizing signs of psychological distress to help a friend in need, etc. Simply call 833.664.2854. There are also other access options, see \url{https://sc.edu/about/offices\_and\_divisions/student-health-well-being/mental-health/24\_hour\_online\_support/index.php}. \pspecial
+
+\colortext{Student Disability Resource Center:} The Student Disability Resource Center empowers students with disabilities and coordinates with university staff to ensure equal access to education and university life. Their offices are 1705 College Street, Close-Hipp, Suite 102, or call/email 803.777.6142, \href{mailto:sadrc@mailbox.sc.edu}{sadrc@mailbox.sc.edu}. \pspecial
+
+\colortext{LGBT[QIA]$+$ Resources:} If you or someone you know is having issues with gender or sexual identity, the \href{https://sc.edu/about/offices\_and\_divisions/multicultural\_student\_affairs/lgbtqplus-at-uofsc/index.php}{Office of Multicultural Student Affairs} can be of assistance. Visit the Office of Multicultural Student Affairs in the Russell House West Wing Suite 115, or call/email 803-777-7716, \href{mailto:saomsa@mailbox.sc.edu}{saomsa@mailbox.sc.edu}. \pspecial
+
+\colortext{Substance Abuse Prevention and Education:} Substance Abuse Prevention and Education helps support students with prevention, cessation, and abstinence from substances, e.g. alcohol, cannabis, etc. They can be found at Strom Thurmond Wellness \& Fitness Center, 3rd floor, or call/email 803.777.3933, \href{mailto:sape@sc.edu}{sape@sc.edu}. You can also find the Gamecock Recovery Lounge at Carolina Coliseum 4001, or call/email 803.777.5781, \href{mailto:gamecockrecovery@sc.edu}{gamecockrecovery@sc.edu}. \pspecial
+
+
+
+\newpage
+
+
+
+\colortext{Campus Safety and Wellness:} If you are concerned about a student's welfare, especially immediate welfare, please call 803.777.4215, or in case of an emergency dial 911. More information about campus safety, wellness, resources, and officer contact information can be found at \url{https://sc.edu/safety/}. \pspecial
+
+\colortext{Campus Spiritual and Religious Life:} There is a diverse offering of services and opportunities for students across faiths, spiritualities, and religions. For a list of resources, see \url{https://sc.edu/about/offices\_and\_divisions/student\_affairs/our\_experts/our\_offices/student\_life/spiritual\_religious\_life/index.php} or contact the Division of Student Affairs and Academic Support, Osborne Administration Building, 915 Bull St., Suite 110, or call/email 803.777.4172, \href{mailto:saas@mailbox.sc.edu}{saas@mailbox.sc.edu}. \vfill
+
+% Other Resources
+\mysection{0.30}{Other Resources}
+
+Should you not want to use the resources at the University of South Carolina, there are a variety of other options available to you. \pttspace
+
+\colortext{Local Mental Health Services:} There are a number of local mental health services available: \ptspace
+	\hspace{0.2cm} {\bfseries Richland County Emergency Services} 803.576.3400 \par
+	\hspace{0.2cm} {\bfseries Columbia Area Mental Health Center:} 803.898.8888 (8:30am -- 5:00pm, see below) \par
+	\hspace{0.2cm} {\bfseries Community Crisis Response and Intervention (CCRI) :} 803.898.8888 (after hours) \par
+	\hspace{0.2cm} {\bfseries South Carolina Department Mental Health Mobile Crisis:} 803.364.2274 (Statewide) \par
+	\hspace{0.2cm} {\bfseries South Carolina Department Mental Health Mobile Crisis:} 803.364.2274 (Richland County) \pspecial
+
+\colortext{Food/Resource Insecurity:} If you are dealing with needs based issues, such as food insecurity, there are local resources that may be available to you. For more information or to learn how to donate or volunteer, visit \url{https://www.harvesthope.org/}. \par\vspace{0.3cm}
+
+
+There are also a number of hotline numbers you can access: \pttspace
+
+\colortext{National Suicide Prevention Hotline:} 988 (Call or Text) \pttspace
+\colortext{Trevor LGBT Suicide Hotline:} 1.866.488.7386 \pttspace
+\colortext{Trans Lifeline Suicide Hotline:} 1.877.565.8860 \pttspace
+\colortext{Rape, Sexual Assault, Abuse and Incest National Network (RAINN)} 1.800.656.4673 \pttspace
+\colortext{National Domestic Violence Hotline:} 1.800.799.7233 \pttspace
+\colortext{Veteran's Crisis Line:} 1.800.273.8255 \pttspace
+\colortext{Gay and Lesbian National Hotline:} 1.888.843.4564 \pttspace
+\colortext{CDC National STD Hotline:} 1.800.311.3435 \pttspace
+\colortext{Substance and Mental Health Services Administration (SAMHSA):} 1.800.662.4357 \pttspace
+\colortext{National Alliance on Mental Health Illness (NAMI):} 1.800.950.6264 \pttspace
+\colortext{American Cancer Society:} 1.800.227.2345 \pttspace
+\colortext{CDC National HIV/AIDS Hotline:} 1.800.343.2437 \pttspace
+\colortext{Crisis Pregnancy Hotline:} 1.800.712.4357 \pttspace
+\colortext{Eating Disorder Hotline:} 1.800.931.2237 \pttspace
+\colortext{Self Harm Hotline:} 1.800.366.8288 \pttspace
+\colortext{Sex Addicts Anonymous:} 1.800.477.8191 \pttspace
+\colortext{Marijuana Anonymous:} 1.800.766.6779 \pttspace
+\colortext{Compulsive Gambling Hotline:} 1.800.522.4700 \pttspace
+\colortext{GriefShare:} 1.800.395.5755
+
+\end{document}
