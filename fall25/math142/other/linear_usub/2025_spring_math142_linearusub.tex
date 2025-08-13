@@ -1,0 +1,161 @@
+\documentclass[11pt,letterpaper]{article}
+\usepackage[lmargin=1in,rmargin=1in,bmargin=1in,tmargin=1in]{geometry}
+\usepackage{
+	amsmath,			% AMS Math
+	enumerate,		% Enumerate Environments
+	microtype,			% Improved Typesetting
+	multicol,			% Use Multiple Columns
+}
+
+% Font
+\usepackage[T1]{fontenc}
+\usepackage{charter}
+
+\setlength{\parindent}{0ex} % Paragraph Indentation
+
+% Commands
+\newcommand\ds{\displaystyle}
+\newenvironment{3enumerate}{%
+	\begin{enumerate}[(1)]
+	\begin{multicols}{3}
+	}{%
+	\end{multicols}
+	\end{enumerate}
+}
+
+% -------------------
+% Content
+% -------------------
+\begin{document}
+
+\pagenumbering{gobble}
+
+\begin{center} {\bfseries \LARGE Linear $u$-Substitution: $u$-Sub. in Your Head} \end{center} 
+
+Determine whether each of the following integrals is an `obvious' `linear $u$-sub.' If it is, compute the integral `in your head.'
+
+% Problems
+	\begin{center} {\bfseries\Large Problems} \end{center}
+\begin{3enumerate} \itemsep=0.26ex
+\item $\ds\int \sin(\pi x) \;dx$
+\item $\ds\int e^{5x} \;dx$
+\item $\ds\int \dfrac{dx}{x^2 - 10x + 25}$
+\item $\ds\int \tan(6s) \;ds$
+\item $\ds\int \ln(2x) \;dx$
+\item $\ds\int \dfrac{\left(1 + \frac{1}{x} \right)^6}{x^2} \;dx$
+\item $\ds\int (6x - 7)^4 \;dx$
+\item $\ds\int \dfrac{\sin \theta}{\cos^2 \theta + 1} \;d\theta$
+\item $\ds\int \sin(1 - 3a) \;da$
+\item $\ds\int e^{9 - x} \;dx$
+\item $\ds\int \ln(9x) \;dx$
+\item $\ds\int \sqrt[3]{1 - 5x} \;dx$
+\item $\ds\int (1 - t)^{11} \;dt$
+\item $\ds\int \sin(\cos(x)) \sin x \;dx$
+\item $\ds\int \cos\left( \dfrac{x}{2} \right) \;dx$
+\item $\ds\int \left( \dfrac{5}{7} \right)^{x/6} \;dx$
+\item $\ds\int \dfrac{e^{\ln x}}{x} \;dx$
+\item $\ds\int \dfrac{dt}{6t - 13}$
+\item $\ds\int 8^{1 - x} \;dx$
+\item $\ds\int \cos(5x) \;dx$
+\item $\ds\int \cot(1 - x) \;dx$
+\item $\ds\int \dfrac{dx}{\sqrt{x} (\sqrt{x} + 1)}$
+\item $\ds\int \dfrac{1}{(5x + 2)^4} \;dx$
+\item $\ds\int \sin\left( \dfrac{x}{7} \right) \;dx$
+\item $\ds\int 5^{6x} \;dx$
+\item $\ds\int \dfrac{e^x + 5}{e^x} \;dx$
+\item $\ds\int \left( \dfrac{2x - 1}{3} \right)^5 \;dx$
+\item $\ds\int \csc^2(9z) \;dz$
+\item $\ds\int \dfrac{x}{\sqrt{x + 1}} \;dx$
+\item $\ds\int \cos(2w + 1) \;dw$
+\item $\ds\int e^{3m - 4} \;dm$
+\item $\ds\int \ln\left( \frac{x}{5} \right) \;dx$
+\item $\ds\int (r + 3)^8 \;dr$
+\item $\ds\int q^3 \sqrt{q^2 + 1} \;dq$
+\item $\ds\int (3x - 7)^3 \;dx$
+\item $\ds\int \sec(4x) \tan(4x) \;dx$
+\item $\ds\int \dfrac{\arcsin x}{\sqrt{1 - x^2}} \;dx$
+\item $\ds\int \sqrt{3z + 1} \;dz$
+\item $\ds\int \log_8(4x) \;dx$
+\item $\ds\int e^{n/7} \;dn$
+\item $\ds\int \csc(2x) \cot(2x) \;dx$
+\item $\ds\int \dfrac{\tan \sqrt[3]{x^2}}{\sqrt[3]{x}} \;dx$
+\item $\ds\int e^{x/5} \;dx$
+\item $\ds\int \tan\left( \dfrac{x}{13} \right) \;dx$
+\item $\ds\int \log_2(3a + 4) \;da$
+\item $\ds\int \dfrac{dx}{(x + 10)^3}$
+\item $\ds\int x^4 \sec^2(3x^5) \;dx$
+\item $\ds\int (0.3)^{x/0.1} \;dx$
+\item $\ds\int (6x + 13)^{2/3} \;dx$
+\item $\ds\int \dfrac{dx}{x \ln \sqrt{x}}$
+\item $\ds\int \pi^{\pi x} \;dx$
+\item $\ds\int \dfrac{dx}{3 - 2x}$
+\item $\ds\int (4x)^{100} \;dx$
+\item $\ds\int \dfrac{4\ln x}{x(\ln x + 10)} \;dx$
+\item $\ds\int (5b^2 + 15)(b^3 + 15b)^{11} \;db$
+\end{3enumerate}
+
+\newpage
+
+% Solutions
+	\begin{center} {\bfseries\Large Solutions} \end{center}
+{\itshape Note. The solutions are not simplified---rather given as one would write `from one's head.'}
+
+\begin{3enumerate} \itemsep=1.5ex
+\item $-\dfrac{\cos(\pi x)}{\pi} + C$
+\item $\dfrac{e^{5x}}{5} + C$
+\item Not an obvious \par linear $u$-sub.
+\item $\dfrac{\ln(\sec 6x)}{6} + C$
+\item $\dfrac{2x - 2x \ln(2x)}{2} + C$
+\item Not a linear $u$-sub.
+\item $\dfrac{(6x - 7)^5}{5} \cdot \dfrac{1}{6} + C$
+\item Not a linear $u$-sub.
+\item $-\cos(1 - 3x) \cdot -\frac{1}{3} + C$
+\item $-e^{9 - x} + C$
+\item $\dfrac{9x - 9x \ln(9x)}{9} + C$
+\item $\dfrac{3(1 - 5x)^{4/3}}{4} \cdot -\dfrac{1}{5} + C$
+\item $-\dfrac{(1 - t)^{12}}{12} + C$
+\item Not a linear $u$-sub.
+\item $2 \sin\left( \dfrac{x}{2} \right) + C$
+\item $\dfrac{\left( \dfrac{5}{7} \right)^{x/6}}{\ln(5/7)} \cdot 6 + C$
+\item Not a linear $u$-sub.
+\item $\dfrac{\ln|6t - 13|}{6} + C$
+\item $-\dfrac{8^{1-x}}{\ln 8} + C$
+\item $\dfrac{\sin(5x)}{5} + C$
+\item $-\ln(\sin(1 - x)) + C$
+\item Not a linear $u$-sub.
+\item $\dfrac{(5x + 2)^{-3}}{-3} \cdot \dfrac{1}{5} + C$
+\item $-\cos \left( \dfrac{x}{7} \right) \cdot 7 + C$
+\item $\dfrac{5^{6x}}{\ln 5} \cdot \dfrac{1}{6} + C$
+\item Not a linear $u$-sub.
+\item $\left( \dfrac{2x - 1}{3} \right)^6 \cdot \dfrac{1}{6} \cdot \dfrac{2}{3} + C$
+\item $\dfrac{-\cot(9z)}{9} + C$
+\item Not an obvious \par linear $u$-sub.
+\item $\dfrac{\sin(2w + 1)}{2} + C$
+\item $\dfrac{e^{3m - 4}}{3} + C$
+\item $\left( \dfrac{x}{5} - \dfrac{x}{5} \, \ln\left( \dfrac{x}{5} \right) \right) \cdot 5 + C$
+\item $\dfrac{(r + 3)^9}{9} + C$
+\item Not an obvious \par (linear) $u$-sub.
+\item $\dfrac{(3x - 7)^4}{4} \cdot \dfrac{1}{3} + C$
+\item $\dfrac{\sec(4x)}{4} + C$
+\item Not a linear $u$-sub.
+\item $\dfrac{2(3z + 1)^{3/2}}{3} \cdot \dfrac{1}{3} + C$
+\item $\dfrac{4x - 4x \log_8(4x)}{\ln 8} \cdot \dfrac{1}{4} + C$
+\item $7e^{n/7} + C$
+\item $\dfrac{-\csc(2x)}{2} + C$
+\item Not a linear $u$-sub.
+\item $5e^{x/5} + C$
+\item $13 \ln \left| \sec\left( \dfrac{x}{13} \right) \right| + C$
+\item {\scriptsize$\dfrac{(3a + 4) - (3a + 4) \log_2(3a + 4)}{\ln 2} \cdot \dfrac{1}{3} + C$}
+\item $\dfrac{(x + 10)^{-2}}{-2} + C$
+\item Not a linear $u$-sub.
+\item $\dfrac{(0.3)^{x/0.1}}{\ln(0.3)} \cdot 0.1 + C$
+\item $\dfrac{3(6x + 13)^{5/3}}{5} \cdot \dfrac{1}{6} + C$
+\item Not a linear $u$-sub.
+\item $\dfrac{\pi^{\pi x}}{\ln \pi} \cdot \dfrac{1}{\pi} + C$
+\item $\ln|3 - 2x| \cdot \dfrac{1}{-2} + C$
+\item $\dfrac{(4x)^{101}}{101} \cdot \dfrac{1}{4} + C$
+\item Not a linear $u$-sub.
+\item Not a linear $u$-sub.
+\end{3enumerate}
+
+\end{document}
