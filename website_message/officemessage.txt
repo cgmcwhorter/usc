@@ -1,2 +1,2 @@
-<div><strong>Is Caleb around? :</strong> Yes, I am in my office.</div>
+Yes, I am in my office.
 No, Caleb is out.
