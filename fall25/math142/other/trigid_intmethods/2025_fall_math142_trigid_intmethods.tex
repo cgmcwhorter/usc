@@ -1,0 +1,53 @@
+\documentclass[11pt,letterpaper]{article}
+\usepackage[lmargin=1in,rmargin=1in,bmargin=1in,tmargin=1in]{geometry}
+
+% Packages
+\usepackage{
+	amsmath,			% Math Environments
+}
+
+% Font
+\usepackage[T1]{fontenc}
+\usepackage{charter}
+
+% Tikz
+\usepackage{tikz}
+
+% Commands
+\newcommand{\pspace}{\par\vspace{\baselineskip}}
+\setlength{\parindent}{0ex}
+
+% -------------------
+% Content
+% -------------------
+\begin{document}
+\pagenumbering{gobble}
+
+% Title
+\begin{center} {\bfseries \Large Trig. Identities for Trigonometric Integrals \& Trig. Substitution} \end{center}\par\vspace{1\baselineskip}
+
+% List
+\begin{itemize} \itemsep=5ex
+\item $\sin 2\theta= 2 \sin \theta \cos \theta$
+\item $\sin^2 \theta= \dfrac{1 - \cos 2\theta}{2}$
+\item $\cos^2 \theta= \dfrac{1 + \cos 2\theta}{2}$
+\item $\sin^2 \theta + \cos^2 \theta= 1$ \par
+	\begin{tikzpicture}
+	\node (A) at (0,2) {};
+	\node (B) at (6,0.43) {$\tan^2 \theta + 1= \sec^2 \theta$};
+	\node (C) at (12,0.43) {$1 + \cot^2 \theta= \csc^2 \theta$};
+	
+	\node[align=left] (D) at (0,0) {$\sim$ \enskip $\sin^2 \theta= 1 - \cos^2 \theta$ \\[0.2cm] $\sim$ \enskip $\cos^2 \theta= 1 - \sin^2 \theta$};
+	\node[align=left] (E) at (6,-2) {$\sim$ \enskip $\tan^2 \theta= \sec^2 \theta - 1$ \\[0.2cm] $\sim$ \enskip $\sec^2 \theta= \tan^2 \theta + 1$};
+	\node[align=left] (F) at (12,-2) {$\sim$ \enskip $\cot^2 \theta= \csc^2 \theta - 1$ \\[0.2cm] $\sim$ \enskip $\csc^2 \theta= \cot^2 \theta + 1$};
+
+	\draw[thick,->] (A) -- (D);
+	\draw[thick,->] (A) -- (B);
+	\draw[thick,->] (A) -- (C);
+	
+	\draw[thick,->] (B) -- (E);
+	\draw[thick,->] (C) -- (F);
+	\end{tikzpicture}
+\end{itemize}
+
+\end{document}
