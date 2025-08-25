@@ -13,13 +13,73 @@
 \begin{document}
 \thispagestyle{title}
 
-% 08/19
-\checkin{08/19}
+% 08/22
+\checkin{08/22} If $\ds\lim_{x \to 5} f(x)= -3$, then $f(5)= -3$. \pspace
 
-
-
-
-
+\sol The statement is \textit{false}. A function's limit (if it even exists) \textit{does not} have to be the same as the function's value at that limiting value---the function does not even have to be defined there! Consider the three examples below.
+	\begin{center}
+	% Left
+	\fbox{%
+	\begin{tikzpicture}[scale=0.7,every node/.style={scale=0.5}]
+	\begin{axis}[
+	grid=both,
+	axis lines=middle,
+	ticklabel style={fill=blue!5!white},
+	xmin= -0.5, xmax=10.5,
+	ymin= -8.5, ymax=2.5,
+	xtick={-1,0,...,11},
+	ytick={-8,-7,...,2},
+	minor tick = {-9,-8,...,3},
+	xlabel=\(x\),ylabel=\(y\),
+	samples=20]
+	\node at (7.5,-2.4) {\scalebox{1.6}{$f(x)$}};
+	\addplot[thick, samples=5, domain= -0.5:10.5] {x - 8};
+	\end{axis}
+	\end{tikzpicture}
+	} \hfill
+	% Middle
+	\fbox{%
+	\begin{tikzpicture}[scale=0.7,every node/.style={scale=0.5}]
+	\begin{axis}[
+	grid=both,
+	axis lines=middle,
+	ticklabel style={fill=blue!5!white},
+	xmin= -0.5, xmax=10.5,
+	ymin= -8.5, ymax=2.5,
+	xtick={-1,0,...,11},
+	ytick={-8,-7,...,2},
+	minor tick = {-9,-8,...,3},
+	xlabel=\(x\),ylabel=\(y\),
+	samples=20]
+	\node at (7.5,-3.4) {\scalebox{1.6}{$g(x)$}};
+	\addplot[thick, samples=5, domain= -0.5:10.5] {x - 8};
+	\addplot[soldot] coordinates{(5,-2)};
+	\addplot[holdot] coordinates{(5,-3)};
+	\end{axis}
+	\end{tikzpicture}
+	} \hfill
+	% Right
+	\fbox{%
+	\begin{tikzpicture}[scale=0.7,every node/.style={scale=0.5}]
+	\begin{axis}[
+	grid=both,
+	axis lines=middle,
+	ticklabel style={fill=blue!5!white},
+	xmin= -0.5, xmax=10.5,
+	ymin= -8.5, ymax=2.5,
+	xtick={-1,0,...,11},
+	ytick={-8,-7,...,2},
+	minor tick = {-9,-8,...,3},
+	xlabel=\(x\),ylabel=\(y\),
+	samples=20]
+	\node at (6.5,-2.4) {\scalebox{1.6}{$h(x)$}};
+	\addplot[thick, samples=5, domain= -0.5:10.5] {x - 8};
+	\addplot[holdot] coordinates{(5,-3)};
+	\end{axis}
+	\end{tikzpicture}
+	}
+	\end{center} \par
+For the graph of $f(x)$ on the left, $\ds\lim_{x \to 5} f(x)= -3$, so they are equal. However, observe that for $g(x)$ (the middle graph), we have $\ds\lim_{x \to 5} g(x)= -3$ but $g(5)= -2$, so that $\ds\lim_{x \to 5} g(x) \neq g(5)$. Similarly, in the graph of $h(x)$ on the right, $\ds\lim_{x \to 5} h(x)= -3$ but $h(-3)$ is not defined, so that $\ds\lim_{x \to 5} h(x) \neq h(-3)$. A function's value (if even defined) need not be related to its limit (if the limit even exists). \pvspace{1.3cm}
 
 
 
