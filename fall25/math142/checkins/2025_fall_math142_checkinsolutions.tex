@@ -7,6 +7,36 @@
 		compat=1.12
 }
 
+\newcommand{\boxseven}[4]{%
+	\draw[thick] (0,0) -- (4,0) -- (4,4) -- (0,4) -- (0,0);
+	\draw[thick] (0,2) -- (4,2);
+	\draw[thick] (2,0) -- (2,4);
+	% '7'
+	\draw[line width=0.03cm] (1.7,2.2) -- (2.3,2.2) -- (1.7,1.6);
+	% Entries
+	\node at (1,3) {$#1$};	% u
+	\node at (3,1) {$#2$};	% dv
+	\node at (1,1) {$#3$};	% du
+	\node at (3,3) {$#4$};	% 
+}
+
+\usetikzlibrary{calc}
+\usepackage{booktabs}
+\tikzset{Arrow Style/.style={text=black, font=\boldmath}}
+\newcommand{\tikzmark}[1]{%
+    \tikz[overlay, remember picture, baseline] \node (#1) {};%
+}
+\newcommand*{\XShift}{0.5em}
+\newcommand*{\YShift}{0.5ex}
+\NewDocumentCommand{\DrawArrow}{s O{} m m m}{%
+    \begin{tikzpicture}[overlay,remember picture]
+        \draw[->, thick, Arrow Style, #2] 
+                ($(#3.west)+(\XShift,\YShift)$) -- 
+                ($(#4.east)+(-\XShift,\YShift)$)
+        node [midway,above] {#5};
+    \end{tikzpicture}%
+}
+
 % -------------------
 % Content
 % -------------------
@@ -26,6 +56,100 @@ Note that a computer algebra system may write the answer (though you will \texti
 	\] \pvspace{1.3cm}
 
 
+
+% 08/26
+\checkin{08/26} Using integration-by-parts to evaluate $\ds\int x \tan^{-1}(x) \;dx$, one chooses $u= \tan^{-1} x$ and $dv= x$. \pspace
+
+\sol The statement is \textit{true}. Using LIATE, the first term that appears is `I' for inverse trig. Therefore, we choose $u= \tan^{-1} x$. But then $dv= x$. We then fill in our box:
+	\[
+	\begin{tikzpicture}
+	\boxseven{\tan^{-1} x}{x}{\dfrac{1}{1 + x^2}}{\dfrac{x^2}{2}}
+	\end{tikzpicture}
+	\]
+Using the `rule of 7', we have\dots
+	\[
+	\int x \tan^{-1} x \;dx= \dfrac{1}{2}\, x^2 \tan^{-1} x - \dfrac{1}{2} \int \dfrac{x^2}{1 + x^2} \;dx
+	\]
+We now need only evaluate the integral on the right. Dividing $1 + x^2$ into $x^2$, we have a remainder of $-1$, i.e. $\dfrac{x^2}{1 + x^2}= 1 + \dfrac{-1}{1 + x^2}$. Therefore, we have\dots
+	\[
+	\dfrac{1}{2} \int \dfrac{x^2}{1 + x^2} \;dx= \dfrac{1}{2} \int \left( 1 + \dfrac{-1}{1 + x^2} \right) \;dx= \dfrac{1}{2} \left( x - \tan^{-1} x \right) + C
+	\]
+But then\dots
+	\[
+	\begin{aligned}
+	\int x \tan^{-1} x \;dx&= \dfrac{1}{2}\, x^2 \tan^{-1} x - \dfrac{1}{2} \int \dfrac{x^2}{1 + x^2} \;dx \\[0.3cm]
+	&= \dfrac{1}{2}\, x^2 \tan^{-1} x - \dfrac{1}{2} \left( x - \tan^{-1} x \right) + C  \\[0.3cm]
+	&= \dfrac{1}{2}\, x^2 \tan^{-1} x - \dfrac{1}{2} \, x + \dfrac{1}{2}\, \tan^{-1} x + C \\[0.3cm]
+	&= \dfrac{x^2 \tan^{-1} x - x + \tan^{-1} x}{2} + C \\[0.3cm]
+	&= \dfrac{(x^2 + 1) \tan^{-1} x - x}{2} + C
+	\end{aligned}
+	\] \pvspace{1.3cm}
+
+
+
+% 08/28
+\checkin{08/28} The integral $\ds\int e^x \sin(3x) \;dx$ can be treated as an integration-by-parts `looping' integral. \pspace
+
+\sol The statement is \textit{true}. Using integration-by-parts for $\ds\int e^x \sin(3x) \;dx$ would result in an integral that would `loop' back to itself. Generally, an integrand of the form $\text{exponential} \cdot (\text{sin or cos})$ or $\text{trig} \cdot \text{trig}$ will have this property. Using traditional integration-by-parts, by LIATE, we choose $u= \sin(3x)$ and $dv= e^x$. Filling out our box, we have\dots
+	\[
+	\begin{tikzpicture}
+	\boxseven{\sin(3x)}{e^x}{3 \cos(3x)}{e^x}
+	\end{tikzpicture}
+	\]
+Using the `rule of seven', we then have\dots
+	\[
+	\int e^x \sin(3x) \;dx= e^x \sin(3x) - \int 3e^x \cos(3x) \;dx
+	\]
+To integrate $\ds\int 3e^x \cos(3x) \;dx$, we again use integration-by-parts. Using LIATE, we choose $u= 3 \cos(3x)$ and $dv= e^x$. Filling out the box, we have\dots
+	\[
+	\begin{tikzpicture}
+	\boxseven{3\cos(3x)}{e^x}{-9\sin(3x)}{e^x}
+	\end{tikzpicture}
+	\]
+Using the `rule of seven', we then have 
+	\[
+	\int 3e^x \cos(3x) \;dx= 3 e^x \cos(3x) - \int -9e^x \sin(3x) \;dx= 3 e^x \cos(3x) + 9 \int e^x \sin(3x) \;dx
+	\]
+But then we have\dots
+	\[
+	\hspace{-1cm} \int e^x \sin(3x) \;dx= e^x \sin(3x) - \int 3e^x \cos(3x) \;dx= \int e^x \sin(3x) \;dx= e^x \sin(3x) - \left( 3 e^x \cos(3x) + 9 \int e^x \sin(3x) \;dx \right)
+	\]
+Therefore, we have\dots
+	\[
+	\begin{gathered}
+	\int e^x \sin(3x) \;dx= e^x \sin(3x) - \left( 3 e^x \cos(3x) + 9 \int e^x \sin(3x) \;dx \right) \\[0.2cm]
+	\int e^x \sin(3x) \;dx= e^x \sin(3x) - 3 e^x \cos(3x) - 9 \int e^x \sin(3x) \;dx \\[0.2cm]
+	10 \int e^x \sin(3x) \;dx= e^x \sin(3x) - 3 e^x \cos(3x) \\[0.2cm]
+	\int e^x \sin(3x) \;dx= \dfrac{e^x \sin(3x) - 3 e^x \cos(3x)}{10} + C \\[0.2cm]
+	\int e^x \sin(3x) \;dx= \dfrac{e^x}{10} \,\big( \sin(3x) - 3 \cos(3x) \big) + C
+	\end{gathered}
+	\]
+Alternatively, we can use an alternation of the tabular method of integration-by-parts. We choose $u= \sin(3x)$ and $dv= e^x$. We then have\dots
+	\[
+	\begin{array}{c @{\hspace*{1.3cm}} c} \toprule
+	u & dv \\ \cmidrule(lr){1-2}
+	\sin(3x) \tikzmark{Left 1} & \tikzmark{Right 1} e^x \\[0.5cm]
+	3 \cos(3x) \tikzmark{Left 2} & \tikzmark{Right 2} e^x \\[0.3cm]
+	-9 \sin(3x) \tikzmark{Left 3}  & \tikzmark{Right 3} e^x 
+	
+	\DrawArrow{Left 1}{Right 2}{+}
+	\DrawArrow{Left 2}{Right 3}{--}
+	\DrawArrow{Left 3}{Right 3}{\!\!\!\!\!$\phantom{}_{\genfrac{}{}{0pt}{}{}{+}}$}
+	\end{array}
+	\]
+Therefore, we have\dots
+	\[
+	\int e^x \sin(3x) \;dx= e^x \sin(3x) - 3 \cos(3x) e^x - 9 \int e^x \sin(3x) \;dx
+	\]
+Solving for our integral, we have\dots
+	\[
+	\begin{gathered}
+	\int e^x \sin(3x) \;dx= e^x \sin(3x) - 3 \cos(3x) e^x - 9 \int e^x \sin(3x) \;dx \\[0.2cm]
+	10 \int e^x \sin(3x) \;dx= e^x \sin(3x) - 3 e^x \cos(3x) \\[0.2cm]
+	\int e^x \sin(3x) \;dx= \dfrac{e^x \sin(3x) - 3 e^x \cos(3x)}{10} + C \\[0.2cm]
+	\int e^x \sin(3x) \;dx= \dfrac{e^x}{10} \,\big( \sin(3x) - 3 \cos(3x) \big) + C
+	\end{gathered}
+	\]
 
 
 

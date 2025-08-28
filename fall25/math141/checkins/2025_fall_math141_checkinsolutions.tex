@@ -16,7 +16,7 @@
 % 08/22
 \checkin{08/22} If $\ds\lim_{x \to 5} f(x)= -3$, then $f(5)= -3$. \pspace
 
-\sol The statement is \textit{false}. A function's limit (if it even exists) \textit{does not} have to be the same as the function's value at that limiting value---the function does not even have to be defined there! Consider the three examples below.
+\sol The statement is \textit{false}. A function's limit (if it even exists) \textit{does not} have to be the same as the function's value at that limiting value---the function does not even have to be defined there! Consider the three examples below. \par
 	\begin{center}
 	% Left
 	\fbox{%
@@ -83,11 +83,24 @@ For the graph of $f(x)$ on the left, $\ds\lim_{x \to 5} f(x)= -3$, so they are e
 
 
 
+% 08/25
+\checkin{08/25} The limit $\ds\lim_{x \to 0} \dfrac{\sin x}{x}= \text{DNE}$ because $\tfrac{\sin x}{x}$ becomes $\tfrac{0}{0}$ when one `plugs-in' $x= 0$ and $\frac{0}{0}$ is undefined. \pspace
+
+\sol The statement is \textit{false}. In fact, $\ds\lim_{x \to 0} \dfrac{\sin x}{x}= 1$. Yes, $\tfrac{0}{0}$, $\pm\tfrac{\infty}{\infty}$, $0 \cdot \infty$, $\infty - \infty$, $0^0$, $1^\infty$, and $\infty^0$ are indeterminant/undefined expressions. However, that does not mean that the limit they arise from does not exist. The limit could exist or not---just like \textit{any} limit. `Running into' one of these expressions when evaluating a limit at its limiting value only means that one needs to try a different approach to determine if the limit exists or not. \pvspace{1.3cm}
 
 
 
+% 08/27
+\checkin{08/27} $\ds\lim_{x \to 0} \dfrac{\tan(5x)}{5x}= 1$ \pspace
 
-
+\sol The statement is \textit{true}. Recall that $\ds\lim_{x \to 0} \dfrac{\sin(x)}{x}= 1$. We should think of this as $\ds\lim_{\Box \to 0} \dfrac{\sin \Box}{\Box}= 1$. But then\dots
+	\[
+	\lim_{x \to 0} \dfrac{\tan(5x)}{5x}= \lim_{x \to 0} \dfrac{\tfrac{\sin(5x)}{\cos(5x)}}{5x}= \lim_{x \to 0} \dfrac{\sin(5x)}{5x \cos x}= \lim_{x \to 0} \left( \dfrac{\sin(5x)}{5x} \cdot \dfrac{1}{\cos(5x)} \right)
+	\]
+Using the fact that $\ds\lim_{\Box \to 0} \dfrac{\sin \Box}{\Box}= 1$, we then have\dots
+	\[
+	\lim_{x \to 0} \dfrac{\tan(5x)}{5x}= \lim_{x \to 0} \left( \dfrac{\sin(5x)}{5x} \cdot \dfrac{1}{\cos(5x)} \right)= 1 \cdot \dfrac{1}{\cos(0)}= 1 \cdot \dfrac{1}{1}= 1
+	\] \pvspace{1.3cm}
 
 
 
