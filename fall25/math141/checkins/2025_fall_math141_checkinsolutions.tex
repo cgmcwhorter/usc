@@ -104,7 +104,13 @@ Using the fact that $\ds\lim_{\Box \to 0} \dfrac{\sin \Box}{\Box}= 1$, we then h
 
 
 
+% 08/29
+\checkin{08/29} $\ds\lim_{x \to 2^+} \dfrac{x - 3}{x - 2}= \infty$ \pspace
 
+\sol The statement is \textit{false}. Observe that plugging-in $x= 2$, we obtain $\frac{-1}{0}$, which is undefined. However, this indicates that this is a `thinking limit'. Because in the limit, $x$ is `close' to 2, $x - 3$ is negative. As we approach 2 from the right, $x > 2$ so that $x - 2$ is positive. But then\dots
+	\[
+	\lim_{x \to 2^+} \dfrac{\overbrace{x - 3}^{-}}{\underbrace{x - 2}_{+}}= -\infty
+	\]
 
 
 
