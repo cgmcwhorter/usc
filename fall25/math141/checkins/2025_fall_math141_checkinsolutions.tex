@@ -32,7 +32,7 @@
 	minor tick = {-9,-8,...,3},
 	xlabel=\(x\),ylabel=\(y\),
 	samples=20]
-	\node at (7.5,-2.4) {\scalebox{1.6}{$f(x)$}};
+	\node at (6,-3) {\scalebox{1.6}{$f(x)$}};
 	\addplot[thick, samples=5, domain= -0.5:10.5] {x - 8};
 	\end{axis}
 	\end{tikzpicture}
@@ -51,7 +51,7 @@
 	minor tick = {-9,-8,...,3},
 	xlabel=\(x\),ylabel=\(y\),
 	samples=20]
-	\node at (7.5,-3.4) {\scalebox{1.6}{$g(x)$}};
+	\node at (6.0,-3.3) {\scalebox{1.6}{$g(x)$}};
 	\addplot[thick, samples=5, domain= -0.5:10.5] {x - 8};
 	\addplot[soldot] coordinates{(5,-2)};
 	\addplot[holdot] coordinates{(5,-3)};
@@ -72,7 +72,7 @@
 	minor tick = {-9,-8,...,3},
 	xlabel=\(x\),ylabel=\(y\),
 	samples=20]
-	\node at (6.5,-2.4) {\scalebox{1.6}{$h(x)$}};
+	\node at (6.1,-3.5) {\scalebox{1.6}{$h(x)$}};
 	\addplot[thick, samples=5, domain= -0.5:10.5] {x - 8};
 	\addplot[holdot] coordinates{(5,-3)};
 	\end{axis}
@@ -110,7 +110,33 @@ Using the fact that $\ds\lim_{\Box \to 0} \dfrac{\sin \Box}{\Box}= 1$, we then h
 \sol The statement is \textit{false}. Observe that plugging-in $x= 2$, we obtain $\frac{-1}{0}$, which is undefined. However, this indicates that this is a `thinking limit'. Because in the limit, $x$ is `close' to 2, $x - 3$ is negative. As we approach 2 from the right, $x > 2$ so that $x - 2$ is positive. But then\dots
 	\[
 	\lim_{x \to 2^+} \dfrac{\overbrace{x - 3}^{-}}{\underbrace{x - 2}_{+}}= -\infty
-	\]
+	\] \pvspace{1.3cm}
+
+
+
+% 09/03
+\checkin{09/03} $\ds\lim_{x \to \infty} \dfrac{x^3 - 1}{1 - x^2}= -\infty$ \pspace
+
+\sol The statement is \textit{true}. This is a rational limit. Observe that the degree of the numerator is 3 while the degree of the denominator is 2. Therefore, we know the limit will be $\pm\infty$. Observe that in the numerator, $x \to \infty$, so we know that $x^3 \to \infty$. In the denominator, we know that $x \to \infty$, so that $-x^2 \to -\infty$. Therefore, it should be that the limit tends to $-\infty$. We can confirm this intuition with the appropriate algebraic `trick': we divide the numerator and denominator by the `dominating' term in the denominator, which in this case is $x^2$:
+	\[
+	\lim_{x \to \infty} \dfrac{x^3 - 1}{1 - x^2}= \lim_{x \to \infty} \dfrac{x^3 - 1}{1 - x^2} \cdot \dfrac{1/x^2}{1/x^2}= \lim_{x \to \infty} \dfrac{\tfrac{x^3}{x^2} - \tfrac{1}{x^2}}{\tfrac{1}{x^2} - \tfrac{x^2}{x^2}}= \lim_{x \to \infty} \dfrac{x - \cancel{\tfrac{1}{x^2}}^{\,{}^0}}{\cancel{\tfrac{1}{x^2}}^{\,{}^0} - 1}= -\infty
+	\] \pvspace{1.3cm}
+
+
+
+% 09/05
+\checkin{09/05} If $f(x)$ is a function and $\ds\lim_{x \to 1} f(x) = f(1)$, then $f(x)$ must be continuous at $x= 1$. \pspace
+
+\sol The statement is \textit{true}. A function $f(x)$ is continuous at $x= a$ if $\ds f(a)= \lim_{x \to a} f(x)$. The statement of the problem states that $\ds\lim_{x \to 1} f(x)= f(1)$, i.e. $\ds f(1)= \lim_{x \to 1} f(x)$. Therefore, $f(x)$ is continuous at $x= 1$. Similarly, if we knew $f(x)$ was continuous at $x= 1$, then we would know that $\ds f(1)= \lim_{x \to 1} f(x)$. \pvspace{1.3cm}
+
+
+
+
+
+
+
+
+
 
 
 

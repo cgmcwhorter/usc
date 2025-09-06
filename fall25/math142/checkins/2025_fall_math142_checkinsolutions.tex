@@ -124,7 +124,7 @@ Therefore, we have\dots
 	\int e^x \sin(3x) \;dx= \dfrac{e^x}{10} \,\big( \sin(3x) - 3 \cos(3x) \big) + C
 	\end{gathered}
 	\]
-Alternatively, we can use an alternation of the tabular method of integration-by-parts. We choose $u= \sin(3x)$ and $dv= e^x$. We then have\dots
+Alternatively, we can use an alteration of the tabular method of integration-by-parts. We choose $u= \sin(3x)$ and $dv= e^x$. We then have\dots
 	\[
 	\begin{array}{c @{\hspace*{1.3cm}} c} \toprule
 	u & dv \\ \cmidrule(lr){1-2}
@@ -149,22 +149,46 @@ Solving for our integral, we have\dots
 	\int e^x \sin(3x) \;dx= \dfrac{e^x \sin(3x) - 3 e^x \cos(3x)}{10} + C \\[0.2cm]
 	\int e^x \sin(3x) \;dx= \dfrac{e^x}{10} \,\big( \sin(3x) - 3 \cos(3x) \big) + C
 	\end{gathered}
+	\] \pvspace{1.3cm}
+
+
+
+% 09/02
+\checkin{09/02} To integrate $\ds\int \cot^2 x \csc^2 x \;dx$ as a trigonometric integral, one could make the substitution $u= \cot x$. \pspace
+
+\sol The statement is \textit{true}. If one let $u= \csc x$, we would have $du= -\csc x \cot x$. Setting aside a $\cot x$ for the $du$, this would leave only a single $\cot x$ term in the integrand---which we cannot replace with a Pythagorean identity. However, this is not an issue if we let $u= \cot x$. If $u= \cot x$, then $du= -\csc^2 x \,dx$. But then\dots
+	\[
+	\int \cot^2 x \csc^2 x \;dx= -\int \cot^2 x \cdot -\csc^2 x \;dx= -\int u^2 \;du= -\dfrac{u^3}{3} + C= -\dfrac{\cot^3 x}{3} + C
+	\] \pvspace{1.3cm}
+
+
+
+% 09/04
+\checkin{09/04} To integrate $\ds\int \dfrac{x^2}{\sqrt{x^2 + 9}} \;dx$, one can make the substitution $x= 3 \cot \theta$. \pspace
+
+\sol The statement is \textit{true}. Observe that the $x^2 + 9$ `resembles' a term from the Pythagorean Theorem. This suggests that a trig. substitution might be useful. Because $a^2 + b^2= c$, we see that $a^2 + b^2$ corresponds to $x^2 + 9$, i.e. $a^2$ corresponds to $x^2$ and $b^2$ corresponds to $9$. This implies that $a= x$ and $b= 3$. But then $c^2= x^2 + 9$, i.e. $c= \sqrt{x^2 + 9}$. We construct a right triangle with these legs and hypotenuse: 
+	\[
+	\begin{tikzpicture}
+	\draw[line width=0.03cm] (0,0) -- (2.5,0) -- (2.5,2.5) -- (0,0);
+	\draw[line width=0.03cm] (2.3,0) -- (2.3,0.2) -- (2.5,0.2);
+	\node at (0.6,0.3) {$\theta$};
+	\node at (1.3,-0.3) {$3$};
+	\node at (2.8,1.2) {$x$};
+	\node[rotate = 45] at (0.9,1.5) {$\sqrt{x^2 + 9}$};
+	\end{tikzpicture}
 	\]
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+But then $\tan \theta= \tfrac{x}{3}$, which implies $x= 3 \tan \theta$. While this \text{seems} like it makes the statement of the problem false, this is not the only right triangle we could have constructed. If we had instead drawn
+	\[
+	\begin{tikzpicture}
+	\draw[line width=0.03cm] (0,0) -- (2.5,0) -- (2.5,2.5) -- (0,0);
+	\draw[line width=0.03cm] (2.3,0) -- (2.3,0.2) -- (2.5,0.2);
+	\node at (0.6,0.3) {$\theta$};
+	\node at (1.3,-0.3) {$x$};
+	\node at (2.8,1.2) {$3$};
+	\node[rotate = 45] at (0.9,1.5) {$\sqrt{x^2 + 9}$};
+	\end{tikzpicture}
+	\]
+We would have $\tan \theta= \tfrac{3}{x}$, which implies that $x \tan \theta= 3$, so that $x= \tfrac{3}{\tan \theta}= 3 \cot \theta$. This is the substitution in the problem statement. Both the substitutions $x= 3 \cot \theta$ and $x= 3 \tan \theta$ are viable trig. substitutions to compute this integral. 
 
 
 
