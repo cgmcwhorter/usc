@@ -131,7 +131,27 @@ Using the fact that $\ds\lim_{\Box \to 0} \dfrac{\sin \Box}{\Box}= 1$, we then h
 
 
 
+% 09/07
+\checkin{09/07} If $f(x)$ is given by\dots
+	\[
+	f(x)=
+	\begin{cases}
+	x + 1, & x \geq 0 \\
+	4, & x < 0
+	\end{cases}
+	\]
+Then $f(x)$ is differentiable at $x= 0$. \pspace
 
+\sol The statement is \textit{false}. Recall that $f(x)$ is continuous at $x= a$ if $\ds f(a)= \lim_{x \to a} f(x)$ and that if a function is differentiable at $x= a$, then $f(x)$ is continuous at $x= a$. Therefore, $f(x)$ is continuous at $x= 0$ if and only if $\ds f(0)= \lim_{x \to 0} f(x)$. Observe that $f(0)= 0 + 1= 1$, $\ds\lim_{x \to 0^-} f(x)= \lim_{x \to 0^-} 4= 4$, and $\ds\lim_{x \to 0^+} f(x)= \lim_{x \to 0^+} (x + 1)= 0 + 1= 1$. Because $\ds\lim_{x \to 0^-} f(x) \neq \lim_{x \to 0^+} f(x)$, i.e. the left and right hand limits are not equal, $\ds\lim_{x \to 0} f(x)$ does not exist. But then $f(0) \neq \lim_{x \to 0} f(x)$, so that $f(x)$ is not continuous at $x= 0$. Because $f(x)$ is not continuous at $x= 0$, $f(x)$ cannot be differentiable at $x= 0$. \pspace
+
+We can also verify this directly from the definition of the derivative. Recall that $\ds f'(a):= \lim_{h \to 0} \dfrac{f(a + h) - f(a)}{h}$. Here, we have $a= 0$ and $f(0)= 0 + 1= 1$. We compute this limit by computing the left and right hand limits. We have\dots
+	\[
+	\begin{aligned}
+	\lim_{h \to 0^-} \dfrac{f(0 + h) - f(0)}{h}= \lim_{h \to 0^-} \dfrac{f(h) - f(0)}{h}= \lim_{h \to 0^-} \dfrac{4 - 1}{h}= \lim_{h \to 0^-} \dfrac{3}{h}= -\infty \\[0.3cm]
+	\lim_{h \to 0^+} \dfrac{f(0 + h) - f(0)}{h}= \lim_{h \to 0^+} \dfrac{f(h) - f(0)}{h}= \lim_{h \to 0^+} \dfrac{(h + 1) - 1}{h}= \lim_{h \to 0^+} 1= 1 \\
+	\end{aligned}
+	\]
+Because $\ds \lim_{h \to 0} \dfrac{f(0 + h) - f(0)}{h}$ does not exist, $f'(0)$ does not exist, i.e. $f(x)$ is not differentiable at $x= 0$. \pvspace{1.3cm}
 
 
 
