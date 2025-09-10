@@ -188,7 +188,37 @@ But then $\tan \theta= \tfrac{x}{3}$, which implies $x= 3 \tan \theta$. While th
 	\node[rotate = 45] at (0.9,1.5) {$\sqrt{x^2 + 9}$};
 	\end{tikzpicture}
 	\]
-We would have $\tan \theta= \tfrac{3}{x}$, which implies that $x \tan \theta= 3$, so that $x= \tfrac{3}{\tan \theta}= 3 \cot \theta$. This is the substitution in the problem statement. Both the substitutions $x= 3 \cot \theta$ and $x= 3 \tan \theta$ are viable trig. substitutions to compute this integral. 
+We would have $\tan \theta= \tfrac{3}{x}$, which implies that $x \tan \theta= 3$, so that $x= \tfrac{3}{\tan \theta}= 3 \cot \theta$. This is the substitution in the problem statement. Both the substitutions $x= 3 \cot \theta$ and $x= 3 \tan \theta$ are viable trig. substitutions to compute this integral. \pvspace{1.3cm}
+
+
+
+% 09/09
+\checkin{09/09} The partial fraction decomposition of $\dfrac{x + 4}{x^2(x - 3)}$ has the form $\dfrac{Ax + B}{x^2} + \dfrac{C}{x - 3}$. \pspace
+
+\sol The statement is \textit{false}. For a partial fraction decomposition, one first needs to be sure that the degree of the numerator is smaller than the degree of the denominator---which is the case here. One then needs to be sure that the denominator is factored completely---which is the case here. One then needs to `run' through each power of the factored terms of the denominator---being sure that the numerator term for quadratic factors is linear. In this case, the denominator terms are $x$ (up to power 2) and $x - 3$. Therefore, the partial fraction decomposition is\dots
+	\[
+	\dfrac{x + 4}{x^2(x - 3)}= \dfrac{A}{x} + \dfrac{B}{x^2} + \dfrac{C}{x - 3}
+	\]
+Although the term $x^2$ is quadratic, the base---$x$---is linear. Hence, its numerator terms will always be constant---never linear. This is the mistake in the decomposition given in the problem statement. \pvspace{1.3cm}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
