@@ -155,7 +155,10 @@ Because $\ds \lim_{h \to 0} \dfrac{f(0 + h) - f(0)}{h}$ does not exist, $f'(0)$ 
 
 
 
+% 09/10
+\checkin{09/10} $\dfrac{d}{dx} \left( e^{\sin x} \right)= e^{\cos x}$ \pspace
 
+\sol The statement is \textit{false}. Observe that the given solution, $e^{\cos x}$, has the derivative of both $e^x$ (which is $e^x$) and $\sin x$ (which is $\cos x$) simultaneously. However, all the derivative rules only ever have one taking the derivative of \textit{one} function at a time for any corresponding term. If we choose $f(x)= e^x$ and $g(x)= \sin x$, we have $f \big( g(x) \big)= f(\sin x)= e^{\sin x}$. We know that $f'(x)= e^x$ and $g'(x)= \cos x$. Using the chain rule, $\tfrac{d}{dx} f \big( g(x) \big)= f' \big( g(x) \big) \cdot g'(x)$, we have $\tfrac{d}{dx} e^{\sin x}= e^{\sin x} \cdot \cos x= e^{\sin x} \cos x$. Alternatively, using the `box method' or `onion approach', the first `layer' is $e^\Box{}$, whose derivative is $e^\Box{}$. We multiply by the derivative of the contents of $\Box{}$, which is the derivative of $\sin x$, i.e. $\cos x$. But then the derivative is $e^{\sin x} \cos x$. \pvspace{1.3cm}
 
 
 

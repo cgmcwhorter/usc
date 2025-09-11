@@ -7,6 +7,7 @@
 	amsthm,			% Theorem Environments
 	bm,				% i,j,k
 	enumerate,		% Enumerate Environments
+	enumitem,			% Double Column Bullets
 	esint,			% Iterated Loop Integrals
 	etoolbox,			% Use Booleans
 	float,				% Force Table Placement
@@ -73,6 +74,13 @@
 	}{%
 	\end{multicols}
 	\end{enumerate}
+}
+\newenvironment{2itemize}{%
+	\begin{multicols}{2}
+	\begin{itemize}[label=\textbullet]
+	}{%
+	\end{itemize}
+	\end{multicols}
 }
 
 
