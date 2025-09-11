@@ -203,6 +203,29 @@ Although the term $x^2$ is quadratic, the base---$x$---is linear. Hence, its num
 
 
 
+% 09/11
+\checkin{09/11} The partial fraction decomposition of $\dfrac{7x - 5}{x^2 - x}$ \;is\; $\dfrac{5}{x} + \dfrac{2}{x - 1}$. \pspace
+
+\sol The statement is \textit{true}. First, observe that $\dfrac{7x - 5}{x^2 - x}= \dfrac{7x - 5}{x(x - 1)}$. Therefore, we have a decomposition of the form
+	\[
+	\dfrac{7x - 5}{x(x - 1)}= \dfrac{A}{x} + \dfrac{B}{x - 1}
+	\]
+Observe that Heaviside's can be used to find both $A$ and $B$. So, we have\dots
+	\[
+	\begin{aligned}
+	A&= \dfrac{7x - 5}{\cancel{\boxed{x}}\, (x - 1)} \bigg|_{x= 0}= \dfrac{0 - 5}{0 -1}= \dfrac{-5}{-1}= 5 \\[0.3cm]
+	B&= \dfrac{7x - 5}{x \cancel{\boxed{x - 1}}} \bigg|_{x= 1}= \dfrac{7 - 5}{1}= \dfrac{2}{1}= 2
+	\end{aligned}
+	\]
+Therefore, we have\dots
+	\[
+	\dfrac{7x - 5}{x^2 - x}= \dfrac{5}{x} + \dfrac{2}{x - 1}
+	\] \pvspace{1.3cm}
+
+
+
+
+
 
 
 
