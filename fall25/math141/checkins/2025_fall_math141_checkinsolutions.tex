@@ -162,7 +162,16 @@ Because $\ds \lim_{h \to 0} \dfrac{f(0 + h) - f(0)}{h}$ does not exist, $f'(0)$ 
 
 
 
+% 09/11
+\checkin{09/11} $\dfrac{d}{dx} \,\left( x^4 \csc(x) e^x \right)= 4x^3 \cdot \csc(x) e^x + -\csc x \cot x \cdot x^4 e^x + e^x \cdot x^4 \csc x$ \pspace
 
+\sol The statement is \textit{true}. Although we can use the Product Rule: $\dfrac{d}{dx} (fg)= f'g + fg'$, it is simpler to recall that the Product Rule is a `one at a time rule.' That is, the product rule says to add together the product of the terms where the derivative of only one of the terms has been taken. Using this approach, we have\dots
+	\[
+	\begin{aligned}
+	\dfrac{d}{dx} \,\left( x^4 \csc(x) e^x \right)&= \dfrac{d}{dx} (x^4) \cdot \csc x e^x + \dfrac{d}{dx} (\csc x) \cdot x^4 e^x + \dfrac{d}{dx}(e^x) \cdot x^4 \csc x \\[0.3cm]
+	&= 4x^3 \cdot \csc(x) e^x + -\csc x \cot x \cdot x^4 e^x + e^x \cdot x^4 \csc x
+	\end{aligned}
+	\] \pvspace{1.3cm}
 
 
 
