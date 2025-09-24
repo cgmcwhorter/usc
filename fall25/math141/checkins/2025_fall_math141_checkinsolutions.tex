@@ -181,9 +181,17 @@ Because $\ds \lim_{h \to 0} \dfrac{f(0 + h) - f(0)}{h}$ does not exist, $f'(0)$ 
 \sol The statement is \textit{false}. Recall that the quotient rule is given by $\frac{d}{dx} \left( \frac{f}{g} \right)= \frac{f' g - g' f}{g^2}$, i.e. the derivative of the bottom `gets the negative for its derivative' or the `\textbf{\underline{n}}umerator function' gets the \textbf{\underline{n}}egative. Observe that the given solution has the order of subtraction in the numerator reversed, i.e. it is the negative of the correct answer; that is, the numerator is `backwards' from the actual quotient rule. The correct answer should be:
 	\[
 	\dfrac{d}{dx} \left( \dfrac{x^2}{4x - 3} \right)= \dfrac{2x(4x - 3) - 4(x^2)}{(4x - 3)^2}
-	\]
+	\] \pvspace{1.3cm}
 
 
+
+% 09/17
+\checkin{09/17} If $f(x)$ is a function with $f(1)= 3$ and $f'(1)= 10$, then it should be that $f(0.8) \approx 1$. \pspace
+
+\sol The statement is \textit{true}. The linearization of $f(x)$ at $x= a$ is $\ell_a(x)= f(a) + f'(a) \,\big( x - a \big)$. We know that if $x$ is `close' to $a$, then $f(x) \approx \ell_a(x)$. The linearization of the given $f(x)$ at $x= 1$ is $\ell_1(x)= f(1) + f'(1) \,\big( x - 1 \big)= 3 + 10(x - 1)$. But then we have\dots
+	\[
+	f(0.8) \approx \ell_1(0.8)= 3 + 10(0.8 - 1)= 3 + 10(-0.2)= 3 + (-2)= 1
+	\] \pvspace{1.3cm}
 
 
 

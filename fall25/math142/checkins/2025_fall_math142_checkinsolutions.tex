@@ -224,7 +224,33 @@ Therefore, we have\dots
 
 
 
+% 09/18
+\checkin{09/18} The integral $\ds\int_{-1}^1 \dfrac{dx}{\sqrt[3]{x}}= \int_{-1}^1 x^{-1/3} \;dx= \frac{3}{2} \, x^{2/3} \bigg|_{-1}^1= \frac{3}{2} \, (1^{2/3} - (-1)^{2/3})= \frac{2}{3} \, (1 - \sqrt[3]{(-1)^2})= \frac{2}{3} \, (1 - 1)= 0$. \pspace
 
+\sol The statement is \textit{false}. Observe that the integrand is undefined at $x= 0$. In fact, the integrand has a vertical asymptote at $x= 0$. Therefore, the integral is improper. We need split the integral at this $x$-value. So, we write\dots
+	\[
+	\int_{-1}^1 \dfrac{dx}{\sqrt[3]{x}}= \int_{-1}^0 \dfrac{dx}{\sqrt[3]{x}} + \int_0^1 \dfrac{dx}{\sqrt[3]{x}}
+	\]
+We need to take the limit as the integral limits approach $0$:
+	\[
+	\int_{-1}^1 \dfrac{dx}{\sqrt[3]{x}}:= \lim_{b \to 0^-} \int_{-1}^b \dfrac{dx}{\sqrt[3]{x}} + \lim_{b \to 0^+} \int_b^1 \dfrac{dx}{\sqrt[3]{x}}
+	\]
+Observe that\dots
+	\[
+	\int \dfrac{dx}{\sqrt[3]{x}}= \int x^{-1/3} \;dx= \frac{3}{2}\,x^{2/3} + C
+	\]
+But then\dots
+	\[
+	\begin{aligned}
+	\lim_{b \to 0^-} \int_{-1}^b \dfrac{dx}{\sqrt[3]{x}}&= \lim_{b \to 0^-} \frac{3}{2}\,x^{2/3} \bigg|_{-1}^b= \lim_{b \to 0^-} \frac{3}{2}\,b^{2/3} - \dfrac{3}{2}= -\dfrac{3}{2} \\[0.3cm]
+	\lim_{b \to 0^+} \int_b^1 \dfrac{dx}{\sqrt[3]{x}}&= \lim_{b \to 0^+} \frac{3}{2}\,x^{2/3} \bigg|_b^1= \dfrac{3}{2} - \lim_{b \to 0^+} \frac{3}{2}\,b^{2/3}= \dfrac{3}{2}
+	\end{aligned}
+	\]
+Therefore, we have\dots
+	\[
+	\int_{-1}^1 \dfrac{dx}{\sqrt[3]{x}}:= \lim_{b \to 0^-} \int_{-1}^b \dfrac{dx}{\sqrt[3]{x}} + \lim_{b \to 0^+} \int_b^1 \dfrac{dx}{\sqrt[3]{x}}= -\dfrac{3}{2} + \dfrac{3}{2}= 0
+	\]
+So, while the given answer is correct, the approach is entirely incorrect. In other cases, using the given approach for improper integrals will result in incorrect solutions. \pvspace{1.3cm}
 
 
 
