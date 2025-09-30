@@ -17,7 +17,10 @@
 Here are some of the learning outcomes for each lecture. That is, after lecture, the homework, and studying, what students should know from each lecture. Though this list is not necessarily \textit{completely} comprehensive, the most important ideas/concepts are contained in each list. Students should be sure to feel comfortable with each bullet point before an exam. These learning goals are broken down by class date---with the class topic given. The classes are given in reverse-chronological order for ease of access to the most recent class. You may also click any of the hyperlinks below to jump to that date. 
 
 \begin{itemize}
-\item \hyperref[09-09]{09/11, Thursday: Partial Fractions}
+\item \hyperref[09-25]{09/25, Thursday: Sequences \& Series}
+\item \hyperref[09-18]{09/18, Thursday: Arclength \& Surface Area}
+\item \hyperref[09-16]{09/16, Tuesday: Improper Integrals}
+\item \hyperref[09-11]{09/11, Thursday: Integration Review}
 \item \hyperref[09-09]{09/09, Tuesday: Partial Fractions}
 \item \hyperref[09-04]{09/04, Thursday: Partial Fractions}
 \item \hyperref[09-02]{09/02, Tuesday: Trig. Substitution}
@@ -25,6 +28,77 @@ Here are some of the learning outcomes for each lecture. That is, after lecture,
 \item \hyperref[08-26]{08/26, Tuesday: Integration-by-Parts}
 \item \hyperref[08-21]{08/21, Thursday: Integration-by-Parts}
 \item \hyperref[08-19]{08/19, Tuesday: $u$-Substitution Review}
+\end{itemize}
+
+
+% 09/25, Thursday: Sequences \& Series
+\newpage
+\section*{09/25, Thursday: Sequences \& Series\label{09-25}}
+
+\begin{itemize}
+\item Know the definition of a sequence.
+\item Be able to give examples of sequences, including some famous sequences.
+\item Be able to compute terms of a sequence given its formula. 
+\item Be able to determine a formula for a given sequence. 
+\item Be able to compute terms of a recursive sequence. 
+\item Be able to explain how an infinite series is defined (in terms of partial sums). 
+\item Know that an infinite series converges if its partial sums converge and diverges otherwise.
+\item Know that $\ds\sum_{n=1}^\infty \dfrac{1}{n}$ is called the Harmonic Series and diverges (to $\infty$).
+\item Be able to state the Divergence Test ($n$th Term Test): if $\ds\lim_{n \to \infty} a_n \neq 0$, then $\ds\sum^\infty a_n$ diverges. 
+\item Know when the Divergence Test applies and does not apply to an infinite series. 
+\item Be able to use the Divergence Test to show that a series diverges.
+\item Be able to give an example where the Divergence Test does not apply (because $\ds\lim_{n \to \infty} a_n= 0$) but the series diverges, e.g. $\ds\sum_{n=1}^\infty \dfrac{1}{n}$, and another where the series converges, e.g. $\ds\sum_{n=1}^\infty \dfrac{1}{n^2}$.
+\item Know that a $p$-series is an infinite series of the form $\ds\sum^\infty \dfrac{1}{n^p}$. 
+\item Be able to identify whether a given infinite series is a $p$-series or not. 
+\item Know the $p$-series Test:
+	\[
+	\sum^\infty \dfrac{1}{n^p}= \begin{cases} \text{converges}, & p > 1 \\ \text{diverges (to } \infty \text{)}, & p \leq 1 \end{cases}
+	\]
+\item Be able to define and give examples of a geometric sequence---a sequence with a common multiple/ratio.
+\item Be able to define and identify a geometric series---a series of the form $\ds\sum a r^n$. 
+\item Know that the sum of a finite geometric series is given by\dots
+	\[
+	\sum_{k=0}^n a r^k= a \, \dfrac{1 - r^{n+1}}{1 - r}
+	\]
+\item Know the Geometric Series Test: if a geometric series has common ratio $r$ and $|r| < 1$, then the infinite series converges to $\frac{\text{first term}}{1 - r}$; otherwise, the series diverges. 
+\item Be able to compute the sum of a finite geometric series. 
+\item Be able to determine whether a given infinite geometric series converges or diverges and if it converges compute its sum. 
+\end{itemize}
+
+% 09/18, Thursday: Arclength \& Surface Area
+\newpage
+\section*{09/18, Thursday: Arclength \& Surface Area\label{09-18}}
+
+\begin{itemize}
+\item Be able to explain the idea of how the arclength formula is derived. 
+\item Know that the arclength of the portion of the graph of $f(x)$ between $x= a$ and $x= b$ is\dots
+	\[
+	L= \int_a^b \sqrt{1 + \big( f'(x) \big)^2} \;dx
+	\]
+\item Be able to compute the arclength of a curve.
+\item Be able to explain the idea of how the surface area formula is derived. 
+\item Know that the surface area resulting from revolving the portion of the graph of $f(x)$ between $x= a$ and $x= b$ around the $x$-axis is\dots
+	\[
+	\text{SA}= 2\pi \int_a^b f(x) \sqrt{1 + \big( f'(x) \big)^2} \;dx
+	\]
+\item Know that the `$f(x)$' in the formula above is really a `radius' from the portion of the graph at $x$ to the axis of revolution---allowing one to alter the above formula for other situations. 
+\item Be able to compute the surface area of a given surface. 
+\end{itemize}
+
+% 09/16, Tuesday: Improper Integrals
+\newpage
+\section*{09/16, Tuesday: Improper Integrals\label{09-16}}
+
+\begin{itemize}
+\item Know that an integral is improper if either of the limits are $\pm\infty$ or if the integrand is undefined at some value between the limits of integration.
+\item Know how to properly write an improper integral using a limit. 
+\item Know that an integral which is improper at both endpoints or at a value in-between the limits of integration must be broken into two integrals. 
+\item Know that an improper integral converges if the limit of all the integral(s) making it up exist. Otherwise, the improper integral diverges. 
+\item Be able to determine the value of an improper integral (if it converges). 
+\item Know that\dots
+	\[
+	\int_1^\infty \dfrac{1}{x^p} \;dx= \begin{cases} \dfrac{1}{p - 1}, & p > 1 \\ \infty, & p \leq 1 \end{cases}
+	\]
 \end{itemize}
 
 % 09/11, Thursday: Integration Review

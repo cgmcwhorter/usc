@@ -1,0 +1,241 @@
+\documentclass[12pt,letterpaper]{exam}
+\usepackage[lmargin=1in,rmargin=1in,tmargin=1in,bmargin=1in]{geometry}
+\usepackage{../style/exams}
+
+% -------------------
+% Course & Exam Information
+% -------------------
+\newcommand{\course}{MATH 141: Exam 1}
+\newcommand{\term}{Fall ---\textsubscript{\textsubscript{2}} 2025}
+\newcommand{\examdate}{09/19/2025}
+\newcommand{\timelimit}{50 Minutes}
+
+\setbool{hideans}{true} % Student: True; Instructor: False
+
+
+% -------------------
+% Content
+% -------------------
+\begin{document}
+
+\examtitle
+\instructions{Write your name on the appropriate line on the exam cover sheet. This exam contains \numpages\ pages (including this cover page) and \numquestions\ questions. Check that you have every page of the exam. Answer the questions in the spaces provided on the question sheets. Be sure to answer every part of each question and show all your work. If you run out of room for an answer, continue on the back of the page --- being sure to indicate the problem number. At no during the exam may you use l'H\^{o}pital's rule. {\itshape Solutions which make use of l'H\^{o}pital's rule will receive no credit.}} 
+\scores
+\bottomline
+\newpage
+
+
+% -------------------
+% Questions
+% -------------------
+\begin{questions}
+
+% Question 1
+\newpage
+\question[20] Use the plot of the function $f(x)$ shown below to answer the following questions---if a given limit does not exist, simply write `DNE':
+	\[
+	\fbox{
+	\begin{tikzpicture}[scale=1.5,every node/.style={scale=0.5}]
+	\begin{axis}[
+	grid=both,
+	axis lines=middle,
+	ticklabel style= {fill= blue!5!white},
+	xmin= -10.5, xmax=10.5,
+	ymin= -10.5, ymax=10.5,
+	xtick= {-10,-8,...,10},
+	ytick= {-10,-8,...,10},
+	minor tick = {-10,-9,...,10},
+	xlabel= \(x\), ylabel= \(y\)
+	]
+	\node at (5.7,2.0) {$f(x)$};
+	\addplot[thick, samples=100, smooth, domain= -10.5:-5.1] {1.2/(x + 5) + 1};
+	\addplot[thick, samples=100, smooth, domain= -4.9:-4] {(-3/2)/(x + 5) + 5/2};
+	\addplot[thick, samples=100, smooth, domain= -4:-2] {3/2*(x + 2) + 4};
+	\addplot[thick, samples=100, smooth, domain= -2:0] {x^2};
+	\addplot[thick, samples=100, smooth, domain= 0:5] {1/5*x};
+	\addplot[thick, samples=100, smooth, domain= 5:10.5] {-3*sin(4*deg(x)) - 3.3};
+	
+	\addplot[holdot] coordinates{(5,-6)(0,0)};
+	\addplot[soldot] coordinates{(5,1)(0,5)};
+	\end{axis}
+	\end{tikzpicture}
+	}
+	\] \pvspace{0.3cm}
+
+\begin{enumerate}[(a)]
+\item $\ds\lim_{x \to -\infty} f(x)= \psol{1}$ \vfill
+\item $\ds\lim_{x \to -5} f(x)= \psol{-\infty}$ \vfill
+\item $\ds\lim_{x \to 0^-} f(x)= \psol{0}$ \vfill
+\item $\ds\lim_{x \to 0^+} f(x)= \psol{0}$ \vfill
+\item $\ds\lim_{x \to 0} f(x)= \psol{0}$ \vfill
+\item $\ds\lim_{x \to 5^-} f(x)= \psol{1}$ \vfill
+\item $\ds\lim_{x \to 5^+} f(x)= \psol{-6}$ \vfill
+\item $\ds\lim_{x \to 5} f(x)= \psol{\text{DNE}}$ \vfill
+\item $\ds\lim_{x \to \infty} f(x)= \psol{\text{DNE}}$ \vfill
+\item Give an $x$-value such that $f(x)$ is continuous but not differentiable at $x$. 
+	\[
+	\psol{x= -2}
+	\]
+\end{enumerate}
+
+
+
+% Question 2
+\newpage
+\question[20] Showing all your work, compute the limits below. You may \textit{not} use l'H\^opital's to compute any limits. \par\vspace{0.2cm}
+	\begin{enumerate}[(a)]
+	\item $\ds\lim_{x \to 5^+} \dfrac{x - 6}{x - 5}$ \vfill
+		\[
+		\psol{\lim_{x \to 5^+} \dfrac{\overbrace{x - 6}^{-}}{\underbrace{x - 5}_{+}} \;\stackrel{\tfrac{1}{0}}{=}\; -\infty}
+		\] \vfill
+	
+	\item $\ds\lim_{n \to \infty} \dfrac{18n^3 - 2n + 6}{8 - n^3}$ \vfill
+		\[
+		\psol{\hspace{-3.3cm} \lim_{n \to \infty} \dfrac{18n^3 - 2n + 6}{8 - n^3}= \lim_{n \to \infty} \dfrac{18n^3 - 2n + 6}{8 - n^3} \cdot \dfrac{1/n^3}{1/n^3}= \lim_{x \to \infty} \dfrac{\frac{18n^3}{n^3} - \frac{2n}{n^3} + \frac{6}{n^3}}{\frac{8}{n^3} - \frac{n^3}{n^3}}= \lim_{x \to \infty} \dfrac{18 - \frac{2}{n^2} + \frac{6}{n^3}}{\frac{8}{n^3} - 1}= \dfrac{18 - 0 + 0}{0 - 1}= -18}
+		\] \vfill
+	
+	\newpage
+	
+	\item $\ds\lim_{x \to \infty} \left(1 + \dfrac{2}{x} \right)^{5x}$ \vfill\vspace{2.8cm}
+		\[
+		\psol{\hspace{-1cm} \lim_{x \to \infty} \left(1 + \dfrac{2}{x} \right)^{5x}= \lim_{x \to \infty} \left(1 + \dfrac{\;\;1\;\;}{\tfrac{x}{2}} \right)^{5x}= \lim_{x \to \infty} \left(1 + \dfrac{\;\;1\;\;}{\tfrac{x}{2}} \right)^{\tfrac{x}{2} \cdot (2 \cdot 5)}= \lim_{x \to \infty} \left[ \left(1 + \dfrac{\;\;1\;\;}{\tfrac{x}{2}} \right)^{\tfrac{x}{2}} \right]^{2 \cdot 5}= e^{10}}
+		\] \vfill\vspace{2.8cm} 
+	
+	\item $\ds\lim_{h \to 0} \dfrac{3 - \sqrt{h + 9}}{h}$ \vfill
+		\[
+		\psol{
+		\begin{aligned}
+		\lim_{h \to 0} \dfrac{3 - \sqrt{h + 9}}{h}&= \lim_{h \to 0} \dfrac{3 - \sqrt{h + 9}}{h} \cdot \dfrac{3 + \sqrt{h + 9}}{3 + \sqrt{h + 9}} \\[0.2cm]
+		&= \lim_{h \to 0} \dfrac{9 - (h + 9)}{h(3 + \sqrt{h + 9})} \\[0.2cm]
+		&= \lim_{h \to 0} \dfrac{-h}{h(3 + \sqrt{h + 9})} \\[0.2cm]
+		&= \lim_{h \to 0} \dfrac{-1}{3 + \sqrt{h + 9}} \\[0.2cm]
+		&= \dfrac{-1}{3 + \sqrt{9}} \\[0.2cm]
+		&= -\dfrac{1}{6}
+		\end{aligned}
+		}
+		\] \vfill
+	\end{enumerate}
+
+
+
+% Question 3
+\newpage
+\question[20] Let $f(x)$ be the piecewise function given below.
+	\[
+	f(x)= 
+	\begin{cases}
+	x + 5, & x < 2 \\
+	3x - 4, & x \geq 2
+	\end{cases}
+	\] \par\vspace{0.3cm}
+
+\begin{enumerate}[(a)]
+\item Find $f(2)$. \par
+	\[
+	\psol{f(2)= 3(2) - 4= 6 - 4= 2}
+	\] \vspace{0.2cm}
+
+\item Completely justifying your answer, compute $\ds\lim_{x \to 2} f(x)$. \par\vspace{1.05cm}
+
+\psol{\itshape To compute $\ds\lim_{x \to 1} f(x)$, we compute the left-hand and right-hand limits:}
+	\[
+	\psol{%
+	\begin{aligned}
+	\lim_{x \to 2^-} f(x)&= \lim_{x \to 2^-} (x + 5)= 2 + 5= 7 \\[0.3cm]
+	\lim_{x \to 2^+} f(x)&= \lim_{x \to 2^+} (3x - 4)= 3(2) - 4= 6 - 4= 2
+	\end{aligned}%
+	}
+	\]
+\psol{\itshape Recall that $\ds\lim_{x \to a} f(x)$ exists if and only if $\ds\lim_{x \to a^-} f(x)$ and $\ds\lim_{x \to a^+} f(x)$ exist and are equal. Because the left-hand limit does not equal the right-hand limit, i.e. $\ds\lim_{x \to 2^-} f(x) \neq \lim_{x \to 2^+} f(x)$, the limit $\ds\lim_{x \to 2} f(x)$ does not exist, i.e. $\ds\lim_{x \to 2} f(x)= \text{DNE}$.} \par\vspace{1.05cm}
+
+\item Explain why $f(x)$ is not continuous at $x= 2$. Justify your answer in terms of the definition of continuity. \par\vspace{1cm}
+
+\psol{\itshape By definition, $f(x)$ is continuous at $x= a$ if $\ds f(a)= \lim_{x \to a} f(x)$; that is, $f(a)$ is defined, $\ds\lim_{x \to a} f(x)$ exists, and $\ds f(a)= \lim_{x \to a} f(x)$. We know from (b) that $\ds\lim_{x \to 2} f(x)$ does not exist. Therefore, we know that $f(x)$ is not continuous at $x= 2$.} \par\vspace{1cm}
+
+\item Classify the type of discontinuity $f(x)$ has at $x= 2$. Be sure to justify your answer using limits. \par\vspace{0.52cm}
+
+\psol{\itshape We know that $\ds f(2)= \lim_{x \to 2^+} f(x)$ but $\ds\lim_{x \to 2^-} f(x) \neq \lim_{x \to 2^+} f(x)$. Therefore, $f(x)$ has a jump discontinuity at $x= 2$. We can also see this in the rough sketch of $f(x)$ below.}
+\vsol{
+	\[
+	\begin{tikzpicture}[scale=0.2,every node/.style={scale=0.5}]
+	\begin{axis}[
+	grid=both,
+	axis lines=middle,
+	ticklabel style= {fill= blue!5!white},
+	xmin= 0.5, xmax=3.5,
+	ymin= 1.5, ymax=7.5,
+	xtick= {-10,-8,...,10},
+	ytick= {-10,-8,...,10},
+	minor tick = {-10,-9,...,10},
+	xlabel= \(x\), ylabel= \(y\)
+	]
+	\addplot[line width=0.05cm, samples=100, smooth, domain= 0.5:2] {x + 5};
+	\addplot[line width=0.05cm, samples=100, smooth, domain= 2:3.5] {3*x - 4};
+
+	\addplot[holdot] coordinates{(2,7)};
+	\addplot[soldot] coordinates{(2,2)};
+	\end{axis}
+	\end{tikzpicture}
+	\]
+}
+\end{enumerate}
+
+
+
+% Question 4
+\newpage
+\question[20] Use the definition of the derivative to find $f'(-4)$, where $f(x)= x^2 + 3x$. Do not use the definition of the derivative to find $f'(x)$ and then evaluate at $x= -4$. You will not receive any credit for using any derivative `shortcut' rules, though you may check your answer with them. You may not use l'H\^opital's to compute any limits.  \pspace
+
+\vsol{\itshape Recall that the definition of the derivative of $f(x)$ at $x= a$ is\dots
+	\[
+	f'(a):= \lim_{h \to 0} \dfrac{f(a + h) - f(a)}{h}
+	\]
+We have $f(x)= x^2 + 3x$ and $a= -4$. So, we need to compute $\ds\lim_{h \to 0} \dfrac{f(-4 + h) - f(-4)}{h}$. Observe\dots \pspace
+	\[
+	\begin{aligned}
+	f(-4 + h)&= (-4 + h)^2 + 3(-4 + h)= (16 - 8h + h^2) - 12 + 3h= h^2 - 5h + 4 \\[0.3cm]
+	f(-4)&= (-4)^2 + 3(-4)= 16 - 12= 4
+	\end{aligned}
+	\] \pspace
+Therefore, we have\dots
+	\[
+	\begin{aligned}
+	f'(-4)&:= \lim_{h \to 0} \dfrac{f(-4 + h) - f(-4)}{h} \\[0.3cm]
+	&= \lim_{h \to 0} \dfrac{(h^2 - 5h + 4) - 4}{h} \\[0.3cm]
+	&= \lim_{h \to 0} \dfrac{h^2 - 5h}{h} \\[0.3cm]
+	&= \lim_{h \to 0} (h - 5) \\[0.3cm]
+	&= 0 - 5 \\[0.3cm]
+	&= -5
+	\end{aligned}
+	\]
+}
+
+
+
+% Question 5
+\newpage
+\question[20] Showing all your work, compute the following but \textit{do not simplify your results}:
+	\begin{enumerate}[(a)]
+	\item $\dfrac{d}{dx} \left( \sqrt[5]{x^6} + \dfrac{1}{x^5} + 7^x + \arcsin(x) \right)$ \vfill
+		\[
+		\hspace{-2.5cm}\psol{\dfrac{d}{dx} \left( \sqrt[5]{x^6} + \dfrac{1}{x^5} + 7^x + \arcsin(x) \right)= \dfrac{d}{dx} \left( x^{6/5} + x^{-5} + 7^x + \arcsin(x) \right)= \tfrac{6}{5}\,x^{1/5} - 5x^{-6} + 7^x \ln 7 + \dfrac{1}{\sqrt{1 - x^2}}}
+		\] \vfill
+	
+	\item $\dfrac{d}{dx} \left( \cos^4(6x) \right)$ \vfill
+		\[
+		\psol{\dfrac{d}{dx} \left( \cos^4(6x) \right)= 4 \cos^3(6x) \cdot -\sin(6x) \cdot 6}
+		\] \vfill
+	
+	\item $\dfrac{d}{dx} \left( e^x \cot(x) \ln(x) \right)$ \vfill
+		\[
+		\psol{\dfrac{d}{dx} \left( e^x \cot(x) \ln(x) \right)= e^x \cdot \cot x \ln x + (-\csc^2 x) \cdot e^x \ln x + \dfrac{1}{x} \cdot e^x \cot x}
+		\] \vfill
+	
+	\item $\dfrac{d}{dx} \left( \dfrac{\sec x}{4x - x^3} \right)$ \vfill
+		\[
+		\psol{\dfrac{d}{dx} \left( \dfrac{\sec x}{4x - x^3} \right)= \dfrac{(\sec x \tan x)(4x - x^3) - (4 - 3x^2)(\sec x)}{(4x - x^3)^2}}
+		\] \vfill
+	\end{enumerate}
+
+\end{questions}
+\end{document}

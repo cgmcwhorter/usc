@@ -25,12 +25,63 @@
 Here are some of the learning outcomes for each lecture. That is, after lecture, the homework, and studying, what students should know from each lecture. Though this list is not necessarily \textit{completely} comprehensive, the most important ideas/concepts are contained in each list. Students should be sure to feel comfortable with each bullet point before an exam. These learning goals are broken down by class date---with the class topic given. The classes are given in reverse-chronological order for ease of access to the most recent class. You may also click any of the hyperlinks below to jump to that date. 
 
 \begin{itemize}
+\item \hyperref[09-24]{09/24, 09/26, 09/29, Wednesday, Friday, Monday: l'H\^{o}pital's Rule}
+\item \hyperref[09-22]{09/22, Monday: Maxima, Minima, \& Inflections}
+\item \hyperref[09-17]{09/17, Wednesday: Derivative Interpretations}
 \item \hyperref[09-15]{09/15, Monday: Linearization}
 \item \hyperref[09-08--09-12]{09/08, 09/10, 09/12, Monday, Wednesday, Friday: Derivative Rules and Chain, Product, \& Quotient Rule}
 \item \hyperref[09-05]{09/05, Friday: Derivative Definition}
 \item \hyperref[09-03]{09/03, Wednesday: Continuity}
 \item \hyperref[08-22--08-29]{08/22, 08/25, 08/27, 08/29, Friday, Monday, Wednesday, Friday: Limit Techniques}
 \item \hyperref[08-20]{08/20, Wednesday: Graphical Limits}
+\end{itemize}
+
+% 09/24, 09/26, 09/29, Wednesday, Friday, Monday: l'Hopital's Rule
+\newpage
+\section*{09/24, 09/26, 09/29, Wednesday, Friday, Monday: l'H\^{o}pital's Rule\label{09-24}}
+
+\begin{itemize}
+\item Know the indeterminant forms: $\dfrac{0}{0}$, $\pm\frac{\infty}{\infty}$, $0 \cdot \infty$, $\infty - \infty$, $0^0$, $1^\infty$, and $\infty^0$.
+\item Know the statement of l'H\^{o}pital's Theorem: let $f, g$ be differentiable functions. If $\ds\lim_{x \to \Box{}} \dfrac{f(x)}{g(x)}$ i$\frac{0}{0}$ or $\pm\dfrac{\infty}{\infty}$ when `na\"ively'' evaluated at $\Box{}$ and $\ds\lim_{x \to \Box{}} \dfrac{f'(x)}{g'(x)}$ exists, then $\ds\lim_{x \to \Box{}} \dfrac{f(x)}{g(x)}= \lim_{x \to \Box{}} \dfrac{f'(x)}{g'(x)}$. 
+\item Know that l'H\^{o}pital's only works when the limit `eventually' exists, even if it is $\pm\infty$. Know the classic example where l'H\^{o}pital's fails: $\ds\lim_{x \to \infty} \dfrac{x + \sin x}{x + \cos x}$. Diving the numerator and denominator by $x$, one can see that the limit is 1. However, taking the derivative of the numerator and denominator, one obtains $\ds\lim_{x \to \infty} \dfrac{1 + \cos x}{1 - \sin x}$, which does not exist. The reason l'H\^{o}pital's does not say that these are equal is because $\ds\lim_{x \to \infty} \dfrac{1 + \cos x}{1 - \sin x}$ does not exist. 
+\item Know that l'H\^{o}pital's only applies (directly) to $\frac{0}{0}$ and $\pm\frac{\infty}{\infty}$. 
+\item Be able to use l'H\^{o}pital's rule to compute limits.
+\item Know how to transform $\infty - \infty$ (often by combining terms or factoring something out), $0 \cdot \infty$ (often by flipping a term into the denominator or making a substitution), and $1^\infty$, $0^0$, $\infty^0$ (by using logs) into a form where l'H\^{o}pital's directly applies.
+\item Be able to compute limits in cases where l'H\^{o}pital's fails---often by using strategies from `Rational Limits'. 
+\end{itemize}
+
+% 09/22, Monday: Maxima, Minima, & Inflections
+\newpage
+\section*{09/22, Monday: Maxima, Minima, \& Inflections\label{09-22}}
+
+\begin{itemize}
+\item Know and be able to do anything from the `Derivative Interpretations' lecture.
+\item Be able to find absolute maxima and minima for $f(x)$ on a given interval $[a, b]$. [Find any local maxima/minima and compare to the values at the endpoints.]
+\item Be able to determine whether $f(x)$ has any global maxima or minima and if it has either find them.
+\end{itemize}
+
+% 09/17, Wednesday: Derivative Interpretations
+\newpage
+\section*{09/17, Wednesday: Derivative Interpretations\label{09-17}}
+
+\begin{itemize}
+\item Associate to $f'(x)$ the following: slope, rate of change, slope of tangent, tangent line, increasing/decreasing, maxima/minima, and velocity. 
+\item Associate to $f''(x)$ the following: concavity, `bendiness', inflection point, and acceleration.
+\item Know that for `nice' functions, $f(x)$ is increasing if and only if $f'(x) > 0$, $f(x)$ is decreasing if and only if $f'(x) < 0$, and $f(x)$ is `constant' if and only if $f'(x)= 0$. 
+\item Be able to find where $f(x)$ is increasing and decreasing by finding $f'(x)$, finding where $f'(x)$ is zero or undefined, and using a `signed number line' to identify these intervals. 
+\item Know that a critical value for $f(x)$ is an $x$-value where $f'(x)$ is 0 or undefined. 
+\item Know that for `nice' functions, $f(x)$ is concave up (convex) if and only if $f''(x) > 0$, $f(x)$ is concave down (concave) if and only if $f''(x) < 0$, and $f(x)$ is `locally linear' if and only if $f''(x)= 0$.
+\item Be able to find where $f(x)$ is concave up/down by finding $f''(x)$, finding where $f''(x)$ is zero or undefined, and using a `signed number line' to identify these intervals. 
+\item Know that a point of inflection is where $f''(x)$ changes sign. 
+\item Be able to find and identify points of inflection. [Use the same procedure one uses to find where $f(x)$ is concave up/down.] Recall that a point of inflection is a \textit{point}. 
+\item Know the first and second derivative test and be able to explain why they work with a picture. 
+\item Be able to find local maxima and minima by using either the first or second derivative test. 
+\item Be able to define local, global, and absolute maxima/minima. 
+\item Be aware of the difference between being asked for the $x$-value of a maxima/minima/point of inflection, the $y$-value there, and for the corresponding point on the curve. 
+\item Be able to sketch the graph of $f'(x)$ and $f''(x)$ given the graph of $f(x)$. 
+\item Be able to identify features of $f(x)$ or $f''(x)$ given the graph of $f'(x)$.
+\item Be able to identify features of $f(x)$ or $f'(x)$ given the graph of $f''(x)$.
+\item Know that $C^n$ is the set of functions that have $n$-derivatives and all of those derivatives are continuous. 
 \end{itemize}
 
 % 09/15, Monday: Linearization

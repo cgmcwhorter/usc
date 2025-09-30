@@ -195,6 +195,47 @@ Because $\ds \lim_{h \to 0} \dfrac{f(0 + h) - f(0)}{h}$ does not exist, $f'(0)$ 
 
 
 
+% 09/24
+\checkin{09/24} The critical value(s) for $f(x)= 2x + \frac{1}{x^2}$ is $x= 1$. \pspace
+
+\sol The statement is \textit{false}. Recall the critical value(s) for a function $f(x)$ are the value(s) for which $f'(x)$ is 0 or undefined. Because $f(x)= 2x + \frac{1}{x^2}= 2x + x^{-2}$, we have $f'(x)= 2 - 2x^{-3}= 2 - \frac{2}{x^3}$. Observe that $f'(x)$ is undefined at $x= 0$, so that $x= 0$ is a critical value. Solving $f'(x)= 0$, we have\dots
+	\[
+	\begin{gathered}
+	f'(x)= 0 \\
+	2 - \frac{2}{x^3}= 0 \\
+	2= \frac{2}{x^3} \\
+	2x^3= 2 \\
+	x^3= 1 \\
+	x= 1
+	\end{gathered}
+	\]
+Therefore, $x= 1$ is a critical value. Therefore, the critical values are $x= 0, 1$. \pvspace{1.3cm}
+
+
+
+% 09/26
+\checkin{09/26} $\ds\lim_{x \to 0} \dfrac{\sin(4x)}{5x} \stackrel{\text{LH}}{=} \lim_{x \to 0} \dfrac{4\cos(4x)}{5}= \dfrac{4}{5}$ \pspace
+
+\sol The statement is \textit{true}. Na\"ively evaluating the argument at $x= 0$, we obtain $\frac{0}{0}$. But then l'H\^{o}pital's should apply. The derivative of $\sin(4x)$ is $\cos(4x) \cdot 4= 4 \cos(4x)$ and the derivative of $5x$ is $5$. But then\dots
+	\[
+	\lim_{x \to 0} \dfrac{\sin(4x)}{5x} \stackrel{\text{LH}}{=} \lim_{x \to 0} \dfrac{4\cos(4x)}{5}= \dfrac{4 \cos(0)}{5}= \dfrac{4(1)}{5}= \dfrac{4}{5}
+	\]
+However, we can also recognize this as a `special limit', $\ds\lim_{\Box{} \to 0} \dfrac{\sin \Box{}}{\Box{}}= 1$, and solve it this way:
+	\[
+	\lim_{x \to 0} \dfrac{\sin(4x)}{5x}= \lim_{x \to 0} \dfrac{1}{5} \dfrac{\sin(4x)}{x}= \lim_{x \to 0} \dfrac{1}{5} \dfrac{\sin(4x)}{4x} \cdot 4= \dfrac{1}{5} \cdot 1 \cdot 4= \dfrac{4}{5}
+	\] \pvspace{1.3cm}
+
+
+
+% 09/29
+\checkin{09/29} $\ds\lim_{x \to 1} \dfrac{3x^2 - 2x - 1}{x^2 - 2x + 1} \stackrel{\text{L.H.}}{=} \lim_{x \to 1} \dfrac{6x - 2}{2x - 2} \stackrel{\text{L.H.}}{=} \dfrac{6}{2}= 3$ \pspace
+
+\sol The statement is \textit{false}. Na\"ively plugging in $x= 1$ into $\dfrac{3x^2 - 2x - 1}{x^2 - 2x + 1}$, we obtain $\frac{0}{0}$, so l'H\^{o}pital's rule applies. Applying l'H\^{o}pital's rule, we obtain $\ds\lim_{x \to 1} \dfrac{6x - 2}{2x - 2}$. However, now na\"ively plugging in $x= 1$, we obtain $\frac{4}{0}$ and l'H\^{o}pital's rule does not apply. Indeed, this is now a `thinking limit.' One can show that this limit does not exist. [In fact, this shows the initial application does not necessarily hold. However, $\dfrac{3x^2 - 2x - 1}{x^2 - 2x + 1}= \dfrac{(3x + 1)(x - 1)}{(x - 1)^2}$. But then $\ds\lim_{x \to 1} \dfrac{3x^2 - 2x - 1}{x^2 - 2x + 1}= \lim_{x \to 1} \dfrac{3x + 1}{x - 1}$ and this limit does not exist.] \pvspace{1.3cm}
+
+
+
+
+
 
 
 
