@@ -255,7 +255,13 @@ So, while the given answer is correct, the approach is entirely incorrect. In ot
 
 
 % 09/30
-\checkin{09/30} 
+\checkin{09/30} The series $\ds\sum_{n=17}^\infty \dfrac{n^2}{n^2 + 1}$ diverges. \pspace
+
+\sol The statement is \textit{true}. Recall that the Divergence Test ($n$th Term Test) states: if $\ds\lim_{n \to \infty} a_n \neq 0$, then $\ds\sum^\infty a_n$ diverges. Observe that here $\ds a_n= \dfrac{n^2}{n^2 + 1}$ and\dots
+	\[
+	\lim_{n \to \infty} \dfrac{n^2}{n^2 + 1}= 1 \neq 0
+	\]
+Therefore, the series diverges by the Divergence Test. However, it is important to note two things: first, one can \textit{never} say that a series converges by the Divergence Test; otherwise, they would have called it the Convergence Test. Second, if $\ds\lim_{n \to \infty} a_n= 0$, then this \textit{does not} mean that the series converges. It could be that the series diverges---even though the Divergence Test does not tell you this. It could also be that the series converges---the Divergence Test also not telling you this. For example, the series $\ds\sum^\infty \dfrac{1}{n}$ (the Harmonic Series) diverges even though $\ds\lim_{n \to \infty} \dfrac{1}{n}= 0$, while the series $\ds\sum_{n=1}^\infty \dfrac{1}{n^2}$ converges (to $\frac{\pi^2}{6}$) even though $\ds\lim_{n \to \infty} \dfrac{1}{n^2}= 0$. That is, if $\ds\lim_{n \to \infty} a_n= 0$, then one knows \textit{zero} information as to whether the series converges or diverges (at least from the Divergence Test). \pvspace{1.3cm}
 
 
 
