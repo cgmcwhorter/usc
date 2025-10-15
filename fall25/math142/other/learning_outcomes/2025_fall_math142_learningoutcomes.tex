@@ -17,6 +17,9 @@
 Here are some of the learning outcomes for each lecture. That is, after lecture, the homework, and studying, what students should know from each lecture. Though this list is not necessarily \textit{completely} comprehensive, the most important ideas/concepts are contained in each list. Students should be sure to feel comfortable with each bullet point before an exam. These learning goals are broken down by class date---with the class topic given. The classes are given in reverse-chronological order for ease of access to the most recent class. You may also click any of the hyperlinks below to jump to that date. 
 
 \begin{itemize}
+\item \hyperref[10-14]{10/14, Tuesday: Alternating Series Test \& Conditional Convergence}
+\item \hyperref[10-07]{10/07, Thursday: Direct Comparison Test}
+\item \hyperref[10-02]{10/02, Thursday: Limit Comparison Test}
 \item \hyperref[09-30]{09/30, Tuesday: More Series \& Integral Test}
 \item \hyperref[09-25]{09/25, Thursday: Sequences \& Series}
 \item \hyperref[09-18]{09/18, Thursday: Arclength \& Surface Area}
@@ -29,6 +32,100 @@ Here are some of the learning outcomes for each lecture. That is, after lecture,
 \item \hyperref[08-26]{08/26, Tuesday: Integration-by-Parts}
 \item \hyperref[08-21]{08/21, Thursday: Integration-by-Parts}
 \item \hyperref[08-19]{08/19, Tuesday: $u$-Substitution Review}
+\end{itemize}
+
+% 10/14, Tuesday: Alternating Series Test & Conditional Convergence
+\newpage
+\section*{10/14, Tuesday: Alternating Series Test \& Conditional Convergence\label{10-14}}
+
+\begin{itemize}
+\item Know that an alternating series is a series of the form $\ds\sum^\infty (-1)^n a_n$, where $\{ a_n \}$ is a sequence with $a_n > 0$. That is, an alternating series is a series whose terms alternate sign. 
+
+\item Know that the Comparison Tests \textit{do not} apply to alternating series.
+
+\item Be able to understand, state, and use the Alternating Series Test (AST): if $\ds\sum^\infty (-1)^n a_n$ is an alternating series with\dots
+	\begin{itemize}
+	\item $\ds\lim_{n \to \infty} a_n= 0$
+	\item $\{ a_n \}$ is a decreasing sequence, i.e. $a_{n+1} \leq a_n$
+	\end{itemize}
+Then the series $\ds\sum^\infty (-1)^n a_n$ converges.
+
+\item Know that the first part of the Alternating Series Test is simply the Divergence Test and that if in an alternating series $\ds\lim_{n \to \infty} a_n \neq 0$, then the series diverges by the Divergence Test. [Even though we only know $\ds\lim_{n \to \infty} a_n \neq 0$ and not necessarily $\ds\ds\lim_{n \to \infty} (-1)^n a_n \neq 0$. It is true that if $\ds\lim_{n \to \infty} a_n \neq 0$, then $\ds\lim_{n \to \infty} (-1)^n a_n \neq 0$, so that the Divergence Test will apply.]
+
+\item Know that to show a sequence is decreasing, one often has to use derivatives, i.e. showing the derivative is always negative, or some type of `algebraic' trick. Although, we often will not bother to \textit{prove} that the sequence is (eventually) decreasing but instead rather simply assume/state it.
+
+\item Know that if an $\{ a_n \}$ is not necessarily decreasing (so that the Alternating Series Test does not apply), this \textit{does not} mean that the alternating series diverges----it may converge or it may diverge. For example, the alternating series given by $\dfrac{1}{2^4} - \dfrac{1}{2^2} + \dfrac{1}{3^4} - \dfrac{1}{3^2} + \dfrac{1}{4^4} - \dfrac{1}{4^2} + \cdots$ has terms that tend to 0 but do not decrease, e.g. $\frac{1}{2^2} \not\leq \dfrac{1}{2^4}$. Yet, this series converges. On the other hand, the series given by $\dfrac{1}{\sqrt{2} - 1} - \dfrac{1}{\sqrt{2} + 1} + \dfrac{1}{\sqrt{3} - 1} - \dfrac{1}{\sqrt{3} + 1} + \cdots$ has terms that tend to 0 but do not decrease, e.g. the given terms are $\approx 2.41421, 0.414214, 1.36603, 0.366025, \ldots$. But this series does indeed diverge. 
+
+\item Know that the Alternating Harmonic Series converges. In fact, $\ds\sum_{n=1}^\infty \dfrac{(-1)^{n+1}}{n}= \ln(2)$.
+
+\item Know that while many alternating series have a power of $-1$, alternating series do not have to have this to be alternating---the term could be `hidden.' For example, the series $\ds\sum_{n=1}^\infty \dfrac{n \cos(\pi n)}{\ln(n + 1)}$ is alternating because the values of $\cos(\pi n)$ are either $+1$ or $-1$ depending on the value of $n$. Furthermore, just because a series has a power of $-1$ in the summand does not mean that the series alternates. For example, the series $\ds\sum_{n=1}^\infty \dfrac{(-1)^n}{(-2)^n}$ \textit{does not} alternate because $\ds\sum_{n=1}^\infty \dfrac{(-1)^n}{(-2)^n}= \sum_{n=1}^\infty \dfrac{(-1)^n}{(-1)^n 2^n}= \sum_{n=1}^\infty \dfrac{1}{2^n}= \sum_{n=1}^\infty \left( \dfrac{1}{2} \right)^n$, which does not alternate. 
+
+\item Be able to know, state, and apply the Remainder Theorem for Alternating Series: if an alternating series $\ds\sum^\infty (-1)^n a_n$ converges, say to $S$, then the difference between $S$ and the sum of the first $n$ terms, $S_n$ (which is called the remainder, $R_n$) satisfies $|S_n - S|= |R_n| \leq |a_{n+1}|$. That is, the error between the actual sum of the series and the sum you get by adding the first $n$ terms is at most the magnitude of the next term you would have added/subtracted next. For instance, the series $\ds\sum_{n=1}^\infty \dfrac{(-1)^{n+1}}{n}$ converges by the Alternating Series Test (in fact, to $\ln(2)$). If we only add $1 - \frac{1}{2} + \frac{1}{3} - \frac{1}{4} + \frac{1}{5} - \frac{1}{6} + \frac{1}{7} \approx 0.759524$, then the error between this value and the actual sum of the series is \textit{at most} $\left| -\frac{1}{8} \right|= \frac{1}{8}= 0.125$. In fact, $|\ln(2) - 0.759524| \approx 0.0663766 < 0.125$.
+
+\item Be able to use the Remainder Theorem for Alternating Series to find at most how many terms of a convergent alternating series one would need to add to be within a certain error of the actual sum of the series. For instance, we know the series $\ds\sum_{n=1}^\infty \dfrac{(-1)^n}{\sqrt{n}}$ converges by the Alternating Series Test. Suppose one wanted to find the sum of this series to two decimal places, i.e. with an error less than $\pm 0.01$. If we added the first $n$ terms, the magnitude of the next term would be $\frac{1}{\sqrt{n+1}}$. We know the error is at most this term. So, we could find an $n$ such that $\frac{1}{\sqrt{n+1}} < 0.01$. But then\dots
+	\[
+	\begin{gathered}
+	\dfrac{1}{\sqrt{n+1}} < 0.01 \\[0.2cm]
+	\dfrac{1}{\sqrt{n+1}} < \dfrac{1}{100} \\[0.2cm]
+	\sqrt{n+1} > 100 \\[0.2cm]
+	(\sqrt{n+1})^2 > 100^2 \\[0.2cm]
+	n + 1 > 10000 \\[0.2cm]
+	n > 9999
+	\end{gathered}
+	\]
+Therefore, if we add at least the first $9,\!999+1= 10,\!000$ terms of the series (the $+1$ is because this is the next integer strictly bigger than $9,\!999$; if we had $n > 8,\!432.119$, we would have taken $n= 8,\!433$), we would approximate the actual sum to two decimal places. We may need less terms, but using this many guarantees it. 
+
+\item Know that dropping/moving infinitely many parentheses is not necessarily a valid operation; that is, while moving finitely many parentheses is fine, e.g. $(1 + 3) - 4 + 6 + (5 - 1)= 1 + (3 - 4) + (6 + 5) - 1$, but something like $(1 - 1) + (1 - 1) + (1 - 1) + \cdots= 1 + (-1 + 1) + 1 + (-1 + 1) + \cdots$ is not necessarily (and often is not) correct. 
+
+\item Know and be able to state the definition of absolute and conditional convergence: a series $\ds\sum a_n$ is absolutely convergent (or converges absolutely) if $\ds\sum |a_n|$ also converges. If $\ds\sum a_n$ converges but the series $\ds\sum |a_n|$ diverges, then we say that the series $\ds\sum a_n$ converges conditionally (or is conditionally convergent). 
+
+\item Know that if the series $\ds\sum |a_n|$ converges, i.e. the series $\ds\sum a_n$ is absolutely convergent, then it must be that the series $\ds\sum a_n$ converges. In fact, if a series $\ds\sum a_n$ is absolutely convergent, then the series created by  \textit{any} rearrangement of its terms converges and also converges to the same sum. This is called the Riemann Rearrangement Theorem.
+
+\item Know that if a series $\ds\sum a_n$ is conditionally convergent, i.e. $\ds\sum a_n$ converges but $\ds\sum |a_n|$ diverges, then there is a series that can be formed by rearranging the terms of the series $\ds\sum a_n$ that converges to \textit{any} real number, $-\infty$, $+\infty$, or diverges. This is called the Riemann Rearrangement Theorem.
+
+\item Be able to determine whether a given series diverges, converges conditionally, or converges absolutely and be able to provide a full justification of the answer. 
+\end{itemize}
+
+% 10/07, Thursday: Limit Comparison Test
+\newpage
+\section*{10/07, Thursday: Direct Comparison Test\label{10-07}}
+
+\begin{itemize}
+\item Understand and be able to state the Direct Comparison Test: if $\{ a_n \}$ and $\{ b_n \}$ are sequences with $a_n, b_n > 0$ such that $\ds\sum^\infty a_n \leq \sum^\infty b_n$, then\dots
+	\begin{itemize}
+	\item If $\ds\sum^\infty a_n$ diverges, then $\ds\sum^\infty b_n$ diverges. 
+	\item If $\ds\sum^\infty b_n$ converges, then $\ds\sum^\infty a_n$ converges.
+	\end{itemize}
+
+\item Understand and be able to articulate why the Direct Comparison Test works, i.e. be able to understand and explain why one series being larger/smaller than the other assures the others convergence/divergence. 
+
+\item If a series is `like' a $p$-series, be able to determine which $p$-series it is `like' and use this information to predict whether the given series converges or diverges.
+
+\item Understand that to make a fraction larger, one needs to make the numerator larger or the denominator smaller. To make a fraction smaller, one needs to make the numerator smaller or the denominator larger. 
+
+\item Be able to use the Direct Comparison Test to prove that a given series converges or diverges, including cases where one needs to be `clever'.
+
+\item Be able to use a `number line' analogy to help determine whether one needs to increase or decrease the summand to prove the convergence/divergence of the given series with the Direct Comparison Test. 
+
+\item Understand when the Direct Comparison Test cannot be used and instead the Limit Comparison Test is needed. 
+
+\item Know that the Direct Comparison Test cannot be used for alternating series. 
+\end{itemize}
+
+% 10/02, Thursday: Limit Comparison Test
+\newpage
+\section*{10/02, Thursday: Limit Comparison Test\label{10-02}}
+
+\begin{itemize}
+\item Understand and be able to state the Limit Comparison Test: if $\{ a_n \}$ and $\{ b_n \}$ are sequences with $a_n, b_n > 0$ such that $\ds\lim_{n \to \infty} \dfrac{a_n}{b_n}$ is finite and not 0, then $\ds\sum^\infty a_n$ and $\ds\sum^\infty b_n$ either both converge or both diverge. 
+
+\item Understand and be able to articulate why the Limit Comparison Test works, i.e. be able to understand and explain why the limit being finite and nonzero means one series is `like' the other. 
+
+\item If a series is `like' a $p$-series, be able to determine which $p$-series it is `like' and use this information to predict whether the given series converges or diverges.
+
+\item Be able to use the Limit Comparison Test to prove that a given series converges or diverges. 
+
+\item Know that the Limit Comparison Test cannot be used for alternating series. 
 \end{itemize}
 
 % 09/30, Tuesday: More Series & Integral Test

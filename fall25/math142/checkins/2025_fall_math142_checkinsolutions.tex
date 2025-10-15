@@ -265,6 +265,53 @@ Therefore, the series diverges by the Divergence Test. However, it is important 
 
 
 
+% 10/02
+\checkin{10/02} The series $\ds\sum_{n=1}^\infty 3640 \, \dfrac{7^n}{4^{2n}}$ diverges. \pspace
+
+\sol The statement is \text{false}. This is a geometric series, although it is not written in the traditional form of a geometric series: $\ds\sum^\infty a r^n$. We first do some algebra:
+	\[
+	\sum_{n=1}^\infty 3640 \, \dfrac{7^n}{4^{2n}}= \sum_{n=1}^\infty 3640 \, \dfrac{7^n}{(4^2)^n}= \sum_{n=1}^\infty 3640 \, \left( \dfrac{7}{4^2} \right)^n= \sum_{n=1}^\infty 3640 \, \left( \dfrac{7}{16} \right)^n
+	\]
+Observe that this now has the form $\ds\sum^\infty a r^n$ with $a= 3640$ and $r= \frac{7}{16}$. Because $|r|= \left| \frac{7}{16} \right|= \frac{7}{16} < 1$, this geometric series converges by the Geometric Series Test. In fact, we can then find the sum of this series:
+	\[
+	\sum_{n=1}^\infty 3640 \, \dfrac{7^n}{4^{2n}}= \sum_{n=1}^\infty 3640 \, \left( \dfrac{7}{16} \right)^n= \dfrac{\text{first term}}{1 - r}= \dfrac{3640 \cdot \frac{7}{16}}{1 - \frac{7}{16}}= \dfrac{3640\, \frac{7}{16}}{\frac{9}{16}}= \dfrac{3640 \cdot 7}{9}= \dfrac{25480}{9}
+	\] \pvspace{1.3cm}
+
+
+
+% 10/07
+\checkin{10/07} Because the series $\ds\sum_{n=1}^\infty (-1)^n\, \dfrac{\sqrt{n} - 1}{n + 1}$ `behaves like' $\ds\sum_{n=1}^\infty \dfrac{1}{\sqrt{n}}$, which diverges by the $p$-test, one can use the Limit Comparison Test to show that the series $\ds\sum_{n=1}^\infty (-1)^n \dfrac{\sqrt{n} - 1}{n + 1}$ diverges. \pspace
+
+\sol The statement is \textit{false}. In fact, the series $\sum_{n=1}^\infty (-1)^n\, \dfrac{\sqrt{n} - 1}{n + 1}$ converges to approximately $0.05271877311$. Recall that the Limit Comparison Test states: if $\{a_n \}, \{ b_n \}$ are sequences of \textit{positive} numbers, i.e. $a_n, b_n > 0$ for all $n$, and $\ds\lim_{n \to \infty} \frac{a_n}{b_n}$ is finite and not 0, then $\ds\sum^\infty a_n$ and $\ds\sum^\infty b_n$ either both converge or both diverge. Notice the test requires that both series be (eventually) positive. However, while the sequence $\left\{ \frac{1}{\sqrt{n}} \right\}$ is always positive, the sequence $\left\{ (-1)^n \, \frac{\sqrt{n} - 1}{n + 1} \right\}$ is 0 when $n= 1$ and alternates infinitely between positive and negative values. Therefore, the Limit Comparison Test does not apply. One would need another series test, such as the Alternating Series Test, to determine whether the series $\ds\sum_{n=1}^\infty (-1)^n\, \dfrac{\sqrt{n} - 1}{n + 1}$ converges or diverges. Note that if it were the series $\ds\sum_{n=1}^\infty (-1)^n\, \dfrac{\sqrt{n} - 1}{n + 1}$ were replaced with $\ds\sum_{n=1}^\infty \dfrac{\sqrt{n} - 1}{n + 1}$ in the statement of the problem, then the statement would be true. \pvspace{1.3cm}
+
+
+
+% 10/14
+\checkin{10/14} Because $\ds\sum_{n=5}^\infty \dfrac{n - 1}{n^2 + 1} \leq \sum_{n=5}^\infty \dfrac{n}{n^2}= \sum_{n=5}^\infty \dfrac{1}{n}$, the series $\ds\sum_{n=5}^\infty \dfrac{n - 1}{n^2 + 1}$ diverges. \pspace
+
+\sol The statement is \textit{false}. It is true that 
+	\[
+	\sum_{n=5}^\infty \dfrac{n - 1}{n^2 + 1} \leq \sum_{n=5}^\infty \dfrac{n}{n^2}= \sum_{n=5}^\infty \dfrac{1}{n}
+	\]
+We make the original fraction bigger by making the numerator bigger (by removing the $-1$) and making the denominator smaller (by removing the $+1$), which makes the fraction bigger. The series $\ds\sum_{n=5}^\infty \dfrac{n - 1}{n^2 + 1}$ does `behave like' the series $\ds\sum_{n=5}^\infty \dfrac{1}{n}$ because when $n$ is large $\dfrac{n - 1}{n^2 + 1} \approx \dfrac{n}{n^2}= \dfrac{1}{n}$, and the series $\ds\sum_{n=5}^\infty \dfrac{1}{n}$ diverges (by the $p$-test with $p= 1$). However, a series being less than a series which diverges does not show that the original series diverges. This is not one of the conclusions of the Direct Comparison Test. For instance, $\ds\sum_{n=1}^\infty \dfrac{1}{n} \leq \sum_{n=1}^\infty \dfrac{2}{n}$ and both series diverge while $\ds\sum_{n=1}^\infty \dfrac{1}{n^2}= \dfrac{\pi^2}{6} \leq \sum_{n=1}^\infty \dfrac{1}{n}$. To show that the series $\ds\sum_{n=5}^\infty \dfrac{n - 1}{n^2 + 1}$ diverges, we need to find a series with a summand that is always smaller than $\dfrac{n - 1}{n^2 + 1}$ whose series also diverges. We could do this by making the fraction $\dfrac{n - 1}{n^2 + 1}$ smaller, which can be done by making the denominator smaller or the denominator larger. Observe that because $\frac{n}{2} > 1$ and $1 \leq n^2$ for $n \geq 5$, we have\dots
+	\[
+	\sum_{n=5}^\infty \dfrac{n - 1}{n^2 + 1} \geq \sum_{n=5}^\infty \dfrac{n - \frac{n}{2}}{n^2 + n^2}= \sum_{n=5}^\infty \dfrac{\;\;\frac{n}{2}\;\;}{2n^2}= \dfrac{1}{4} \sum_{n=5}^\infty \dfrac{1}{n}
+	\]
+Because the series $\ds\sum_{n=5}^\infty \dfrac{1}{n}$ diverges by the $p$-test with $p= 1$ and $\ds\sum_{n=5}^\infty \dfrac{n - 1}{n^2 + 1} \geq \dfrac{1}{4} \sum_{n=5}^\infty \dfrac{1}{n}$, the series $\ds\sum_{n=5}^\infty \dfrac{n - 1}{n^2 + 1}$ diverges by the Direct Comparison Test. 
+
+
+
+
+
+\newpage
+
+
+
+
+
+
+
+
 
 
 

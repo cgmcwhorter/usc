@@ -234,6 +234,129 @@ However, we can also recognize this as a `special limit', $\ds\lim_{\Box{} \to 0
 
 
 
+% 10/01
+\checkin{10/01} $\ds\lim_{x \to 0^+} \left( \dfrac{1}{\sin x} - \dfrac{1}{x} \right) \stackrel{\text{L.H.}}{=} \lim_{x \to 0^+} \left( \dfrac{1}{\cos x} - \dfrac{1}{1} \right)$ \pspace
+
+\sol The statement is \textit{false}. Observe that if one na\"ively evaluates $\dfrac{1}{\sin x} - \dfrac{1}{x}$ at $x= 0$, one obtains $\infty - \infty$, which is indeterminant. However, we recognize this as a limit to which l'H\^opital's will typically be applied to. However, l'H\^opital's rule does not immediately apply as it can only be used in the case of the indeterminant forms $\frac{0}{0}$ or $\pm \frac{\infty}{\infty}$. Even if l'H\^opital's rule could be applied, recall that it says that if $\ds\lim \frac{f}{g}$ is $\frac{0}{0}$ or $\pm \frac{\infty}{\infty}$, then $\ds\lim \frac{f}{g}= \lim \frac{f'}{g'}$ (so long as $\ds\lim \frac{f'}{g'}$ exists). So, even if l'H\^opital's rule applied, it would have not been applied correctly here because there was not a single fraction and `l'H\^opital's was applied' to only the denominators of the separate fractions. \pspace
+
+In the case of the indeterminant form $\infty - \infty$, we often factor a term out or combine terms. In this case, creating a common denominator, we have\dots
+	\[
+	\lim_{x \to 0^+} \left( \dfrac{1}{\sin x} - \dfrac{1}{x} \right)= \lim_{x \to 0^+} \dfrac{x - \sin x}{x \sin x}
+	\]
+Observe that now na\"ively evaluating $\dfrac{x - \sin x}{x \sin x}$ at $x= 0$, one obtains $\frac{0}{0}$. But then l'H\^opital's rule applies. So, we have\dots
+	\[
+	\lim_{x \to 0^+} \dfrac{x - \sin x}{x \sin x} \stackrel{\text{L.H.}}{=} \lim_{x \to 0^+} \dfrac{1 - \cos x}{\sin x + x \cos x}
+	\]
+Na\"ively evaluating $\dfrac{1 - \cos x}{\sin x + x \cos x}$ at $x= 0$, we obtain $\frac{0}{0}$. So, we use l'H\^opital's again: 
+	\[
+	\lim_{x \to 0^+} \dfrac{1 - \cos x}{\sin x + x \cos x} \stackrel{\text{L.H.}}{=} \lim_{x \to 0^+} \dfrac{\sin x}{\cos x + (\cos x - x \sin x)}= \lim_{x \to 0^+} \dfrac{\sin x}{2 \cos x - x \sin x}= \dfrac{0}{2(1) - 0}= 0
+	\]
+Therefore, $\\lim_{x \to 0^+} \left( \dfrac{1}{\sin x} - \dfrac{1}{x} \right)= 0$. \pvspace{1.3cm}
+
+
+
+% 10/03
+\checkin{10/03} $\dfrac{d}{dt} \left( x \sin(xy) \right)= x' \sin(xy) + x \cos(xy) \big(x' y + y' x)$ \pspace
+
+\sol The statement is \textit{true}. If $x, y$ do not depend on $t$, then clearly $\dfrac{d}{dt} \left( x \sin(xy) \right)= 0$. However, if we do not know this to be the case, we can always implicitly differentiate, which will give us a correct answer regardless of whether $x, y$ depends on $t$. Assuming $x, y$ might depend on $t$, observe that $x \sin(xy)$ is a product of functions which depend on $t$. So, we need a product rule (which will also require a chain rule for the term $\sin(xy)$):
+	\[
+	\begin{aligned}
+	\dfrac{d}{dt} \left( x \sin(xy) \right)&= \dfrac{d}{dt}(x) \cdot \sin(xy) + x \cdot \dfrac{d}{dt} \big( \sin(xy) \big) \\
+	&= \frac{dx}{dt}\, \sin(xy) + x \cos(xy) \cdot \dfrac{d}{dt} (xy) \\
+	&= \frac{dx}{dt}\, \sin(xy) + x \cos(xy) \cdot \left( \dfrac{d}{dt}(x) \cdot y + x \cdot \dfrac{d}{dt}(y) \right) \\
+	&= \frac{dx}{dt}\, \sin(xy) + x \cos(xy) \cdot \left( \dfrac{dx}{dt}(x) \cdot y + x \cdot \dfrac{dy}{dt} \right) \\
+	&= x' \sin(xy) + x \cos(xy) \,(x' y+ y' x)
+	\end{aligned}
+	\] \pvspace{1.3cm}
+
+
+
+% 10/06
+\checkin{10/06} One can substitute anything that is constant throughout the problem into the equation to be differentiated in a related rates problem without introducing an error. \pspace
+
+\sol The statement is \textit{true}. This is easiest seen in an example. Suppose we had a problem where the side lengths of a right triangle were changing in time but one side was constant. Say that $a, b$ and $c$ were the legs and hypotenuse of the triangle, respectively, and that $a, c$ were changing in time but $b$ was not. We know that $a^2 + b^2= c^2$. Because $b$ is constant with respect to time, we could substitute it before differentiating with respect to time. Say that $b= 5$. We would then have\dots
+	\[
+	\begin{gathered}
+	a^2 + b^2= c^2 \\
+	a^2 + 5^2= c^2 \\
+	\dfrac{d}{dt} \,(a^2 + 5^2)= \dfrac{d}{dt} \,c^2 \\
+	2aa' + 0= 2cc' \\
+	2aa'= 2cc' \\
+	aa'= cc'
+	\end{gathered}
+	\]
+We did not \textit{have} to substitute this $b$-value. If we had not, we would have\dots
+	\[
+	\begin{gathered}
+	a^2 + b^2= c^2 \\
+	\dfrac{d}{dt} \,(a^2 + b^2)= \dfrac{d}{dt} \,c^2 \\
+	2aa' + 2bb'= 2cc' \\
+	aa' + bb'= cc'
+	\end{gathered}
+	\]
+Why is the same as the original answer above? If $b$ is constant with respect to time, then $b'= 0$ because $b$ is not changing. But then\dots
+	\[
+	\begin{gathered}
+	aa' + bb'= cc' \\
+	aa' + b(0)= cc' \\
+	aa'= cc' 
+	\end{gathered}
+	\]
+However, suppose that $b$ was \textit{not} constant with respect to time but we still had $b= 5$ at some moment in time. If we substituted it as above, we would obtain the same result as we did in the original answer, $aa'= cc'$, where we should have obtained $aa' + bb'= cc'$ as we did in the second answer. So, in a related rates problem, one can only substitute values which are constant with respect to the differentiated variable before differentiating. \pvspace{1.3cm}
+
+
+
+% 010/08
+\checkin{10/08} $\dfrac{d}{dx}\,(y^2 \cdot y')= 2y \cdot y' + y^2 \cdot y''$ \pspace
+
+\sol The statement is \textit{false}. The answer given in the problem statement has missed the $y'$ term produced by differentiating $y^2$ implicitly---likely because of the $y'$ term already present. We have\dots
+	\[
+	\dfrac{d}{dx}\,(y^2 \cdot y')= \dfrac{d}{dx}(y^2) \cdot y' + y^2 \cdot \dfrac{d}{dx}(y')= (2yy') \cdot y' + y^2 \cdot y''= 2y (y')^2 + y^2 \cdot y''
+	\] \pvspace{1.3cm}
+
+
+
+% 010/14
+\checkin{10/14} It is often easier to work with the square of the distance between two points rather than the distance itself, and this approach will often yield the same answer in the end. \pspace
+
+\sol The statement is \textit{true}. Although this is not necessarily universally true, this is often the case. Consider the example when we want to determine how the distance from a point $(x, y)$ to the point $(1, -2)$ changes in time. The distance is $d= \sqrt{(x - 1)^2 + \big(y - (-2) \big)^2}= \sqrt{(x - 1)^2 + (y + 2)^2}$. Then the rate of change of this distance in time is\dots
+	\[
+	d'= \dfrac{d}{dt}\, \sqrt{(x - 1)^2 + \big(y - (-2) \big)^2}= \dfrac{2(x - 1) x' + 2(y + 2) y'}{2 \sqrt{(x - 1)^2 + \big(y + 2 \big)^2}}= \dfrac{(x - 1) x' + (y + 2) y'}{\sqrt{(x - 1)^2 + \big(y + 2 \big)^2}}
+	\]
+Although this derivative is not necessarily that difficult, it is tedious. Compare to this to workin with $d^2= (x - 1)^2 + (y + 2)^2$. Differentiating in time, we have\dots
+	\[
+	\begin{gathered}
+	\dfrac{d}{dt}\, d^2= \dfrac{d}{dt}\, \left[ (x - 1)^2 + (y + 2)^2 \right] \\
+	2dd'= 2(x - 1) x' + 2(y + 2) y' \\
+	dd'= (x - 1) x' + (y + 2) y'
+	\end{gathered}
+	\]
+This is just as easy to find $d'$ for---perhaps easier---given $x, y, x', y'$ than the expression we found before. We can even find the same equation as above. We know that $d= \sqrt{(x - 1)^2 + (y + 2)^2}$. But then\dots
+	\[
+	\begin{gathered}
+	dd'= (x - 1) x' + (y + 2) y' \\
+	d'= \dfrac{(x - 1) x' + (y + 2) y'}{d} \\
+	d'= \dfrac{(x - 1) x' + (y + 2) y'}{\sqrt{(x - 1)^2 + (y + 2)^2}}
+	\end{gathered}
+	\]
+This same strategy will also be useful for optimization as well. \pvspace{1.3cm}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
