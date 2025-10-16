@@ -316,8 +316,8 @@ However, suppose that $b$ was \textit{not} constant with respect to time but we 
 
 
 
-% 010/14
-\checkin{10/14} It is often easier to work with the square of the distance between two points rather than the distance itself, and this approach will often yield the same answer in the end. \pspace
+% 010/13
+\checkin{10/13} It is often easier to work with the square of the distance between two points rather than the distance itself, and this approach will often yield the same answer in the end. \pspace
 
 \sol The statement is \textit{true}. Although this is not necessarily universally true, this is often the case. Consider the example when we want to determine how the distance from a point $(x, y)$ to the point $(1, -2)$ changes in time. The distance is $d= \sqrt{(x - 1)^2 + \big(y - (-2) \big)^2}= \sqrt{(x - 1)^2 + (y + 2)^2}$. Then the rate of change of this distance in time is\dots
 	\[
@@ -343,7 +343,14 @@ This same strategy will also be useful for optimization as well. \pvspace{1.3cm}
 
 
 
+% 010/15
+\checkin{10/15} If $x_0$ is a local minimum for $d^2= (x - 1)^2 + \big( f(x) + 4 \big)^2$, then it is a minimum for $d= \sqrt{(x - 1)^2 + \big( f(x) + 4 \big)^2}$. \pspace
 
+\sol The statement is \textit{true}. The distance between a point on a function, $f(x)$, i.e. $\big(x, f(x) \big)$, and a point $(1, -4)$ is given by\dots
+	\[
+	d= \sqrt{(x_1 - x_2)^2 + (y_1 - y_2)^2}= \sqrt{(x - 1)^2 + \big(f(x) - (-4) \big)^2}= \sqrt{(x - 1)^2 + \big(f(x) + 4 \big)^2}
+	\]
+While minimizing/maximizing $d^2$ instead of $d$ may result in different minimum/maximum \textit{values}, the location of these minimum/maximum values remains the same. That is, $d^2$ and $d$ have the same critical values. So, instead of minimizing/maximizing $d$, we can minimize/maximize $d^2$, which is simpler to work with because of the lack of square root, c.f. the previous check-in. \pvspace{1.3cm}
 
 
 
