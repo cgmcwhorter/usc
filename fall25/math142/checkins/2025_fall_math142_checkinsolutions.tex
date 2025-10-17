@@ -309,6 +309,18 @@ Because the series $\ds\sum_{n=5}^\infty \dfrac{1}{n}$ diverges by the $p$-test 
 
 
 
+% 10/16
+\checkin{10/16} The series $\ds\sum_{n=1}^\infty (-1)^n\, \dfrac{\sin^4(1/n)}{n}$ converges. \pspace
+
+\sol The statement is \textit{true}. Recall that an alternating series is a series of the form $\ds\sum^\infty (-1)^n a_n$, where $a_n$. Choosing $a_n= \dfrac{\sin^4(n)}{n}$, observe that $a_n > 0$. Therefore, $\ds\sum_{n=1}^\infty (-1)^n\, \dfrac{\sin^4(n)}{n}$ is an alternating series. The Alternating Series Test states that if $\ds\sum^\infty (-1)^n a_n$ is an alternating series, then $\ds\lim_{n \to \infty} a_n= 0$ and the sequence $\{ a_n \}$ is decreasing, then $\ds\sum^\infty (-1)^n a_n$ converges. Observe that $\ds\lim_{n \to \infty} \dfrac{\sin^4(1/n)}{n}= 0$ and because 
+	\[
+	\begin{aligned}
+	\dfrac{d}{dn} \left( \dfrac{\sin^4(1/n)}{n} \right)&= \dfrac{n \cdot (4 \sin^3(1/n) \cdot \cos(1/n) \cdot -\frac{1}{n^2}) - 1 \cdot \sin^4(1/n)}{n^2} \\
+	&= \dfrac{-\frac{1}{n} \cdot 4 \sin^3(1/n) \cos(1/n) - \sin^4(1/n)}{n^2} \\
+	&= -\dfrac{\sin(1/n)^3 \left(4 \cos(1/n) + n \sin(1/n) \right)}{n^3} < 0
+	\end{aligned}
+	\]
+Therefore, the sequence is decreasing. Therefore, by the Alternating Series Test, the series $\ds\sum_{n=1}^\infty (-1)^n\, \dfrac{\sin^4(1/n)}{n}$ converges. \pvspace{1.3cm}
 
 
 

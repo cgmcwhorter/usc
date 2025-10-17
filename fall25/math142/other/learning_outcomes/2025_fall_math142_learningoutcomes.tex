@@ -17,6 +17,7 @@
 Here are some of the learning outcomes for each lecture. That is, after lecture, the homework, and studying, what students should know from each lecture. Though this list is not necessarily \textit{completely} comprehensive, the most important ideas/concepts are contained in each list. Students should be sure to feel comfortable with each bullet point before an exam. These learning goals are broken down by class date---with the class topic given. The classes are given in reverse-chronological order for ease of access to the most recent class. You may also click any of the hyperlinks below to jump to that date. 
 
 \begin{itemize}
+\item \hyperref[10-16]{10/16, Thursday: Ratio \& Root Test}
 \item \hyperref[10-14]{10/14, Tuesday: Alternating Series Test \& Conditional Convergence}
 \item \hyperref[10-07]{10/07, Thursday: Direct Comparison Test}
 \item \hyperref[10-02]{10/02, Thursday: Limit Comparison Test}
@@ -32,6 +33,44 @@ Here are some of the learning outcomes for each lecture. That is, after lecture,
 \item \hyperref[08-26]{08/26, Tuesday: Integration-by-Parts}
 \item \hyperref[08-21]{08/21, Thursday: Integration-by-Parts}
 \item \hyperref[08-19]{08/19, Tuesday: $u$-Substitution Review}
+\end{itemize}
+
+% 10/16, Thursday: Ratio & Root Test
+\newpage
+\section*{10/16, Thursday: Ratio \& Root Test\label{10-16}}
+
+\begin{itemize}
+\item Know that $0!= 1$ and $n!= n \cdot (n - 1) \cdot (n - 2) \cdot \cdots \cdot 3 \cdot 2 \cdot 1$. 
+
+\item Be able to express factorials in terms of `lower factorials', e.g. $(n + 3)!= (n + 3)(n + 2)(n + 1) n!$. Know also that $\big(2(n + 1) \big)!= (2n + 2)!= (2n + 2)(2n + 1) (2n)!$.
+
+\item Understand and be able to state the Ratio Test: given a series $\ds\sum^\infty a_n$ and $\ds L= \lim_{n \to \infty} \left| \dfrac{a_{n+1}}{a_n} \right|$, then
+	\begin{itemize}
+	\item if $L < 1$, the series \textit{converges absolutely}
+	\item if $L > 1$, the series diverges
+	\item if $L= 1$ or the limit does not exist, the test is inconclusive. 
+	\end{itemize}
+
+\item Have an intuition for why the Ratio Test is true: if $L= \lim_{n \to \infty} \left| \dfrac{a_{n+1}}{a_n} \right|$, then for `large' $n$, each term is essentially $L$ times the previous term. But then the series starts to `look like' a geometric series with common ratio $L$. 
+
+\item Know which type of series the Ratio Test will likely be useful for, e.g. series with factorials, and which it will not be useful for, e.g. `rational-like' series (such as $\ds\sum \dfrac{n + 1}{n^2 - 3}$, etc.). 
+
+\item Be able to use the Ratio Test to determine whether a given series converges or diverges. 	
+
+\item Know that $e \approx 2.71828\ldots$, $\ds\lim_{n \to \infty} \left(1 + \frac{1}{n} \right)^n= e$, $\left(\frac{n + 1}{n} \right)^n= \left(1 + \frac{1}{n} \right)^n$, and $\left( \frac{n}{n + 1} \right)^n= \left( \frac{n + 1}{n} \right)^{-n}$ (so that $\ds\lim_{n \to \infty} \left( \frac{n}{n + 1} \right)^n= \lim_{n \to \infty} \left( \frac{n + 1}{n} \right)^{-n}= \lim_{n \to \infty} \left[\left( \frac{n + 1}{n} \right)^n \right]= e^{-1}= \frac{1}{e}\,\,$).
+
+\item Understand and be able to state the Root Test: given a series $\ds\sum^\infty a_n$ and $\ds L= \lim_{n \to \infty} \sqrt[n]{|a_n|}= \lim_{n \to \infty} |a_n|^{1/n}$, then
+	\begin{itemize}
+	\item if $L < 1$, the series \textit{converges absolutely}
+	\item if $L > 1$, the series diverges
+	\item if $L= 1$ or the limit does not exist, the test is inconclusive. 
+	\end{itemize}
+
+\item Know which type of series the Root Test will likely be useful for, e.g. series with only powers, and which it will not be useful for, e.g. series with addition/subtraction in the numerator/denominator, especially `rational-like' series (such as $\ds\sum \dfrac{n + 1}{n^2 - 3}$, etc.).  
+
+\item Be able to use the Root Test to determine whether a given series converges or diverges. 	
+
+\item Know that $\ds\lim_{n \to \infty} n^{1/n}= 1$ and $\ds\lim_{n \to \infty} a^{1/n}= 1$. 
 \end{itemize}
 
 % 10/14, Tuesday: Alternating Series Test & Conditional Convergence
