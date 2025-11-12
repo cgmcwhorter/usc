@@ -324,6 +324,73 @@ Therefore, the sequence is decreasing. Therefore, by the Alternating Series Test
 
 
 
+% 10/21
+\checkin{10/21} The series $\ds\sum_{n=1}^\infty \left( \dfrac{99n}{100n + 1} \right)^n$ converges. \pspace
+
+\sol The statement is \textit{true}. Using the Ratio Test, we have\dots
+	\[
+	L:= \lim_{n \to \infty} \left[ \left( \dfrac{99n}{100n + 1} \right)^n \right]^{1/n}= \lim_{n \to \infty} \dfrac{99n}{100n + 1}= \dfrac{99}{100} < 1
+	\]
+Because $L < 1$, the series converges absolutely. \pvspace{1.3cm}
+
+
+
+% 10/30
+\checkin{10/30} If a power series $\ds \sum_{n=0}^\infty a_n (x - c)^n$ converges on the interval $(-5, 3]$, then the center of the power series is $c= -1$ and the radius of convergence is 4. Moreover, the power series diverges for every $x$ with $x \leq -5$ or $x > 3$. \pspace
+
+\sol The statement is \textit{true}. In the case of a finite interval, the center should be the center of the interval. The center of $(-5, 3]$ is $\frac{-5 + 3}{2}= \frac{-2}{2}= -1$. Therefore, the center is $c= -1$. The radius of convergence should be half the length of this interval, which is $\frac{3 - (-5)}{2}= \frac{8}{2}= 4$. We know that the power series converges on the interval of convergence and diverges for all other $x$. The $x$-values which are not in $(-5, 3]$ are precisely $x \leq -5$ or $x > 3$. \pvspace{1.3cm}
+
+
+
+% 11/04
+\checkin{11/04} If a power series $\ds\sum_{n=0}^\infty a_n x^n$ converges for $x= -5$ and diverges for $x= 10$, then the power series converges when $x= 4$. \pspace
+
+\sol The statement is \textit{true}. We can see that the center of the power series is $x= 0$. We know the interval of convergence of a power series is an interval about its center. We know the interval of convergence is larger than just $\{ 0 \}$. So, the interval of convergence must at least contain $(-a, a)$ for some $a$---an interval of some size contained about a center of $x= 0$. The radius of convergence of power series is the distance from the center for which the power series is guaranteed to converge. Because the power series converges for $x= -5$, we know that $R \geq 5$---the distance from $x= -5$ to $x= 0$. But we know also that the series diverges at $x= 10$. So, we know that $R \leq 10$---the distance from $x= 0$ to $x= 10$. Therefore, $5 \leq R \leq 10$. But then the interval of convergence contains at least $(-5, 5)$ and is contained within $[-10, 10)$. [Do you see why?] But then the power series must converge for $x= 4$ because $4 \in (-5, 5)$. \pvspace{1.3cm}
+
+
+
+% 11/06
+\checkin{11/06} The Taylor series for $f(x)= \dfrac{1}{1 - x}$ centered at $x= 0$ is $\ds\sum_{n=0}^\infty x^n$ and has interval of convergence $(-1, 1)$. Furthermore, the Taylor series converges to $f(x)$ on the interval $(-1, 1)$. \pspace
+
+\sol The statement is \textit{true}. We know from our table of Taylor series, that the Taylor series for $\frac{1}{1 - x}$ centered at $x= 0$ is $\ds\sum_{n=0}^\infty x^n$. Of course, one can find this: we know that $\frac{d^n}{dx^n} \left( \frac{1}{1 - x} \right)= \frac{n!}{(1 - x)^{n+1}}$, so $f^{(n)}(0)= \frac{n!}{(1 - 0)^{n+1}}= n!$. Therefore, the Taylor series is\dots
+	\[
+	T(x)= \sum_{n=0}^\infty \dfrac{f^{(n)}(0)}{n!} \,(x - 0)^n= \sum_{n=0}^\infty \dfrac{f^{(n)}(0)}{n!} \,(x - 0)^n= \sum_{n=0}^\infty \dfrac{n!}{n!} \,x^n= \sum_{n=0}^\infty x^n
+	\]
+One can easily use the Ratio or Root Test to show that it must be that $|x| < 1$, i.e. $-1 < x < 1$. If $x= -1$, the series is $\ds\sum_{n=0}^\infty (-1)^n$, which diverges, and if $x= 1$, the series is $\ds\sum_{n=0}^\infty 1^n$, which diverges. Therefore, the interval of convergence is $(-1, 1)$. We can see that this series is geometric with common ratio $x$. But then for $|x| < 1$, we have $\ds\sum_{n=0}^\infty x^n= \dfrac{x^0}{1 - x}= \dfrac{1}{1 - x}$. \pvspace{1.3cm}
+
+
+
+% 11/11
+\checkin{11/11} 
+	\[
+	\pi= 4 - \dfrac{4}{3} + \dfrac{4}{5} - \dfrac{4}{7} + \dfrac{4}{9} - \dfrac{4}{11} + \cdots
+	\]
+
+\sol The statement is \textit{true}. First, observe that\dots
+	\[
+	4 - \dfrac{4}{3} + \dfrac{4}{5} - \dfrac{4}{7} + \dfrac{4}{9} - \dfrac{4}{11} + \cdots= 4 \left( 1 - \dfrac{1}{3} + \dfrac{1}{5} - \dfrac{1}{7} + \dfrac{1}{9} - \dfrac{1}{11} + \cdots \right)
+	\]
+Recall the Taylor series for $\arctan(x)$ centered at $x= 0$ is $\ds\sum_{n=1}^\infty (-1)^n \, \dfrac{x^{2n+1}}{2n + 1}$ and is valid for $x \in [-1, 1]$. But then\dots
+	\[
+	\dfrac{\pi}{4}= \arctan(1)= \sum_{n=1}^\infty (-1)^n \, \dfrac{x^{2n+1}}{2n + 1} \bigg|_{x=1}= 1 - \dfrac{1}{3} + \dfrac{1}{5} - \dfrac{1}{7} + \dfrac{1}{9} - \dfrac{1}{11} + \cdots
+	\]
+Therefore, we have\dots
+	\[
+	\pi= 4 \cdot \dfrac{\pi}{4}= 4 \left( 1 - \dfrac{1}{3} + \dfrac{1}{5} - \dfrac{1}{7} + \dfrac{1}{9} - \dfrac{1}{11} + \cdots \right)= 4 - \dfrac{4}{3} + \dfrac{4}{5} - \dfrac{4}{7} + \dfrac{4}{9} - \dfrac{4}{11} + \cdots
+	\] \pvspace{1.3cm}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

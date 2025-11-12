@@ -354,6 +354,115 @@ While minimizing/maximizing $d^2$ instead of $d$ may result in different minimum
 
 
 
+% 10/17
+\checkin{10/17} The area of an equilateral triangle with side length $s$ is $\frac{\sqrt{3}}{4}\, s^2$. \pspace
+
+\sol The statement is \textit{true}\dots there's not much else to say. \pvspace{1.1cm}
+
+
+
+% 10/29
+\checkin{10/29} Let $f(x)= \dfrac{2x + 5}{x - 3}$. Observe that $f(2)= -9$ and $f(4)= 13$, $-9 < 0 < 13$, and $-9 < 2 < 13$. By the Intermediate Value Theorem, there exists $c_1 \in [2, 4]$ such that $f(c_1)= 0$ and there also exists $c_2 \in [2, 4]$ such that $f(c_2)= 2$. \pspace
+
+\sol The statement is \textit{false}. Recall that the Intermediate Value Theorem (IVT) states the following: if $f(x)$ is continuous on $[a, b]$ and $y$ is between $f(a)$ and $f(b)$, there exists $c \in [a, b]$ such that $f(c)= y$; that is, if a continuous function takes on two different values on an interval, it takes on every value between those values at some point on the interval. But the function needs to be continuous. Observe that the given $f(x)$ is not continuous at $x= 3$---it is not even defined there. So, $f(x)$ is not continuous on $[2, 4]$ because $3 \in [2, 4]$. In fact, there is a $x$-value such that $f(x)= 0$, namely $x= -\frac{5}{2}$ but this value is not in $[2, 4]$. While it is true that $-9 < 2 < 13$, the IVT does not apply because $f(x)$ is not continuous on $[2, 4]$. Furthermore, there is no $x$-value such that $f(x)= 2$. If there were, then $\frac{2x + 5}{x - 3}= 2$. Multiplying by $x - 3$ (so long as $x \neq 3$), we have $2x + 5= 2x - 6$, which implies that $5= -6$, which is impossible. In fact, $y= 2$ is a horizontal asymptote for $f(x)$ as $\ds\lim_{x \to \pm \infty} f(x)= 2$. \pvspace{0.8cm}
+
+
+
+% 10/31
+\checkin{10/31} If 30 people enter a room over 5 hours, then there was an hour where \textit{at least} 6 people entered the room but not necessarily an hour where \textit{exactly} 6 people entered the room. \pspace
+
+\sol The statement is \textit{true}. Recall that the Mean Value Theorem (MVT) states the following: if $f(x)$ is continuous on $[a, b]$ and differentiable on $(a, b)$, then there exists $c \in (a, b)$ such that $f'(c)= \frac{f(b) - f(a)}{b - a}$; that is, if $f(x)$ is continuous on $[a, b]$ and differentiable on $(a, b)$, then there is at least one point on the interval $(a, b)$ where the instantaneous rate of change is the average rate of change, i.e. the slope of the tangent line is parallel to the line through the endpoints of the function on the interval. Let $f(x)$ be the number of people that have entered the room $x$~hours from now. We know $f(0)= 0$ and $f(5)= 30$. The average rate of change is $\frac{f(5) - f(0)}{5 - 0}= \frac{30}{5}= 6$. However, the MVT does not apply because the function $f(x)$ is not continuous (and hence not differentiable) on $[0, 5]$. Observe that $f(x)$ is a step function---it changes by integer values. For instance, if a person enters 2 hours from now, $f(2)= 1$. But $f(x)= 0$ for $x < 2$, so that $f(x)$ has a jump discontinuity at $x= 2$. It could be that 30 people entered the room at the fifth hour. So, there need not be an hour where \textit{exactly} 6 people entered the room. However, there must be an hour where \textit{at least} 6 people entered the room. If not, then every hour 5 or less people entered the room. But then after 5 hours, at most $5 \cdot 5= 25$ people entered the room, contradicting the fact that 30~people entered the room. The fact that there must be an hour where \textit{at least} 6 people entered the room is a consequence of the `discrete version' of the MVT---the Pigeonhole Principle: if there are $n$ items placed into $m$ containers with $n > m$, then at least one container must contain more than one item. \pvspace{1.3cm}
+
+
+
+% 11/03
+\checkin{11/03} $\ds\int_a^b c \;dx= c(b - a)$ \pspace
+
+\sol The statement is \textit{true}. Recall that the definite integral $\ds\int_a^b f(x) \;dx$ is the area `under' the curve $f(x)$ (area between the curve $f(x)$ and the $x$-axis) between $x= a$ and $x= b$, where area under the $x$-axis is treated as `negative area.' We have $f(x)= c$, whose graph is a horizontal line. But then $\ds\int_a^b f(x) \;dx$ is the area of a rectangle with area $A= \ell w= c(b - a)$. Therefore, $\ds\int_a^b f(x) \;dx= c(b -a)$. \par
+	\[
+	\fbox{%
+	\begin{tikzpicture}[scale=0.6,every node/.style={scale=0.5}]
+	\draw[draw=none,fill=gray!30,opacity=0.7] (0.5,0) -- (0.5,1.3) -- (2,1.3) -- (2,0) -- (0.5,0);
+	\draw[line width=0.022cm,->] (0,-3) -- (0,3);
+	\draw[line width=0.022cm,->] (-3,0) -- (3,0);
+	\foreach \x in {-3,-2.5,...,3} {
+		\draw[line width=0.01,gray] (\x,-3) -- (\x,3);
+		\draw[line width=0.01,gray] (-3,\x) -- (3,\x);
+	};
+	\draw[line width=0.04cm] (-3,1.3) -- (3,1.3);
+	\draw[line width=0.04cm] (0.5,-0.1) -- (0.5,0.1);
+	\draw[line width=0.04cm] (2,-0.1) -- (2,0.1);
+	\node at (0.3,1.6) {\huge$c$};
+	\node at (0.3,-0.2) {\huge$a$};
+	\node at (2.2,-0.2) {\huge$b$};
+	\end{tikzpicture}
+	}
+	\]
+Alternatively, we can use the Fundamental Theorem of Calculus to compute the integral:
+	\[
+	\int_a^b c \;dx= cx \bigg|_{x=a}^{x=b}= c(b - a)
+	\] \pvspace{1.3cm}
+
+
+
+% 11/05
+\checkin{11/05} If $f(x)$ is a differentiable function on $[a, b]$, then $\ds\int_a^b f'(x) \;dx$ gives the net change of $f(x)$ on the interval $[a, b]$. \pspace
+
+\sol The statement is \textit{true}. We know that $f'(x)$ gives the instantaneous rate of change of $f(x)$ at $x$. If the integral exists, we know that $\ds\int_a^b f'(x) \;dx$ is the limit---for example---of the left-hand sums. Simply put, the area of each box in the left-hand sum is a small amount of change in $f(x)$ because the width of each box is a $\Delta x$ and the height of each box is $f'(x)$. But then $A= f'(x) \Delta x= \Delta f$. Summing all these areas then sums the small amount of change in $f(x)$ at each $x$---finding the total change in $f(x)$. So, $\ds\int_a^b f'(x) \;dx$ computes the net change in $f(x)$ over $[a, b]$. \pspace
+
+Formally, if we use an approximation to the integral with $n$ rectangles (say a left-hand sum), the width of each rectangle is $\Delta x= \frac{b - a}{n}$. The $x$-values we use are $x_i= a + i \,\Delta x= a + i \cdot \frac{b - a}{n}$. So, the height of each rectangle is given by $f'(x_i)= f \left( a + i \cdot \frac{b - a}{n} \right)$. Each rectangle then has area $A_i= \ell w= f' \left( a + i \cdot \frac{b - a}{n} \right) \cdot \Delta x$. But then\dots
+	\[
+	\ds\int_a^b f'(x) \;dx:= \lim_{n \to \infty} \sum_{i=0}^{n-1} A_i= \lim_{n \to \infty} \sum_{i=0}^{n-1} f' \left( a + i \cdot \frac{b - a}{n} \right) \Delta x_i
+	\]
+It follows immediately from the differentiability of $f$ that $f \left( a + i \cdot \frac{b - a}{n} \right) - f(a) \approx f' \left( a + i \cdot \frac{b - a}{n} \right) \Delta x_i$; that is, $f' \left( a + i \cdot \frac{b - a}{n} \right) \Delta x_i$ is the change in $x$ from $x= a$ to $x= a + i \cdot \frac{b - a}{n}$. But then $A_i$ represents the approximate net change in $f(x)$ from $x= a$ to $x= a + i \cdot \frac{b - a}{n}$. Summing over all these rectangles and taking the limit, we see that we have summed the changes in $f(x)$ from $x= a$ to $x= b$. Therefore, $\ds\int_a^b f'(x) \;dx:= \lim_{n \to \infty} \sum_{i=0}^{n-1} A_i$ is the net change in $f(x)$. \pvspace{1.3cm}
+
+
+
+% 11/07
+\checkin{11/07} $\ds\int (5 - \sin x + e^x) \;dx= 5x + \cos x + e^x$ \pspace
+
+\sol The statement is \textit{false}. Recall that the indefinite integral $\ds\int f(x) \;dx$ asks the question: ``What is the most general function whose derivative is $f(x)$?'' That is, $\ds\int f(x) \;dx$ is the most general antiderivative for $f(x)$. If $F(x)$ is an antiderivative for $f(x)$, i.e. $F'(x)= f(x)$, then $\ds\int f(x) \;dx= F(x) + C$---but the `$+C$' is necessary. Antiderivatives are only unique up to a constant. The given solution is missing the `$+C$.' We should have\dots
+	\[
+	\int (5 - \sin x + e^x) \;dx= 5x + \cos x + e^x + C
+	\] \pvspace{1.3cm}
+
+
+
+\newpage
+
+
+
+% 11/10
+\checkin{11/10} Both $9 - \cos^2 x$ and $\dfrac{1 - \cos(2x)}{2}$ are antiderivatives for $\sin(2x)$. Therefore, $\ds\int \sin(2x) \;dx= (9 - \cos^2 x) + C$ and $\ds\int \sin(2x) \;dx= \dfrac{1 - \cos(2x)}{2} + C$. \pspace
+
+\sol The statement is \textit{true}. Recall that a function $F(x)$ is an antiderivative for $f(x)$ if $F'(x)= f(x)$. So, we only need to prove that the derivative of the given functions is $\sin(2x)$. Making use of the identity $\sin(2x)= 2 \sin x \cos x$, observe that\dots
+	\[
+	\begin{aligned}
+	\dfrac{d}{dx} (9 - \cos^2 x)&= 0 - 2 \cos x \cdot -\sin x= 2 \sin x \cos x= \sin(2x) \\[0.3cm]
+	\dfrac{d}{dx} \left( \dfrac{1 - \cos(2x)}{2} \right)&= 0 - \dfrac{-\sin(2x)}{2} \cdot 2= \sin(2x)
+	\end{aligned}
+	\]
+Therefore, they are both antiderivatives for $\sin(2x)$. This implies that\dots
+	\[
+	\begin{aligned}
+	\int \sin(2x) \;dx&= (9 - \cos^2 x) + C \\[0.3cm]
+	\int \sin(2x) \;dx&= \dfrac{1 - \cos(2x)}{2} + C
+	\end{aligned}
+	\]
+Because antiderivatives are unique up to a constant, this implies that $9 - \cos^2 x$ and $\dfrac{1 - \cos(2x)}{2}$ only differ by a constant. Using the identities $\sin(2x)= \frac{1 - \cos(2x)}{2}$ and $\sin^2(x) + \cos^2(x)= 1$ (so that $\sin^2 x= 1 - \cos^2 x$), observe that\dots
+	\[
+	8 + \dfrac{1 - \cos(2x)}{2}= 8 + \sin^2 x= 8 + (1 - \cos^2 x)= 9 - \cos^2 x
+	\] \pvspace{1.3cm}
+
+
+
+
+
+
+
+
+
+
 
 
 
