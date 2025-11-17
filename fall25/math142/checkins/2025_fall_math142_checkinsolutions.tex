@@ -381,9 +381,27 @@ Therefore, we have\dots
 
 
 
+% 11/13
+\checkin{11/13} Using more terms of the Taylor series for $f(x)$ always results in a better approximation for $x$ values `near' the center. \pspace
 
-
-
+\sol The statement is \textit{false}. The approximation will never improve if we do not use $x$-values in the interval of convergence for our Taylor series. Even if we consider such an $x$-value, there is no guarantee that the Taylor series converges to the function. From the Taylor Remainder Theorem, we know the error in replacing $f(x)$ with $T_n(x)$ is given by $R(x)= \dfrac{f^{(n+1)}(a)}{n!}\, (x - c)^{n+1}$, where $a$ is some value between $x$ and $c$ (the center). But as one uses more and more terms, i.e. increases $n$, there is no guarantee that for a given $x$ the error shrinks, i.e. $\ds\lim_{n \to \infty} \dfrac{f^{(n+1)}(a)}{n!}\, (x - c)^{n+1}= 0$. This depends on the growth of the $x - c$ term and the values of the $(n+1)$-st derivative. Some Taylor series do not converge to the function. For instance, consider the function 
+	\[
+	f(x)=
+	\begin{cases}
+	e^{-1/x}, & x > 0 \\
+	0, & x \leq 0
+	\end{cases}
+	\]
+This is a function whose Taylor polynomial at $x= 0$ is $T(x)= 0$. But $f(x) > 0$ for all $x > 0$. Therefore, $T(x)$ fails to converge to $f(x)$ for all positive values. No amount of terms of the Taylor series will improve the error. We can prove this fact. First, observe that all the derivatives of $f(x)$ exist. We claim that for $x > 0$, $f^{(n)}(x)= p_n(1/x) e^{-1/x}$, where $p_n(x)$ is a polynomial. For $n= 0$, we have $f^{(0)}(x)= e^{-1/x}= 1 \cdot e^{-1/x}$ so that we can take $p_0(x)= 1$. Assume the result is true for $n= 0, 1, 2, \ldots, k$. For $x > 0$, we have\dots
+	\[
+	\begin{aligned}
+	f^{(k+1)}(x)&= \dfrac{d}{dx} \, f^{(k)}(x) \\
+	&=\dfrac{d}{dx} \, \left( p_k(1/x) e^{-1/x} \right) \\
+	&= \left( p_k'(1/x) \cdot -\dfrac{1}{x^2} \right) \cdot e^{-1/x} + p_k(1/x) \cdot \left( e^{-1/x} \cdot \dfrac{1}{x^2} \right) \\
+	&= e^{-1/x} \left( \dfrac{p_k(1/x) - p_k'(1/x)}{x^2} \right)
+	\end{aligned}
+	\]
+But $\dfrac{p_k(1/x) - p_k'(1/x)}{x^2}$ is also a polynomial in $1/x$, so we can take $p_{k+1}(x)= \dfrac{p_k(1/x) - p_k'(1/x)}{x^2}$. Therefore, $f^{(k+1)}(x)= p_{k+1} e^{-1/x}$. The result then follows by induction. We have $\ds\lim_{x \to 0^+} p_n(1/x) e^{-1/x}= \lim_{x \to \infty} p_n(x) e^{-x}$. It follows easily from l'H\^opital's rule that $\ds\lim_{x \to \infty} x^n e^{-x}= \ds\lim_{x \to \infty} \dfrac{x^n}{e^x}= 0$ for any integer $n \geq 0$. But then $\ds\lim_{x \to 0^+} p_n(1/x) e^{-1/x}= \lim_{x \to \infty} p_n(x) e^{-x}= 0$. This matches the derivative of $f(x)$ for $x < 0$. Therefore, $f(x)$ is smooth at $x= 0$, i.e. infinitely differentiable with continuous derivatives at $x= 0$. [This uses the fact that $e^{-1/x}$ is smooth for $x > 0$.] Now consider the Taylor series for $f(x)$ centered at $x= 0$. From the work above, we know all the $n$th derivatives of $f(x)$ at $x= 0$ are 0. But this forces $\ds T(x)= \sum_{n=0}^\infty \dfrac{f^{(n)}(0)}{n!} \,(x - 0)^n= 0$ because $f^{(n)}(0)= 0$ for all $n$. \pvspace{1.3cm}
 
 
 

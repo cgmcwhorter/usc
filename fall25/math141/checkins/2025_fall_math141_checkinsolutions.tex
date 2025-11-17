@@ -456,19 +456,51 @@ Because antiderivatives are unique up to a constant, this implies that $9 - \cos
 
 
 
+% 11/12
+\checkin{11/12} Suppose two curves $f(x)$ and $g(x)$ intersect only at $x= a$ and $x= b$. The area between them is \textit{always} then given by $\ds\int_a^b |f(x) - g(x)| \;dx$. \pspace
+
+\sol The statement is \textit{true}. If $f(x)$ and $g(x)$ intersect only at $x= a$ and $x= b$, the region `between', i.e. bound by, the curves is precisely on the interval $[a, b]$. Intuitively, we want to be sure that the difference is taken in an order so that the difference is nonnegative---forcing the area to be nonnegative. That is, we want to be sure that the integrand is ``top minus bottom.'' However, taking the absolute value forces the value of the difference to be nonnegative---taking care of this problem for us. Rigorously, if $f(x) \geq g(x)$ on $[a, b]$, the area would be given by $\ds\int_a^b f(x) - g(x) \;dx$. But if $f(x) \geq g(x)$, then $f(x) - g(x) \geq 0$ so that $|f(x) - g(x)|= f(x) - g(x)$. But then $\ds\int_a^b |f(x) - g(x)| \;dx= \int_a^b f(x) - g(x) \;dx$. If $g(x) \geq f(x)$ on $[a, b]$, the area would be given by $\ds\int_a^b g(x) - f(x) \;dx$. But if $g(x) \geq f(x)$, then $g(x) - f(x) \geq 0$, i.e. $f(x) - g(x) \leq 0$ so that $|f(x) - g(x)|= -\big( f(x) - g(x) \big)= g(x) - f(x)$. But then $\ds\int_a^b |f(x) - g(x)| \;dx= \int_a^b g(x) - f(x) \;dx$. Therefore, the area is always given by $\ds\int_a^b |f(x) - g(x)| \;dx$. \pvspace{1.3cm}
 
 
 
+% 11/14
+\checkin{11/14} If $\ds\int_a^b \big( f(x) - g(x) \big) \;dx= -5$, then the area between $f(x)$ and $g(x)$ is $5$. \pspace
+
+\sol The statement is \textit{false}. When finding area between curves, we know that the area must be nonnegative. Certainly, an answer of $-5$ would be incorrect. Many would say when you get a negative, one must have simply done ``bottom minus top'' instead, so that the correct answer must be the negative of what was obtained. However, the error may not be that simple. For instance, consider the example below with $f(x)$ the piecewise function shown ($1$ for $0 \leq x \leq 1$ and $-1$ for $x > 1$) and $g(x)= 0$. \par
+	\[
+	\fbox{%
+	\begin{tikzpicture}[scale=0.7,every node/.style={scale=0.5}]
+	\begin{axis}[
+	grid=both,
+	axis lines=middle,
+	ticklabel style={fill=blue!5!white},
+	xmin= -0.5, xmax=7.5,
+	ymin= -1.5, ymax=1.5,
+	xtick={-1,0,...,11},
+	ytick={-8,-7,...,2},
+	minor tick = {-9,-8,...,3},
+	xlabel=\(x\),ylabel=\(y\),
+	samples=20]
+	\node at (7.2,-1.2) {\scalebox{1.6}{$f(x)$}};
+	\node at (6.4,0.2) {\scalebox{1.6}{$g(x)$}};
+	\draw[draw=none,fill=gray!30,opacity=0.6] (0,0) -- (1,0) -- (1,1) -- (0,1) -- (0,0);
+	\draw[draw=none,fill=gray!30,opacity=0.6] (1,0) -- (1,-1) -- (7,-1) -- (7,0) -- (1,0);
+	\addplot[thick, samples=5, domain= 0:1] {1};
+	\addplot[thick, samples=5, domain= 1:7] {-1};
+	\node at (0.45,0.5) {\scalebox{1.6}{$1$}};
+	\node at (4,-0.5) {\scalebox{1.6}{$-6$}};
+	\end{axis}
+	\end{tikzpicture}
+	} 
+	\]
+We can see that the area between these curves is 7---the sum of the area 1 rectangle `on the left' and the area $6$ rectangle `on the right'. However, we can see that $\ds\int_0^7 \big( f(x) - g(x) \big) \;dx= 1 + (-6)= -5$ because the integral treats area under the $x$-axis as negative. The problem is that to have properly computed the area, one needed to compute two integrals: $\ds\int_0^1 \big( f(x) - g(x) \big) \;dx + \ds\int_1^7 \big( g(x) - f(x) \big) \;dx$. This is because which curve is on `top' flips over the interval $[0, 7]$. `On the left', the curve $f(x)$ is `on top' while on the interval $[1, 7]$ the function $g(x)$ is `on top.' Therefore, obtaining a negative value for an area between curves does not simply mean one interchanged the roles of `top' and `bottom'. \pvspace{1.3cm}
 
 
 
+% 11/17
+\checkin{11/17} Consider the integral $\ds\int \dfrac{e^{x^2}}{x} \;dx$. We can use $u$-substitution to compute this integral because if we chose $u= x^2$, the derivative $du= 2x \;dx$ is seen up to a constant multiple in the integrand. \pspace
 
-
-
-
-
-
-
+\sol The statement is \textit{false}. For $u$-substitution to work, one often needs the derivative of $u$ to be found in the integrand. We see that if $u= x^2$, then $du= 2x \;dx$. We also see the $du$ up to a multiple in the integrand---the $x$ in the denominator. However, we want a multiple of $2x$---not $\frac{1}{2x}$. Even if this $x$-term in the denominator were to be cancelled by the $du$ portion, we would then obtain the integral $\ds\int e^{x^2} \;dx$, which has no elementary antiderivative. Remember, $u$-substitution ought to convert an integral we cannot compute into one we can---or at least one which is simpler. In fact, this integral is equivalent to the exponential integral $\ds \mathrm{Ei}(x)$, $\ds\int \dfrac{e^x}{x} \;dx$, which has no elementary antiderivative. \pvspace{1.3cm}
 
 
 
