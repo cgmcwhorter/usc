@@ -1,0 +1,282 @@
+\documentclass[12pt,letterpaper]{exam}
+\usepackage[lmargin=1in,rmargin=1in,tmargin=1in,bmargin=1in]{geometry}
+\usepackage{../style/exams}
+
+% -------------------
+% Course & Exam Information
+% -------------------
+\newcommand{\course}{MATH 142: Exam 3}
+\newcommand{\term}{Fall ---\textsubscript{\textsubscript{1}} 2025}
+\newcommand{\examdate}{11/20/2025}
+\newcommand{\timelimit}{75 Minutes}
+
+\setbool{hideans}{true} % Student: True; Instructor: False
+
+\usepackage{cancel}
+\usepackage{array}
+\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+
+% -------------------
+% Content
+% -------------------
+\begin{document}
+
+\examtitle
+\instructions{Write your name on the appropriate line on the exam cover sheet. This exam contains \numpages\ pages (including this cover page) and \numquestions\ questions. Check that you have every page of the exam. Answer the questions in the spaces provided on the question sheets. Be sure to answer every part of each question and show all your work. If you run out of room for an answer, continue on the back of the page --- being sure to indicate the problem number.
+} 
+\scores
+\bottomline
+\newpage
+
+
+% -------------------
+% Questions
+% -------------------
+\begin{questions}
+
+% Question 1
+\newpage
+\question[18] Fill out the table of Maclaurin series below.
+	\begin{table}[!ht]
+	\hspace{-0.6cm}
+	\begin{tabular}{C{1.71cm}C{0.2cm}C{5cm}C{0.2cm}C{5cm}C{0.2cm}C{2.8cm}}
+	{\bfseries Function} && {\bfseries First Two Nonzero Terms} && {\bfseries Series} && {\bfseries Interval of Convergence} \\ \hline
+	\\[1.5cm]
+	$\dfrac{1}{1 - x}$ && \psol{$1 + x$} && \psol{$\ds\sum_{n=0}^\infty x^n$} && \psol{$(-1, 1)$} \\ \cline{3-3} \cline{5-5} \cline{7-7}
+	\\[1.5cm]
+	$e^x$ && \psol{$1 + x$} && \psol{$\ds\sum_{n=0}^\infty \dfrac{x^n}{n!}$} && \psol{$(-\infty, \infty)$} \\ \cline{3-3} \cline{5-5} \cline{7-7}
+	\\[1.5cm]
+	$\sin(x)$ && \psol{$x - \dfrac{x^3}{3!}$} && \psol{$\ds\sum_{n=0}^\infty (-1)^n\, \dfrac{x^{2n + 1}}{(2n + 1)!}$} && \psol{$(-\infty, \infty)$} \\ \cline{3-3} \cline{5-5} \cline{7-7}
+	\\[1.5cm]
+	$\cos(x)$ && \psol{$1 - \dfrac{x^2}{2!}$} && \psol{$\ds\sum_{n=0}^\infty (-1)^n\, \dfrac{x^{2n}}{(2n)!}$} && \psol{$(-\infty, \infty)$} \\ \cline{3-3} \cline{5-5} \cline{7-7}
+	\\[1.5cm]
+	$\ln(1 + x)$ && \psol{$x - \dfrac{x^2}{2}$} && \psol{$\ds\sum_{n=1}^\infty (-1)^{n+1}\, \dfrac{x^n}{n}$} && \psol{$(-1, 1]$} \\ \cline{3-3} \cline{5-5} \cline{7-7}
+	\\[1.5cm]
+	$\arctan(x)$ && \psol{$x - \dfrac{x^3}{3}$} && \psol{$\ds\sum_{n=0}^\infty (-1)^n \, \dfrac{x^{2n + 1}}{2n + 1}$} && \psol{$[-1, 1]$} \\ \cline{3-3} \cline{5-5} \cline{7-7}
+	\end{tabular}
+	\end{table}
+
+
+
+% Question 2
+\newpage
+\question[16] Showing all your work, find the Taylor series for $f(x)= \dfrac{3}{x^2}$ centered at $x= -1$. You may \textit{not} use any known Taylor series to find this Taylor series. It must be derived ``from scratch.'' You \textit{do not} need to find the interval of convergence for this Taylor series but you should simplify the resulting series. \pspace
+
+\vsol{\itshape We know that the Taylor series for $f(x)$ centered at $x= c$ is given by $\ds\sum_{n=0}^\infty \dfrac{f^{(n)}(c)}{n!} \,(x - c)^n$. We know that the center is $c= -1$. So, we have $\ds\sum_{n=0}^\infty \dfrac{f^{(n)}(-1)}{n!} \,\big(x - (-1) \big)^n= \sum_{n=0}^\infty \dfrac{f^{(n)}(-1)}{n!} \,(x + 1)^n$. We need only find the value of $f^{(n)}(-1)$ for all $n$. We compute several derivatives:
+	\[
+	\begin{aligned}
+	f(x)&= \dfrac{3}{x^2} \bigg|_{x=-1}= \dfrac{3}{(-1)^2}= 3= 3 \cdot 1 \\[0.3cm]
+	f'(x)&= \dfrac{3 \cdot -2}{x^3} \bigg|_{x=-1}= \dfrac{3 \cdot -2}{(-1)^3}= 3 \cdot 2= 3 \cdot(1 \cdot 2) \\[0.3cm]
+	f''(x)&= \dfrac{3 \cdot -2 \cdot -3}{x^4} \bigg|_{x=-1}= 3 \cdot 2 \cdot 3= 3 \cdot (1 \cdot 2 \cdot 3) \\[0.3cm]
+	f'''(x)&= \dfrac{3 \cdot -2 \cdot -3 \cdot -4}{x^5} \bigg|_{x=-1}= \dfrac{3 \cdot -2 \cdot -3 \cdot -4}{(-1)^5}= 3 \cdot 2 \cdot 3 \cdot 4= 3 \cdot (1 \cdot 2 \cdot 3 \cdot 4) \\[0.3cm]
+	f^{(4)}(x)&= \dfrac{3 \cdot -2 \cdot -3 \cdot -4 \cdot -5}{x^6} \bigg|_{x=-1}= \dfrac{3 \cdot -2 \cdot -3 \cdot -4 \cdot -5}{(-1)^6}= 3 \cdot 2 \cdot 3 \cdot 4 \cdot 5= 3 \cdot (1 \cdot 2 \cdot 3 \cdot 4 \cdot 5)
+	\end{aligned}
+	\]
+Each derivative has a 3 in its product and then a term that resembles a factorial. At the $n$th derivative, the additional terms in the product seem to be $(n + 1)!$. We can check this. If $n= 2$, we have $f''(-1)= 3 \cdot (1 \cdot 2 \cdot 3)= 3 \cdot 3!= 3 \cdot (n+1)!$. If $n= 3$, we have $f'''(-1)= 3 \cdot (1 \cdot 2 \cdot 3 \cdot 4)= 3 \cdot 4!= 3 \cdot (n+1)!$. One can verify that the other derivatives computed also match. So, we have $f^{(n)}(-1)= 3(n + 1)!$. Therefore, the Taylor series is\dots
+	\[
+	\begin{aligned}
+	T(x)&= \sum_{n=0}^\infty \dfrac{f^{(n)}(-1)}{n!} \,(x + 1)^n \\[0.3cm]
+	&= \sum_{n=0}^\infty \dfrac{3(n + 1)!}{n!} \,(x + 1)^n \\[0.3cm]
+	&= \sum_{n=0}^\infty \dfrac{3(n + 1)n!}{n!} \,(x + 1)^n \\[0.3cm]
+	&= \boxed{\sum_{n=0}^\infty 3(n + 1) \,(x + 1)^n}
+	\end{aligned}
+	\]
+}
+
+
+
+% Question 3
+\newpage
+\question[14] Showing all your work and fully justifying your reasoning, find the center, radius of convergence, and interval of convergence for each following power series: \par\vspace{0.2cm}
+	\begin{parts}
+	\part $\ds\sum_{n=0}^\infty n!\, (5x + 2)^n$ \pspace
+	
+	\vsol{\itshape The center is the solution to $5x + 2= 0$, i.e. $x= -\frac{2}{5}$. Using the Ratio Test, we have\dots
+		\[
+		\lim_{n \to \infty} \left| \dfrac{(n+1)! (5x + 2)^{n+1}}{n! (5x + 2)^n} \right|= \lim_{n \to \infty} |(n + 1) (5x + 2)|= \infty
+		\]
+	Because this limit cannot be less than 1 for any $x \neq -\frac{2}{5}$, the `interval' of convergence is simply $\{ -\frac{2}{5} \}$, so that the radius of convergence is $R= 0$.
+		\[
+		\boxed{
+		\begin{gathered}
+		\text{Center: } x= -\frac{2}{5} \\
+		\text{`Interval' of Convergence: } \left\{ -\frac{2}{5} \right\} \\
+		R= 0 
+		\end{gathered}
+		}
+		\]
+	} \vfill
+	
+	\part $\ds\sum_{n=0}^\infty (-1)^n \dfrac{x^n}{(2n)!}$ \pspace
+	
+	\vsol{\itshape It is immediate that the center is $x= 0$. Using the Ratio Test, we have\dots
+		\[
+		\hspace{-3.6cm}\lim_{n \to \infty} \left| \dfrac{\dfrac{x^{n+1}}{\big(2 (n + 1) \big)!}}{\dfrac{x^n}{(2n)!}} \right|= \lim_{n \to \infty} \left| \dfrac{x^{n+1}}{(2n + 2)!} \cdot \dfrac{(2n)!}{x^n} \right|= \lim_{n \to \infty} \left| \dfrac{x^{n+1}}{x^n} \cdot \dfrac{(2n)!}{(2n+2)(2n+1)(2n)!} \right|= \lim_{n \to \infty} \left| \dfrac{x}{(2n + 2)(2n + 1)} \right|= 0
+		\]
+	Because this limit is less than 1 for all $x$, the interval of convergence is the entire real line, i.e. $(-\infty, \infty)$. This means that the radius of convergence is $R= \infty$.
+		\[
+		\boxed{
+		\begin{gathered}
+		\text{Center: } x= 0 \\
+		\text{Interval of Convergence: } (-\infty, \infty) \\
+		R= \infty 
+		\end{gathered}
+		}
+		\]
+	} \vfill
+	\end{parts}
+
+
+
+% Question 4
+\newpage
+\question[16] Showing all your work, complete the following: \par\vspace{0.2cm}
+	\begin{parts}
+	\part Find the Maclaurin series for $x \cos(x^3)$. \pspace
+	
+	\wsol{%
+		\[
+		\begin{aligned}
+		\cos x&= \sum_{n=0}^\infty (-1)^n \, \dfrac{x^{2n}}{(2n)!} \\[0.3cm]
+		\cos(x^3)&= \sum_{n=0}^\infty (-1)^n \, \dfrac{(x^3)^{2n}}{(2n)!}= \sum_{n=0}^\infty (-1)^n \, \dfrac{x^{6n}}{(2n)!} \\[0.3cm]
+		x \cos(x^3)&= x \sum_{n=0}^\infty (-1)^n \, \dfrac{x^{6n}}{(2n)!}= \boxed{\sum_{n=0}^\infty (-1)^n \, \dfrac{x^{6n + 1}}{(2n)!}}
+		\end{aligned}
+		\]
+	} \par\vspace{3.38cm}
+	
+	\part Compute $\ds\sum_{n=0}^\infty n \left( -\dfrac{1}{2} \right)^{n-1}$ \enskip [Hint. Differentiate $\ds\sum_{n=0}^\infty x^n$.] \pspace
+	
+	\wsol{\itshape For $x \in (-1, 1)$, we know that $\ds\sum_{n=0}^\infty x^n= \dfrac{1}{1 - x}$ --- which will be true for its derivatives. In particular, the series and its derivatives are defined at $x= -\frac{1}{2}$. Therefore, we have\dots
+		\[
+		\begin{gathered}
+		\sum_{n=0}^\infty x^n= \dfrac{1}{1 - x} \\[0.3cm]
+		\dfrac{d}{dx} \sum_{n=0}^\infty x^n= \dfrac{d}{dx} \!\left( \dfrac{1}{1 - x} \right) \\[0.3cm]
+		\sum_{n=0}^\infty n x^{n-1}= \dfrac{1}{(1 - x)^2} \\[0.3cm]
+		\sum_{n=0}^\infty n x^{n-1} \bigg|_{x=-\frac{1}{2}}= \dfrac{1}{(1 - x)^2} \bigg|_{x=-\frac{1}{2}} \\[0.3cm]
+		\sum_{n=0}^\infty n \left(-\dfrac{1}{2} \right)^{n-1}= \boxed{\dfrac{4}{9}}
+		\end{gathered}
+		\]
+	}
+	
+	
+	\newpage
+	
+	
+	\part Compute $\dfrac{1}{2} - \dfrac{1}{3} + \dfrac{1}{4} - \dfrac{1}{5} + \dfrac{1}{6} - \dfrac{1}{7} + \cdots$ \pspace
+	
+	\wsol{\itshape For $x \in (-1, 1]$, we know that $\ds\ln(1 + x)= \sum_{n=1}^\infty (-1)^{n+1}\, \dfrac{x^n}{n}$, so that this is true for $x= 1$. That is, $\log(1 + 1)= 1 - \frac{1}{2} + \frac{1}{3} - \frac{1}{4} + \cdots$. We have\dots
+		\[
+		\begin{aligned}
+		\dfrac{1}{2} - \dfrac{1}{3} + \dfrac{1}{4} - \dfrac{1}{5} + \dfrac{1}{6} - \dfrac{1}{7} + \cdots&= (1 - 1) + \left( \dfrac{1}{2} - \dfrac{1}{3} + \dfrac{1}{4} - \dfrac{1}{5} + \dfrac{1}{6} - \dfrac{1}{7} + \cdots \right) \\[0.3cm]
+		&= 1 + \left(-1 + \dfrac{1}{2} - \dfrac{1}{3} + \dfrac{1}{4} - \dfrac{1}{5} + \dfrac{1}{6} - \dfrac{1}{7} + \cdots \right) \\[0.3cm]
+		&= 1 - \left( 1 - \dfrac{1}{2} + \dfrac{1}{3} - \dfrac{1}{4} + \dfrac{1}{5} - \dfrac{1}{6} + \dfrac{1}{7} - \cdots \right) \\[0.3cm]
+		&= 1 - \log(1 + 1) \\[0.3cm]
+		&= \boxed{1 - \log(2)}
+		\end{aligned}
+		\] 
+	} \par\vspace{1.8cm}
+
+	\part Replacing $\sin x$ with a Taylor series, compute $\ds\lim_{x \to 0} \dfrac{x - \sin x}{3x^3}$. [You will receive no credit for using l'H\^opital's rule. However, you may check your answer with it.] \pspace
+	
+	\wsol{%
+		\[
+		\begin{aligned}
+		\lim_{x \to 0} \dfrac{x - \sin x}{3x^3}&= \lim_{x \to 0} \dfrac{x - \left(x - \frac{x^3}{3!} + \frac{x^5}{51} - \frac{x^7}{7!} + \cdots \right)}{3x^3} \\[0.3cm]
+		&= \lim_{x \to 0} \dfrac{x - x + \frac{x^3}{3!} - \frac{x^5}{51} + \frac{x^7}{7!} - \cdots}{3x^3} \\[0.3cm]
+		&= \lim_{x \to 0} \dfrac{\frac{x^3}{3!} - \frac{x^5}{51} + \frac{x^7}{7!} - \cdots}{3x^3} \\[0.3cm]
+		&= \lim_{x \to 0} \dfrac{\frac{1}{3!} - \frac{x^2}{51} + \frac{x^5}{7!} - \cdots}{3} \\[0.3cm]
+		&= \dfrac{\frac{1}{3!} - 0 + 0 - \cdots}{3} \\[0.3cm]
+		&= \boxed{\dfrac{1}{18}}
+		\end{aligned}
+		\]
+	}
+	\end{parts}
+
+
+
+% Question 5
+\newpage
+\question[18] Showing all your work and fully justifying your reasoning, find the center, radius of convergence, and interval of convergence for the following power series:
+	\[
+	\sum_{n=1}^\infty \dfrac{(x - 59)^n}{8^n\, \sqrt{n}}
+	\] \pspace
+
+\vsol{\itshape\footnotesize The center is the $x$-value for which $x - 59= 0$, i.e. $x= 59$. To determine the interval of convergence, we can use the Ratio Test or the Root Test (using the fact that $\ds\lim_{n \to \infty} n^{1/n}= 1$):
+	\[
+	\begin{gathered}
+	\hspace{-1.35cm} \text{Ratio Test: } \lim_{n \to \infty} \left|\dfrac{\;\;\dfrac{(x - 59)^{n+1}}{8^{n+1} \sqrt{n+1}}\;\;}{\dfrac{(x - 59)^n}{8^n\, \sqrt{n}}} \right|= \lim_{n \to \infty} \left| \dfrac{(x - 59)^{n+1}}{8^{n+1} \sqrt{n+1}} \cdot \dfrac{8^n \sqrt{n}}{(x - 59)^n} \right|= \lim_{n \to \infty} \left| \dfrac{(x - 59)^{n+1}}{(x - 59)^n} \cdot \dfrac{8^n}{8^{n+1}} \cdot \sqrt{\dfrac{n}{n+1}} \right|= \left| \dfrac{x - 59}{8} \right| \\[0.2cm]
+	\text{Root Test: } \lim_{n \to \infty} \left| \dfrac{(x - 59)^n}{8^n \sqrt{n}} \right|^{1/n}= \lim_{n \to \infty} \left| \dfrac{x - 59}{8 n^{1/(2n)}} \right|= \lim_{n \to \infty} \left| \dfrac{x - 59}{8 (n^{1/n})^{1/2}} \right|= \left| \dfrac{x - 59}{8} \right|
+	\end{gathered}
+	\]
+For either test to guarantee convergence, we need\dots
+	\[
+	\begin{gathered}
+	\hspace{0.3cm}\left| \dfrac{x - 59}{8} \right| < 1 \\[0.2cm]
+	-1 < \dfrac{x - 59}{8} < 1 \\[0.2cm]
+	-8 < x - 59 < 8 \\[0.2cm]
+	51 < x < 67
+	\end{gathered}
+	\]
+We need to test the endpoints: \par\vspace{0.3cm}
+
+\underline{$x= 51$}: If $x= 51$, then\dots
+	\[
+	\sum_{n=1}^\infty \dfrac{(x - 59)^n}{8^n\, \sqrt{n}}= \sum_{n=1}^\infty \dfrac{(51 - 59)^n}{8^n\, \sqrt{n}}= \sum_{n=1}^\infty \dfrac{(-8)^n}{8^n\, \sqrt{n}}= \sum_{n=1}^\infty \dfrac{(-1)^n 8^n}{8^n\, \sqrt{n}}= \sum_{n=1}^\infty \dfrac{(-1)^n}{\sqrt{n}}
+	\]
+This is an alternating series. We can see that $\ds\lim_{n \to \infty} \frac{1}{\sqrt{n}}= 0$ and that the sequence $\left\{ \frac{1}{\sqrt{n}} \right\}$ is decreasing. Therefore, $\ds\sum_{n=1}^\infty \dfrac{(-1)^n}{\sqrt{n}}$ the series converges by the Alternating Series Test. \par\vspace{0.3cm}
+
+\underline{$x= 67$}: If $x= 67$, then\dots
+	\[
+	\sum_{n=1}^\infty \dfrac{(x - 59)^n}{8^n\, \sqrt{n}}= \sum_{n=1}^\infty \dfrac{(67 - 59)^n}{8^n\, \sqrt{n}}= \sum_{n=1}^\infty \dfrac{8^n}{8^n\, \sqrt{n}}= \sum_{n=1}^\infty \dfrac{1}{\sqrt{n}}
+	\]
+But the series $\ds\sum_{n=1}^\infty \dfrac{1}{\sqrt{n}}$ diverges by the $p$-test with $p= \frac{1}{2}$. \par\vspace{0.3cm}
+
+Therefore, the interval of convergence is $[51, 67)$. This implies that the radius of convergence is $R= \frac{67 - 51}{2}= \frac{16}{2}= 8$. 
+		\[
+		\boxed{
+		\begin{gathered}
+		\text{Center: } x= 59 \\
+		\text{Interval of Convergence: } [51, 67) \\
+		R= 8
+		\end{gathered}
+		}
+		\]
+}
+
+
+
+% Question 6
+\newpage
+\question Consider the function $f(x)= \dfrac{1}{x}$. Showing all your work and fully justifying your reasoning, complete the following: \par\vspace{0.2cm}
+	\begin{parts}
+	\part[6] Find the second degree Taylor polynomial, $T_2(x)$, for $f(x)$ centered at $x= 2$. \pspace
+	
+	\vsol{\itshape We have\dots
+		\[
+		f(x)= \dfrac{1}{x} \bigg|_{x=2}= \dfrac{1}{2}, \qquad f'(x)= \dfrac{-1}{x^2} \bigg|_{x=2}= -\dfrac{1}{4}, \qquad f''(x)= \dfrac{2}{x^3} \bigg|_{x=2}= \dfrac{1}{4}
+		\]
+	Therefore, $T_2(x)$ is\dots
+		\[
+		T_2(x)= \dfrac{\;\frac{1}{2}\;}{0!}\, (x - 2)^0 + \dfrac{\;\;-\frac{1}{4}\;}{1!}\, (x - 2)^1 + \dfrac{\;\frac{1}{4}\;}{2!}\, (x - 2)^2= \boxed{\dfrac{1}{2} - \dfrac{1}{4}\, (x - 2) + \dfrac{1}{8}\, (x - 2)^2}
+		\]
+	} \vfill
+	
+	\part[6] Find the maximum error approximating $f(2.1)$ using $T_2(2.1)$. \pspace
+	
+	\vsol{\itshape By the Taylor Remainder Theorem, the error term, $R_2(x)$, is given by $R_2(x)= \dfrac{f^{(3)}(a)}{3!} \, (x - 2)^3$ for some $a$ between the center $c= 2$ and $x$. We have $f'''(x)= \frac{-6}{x^4}$, so that $R_2(x)= \dfrac{-6/a^4}{3!} \, (x - 2)^3= \dfrac{-6}{6a^4} \, (x - 2)^3= \dfrac{-(x - 2)^3}{a^4}$. We have $c= 2$ and $x= 2.1$, so that $a \in [2, 2.1]$, i.e. $2 \leq a \leq 2.1$. But $\frac{1}{a^6}$ is smallest if $a= 2$. Therefore, the maximum error is\dots
+		\[
+		|R(2.1)|= \left| \dfrac{-(2.1 - 2)^3}{a^4} \right|= \dfrac{(0.1)^3}{a^4}= \dfrac{1}{a^4} \cdot \left( \dfrac{1}{10} \right)^3 \leq \dfrac{1}{2^4} \cdot \dfrac{1}{1000}= \boxed{\dfrac{1}{16,\!000}} \approx 0.0000625
+		\]
+	} \vfill
+	
+	\part[6] Find the maximum error approximating the values of $f(x)$ using $T_2(x)$ on $[1, 3]$. \pspace
+	
+	\vsol{\itshape We know from the previous part that $R_2(x)= \dfrac{-(x - 2)^3}{a^4}$ for some $a$ between the center $c= 2$ and $x$. We know that $x \in [1, 3]$, so that $a \in [1, 3]$. On the interval $[1, 3]$, $\frac{1}{a^4}$ is largest when $a= 1$. On the interval $[1, 3]$, $(x - 2)^3$ is largest when $x= 3$. Therefore, the maximum error is\dots
+		\[
+		|R(2.1)|= \left| \dfrac{-(x - 2)^3}{a^4} \right|= \left| \dfrac{1}{a^4} \cdot (x - 2)^3 \right| \leq \dfrac{1}{1^4} \cdot (3 - 2)^3= 1 \cdot 1= \boxed{1}
+		\]
+	} \vfill
+	\end{parts}
+
+\end{questions}
+\end{document}
