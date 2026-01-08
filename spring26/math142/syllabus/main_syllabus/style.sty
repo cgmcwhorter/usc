@@ -1,0 +1,140 @@
+% -------------------
+% Packages
+% -------------------
+\usepackage{
+	graphicx,		% Include Images
+	microtype		% Improved Typesetting
+}
+%	amsthm,			% Theorem Environments
+%	caption,			% Remove 'Figure' Prefix
+%	float,				% Force Table Placement
+
+
+
+
+% -------------------
+% Font
+% -------------------
+\usepackage[T1]{fontenc}
+\usepackage{charter}
+
+
+
+% -------------------
+% Colors
+% -------------------
+\usepackage{xcolor}
+
+% College Colors
+\definecolor{scred}{HTML}{73000a} % 115, 0, 10
+\definecolor{scgold}{HTML}{d7a902} % 215, 169, 2
+
+\definecolor{quotegray}{HTML}{595959} % 89, 89, 89
+\definecolor{endquotegray}{HTML}{6b6b6b} % 107, 107, 107
+
+
+
+% -------------------
+% Hyperref
+% -------------------
+\PassOptionsToPackage{hyphens}{url}
+\usepackage[breaklinks = true]{hyperref}
+\urlstyle{same}
+\hypersetup{
+	colorlinks 	= true,
+  	linkcolor  	= scred,
+  	urlcolor   	= scred
+}
+
+
+
+% -------------------
+% Enumerate/Itemize Environments
+% -------------------
+\usepackage{enumerate}
+%\newenvironment{2enumerate}{%
+%	\begin{enumerate}[(a)]
+%	\begin{multicols}{2}
+%	}{%
+%	\end{multicols}
+%	\end{enumerate}
+%}
+%\newenvironment{3enumerate}{%
+%	\begin{enumerate}[(a)]
+%	\begin{multicols}{3}
+%	}{%
+%	\end{multicols}
+%	\end{enumerate}
+%}
+
+
+
+% -------------------
+% Header & Footer
+% -------------------
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+
+% Paragraph Spacing & Head/Foot Height
+\setlength{\parskip}{0.0cm}
+\setlength{\parindent}{0.0cm}
+\headheight = 14pt
+\footskip = 14pt
+
+% Default Page Style
+\fancypagestyle{pages}{
+	%Headers
+	\fancyhead[L]{}
+	\fancyhead[C]{}
+	\fancyhead[R]{\thepage}
+\renewcommand{\headrulewidth}{0pt}
+	%Footers
+	\fancyfoot[L]{}
+	\fancyfoot[C]{}
+	\fancyfoot[R]{}
+\renewcommand{\footrulewidth}{0.0pt}
+}
+\pagestyle{pages}
+
+
+
+% -------------------
+% Section Headers
+% -------------------
+
+% Title
+\newcommand{\mytitle}[1]{%
+\begin{center}
+\thispagestyle{empty}
+\includegraphics[width=0.54\textwidth]{usc_horzlogo.png} \par
+\huge\color{scred} \coursenumber: \coursetitle \par
+\color{scred} \semester\ \myyear\
+\end{center} \par\vspace{0\baselineskip}%
+}
+
+% Section
+\newcommand{\mysection}[3]{%
+\begin{minipage}{\textwidth}
+\phantomsection
+	{%
+\large\bfseries\color{scred}
+#2\label{#3} \par\vspace{-0.62\baselineskip}
+\noindent\rule{#1\textwidth}{1.5pt} \par
+\vspace{-0.3cm}\noindent\rule{0.13\textwidth}{5.1pt}%
+	}%
+\end{minipage}\par\vspace{4\lineskip}%
+}
+
+% Header
+\newcommand{\lefthead}[1]{\noindent{\large\bfseries\color{scred}#1}\par}
+
+% Large Header
+\newcommand{\largeheader}[3]{\phantomsection\noindent{\LARGE\bfseries\color{scred}#2\label{#3}}\par\vspace{#1}}
+
+
+% -------------------
+% General Commands
+% -------------------
+\newcommand{\sectionbreak}{\par\vspace{2\baselineskip}}
+\newcommand{\pspace}{\par\vspace{\baselineskip}}
+\newcommand{\pvspace}[1]{\par\vspace{#1}}

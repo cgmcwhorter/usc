@@ -1,0 +1,81 @@
+\documentclass[11pt,letterpaper]{article}
+\usepackage[lmargin=1in,rmargin=1in,bmargin=1in,tmargin=1in]{geometry}
+\usepackage{checkins}
+
+\pgfplotsset{soldot/.style={color=black,only marks,mark=*},
+		holdot/.style={color=black,fill=white,only marks,mark=*},
+		compat=1.12
+}
+
+\newcommand{\boxseven}[4]{%
+	\draw[thick] (0,0) -- (4,0) -- (4,4) -- (0,4) -- (0,0);
+	\draw[thick] (0,2) -- (4,2);
+	\draw[thick] (2,0) -- (2,4);
+	% '7'
+	\draw[line width=0.03cm] (1.7,2.2) -- (2.3,2.2) -- (1.7,1.6);
+	% Entries
+	\node at (1,3) {$#1$};	% u
+	\node at (3,1) {$#2$};	% dv
+	\node at (1,1) {$#3$};	% du
+	\node at (3,3) {$#4$};	% 
+}
+
+\usetikzlibrary{calc}
+\usepackage{booktabs}
+\tikzset{Arrow Style/.style={text=black, font=\boldmath}}
+\newcommand{\tikzmark}[1]{%
+    \tikz[overlay, remember picture, baseline] \node (#1) {};%
+}
+\newcommand*{\XShift}{0.5em}
+\newcommand*{\YShift}{0.5ex}
+\NewDocumentCommand{\DrawArrow}{s O{} m m m}{%
+    \begin{tikzpicture}[overlay,remember picture]
+        \draw[->, thick, Arrow Style, #2] 
+                ($(#3.west)+(\XShift,\YShift)$) -- 
+                ($(#4.east)+(-\XShift,\YShift)$)
+        node [midway,above] {#5};
+    \end{tikzpicture}%
+}
+
+% -------------------
+% Content
+% -------------------
+\begin{document}
+\thispagestyle{title}
+
+% 08/21
+\checkin{08/21} 
+
+\sol 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}
