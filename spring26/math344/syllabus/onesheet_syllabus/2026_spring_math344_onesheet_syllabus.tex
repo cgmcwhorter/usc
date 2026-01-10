@@ -14,7 +14,7 @@
 \bfseries
 \color{scred}
 \LARGE Syllabus Quick Facts \par\vspace{0.2\baselineskip}
-\Large MATH 142: Calculus II --- Spring 2026
+\Large MATH 344: Applied Linear Algebra --- Spring 2026
 \end{center} \pspace
 
 
@@ -22,7 +22,7 @@
 \mysection{0.27}{Course Information}{course_info}
 \hspace{0.53cm} {\itshape Instructor Email}: \href{mailto:cm264@mailbox.sc.edu}{cm264@mailbox.sc.edu} \par
 \hspace{0.53cm} {\itshape Course Webpage}: \href{https://coffeeintotheorems.com}{https://coffeeintotheorems.com} \par
-\hspace{0.53cm} {\itshape Office Hours}: The instructor's office is LeConte 345C. The office hours are Monday, Wednesday, \par \hspace{0.55cm} and Friday from 2:00pm to 3:00pm, and Tuesday/Thursday from 1:00pm until 2:00pm. \pspace
+\hspace{0.53cm} {\itshape Office Hours}: The instructor's office is LeConte 345C. The office hours are Monday, Wednesday, \par \hspace{0.55cm} and Friday from 2:30pm to 3:30pm, and Tuesday/Thursday from 12:00pm until 1:00pm. \pspace
 
 
 % Grading Components
@@ -30,11 +30,10 @@
 Course grades are determined by the following components: \par \vspace{-0.3cm}
 	\begin{table}[!ht]
         \begin{tabular}{lr}
-	Check-Ins & 5\% \\
-	Labs & 10\% \\
-	Gateway Exams& 10\% \\
-	Homework & 20\% \\
-	Exam I -- III & 30\% \\
+	Check-Ins & 10\% \\
+	Homework & 25\% \\
+	Exam 1 & 20\% \\
+	Exam 2 & 20\% \\
 	Final Exam & 25\%
         \end{tabular} 
         \end{table}
@@ -45,28 +44,9 @@ Course grades are determined by the following components: \par \vspace{-0.3cm}
 Attend each lecture and show up on time. Address any absences---anticipated or otherwise---with the instructor. If you miss a lecture, you are responsible for any material covered, any work assigned, any course changes made, etc. during the class. Five or more unexcused absences from lectures could result in receiving a grade penalty per additional absence or an `F' in the course. Furthermore, excessive lateness will also count as an absence. 
 \pspace
 
-
 % Check-Ins 
 \mysection{0.27}{Check-Ins}{check}
 There will be a check-ins \textit{every} class, typically at the start of class. Because solutions will often then be immediately discussed, no make-up check-ins will be given (except under extraordinary circumstances). \pspace
-
-
-% Labs 
-\mysection{0.27}{Labs}{labs}
-Nearly every week, students will have a lab to complete in a Python Jupyter Notebook. These labs will help engage them with the material and learn some basic programming skills. Students will have a designated lab time to work on these labs. However, if a student does not complete their lab during this time, they are still expected to complete and submit the lab on time.
-\pspace
-
-
-% Gateways 
-\mysection{0.27}{Gateways}{gateways}
-There are two Gateway exams during the semester. The Gateway exams are 30~minute exams that will help students to achieve mastery over basic Precalculus/Calculus (Gateway~I) and integration (Gateway~II) skills and help assure students that they are prepared for the future material. 
-\pspace
-
-
-
-\newpage
-
-
 
 % Homeworks 
 \mysection{0.27}{Homeworks}{homeworks}
@@ -76,8 +56,13 @@ there will be weekly homework assignments. Homeworks will mostly be given and su
 
 % Exams 
 \mysection{0.27}{Exams}{exams}
-There will be three exams in this course, each worth 10\% of the course grade, for a total of 30\% of the course grade. There will also be a final exam worth 25\% of the course grade. Together, all exams are worth 55\% of the course grade. 
+There will be two exams in this course, each worth 20\% of the course grade, for a total of 40\% of the course grade. There will also be a final exam worth 25\% of the course grade. Together, all exams are worth 65\% of the course grade. 
 \pspace
+
+
+
+\newpage
+
 
 
 % Course Schedule 
@@ -87,38 +72,30 @@ The following is a \emph{tentative} schedule for the course and is subject to ch
         \centering
         \scalebox{1}{%
         \begin{tabular}{ll || ll}
-        Date & Topic(s) & Date & Topic(s) \\ \hline         
-	01/12 & Recitation (Integration Review) & 03/05 & Absolute/Cond. Conv. \& Ratio/Root Test \\
-	01/13 & $u$-Substitution Review & 03/09 & Spring Break \\
-	01/14 & Gateway~I & 03/10 & Spring Break \\
-	01/15 & Integration-by-Parts & 03/11 & Spring Break \\
-	01/19 & MLK Day (No Classes) & 03/12 & Spring Break \\
-	01/20 & Integration-by-Parts & 03/16 & Recitation (Series Tests) \\
-	01/21 & Recitation (Integration Review) & 03/17 & Ratio/Root Tests \\
-	01/22 & Trigonometric Integrals & 03/18 & Lab~5 \\
-	01/26 & Recitation (Integration Review) & 03/19 & Exam~2 \\
-	01/27 & Trig. Substitution & 03/23 & Lab~6 \\
-	01/28 & Recitation (Integration Review) & 03/24 & Power Series \\
-	01/29 & Partial Fractions & 03/25 & Recitation (Power Series) \\
-	02/02 & Recitation (Integration Review) & 03/26 & Power Series \\
-	02/03 & Improper Integrals & 03/30 & Recitation (Power Series) \\
-	02/04 & Recitation (Integration Review) & 03/31 & Taylor Series \\
-	02/05 & Integral Applications & 04/01 & Lab~7 \\
-	02/09 & Recitation (Exam Review) & 04/02 & Taylor Series \\
-	02/10 & Integration Review & 04/06 & Recitation (Taylor Series) \\
-	02/11 & Lab~1 & 04/07 & Taylor Remainder Theorem \\
-	02/12 & Exam~1 & 04/08 & Recitation (Remainder Theorem) \\
-	02/16 & Lab~2 & 04/09 & Series Applications \\
-	02/17 & Sequences \& Series Introduction & 04/13 & Recitation (Series Applications) \\
-	02/18 & Gateway~II & 04/14 & Series Applications \\
-	02/19 & Telescoping/Geometric Series & 04/15 & Lab~8 \\
-	02/23 & Lab~3 & 04/16 & Exam~3 \\
-	02/24 & Integral/Alternating Series Test & 04/20 & Lab~9 \\
-	02/25 & Lab~4 & 04/21 & Parametric Functions \\
-	02/26 & Limit Comparison Test & 04/22 & Recitation (Final Exam Review) \\
-	03/02 & Gateway~II & 04/23 & Polar Coordinates \\
-	03/03 & Direct Comparison Test & 04/27 & Recitation (Final Exam Review) \\
-	03/04 & Recitation (Series Tests) & Varies & Final Exam
+        Date & Topic(s) & Date & Topic(s) \\ \hline    
+        01/12 & Vectors & 03/06 & Column Space \\
+        01/14 & Vectors & 03/09 & Spring Break \\
+        01/16 & Vectors & 03/11 & Spring Break \\
+        01/19 & MLK Day (No Classes) & 03/13 & Spring Break \\
+        01/21 & Matrices & 03/16 & Dimension \\
+        01/23 & RREF & 03/18 & Dimension \\
+        01/26 & RREF & 03/20 & Fundamental Theorem \\
+        01/28 & RREF & 03/23 & Fundamental Theorem \\
+        01/30 & Inverses & 03/25 & Overflow \\
+        02/02 & Inverses & 03/27 & Exam 2 \\
+        02/04 & Determinants & 03/30 & Eigenvectors \\
+        02/06 & Determinants & 04/01 & Eigenvectors \\
+        02/09 & Determinants & 04/03 & Eigenvectors \\
+        02/11 & Overflow & 04/06 & Eigenvectors \\
+        02/13 & Exam 1 & 04/08 & Diagonalization \\
+        02/16 & LU Factorizations & 04/10 & Diagonalization \\
+        02/18 & LU Factorizations & 4/13 & Diagonalization \\
+        02/20 & $Ax= b$ & 04/15 & Orthogonality \\
+        02/23 & Rank & 04/17 & Orthogonality \\
+        02/25 & Subspaces & 04/20 & Orthogonality \\
+        02/27 & Nullspace & 04/22 & Orthogonality \\
+        03/02 & Nullspace & 04/24 & Special Topics \\
+        03/04 & Column Space & 04/27 & Special Topics 
         \end{tabular}
         }
         \end{table}

@@ -3,26 +3,23 @@
 \usepackage{style}
 
 % Course Subject Abbreviation
-\newcommand{\coursenumber}{MATH 142}
+\newcommand{\coursenumber}{MATH 344}
 % Course Title
-\newcommand{\coursetitle}{Calculus II}
+\newcommand{\coursetitle}{Applied Linear Algebra}
 % Section
 \newcommand{\coursesection}{}
 % Term
-\newcommand{\semester}{Sections 5 -- 8 --- Spring}
+\newcommand{\semester}{Sections 1 -- 2 --- Spring}
 % Year
 \newcommand{\myyear}{2026}
 % Class Dates
 \newcommand{\classdates}{January 12 -- May 6}
 % Class Time
-\newcommand{\classtimes}{Lecture, TR: \par \hspace{1.5cm} 1:15pm -- 2:30pm (Sections 005--006); \par \hspace{1.5cm} 2:50pm -- 4:05pm (Sections 006--007) \par \hspace{0.95cm} Recitation/Lab, MW: \par \hspace{1.5cm} 1:10pm -- 2:00pm (Section 005) \par \hspace{1.5cm} 2:20pm -- 3:31pm (Section 006) \par \hspace{1.5cm} 8:30am -- 9:20am (Section 007) \par \hspace{1.5cm} 9:40am -- 10:30am (Section 008)}
-
+\newcommand{\classtimes}{MWF 9:40am -- 10:30am (Section 001); MWF 12:00pm -- 12:50pm (Section 002)}
 % Classroom
-\newcommand{\classroom}{TR: LeConte 444 (All Sections); \par\hspace{1.8cm} MW: LeConte 101 (Sections 005--006), LeConte 122 (Sections 007--008)}
+\newcommand{\classroom}{Wardlaw 126 (Section 001); Close-Hipp 335 (Section 002)}
 % Credits
-\newcommand{\credits}{4}
-
-
+\newcommand{\credits}{3}
 % Instructor
 \newcommand{\instructor}{Dr. Caleb McWhorter}
 % Instructor Office
@@ -54,7 +51,6 @@
 \hspace{0.3cm} Instructor \& T.A. Information \dotfill \pageref{instr_info} \par
 \hspace{0.3cm} Meeting Times \dotfill \pageref{meetings} \par
 \hspace{0.3cm} Course Description \dotfill \pageref{course_desc} \par
-\hspace{0.3cm} Course Overview \dotfill \pageref{course_overview} \par
 \hspace{0.3cm} Course Objectives \dotfill \pageref{course_obj} \par
 \hspace{0.3cm} Course Materials \dotfill \pageref{course_mat} \par
 \hspace{0.3cm} Course Format \dotfill \pageref{course_format} \par
@@ -64,19 +60,16 @@
 \hspace{0.3cm} Grading Scale \dotfill \pageref{grade_scale} \par
 \hspace{0.3cm} Attendance \& Participation \dotfill \pageref{attend} \par
 \hspace{0.3cm} Check-Ins \dotfill \pageref{check} \par
-\hspace{0.3cm} Labs \dotfill \pageref{labs} \par
-\hspace{0.3cm} Gateways \dotfill \pageref{gateways} \par
 \hspace{0.3cm} Homeworks \dotfill \pageref{hw} \par
 \hspace{0.3cm} Exams \dotfill \pageref{exams} \par
-\hspace{0.3cm} CircleIn \dotfill \pageref{circlein} \par
 \hspace{0.3cm} Respect Policy \dotfill \pageref{respect} \par
 \hspace{0.3cm} Email Policy \dotfill \pageref{email_policy} \par 
 \hspace{0.3cm} Electronic Device Policy \dotfill \pageref{electronic} \par
-\hspace{0.3cm} Faith/Tradition Observances Policy \dotfill \pageref{faith}
-\end{minipage} \hfill \begin{minipage}[t]{0.45\textwidth} \par % Second Column
+\hspace{0.3cm} Faith/Tradition Observances Policy \dotfill \pageref{faith} \par
 \hspace{0.3cm} Use of Student Work \dotfill \pageref{std_work} \par
 \hspace{0.3cm} Course Materials Policy \dotfill \pageref{copyright} \par
-\hspace{0.3cm} Syllabus Policy \dotfill \pageref{syllabus} \par
+\hspace{0.3cm} Syllabus Policy \dotfill \pageref{syllabus} 
+\end{minipage} \hfill \begin{minipage}[t]{0.45\textwidth} \par % Second Column
 \hspace{0.3cm} Tips for Success \dotfill \pageref{tips} \par
 % University Policies
 {\bfseries\color{scred} University Policies \& Resources} \dotfill \pageref{univ_policies} \par
@@ -86,6 +79,7 @@
 \hspace{0.3cm} Amending the Syllabus or Policies \dotfill \pageref{univ_amending} \par
 \hspace{0.3cm} Artificial Intelligence Policy \dotfill \pageref{univ_artintel} \par
 \hspace{0.3cm} Attendance Policy \dotfill \pageref{univ_attendance} \par
+\hspace{0.3cm} CircleIn \dotfill \pageref{circlein} \par
 \hspace{0.3cm} Codes of Conduct \dotfill \pageref{univ_conduct} \par
 \hspace{0.3cm} Expectations of the Instructor \dotfill \pageref{univ_instructorexp} \par
 \hspace{0.3cm} Freedom of Expression \dotfill \pageref{univ_freedexpression} \par
@@ -99,7 +93,7 @@
 {\bfseries\color{scred} Course Schedule} \dotfill \pageref{schd} \par
 \hfill {\bfseries\color{scred} Total Pages:} \pageref*{LastPage}
 \end{minipage}
-\pvspace{0.3cm}
+\par\vspace{0.3cm}
 
 
 
@@ -108,7 +102,7 @@
 % -----
 
 % Course Information
-\vspace{0cm} \largeheader{0.5cm}{Basic Course Information}{course_info} \vspace{-0.2cm}
+\vspace{0cm} \largeheader{0.5cm}{Basic Course Information}{course_info} \vspace{-0.3cm}
 
 % Instructor Information
 \mysection{0.62}{Instructor \& Teaching Assistant Information}{instr_info}
@@ -120,19 +114,6 @@
 \textit{Email:} \href{mailto:\email}{\email} \par
 \textit{Office Hours:} \officehours \pvspace{0.3cm}
 
-{\bfseries\color{scred} Teaching Assistant Information} \par \vspace{0.1cm}
-\hspace{0.25cm} \begin{minipage}[b]{0.4\textwidth}
-        {\itshape Teaching Assistant Sections 005--006} \par
-        \textit{Name:} Kosta Zigic \par
-        \textit{Office:}  TBD \par
-        \textit{Email:} \href{mailto:kzigic@email.sc.edu}{kzigic@email.sc.edu}
-\end{minipage}\begin{minipage}[b]{0.4\textwidth}
-        {\itshape Teaching Assistant Sections 007--008} \par
-        \textit{Name:} Aisensen (Bowen) Han \par
-        \textit{Office:}  TBD \par
-        \textit{Email:} \href{mailto:bh111@email.sc.edu}{bh111@email.sc.edu}
-\end{minipage}
-\pspace
 
 
 
@@ -142,7 +123,7 @@
 \textit{Time:} \classtimes \par
 \textit{Classroom:} \classroom \par
 \textit{Course Webpage:} \href{\website}{\website} \par
-\textit{Final Exam:} Thursday, April 30, 4:00pm (Sections 007--008) \par\hspace{2.0cm} Tuesday, May 5, 12:30pm (Sections 005--006)
+\textit{Final Exam:} Friday, May 1, 9:00am (Section 001); Wednesday, April 29, 12:30pm (Section 002)
 \sectionbreak
 
 
@@ -150,22 +131,7 @@
 % Course Description 
 \mysection{0.27}{Course Description}{course_desc}
 
-Methods of integration, sequences and series, approximations. Four classroom hours and one laboratory hour per week. {\itshape Prerequisites: C or better in MATH 141. Carolina Core: ARP}
-\sectionbreak
-
-
-
-% Course Overview
-\mysection{0.27}{Course Overview}{course_overview}
-
-This is a continuation of Math 141 --- Calculus I. A working understanding of all the major topics from Math 141: limits, differentiation, integration, extrema, Fundamental Theorem of Calculus, etc. These topics are essential for success in Calculus II. There are four topic areas in this course: \par
-	\begin{enumerate}
-	\item[I.] Techniques of Integration: Integration-by-parts, trigonometric substitution, etc.
-	\item[II.] Applications of Integration: Volumes of rotation, arclength, surface area, etc.
-	\item[III.] Sequences and Series: convergence tests, Taylor series, etc.
-	\item[IV.] Polar Calculus: polar coordinates, polar integrals, etc.
-	\end{enumerate} \par
-This course emphasizes both the mastery of specific course topics as well as the understanding of the development of these course topics from previous results from the course, Calculus I, and Precalculus.
+General solutions of systems of linear equations, vector spaces and subspaces, linear transformations, determinants, orthogonality, characteristic polynomials, eigenvalues and eigenvectors, singular value decomposition, and generalized inverse. MATH 344L is an optional laboratory course where additional applications will be discussed. {\itshape Prerequisites: C or better in MATH 142.}
 \sectionbreak
 
 
@@ -175,19 +141,7 @@ This course emphasizes both the mastery of specific course topics as well as the
 
 A student who successfully completes Calculus II (MATH 142) should be able to\dots
 	\begin{itemize} \itemsep=0.3ex
-	\item Demonstrate the ability to approach problems from a conceptual viewpoint.
-	\item Demonstrate the ability to utilize more than one idea in a single problem.
-	\item Demonstrate the ability to apply appropriate Calculus skills to problems in context.
-	\item Demonstrate mastery of concepts and skills needed to solve problems related to:
-		\begin{enumerate}[(i)]
-		\item Techniques of Integration: u-substitution, integration-by-parts, trigonometric integrals, trigonometric substitution, partial fractions, etc.
-		\item Improper integrals
-		\item Applications of integration, e.g. areas, volumes of rotation, arclength, surface area, work, etc.
-		\item Convergence of sequences and series: sequences, series, divergence test, comparison and limit comparison test, alternating series test, conditional convergence, ratio/root test, etc.
-		\item Power series and their convergence
-		\item Taylor series and their applications
-		\item Polar coordinates and their applications to Calculus
-		\end{enumerate}
+	\item 
 	\end{itemize}
 Furthermore, students should\dots
 	\begin{itemize} \itemsep=0.3ex
@@ -204,23 +158,13 @@ Furthermore, students should\dots
 % Course Materials
 \mysection{0.22}{Course Materials}{course_mat}
 
-{\itshape\bfseries\color{scred}Textbook.} The textbook for this course is {\itshape Thomas' Calculus Early Transcendentals (15th Ed)} by George B. Thomas Jr. Students may purchase a physical copy of the textbook; however, students are not required to purchase a copy of the textbook and no specific reference will be made to the textbook. \pspace
+{\itshape\bfseries\color{scred}Textbook.} The textbook for this course is {\itshape Introduction to Linear Algebra (6th Ed)} by Gilbert Strang (ISBN: 978-17331466-7-8). Students may purchase a physical or digital copy of the textbook; however, students are not required to a copy of the textbook. While references may be made to the text, the textbook will not be required to follow. Moreover, many free textbooks that can be used during the course will be linked on the course Blackboard. \pspace
 
 {\itshape\bfseries\color{scred}MyOpenMath.} Students will complete homework and possibly other course assignments using a homework system called MyOpenMath. This is an online assessment system through the non-profit MyOpenMath and will be integrated into the course through Blackboard. This system is free for students and students will not have to setup an account. The link to the homeworks can be found in the `Homework' folder on Blackboard. \pspace
 
-{\itshape\bfseries\color{scred}Python \& Jupyter.} To help students engage with the course topics and learn some fundamental programming principles, students will complete a series of labs using Python through Jupyter Notebooks throughout the semester. Python is a dynamic, interpreted programming language that is widely used in industry. Jupyter Notebook is an open-source application allowing one to easily create and group various coding language outputs. Lab computers will have Python and Jupyter easily accessible. Students will also be given instructions how to setup Python and Jupyter on their own computers. Both are freely available. Instructions will also be given on how to create and submit their labs to Blackboard as PDFs. \pspace
+{\itshape\bfseries\color{scred}Python \& Jupyter.} To help students engage with the course topics and learn some fundamental programming principles, students may be required to use Python through Jupyter Notebooks during the semester---during lecture, outside of class, or for homeworks. Python is a dynamic, interpreted programming language that is widely used in industry. Jupyter Notebook is an open-source application allowing one to easily create and group various coding language outputs. Lab computers will have Python and Jupyter easily accessible. Students will also be given instructions how to setup Python and Jupyter on their own computers. Both are freely available. If assigned, instructions will also be given on how to create and submit Python assignments to Blackboard as PDFs. \pspace
 
-
-
-
-
-\newpage
-
-
-
-
-
-{\itshape\bfseries\color{scred}Calculators.} Basic graphing calculators will often be allowed during the course, unless otherwise instructed. However, these will not be required. The course may make use of the computational engine Mathematica via the WolframAlpha website: \url{https://www.wolframalpha.com}. Although WolframAlpha does have a paid account option for additional resources, the course will not make use of these features and students {\itshape will not} be required to setup an account or make any kind of payment. The course may also make use of Symbolab: \url{https://www.symbolab.com/}. Calculators or other computational devices will not be allowed during exams. 
+{\itshape\bfseries\color{scred}Calculators.} Basic graphing calculators will not be allowed during the course, unless otherwise instructed. Furthermore, calculators will generally not be allowed during the course. There may be times, however, when basic four-function calculators will be allowed. Students will be explicitly told when these are allowed. However, they will not be required. The course may make use of the computational engine Mathematica via the WolframAlpha website: \url{https://www.wolframalpha.com}. Although WolframAlpha does have a paid account option for additional resources, the course will not make use of these features and students {\itshape will not} be required to setup an account or make any kind of payment. The course may also make use of Symbolab: \url{https://www.symbolab.com/}. Calculators or other computational devices will not be allowed during exams unless otherwise instructed. 
 \sectionbreak
 
 
@@ -228,7 +172,7 @@ Furthermore, students should\dots
 % Course Format
 \mysection{0.19}{Course Format}{course_format}
 
-The course consists of four meetings per week. Meetings on Tuesday and Thursday will focus primarily on lectures addressing the course material. Lectures will begin with a short checkin followed by course material. Whenever possible, these lectures will consist of a topic discussion followed by time for individual or group problem solving. However, due to the number and depth of course topics, not every concept or problem type can be covered during class. Therefore, you may be assigned reading or videos before lecture. Lectures where readings or video are assigned will still cover course content; however, the focus of these lectures will be problem-solving. Therefore, be sure to do the assigned reading/viewing before the lecture. Regardless, students are expected to spend outside of class reading course material, studying extra materials, and solving additional problems. Students are highly encouraged to do additional practice problems from past semesters available via the course webpage. Class meetings on Monday and Wednesday will be either a recitation or lab, both led by a teaching assistant---not the primary instructor. Recitations will typically focus on time for questions, review, and problem solving. Labs will typically occur on Thursdays and will either be used to take a Gateway exam or work on a Sage lab. A student should be able to complete a Gateway exam or lab in the assigned time. However, if a student does not complete the Gateway exam or lab during the period, they are still required to submit the assignment before the due date. Students may use the computer lab when it is available or complete the assignment on their own device; however, a student must be proctored to take a Gateway exam. Regardless, students should be certain to submit the assignment before the deadline---especially in the case of Gateway exams. Finally, students are expected to typically spend approximately 3 hours per credit outside of class on course materials. However, some weeks this may be more or less.
+The course consists of three meetings per week on Monday, Wednesday, and Friday. Lectures will begin with a short checkin followed by course material. Whenever possible, these lectures will consist of a topic discussion followed by time for individual or group problem solving. However, due to the number and depth of course topics, not every concept or problem type can be covered during class. Therefore, you may be assigned reading or videos before lecture. Lectures where readings or video are assigned will still cover course content; however, the focus of these lectures will then typically be problem-solving. Therefore, be sure to do the assigned reading/viewing before the lecture. Regardless, students are expected to spend outside of class reading course material, studying extra materials, and solving additional problems. Students are highly encouraged to do additional practice problems using the course resources provided in Blackboard. Finally, students are expected to typically spend approximately 3--4 hours per credit outside of class on course materials. However, some weeks this may be more or less.
 \sectionbreak
 
 
@@ -246,11 +190,10 @@ The course consists of four meetings per week. Meetings on Tuesday and Thursday 
 Course grades are determined by the following components: \par
 	\begin{table}[!ht]
         \begin{tabular}{lr}
-	Check-Ins & 5\% \\
-	Labs & 10\% \\
-	Gateway Exams& 10\% \\
-	Homework & 20\% \\
-	Exam I -- III & 30\% \\
+	Check-Ins & 10\% \\
+	Homework & 25\% \\
+	Exam I & 20\% \\
+	Exam 2 & 20\% \\
 	Final Exam & 25\%
         \end{tabular} 
         \end{table}
@@ -302,31 +245,10 @@ There will be a check-in \textit{every} class. Check-Ins are meant to be short a
 
 
 
-% Labs
-\mysection{0.18}{Labs}{labs}
-Learning Calculus requires students to actively engage with course concepts. Furthermore, real-world applications of Calculus (and beyond) will require some level of programming skills. To address both these issues, students will be given a number of labs across the semester. These sessions will occur nearly weekly and be located in the Math Lab in LeConte Hall. Each lab is a series of guided problems using Python and common Python packages, e.g. NumPy, SciPy, etc., in a Jupyter Notebook. \pspace
-
-Python is a free dynamic, interpreted language that is widely used in industry and academia. Students will use Jupyter Notebook for their Python programming. Jupyter Notebook is an open-source application allowing one to easily create and group various coding language outputs. Both Python and Jupyter are free and open source. Lab computers will have Python and Jupyter easily accessible. Instructions for installing or using Python and Jupyter Notebooks on a student's personal computer can be found in Blackboard. While students complete labs using a Jupyter Notebook, they are to be submitted to Blackboard as a PDF. Instructions on creating, completing, and submitting the lab as a PDF to Blackboard can be found in the lab instructions on Blackboard. Students may be able to find additional information on the departmental website: \url{https://sc.edu/study/colleges\_schools/artsandsciences/mathematics/my\_mathematics/undergrads/calculus\_labs/}. \pspace
-
-The complete list of SageMath labs for the semester can be found on the \href{https://sc.edu/study/colleges\_schools/artsandsciences/mathematics/my\_mathematics/undergrads/calculus\_labs/math\_142\_labs.php}{Math 142 Labs webpage} (\url{https://sc.edu/study/colleges\_schools/artsandsciences/mathematics/my\_mathematics/undergrads/calculus\_labs/math\_142\_labs.php}). While not necessarily encouraged, students may complete these labs in advance. However, whether a lab was completed in advance or not, students are still expected to attend their assigned lab. This is because the dates for labs may shift, other material may be addressed during labs, surveys may be given out during labs, and students should mostly only expect lab help during their assigned lab period. If a student completes a lab in advance, they can use the lab period for other homework, studying, or trying to write their own Python programs to answer other course problems. Each Python lab should be able to be completed during the assigned lab period. However, if a student does not complete their lab during this time, they are still expected to complete and submit the lab on time. This might mean the student will need to return on their own time to the Math Lab when it is open to complete the lab. Do not hesitate to ask for help with these labs. Because the submission for these labs will likely be done electronically, do not wait until the last minutes or seconds to submit an assignment---anticipate unanticipated problems. Do not expect to have a late lab be accepted, certainly not without a grade penalty. Acceptance of late labs or any grade penalties incurred will be decided on a student-by-student basis at the discretion of the instructors. 
-\sectionbreak
-
-
-
-% Gateways
-\mysection{0.18}{Gateways}{gateways}
-
-There are two Gateway exams during the semester. The Gateway exams are 30 minute exams help ensure students have achieved mastery over the basic Calculus~I (Gateway~I) and Calculus~II (Gateway~II) skills required to succeed in future course material. Gateway I focuses on prerequisite material from Calculus~I, i.e. limits and differentiation, while Gateway~II focuses on the early integration techniques from Calculus II. Each Gateway exam is worth 5\% of the course grade. The Gateway exams are administered via an online system called WebWork---run through the Mathematical Association of America (MAA). Students will not need to create an account. Instead, students will access the Gateway exam in WebWork through their Blackboard account. Students will simply need to click the appropriate link on their course Blackboard page. \pspace
-
-Each Gateway exam is graded on an `all-or-nothing' scale---either students achieve the minimum required score and earn 100\% or fail to achieve the minimum required score and earn 0\%. However, students have an `unlimited' number of attempts to pass each Gateway exam; that is, a student can take the exam repeatedly until a passing score is achieved. But a student \textit{must} be proctored to take a Gateway exam. Students can be proctored by their teaching assistant or by one of the staff in the Math Lab. Once a student has earned the minimum passing score on an attempt, they \textit{do not} have to make any subsequent attempts (though these may temporarily appear as a 0\% until the \textit{final} 100\% for the exam is processed after the Gateway exam period has closed). Students that fail to pass Gateway~I are \textit{highly} encouraged to enroll in MATH~152, which is a 1-credit hour support course called Calculus Workshop II. This is a pass/fail class designed to allow for more practice with the course material. Students who do not pass Gateway~I, enroll in MATH~152, and pass MATH~152 will not receive the 5\% penalty to their course grade. There are limited spots for MATH 152, so students wanting to enroll---whether they have failed Gateway~I or not---should enroll as soon as possible. Students not able to enroll in MATH 152 \textit{may} be offered an opportunity to earn back their Gateway I score. These opportunities are offered on a student-by-student basis.
-\pspace
-
-
-
 % Homeworks
 \mysection{0.18}{Homeworks}{hw}
 
-The only way to learn Mathematics is to do Mathematics! Therefore, there will be weekly homework assignments. Homeworks will mostly be given and submitted using MyOpenMath. MyOpenMath is a non-profit that hosts the open source IMathAS online assessment software. This online assessment system that will be integrated into the course through Blackboard. So, students will not have to create an account to access the homeworks. Moreover, students will not have to pay to access the homeworks. The homeworks can be found in the corresponding `Homework' folder in Blackboard. If you have difficulties in accessing this system or using the system during the semester, ask your instructor, teaching assistant, or other university technological consultant for assistance. Because homeworks will often be submitted electronically and students may experience difficulties with these systems, the internet, etc., do not wait until the last minute to begin or submit these assignments. \pspace
+The only way to learn Mathematics is to do Mathematics! Therefore, there will be nearly weekly homework assignments. Homeworks will mostly be given and submitted using MyOpenMath. MyOpenMath is a non-profit that hosts the open source IMathAS online assessment software. This online assessment system that will be integrated into the course through Blackboard. So, students will not have to create an account to access the homeworks. Moreover, students will not have to pay to access the homeworks. The homeworks can be found in the corresponding `Homework' folder in Blackboard. If you have difficulties in accessing this system or using the system during the semester, ask your instructor, teaching assistant, or other university technological consultant for assistance. Because homeworks will often be submitted electronically and students may experience difficulties with these systems, the internet, etc., do not wait until the last minute to begin or submit these assignments. \pspace
 
 It is essential for students to complete all of the assignments for the course. Working on homework is the best way of engaging with course concepts and gauging one's mastery of the material. Moreover, homework is an essential portion of the course grade. Assignments should be started as soon as possible. Do not delay working through homework; it is easier to keep up than it is to catch up. Students may request extensions on homework assignments. Requests for extensions should be submitted to the instructor in a timely fashion---do not delay! However, do not simply assume that you will be able to receive extra time on an assignment and plan your schedule carefully. Except in exceptional circumstances, homework extensions on topics included in an exam will not be granted beyond the exam date for that material. Any extensions, due dates, and grade penalties for late assignments will be determined by the instructor on a student-by-student basis. \pspace
 
@@ -340,51 +262,8 @@ Homeworks may entail software or programming components. These portions may requ
 % Exams
 \mysection{0.18}{Exams}{exams}
 
-There will be three exams in this course, each worth 10\% of the course grade for a total of 30\% of the course grade. There will also be a final exam worth 25\% of the course grade. Together, all exams are worth 55\% of the course grade. The schedule of the exams can be found in the `Course Schedule' section of the syllabus. However, these exam dates are subject to change. Students should not make plans to leave campus or otherwise have conflicts on/before class on Friday March 6th for Spring Break nor May 5th for the final exam. Exams will typically focus on that portion of the course's material. However, any course topics may appear on any exam. The final exam is cumulative and will cover the topics from the entire semester. Students should be present, seated, and prepared for a scheduled exam before the exam begins. Students who are late should not expect extra exam time. Furthermore, students who miss an exam should not expect to receive a make-up exam. There will be no make-up exams except under extraordinary circumstances, e.g. in the case of an emergency. However, determinations for make-up exams or other substitutions, with possible grade deductions, are made at the discretion of the instructor on a case-by-case basis. Unless otherwise instructed, no devices or materials other than those provided by the instructor are allowed on any exam. Exams may involve out-of-class portions, which will be submitted at a time and manner specified in lecture. Furthermore, it may be possible that any exam will be a take-home exam. In this case, the exam procedure and schedule will be announced in advance during lecture. 
+There will be two exams in this course, each worth 20\% of the course grade for a total of 40\% of the course grade. There will also be a final exam worth 25\% of the course grade. Together, all exams are worth 65\% of the course grade. The schedule of the exams can be found in the `Course Schedule' section of the syllabus. However, these exam dates are subject to change. Students should not make plans to leave campus or otherwise have conflicts on/before class on Friday March 6th for Spring Break nor May 5th for the final exam. Exams will typically focus on that portion of the course's material. However, any course topics may appear on any exam. The final exam is cumulative and will cover the topics from the entire semester. Students should be present, seated, and prepared for a scheduled exam before the exam begins. Students who are late should not expect extra exam time. Furthermore, students who miss an exam should not expect to receive a make-up exam. There will be no make-up exams except under extraordinary circumstances, e.g. in the case of an emergency. However, determinations for make-up exams or other substitutions, with possible grade deductions, are made at the discretion of the instructor on a case-by-case basis. Unless otherwise instructed, no devices or materials other than those provided by the instructor are allowed on any exam. Exams may involve out-of-class portions, which will be submitted at a time and manner specified in lecture. Furthermore, it may be possible that any exam will be a take-home exam. In this case, the exam procedure and schedule will be announced in advance during lecture. 
 \sectionbreak
-
-
-
-% CircleIn
-\mysection{0.18}{CircleIn}{circlein}
-
-{\bfseries What is CircleIn?} \par
-The class will use the CircleIn app to study and help every student another succeed in this course. Studying and learning alone is one of the hardest parts of a course, so please leverage one another. \par\vspace{0.3cm}
-
-With \href{http://CircleInApp.app.link}{CircleIn} (\url{http://CircleInApp.app.link}), you can\dots
-	\begin{itemize}
-	\item Ask anonymous questions.
-	\item Connect with all students taking the same course in addition to those in this class with you, via the course and class chat. Please note, this app does {\itshape not} require you to give out your personal contact information to anyone.
-	\item Participate in video study rooms.
-	\item Stay organized with assignments and tasks using the planner feature.
-	\item Create, study, and share flashcards, notes and resources with every student taking the course.
-	\item Provide anonymous weekly course feedback to share with me and the class what you are struggling with and what questions you have and you can help each other resolve those questions. 
-	\end{itemize}
-
-Students may engage with their classmates each week on CircleIn. For those students needing help, use it to ask questions, and for those students willing to help others, please, check it often to look for questions that have not been responded to yet. CircleIn is a leaderless student community where each student is stronger together, particularly when students engage. Note that good behavior and adherence to the academic code of conduct is expected on CircleIn. Inappropriate behavior or other violations can result in severe academic penalties. \par\vspace{0.3cm}
-
-Lastly, CircleIn is paid for by USC, so students will never see advertising, students will not be asked for a credit card or banking info and students can communicate with any other student directly through CircleIn, so students do not have to give out any personal contact information to set it up. It is possible to earn rewards by regularly engaging with CircleIn. \par\vspace{0.3cm}
-
-To get started:
-	\begin{itemize}
-	\item \href{http://CircleInApp.app.link}{Download the App} (\url{http://CircleInApp.app.link}) and visit the \href{https://app.circleinapp.com/}{CircleIn's Web Version (PC or MAC)} (\url{https://app.circleinapp.com/}).
-	\item Search for the University of South Carolina
-	\item Enter your school log-in credentials. 
-	\item Select authorize and get started! 
-	\end{itemize}
-You may also use the QR-code below:
-	\begin{figure}[!ht]
-	\centering
-	\includegraphics[width=0.10\textwidth]{circlein_qr.png}
-	\end{figure}
-
-
-
-
-
-\newpage
-
-
 
 
 
@@ -648,6 +527,42 @@ The University recognizes that students may occasionally miss classes for legiti
 
 
 
+% CircleIn
+\mysection{0.18}{CircleIn}{circlein}
+
+{\bfseries What is CircleIn?} \par
+Students may use the CircleIn app to study and help themselves and other students succeed in the course. Studying and learning alone is one of the hardest parts of a course, so please leverage one another. \par\vspace{0.3cm}
+
+With \href{http://CircleInApp.app.link}{CircleIn} (\url{http://CircleInApp.app.link}), you can\dots
+	\begin{itemize}
+	\item Ask anonymous questions.
+	\item Connect with all students taking the same course in addition to those in this class with you, via the course and class chat. Please note, this app does {\itshape not} require you to give out your personal contact information to anyone.
+	\item Participate in video study rooms.
+	\item Stay organized with assignments and tasks using the planner feature.
+	\item Create, study, and share flashcards, notes and resources with every student taking the course.
+	\item Provide anonymous weekly course feedback to share with me and the class what you are struggling with and what questions you have and you can help each other resolve those questions. 
+	\end{itemize}
+
+Students may engage with their classmates each week on CircleIn. For those students needing help, use it to ask questions, and for those students willing to help others, please, check it often to look for questions that have not been responded to yet. CircleIn is a leaderless student community where each student is stronger together, particularly when students engage. Note that good behavior and adherence to the academic code of conduct is expected on CircleIn. Inappropriate behavior or other violations can result in severe academic penalties. \par\vspace{0.3cm}
+
+Lastly, CircleIn is paid for by USC, so students will never see advertising, students will not be asked for a credit card or banking info and students can communicate with any other student directly through CircleIn, so students do not have to give out any personal contact information to set it up. It is possible to earn rewards by regularly engaging with CircleIn. \par\vspace{0.3cm}
+
+To get started:
+	\begin{itemize}
+	\item \href{http://CircleInApp.app.link}{Download the App} (\url{http://CircleInApp.app.link}) and visit the \href{https://app.circleinapp.com/}{CircleIn's Web Version (PC or MAC)} (\url{https://app.circleinapp.com/}).
+	\item Search for the University of South Carolina
+	\item Enter your school log-in credentials. 
+	\item Select authorize and get started! 
+	\end{itemize}
+You may also use the QR-code below:
+	\begin{figure}[!ht]
+	\centering
+	\includegraphics[width=0.10\textwidth]{circlein_qr.png}
+	\end{figure}
+\sectionbreak
+
+
+
 % Codes of Conduct
 \mysection{0.25}{Codes of Conduct}{univ_conduct}
 
@@ -835,38 +750,30 @@ The following is a \emph{tentative} schedule for the course and is subject to ch
         \centering
         \scalebox{1}{%
         \begin{tabular}{ll || ll}
-        Date & Topic(s) & Date & Topic(s) \\ \hline         
-	01/12 & Recitation (Integration Review) & 03/05 & Absolute/Cond. Conv. \& Ratio/Root Test \\
-	01/13 & $u$-Substitution Review & 03/09 & Spring Break \\
-	01/14 & Gateway~I & 03/10 & Spring Break \\
-	01/15 & Integration-by-Parts & 03/11 & Spring Break \\
-	01/19 & MLK Day (No Classes) & 03/12 & Spring Break \\
-	01/20 & Integration-by-Parts & 03/16 & Recitation (Series Tests) \\
-	01/21 & Recitation (Integration Review) & 03/17 & Ratio/Root Tests \\
-	01/22 & Trigonometric Integrals & 03/18 & Lab~5 \\
-	01/26 & Recitation (Integration Review) & 03/19 & Exam~2 \\
-	01/27 & Trig. Substitution & 03/23 & Lab~6 \\
-	01/28 & Recitation (Integration Review) & 03/24 & Power Series \\
-	01/29 & Partial Fractions & 03/25 & Recitation (Power Series) \\
-	02/02 & Recitation (Integration Review) & 03/26 & Power Series \\
-	02/03 & Improper Integrals & 03/30 & Recitation (Power Series) \\
-	02/04 & Recitation (Integration Review) & 03/31 & Taylor Series \\
-	02/05 & Integral Applications & 04/01 & Lab~7 \\
-	02/09 & Recitation (Exam Review) & 04/02 & Taylor Series \\
-	02/10 & Integration Review & 04/06 & Recitation (Taylor Series) \\
-	02/11 & Lab~1 & 04/07 & Taylor Remainder Theorem \\
-	02/12 & Exam~1 & 04/08 & Recitation (Remainder Theorem) \\
-	02/16 & Lab~2 & 04/09 & Series Applications \\
-	02/17 & Sequences \& Series Introduction & 04/13 & Recitation (Series Applications) \\
-	02/18 & Gateway~II & 04/14 & Series Applications \\
-	02/19 & Telescoping/Geometric Series & 04/15 & Lab~8 \\
-	02/23 & Lab~3 & 04/16 & Exam~3 \\
-	02/24 & Integral/Alternating Series Test & 04/20 & Lab~9 \\
-	02/25 & Lab~4 & 04/21 & Parametric Functions \\
-	02/26 & Limit Comparison Test & 04/22 & Recitation (Final Exam Review) \\
-	03/02 & Gateway~II & 04/23 & Polar Coordinates \\
-	03/03 & Direct Comparison Test & 04/27 & Recitation (Final Exam Review) \\
-	03/04 & Recitation (Series Tests) & Varies & Final Exam
+        Date & Topic(s) & Date & Topic(s) \\ \hline    
+        01/12 & Vectors & 03/06 & Column Space \\
+        01/14 & Vectors & 03/09 & Spring Break \\
+        01/16 & Vectors & 03/11 & Spring Break \\
+        01/19 & MLK Day (No Classes) & 03/13 & Spring Break \\
+        01/21 & Matrices & 03/16 & Dimension \\
+        01/23 & RREF & 03/18 & Dimension \\
+        01/26 & RREF & 03/20 & Fundamental Theorem \\
+        01/28 & RREF & 03/23 & Fundamental Theorem \\
+        01/30 & Inverses & 03/25 & Overflow \\
+        02/02 & Inverses & 03/27 & Exam 2 \\
+        02/04 & Determinants & 03/30 & Eigenvectors \\
+        02/06 & Determinants & 04/01 & Eigenvectors \\
+        02/09 & Determinants & 04/03 & Eigenvectors \\
+        02/11 & Overflow & 04/06 & Eigenvectors \\
+        02/13 & Exam 1 & 04/08 & Diagonalization \\
+        02/16 & LU Factorizations & 04/10 & Diagonalization \\
+        02/18 & LU Factorizations & 4/13 & Diagonalization \\
+        02/20 & $Ax= b$ & 04/15 & Orthogonality \\
+        02/23 & Rank & 04/17 & Orthogonality \\
+        02/25 & Subspaces & 04/20 & Orthogonality \\
+        02/27 & Nullspace & 04/22 & Orthogonality \\
+        03/02 & Nullspace & 04/24 & Special Topics \\
+        03/04 & Column Space & 04/27 & Special Topics 
         \end{tabular}
         }
         \end{table}
