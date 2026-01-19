@@ -46,7 +46,16 @@
 % 01/15
 \checkin{01/15} 
 
-\sol 
+\sol Making the $u$-substitution $u= x^2 + 1$ in $\ds\int_0^1 \dfrac{5x}{x^2 + 1}\;dx$, we obtain $\ds\int_0^1 \dfrac{5}{2u} \;du$. \pspace
+
+\sol The statement is \textit{false}. One must always remember to change the limits when making a substitution in a definite integral. If we choose $u= x^2 + 1$, then $du= 2x \;dx$. If $x= 0$, then $u= 0^2 + 1= 1$. If $x= 1$, then $u= 1^2 + 1= 2$. But then\dots
+	\[
+	\int_0^1 \dfrac{5x}{x^2 + 1}\;dx= 5 \int_0^1 \dfrac{x}{x^2 + 1}\;dx= \dfrac{5}{2} \int_0^1 \dfrac{2x}{x^2 + 1}\;dx= \dfrac{5}{2} \int_1^2 \dfrac{du}{u}
+	\]
+We also have\dots
+	\[
+	\dfrac{5}{2} \int_1^2 \dfrac{du}{u}= \dfrac{5}{2}\,\ln|u| \;\bigg|_1^2= \dfrac{5}{2}\; ( \ln 2 - \ln 1)= \dfrac{5}{2}\; ( \ln 2 - 0)= \dfrac{5}{2}\,\ln(2)= \ln(\sqrt{32}) \approx 1.73287
+	\]
 
 
 
