@@ -44,9 +44,7 @@
 \thispagestyle{title}
 
 % 01/15
-\checkin{01/15} 
-
-\sol Making the $u$-substitution $u= x^2 + 1$ in $\ds\int_0^1 \dfrac{5x}{x^2 + 1}\;dx$, we obtain $\ds\int_0^1 \dfrac{5}{2u} \;du$. \pspace
+\checkin{01/15} Making the $u$-substitution $u= x^2 + 1$ in $\ds\int_0^1 \dfrac{5x}{x^2 + 1}\;dx$, we obtain $\ds\int_0^1 \dfrac{5}{2u} \;du$. \pspace
 
 \sol The statement is \textit{false}. One must always remember to change the limits when making a substitution in a definite integral. If we choose $u= x^2 + 1$, then $du= 2x \;dx$. If $x= 0$, then $u= 0^2 + 1= 1$. If $x= 1$, then $u= 1^2 + 1= 2$. But then\dots
 	\[
@@ -55,24 +53,59 @@
 We also have\dots
 	\[
 	\dfrac{5}{2} \int_1^2 \dfrac{du}{u}= \dfrac{5}{2}\,\ln|u| \;\bigg|_1^2= \dfrac{5}{2}\; ( \ln 2 - \ln 1)= \dfrac{5}{2}\; ( \ln 2 - 0)= \dfrac{5}{2}\,\ln(2)= \ln(\sqrt{32}) \approx 1.73287
+	\] \pvspace{1.3cm}
+
+
+
+% 01/20
+\checkin{01/20} We should integrate $\ds\int x e^{x^2} \;dx$ using integration-by-parts. \pspace
+
+\sol The statement is \textit{false}. This certainly looks like an integration-by-parts integral---specifically, a tabular integral (because it is of the form polynomial times trig). The only possible choices for $dv$ would be $e^{x^2}$, which cannot be integrated, or $x e^{x^2}$, which is the entire integral and we already `don't know' how to integrate, or $x$. This last choices forces $u= e^{x^2}$. But then the new integral produced is $\ds\int x^3 e^{x^2} \;dx$---which is even `worse.' Instead, observe that the given integral can be found by $u$-substitution using $u= x^2$, so that $du= 2x \;dx$. But then\dots
+	\[
+	\int x e^{x^2} \;dx= \dfrac{1}{2} \int 2x e^{x^2} \;dx= \dfrac{1}{2} \int e^u \;du= \dfrac{e^u}{2} + C= \dfrac{e^{x^2}}{2} + C
 	\]
+There is a heavy overlap between $u$-substitution and integration-by-parts in terms of what the integrals that require these methods `look like.' One needs to be careful when determining when to use which method. Some integrals require both methods! \pvspace{1.3cm}
 
 
 
+% 01/22
+\checkin{01/22} The integral $\ds\int x^2 3^x \;dx$ can be integrated using tabular integration. \pspace
+
+\sol The statement is \textit{true}. We anticipate that this might be an integration-by-parts tabular integral because it is of the form polynomial times exponential. Using LIATE, we choose $u= x^2$, which forces $dv= 3^x$. Note that $\ds\int 3^x \;dx= \dfrac{3^x}{\ln 3} + C$. We then have\dots\par
+	\[
+	\begin{array}{c @{\hspace*{1.3cm}} c} \toprule
+	u & dv \\ \cmidrule(lr){1-2}
+	x^2 \tikzmark{Left 1} & \tikzmark{Right 1} 3^x \\[0.3cm]
+	2x \tikzmark{Left 2} & \tikzmark{Right 2} \dfrac{3^x}{\ln 3} \\[0.3cm]
+	2 \tikzmark{Left 3} & \tikzmark{Right 3} \dfrac{3^x}{(\ln 3)^2} \\[0.3cm]
+	0 \tikzmark{Left 4} & \tikzmark{Right 4} \dfrac{3^x}{(\ln 3)^3} \\[0.3cm]
+	
+	\DrawArrow{Left 1}{Right 2}{+}
+	\DrawArrow{Left 2}{Right 3}{--}
+	\DrawArrow{Left 3}{Right 4}{+}
+	\end{array}
+	\]
+Therefore, we have\dots
+	\[
+	\begin{aligned}
+	\int x^2 3^x \;dx&= \boxed{\dfrac{x^2 (3^x)}{\ln 3} - \dfrac{2x (3^x)}{(\ln 3)^2} + \dfrac{2(3^x)}{(\ln 3)^3} + C} \\[0.3cm]
+	&= \dfrac{3^x}{(\ln 3)^3} \left( x^2 (\ln 3)^2 - 2x (\ln 3) + 2 \right) + C \\[0.3cm]
+	&= \dfrac{3^x \left( x^2 (\ln 3)^2 - x (2 \ln 3) + 2 \right)}{(\ln 3)^3} + C \\[0.3cm]
+	&= \dfrac{3^x \left( x^2 (\ln 3)^2 - x \ln 9 + 2 \right)}{(\ln 3)^3} + C
+	\end{aligned}
+	\] \pvspace{1.3cm}
 
 
+% 01/27
+\checkin{01/27} To integrate $\ds\int \tan^2 x \sec x \;dx$, one chooses $u= \sec x$. \pspcae
+
+\sol The statement is \textit{false}. 
 
 
+% 01/29
+\checkin{01/29} Consider the integral $\ds\int (x^2 + 4)^3 \;dx$. One can recognize this is a trig. sub. because the ``$a^2 + b^2= c^2$--like'' term $x^2 + 4$, and can then make the substitution $x= 2 \tan \theta$. \pspace
 
-
-
-
-
-
-
-
-
-
+\sol The statement is \textit{true}. 
 
 
 
