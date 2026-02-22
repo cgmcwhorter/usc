@@ -96,16 +96,98 @@ Therefore, we have\dots
 	\] \pvspace{1.3cm}
 
 
-% 01/27
-\checkin{01/27} To integrate $\ds\int \tan^2 x \sec x \;dx$, one chooses $u= \sec x$. \pspcae
 
-\sol The statement is \textit{false}. 
+% 01/27
+\checkin{01/27} To integrate $\ds\int \tan^2 x \sec x \;dx$, one chooses $u= \sec x$. \pspace
+
+\sol The statement is \textit{false}. Observe that if one chooses $u= \sec x$, we have $du= \sec x \tan x \;dx$. But writing $\ds\int \tan x \cdot \sec x \tan x \;dx$, we have a remaining term of $\tan x$, which cannot be replaced with the trigonometric Pythagorean identity. Therefore, this substitution will not work. Similarly, choosing $u= \tan x$, we would have $du= \sec^2 x$---requiring two factors of $\sec x$ while the integrand only has one. To compute the given integral, observe\dots
+	\[
+	\int \tan^2 x \sec x \;dx= \int \dfrac{\sin^2 x}{\cos^2 x} \cdot \dfrac{1}{\cos x} \;dx= \int \dfrac{\sin^2 x}{\cos^3 x} \;dx= \int \dfrac{1 - \cos^2 x}{\cos^3 x} \;dx= \int \left( \sec^3 x - \sec x \right) \;dx
+	\]
+Using the fact that $\ds\int \sec^3 x \;dx= \frac{1}{2} \left( \sec x \tan x + \ln|\sec x + \tan x| \right) + C$ and $\ds\int \sec x \;dx= \ln|\sec x + \tan x| + C$, we have\dots
+	\[
+	\int \tan^2 x \sec x \;dx= \dfrac{\sec x \tan x - \ln|\sec x + \tan x|}{2} + C
+	\] \pvspace{1.3cm}
+
+
+
+\newpage
+
 
 
 % 01/29
 \checkin{01/29} Consider the integral $\ds\int (x^2 + 4)^3 \;dx$. One can recognize this is a trig. sub. because the ``$a^2 + b^2= c^2$--like'' term $x^2 + 4$, and can then make the substitution $x= 2 \tan \theta$. \pspace
 
-\sol The statement is \textit{true}. 
+\sol The statement is \textit{true}. One can indeed make the substitution $x= 2 \tan \theta$, where $dx= 2 \sec^2 \theta \;d\theta$, so that $x^2 + 4= 4 \sec^2 \theta$. One then finds that the integral is $\ds 128 \int \sec^8 \theta \;d\theta$. However, there is a simpler way:
+	\[
+	\int (x^2 + 4)^3 \;dx= \int \left( x^6 + 12x^4 + 48x^2 + 64 \right) \;dx= \dfrac{x^7}{7} + \dfrac{12x^5}{x} + 16x^3 + 64x + C
+	\]
+Always carefully observe one's integrand. While one method may work, there may be other approaches which are simpler. \pvspace{1.3cm}
+
+
+
+% 02/03
+\checkin{02/03} The decomposition of $\dfrac{5x - 6}{x^2(x + 3)}$ takes the form $\dfrac{A}{x} + \dfrac{Bx + C}{x^2} + \dfrac{D}{x + 3}$. \pspace
+
+\sol The statement is \textit{false}. While it is true that quadratic terms receive general linear terms in their numerator in a partial fraction decomposition, if the `base term', i.e. the term being raised to a power, is linear, the top is only a constant. We should think of $x^2$ as $x^2= (x - 0)^2$, so that the `base term' is $x - 0$, which is linear. The partial fraction decomposition should be\dots
+	\[
+	\dfrac{5x - 6}{x^2(x + 3)}= \dfrac{A}{x} + \dfrac{B}{x^2} + \dfrac{C}{x + 3}
+	\]
+Note that one could use the given decomposition. However, one would have redundant terms. One would find that $B= 0$ and $C$ would be the $B$ from the correct partial fraction decomposition. \pvspace{1.3cm}
+
+
+
+% 02/05
+\checkin{02/05} Heaviside's rule will allow you to find the full partial fraction decomposition for a rational function whose denominator consists of products of only linear terms, e.g. $\dfrac{6x - 9}{(x + 1)(x - 3)^2}$. \pspace
+
+\sol The statement is \textit{false}. Recall that Heaviside's method (the cover-up method) only allows one to find the coefficient associated with the highest power of linear terms. So, while it will not find any coefficients associated to quadratic terms, it will find some coefficients associated to linear terms---but only their highest power. We have a partial fraction decomposition of\dots
+	\[
+	\dfrac{6x - 9}{(x + 1)(x - 3)^2}= \dfrac{A}{x + 1} + \dfrac{B}{x - 3} + \dfrac{C}{(x - 3)^2}
+	\]
+Heaviside's method will allow one to find $A, C$ but not $B$. Therefore, it will not find the full partial fraction decomposition. [\textit{Note.} There is a modification of Heaviside's method that will allow one to find all coefficients associated to linear terms: given the coefficient $A_k$ for $\frac{A_k}{(x - a)^k}$, where $1 \leq k \leq n$, we have $\ds A_k= \frac{1}{(n - k)!} \lim_{x \to a} \frac{d^{n-k}}{dx^{n-k}} \left( (x - a)^n F(x) \right)$, where $F(x)$ is the original rational function. Of course, other methods, such as Keily's Method, are often simpler.] \pvspace{1.3cm}
+
+
+
+\newpage
+
+
+
+% 02/10
+\checkin{02/10} 
+The partial fraction decomposition of $\dfrac{9 - x}{x^5 + 6x^4 + 9x^3}= \dfrac{9 - x}{x^3(x^2 + 6x + 9)}$ is $\dfrac{A}{x} + \dfrac{B}{x^2} + \dfrac{C}{x^3} + \dfrac{Ax + B}{x^2 + 6x + 9}$. \pspace
+
+\sol The statement is \textit{false}. Recall before performing a partial fraction decomposition, one needs to be sure that the degree of the numerator is strictly less than the degree of the denominator (or else one first needs to polynomial long divide) and that the denominator is factored into irreducible terms. Observe that $x^2 + 6x + 9= (x + 3)(x + 3)= (x + 3)^2$. Therefore, we have\dots
+	\[
+	\dfrac{9 - x}{x^5 + 6x^4 + 9x^3}= \dfrac{9 - x}{x^3(x^2 + 6x + 9)}= \dfrac{9 - x}{x^3(x + 3)^2}= \dfrac{A}{x} + \dfrac{B}{x^2} + \dfrac{C}{x^3} + \dfrac{D}{x + 3} + \dfrac{E}{(x + 3)^2}
+	\]
+Of course, one could use the originally given decomposition. Denoting the originally given decomposition with tildes, one would find $\tilde{A}= D$ and $\tilde{B}= 3D + E$. \pvspace{1.3cm}
+
+
+
+% 02/19
+\checkin{02/19} Because $\ds\lim_{n \to \infty} \dfrac{1}{n \ln(n)}= 0$, the sequence $\ds\sum_{n=2}^\infty \dfrac{1}{n \ln(n)}$ converges. \pspace
+
+\sol The statement is \textit{false}. In fact, the given series diverges. One is making an incorrect inference from the Divergence Test. It is true that if $\ds\lim_{n \to \infty} a_n \neq 0$, then $\ds\sum^\infty a_n$ diverges. However, that does not necessarily meant that if $\ds\lim_{n \to \infty} a_n = 0$ that the series $\ds\sum^\infty a_n$ converges. Consider the series $\ds\sum^\infty \frac{1}{n}$ (the Harmonic series) which diverges and $\ds\sum^\infty \frac{1}{n^2}$ converges to $\frac{\pi^2}{6}$. In both cases, $\ds\lim_{n \to \infty} \frac{1}{n}= \lim_{n \to \infty} \frac{1}{n^2}= 0$, but their series have different behaviors. The fact that $\ds\lim_{n \to \infty} a_n= 0$ is never enough to determine the behavior of $\ds\sum^\infty a_n$ without more information about the sequence $\{ a_n \}$. \pvspace{1.3cm}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
