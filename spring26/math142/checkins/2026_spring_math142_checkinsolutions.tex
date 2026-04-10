@@ -167,14 +167,96 @@ Of course, one could use the originally given decomposition. Denoting the origin
 % 02/19
 \checkin{02/19} Because $\ds\lim_{n \to \infty} \dfrac{1}{n \ln(n)}= 0$, the sequence $\ds\sum_{n=2}^\infty \dfrac{1}{n \ln(n)}$ converges. \pspace
 
-\sol The statement is \textit{false}. In fact, the given series diverges. One is making an incorrect inference from the Divergence Test. It is true that if $\ds\lim_{n \to \infty} a_n \neq 0$, then $\ds\sum^\infty a_n$ diverges. However, that does not necessarily meant that if $\ds\lim_{n \to \infty} a_n = 0$ that the series $\ds\sum^\infty a_n$ converges. Consider the series $\ds\sum^\infty \frac{1}{n}$ (the Harmonic series) which diverges and $\ds\sum^\infty \frac{1}{n^2}$ converges to $\frac{\pi^2}{6}$. In both cases, $\ds\lim_{n \to \infty} \frac{1}{n}= \lim_{n \to \infty} \frac{1}{n^2}= 0$, but their series have different behaviors. The fact that $\ds\lim_{n \to \infty} a_n= 0$ is never enough to determine the behavior of $\ds\sum^\infty a_n$ without more information about the sequence $\{ a_n \}$. \pvspace{1.3cm}
+\sol The statement is \textit{false}. In fact, the given series diverges. One is making an incorrect inference from the Divergence Test. It is true that if $\ds\lim_{n \to \infty} a_n \neq 0$, then $\ds\sum^\infty a_n$ diverges---this is the Divergence Test. However, the Divergence Test does not say that if $\ds\lim_{n \to \infty} a_n = 0$ that the series $\ds\sum^\infty a_n$ converges. One cannot determine whether a series $\ds\sum^\infty a_n$ converges or diverges from the fact that $\ds\lim_{n \to \infty} a_n = 0$. Consider the series $\ds\sum^\infty \frac{1}{n}$ (the Harmonic series) and $\ds\sum^\infty \frac{1}{n^2}$. For both series, $\ds\lim_{n \to \infty} \frac{1}{n}= 0$ and $\ds\lim{n \to \infty} \frac{1}{n^2}= 0$. However, the series $\ds\sum^\infty \frac{1}{n}$ diverges (it is the Harmonic series), while the series $\ds\sum^\infty \frac{1}{n^2}$ converges to $\frac{\pi^2}{6}$. So, while $\ds\lim_{n \to \infty} a_n= 0$ in both cases, the series have different behaviors. The fact that $\ds\lim_{n \to \infty} a_n= 0$ is never enough to determine the behavior of $\ds\sum^\infty a_n$ without more information about the sequence $\{ a_n \}$. \pvspace{1.3cm}
 
 
 
 % 02/24
 \checkin{02/24} The series $\ds\sum_{n=2}^\infty 4 \left( \dfrac{9^{n+4}}{5^{2n}} \right)$ diverges. \pspace
 
-\sol The statement is \textit{false}.
+\sol The statement is \textit{false}. Although it seems that for large $n$, $4 \left( \frac{9^{n+4}}{5^{2n}} \right) \approx 4 \cdot \frac{9^n}{5^n} \approx 4 \left( \frac{9}{5} \right)^n$, which would diverge by the Geometric Series Test because $|r|= \frac{9}{5} > 1$, this is \textit{not} the case because the correct $r$ has not been found. Given a geometric series, one needs to be sure to write it in the form $\ds\sum^\infty a r^n$. That is, you need to find a common power $n$ for all the exponential terms. For this series, we have\dots
+	\[
+	\sum_{n=2}^\infty 4 \left( \dfrac{9^{n+4}}{5^{2n}} \right)= \sum_{n=2}^\infty 4 \left( \dfrac{9^n 9^4}{(5^2)^n} \right)= \sum_{n=2}^\infty (4 \cdot 9^4) \left( \dfrac{9^n}{25^n} \right)= \sum_{n=2}^\infty 26244 \left( \dfrac{9}{25} \right)^n
+	\]
+Observe this series is geometric because it has the form $\ds\sum^\infty ar^n$, where $a= 26244$ and $r= \frac{9}{25}$. Therefore, the series converges by the Geometric Series Test because $|r|= \frac{9}{25} < 1$. In fact, the series converges to $\frac{\text{first term}}{1 - r}= \frac{2125764/625}{1 - \frac{9}{25}}= \frac{531441}{100} \approx 5314.41$. \pvspace{1.3cm}
+
+
+
+% 02/26
+\checkin{02/26} Because $\ds\int_1^\infty \dfrac{x}{e^x} \;dx$ converges to $\frac{2}{e}$, the series $\ds\sum_{n=1}^\infty \frac{n}{e^n}$ converges to $\frac{2}{e}$ by the integral test. \pspace
+
+\sol The statement is \textit{false}. Let $f(x)= \frac{x}{e^x}$. We know that $f(x) > 0$ on $[1, \infty)$ because $x, e^x > 0$ on this interval. Because $x, e^x$ are continuous on $[1, \infty)$, $f(x)$ is continuous because it is a quotient of continuous functions. Finally, $f(x)$ is decreasing on $[1, \infty)$ because $f'(x)= -e^{-x} (x - 1) < 0$ on $[1, \infty)$. [Observe that for $x > 1$, $x - 1 > 0$, $e^x > 0$, so that $-e^x (x - 1) < 0$.] Therefore by the Integral Test, we know that $\ds\sum_{n=1}^\infty \frac{n}{e^n}$ converges if and only if $\ds\int_1^\infty \dfrac{x}{e^x} \;dx$ converges. Using integration-by-parts, we know $\ds\int \frac{x}{e^x} \;dx=  -xe^{-x} - e^{-x} + C= -e^{-x} (x + 1) + C= -\frac{x + 1}{e^x} + C$. Therefore, we have\dots
+	\[
+	\int_1^\infty \dfrac{x}{e^x} \;dx:= \lim_{b \to \infty} \int_1^b \dfrac{x}{e^x} \;dx= \lim_{b \to \infty} -\frac{x + 1}{e^x} \bigg|_1^b= \lim_{b \to \infty} -\dfrac{b + 1}{e^b} - \left( -\dfrac{2}{e^1} \right)= 0 + \dfrac{2}{e}= \dfrac{2}{e}
+	\]
+By the Integral Test, because $\int_1^\infty \dfrac{x}{e^x} \;dx$ converges the series $\ds\sum_{n=1}^\infty \frac{n}{e^n}$ converges. While the Integral Test guarantees that the expressions have the same behavior, it \textit{does not} state that they have the same value. In fact, it should never be the case that they will be equal. So, while $\ds\sum_{n=1}^\infty \frac{n}{e^n}$ converges, it does not converge to $\frac{2}{e}$. In fact, $\ds\sum_{n=1}^\infty \frac{n}{e^n}= \frac{e}{(e - 1)^2} \approx 0.9206735942$. \pvspace{1.3cm}
+
+
+
+% 03/03
+\checkin{03/03} Because the series $\ds\sum_{n=1}^\infty \dfrac{1}{n^5}$ converges by the $p$-test with $p= 5 > 1$, the series $\ds\sum_{n=1}^\infty \dfrac{n^2}{n^5 + 1}$ converges by the Limit Comparison Test. \pspace
+
+\sol The statement is \textit{false}. It is true that the series $\ds\sum_{n=1}^\infty \dfrac{n^2}{n^5 + 1}$ converges. However, the stated reason is \textit{not} the correct reasoning. One would need to compare to the series $\ds\sum_{n=1}^\infty \frac{1}{n^3}$. We can see this from the fact that for sufficiently large $n$, $\frac{n^2}{n^5 + 1} \approx \frac{n^2}{n^5}= \frac{1}{n^3}$. Observe that\dots
+	\[
+	\lim_{n \to \infty} \dfrac{\;\;\;\;\dfrac{n^2}{n^5 + 1}\;\;\;\;}{\dfrac{1}{n^3}}= \lim_{n \to \infty} \dfrac{n^2}{n^5 + 1} \cdot \dfrac{n^3}{1}= \lim_{n \to \infty} \dfrac{n^5}{n^5 + 1}= 1
+	\]
+Because this limit is finite and nonzero, we know by the Limit Comparison Test that the series $\ds\sum_{n=1}^\infty \dfrac{n^2}{n^5 + 1}$ and $\ds\sum_{n=1}^\infty \dfrac{1}{n^3}$ either both converge or both diverge. We know that the series $\ds\sum_{n=1}^\infty \dfrac{1}{n^3}$ converges by the $p$-test because $p= 3 > 1$. Therefore, it must be that the series $\ds\sum_{n=1}^\infty \dfrac{n^2}{n^5 + 1}$ converges. \pvspace{1.3cm}
+
+
+
+% 03/05
+\checkin{03/05} The series $\ds\sum_{n=1}^\infty (-1)^n \, \dfrac{|\arctan \big( \csc(\sqrt[3]{n} ) \big)| \sqrt[8]{n^\pi + 5}}{n^7 + \ln(n) + 15}$ converges. \pspace
+
+\sol The statement is \textit{true}. Observe that $|\arctan \big( \csc(\sqrt[3]{n} ) \big)|, \sqrt[8]{n^\pi + 5}, n^7 + \ln(n) + 15 > 0$ on $[1, \infty)$. Therefore because of the $(-1)^n$ term, the series is alternating. We know that $|\arctan \big( \csc(\sqrt[3]{n} ) \big)|$ is bounded because $\arctan x$ is bounded. We know that for large $n$, $\sqrt[8]{n^\pi + 5} \approx \sqrt[8]{n^\pi}= n^{\pi/8} \approx n^{0.393}$. Furthermore, we know for sufficiently large $n$ that $n^7 + \ln n + 15 \approx n^7$. So for sufficiently large $n$, $\dfrac{|\arctan \big( \csc(\sqrt[3]{n} ) \big)| \sqrt[8]{n^\pi + 5}}{n^7 + \ln(n) + 15} \approx \frac{n^{0.392}}{n^7}$. But then $\ds\lim_{n \to \infty} \frac{|\arctan \big( \csc(\sqrt[3]{n} ) \big)| \sqrt[8]{n^\pi + 5}}{n^7 + \ln(n) + 15}= 0$. Furthermore for sufficiently large $n$, we know that $\left\{ \frac{|\arctan \big( \csc(\sqrt[3]{n} ) \big)| \sqrt[8]{n^\pi + 5}}{n^7 + \ln(n) + 15} \right\}$ is a decreasing sequence. Therefore, the series $\ds\sum_{n=1}^\infty (-1)^n \, \dfrac{|\arctan \big( \csc(\sqrt[3]{n} ) \big)| \sqrt[8]{n^\pi + 5}}{n^7 + \ln(n) + 15}$ converges by the Alternating Series Test. Furthermore, adding the first thirty terms of the series, we estimate the series has a sum of $0.0766257845$. By the Alternating Series Estimation Theorem, the error in this estimation will at most be the magnitude of the 31st term of the summand, which is approximately $2.2 \cdot 10^{-10}$. \pvspace{1.3cm}
+
+
+
+% 03/17
+\checkin{03/17} Applying the Root Test to $\ds\sum_{n=1}^\infty \left( \dfrac{1}{n} \right)^n$, we have $\left| \left( \dfrac{1}{n} \right)^n \right|^{1/n}= \dfrac{1}{n}$. Because $\ds\sum_{n=1}^\infty \dfrac{1}{n}$ diverges, we then know that $\ds\sum_{n=1}^\infty \left( \dfrac{1}{n} \right)^n$ diverges by the Root Test. \pspace
+
+\sol The statement is \textit{false}. Consider the infinite series $\ds\sum^\infty a_n$ and let $L:= \lim_{n \to \infty} |a_n|^{1/n}$. Recall that the Root Test states that $\ds\sum^\infty a_n$ converges absolutely if $L < 1$, diverges if $L= 1$, and is inconclusive if $L= 1$. Observe for this series\dots
+	\[
+	\lim_{n \to \infty} \left| \left( \dfrac{1}{n} \right)^n \right|^{1/n}= \lim_{n \to \infty} \dfrac{1}{n}= 0 < 1
+	\]
+Because this limit is less than 1, we know the series $\ds\sum_{n=1}^\infty \left( \dfrac{1}{n} \right)^n$ is absolutely convergent. \pvspace{1.3cm}
+
+
+
+% 03/26
+\checkin{03/26} There is a power series which has an interval of convergence given by $x < -5$ and $x > 5$. \pspace
+
+\sol The statement is \textit{false}. First of all, the $x$-values for which $x < -5$ and $x > 5$ is not an interval. Furthermore, let $\ds\sum^\infty a_n (x - c)^n$ be a power series with center $c$. The only possibilities for the interval of convergence for a power series are just the center, $\{ c \}$, a finite interval of radius $R$ centered about the center, e.g. $(c - R, c + R), [c - R, c + R), (c - R, c + R]$, or $[c - R, c + R]$, or the entire real line $(-\infty, \infty)$. So, there cannot be a power series with `interval of convergence' given by $x < -5$ and $x > 5$. \pvspace{1.3cm}
+
+
+
+% 03/31
+\checkin{03/31} If a power series converges on $[3,19)$, then the radius of convergence must be $8$ and the center must be $x= 11$. \pspace
+
+\sol The statement is \textit{true}. The center of this interval of convergence is clearly $\frac{a + b}{2}= \frac{3 + 19}{2}= \frac{22}{2}= 11$. Furthermore, the radius of this interval of convergence is $R= \frac{b - a}{2}= \frac{19 - 3}{2}= \frac{16}{2}= 8$. \pvspace{1.3cm}
+
+
+
+% 04/02
+\checkin{04/02} The Maclaurin series for $f(x)$ is $\ds\sum_{n=0}^\infty \dfrac{f^{(n)}(0)}{n!} \, x^n$. \pspace
+
+\sol The statement is \textit{true}. Assuming that a function $f(x)$ is infinitely differentiable, the Taylor series for $f(x)$ centered at $x= c$ is given by $\ds T(x)= \sum_{n=0}^\infty \dfrac{f^{(n)}(c)}{n!} \, (x - c)^n$. A Maclaurin series is simply a Taylor series with a center of $c= 0$. But then the Maclaurin series for $f(x)$ is $\ds T(x)= \sum_{n=0}^\infty \dfrac{f^{(n)}(0)}{n!} \, (x - 0)^n= \sum_{n=0}^\infty \dfrac{f^{(n)}(0)}{n!} \, x^n$. \pvspace{1.3cm}
+
+
+
+% 04/07
+\checkin{04/07} We have $\ds\sum_{n=0}^\infty (-1)^n \,\dfrac{\pi^{2n}}{(2n)!}= -1$. \pspace
+
+\sol The statement is \textit{true}. We know the Taylor series for $\cos x$ centered at $x= 0$ is $\ds\sum_{n=0}^\infty (-1)^n \, \dfrac{x^{2n}}{(2n)!}$. Furthermore, this Taylor series converges to $\cos x$ for all $x \in (-\infty, \infty)$. So, we can evaluate this Taylor series at $x= \pi$. But then\dots
+	\[
+	\sum_{n=0}^\infty (-1)^n \,\dfrac{\pi^{2n}}{(2n)!}= \sum_{n=0}^\infty (-1)^n \, \dfrac{x^{2n}}{(2n)!} \bigg|_{x= \pi}= \cos(x) \bigg|_{x= \pi}= \cos(\pi)= -1
+	\] \pvspace{1.3cm}
+
+
+
+% 04/09
+\checkin{04/09} The 3rd degree Taylor polynomial, $T_3(x)$, for $e^x$ centered at $x= 0$ is $1 + x + \frac{x^2}{2!} + \frac{x^3}{3!}$. The Taylor remainder term for this polynomial in approximating $e^x$ `near' $x= 0$ is $R_3(x)= \frac{x^4}{4!}$. \pspace
+
+\sol The statement is \textit{false}. The Taylor Remainder Theorem (or Lagrange Remainder Theorem) states that the remainder (error) in approximating $f(x)$ using $T_n(x)$ (centered at $c$) is $R_n(x)= \frac{f^{(n+1)}(c)}{(n+1)!} \,(x - c)^{n+1}$, where $c$ is some real number between $x$ and $c$. That is, the remainder term is the `next term' of the Taylor series but with the derivative instead evaluated at some other value between $x$ and $c$---not the center! So for $f(x)= e^x$ and $T_3(x)$ (centered at $0$), the remainder term would be $R_3(x)= \frac{f^{(4)}(c)}{4!}\, (x - 0)^4= \frac{f^{(4)}(c)}{4!}\, x^4$. Because $f^{(n)}(x)= e^x$ for all $n$, we have $R_3(x)= \frac{e^c}{4!}\, x^4$. Notice if the fourth derivative \textit{had} been evaluated at the center $0$, we would have had $\frac{e^0}{4!}\, x^4= \frac{1}{4!}\, x^4= \frac{x^4}{4!}$, which is the exact next term of the Taylor series. \pvspace{1.3cm}
 
 
 

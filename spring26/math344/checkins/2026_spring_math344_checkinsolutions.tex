@@ -2,6 +2,10 @@
 \usepackage[lmargin=1in,rmargin=1in,bmargin=1in,tmargin=1in]{geometry}
 \usepackage{checkins}
 
+\DeclareMathOperator{\Null}{null}
+\DeclareMathOperator{\rank}{rank}
+\DeclareMathOperator{\nullity}{nullity}
+
 % -------------------
 % Content
 % -------------------
@@ -81,28 +85,186 @@ which has solution $(-\frac{1}{2}, 1, -\frac{1}{2})$. \pvspace{1.3cm}
 % 02/09
 \checkin{02/09} If $A,B$ are $n \times n$ matrices, $B$ is invertible, and $\det(AB)= 0$, then it \textit{must be} that $A$ is not invertible. \pspace
 
-\sol The statement is \textit{true}. We know that a square matrix $A$ is invertible if and only if $\det A \neq 0$. We also know that $\det(AB)= \det A \det B$. Because $0= \det(AB)= \det A \det B$, either $\det A= 0$ or $\det B= 0$. Because $B$ is invertible, we know $\det B \neq 0$. But then it must be that $\det A= 0$, which implies that $A$ is not invertible. \pvspace{1.3cm}
+\sol The statement is \textit{true}. We know that a square matrix $A$ is invertible if and only if $\det A \neq 0$. We also know that $\det(AB)= \det A \cdot \det B$. Because $0= \det(AB)= \det A \cdot \det B$, either $\det A= 0$ or $\det B= 0$. Because $B$ is invertible, we know $\det B \neq 0$. But then it must be that $\det A= 0$, which implies that $A$ is not invertible. \pvspace{1.3cm}
 
 
 
 % 02/18
 \checkin{02/18} An $LU$ factorization for a matrix $A$ is a decomposition of $A$ into a product of the form $A= LU$, where $L$ is lower triangular and $U$ is upper triangular. \pspace
 
-\sol The statement is \textit{true}. This is the definition of an $LU$ factorization/decomposition. In fact, one typically also requires (if possible) the matrix $L$ to be unit lower triangular, i.e. the diagonal entries of $L$ to be equal to 1. \pvspace{1.3cm}
+\sol The statement is \textit{true}. This is the definition of an $LU$ factorization/decomposition. In fact, one typically also requires the matrix $L$ to be unit lower triangular, i.e. the diagonal entries of $L$ to be equal to 1. One of the `standard' approaches (the one we introduced in class) to computing $L$ ensures this. \pvspace{1.3cm}
 
 
 
 % 02/20
-\checkin{02/20} \textit{Every} $n \times m$ matrix $A$ has a $PLU$ factorization. \pspace
+\checkin{02/20} \textit{Every} $n \times m$ matrix $A$ has a PLU factorization. \pspace
 
-\sol The statement is \textit{true}. Computing an LU decomposition is essentially computing the row echelon form of a matrix without scaling or row interchanges. Of course, this is not always possible, so not all matrices have an LU factorization. But if one allows row interchanges, one can always find the REF of a matrix. But then one should always be able to find a PLU factorization for a matrix. \pvspace{1.3cm}
+\sol The statement is \textit{true}. Computing an LU decomposition is essentially computing the row echelon form of a matrix without row interchanges (or often scaling). Of course, this is not always possible, so not all matrices have an LU factorization. But if one allows row interchanges, one can always find the REF of a matrix. But then one should always be able to find a PLU factorization for a matrix. A square, invertible matrix has an LU decomposition if and only if all the leading principal minors are nonzero. More generally, if a square matrix is singular, i.e. not invertible, and has rank $k$, then it will have an LU decomposition if the first $k$ leading principal minors are nonzero---although the reverse need not be true. Lastly, we know a if square, invertible matrix $A$ has an LU decomposition (with $1$s along the diagonal of $L$), then this decomposition is unique. \pvspace{1.3cm}
 
 
 
 % 02/23
 \checkin{02/23} If $P= \begin{pmatrix} 1 & 0 & 0 & 0 \\ 0 & 0 & 1 & 0 \\ 0 & 1 & 0 & 0 \\ 0 & 0 & 0 & 1 \end{pmatrix}$, then $PA$ interchanges performs the operations $R_1 \leftrightarrow R_4$ and $R_2 \leftrightarrow R_3$. \pspace
 
-\sol The statement is \textit{false}. 
+\sol The statement is \textit{false}. We can interpret left multiplication by a square matrix $A$, i.e. $AB$, as `acting' on the rows of $B$. This is how we interpret left multiplication of $B$ by an elementary/permutation matrix, $EB$ or $PB$, respectively. This is also how we can easily construct elementary/permutation matrices with a desired effect. We can label the columns and rows of $B$ with labels $R_i$. The row labels will represent the $i$th row of the result $EB$ or $PB$. The entries in that row indicate the linear combination of the original rows of $B$ from which the $i$th row of the product is formed. For instance, if the $3$rd row of $E$ in $EB$ is $(0\;\;-3\;\;5\;\;7)$, then the $3$rd row of the product will be $-3R_2 + 5R_3 + 7R_4$, where $R_i$ is the $i$th row of $B$. Examining the given $P$ in this way, we have\dots
+	\[
+	P= \bordermatrix{%
+      	& R_1 & R_2 & R_3 & R_4 \cr
+	\widetilde{R_1}   & 1   & 0   & 0   & 0 \cr
+	\widetilde{R_2}   & 0   & 0   & 1   & 0 \cr
+	\widetilde{R_3}   & 0   & 1   & 0   & 0 \cr
+	\widetilde{R_4}   & 0   & 0   & 0   & 1 \cr
+	}
+	\]
+So, the new Row~1 will be the same as the original Row~1, the new Row~2 will be the original Row~3, the new Row~3 will be the original Row~2, and the new Row~4 will be the original Row~4. Therefore, this matrix interchanges rows two and three of the original matrix, i.e. $P$ represents the row operation $R_2 \leftrightarrow R_3$. The matrix which would perform $R_1 \leftrightarrow R_4$ and $R_2 \leftrightarrow R_3$ would be\dots
+	\[
+	\begin{pmatrix}
+	0 & 0 & 0 & 1 \\
+	0 & 0 & 1 & 0 \\
+	0 & 1 & 0 & 0 \\
+	1 & 0 & 0 & 0 
+	\end{pmatrix}
+	\] \pvspace{1.3cm}
+
+
+
+% 02/25
+\checkin{02/25} The collection of vectors $\left\{ \begin{pmatrix} 1 \\ 1 \end{pmatrix}, \begin{pmatrix} 4 \\ 4 \end{pmatrix}, \begin{pmatrix} 0 \\ 0 \end{pmatrix} \right\}$ is linear independent. \pspace
+
+\sol The statement is \textit{false}. Foremost, \textit{any} collection of vectors containing the zero vector, $\mathbf{0}$, is \textit{never} linearly independent. We know that $c \cdot \mathbf{0}= \mathbf{0}$ for any real number $c$. Furthermore, suppose $\{ \mathbf{0}, v_1, \ldots, v_n \}$ is a collection of vectors. Then $1 \cdot \mathbf{0} + 0 v_1 + 0 v_2 + \cdots + 0 v_n= \mathbf{0}$ and $0 \cdot \mathbf{0} + 0 v_1 + 0 v_2 + \cdots + 0 v_n= \mathbf{0}$ are different representations of $\mathbf{0}$ using the vectors from the collection. So, the collection would be linearly dependent. Alternatively, we see that the second vector is a scalar multiple of the first, i.e. parallel to the first. A collection of vectors in which two or more vectors are parallel can \textit{never} be linearly independent. Suppose $\{ v_1, \ldots, v_n \}$ is a collection of vectors where (after possibly renumbering them) $v_1$ and $v_2$ are parallel. But then $v_1= c v_2$. But then $0 v_1 + 0v_2 + \cdots + 0 v_n= \mathbf{0}$ and $-1 v_1 + cv_2 + 0v_3 + \cdots + 0v_n= -cv_2 + cv_2 + 0v_3 + \cdots + 0v_n= \mathbf{0}$ are different representations of $\mathbf{0}$ using the vectors in $\{ v_1, \ldots, v_n \}$. Therefore, the collection of vectors is linearly dependent. In our specific case, we can see that $-4 \begin{pmatrix} 1 \\ 1 \end{pmatrix} + \begin{pmatrix} 4 \\ 4 \end{pmatrix}= \mathbf{0}$, $\begin{pmatrix} 1 \\ 1 \end{pmatrix} - \frac{1}{4} \begin{pmatrix} 4 \\ 4 \end{pmatrix}= \mathbf{0}$, and $0 \begin{pmatrix} 1 \\ 1 \end{pmatrix} + 0\begin{pmatrix} 4 \\ 4 \end{pmatrix}= \mathbf{0}$ are all distinct representations of $\mathbf{0}$. Therefore, the collection $\left\{ \begin{pmatrix} 1 \\ 1 \end{pmatrix}, \begin{pmatrix} 4 \\ 4 \end{pmatrix}, \begin{pmatrix} 0 \\ 0 \end{pmatrix} \right\}$ cannot be linearly independent, i.e. the collection is linearly dependent. \pvspace{1.3cm}
+
+
+
+% 02/27
+\checkin{02/27} A basis for a subspace is a collection of vectors that span the subspace. \pspace
+
+\sol The statement is \textit{false}. For a collection of vectors to be a basis for a subspace, the collection needs to span the subspace and be linearly independent. The collection $\left\{ \begin{pmatrix} 1 \\ 0 \end{pmatrix}, \begin{pmatrix} 0 \\ 1 \end{pmatrix}, \begin{pmatrix} 1 \\ 1 \end{pmatrix} \right\}$ spans $\mathbb{R}^2$. However, this collection is \textit{not} a basis for $\mathbb{R}^2$ because the set is not linearly independent because $1 \begin{pmatrix} 1 \\ 0 \end{pmatrix} + 1 \begin{pmatrix} 0 \\ 1 \end{pmatrix} + (-1) \begin{pmatrix} 1 \\ 1 \end{pmatrix}= \mathbf{0}$ is a nontrivial way, i.e. not all weights 0, of obtaining $\mathbf{0}$. Therefore, the collection of vectors is linearly dependent. A basis needs to be a linearly independent spanning set for a subspace. A collection of vectors spanning a subspace means that every vector in the subspace can be obtained using a linear combination of vectors from the collection. The set being linearly independent means that the linear combination of vectors from the collection giving the desired vector is unique, i.e. there is only one way to obtain a vector in the subspace `using' vectors from the collection. So, a basis for a subspace is a collection of vectors that allows one to obtain each vector in the subspace uniquely using a linear combination of those vectors. As we shall see, this also means the basis can serve as a `coordinate system' for the subspace. \pvspace{1.3cm}
+
+
+
+% 03/02
+\checkin{03/02} The nullspace of a matrix forms a subspace of some vector space. \pspace
+
+\sol The statement is \textit{true}. Recall that the nullspace of a $m \times n$ matrix is the set of solutions to the homogeneous equation $A \mathbf{x}= \mathbf{0}$. That is, $\Null A= \{ \mathbf{x} \in \mathbb{R}^n \colon A \mathbf{x}= \mathbf{0} \}$. Recall that $S$ is a subspace of a vector space $V$ if\dots
+	\begin{itemize}
+	\item $\mathbf{0} \in S$ (the zero vector is in the subspace): $\mathbf{0} \in \Null A$ because $A \mathbf{0}= \mathbf{0}$. 
+	\item if $u, v \in S$, then $u + v \in S$ (you can add vectors in the subspace): Suppose $\mathbf{x}, \mathbf{y} \in \Null A$. So, $A \mathbf{x}= \mathbf{0}$ and $A \mathbf{y}= \mathbf{0}$. But then $A(\mathbf{x} + \mathbf{y})= A \mathbf{x} + A\mathbf{y}= \mathbf{0} + \mathbf{0}= \mathbf{0}$, so that $\mathbf{x} + \mathbf{y} \in \Null A$.
+	\item if $c \in \mathbb{R}$ and $v \in S$, then $cv \in S$ (you can scale vectors in the subspace): Let $c \in \mathbf{R}$ and $\mathbf{x} \in \Null A$. Because $\mathbf{x} \in \Null A$, $A\mathbf{x}= \mathbf{0}$. But then $A(c \mathbf{x})= c(A \mathbf{x})= c \mathbf{0}= \mathbf{0}$, so that $c \mathbf{x} \in \Null A$.
+	\end{itemize}
+Therefore, the nullspace of a $m \times n$ matrix $A$ is a subspace of $\mathbb{R}^n$. \pvspace{1.3cm}
+
+
+
+% 03/04
+\checkin{03/04} If the nullspace of $A$ has dimension 2, then the equation $A\mathbf{x}= \mathbf{b}$ must have infinitely many solutions. \pspace
+
+\sol The statement is \textit{false}. Consider the following example with $A= \begin{pmatrix} 1 & 0 & 0 \end{pmatrix}$ and consider the equation $A\mathbf{x}= \begin{pmatrix} 0 \\ 0 \\ 1 \end{pmatrix}$. We can see that $A$ has nullity 2, so the dimension of its nullspace is also 2. However, the equation has no solutions. Indeed, if $\mathbf{x}= \begin{pmatrix} x_1 & x_2 & x_3 \end{pmatrix}^T$ were a solution, then\dots
+	\[
+	\begin{gathered}
+	A\mathbf{x}= \mathbf{b} \\
+	\begin{pmatrix} 1 & 0 & 0 \end{pmatrix} \begin{pmatrix} x_1 \\ x_2 \\ x_3 \end{pmatrix}= \begin{pmatrix} 0 \\ 0 \\ 1 \end{pmatrix} \\
+	\begin{pmatrix} x_1 \\ 0 \\ 0 \end{pmatrix}= \begin{pmatrix} 0 \\ 0 \\ 1 \end{pmatrix}
+	\end{gathered}
+	\]
+But this implies $0= 1$, which is impossible. So, there is no solution. Recall for $A\mathbf{x}= \mathbf{b}$ to have a solution, $\mathbf{b}$ has to be in the column space of $A$. If that is the case, then there will be a unique solution if the dimension of the nullspace of $A$ (the nullity of $A$) is 0. Otherwise, there will be infinitely many solutions. So, as long as there is a solution, once there is `some nullity', there will be infinitely many solutions. But there has to be a solution first! \pvspace{1.3cm}
+
+
+
+% 03/06
+\checkin{03/06} The column space of $A$ is \textit{always} generated by the span of the columns of $A$ but may not be a basis for the column space. \pspace
+
+\sol The statement is \textit{true}. The first part is the definition of the column space---the column space is the span of the columns of $A$. But the columns of $A$ may not be a basis for the column space. For instance, consider $A= \begin{pmatrix} 1 & 0 & 0 \\ 0 & 1 & 1 \end{pmatrix}$. Clearly, the third column of $A$ is redundant as it is a copy of the second column. So, $\left\{ \begin{pmatrix} 1 \\ 0 \end{pmatrix}, \begin{pmatrix} 0 \\ 1 \end{pmatrix}, \begin{pmatrix} 0 \\ 1 \end{pmatrix} \right\}$ cannot be a basis for the column space. Eliminating this third column, we have $\left\{ \begin{pmatrix} 1 \\ 0 \end{pmatrix}, \begin{pmatrix} 0 \\ 1 \end{pmatrix} \right\}$, which is a basis because it clearly still spans the column space (we only eliminated a redundant vector) and it linearly independent (there only two vectors and neither is a scalar multiple of the other). Notice these are the pivot columns of $A$. Indeed, one can always use the pivot columns of $A$---be careful its the pivot columns of $A$ and not its RREF---to form a basis for the column space of $A$. \pvspace{1.3cm}
+
+
+
+% 03/18
+\checkin{03/18} If $A$ is a $3 \times 7$ matrix with rank 5, then $A \mathbf{x}= \mathbf{b}$ has a solution for all $\mathbf{x} \in \mathbb{R}^3$. However, the solution will only be unique for some $\mathbf{b}$. \pspace
+
+\sol The statement is \textit{false}. First of all, if $A$ is a $m \times n$ matrix, we know that $\rank A \leq \min\{ m, n \}$; that is, the rank of $A$ is at most its number of rows or number of columns---whichever is smaller. So, if $A$ is $3 \times 7$, we know $\rank A \leq \min\{ 3, 7 \}= 3$, which means $\rank A \neq 5$. Furthermore, if $A$ is a $m \times n$ matrix, by the Rank-Nullity Theorem, we know that $\rank A + \nullity A= n$. But then whether $\rank A= 5$ or $\rank A \leq 3$, we know that $\nullity A > 0$. So, there is `some nullity.' Therefore, whenever $A\mathbf{x}= \mathbf{b}$ has a solution, we know it will have infinitely many solutions! Finally, because $\rank A= 5$ is impossible, we would need to know what the rank actually is to know whether or not $A\mathbf{x}= \mathbf{b}$ has a solution. If $\rank A= 3$, we know that $A\mathbf{x}= \mathbf{b}$ will have a solution for all $\mathbf{b} \in \mathbb{R}^3$. However, if $\rank A < 3$, there will only be a solution to $A\mathbf{x}= \mathbf{b}$ for some $\mathbf{b} \in \mathbb{R}^3$. \pvspace{1.3cm}
+
+
+
+% 03/20
+\checkin{03/20} A collection of vectors $\{ \mathbf{v}_1, \ldots, \mathbf{v}_n \}$ is linearly dependent if and only if the matrix formed by the vectors, $A= [ \mathbf{v}_1 \;\;\cdots\;\; \mathbf{v}_n]$, has positive nullity. \pspace
+
+\sol The statement is \textit{true}. We know that a collection of vectors $\{ \mathbf{v}_1, \ldots, \mathbf{v}_n \}$ is linearly dependent if there is a nontrivial solution to $c_1 \mathbf{v}_1 + c_2 \mathbf{v}_2 + \cdots +  c_n \mathbf{v}_n$. If we form a matrix $A$ using the $\mathbf{v}_i$ as the columns, i.e. $A= [ \mathbf{v}_1 \;\;\cdots\;\; \mathbf{v}_n]$, then this occurs if and only if $A\mathbf{c}= \mathbf{0}$ has a nontrivial solution, where $\mathbf{c}= \begin{pmatrix} c_1 & c_2 & \cdots & c_n \end{pmatrix}^T$. The equation $A\mathbf{c}= \mathbf{0}$ always has the trivial solution $\mathbf{0}$. So, if there is any other solution, there will be infinitely many solutions. But then $\nullity A > 0$. But then $A\mathbf{c}= \mathbf{0}$ has a nontrivial solution if and only if $\nullity A > 0$, i.e. the nullity of $A$ is positive. \pvspace{1.3cm}
+
+
+
+% 03/23
+\checkin{03/23} If $A$ is a $n \times n$ invertible matrix, then $\dim \text{ Col } A= n$. \pspace
+
+\sol The statement is \textit{true}. Think of how we can determine whether a $n \times n$ matrix is invertible. We augment $A$ with the identity matrix, $I_n$, and place the matrix `on the left' (the original $A$) into RREF. We know that $A$ is invertible if and only if we obtain the identity matrix `on the left.' If so, the inverse, $A^{-1}$, is the matrix `on the right.' But the rank of the identity matrix is $n$. Row reduction does not change the rank of the resulting matrix and a matrix's rank is the dimension of the column space. So, we know a $n \times n$ matrix $A$ is invertible if and only if $n= \rank A= \dim \text{ Col }A$. \pvspace{1.3cm}
+
+
+
+% 03/25
+\checkin{03/25} The matrix associated to the linear transformation $T: \mathbb{R}^2 \to \mathbb{R}^2$ given by $T(x, y)= (x + y, y - x)$ is $\begin{pmatrix} 1 & 1 \\ 1 & -1 \end{pmatrix}$. \pspace
+
+\sol The statement is \textit{false}. Write the transformation as vectors rather than the typical `input-output form':
+	\[
+	T \begin{pmatrix} x \\ y \end{pmatrix}= \begin{pmatrix} x + y \\ y - x \end{pmatrix}
+	\]
+Although the `matrix' on the right is only a vector---which has only a single column, we pretend it is a matrix with several columns---corresponding to the variables in a given order. So, aligning the `columns' of the output, we have\dots
+	\[
+	T \begin{pmatrix} x \\ y \end{pmatrix}= \left( \begin{array}{ccc} x & + & y \\ -x & + & y \end{array} \right)
+	\]
+The coefficients of the variables in this resulting `matrix' is exactly the matrix associated to the linear transformation. Therefore, the matrix associated to our given $T$ is\dots
+	\[
+	A= \begin{pmatrix} 1 & 1 \\ -1 & 1 \end{pmatrix}
+	\]
+The given result did not properly align the variables. \pvspace{1.3cm}
+
+
+
+
+
+\newpage
+
+
+
+
+
+% 04/01
+\checkin{04/01} An eigenvector for a square matrix $A$ is \textit{any} vector $\mathbf{v}$ such that $A\mathbf{v}= \lambda \mathbf{v}$, where $\lambda$ is a scalar called the eigenvalue associated to $\mathbf{v}$. \pspace
+
+\sol The statement is \textit{false}. The zero vector satisfies the statement because $A\mathbf{0}= \lambda \mathbf{0}= \mathbf{0}$ for any choice of $\lambda$. However, the definition of an eigenvector precludes the zero vector from being an eigenvector, ``An eigenvector is a \textit{nonzer} vector $\mathbf{v}$ such that $A\mathbf{v}= \lambda \mathbf{v}$, where $\lambda$ is some scalar called the eigenvalue associated to $\mathbf{v}$.''  Therefore, $\mathbf{v}$ cannot be \textit{any} vector---it must be nonzero. [This is important for the uniqueness of $\lambda$ and for some of our uses of eigenvectors.] \pvspace{1.3cm}
+
+
+
+% 04/03
+\checkin{04/03} An eigenvalue associated to an eigenvector is unique. However, there are many eigenvectors associated to a fixed eigenvalue. \pspace
+
+\sol The statement is \textit{true}. We have seen that an eigenvalue associated to an eigenvector is unique. If an eigenvector $\mathbf{v}$ were such that $A\mathbf{v}= \lambda_1 \mathbf{v}$ and $A\mathbf{v}= \lambda_2 \mathbf{v}$, then because both are equal to $A\mathbf{v}$, we know $\lambda \mathbf{v}= \lambda_2 \mathbf{v}$. This implies $(\lambda_1 - \lambda_2)\mathbf{v}= \mathbf{0}$. Because $\mathbf{v}$ is not the zero vector (it is an eigenvector and cannot be $\mathbf{0}$ by definition), it must be $\lambda_1 - \lambda_2= 0$, i.e. $\lambda_1= \lambda_2$, i.e. the eigenvalue associated to $\mathbf{v}$ is unique. However, an eigenvector associated to $\lambda$ is merely a nonzero vector such that $A\mathbf{v}= \lambda \mathbf{v}$, i.e. $(A - \lambda I_n)\mathbf{v}= \mathbf{0}$. That is, $\mathbf{v} \in \null (A - \lambda I_n)$. Because we know this nullspace must consist of more than just the zero vector, there are infinitely many choices for $\mathbf{v}$---any nonzero element of the nullspace will do! For instance, consider the example, let $A= \begin{pmatrix} -4 & -3 \\ 3 & 6 \end{pmatrix}$. This matrix has eigenvalues $\lambda= -3, 5$. The eigenspace associated to $\lambda= -3$ has basis $\left\{ \begin{pmatrix} -3 \\ 1 \end{pmatrix} \right\}$. Therefore, any nonzero vector in the span of this set can serve as an eigenvector for $\lambda= -3$. For instance, $\begin{pmatrix} -3 \\ 1 \end{pmatrix}$, $\begin{pmatrix} 3 \\ -1 \end{pmatrix}$, $\begin{pmatrix} -6 \\ 2 \end{pmatrix}$, etc. \pvspace{1.3cm}
+
+
+
+% 04/06
+\checkin{04/06} If the characteristic polynomial of a matrix $A$ is $p(\lambda)= (\lambda + 3)^2 (\lambda - 1)$, then $\lambda= -3$ is an eigenvalue with multiplicity 2 and its eigenspace has dimension two. \pspace
+
+\sol The statement is \textit{false}. We can see that the eigenvalues of $A$ are $\lambda= -3$ and $\lambda= 1$, i.e. the solutions to $p(\lambda)= 0$. Because the factor of $p(\lambda)$ for $\lambda= -3$ has degree $2$, we know that the (algebraic) multiplicity of $\lambda= -3$ is $2$. However, without computing the eigenspace, we cannot say that its dimension is $2$. The dimension of the eigenspace for $\lambda$ is its geometric multiplicity. All we know is that the geometric multiplicity of $\lambda$ is \textit{at most} its algebraic multiplicity (and is at least 1, so here it is either 1 or 2). But without knowing $A$, we cannot say for sure that it has dimension 2. In fact, take $A= \begin{pmatrix} 3 & 1 & 0 \\ 0 & 3 & 0 \\ 0 & 0 & 1 \end{pmatrix}$. The matrix is diagonal, so its eigenvalues are its diagonal entries---$1$ and $-3$. One can easily verify through routine calculation that the dimension of the eigenspace for $\lambda= 3$ is 1---despite it having algebraic multiplicity 2. \pvspace{1.3cm}
+
+
+
+% 04/08
+\checkin{04/08} If $A$ is a $6 \times 6$ matrix with eigenspaces of dimension $1, 2, 3$, respectively, then $A$ is diagonalizable. \pspace
+
+\sol The statement is \textit{true}. We know that an $n \times n$ matrix is diagonalizable if and only if it has $n$ linearly independent vectors. This will occur if and only if the algebraic multiplicity of each of its eigenvalues matches their geometric multiplicity. The geometric multiplicity of an eigenvector is the dimension of its eigenspace. So, one can find $1 + 2 + 3= 6$ linearly independent vectors for $A$. Therefore, $A$ is diagonalizable. \pvspace{1.3cm}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
