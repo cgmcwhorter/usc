@@ -253,7 +253,13 @@ The given result did not properly align the variables. \pvspace{1.3cm}
 
 
 
+% 04/10
+\checkin{04/10} If a square matrix $A= PDP^{-1}$ for some matrices $P, D$, where $D$ is diagonal, it \textit{must} be that $P$ is a matrix of eigenvectors of $A$ and $D$ is a matrix of eigenvalues of $D$. \pspace
 
+\sol The statement is \textit{true}. We know that $A$ is diagonalizable, i.e. $A= PDP^{-1}$ with $D$ diagonal, if and only if $P$ is a matrix of eigenvectors and $D$ is a matrix of eigenvalues. The columns of $P$ and $D$ are corresponding eigenvalues and eigenvector pairs. For example, let $A= \begin{pmatrix} 1 & 0 & -1 \\ 1 & 1 & 1 \\ 1 & 2 & 3 \end{pmatrix}$. The eigenvalues are $\lambda= 0, 2, 3$, with eigenvectors $\begin{pmatrix} 1 & -2 & 1 \end{pmatrix}$, $\begin{pmatrix} -1 & 0 & 1 \end{pmatrix}$, and $\begin{pmatrix} -2 & 1 & 4 \end{pmatrix}$. Then one possible diagonalization for $A$ would be\dots
+	\[
+	A= \begin{pmatrix} -2 & -1 & 1 \\ 1 & 0 & -2 \\ 4 & 1 & 1 \end{pmatrix} \begin{pmatrix} 3 & 0 & 0 \\ 0 & 2 & 0 \\ 0 & 0 & 0 \end{pmatrix} \begin{pmatrix} -2 & -1 & 1 \\ 1 & 0 & -2 \\ 4 & 1 & 1 \end{pmatrix}^{-1}
+	\]
 
 
 
