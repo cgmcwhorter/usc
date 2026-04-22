@@ -254,16 +254,34 @@ The given result did not properly align the variables. \pvspace{1.3cm}
 
 
 % 04/10
-\checkin{04/10} If a square matrix $A= PDP^{-1}$ for some matrices $P, D$, where $D$ is diagonal, it \textit{must} be that $P$ is a matrix of eigenvectors of $A$ and $D$ is a matrix of eigenvalues of $D$. \pspace
+\checkin{04/10} If a square matrix $A= PDP^{-1}$ for some matrices $P, D$, where $D$ is diagonal, it \textit{must} be that $P$ is a matrix of eigenvectors of $A$ and $D$ is a matrix of eigenvalues of $A$. \pspace
 
 \sol The statement is \textit{true}. We know that $A$ is diagonalizable, i.e. $A= PDP^{-1}$ with $D$ diagonal, if and only if $P$ is a matrix of eigenvectors and $D$ is a matrix of eigenvalues. The columns of $P$ and $D$ are corresponding eigenvalues and eigenvector pairs. For example, let $A= \begin{pmatrix} 1 & 0 & -1 \\ 1 & 1 & 1 \\ 1 & 2 & 3 \end{pmatrix}$. The eigenvalues are $\lambda= 0, 2, 3$, with eigenvectors $\begin{pmatrix} 1 & -2 & 1 \end{pmatrix}$, $\begin{pmatrix} -1 & 0 & 1 \end{pmatrix}$, and $\begin{pmatrix} -2 & 1 & 4 \end{pmatrix}$. Then one possible diagonalization for $A$ would be\dots
 	\[
 	A= \begin{pmatrix} -2 & -1 & 1 \\ 1 & 0 & -2 \\ 4 & 1 & 1 \end{pmatrix} \begin{pmatrix} 3 & 0 & 0 \\ 0 & 2 & 0 \\ 0 & 0 & 0 \end{pmatrix} \begin{pmatrix} -2 & -1 & 1 \\ 1 & 0 & -2 \\ 4 & 1 & 1 \end{pmatrix}^{-1}
+	\] \pvspace{1.3cm}
+
+
+
+% 04/13
+\checkin{04/13} The vector $\text{proj}_{\mathbf{v}} \mathbf{u}$ is perpendicular to $\mathbf{v}$. \pspace
+
+\sol The statement is \textit{false}. If $\mathbf{u}, \mathbf{v}$ are one, two, or three dimensional vectors, we can take the cross product of $\mathbf{u}, \mathbf{v}$, i.e. $\mathbf{u} \times \mathbf{v}$, to produce a vector perpendicular to \textit{both} $\mathbf{u}$ and $\mathbf{v}$. However, the projection $\text{proj}_{\mathbf{v}} \mathbf{u}$ will \textit{never} be perpendicular to $\mathbf{v}$ unless $\mathbf{v}= \mathbf{0}$ or $\text{proj}_{\mathbf{v}} \mathbf{u}= \mathbf{0}$, i.e. $\mathbf{u} \perp \mathbf{v}$. However, $\mathbf{u} - \text{proj}_{\mathbf{v}} \mathbf{u}$ is perpendicular to $\mathbf{v}$. We can check this. Recall that two vectors are perpendicular if and only if their dot product is 0. Now using the fact that $\mathbf{u} \cdot \mathbf{v}= \mathbf{v} \cdot \mathbf{u}$ and $\text{proj}_{\mathbf{v}} \mathbf{u}= \frac{\mathbf{u} \cdot \mathbf{v}}{\mathbf{v} \cdot \mathbf{v}} \, \mathbf{v}$, we have\dots
+	\[
+	\begin{aligned}
+	\mathbf{v} \cdot ( \mathbf{u} - \text{proj}_{\mathbf{v}} \mathbf{u} )&= \mathbf{v} \cdot \mathbf{u} - \mathbf{v} \cdot \text{proj}_{\mathbf{v}} \mathbf{u} \\
+	&= \mathbf{u} \cdot \mathbf{v} - \mathbf{v} \cdot \left( \dfrac{\mathbf{u} \cdot \mathbf{v}}{\mathbf{v} \cdot \mathbf{v}} \; \mathbf{v} \right) \\
+	&= \mathbf{u} \cdot \mathbf{v} - \left( \dfrac{\mathbf{u} \cdot \mathbf{v}}{\mathbf{v} \cdot \mathbf{v}} \right) ( \mathbf{v} \cdot \mathbf{v} ) \\
+	&= \mathbf{u} \cdot \mathbf{v} - \mathbf{u} \cdot \mathbf{v} \\
+	&= 0
+	\end{aligned} 
 	\]
-
-
-
-
+Although, this is easiest seen by simply sketching a picture, as seen below.
+	\[
+	\begin{tikzpicture}
+	
+	\end{tikzpicture}
+	\]
 
 
 
