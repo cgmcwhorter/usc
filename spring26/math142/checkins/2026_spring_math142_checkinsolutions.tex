@@ -260,31 +260,9 @@ Because this limit is less than 1, we know the series $\ds\sum_{n=1}^\infty \lef
 
 
 
+% 04/14
+\checkin{04/14} If $\ds\sum_{n=0}^\infty a_n x^n$ is the Taylor series for $f(x)$ centered at $x= 0$, then $\ds\sum_{n=0}^\infty a_n (x - a)^n$ is the Taylor series for $f(x)$ centered at $x= a$. \pspace
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+\sol The statement is \textit{false}. One has correctly shifted the center. But the original Taylor series had $a_n= \dfrac{f^{(n)}(0)}{n!}$. The Taylor series for $f(x)$ centered at $x= a$ has $a_n= \dfrac{f^{(n)}(a)}{n!}$ and there is no reason that $\dfrac{f^{(n)}(0)}{n!}= \dfrac{f^{(n)}(a)}{n!}$. Often, to `shift' a Taylor series, one has to recompute the Taylor series `from scratch', i.e. you cannot simply shift the center and hope that the coefficients of the terms remain the same. For example, the Taylor series for $\sin x$ at $x= 0$ is $\ds\sum_{n=0}^\infty (-1)^n\, \dfrac{x^{2n + 1}}{(2n + 1)!}$, while the Taylor series for $\sin x$ centered at $x= \frac{\pi}{2}$ is $\ds\sum_{n=0}^\infty (-1)^n\, \dfrac{x^{2n}}{(2n)!}$, which is \textit{not} the Taylor series for $\sin x$ at $x= 0$ shifted to $\frac{\pi}{2}$. 
 
 \end{document}
