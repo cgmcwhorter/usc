@@ -406,32 +406,17 @@ But $\dfrac{p_k(1/x) - p_k'(1/x)}{x^2}$ is also a polynomial in $1/x$, so we can
 
 
 % 11/18
-\checkin{11/18} $\ds\dfrac{1}{(1 - x)^2}= \sum_{n=0}^\infty n x^{n-1}$ for $x \in (-1, 1)$ \pspace
+\checkin{11/18} $\ds\dfrac{1}{(1 - x)^2}= \sum_{n=0}^\infty n x^{n-1}$ for $x \in (-1, 1)$. \pspace
 
-\sol 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+\sol The statement is \textit{true}. We know that $\ds\dfrac{1}{1 - x}= \sum_{n=0}^\infty x^n$ for $x \in (-1, 1)$, i.e. the Maclaurin series for $\dfrac{1}{1 - x}$. We also know that for `nice' functions, we can interchange the order of integration/differentiation with the infinite summation in a Taylor series (and such an operation at most changes the endpoints of convergence to the function). So, we have\dots
+	\[
+	\begin{gathered}
+	\dfrac{1}{1 - x}= \sum_{n=0}^\infty x^n \\[0.1cm]
+	\dfrac{d}{dx} \left( \dfrac{1}{1 - x} \right)= \dfrac{d}{dx} \sum_{n=0}^\infty x^n \\[0.1cm]
+	\dfrac{d}{dx} \left( \dfrac{1}{1 - x} \right)= \sum_{n=0}^\infty\, \dfrac{d}{dx}\, \left( x^n \right) \\[0.1cm]
+	\dfrac{1}{(1 - x)^2}= \sum_{n=0}^\infty n x^{n-1}
+	\end{gathered}
+	\]
+Therefore, $\ds\dfrac{1}{(1 - x)^2}= \sum_{n=0}^\infty n x^{n-1}$ for $x \in (-1, 1)$.
 
 \end{document}

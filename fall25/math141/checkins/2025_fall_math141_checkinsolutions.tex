@@ -504,19 +504,16 @@ We can see that the area between these curves is 7---the sum of the area 1 recta
 
 
 
+% 11/19
+\checkin{11/19} Making the $u$-substitution $u= \tan x$ for $\ds\int_0^{\pi/4} e^{\tan x} \sec^2 x \;dx$, we have $\ds\int_0^{\pi/4} e^u \;du$. \pspace
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+\sol The statement is \textit{false}. If we choose $u= \tan x$, then $du= \sec^2 x \;dx$. Writing the \textit{indefinite} integral, we would indeed have\dots
+	\[
+	\int e^{\tan x} \sec^2 x \;dx= \int e^{\tan x} \cdot \sec^2 x \;dx= \int e^u \;du
+	\]
+However, observe that we are given a \textit{definite} integral. We need to be sure to properly change the bounds. The original integral begins when $x= 0$, so $u= \tan(0)= 0$. The original integral ends when $x= \frac{\pi}{4}$, so $u= \tan(\tfrac{\pi}{4})= 1$. Therefore, the transformed integral should be\dots
+	\[
+	\int_0^{\pi/4} e^{\tan x} \sec^2 x \;dx= \int_0^1 e^u \;du
+	\]
 
 \end{document}
