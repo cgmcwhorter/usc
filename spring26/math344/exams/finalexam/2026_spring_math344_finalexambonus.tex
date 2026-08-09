@@ -1,0 +1,42 @@
+\documentclass[12pt,letterpaper]{exam}
+\usepackage[lmargin=1in,rmargin=1in,tmargin=1in,bmargin=1in]{geometry}
+\usepackage{
+	amsmath,		% Basic Math Package
+	amssymb,		% Math Symbols
+	enumerate	% Enumerate Lists
+}
+
+% Font
+\usepackage[T1]{fontenc}
+\usepackage{charter}
+
+% -------------------
+% Content
+% -------------------
+\begin{document}
+
+% Heading Content
+\noindent \textbf{Name:} \rule{3in}{0.4pt} \vspace{1em} \\[-0.3cm]
+\noindent \textbf{MATH 344} \\
+\noindent \textbf{Spring 2026} \\
+\noindent \textbf{Final Exam} \par \vspace{1em}
+
+% Instructions
+\noindent Assume $A, B$ are ``generic'' $n \times n$ matrices, $T$ is a triangular $n \times n$ matrix, and $\mathbf{u}, \mathbf{v}, \mathbf{x}, \mathbf{b} \in \mathbb{R}^n$. In terms of floating point operations, determine the computational complexity of each of the ``operations'' below. Give your answer in terms of ``big O'', e.g.\ $O(n^p)$ for some $p$. For credit, you must answer \textit{all} of the below correctly. \par\vspace{0.3cm}
+
+% Parts
+\begin{enumerate}[(a)]
+\item \rule{1in}{0.4pt} : \quad Dot Products, $\mathbf{u} \cdot \mathbf{v}$. \vspace{2em}
+
+\item \rule{1in}{0.4pt} : \quad Matrix-vector multiplication, $A\mathbf{v}$ \vspace{2em}
+
+\item \rule{1in}{0.4pt} : \quad Matrix-matrix multiplication, $AB$ \vspace{2em}
+
+\item \rule{1in}{0.4pt} : \quad Computing the RREF of $A$ \vspace{2em}
+
+\item \rule{1in}{0.4pt} : \quad Computing $\det A$ with cofactor expansion. \vspace{2em}
+
+\item \rule{1in}{0.4pt} : \quad Solving $T\mathbf{x} = \mathbf{b}$ with ``back/foward substitution'' \vspace{2em}
+\end{enumerate}
+
+\end{document}
