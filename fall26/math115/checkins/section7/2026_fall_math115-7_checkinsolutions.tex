@@ -9,34 +9,73 @@
 \begin{document}
 \thispagestyle{title}
 
-% XX/XX
-\checkin{XX/XX} XXXXXX \par\vspace{0.3cm}
+% 08/20
+\checkin{08/20} \textit{Every} linear function must have a constant rate of change. \pspace
 
-\sol The statement is \textit{XXXX}. \par\vspace{1.3cm}
-
-
-
-
-
-
+\sol The statement is \textit{true}. This is one of the equivalent conditions for a function $f(x)$ to be linear, along with $f(x)$ having the form $f(x)= mx + b$ and $f(x)$ having a graph that is a line. In fact, we can see that a linear function has a constant average rate of change. Given any distinct values $x_1, x_2$ and linear function $f(x)= mx + b$, the average rate of change of change on the interval containing $x_1, x_2$ as endpoints is\dots
+	\[
+	\dfrac{f(x_2) - f(x_1)}{x_2 - x_1}= \dfrac{(mx_2 + b) - (mx_1 + b)}{x_2 - x_1}= \dfrac{mx_2 + b - mx_1 - b}{x_2 - x_1}= \dfrac{mx_2 - mx_1}{x_2 - x_1}= \dfrac{m(x_2 - x_1)}{x_2 - x_1}= m 
+	\]
+So, the average rate is constant and equal to the slope of $f(x)$ --- $m$. \par\vspace{1.3cm}
 
 
-20
-\textit{Every} linear function must have a constant rate of change.
 
-24
-If $f(x)= x + 3$ and $g(x)= 5$, then $(f \circ g)(0)= 15$.
+% 08/24
+\checkin{08/24} If $f(x)= x + 3$ and $g(x)= 5$, then $(f \circ g)(0)= 15$. \pspace
 
-25
-The function $f(x)= 3(x + 5)^2 - 6$ is quadratic with vertex $(5, -6)$ and has a maximum possible output. 
+\sol The statement is \textit{false}. Observe that $(f \circ g)(0)= f \big( g(0) \big)= f(5)= 5 + 3= 8$. Recall that the notation `$\circ$' is function composition---not function multiplication. The mistake here is that `$\circ$' is treated as multiplication: $(f \circ g)(0) \neq (fg)(0)= f(0) g(0)= (0 + 3) \cdot 5= 3 \cdot 5= 15$. \par\vspace{1.3cm}
 
-26
-A quadratic function $f(x)$ has a $y$-intercept, two $x$-intercepts, and either a maximum or a minimum output. 
 
-27
-If the discriminant of a quadratic function $q(x)$ is $-16$, then $q(x)$ does not factor over the real numbers but does factor `nicely' over the complex numbers.
 
-3 \pm 2i
+% 08/25
+\checkin{08/25} The function $f(x)= 3(x + 5)^2 - 6$ is quadratic with vertex $(5, -6)$ and has a maximum possible output. \pspace
+
+\sol The statement is \textit{false}. The function $f(x)$ is clearly quadratic, as expanding yields $f(x)= 3x^2 + 30x + 69$, which is quadratic. Alternatively, we see that $f(x)$ has the vertex form of a quadratic function, $a(x - P)^2 + Q$, where $a$ is the $a$ from the standard form of a quadratic $ax^2 + bx + c$ and $(P, Q)$ is the vertex of the quadratic function. Observe $f(x)= 3(x + 5)^2 - 6= 3 \big(x - (-5) \big)^2 + (-6)$ is in vertex form with $a= 3$, $P= -5$, and $Q= -6$. Therefore, the vertex is $(-5, -6)$---not $(5, -6)$. Moreover, because $a= 3 > 0$, the quadratic function opens upwards so that it has a minimum possible output (namely, the $y$-coordinate of the vertex, $-6$) but no maximum possible output. \par\vspace{1.3cm}
+
+
+
+% 08/26
+\checkin{08/26} A quadratic function $f(x)$ has a $y$-intercept, two $x$-intercepts, and either a maximum or a minimum output. \pspace
+
+\sol The statement is \textit{false}. We know that a quadratic function is defined everywhere. So, $f(0)$ is defined. But this is precisely the $y$-intercept for $f(x)$. We know that each quadratic function has either a maximum value (if $a < 0$ so that the quadratic function opens downwards) or a minimum value (if $a > 0$ so that the quadratic function opens upwards). However, not all quadratic functions have two $x$-intercepts. By the Fundamental Theorem of Algebra, a quadratic (polynomial of degree 2) has either none, one, or two $x$-intercepts. For instance, $f(x)= x^2 + 1$ has no $x$-intercept (simply choose any quadratic with a vertex in Quadrant~I or Quadrant~II that opens upwards---$a>0$---or any quadratic with a vertex in Quadrant~III or Quadrant~IV that opens downwards---$a<0$), $f(x)= x^2$ has a single $x$-intercept ($x= 0$), and $f(x)= (x - a)(x - b)$ has two $x$-intercepts ($x= a, b$)---so long as $a \neq b$, e.g. $f(x)= (x - 1)(x + 1)= x^2 - 1$. \par\vspace{1.3cm} 
+
+
+
+% 08/27
+\checkin{08/27} 
+If the discriminant of a quadratic function $q(x)$ is $-16$, then $q(x)$ does not factor over the real numbers but does factor `nicely' over the complex numbers. \pspace
+
+\sol The statement is \textit{true}. We know that a quadratic function $ax^2 + bx + c$ factors over the real numbers if and only if the discriminant, $D= b^2 - 4ac$, is nonnegative, i.e. $D \geq 0$. So, because the given discriminant is negative, we know that $q(x)$ does not factor over the real numbers. We know also a quadratic function only factors `nicely' (over the real numbers or complex numbers) if $|D|$ is a perfect square. We know that $|-16|= 16= 4^2$, so that the discriminant is a perfect square. Therefore, $q(x)$ does not factor over the real numbers but does factor `nicely' over the complex numbers. For instance, $q(x)= x^2 - 6x + 13$ has discriminant $-16$ and does not factor over the real numbers, but does factor over the complex numbers as\dots
+	\[
+	x^2 - 6x + 13= \big(x - (3 + 2i) \big) \big(x - (3 - 2i) \big)
+	\]
+In fact, every quadratic function with discriminant $-16$ has the form $ax^2 + bx + \dfrac{b^2 + 16}{4a}$, where $a, b$ are real numbers and $a \neq 0$. [Try proving this is the case using quadratic formula and the Fundamental Theorem of Algebra.] Our previous example chose $a= 1$ and $b= -6$. \par\vspace{1.3cm}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

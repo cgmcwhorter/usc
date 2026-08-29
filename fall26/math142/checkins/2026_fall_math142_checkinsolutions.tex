@@ -46,21 +46,137 @@
 % 08/20
 \checkin{08/20} The integral $\ds\int (x - 1)^2 (x + 5)^3 \;dx$ can be computed as a `shifting' integral. \pspace
 
-\sol The statement is \textit{false}.  
+\sol The statement is \textit{false}. One wants to multiply the two terms in the integrand without explicitly expanding---but the non-matching powers prevents this. However, this might be possible with a `shift.' There are only two possible choices for $u$ to `shift' the integrand: $u= x - 1$ (so that $x= u + 1$) or $u= x + 5$ (so that $x= u - 5$). In both cases, we have $du= dx$. In the first case, the resulting integral is $\ds\int u^2(u + 6)^3 \;du$, and in the second case, the resulting integral is $\ds\int (u - 6)^2 u^3 \;du$. In either case, we still cannot simply multiply the integrands without explicit expanding. To compute the given integral, there are several options. The most obvious is simple expansion:
+	\[
+	\begin{aligned}
+	\int (x - 1)^2 (x + 5)^3 \;dx&= \int (x^5 + 13x^4 + 46x^3 - 10x^2 - 175x + 125) \;dx \\
+	&= \dfrac{x^6}{6} + \dfrac{13x^5}{5} + \dfrac{23x^4}{2} - \dfrac{10x^3}{3} - \dfrac{175x^2}{2} + 125x + C
+	\end{aligned}
+	\]
+Alternatively, we can use integration-by-parts---particularly tabular integration (as each possible term in the integrand differentiates to 0 and can be repeatedly integration). The `harder' choice of tabular integration yields\dots
+	\[
+	\begin{array}{c @{\hspace*{1.3cm}} c} \toprule
+	u & dv \\ \cmidrule(lr){1-2}
+	(x + 5)^3 \tikzmark{Left 1} & \tikzmark{Right 1} (x - 1)^2 \\[0.3cm]
+	3(x + 5)^2 \tikzmark{Left 2} & \tikzmark{Right 2} \dfrac{(x - 1)^3}{3} \\[0.3cm]
+	6 (x + 5) \tikzmark{Left 3} & \tikzmark{Right 3} \dfrac{(x - 1)^4}{12} \\[0.3cm]
+	6 \tikzmark{Left 4} & \tikzmark{Right 4} \dfrac{(x - 1)^5}{60} \\[0.3cm]
+	0 \tikzmark{Left 5} & \tikzmark{Right 5} \dfrac{(x - 1)^6}{360} \\[0.3cm]
+	
+	\DrawArrow{Left 1}{Right 2}{+}
+	\DrawArrow{Left 2}{Right 3}{--}
+	\DrawArrow{Left 3}{Right 4}{+}
+	\DrawArrow{Left 4}{Right 5}{--}
+	\end{array}
+	\]
+Therefore, we have\dots
+	\[
+	\int (x - 1)^2 (x + 5)^3 \;dx= \dfrac{(x + 5)^3(x - 1)^3}{3} - \dfrac{(x + 5)^2(x - 1)^4}{4} + \dfrac{(x + 5)(x - 1)^5}{10} - \dfrac{(x - 1)^6}{60} + C \\
+	\]
+Alternatively, we have\dots
+	\[
+	\begin{array}{c @{\hspace*{1.3cm}} c} \toprule
+	u & dv \\ \cmidrule(lr){1-2}
+	(x - 1)^2 \tikzmark{Left 1} & \tikzmark{Right 1} (x + 5)^3 \\[0.3cm]
+	2(x - 1) \tikzmark{Left 2} & \tikzmark{Right 2} \dfrac{(x + 5)^4}{4} \\[0.3cm]
+	2 \tikzmark{Left 3} & \tikzmark{Right 3} \dfrac{(x + 5)^5}{20} \\[0.3cm]
+	0 \tikzmark{Left 4} & \tikzmark{Right 4} \dfrac{(x + 5)^6}{120} \\[0.3cm]
+	
+	\DrawArrow{Left 1}{Right 2}{+}
+	\DrawArrow{Left 2}{Right 3}{--}
+	\DrawArrow{Left 3}{Right 4}{+}
+	\end{array}
+	\]
+Therefore, we have\dots
+	\[
+	\int (x - 1)^2 (x + 5)^3 \;dx= \dfrac{(x - 1)^2 (x + 5)^4}{4} - \dfrac{(x - 1)(x + 5)^5}{10} + \dfrac{(x + 5)^6}{60} + C
+	\] 
+Observe that none of these answers are equal to each other but instead differ by a constant. \pvspace{1.3cm}
 
-\pvspace{1.3cm}
 
 
 % 08/25
 \checkin{08/25} To integrate $\ds\int x e^{-3x^2} \;dx$, one uses LIATE to choose $u= x$ and $dv= e^{-3x^2}$. \pspace
 
-\sol The statement is \textit{false}.  
+\sol The statement is \textit{false}. To compute this integral with this choice of $u$ and $dv$, one would have to integrate $e^{-3x^2}$. However, the function $e^{-x^2}$ (and hence $e^{-3x^2}$, which differs only by a linear $u$-substitution of $x= \sqrt{3} u$, i.e. $u= x/\sqrt{3}$) has no elementary antiderivative, i.e. is not integrable. So, this approach will not work. However, we can integrate this with a simple $u$-substitution. Choosing $u= -3x^2$, we have $du= -6x \;dx$. But then\dots
+	\[
+	\int x e^{-3x^2} \;dx= -\dfrac{1}{6} \int -6x e^{-3x^2} \;dx= -\dfrac{1}{6} \int e^u \;du= -\dfrac{e^u}{6} + C= -\dfrac{e^{-3x^2}}{6} + C
+	\]
+We can easily verify this as $\dfrac{d}{dx} \left( -\dfrac{e^{-3x^2}}{6} + C \right)= -\dfrac{e^{-3x^2}}{6} \cdot -6x + 0= xe^{-3x^2}$. \pvspace{1.3cm}
 
-\pvspace{1.3cm}
 
 
 % 08/27
 \checkin{08/27} The integral $\ds\int \sin(2x) \, \cos(3x) \;dx$ can be treated as a `looping integral.' \pspace
+
+\sol The statement is \textit{true}. We can choose either $u= \sin(2x)$ or $u= \cos(3x)$. Choosing $u= \sin(2x)$, we have $dv= \cos(3x)$. We then have\dots
+	\[
+	\begin{array}{c @{\hspace*{1.3cm}} c} \toprule
+	u & dv \\ \cmidrule(lr){1-2}
+	\sin(2x) \tikzmark{Left 1} & \tikzmark{Right 1} \cos(3x) \\[0.3cm]
+	2 \cos(2x) \tikzmark{Left 2} & \tikzmark{Right 2} \dfrac{\sin(3x)}{3} \\[0.3cm]
+	-4 \sin(2x) \tikzmark{Left 3} & \tikzmark{Right 3} -\dfrac{\cos(3x)}{9} \\[0.3cm]
+	
+	\DrawArrow{Left 1}{Right 2}{+}
+	\DrawArrow{Left 2}{Right 3}{--}
+	\DrawArrow{Left 3}{Right 3}{+}
+	\end{array}
+	\]
+So that\dots
+	\[
+	\begin{gathered}
+	\int \sin(2x) \, \cos(3x) \;dx= \dfrac{\sin(2x) \sin(3x)}{3} + \dfrac{2 \cos(2x) \cos(3x)}{9} + \dfrac{4}{9} \int \sin(2x) \cos(3x) \;dx \\[0.3cm]
+	\dfrac{5}{9} \int \sin(2x) \, \cos(3x) \;dx= \dfrac{\sin(2x) \sin(3x)}{3} + \dfrac{2 \cos(2x) \cos(3x)}{9}  \\[0.3cm]
+	\int \sin(2x) \, \cos(3x) \;dx= \dfrac{9}{5} \left( \dfrac{\sin(2x) \sin(3x)}{3} + \dfrac{2 \cos(2x) \cos(3x)}{9} \right) + C
+	\end{gathered}
+	\]
+	\[
+	\begin{gathered}
+	\int \sin(2x) \, \cos(3x) \;dx= \dfrac{1}{5} \, \big( 3 \sin(2x) \sin(3x) + 2 \cos(2x) \cos(3x) \big) + C
+	\end{gathered}
+	\]
+Alternatively, choosing $u= \cos(3x)$ and $dv= \sin(2x)$, we have\dots
+	\[
+	\begin{array}{c @{\hspace*{1.3cm}} c} \toprule
+	u & dv \\ \cmidrule(lr){1-2}
+	\cos(3x) \tikzmark{Left 1} & \tikzmark{Right 1} \sin(2x) \\[0.3cm]
+	-3 \sin(3x) \tikzmark{Left 2} & \tikzmark{Right 2} -\dfrac{\cos(2x)}{2} \\[0.3cm]
+	-9 \cos(3x) \tikzmark{Left 3} & \tikzmark{Right 3} -\dfrac{\sin(2x)}{4} \\[0.3cm]
+	
+	\DrawArrow{Left 1}{Right 2}{+}
+	\DrawArrow{Left 2}{Right 3}{--}
+	\DrawArrow{Left 3}{Right 3}{+}
+	\end{array}
+	\]
+So that\dots
+	\[
+	\begin{gathered}
+	\int \sin(2x) \, \cos(3x) \;dx= -\dfrac{\cos(3x) \cos(2x)}{2} - \dfrac{3 \sin(3x) \sin(2x)}{4} + \dfrac{9}{4} \int \cos(3x) \sin(2x) \;dx \\[0.3cm]
+	-\dfrac{5}{4} \int \sin(2x) \, \cos(3x) \;dx= -\dfrac{\cos(3x) \cos(2x)}{2} - \dfrac{3 \sin(3x) \sin(2x)}{4} \\[0.3cm]
+	\int \sin(2x) \, \cos(3x) \;dx= -\dfrac{4}{5} \left( -\dfrac{\cos(3x) \cos(2x)}{2} - \dfrac{3 \sin(3x) \sin(2x)}{4} \right) + C \\[0.3cm]
+	\int \sin(2x) \, \cos(3x) \;dx= \dfrac{1}{5} \, \big( 2 \cos(3x) \cos(2x) + 3 \sin(3x) \sin(2x) \big) + C \\[0.3cm]
+	\end{gathered}
+	\]
+Alternatively, one can use the product-to-sum formula:
+	\[
+	\sin A \cos B = \dfrac{\sin(A + B) + \sin(A - B)}{2}
+	\]
+We then have\dots
+	\[
+	\begin{aligned}
+	\int \sin(2x) \, \cos(3x) \;dx&= \int \dfrac{\sin(2x + 3x) + \sin(2x - 3x)}{2} \;dx \\[0.3cm]
+	&= \dfrac{1}{2} \int \big( \sin(5x) + \sin(-x) \big) \;dx \\[0.3cm]
+	&= \dfrac{1}{2} \left( -\dfrac{\cos(5x)}{5} + \cos(-x) \right) + C \\[0.3cm]
+	&= \dfrac{1}{2} \left( \cos x -\dfrac{\cos(5x)}{5} \right) + C \\[0.3cm]
+	&= \dfrac{1}{10} \big( 5 \cos x - \cos(5x) \big) + C
+	\end{aligned}
+	\]
+
+
+
+
+
+
 
 
 
