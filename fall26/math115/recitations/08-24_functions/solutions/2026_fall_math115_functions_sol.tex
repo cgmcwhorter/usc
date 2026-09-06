@@ -1,0 +1,111 @@
+\documentclass[11pt,letterpaper]{article}
+\usepackage[lmargin=1in,rmargin=1in,bmargin=1in,tmargin=1in]{geometry}
+\usepackage{../style}
+
+\setlength{\parindent}{0ex}
+
+% -------------------
+% Content
+% -------------------
+\begin{document}
+
+\pagenumbering{gobble}
+
+% Recitation: Function Operations Review
+\phantom{} \hfill {\bfseries \Large Recitation: Linear Functions Review Solutions} \hfill \phantom{} \par\vspace{0.5cm}
+
+% Problem 1
+\noindent {\bfseries Problem 1.} Suppose $f(x)$ and $g(x)$ are the functions given below. 
+	\[
+	\begin{aligned}
+	f(x)&= 2x - 3 \\[0.3cm]
+	g(x)&= x^2 + 2x - 1
+	\end{aligned}
+	\]
+
+Compute the following: \pspace
+        \begin{enumerate}[(a)]
+        \item $f(5)= 2(5) - 3= 10 - 3= 7$ \vfill
+        \item $g(-2)= (-2)^2 + 2(-2) - 1= 4 - 4 - 1= -1 $ \vfill
+        \item $f(0) - 3g(2)= (2 \cdot 0 - 3) - 3 \big( 2^2 + 2(2) - 1 \big)= -3 - 3(7)= -3 - 21= -24$ \vfill
+        \item $(f - g)(x)= f(x) - g(x)= (2x - 3) - (x^2 + 2x - 1)= 2x - 3 - x^2 - 2x + 1= -x^2 - 2$ \vfill
+        \item $(fg)(x)= f(x) \, g(x)= (2x - 3)(x^2 + 2x - 1)= 2x^3 + 4x^2 - 2x - 3x^2 - 6x + 3= 2x^3 + x^2 - 8x + 3$ \vfill
+        \item $\left( \dfrac{f}{g} \right)(x)= \dfrac{f(x)}{g(x)}= \dfrac{2x - 3}{x^2 + 2x - 1}$ \vfill
+        \item $(f \circ g)(0)= f\big( g(0) \big)= f(0^2 + 2(0) - 1)= f(0 + 0 - 1)= f(-1)= 2(-1) - 3= -2 - 3= -5$ \vfill
+        \item $(g \circ f)(0)= g\big( f(0) \big)= g( 2(0) - 3)= g(0 - 3)= g(-3)= (-3)^2 + 2(-3) - 1= 9 - 6 - 1= 2$ \vfill
+        \item $(f \circ g)(x)= f\big( g(x) \big)= f(x^2 + 2x - 1)= 2(x^2 + 2x - 1) - 3= 2x^2 + 4x - 2 - 3= 2x^2 + 4x - 5$ \vfill
+        \item $(g \circ f)(x)= g\big( f(x) \big)= g(2x - 3)= (2x - 3)^2 + 2(2x - 3) - 1= (4x^2 - 12x + 9) + (4x - 6) - 1= 4x^2 - 8x + 2$ \vfill
+        \end{enumerate} 
+
+
+
+\newpage
+
+
+
+% Problem 2
+\noindent {\bfseries Problem 2.} Find the average rate of change for $f(x)= \dfrac{4 - 5x}{3}$ for $-1 \leq x \leq 3$ \textit{without} performing any calculations. Then, find the average rate of change for $g(x)= x^2 - 4x + 5$ on the interval $[-1, 2]$. \par\vspace{1cm}
+
+\noindent{\itshape We know that $f(x)= \dfrac{4 - 5x}{3}= \tfrac{4}{3} - \tfrac{5}{3}x$ is a linear function because it has the form $mx + b$ with $m= -\tfrac{5}{3}$ and $b= \tfrac{4}{3}$. We know that linear functions have a constant average rate of change, i.e. they have the same average rate of change on every interval, and that constant average rate of change is the slope, $m$. Therefore, the average rate of change of $f(x)$ on $-1 \leq x \leq 3$ is $m= -\tfrac{5}{3}$. \par\vspace{1cm}
+
+We have $g(-1)= (-1)^2 - 4(-1) + 5= 1 + 4 + 5= 10$ and $g(2)= 2^2 - 4(2) + 5= 4 - 8 + 5= 1$. But then the average rate of change for $g(x)$ on $[-1, 2]$ is\dots
+	\[
+	\text{Average ROC}= \dfrac{g(2) - g(-1)}{2 - (-1)}= \dfrac{1 - 10}{2 + 1}= \dfrac{-9}{3}= -3
+	\]
+} \par\vspace{4.1cm}
+       
+
+
+% Problem 3
+\noindent {\bfseries Problem 3.} Suppose that $h(x)= \sqrt{x - 9} + 5$. Find at least two possible combinations for $f(x)$ and $g(x)$ such that $h(x)= (f \circ g)(x)$. Find the domain and range for $h(x)$. \par\vspace{1cm}
+
+\noindent{\itshape There are infinitely many possible combinations for $f(x)$ and $g(x)$ (can you see why?). The two `best' possible choices would be $g(x)= x - 9$, $f(x)= \sqrt{x} + 5$, and $g(x)= \sqrt{x - 9}$, $f(x)= x + 5$. Now $h(x)= \sqrt{x - 9} + 5$. We know that $x - 9$ is defined for any real number. Square roots are only defined if their inputs are nonnegative, i.e. greater than or equal to $0$. So, we need $x - 9 \geq 0$, i.e. $x \geq 9$. So, the domain is $[9, \infty)$. We know that square roots produce nonnegative numbers, i.e. greater than or equal to 0. Once this number is added to 5, we obtain numbers greater than or equal to 5, i.e. $[5, \infty)$. Therefore, we have\dots \par\vspace{0.3cm}
+	\[
+	\begin{gathered}
+	\text{Domain: } [9, \infty) \\[0.3cm]
+	\text{Range: } [5, \infty)
+	\end{gathered}
+	\] 
+}
+
+
+
+\newpage
+
+
+
+% Problem 4
+\noindent {\bfseries Problem 4.} Let $f(x)$ be the function given by $f(x)= 3x - 7$. 
+	\begin{enumerate}[(a)]
+	\item Find a value in the range of $f$. Be sure to justify why the value is in the range. 
+	\item Compute $f(4)$. Is $(4, 1)$ on the graph of $f$? Explain. 
+	\item Is there an $x$ such that $f(x)= 11$? Explain. 
+	\item Is $1 \in f^{-1}(3)$? Explain. 
+	\item Assuming $f^{-1}$ exists, what is $f(f^{-1}(\pi))$ and $f^{-1}(f(\sqrt{2}))$?
+	\end{enumerate} \pspace
+
+\sol 
+{\itshape
+\begin{enumerate}[(a)]
+\item We know that the range of $f$ is the set of outputs of $f$. Therefore, we can obtain an output by evaluating $f$ at any value in its domain. For example, $f(0)= 3(0) - 7= -7$, $f(10)= 3(10) - 7= 23$, and $f(-5)= 3(-5) - 7= -22$ are all values in the range of $f$. \vfill
+
+\item We have $f(4)= 3(4) - 7= 12 - 7= 5$. This implies that $(4, 5)$ is a point on the graph. Therefore, $(4, 1)$ cannot be on the graph of $f$. If it were on the graph, then we would know that $f(4)= 1$. But we know $f(4)= 5 \neq 1$. \vfill
+
+\item If there were $x$ such that $f(x)= 11$, then\dots
+	\[
+	\begin{gathered}
+	f(x)= 11 \\
+	3x - 7= 11 \\
+	3x= 18 \\
+	x= 6
+	\end{gathered}
+	\]
+Of course, this assumes there is an $x$ such that $f(x)= 11$; that is, we have shown that $x= 6$ is the only \textit{possible} value. We can verify this possible solution: $f(6)= 3(6) - 7= 18 - 7= 11$. Therefore, there is such an $x$-value---namely, $x= 6$. \vfill
+
+\item If $1 \in f^{-1}(3)$, then $f(1)= 3$. We have $f(1)= 3(1) - 7= 3 - 7= -4$. Therefore, $1 \notin f^{-1}(3)$. \vfill
+
+\item If $f^{-1}$ exists, then we know that $(f \circ f^{-1})(x)= f \big( f^{-1}(x) \big)$ and $(f^{-1} \circ f)(x)= f^{-1} \big( f(x) \big)$ for all $x$. But then we would have $f(f^{-1}(\pi))= \pi$ and $f^{-1}(f(\sqrt{2}))= \sqrt{2}$. \vfill
+\end{enumerate}
+}
+
+\end{document}

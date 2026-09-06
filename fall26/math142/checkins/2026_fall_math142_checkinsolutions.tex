@@ -176,9 +176,63 @@ We then have\dots
 
 
 
+\newpage
 
 
 
+
+
+%% 09/01
+\checkin{09/01} To integrate $\ds\int \tan^7 \theta \, \sec^5 \theta \;d\theta$, one should choose $u= \sec \theta$. \pspace
+
+\sol The statement is \textit{true}. Observe that the `only' choices are $u= \tan \theta$ or $u= \sec \theta$. If one chooses $u= \tan \theta$, we have $du= \sec^2 \theta \;d\theta$. But then there would remain three terms of $\sec \theta$ in the integrand, and the Pythagorean Identities only allow one to replace even powers of $\sec \theta$. However, choosing $u= \sec \theta$, we have $du= \sec \theta \, \tan \theta \;d\theta$. From the Pythagorean Identities, we have $\tan^2 + 1= \sec^2 \theta$, i.e. $\tan^2 \theta= \sec^2 \theta - 1$. But then $\tan^6 \theta= (\tan^2 \theta)^3= (\sec^2 \theta - 1)^3$. Therefore, we have\dots
+	\[
+	\int \tan^7 \theta \, \sec^5 \theta \;d\theta= \int \tan^6 \theta \, \sec^4 \theta \cdot \sec \theta \tan \theta \;d\theta= \int (\sec^2 \theta - 1)^3 \, \sec^4 \theta \cdot \sec \theta \tan \theta \;d\theta= \int (u^2 - 1)^3 u^4 \;du
+	\]
+But then, we have\dots
+	\[
+	int (u^2 - 1)^3 u^4 \;du= \int (u^{10} - 3u^8 + 3u^6 - u^4) \;du= \dfrac{u^{11}}{11} - \dfrac{u^9}{3} + \dfrac{3u^7}{7} - \dfrac{u^5}{5} + C
+	\]
+Therefore, we have\dots
+	\[
+	\int \tan^7 \theta \, \sec^5 \theta \;d\theta= \dfrac{\sec^{11} \theta}{11} - \dfrac{\sec^9 \theta}{3} + \dfrac{3\sec^7 \theta}{7} - \dfrac{\sec^5 \theta}{5} + C
+	\] \par\vspace{1.3cm}
+
+
+
+% 09/03
+\checkin{09/03-1} One can integrate $\ds \int \dfrac{7x}{(x^2 - 16)^5} \;dx$ using trig. substitution; however, this would not be an `optimal' approach. \pspace
+
+\sol The statement is \textit{true}. There is commonly overlap between different techniques of integration; however, this does not mean that the methods are equally `simple.' For instance, the given integral can be integrated using $u$-substitution: let $u= x^2 - 16$, so that $du= 2x \;dx$. But then\dots
+	\[
+	\int \dfrac{7x}{(x^2 - 16)^5} \;dx= \dfrac{7}{2} \int \dfrac{2x}{(x^2 - 16)^5} \;dx= \dfrac{7}{2} \int \dfrac{du}{u^5}= \dfrac{7}{2}\, u^{-4} \cdot \dfrac{-1}{4} + C= -\dfrac{7}{8(x^2 - 16)^4} + C
+	\]
+Observe that this can also be integrated using integration-by-parts. We choose $u= 7x$ and $dv= \tfrac{1}{(x^2 - 16)^5}$, though the integration of $dv$ requires partial fractions. One can also use partial fractions for the original integral. However, each of these is rather tedious and we will not produce these solutions here. Finally, one can use trig substitution. 
+	\[
+	\begin{tikzpicture}
+	\draw[line width=0.03cm] (0,0) -- (2.5,0) -- (2.5,2.5) -- (0,0);
+	\draw[line width=0.03cm] (2.3,0) -- (2.3,0.2) -- (2.5,0.2);
+	\node at (0.6,0.3) {$\theta$};
+	\node at (1.3,-0.3) {$4$};
+	\node at (3.4,1.2) {$\sqrt{x^2 - 16}$};
+	\node[rotate = 45] at (0.9,1.5) {$x$};
+	\end{tikzpicture}
+	\]
+We have $\sec \theta= \tfrac{x}{4}$, so that $x= 4 \sec \theta$. But then $dx= 4 \sec \theta \tan \theta \;d\theta$. We know $\tan \theta= \tfrac{\sqrt{x^2 - 16}}{4}$, so that $\sqrt{x^2 - 16}= 4 \tan \theta$. But then $(x^2 - 16)^5= (x^2 - 16)^{10/2}= (\sqrt{x^2 - 16})^{10}= ( 4 \tan \theta)^{10}$. Therefore, we have\dots
+	\[
+	\int \dfrac{7x}{(x^2 - 16)^5} \;dx= \int \dfrac{7 \cdot 4 \sec \theta}{4^{10} \tan^{10} \theta} \cdot 4 \sec \theta \tan \theta \;d\theta= \dfrac{7}{4^8} \int \dfrac{\sec^2 \theta}{\tan^9 \theta} \;d\theta
+	\]
+We stop here because it is already evident that this is not `optimal' in comparison to the $u$-substitution approach shown---which was the point. \par\vspace{1.3cm}
+
+
+
+% 09/03
+\checkin{09/03-2} The partial fraction decomposition of $\dfrac{x + 3}{x(x^2 + 4)}$ has the form $\dfrac{A}{x} + \dfrac{B}{x^2 + 4}$. \pspace
+
+\sol The statement is \textit{false}. Recall that the if the `base' irreducible term is quadratic, then the corresponding factor in the numerator of the partial fraction decomposition is a linear term. Therefore, the correct partial fraction decomposition of this rational function is\dots
+	\[
+	\dfrac{x + 3}{x(x^2 + 4)}= \dfrac{A}{x} + \dfrac{Bx + C}{x^2 + 4}
+	\]
 
 
 
