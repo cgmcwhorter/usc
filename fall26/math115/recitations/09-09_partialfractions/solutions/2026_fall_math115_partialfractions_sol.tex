@@ -1,0 +1,165 @@
+\documentclass[11pt,letterpaper]{article}
+\usepackage[lmargin=1in,rmargin=1in,bmargin=1in,tmargin=1in]{geometry}
+\usepackage{../style}
+
+\setlength{\parindent}{0ex}
+
+\usepackage{polynom}	% Poly Long Division
+
+% -------------------
+% Content
+% -------------------
+\begin{document}
+
+\pagenumbering{gobble}
+
+% Recitation: Rational Functions \& Polynomial Long Division Solutions
+\phantom{} \hfill {\bfseries \Large Recitation: Partial Fractions Solutions} \hfill \phantom{} \par\vspace{0.5cm}
+
+% Problem 1
+\noindent {\bfseries Problem 1.} Find the partial fractions decomposition for the following:
+	\begin{enumerate}[(a)]
+	% (a)
+	\item $\dfrac{x + 13}{x^2 - 4x - 5}$ 
+		\[
+		\begin{aligned}
+		\dfrac{x + 13}{x^2 - 4x - 5}= \dfrac{x + 13}{(x - 5)(x + 1)}&= \dfrac{A}{x - 5} + \dfrac{B}{x + 1} \\[0.3cm]
+		&= \dfrac{A(x + 1) + B(x - 5)}{(x - 5)(x + 1)} \\[0.3cm]
+		&= \dfrac{Ax + A + Bx - 5B}{(x - 5)(x + 1)}
+		\end{aligned}
+		\]
+	{\itshape But then $x + 13= Ax + A + Bx - 5B$. So, we have\dots}
+		\[
+		\begin{aligned}
+		x &\colon\quad A + B= 1 \\
+		1 &\colon\quad A - 5B= 13
+		\end{aligned}
+		\]
+	{\itshape Subtracting these equations, we have $6B= -12$, so $B= -2$. Using this in the first equation, we have $A - 2= 1$, i.e. $A= 3$. Therefore,\dots}
+		\[
+		\dfrac{x + 13}{x^2 - 4x - 5}= \boxed{\dfrac{3}{x - 5} + \dfrac{-2}{x + 1}}
+		\]
+	{\itshape We can also find $A, B$ with Heaviside's: $A= \tfrac{5 + 13}{5 + 1}= \tfrac{18}{6}= 3$ and $B= \tfrac{-1 + 13}{-1 - 5}= \tfrac{12}{-6}= -2$.} \par\vspace{0.3cm}
+	
+	% (b)
+	\item $\dfrac{3x + 13}{2x^2 + 4x - 6}$ 
+	
+		\[
+		\begin{aligned}
+		\dfrac{3x + 13}{2x^2 + 4x - 6}= \dfrac{3x + 13}{2(x - 1)(x + 3)}= \dfrac{1}{2} \cdot \dfrac{3x + 13}{(x - 1)(x + 3)}&= \dfrac{1}{2} \left[ \dfrac{A}{x - 1} + \dfrac{B}{x + 3} \right] \\[0.3cm]
+		&= \dfrac{1}{2} \left[ \dfrac{A(x + 3) + B(x - 1)}{(x - 1)(x + 3)} \right]\\[0.3cm]
+		&= \dfrac{1}{2} \left[ \dfrac{Ax + 3A + Bx - B}{(x - 1)(x + 3)} \right]
+		\end{aligned}
+		\]
+	{\itshape But then $3x + 13= Ax + 3A + Bx - B$. So, we have\dots}
+		\[
+		\begin{aligned}
+		x &\colon\quad A + B= 3 \\
+		1 &\colon\quad 3A - B= 13
+		\end{aligned}
+		\]
+	{\itshape Add these equations, we have $4A= 16$, so $A= 4$. Using this in the first equation, we have $4 + B= 3$, i.e. $B= -1$. Therefore,\dots}
+		\[
+		\boxed{\dfrac{3x + 13}{2x^2 + 4x - 6}= \dfrac{1}{2} \left[ \dfrac{4}{x - 1} + \dfrac{-1}{x + 3} \right]}
+		\]
+	{\itshape We can also find $A, B$ with Heaviside's: $A= \tfrac{3(1) + 13}{1 + 3}= \tfrac{16}{4}= 4$ and $B= \tfrac{3(-3) + 13}{-3 - 1}= \tfrac{4}{-4}= -1$.}
+	
+	
+	
+	\newpage
+	
+	
+	
+	% (c)
+	\item $\dfrac{5x^2 - 3x + 4}{(x - 1)(x^2 + 1)}$ 
+	
+		\[
+		\begin{aligned}
+		\dfrac{5x^2 - 3x + 4}{(x - 1)(x^2 + 1)}&= \dfrac{A}{x - 1} + \dfrac{Bx + C}{x^2 + 1} \\[0.3cm]
+		&= \dfrac{A(x^2 + 1) + (Bx + C)(x - 1)}{(x - 1)(x^2 + 1)} \\[0.3cm]
+		&=\dfrac{(Ax^2 + A) + (Bx^2 - Bx + Cx - C)}{(x - 1)(x^2 + 1)}
+		\end{aligned}
+		\]
+	{\itshape But then $5x^2 - 3x + 4= Ax^2 + A + Bx^2 - Bx + Cx - C$. So, we have\dots}
+		\[
+		\begin{aligned}
+		x^2 &\colon\quad A + B= 5 \\
+		x &\colon\quad -B + C= -3 \\
+		1 &\colon\quad A - C= 4
+		\end{aligned}
+		\]
+	{\itshape Subtracting the first and third equation, we have $B + C= 1$. But then $B + C= 1$ and $-B + C= -3$ (the middle equation). Adding these equations, we find $2C= -2$, i.e. $C= -1$. But then because $B + C= 1$, we know $B - 1= 1$, i.e. $B= 2$. But because $A + B= 5$, we know $A + 2= 5$, i.e. $A= 3$. Therefore, we have\dots}
+		\[
+		\boxed{\dfrac{5x^2 - 3x + 4}{(x - 1)(x^2 + 1)}= \dfrac{3}{x - 1} + \dfrac{2x - 1}{x^2 + 1}}
+		\]
+	{\itshape We can also find $A$ with Heaviside's: $A= \tfrac{5 - 3 + 4}{1 + 1}= \tfrac{6}{2}= 3$.}
+	\end{enumerate}
+
+
+
+\newpage
+
+
+
+% Problem 2
+\noindent {\bfseries Problem 2.} Find the partial fraction decomposition of the following:
+	\[
+	\dfrac{3x^4 - x^3 + 7x^2 - 4x + 2}{x^3 + 2x}
+	\] \par\vspace{0.3cm}
+
+\noindent {\bfseries Solution.} {\itshape Observe that the degree of the numerator---4---is not smaller than the degree of the denominator---3. So, we first need to polynomial long divide. We have\dots
+	\[
+	\polylongdiv{3x^4 - x^3 + 7x^2 - 4x + 2}{x^3 + 2x}
+	\]
+Therefore, we have quotient $3x - 1$ and remainder $x^2 - 2x + 2$. So, we have $\tfrac{3x^4 - x^3 + 7x^2 - 4x + 2}{x^3 + 2x}= 3x - 1 + \tfrac{x^2 - 2x + 2}{x^3 + 2x}$. We need to find the partial fraction decomposition of $\tfrac{x^2 - 2x + 2}{x^2 - 2x + 2}$. The denominator factors as $x(x^2 + 2)$. We have\dots
+	\[
+	\begin{aligned}
+	\dfrac{x^2 - 2x + 2}{x(x^2 + 2)}&= \dfrac{A}{x} + \dfrac{Bx + C}{x^2 + 2} \\[0.3cm]
+	&= \dfrac{A(x^2 + 2) + (Bx + C)x}{x(x^2 + 2)} \\[0.3cm]
+	&= \dfrac{Ax^2 + 2A + Bx^2 + Cx}{x(x^2 + 2)}
+	\end{aligned}
+	\]
+Therefore, we must have $x^2 - 2x + 2= Ax^2 + 2A + Bx^2 + Cx$. Relating coefficients, we must have\dots
+	\[
+	\begin{aligned}
+	x^2 &\colon\quad A + B= 1 \\
+	x &\colon\quad C= -2 \\
+	1 &\colon\quad 2A= 2
+	\end{aligned}
+	\]
+From the last equation, we see $A= 1$. [We can also see this with Heaviside's: $A= \tfrac{0 - 0 + 2}{0^2 + 2}= \tfrac{2}{2}= 1$.] Using this in the first equation, we have $1 + B= 1$ so $B= 0$. Therefore, we have\dots
+	\[
+	\boxed{\dfrac{3x^4 - x^3 + 7x^2 - 4x + 2}{x^3 + 2x}= 3x - 1 + \dfrac{-1}{x} + \dfrac{-2}{x^2 + 2}}
+	\]
+}
+
+
+
+\newpage
+
+
+
+% Problem 3
+\noindent {\bfseries Problem 3.} Complete the following:
+	\begin{enumerate}[(a)]
+	\item Find the partial fractions decomposition of $\dfrac{x^2 - x + 2}{x^3}$ `immediately.' 
+	\item Find a rational function with the partial fraction decomposition $2 + \dfrac{-3}{x + 1} + \dfrac{1}{x - 2}$.
+	\end{enumerate} \par\vspace{0.3cm}
+
+\noindent{\bfseries Solution.}
+
+\begin{enumerate}[(a)]
+\item {\itshape We know the decomposition has the form $\tfrac{A}{x} + \tfrac{B}{x^2} + \tfrac{C}{x^3}$ for some $A, B, C$. But this is precisely the form we have when we divide $x^3$ into the numerator! Doing so, we have\dots
+	\[
+	\dfrac{x^2 - x + 2}{x^3}= \dfrac{x^2}{x^3} - \dfrac{x}{x^3} + \dfrac{2}{x^3}= \dfrac{1}{x} + \dfrac{-1}{x^2} + \dfrac{2}{x^3}
+	\]
+So, this is the partial fraction decomposition, i.e. $A= 1$, $B= -1$, and $C= 3$.}
+
+\item {\itshape We know that if the given expression was the partial fraction decomposition, putting the rational functions `back together', we would obtain a rational function with that partial fraction decomposition! So, we have\dots
+	\[
+	2 + \dfrac{-3}{x + 1} + \dfrac{1}{x - 2}= \dfrac{2(x + 1)(x - 2) - 3(x - 2) + 1(x + 1)}{(x + 1)(x - 2)}= \dfrac{2x^2 - 4x + 3}{x^2 - x - 2}
+	\]
+Therefore, $\tfrac{2x^2 - 4x + 3}{x^2 - x - 2}$ has the given partial fraction decomposition.}
+\end{enumerate}
+
+\end{document}

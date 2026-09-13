@@ -4,6 +4,8 @@
 
 \setlength{\parindent}{0ex}
 
+\usepackage{polynom}	% Poly Long Division
+
 % -------------------
 % Content
 % -------------------
@@ -17,29 +19,62 @@
 % Problem 1
 \noindent {\bfseries Problem 1.} Consider the rational function given below:
 	\[
-	f(x)= \dfrac{3x^2 - 2x - 5}{(x + 2)(x^8 - 1)}
+	f(x)= \dfrac{3x^2 - 2x - 5}{(x + 2)(x^8 - 1)}= \boxed{\dfrac{(3x - 5)(x + 1)}{(x + 2)(x - 1)(x + 1)(x^2 + 1)(x^4 + 1)}} \quad '= \, ' \; \boxed{\dfrac{3x - 5}{(x + 2)(x - 1)(x^2 + 1)(x^4 + 1)}}
 	\]
 Complete the following parts:
 	\begin{enumerate}[(a)]
-	\item Find the domain.
-	\item Find any $y$-intercepts.
-	\item Find any $x$-intercepts.
-	\item Find any vertical asymptotes. 
-	\item Find any horizontal asymptotes.
-	\item Find any holes.
-	\item Can this rational function be polynomial long divided? Explain.
+	\item Find the domain. \par
+	{\itshape The domain is where the original denominator is not 0. Solving $(x + 2)(x - 1)(x + 1)(x^2 + 1)(x^4 + 1)= 0$, we see $x= -2, -1, 1$ (the $x^2 + 1$ and $x^4 + 1$ terms have no zeros). Therefore, the domain is $\mathbb{R} \setminus \{ -2, -1, 1 \}$.} \vfill
+	
+	\item Find any $y$-intercepts. \par
+	{\itshape The $y$-intercept will be the value when $x= 0$. We have $f(0)= \tfrac{0 - 0 - 5}{2 \cdot -1}= \dfrac{-5}{-2}= \tfrac{5}{2}$. Therefore, the $y$-intercept is $\tfrac{5}{2}$.} \vfill
+	
+	\item Find any $x$-intercepts. \par
+	{\itshape The $x$-intercepts are the solutions to $f(x)= 0$. For a rational function, this will be when the numerator is 0. Setting $(3x - 5)(x + 1)= 0$, we have $x= -1, \tfrac{5}{3}$. But the value $x= -1$ is not in the domain. Therefore, the only $x$-intercept is $\tfrac{5}{3}$.} \vfill
+	
+	\item Find any vertical asymptotes. \par
+	{\itshape The vertical asymptotes will occur when the denominator is 0 in the `reduced' rational function. So, we solve $(x + 2)(x - 1)(x^2 + 1)(x^4 + 1)= 0$, which implies $x= -2, 1$. Therefore, the vertical asymptotes are $x= -2$ and $x= 1$.} \vfill
+	
+	\item Find any horizontal asymptotes. \par
+	{\itshape Examining the original rational function, the numerator has degree 2 and the denominator has degree 9. Therefore, the horizontal asymptote is $y= 0$.} \vfill
+	
+	\item Find any holes. \par
+	{\itshape To find holes, we examine values not in the domain where the denominator is not 0 in the `reduced' rational function. The only such value here is $x= -1$. Therefore, the only hole is at $x= -1$. The $y$-value will be the $y$-value at this $x$-value in the `reduced' rational function. This is $\tfrac{-3 - 5}{1 \cdot -2 \cdot 2 \cdot 2}= \tfrac{-8}{-8}= 1$. Therefore, the hole is $(-1, 1)$.} \vfill
+	
+	\item Can this rational function be polynomial long divided? Explain. \par
+	{\itshape No, the degree of the denominator is larger than the degree in the numerator. Therefore, this rational function cannot be polynomial long divided.}
 	\end{enumerate} \vfill
+
+
+
+\newpage
 
 
 
 % Problem 2
 \noindent {\bfseries Problem 2.} Complete the parts given below:
 	\begin{enumerate}[(a)]
-	\item Factor the polynomial $x^3 - 25x$. Without explicitly computing, what is the remainder when this polynomial is divided by $x + 5$? Explain. 
-	\item If $(3 x^2 - x + 6) (x^2 + x - 3) + 2 x - 4= 3x^4 + 2x^3 - 4x^2 + 11x - 22$, then what is the polynomial quotient and remainder when $3x^4 + 2x^3 - 4x^2 + 11x - 22$ is divided by $(x^2 + x - 3)$? What about if it were instead divided by $3x^2 - x + 6$?
+	\item Factor the polynomial $x^3 - 25x$. Without explicitly computing, what is the remainder when this polynomial is divided by $x + 5$? Explain.
+	\item If $(3x^2 - x + 6) (x^2 + x - 3) + 2 x - 4= 3x^4 + 2x^3 - 4x^2 + 11x - 22$, then what is the polynomial quotient and remainder when $3x^4 + 2x^3 - 4x^2 + 11x - 22$ is divided by $x^2 + x - 3$? What about if it were instead divided by $3x^2 - x + 6$?
 	\item Without explicitly computing, can $x^2 - 4x + 6$ be divisible by $x^3 + 1$? Explain. 
-	\item If $f(x)$ is divisible by $x - c$, what is $f(c)$? Explain. Is the `reverse' of your conclusion true? Explain.
-	\end{enumerate} \vfill
+	\item If a polynomial $f(x)$ is divisible by $x - c$, what is $f(c)$? Explain. Is the `reverse' of your conclusion true? Explain.
+	\end{enumerate} \par\vspace{0.3cm}
+
+\noindent {\bfseries Solution.} 
+
+\begin{enumerate}[(a)]
+\item {\itshape We have $x^3 - 25x= x(x^2 - 25)= x(x - 5)(x + 5)$. Observe that $x + 5$ is a factor of this polynomial. Therefore, the remainder upon division will be 0. We can also see that the quotient will be $x(x - 5)= x^2 - 5x$.}
+
+\item {\itshape We can see that the quotient will be $3x^2 - x + 6$ and the remainder will be $2x - 4$. Similarly, when dividing by $3x^2 - x + 6$, the quotient will be $x^2 + x - 3$ and the remainder will also be $2x - 4$.}
+
+\item {\itshape No. The degree of $x^2 - 4x + 6$ is 2 while degree of $x^3 + 1$ is 3, so we cannot long divide $x^2 - 4x + 6$ by $x^3 + 1$.}
+
+\item {\itshape We know that a polynomial is divisible by $x - c$ if and only if $x= c$ is a root of $f(x)$. Therefore, because $x - c$ divides $f(x)$, we know $f(c)= 0$. The reverse is also true. Let's prove why. \par\vspace{0.3cm}
+
+First, let's see why $x= c$ is a root of $f(x)$ if $f(x)$ is divisible by $x - c$. Assume $f(x)$ is divisible by $x - c$. Polynomial long divide $f(x)$ by $x - c$. After this, we can express $f(x)$ as $f(x)= q(x) \, (x - c) + r(x)$, where $q(x)$ is the quotient polynomial and $r(x)$ is the remainder polynomial. But we assumed $x - c$ divided $f(x)$, so that $r(x)= 0$. But then $f(x)= q(x) \, (x - c)$. Observe that $f(c)= q(c) \,(c - c)= q(c) \cdot 0= 0$, i.e. $x= c$ is a root of $f(x)$. \par\vspace{0.3cm}
+
+Now, let's see why $f(x)$ is divisible by $x - c$ if $x= c$ is a root of $f(x)$. Assume $x= c$ is a root of $f(x)$, i.e. $f(c)= 0$. Now polynomial long $f(x)$ by $x - c$. After this, we can express $f(x)$ as $f(x)= q(x) \, (x - c) + r(x)$, where $q(x)$ is the quotient polynomial and $r(x)$ is the remainder polynomial. Because $r(x)$ is the remainder polynomial, it has degree less than that of what we divided by---$x - c$. So, $r(x)$ must have degree 0, i.e. be a constant function. Suppose $r(x)= A$, where $A$ is some number. We know $f(x)= q(x) \, (x - c) + r(x)$ for any value of $x$. Let's substitute $x= c$. We have $f(c)= q(c) \, (c - c) + r(c)$. But we know $f(c)= 0$ and the right side is $r(c)$. So, we have $0= r(c)$. But $r(c)= A$, so $A= 0$, i.e. $r(x)= 0$. Therefore, $f(x)= q(x) \, (x - c) + r(x)= q(x) \, (x - c)$, i.e. $f(x)$ is divisible by $x - c$.}
+\end{enumerate}
 
 
 
@@ -51,7 +86,13 @@ Complete the following parts:
 \noindent {\bfseries Problem 3.} Polynomial long divide the expression below:
 	\[
 	\dfrac{5x^4 - 15x^3 - x^2 + 12x - 27}{x - 3}
-	\] \par\vspace{6cm}
+	\] 
+	
+	\[
+	\polylongdiv{5x^4 - 15x^3 - x^2 + 12x - 27}{x - 3}
+	\]
+
+\noindent {\itshape Therefore, the quotient is $5x^3 - x + 9$ with remainder 0. So, we have $\tfrac{5x^4 - 15x^3 - x^2 + 12x - 27}{x - 3}= 5x^3 - x + 9$.} \par\vspace{0.6cm}
 
 
 
@@ -59,11 +100,27 @@ Complete the following parts:
 \noindent {\bfseries Problem 4.} Polynomial long divide the expression below:
 	\[
 	\dfrac{2x^5 + 3x^4 - 6x^3 - 10x^2 - x + 9}{x^2 - 3}
-	\] \par\vspace{6cm}
+	\] \par\vspace{0.5cm}
+	
+	\[
+	\polylongdiv{2x^5 + 3x^4 - 6x^3 - 10x^2 - x + 9}{x^2 - 3}
+	\]
+
+\noindent {\itshape Therefore, the quotient is $2x^3 + 3x^2 - 1$ with remainder $-x + 6$. So, we have $\tfrac{2x^5 + 3x^4 - 6x^3 - 10x^2 - x + 9}{x^2 - 3}= 2x^3 + 3x^2 - 1 + \tfrac{-x + 6}{x^2 - 3}$.} \par\vspace{0.6cm}
 
 
 
 % Problem 5
-\noindent {\bfseries Problem 5.} Use the fact that $x= 1$ is a root of $9x^3 - 3x^2 - 5x - 1$ to fully factor this polynomial. \par\vspace{6cm} 
+\noindent {\bfseries Problem 5.} Use the fact that $x= -1$ is a root of $9x^3 - 3x^2 - 5x - 1$ to fully factor this polynomial. \par\vspace{0.3cm}
+
+\noindent{\bfseries Solution.} {\itshape We know $x= a$ is a root of a polynomial if and only if $x - a$ is a factor of the polynomial. So, because $x= -1$ is a root, $x - (-1)= x + 1$ is a factor of $2x^3 + 3x^2 - 1$. Using polynomial long division, we have\dots
+	\[
+	\polylongdiv{2x^3 + 3x^2 - 1}{x + 1}
+	\]
+So, we know $2x^3 + 3x^2 - 1= (2x^2 + x - 1)(x + 1) + 0= (2x^2 + x - 1)(x + 1)$. The polynomial $2x^2 + x - 1$ factors as $(2x - 1)(x + 1)$. Therefore, $2x^3 + 3x^2 - 1= (2x^2 + x - 1)(x + 1)= [(2x - 1)(x + 1)](x + 1)= (2x - 1)(x + 1)^2$.
+	\[
+	\boxed{2x^3 + 3x^2 - 1= (2x - 1)(x + 1)^2}
+	\]
+}
 
 \end{document}
